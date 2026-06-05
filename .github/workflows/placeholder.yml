@@ -1,0 +1,17 @@
+name: Placeholder
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  repository-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check repository scaffold
+        run: |
+          test -f README.md
+          test -f CONTRIBUTING.md
+          test -f requirements.txt

@@ -1,0 +1,218 @@
+# PageIndex BenchLab
+
+An open benchmark workspace for evaluating **PageIndex** against long-context LLMs, Vector RAG, Hybrid RAG, GraphRAG, and HyperGraphRAG on structured long-document question answering.
+
+## Why This Project Exists
+
+PageIndex proposes a document-native, tree-based retrieval approach for long documents. Instead of only asking whether PageIndex is "better than RAG", this project asks a narrower and more useful question:
+
+> On structured long documents such as SEC filings, annual reports, contracts, and technical manuals, can PageIndex retrieve better evidence, produce more precise citations, and provide a more explainable retrieval path than other RAG methods?
+
+The benchmark focuses on:
+
+- `answer_accuracy`
+- `evidence_recall`
+- `citation_precision`
+- `unsupported_claim_rate`
+- `retrieval_explainability`
+- `token_cost`
+- `latency`
+- `indexing_cost`
+
+## Compared Methods
+
+| Method | Role in this benchmark | Source |
+|---|---|---|
+| PageIndex | Main method under evaluation | https://github.com/VectifyAI/PageIndex |
+| Long-context LLM | Strong baseline: put the full document in context | https://platform.openai.com/docs/api-reference/responses/create |
+| Vector RAG + reranker | Traditional strong semantic retrieval baseline | https://github.com/run-llama/llama_index |
+| Hybrid RAG | BM25 + vector retrieval + fusion/rerank baseline | https://docs.llamaindex.ai/ |
+| GraphRAG | Graph-based baseline for entity and relationship analysis | https://github.com/microsoft/graphrag |
+| HyperGraphRAG | Hypergraph baseline for n-ary facts and multi-hop reasoning | https://github.com/LHRLAB/HyperGraphRAG |
+
+## First Milestone
+
+The first milestone is intentionally small:
+
+- Use `FinanceBench` / SEC filing questions.
+- Run 10-20 questions first.
+- Compare:
+  - PageIndex
+  - Long-context LLM
+  - Vector RAG + reranker
+  - Hybrid RAG
+- Generate a reproducible Markdown or HTML report.
+- Use the results to prepare small upstream PRs for PageIndex and related RAG projects.
+
+FinanceBench source:
+
+- https://github.com/patronus-ai/financebench
+- https://arxiv.org/abs/2311.11944
+
+## Project Structure
+
+```text
+pageindex-benchlab/
+  README.md
+  CONTRIBUTING.md
+  docs/
+    collaboration-plan.md
+    rag-method-comparison-sources.md
+    pageindex-rag-workflow.png
+  datasets/
+    README.md
+  pipelines/
+    pageindex/
+    long_context/
+    vector_rag/
+    hybrid_rag/
+    graphrag/
+    hypergraphrag/
+  evaluators/
+  examples/
+  reports/
+```
+
+## Collaboration Plan
+
+Workflow overview:
+
+![PageIndex BenchLab workflow](docs/pageindex-rag-workflow.png)
+
+Detailed planning documents:
+
+- [Collaboration plan](docs/collaboration-plan.md)
+- [RAG method comparison and sources](docs/rag-method-comparison-sources.md)
+
+## Output Schema
+
+Each pipeline should eventually produce the same JSON-compatible result shape:
+
+```json
+{
+  "method": "pageindex",
+  "question_id": "q001",
+  "question": "What was the company's operating income in 2023?",
+  "answer": "...",
+  "citations": [
+    {
+      "document_id": "example_10k",
+      "page": 42,
+      "section": "Item 7",
+      "text": "..."
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "inspect_tree",
+      "target": "Item 7"
+    }
+  ],
+  "token_usage": {
+    "input": 12000,
+    "output": 800
+  },
+  "latency_ms": 8400
+}
+```
+
+## Team Roles
+
+### Project Owner
+
+Responsibilities:
+
+- Define question sets.
+- Define evaluation metrics.
+- Design reports and README.
+- Maintain the contribution roadmap.
+- Communicate with upstream communities.
+- Try to implement the first MVP.
+
+### PH
+
+Responsibilities:
+
+- Connect PageIndex.
+- Connect LlamaIndex.
+- Connect GraphRAG.
+- Connect HyperGraphRAG.
+- Build pipeline adapters.
+- Run experiments.
+- Write benchmark code.
+- Record environment, model versions, token usage, latency, and failure cases.
+
+## Suggested Roadmap
+
+### Week 1
+
+- Set up this repository.
+- Add the collaboration plan.
+- Run the PageIndex demo locally.
+- Select 10-20 FinanceBench questions.
+- Define the unified output schema.
+
+### Week 2
+
+- Implement the PageIndex adapter.
+- Implement the Vector RAG + reranker baseline.
+- Implement `evidence_recall` and `citation_precision`.
+- Generate the first report from 10 questions.
+
+### Week 3
+
+- Implement Hybrid RAG.
+- Implement or improve the Long-context baseline.
+- Collect failure cases.
+- Open a PageIndex issue describing the benchmark plan.
+
+### Week 4
+
+- Release `v0.1`.
+- Submit the first small upstream PR.
+- Improve documentation.
+- Plan GraphRAG and HyperGraphRAG integration.
+
+## Upstream Contribution Strategy
+
+Do not start with a large feature PR. Start with small, easy-to-review contributions:
+
+- Documentation fixes.
+- Windows quickstart.
+- `.env.example`.
+- Example fixes.
+- Benchmark reproduction notes.
+- Small evaluation scripts.
+
+Recommended first PageIndex PR:
+
+```text
+docs: add Windows quickstart and minimal local PDF example
+```
+
+## Hardware Requirements
+
+The first milestone does **not** require a local GPU.
+
+Recommended first setup:
+
+- Python 3.10+
+- Git
+- 16 GB RAM preferred
+- LLM API key, such as OpenAI / Gemini / Claude
+- Small local reranker or API-based reranker
+
+A GPU may become useful later for local LLMs, large embedding jobs, or large rerankers, but it is not required to become a contributor or run the first benchmark.
+
+## Current Status
+
+This repository is currently in the planning and scaffolding stage.
+
+Next actions:
+
+1. Push this repository to GitHub.
+2. Invite PH as collaborator.
+3. Create issues for the Week 1 tasks.
+4. Run the first PageIndex local demo.
+5. Select the first FinanceBench sample set.
