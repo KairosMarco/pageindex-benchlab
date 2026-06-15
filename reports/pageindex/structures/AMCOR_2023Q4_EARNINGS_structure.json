@@ -1,0 +1,153 @@
+{
+  "doc_name": "AMCOR_2023Q4_EARNINGS.pdf",
+  "structure": [
+    {
+      "title": "Amcor reports fiscal 2023 results and provides outlook for fiscal 2024",
+      "node_id": "0000",
+      "start_index": 1,
+      "end_index": 1
+    },
+    {
+      "title": "Cash Returns to Shareholders",
+      "node_id": "0001",
+      "start_index": 2,
+      "end_index": 2,
+      "nodes": [
+        {
+          "title": "Dividend",
+          "node_id": "0002",
+          "start_index": 2,
+          "end_index": 2
+        },
+        {
+          "title": "Share repurchases",
+          "node_id": "0003",
+          "start_index": 2,
+          "end_index": 2
+        }
+      ]
+    },
+    {
+      "title": "2023 financial results",
+      "node_id": "0004",
+      "start_index": 2,
+      "end_index": 2,
+      "nodes": [
+        {
+          "title": "Segment Information",
+          "node_id": "0005",
+          "start_index": 2,
+          "end_index": 3
+        },
+        {
+          "title": "Flexibles",
+          "node_id": "0006",
+          "start_index": 3,
+          "end_index": 4
+        },
+        {
+          "title": "Rigid Packaging",
+          "node_id": "0007",
+          "start_index": 4,
+          "end_index": 4
+        },
+        {
+          "title": "Net interest and income tax expense",
+          "node_id": "0008",
+          "start_index": 4,
+          "end_index": 4
+        },
+        {
+          "title": "Adjusted Free Cash Flow",
+          "node_id": "0009",
+          "start_index": 5,
+          "end_index": 5
+        }
+      ]
+    },
+    {
+      "title": "Fiscal 2024 Guidance",
+      "node_id": "0010",
+      "start_index": 5,
+      "end_index": 5
+    },
+    {
+      "title": "Conference Call",
+      "node_id": "0011",
+      "start_index": 5,
+      "end_index": 5
+    },
+    {
+      "title": "About Amcor",
+      "node_id": "0012",
+      "start_index": 6,
+      "end_index": 6
+    },
+    {
+      "title": "Contact Information",
+      "node_id": "0013",
+      "start_index": 6,
+      "end_index": 6
+    },
+    {
+      "title": "Cautionary Statement Regarding Forward-Looking Statements",
+      "node_id": "0014",
+      "start_index": 7,
+      "end_index": 7
+    },
+    {
+      "title": "Presentation of non-GAAP information",
+      "node_id": "0015",
+      "start_index": 7,
+      "end_index": 7
+    },
+    {
+      "title": "Dividends",
+      "node_id": "0016",
+      "start_index": 7,
+      "end_index": 7
+    },
+    {
+      "title": "U.S. GAAP Condensed Consolidated Statements of Income (Unaudited)",
+      "node_id": "0017",
+      "start_index": 8,
+      "end_index": 8
+    },
+    {
+      "title": "U.S. GAAP Condensed Consolidated Statements of Cash Flows (Unaudited)",
+      "node_id": "0018",
+      "start_index": 9,
+      "end_index": 9
+    },
+    {
+      "title": "U.S. GAAP Condensed Consolidated Balance Sheets (Unaudited)",
+      "node_id": "0019",
+      "start_index": 9,
+      "end_index": 9
+    },
+    {
+      "title": "Components of Fiscal 2023 Net Sales growth",
+      "node_id": "0020",
+      "start_index": 10,
+      "end_index": 10
+    },
+    {
+      "title": "Reconciliation of Non-GAAP Measures",
+      "node_id": "0021",
+      "start_index": 11,
+      "end_index": 12
+    },
+    {
+      "title": "Reconciliation of adjusted EBIT by reporting segment",
+      "node_id": "0022",
+      "start_index": 13,
+      "end_index": 14
+    },
+    {
+      "title": "Reconciliation of net debt",
+      "node_id": "0023",
+      "start_index": 14,
+      "end_index": 14
+    }
+  ]
+}

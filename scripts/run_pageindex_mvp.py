@@ -6,6 +6,7 @@ import os
 import shutil
 import subprocess
 import sys
+import time
 from pathlib import Path
 
 
@@ -13,6 +14,7 @@ ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_QUESTIONS = ROOT / "datasets" / "financebench" / "mvp_questions.jsonl"
 DEFAULT_PDF_DIR = ROOT / "datasets" / "raw" / "financebench" / "pdfs"
 DEFAULT_OUTPUT_DIR = ROOT / "reports" / "pageindex" / "structures"
+DEFAULT_MANIFEST = ROOT / "reports" / "pageindex" / "indexing_manifest.json"
 
 
 def load_jsonl(path: Path) -> list[dict]:
@@ -56,6 +58,11 @@ def main() -> None:
     parser.add_argument("--pageindex-repo", type=Path, default=default_pageindex_repo())
     parser.add_argument("--model", default=None, help="Optional model override passed to PageIndex.")
     parser.add_argument("--limit", type=int, default=None)
+    parser.add_argument("--doc-name", action="append", help="Run only the given document name. Can be repeated.")
+    parser.add_argument("--force", action="store_true", help="Re-run documents even if the structure already exists.")
+    parser.add_argument("--continue-on-error", action="store_true")
+    parser.add_argument("--timeout-seconds", type=int, default=1800)
+    parser.add_argument("--manifest", type=Path, default=DEFAULT_MANIFEST)
     parser.add_argument("--dry-run", action="store_true")
     args = parser.parse_args()
 
@@ -63,21 +70,45 @@ def main() -> None:
         raise SystemExit(f"PageIndex repo not found: {args.pageindex_repo}")
     if not (args.pageindex_repo / "run_pageindex.py").exists():
         raise SystemExit(f"run_pageindex.py not found under: {args.pageindex_repo}")
-    if not args.dry_run and not has_model_key():
-        raise SystemExit(
-            "No model API key found. Set DASHSCOPE_API_KEY, OPENAI_API_KEY, or another provider key in the current shell."
-        )
-
     questions = load_jsonl(args.questions)
     doc_names = sorted({q["doc_name"] for q in questions})
+    if args.doc_name:
+        requested = set(args.doc_name)
+        doc_names = [name for name in doc_names if name in requested]
+        missing = sorted(requested - set(doc_names))
+        if missing:
+            raise SystemExit(f"Requested doc_name not found in MVP questions: {missing}")
     if args.limit:
         doc_names = doc_names[: args.limit]
 
     args.output_dir.mkdir(parents=True, exist_ok=True)
+    args.manifest.parent.mkdir(parents=True, exist_ok=True)
     py = pageindex_python(args.pageindex_repo)
+    manifest = []
 
+    docs_to_run = []
     for doc_name in doc_names:
+        final_output = args.output_dir / f"{doc_name}_structure.json"
+        if final_output.exists() and not args.force:
+            manifest.append(
+                {
+                    "doc_name": doc_name,
+                    "status": "exists",
+                    "structure_path": str(final_output.relative_to(ROOT)),
+                    "size_bytes": final_output.stat().st_size,
+                }
+            )
+        else:
+            docs_to_run.append(doc_name)
+
+    if docs_to_run and not args.dry_run and not has_model_key():
+        raise SystemExit(
+            "No model API key found. Set DASHSCOPE_API_KEY, OPENAI_API_KEY, or another provider key in the current shell."
+        )
+
+    for doc_name in docs_to_run:
         pdf_path = args.pdf_dir / f"{doc_name}.pdf"
+        final_output = args.output_dir / f"{doc_name}_structure.json"
         if not pdf_path.exists():
             raise SystemExit(f"Missing PDF: {pdf_path}. Run scripts/download_mvp_pdfs.py first.")
 
@@ -102,17 +133,53 @@ def main() -> None:
 
         print(" ".join(command))
         if args.dry_run:
+            manifest.append(
+                {
+                    "doc_name": doc_name,
+                    "status": "dry_run",
+                    "pdf_path": str(pdf_path.relative_to(ROOT)),
+                    "command": command,
+                }
+            )
             continue
 
-        subprocess.run(command, cwd=args.pageindex_repo, check=True)
-        generated = args.pageindex_repo / "results" / f"{doc_name}_structure.json"
-        if not generated.exists():
-            raise SystemExit(f"Expected PageIndex output not found: {generated}")
-        shutil.copy2(generated, args.output_dir / generated.name)
+        started = time.perf_counter()
+        try:
+            subprocess.run(command, cwd=args.pageindex_repo, check=True, timeout=args.timeout_seconds)
+            generated = args.pageindex_repo / "results" / f"{doc_name}_structure.json"
+            if not generated.exists():
+                raise FileNotFoundError(f"Expected PageIndex output not found: {generated}")
+            shutil.copy2(generated, final_output)
+            manifest.append(
+                {
+                    "doc_name": doc_name,
+                    "status": "generated",
+                    "pdf_path": str(pdf_path.relative_to(ROOT)),
+                    "structure_path": str(final_output.relative_to(ROOT)),
+                    "size_bytes": final_output.stat().st_size,
+                    "latency_ms": int((time.perf_counter() - started) * 1000),
+                    "command": command,
+                }
+            )
+        except Exception as exc:
+            manifest.append(
+                {
+                    "doc_name": doc_name,
+                    "status": "failed",
+                    "pdf_path": str(pdf_path.relative_to(ROOT)),
+                    "latency_ms": int((time.perf_counter() - started) * 1000),
+                    "error": str(exc),
+                    "command": command,
+                }
+            )
+            if not args.continue_on_error:
+                args.manifest.write_text(json.dumps(manifest, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+                raise
 
+    args.manifest.write_text(json.dumps(manifest, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    print(f"Indexing manifest: {args.manifest}")
     print(f"PageIndex structures directory: {args.output_dir}")
 
 
 if __name__ == "__main__":
     main()
-

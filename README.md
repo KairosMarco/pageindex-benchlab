@@ -64,6 +64,7 @@ Completed:
 - Upstream PageIndex dependency issue draft exists in `docs/upstream-pageindex-dependency-issue.md`.
 - FinanceBench MVP PDFs can be downloaded with `scripts/download_mvp_pdfs.py`.
 - PageIndex batch indexing can be run with `scripts/run_pageindex_mvp.py` after setting a provider API key.
+- PageIndex structures have been generated for 4 of 11 unique MVP PDFs; remaining indexing is blocked by provider quota/free-tier settings.
 
 Current owner: project owner. PH is on standby for later task assignment.
 

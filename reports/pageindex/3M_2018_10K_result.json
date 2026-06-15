@@ -1,0 +1,1471 @@
+{
+  "method": "pageindex",
+  "question_id": "pageindex_index_demo",
+  "question": "Generate the PageIndex document tree.",
+  "answer": "Generated PageIndex tree with 63 nodes for 3M_2018_10K.pdf.",
+  "citations": [
+    {
+      "document_id": "3M_2018_10K.pdf",
+      "page": 1,
+      "section": "Preface",
+      "text": null,
+      "metadata": {
+        "node_id": "0000",
+        "depth": 0,
+        "start_index": 1,
+        "end_index": 4
+      }
+    },
+    {
+      "document_id": "3M_2018_10K.pdf",
+      "page": 4,
+      "section": "PART I",
+      "text": null,
+      "metadata": {
+        "node_id": "0001",
+        "depth": 0,
+        "start_index": 4,
+        "end_index": 4
+      }
+    },
+    {
+      "document_id": "3M_2018_10K.pdf",
+      "page": 4,
+      "section": "ITEM 1 Business",
+      "text": null,
+      "metadata": {
+        "node_id": "0002",
+        "depth": 1,
+        "start_index": 4,
+        "end_index": 10
+      }
+    },
+    {
+      "document_id": "3M_2018_10K.pdf",
+      "page": 10,
+      "section": "ITEM 1A Risk Factors",
+      "text": null,
+      "metadata": {
+        "node_id": "0003",
+        "depth": 1,
+        "start_index": 10,
+        "end_index": 12
+      }
+    },
+    {
+      "document_id": "3M_2018_10K.pdf",
+      "page": 12,
+      "section": "ITEM 1B Unresolved Staff Comments",
+      "text": null,
+      "metadata": {
+        "node_id": "0004",
+        "depth": 1,
+        "start_index": 12,
+        "end_index": 12
+      }
+    },
+    {
+      "document_id": "3M_2018_10K.pdf",
+      "page": 12,
+      "section": "ITEM 2 Properties",
+      "text": null,
+      "metadata": {
+        "node_id": "0005",
+        "depth": 1,
+        "start_index": 12,
+        "end_index": 12
+      }
+    },
+    {
+      "document_id": "3M_2018_10K.pdf",
+      "page": 12,
+      "section": "ITEM 3 Legal Proceedings",
+      "text": null,
+      "metadata": {
+        "node_id": "0006",
+        "depth": 1,
+        "start_index": 12,
+        "end_index": 12
+      }
+    },
+    {
+      "document_id": "3M_2018_10K.pdf",
+      "page": 12,
+      "section": "ITEM 4 Mine Safety Disclosures",
+      "text": null,
+      "metadata": {
+        "node_id": "0007",
+        "depth": 1,
+        "start_index": 12,
+        "end_index": 13
+      }
+    },
+    {
+      "document_id": "3M_2018_10K.pdf",
+      "page": 13,
+      "section": "PART II",
+      "text": null,
+      "metadata": {
+        "node_id": "0008",
+        "depth": 0,
+        "start_index": 13,
+        "end_index": 13
+      }
+    },
+    {
+      "document_id": "3M_2018_10K.pdf",
+      "page": 13,
+      "section": "ITEM 5 Market for Registrant’s Common Equity, Related Stockholder Matters and Issuer Purchases of Equity Securities",
+      "text": null,
+      "metadata": {
+        "node_id": "0009",
+        "depth": 1,
+        "start_index": 13,
+        "end_index": 14
+      }
+    },
+    {
+      "document_id": "3M_2018_10K.pdf",
+      "page": 14,
+      "section": "ITEM 6 Selected Financial Data",
+      "text": null,
+      "metadata": {
+        "node_id": "0010",
+        "depth": 1,
+        "start_index": 14,
+        "end_index": 15
+      }
+    },
+    {
+      "document_id": "3M_2018_10K.pdf",
+      "page": 15,
+      "section": "ITEM 7 Management’s Discussion and Analysis of Financial Condition and Results of Operations",
+      "text": null,
+      "metadata": {
+        "node_id": "0011",
+        "depth": 1,
+        "start_index": 15,
+        "end_index": 15
+      }
+    },
+    {
+      "document_id": "3M_2018_10K.pdf",
+      "page": 15,
+      "section": "Overview",
+      "text": null,
+      "metadata": {
+        "node_id": "0012",
+        "depth": 2,
+        "start_index": 15,
+        "end_index": 27
+      }
+    },
+    {
+      "document_id": "3M_2018_10K.pdf",
+      "page": 27,
+      "section": "Results of Operations",
+      "text": null,
+      "metadata": {
+        "node_id": "0013",
+        "depth": 2,
+        "start_index": 27,
+        "end_index": 32
+      }
+    },
+    {
+      "document_id": "3M_2018_10K.pdf",
+      "page": 32,
+      "section": "Performance by Business Segment",
+      "text": null,
+      "metadata": {
+        "node_id": "0014",
+        "depth": 2,
+        "start_index": 32,
+        "end_index": 38
+      }
+    },
+    {
+      "document_id": "3M_2018_10K.pdf",
+      "page": 38,
+      "section": "Performance by Geographic Area",
+      "text": null,
+      "metadata": {
+        "node_id": "0015",
+        "depth": 2,
+        "start_index": 38,
+        "end_index": 39
+      }
+    },
+    {
+      "document_id": "3M_2018_10K.pdf",
+      "page": 39,
+      "section": "Critical Accounting Estimates",
+      "text": null,
+      "metadata": {
+        "node_id": "0016",
+        "depth": 2,
+        "start_index": 39,
+        "end_index": 42
+      }
+    },
+    {
+      "document_id": "3M_2018_10K.pdf",
+      "page": 42,
+      "section": "New Accounting Pronouncements",
+      "text": null,
+      "metadata": {
+        "node_id": "0017",
+        "depth": 2,
+        "start_index": 42,
+        "end_index": 43
+      }
+    },
+    {
+      "document_id": "3M_2018_10K.pdf",
+      "page": 43,
+      "section": "Financial Condition and Liquidity",
+      "text": null,
+      "metadata": {
+        "node_id": "0018",
+        "depth": 2,
+        "start_index": 43,
+        "end_index": 50
+      }
+    },
+    {
+      "document_id": "3M_2018_10K.pdf",
+      "page": 50,
+      "section": "Financial Instruments",
+      "text": null,
+      "metadata": {
+        "node_id": "0019",
+        "depth": 2,
+        "start_index": 50,
+        "end_index": 51
+      }
+    },
+    {
+      "document_id": "3M_2018_10K.pdf",
+      "page": 51,
+      "section": "ITEM 7A Quantitative and Qualitative Disclosures About Market Risk",
+      "text": null,
+      "metadata": {
+        "node_id": "0020",
+        "depth": 1,
+        "start_index": 51,
+        "end_index": 52
+      }
+    },
+    {
+      "document_id": "3M_2018_10K.pdf",
+      "page": 52,
+      "section": "ITEM 8 Financial Statements and Supplementary Data",
+      "text": null,
+      "metadata": {
+        "node_id": "0021",
+        "depth": 1,
+        "start_index": 52,
+        "end_index": 52
+      }
+    },
+    {
+      "document_id": "3M_2018_10K.pdf",
+      "page": 52,
+      "section": "Index to Financial Statements",
+      "text": null,
+      "metadata": {
+        "node_id": "0022",
+        "depth": 2,
+        "start_index": 52,
+        "end_index": 52
+      }
+    },
+    {
+      "document_id": "3M_2018_10K.pdf",
+      "page": 52,
+      "section": "Management’s Responsibility for Financial Reporting",
+      "text": null,
+      "metadata": {
+        "node_id": "0023",
+        "depth": 2,
+        "start_index": 52,
+        "end_index": 53
+      }
+    },
+    {
+      "document_id": "3M_2018_10K.pdf",
+      "page": 53,
+      "section": "Management’s Report on Internal Control Over Financial Reporting",
+      "text": null,
+      "metadata": {
+        "node_id": "0024",
+        "depth": 2,
+        "start_index": 53,
+        "end_index": 54
+      }
+    },
+    {
+      "document_id": "3M_2018_10K.pdf",
+      "page": 54,
+      "section": "Report of Independent Registered Public Accounting Firm",
+      "text": null,
+      "metadata": {
+        "node_id": "0025",
+        "depth": 2,
+        "start_index": 54,
+        "end_index": 56
+      }
+    },
+    {
+      "document_id": "3M_2018_10K.pdf",
+      "page": 56,
+      "section": "Consolidated Statement of Income for the years ended December 31, 2018, 2017 and 2016",
+      "text": null,
+      "metadata": {
+        "node_id": "0026",
+        "depth": 2,
+        "start_index": 56,
+        "end_index": 57
+      }
+    },
+    {
+      "document_id": "3M_2018_10K.pdf",
+      "page": 57,
+      "section": "Consolidated Statement of Comprehensive Income for the years ended December 31, 2018, 2017 and 2016",
+      "text": null,
+      "metadata": {
+        "node_id": "0027",
+        "depth": 2,
+        "start_index": 57,
+        "end_index": 58
+      }
+    },
+    {
+      "document_id": "3M_2018_10K.pdf",
+      "page": 58,
+      "section": "Consolidated Balance Sheet at December 31, 2018 and 2017",
+      "text": null,
+      "metadata": {
+        "node_id": "0028",
+        "depth": 2,
+        "start_index": 58,
+        "end_index": 59
+      }
+    },
+    {
+      "document_id": "3M_2018_10K.pdf",
+      "page": 59,
+      "section": "Consolidated Statement of Changes in Equity for the years ended December 31, 2018, 2017 and 2016",
+      "text": null,
+      "metadata": {
+        "node_id": "0029",
+        "depth": 2,
+        "start_index": 59,
+        "end_index": 60
+      }
+    },
+    {
+      "document_id": "3M_2018_10K.pdf",
+      "page": 60,
+      "section": "Consolidated Statement of Cash Flows for the years ended December 31, 2018, 2017 and 2016",
+      "text": null,
+      "metadata": {
+        "node_id": "0030",
+        "depth": 2,
+        "start_index": 60,
+        "end_index": 61
+      }
+    },
+    {
+      "document_id": "3M_2018_10K.pdf",
+      "page": 61,
+      "section": "Notes to Consolidated Financial Statements",
+      "text": null,
+      "metadata": {
+        "node_id": "0031",
+        "depth": 2,
+        "start_index": 61,
+        "end_index": 61
+      }
+    },
+    {
+      "document_id": "3M_2018_10K.pdf",
+      "page": 61,
+      "section": "Note 1. Significant Accounting Policies",
+      "text": null,
+      "metadata": {
+        "node_id": "0032",
+        "depth": 3,
+        "start_index": 61,
+        "end_index": 71
+      }
+    },
+    {
+      "document_id": "3M_2018_10K.pdf",
+      "page": 71,
+      "section": "Note 2. Revenue",
+      "text": null,
+      "metadata": {
+        "node_id": "0033",
+        "depth": 3,
+        "start_index": 71,
+        "end_index": 73
+      }
+    },
+    {
+      "document_id": "3M_2018_10K.pdf",
+      "page": 73,
+      "section": "Note 3. Acquisitions and Divestitures",
+      "text": null,
+      "metadata": {
+        "node_id": "0034",
+        "depth": 3,
+        "start_index": 73,
+        "end_index": 76
+      }
+    },
+    {
+      "document_id": "3M_2018_10K.pdf",
+      "page": 76,
+      "section": "Note 4. Goodwill and Intangible Assets",
+      "text": null,
+      "metadata": {
+        "node_id": "0035",
+        "depth": 3,
+        "start_index": 76,
+        "end_index": 78
+      }
+    },
+    {
+      "document_id": "3M_2018_10K.pdf",
+      "page": 78,
+      "section": "Note 5. Restructuring Actions",
+      "text": null,
+      "metadata": {
+        "node_id": "0036",
+        "depth": 3,
+        "start_index": 78,
+        "end_index": 80
+      }
+    },
+    {
+      "document_id": "3M_2018_10K.pdf",
+      "page": 80,
+      "section": "Note 6. Supplemental Income Statement Information",
+      "text": null,
+      "metadata": {
+        "node_id": "0037",
+        "depth": 3,
+        "start_index": 80,
+        "end_index": 81
+      }
+    },
+    {
+      "document_id": "3M_2018_10K.pdf",
+      "page": 81,
+      "section": "Note 7. Supplemental Balance Sheet Information",
+      "text": null,
+      "metadata": {
+        "node_id": "0038",
+        "depth": 3,
+        "start_index": 81,
+        "end_index": 82
+      }
+    },
+    {
+      "document_id": "3M_2018_10K.pdf",
+      "page": 82,
+      "section": "Note 8. Supplemental Equity and Comprehensive Income Information",
+      "text": null,
+      "metadata": {
+        "node_id": "0039",
+        "depth": 3,
+        "start_index": 82,
+        "end_index": 83
+      }
+    },
+    {
+      "document_id": "3M_2018_10K.pdf",
+      "page": 83,
+      "section": "Note 9. Supplemental Cash Flow Information",
+      "text": null,
+      "metadata": {
+        "node_id": "0040",
+        "depth": 3,
+        "start_index": 83,
+        "end_index": 84
+      }
+    },
+    {
+      "document_id": "3M_2018_10K.pdf",
+      "page": 84,
+      "section": "Note 10. Income Taxes",
+      "text": null,
+      "metadata": {
+        "node_id": "0041",
+        "depth": 3,
+        "start_index": 84,
+        "end_index": 87
+      }
+    },
+    {
+      "document_id": "3M_2018_10K.pdf",
+      "page": 87,
+      "section": "Note 11. Marketable Securities",
+      "text": null,
+      "metadata": {
+        "node_id": "0042",
+        "depth": 3,
+        "start_index": 87,
+        "end_index": 88
+      }
+    },
+    {
+      "document_id": "3M_2018_10K.pdf",
+      "page": 88,
+      "section": "Note 12. Long-Term Debt and Short-Term Borrowings",
+      "text": null,
+      "metadata": {
+        "node_id": "0043",
+        "depth": 3,
+        "start_index": 88,
+        "end_index": 90
+      }
+    },
+    {
+      "document_id": "3M_2018_10K.pdf",
+      "page": 90,
+      "section": "Note 13. Pension and Postretirement Benefit Plans",
+      "text": null,
+      "metadata": {
+        "node_id": "0044",
+        "depth": 3,
+        "start_index": 90,
+        "end_index": 99
+      }
+    },
+    {
+      "document_id": "3M_2018_10K.pdf",
+      "page": 99,
+      "section": "Note 14. Derivatives",
+      "text": null,
+      "metadata": {
+        "node_id": "0045",
+        "depth": 3,
+        "start_index": 99,
+        "end_index": 106
+      }
+    },
+    {
+      "document_id": "3M_2018_10K.pdf",
+      "page": 106,
+      "section": "Note 15. Fair Value Measurements",
+      "text": null,
+      "metadata": {
+        "node_id": "0046",
+        "depth": 3,
+        "start_index": 106,
+        "end_index": 109
+      }
+    },
+    {
+      "document_id": "3M_2018_10K.pdf",
+      "page": 109,
+      "section": "Note 16. Commitments and Contingencies",
+      "text": null,
+      "metadata": {
+        "node_id": "0047",
+        "depth": 3,
+        "start_index": 109,
+        "end_index": 121
+      }
+    },
+    {
+      "document_id": "3M_2018_10K.pdf",
+      "page": 121,
+      "section": "Note 17. Stock-Based Compensation",
+      "text": null,
+      "metadata": {
+        "node_id": "0048",
+        "depth": 3,
+        "start_index": 121,
+        "end_index": 124
+      }
+    },
+    {
+      "document_id": "3M_2018_10K.pdf",
+      "page": 124,
+      "section": "Note 18. Business Segments",
+      "text": null,
+      "metadata": {
+        "node_id": "0049",
+        "depth": 3,
+        "start_index": 124,
+        "end_index": 127
+      }
+    },
+    {
+      "document_id": "3M_2018_10K.pdf",
+      "page": 127,
+      "section": "Note 19. Geographic Areas",
+      "text": null,
+      "metadata": {
+        "node_id": "0050",
+        "depth": 3,
+        "start_index": 127,
+        "end_index": 127
+      }
+    },
+    {
+      "document_id": "3M_2018_10K.pdf",
+      "page": 127,
+      "section": "Note 20. Quarterly Data (Unaudited)",
+      "text": null,
+      "metadata": {
+        "node_id": "0051",
+        "depth": 3,
+        "start_index": 127,
+        "end_index": 128
+      }
+    },
+    {
+      "document_id": "3M_2018_10K.pdf",
+      "page": 128,
+      "section": "ITEM 9 Changes in and Disagreements with Accountants on Accounting and Financial Disclosure",
+      "text": null,
+      "metadata": {
+        "node_id": "0052",
+        "depth": 1,
+        "start_index": 128,
+        "end_index": 128
+      }
+    },
+    {
+      "document_id": "3M_2018_10K.pdf",
+      "page": 128,
+      "section": "ITEM 9A Controls and Procedures",
+      "text": null,
+      "metadata": {
+        "node_id": "0053",
+        "depth": 1,
+        "start_index": 128,
+        "end_index": 128
+      }
+    },
+    {
+      "document_id": "3M_2018_10K.pdf",
+      "page": 128,
+      "section": "ITEM 9B Other Information",
+      "text": null,
+      "metadata": {
+        "node_id": "0054",
+        "depth": 1,
+        "start_index": 128,
+        "end_index": 129
+      }
+    },
+    {
+      "document_id": "3M_2018_10K.pdf",
+      "page": 129,
+      "section": "ITEM 10 Directors, Executive Officers and Corporate Governance",
+      "text": null,
+      "metadata": {
+        "node_id": "0055",
+        "depth": 0,
+        "start_index": 129,
+        "end_index": 129
+      }
+    },
+    {
+      "document_id": "3M_2018_10K.pdf",
+      "page": 129,
+      "section": "ITEM 11 Executive Compensation",
+      "text": null,
+      "metadata": {
+        "node_id": "0056",
+        "depth": 0,
+        "start_index": 129,
+        "end_index": 130
+      }
+    },
+    {
+      "document_id": "3M_2018_10K.pdf",
+      "page": 130,
+      "section": "ITEM 12 Security Ownership of Certain Beneficial Owners and Management and Related Stockholder Matters",
+      "text": null,
+      "metadata": {
+        "node_id": "0057",
+        "depth": 0,
+        "start_index": 130,
+        "end_index": 130
+      }
+    },
+    {
+      "document_id": "3M_2018_10K.pdf",
+      "page": 130,
+      "section": "ITEM 13 Certain Relationships and Related Transactions, and Director Independence",
+      "text": null,
+      "metadata": {
+        "node_id": "0058",
+        "depth": 0,
+        "start_index": 130,
+        "end_index": 130
+      }
+    },
+    {
+      "document_id": "3M_2018_10K.pdf",
+      "page": 130,
+      "section": "ITEM 14 Principal Accounting Fees and Services",
+      "text": null,
+      "metadata": {
+        "node_id": "0059",
+        "depth": 0,
+        "start_index": 130,
+        "end_index": 131
+      }
+    },
+    {
+      "document_id": "3M_2018_10K.pdf",
+      "page": 131,
+      "section": "PART IV",
+      "text": null,
+      "metadata": {
+        "node_id": "0060",
+        "depth": 0,
+        "start_index": 131,
+        "end_index": 131
+      }
+    },
+    {
+      "document_id": "3M_2018_10K.pdf",
+      "page": 131,
+      "section": "ITEM 15 Exhibits, Financial Statement Schedules",
+      "text": null,
+      "metadata": {
+        "node_id": "0061",
+        "depth": 1,
+        "start_index": 131,
+        "end_index": 133
+      }
+    },
+    {
+      "document_id": "3M_2018_10K.pdf",
+      "page": 133,
+      "section": "ITEM 16 Form 10-K Summary",
+      "text": null,
+      "metadata": {
+        "node_id": "0062",
+        "depth": 1,
+        "start_index": 133,
+        "end_index": 160
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "index_node",
+      "target": "Preface",
+      "metadata": {
+        "node_id": "0000",
+        "depth": 0,
+        "start_index": 1,
+        "end_index": 4
+      }
+    },
+    {
+      "step": 2,
+      "action": "index_node",
+      "target": "PART I",
+      "metadata": {
+        "node_id": "0001",
+        "depth": 0,
+        "start_index": 4,
+        "end_index": 4
+      }
+    },
+    {
+      "step": 3,
+      "action": "index_node",
+      "target": "ITEM 1 Business",
+      "metadata": {
+        "node_id": "0002",
+        "depth": 1,
+        "start_index": 4,
+        "end_index": 10
+      }
+    },
+    {
+      "step": 4,
+      "action": "index_node",
+      "target": "ITEM 1A Risk Factors",
+      "metadata": {
+        "node_id": "0003",
+        "depth": 1,
+        "start_index": 10,
+        "end_index": 12
+      }
+    },
+    {
+      "step": 5,
+      "action": "index_node",
+      "target": "ITEM 1B Unresolved Staff Comments",
+      "metadata": {
+        "node_id": "0004",
+        "depth": 1,
+        "start_index": 12,
+        "end_index": 12
+      }
+    },
+    {
+      "step": 6,
+      "action": "index_node",
+      "target": "ITEM 2 Properties",
+      "metadata": {
+        "node_id": "0005",
+        "depth": 1,
+        "start_index": 12,
+        "end_index": 12
+      }
+    },
+    {
+      "step": 7,
+      "action": "index_node",
+      "target": "ITEM 3 Legal Proceedings",
+      "metadata": {
+        "node_id": "0006",
+        "depth": 1,
+        "start_index": 12,
+        "end_index": 12
+      }
+    },
+    {
+      "step": 8,
+      "action": "index_node",
+      "target": "ITEM 4 Mine Safety Disclosures",
+      "metadata": {
+        "node_id": "0007",
+        "depth": 1,
+        "start_index": 12,
+        "end_index": 13
+      }
+    },
+    {
+      "step": 9,
+      "action": "index_node",
+      "target": "PART II",
+      "metadata": {
+        "node_id": "0008",
+        "depth": 0,
+        "start_index": 13,
+        "end_index": 13
+      }
+    },
+    {
+      "step": 10,
+      "action": "index_node",
+      "target": "ITEM 5 Market for Registrant’s Common Equity, Related Stockholder Matters and Issuer Purchases of Equity Securities",
+      "metadata": {
+        "node_id": "0009",
+        "depth": 1,
+        "start_index": 13,
+        "end_index": 14
+      }
+    },
+    {
+      "step": 11,
+      "action": "index_node",
+      "target": "ITEM 6 Selected Financial Data",
+      "metadata": {
+        "node_id": "0010",
+        "depth": 1,
+        "start_index": 14,
+        "end_index": 15
+      }
+    },
+    {
+      "step": 12,
+      "action": "index_node",
+      "target": "ITEM 7 Management’s Discussion and Analysis of Financial Condition and Results of Operations",
+      "metadata": {
+        "node_id": "0011",
+        "depth": 1,
+        "start_index": 15,
+        "end_index": 15
+      }
+    },
+    {
+      "step": 13,
+      "action": "index_node",
+      "target": "Overview",
+      "metadata": {
+        "node_id": "0012",
+        "depth": 2,
+        "start_index": 15,
+        "end_index": 27
+      }
+    },
+    {
+      "step": 14,
+      "action": "index_node",
+      "target": "Results of Operations",
+      "metadata": {
+        "node_id": "0013",
+        "depth": 2,
+        "start_index": 27,
+        "end_index": 32
+      }
+    },
+    {
+      "step": 15,
+      "action": "index_node",
+      "target": "Performance by Business Segment",
+      "metadata": {
+        "node_id": "0014",
+        "depth": 2,
+        "start_index": 32,
+        "end_index": 38
+      }
+    },
+    {
+      "step": 16,
+      "action": "index_node",
+      "target": "Performance by Geographic Area",
+      "metadata": {
+        "node_id": "0015",
+        "depth": 2,
+        "start_index": 38,
+        "end_index": 39
+      }
+    },
+    {
+      "step": 17,
+      "action": "index_node",
+      "target": "Critical Accounting Estimates",
+      "metadata": {
+        "node_id": "0016",
+        "depth": 2,
+        "start_index": 39,
+        "end_index": 42
+      }
+    },
+    {
+      "step": 18,
+      "action": "index_node",
+      "target": "New Accounting Pronouncements",
+      "metadata": {
+        "node_id": "0017",
+        "depth": 2,
+        "start_index": 42,
+        "end_index": 43
+      }
+    },
+    {
+      "step": 19,
+      "action": "index_node",
+      "target": "Financial Condition and Liquidity",
+      "metadata": {
+        "node_id": "0018",
+        "depth": 2,
+        "start_index": 43,
+        "end_index": 50
+      }
+    },
+    {
+      "step": 20,
+      "action": "index_node",
+      "target": "Financial Instruments",
+      "metadata": {
+        "node_id": "0019",
+        "depth": 2,
+        "start_index": 50,
+        "end_index": 51
+      }
+    },
+    {
+      "step": 21,
+      "action": "index_node",
+      "target": "ITEM 7A Quantitative and Qualitative Disclosures About Market Risk",
+      "metadata": {
+        "node_id": "0020",
+        "depth": 1,
+        "start_index": 51,
+        "end_index": 52
+      }
+    },
+    {
+      "step": 22,
+      "action": "index_node",
+      "target": "ITEM 8 Financial Statements and Supplementary Data",
+      "metadata": {
+        "node_id": "0021",
+        "depth": 1,
+        "start_index": 52,
+        "end_index": 52
+      }
+    },
+    {
+      "step": 23,
+      "action": "index_node",
+      "target": "Index to Financial Statements",
+      "metadata": {
+        "node_id": "0022",
+        "depth": 2,
+        "start_index": 52,
+        "end_index": 52
+      }
+    },
+    {
+      "step": 24,
+      "action": "index_node",
+      "target": "Management’s Responsibility for Financial Reporting",
+      "metadata": {
+        "node_id": "0023",
+        "depth": 2,
+        "start_index": 52,
+        "end_index": 53
+      }
+    },
+    {
+      "step": 25,
+      "action": "index_node",
+      "target": "Management’s Report on Internal Control Over Financial Reporting",
+      "metadata": {
+        "node_id": "0024",
+        "depth": 2,
+        "start_index": 53,
+        "end_index": 54
+      }
+    },
+    {
+      "step": 26,
+      "action": "index_node",
+      "target": "Report of Independent Registered Public Accounting Firm",
+      "metadata": {
+        "node_id": "0025",
+        "depth": 2,
+        "start_index": 54,
+        "end_index": 56
+      }
+    },
+    {
+      "step": 27,
+      "action": "index_node",
+      "target": "Consolidated Statement of Income for the years ended December 31, 2018, 2017 and 2016",
+      "metadata": {
+        "node_id": "0026",
+        "depth": 2,
+        "start_index": 56,
+        "end_index": 57
+      }
+    },
+    {
+      "step": 28,
+      "action": "index_node",
+      "target": "Consolidated Statement of Comprehensive Income for the years ended December 31, 2018, 2017 and 2016",
+      "metadata": {
+        "node_id": "0027",
+        "depth": 2,
+        "start_index": 57,
+        "end_index": 58
+      }
+    },
+    {
+      "step": 29,
+      "action": "index_node",
+      "target": "Consolidated Balance Sheet at December 31, 2018 and 2017",
+      "metadata": {
+        "node_id": "0028",
+        "depth": 2,
+        "start_index": 58,
+        "end_index": 59
+      }
+    },
+    {
+      "step": 30,
+      "action": "index_node",
+      "target": "Consolidated Statement of Changes in Equity for the years ended December 31, 2018, 2017 and 2016",
+      "metadata": {
+        "node_id": "0029",
+        "depth": 2,
+        "start_index": 59,
+        "end_index": 60
+      }
+    },
+    {
+      "step": 31,
+      "action": "index_node",
+      "target": "Consolidated Statement of Cash Flows for the years ended December 31, 2018, 2017 and 2016",
+      "metadata": {
+        "node_id": "0030",
+        "depth": 2,
+        "start_index": 60,
+        "end_index": 61
+      }
+    },
+    {
+      "step": 32,
+      "action": "index_node",
+      "target": "Notes to Consolidated Financial Statements",
+      "metadata": {
+        "node_id": "0031",
+        "depth": 2,
+        "start_index": 61,
+        "end_index": 61
+      }
+    },
+    {
+      "step": 33,
+      "action": "index_node",
+      "target": "Note 1. Significant Accounting Policies",
+      "metadata": {
+        "node_id": "0032",
+        "depth": 3,
+        "start_index": 61,
+        "end_index": 71
+      }
+    },
+    {
+      "step": 34,
+      "action": "index_node",
+      "target": "Note 2. Revenue",
+      "metadata": {
+        "node_id": "0033",
+        "depth": 3,
+        "start_index": 71,
+        "end_index": 73
+      }
+    },
+    {
+      "step": 35,
+      "action": "index_node",
+      "target": "Note 3. Acquisitions and Divestitures",
+      "metadata": {
+        "node_id": "0034",
+        "depth": 3,
+        "start_index": 73,
+        "end_index": 76
+      }
+    },
+    {
+      "step": 36,
+      "action": "index_node",
+      "target": "Note 4. Goodwill and Intangible Assets",
+      "metadata": {
+        "node_id": "0035",
+        "depth": 3,
+        "start_index": 76,
+        "end_index": 78
+      }
+    },
+    {
+      "step": 37,
+      "action": "index_node",
+      "target": "Note 5. Restructuring Actions",
+      "metadata": {
+        "node_id": "0036",
+        "depth": 3,
+        "start_index": 78,
+        "end_index": 80
+      }
+    },
+    {
+      "step": 38,
+      "action": "index_node",
+      "target": "Note 6. Supplemental Income Statement Information",
+      "metadata": {
+        "node_id": "0037",
+        "depth": 3,
+        "start_index": 80,
+        "end_index": 81
+      }
+    },
+    {
+      "step": 39,
+      "action": "index_node",
+      "target": "Note 7. Supplemental Balance Sheet Information",
+      "metadata": {
+        "node_id": "0038",
+        "depth": 3,
+        "start_index": 81,
+        "end_index": 82
+      }
+    },
+    {
+      "step": 40,
+      "action": "index_node",
+      "target": "Note 8. Supplemental Equity and Comprehensive Income Information",
+      "metadata": {
+        "node_id": "0039",
+        "depth": 3,
+        "start_index": 82,
+        "end_index": 83
+      }
+    },
+    {
+      "step": 41,
+      "action": "index_node",
+      "target": "Note 9. Supplemental Cash Flow Information",
+      "metadata": {
+        "node_id": "0040",
+        "depth": 3,
+        "start_index": 83,
+        "end_index": 84
+      }
+    },
+    {
+      "step": 42,
+      "action": "index_node",
+      "target": "Note 10. Income Taxes",
+      "metadata": {
+        "node_id": "0041",
+        "depth": 3,
+        "start_index": 84,
+        "end_index": 87
+      }
+    },
+    {
+      "step": 43,
+      "action": "index_node",
+      "target": "Note 11. Marketable Securities",
+      "metadata": {
+        "node_id": "0042",
+        "depth": 3,
+        "start_index": 87,
+        "end_index": 88
+      }
+    },
+    {
+      "step": 44,
+      "action": "index_node",
+      "target": "Note 12. Long-Term Debt and Short-Term Borrowings",
+      "metadata": {
+        "node_id": "0043",
+        "depth": 3,
+        "start_index": 88,
+        "end_index": 90
+      }
+    },
+    {
+      "step": 45,
+      "action": "index_node",
+      "target": "Note 13. Pension and Postretirement Benefit Plans",
+      "metadata": {
+        "node_id": "0044",
+        "depth": 3,
+        "start_index": 90,
+        "end_index": 99
+      }
+    },
+    {
+      "step": 46,
+      "action": "index_node",
+      "target": "Note 14. Derivatives",
+      "metadata": {
+        "node_id": "0045",
+        "depth": 3,
+        "start_index": 99,
+        "end_index": 106
+      }
+    },
+    {
+      "step": 47,
+      "action": "index_node",
+      "target": "Note 15. Fair Value Measurements",
+      "metadata": {
+        "node_id": "0046",
+        "depth": 3,
+        "start_index": 106,
+        "end_index": 109
+      }
+    },
+    {
+      "step": 48,
+      "action": "index_node",
+      "target": "Note 16. Commitments and Contingencies",
+      "metadata": {
+        "node_id": "0047",
+        "depth": 3,
+        "start_index": 109,
+        "end_index": 121
+      }
+    },
+    {
+      "step": 49,
+      "action": "index_node",
+      "target": "Note 17. Stock-Based Compensation",
+      "metadata": {
+        "node_id": "0048",
+        "depth": 3,
+        "start_index": 121,
+        "end_index": 124
+      }
+    },
+    {
+      "step": 50,
+      "action": "index_node",
+      "target": "Note 18. Business Segments",
+      "metadata": {
+        "node_id": "0049",
+        "depth": 3,
+        "start_index": 124,
+        "end_index": 127
+      }
+    },
+    {
+      "step": 51,
+      "action": "index_node",
+      "target": "Note 19. Geographic Areas",
+      "metadata": {
+        "node_id": "0050",
+        "depth": 3,
+        "start_index": 127,
+        "end_index": 127
+      }
+    },
+    {
+      "step": 52,
+      "action": "index_node",
+      "target": "Note 20. Quarterly Data (Unaudited)",
+      "metadata": {
+        "node_id": "0051",
+        "depth": 3,
+        "start_index": 127,
+        "end_index": 128
+      }
+    },
+    {
+      "step": 53,
+      "action": "index_node",
+      "target": "ITEM 9 Changes in and Disagreements with Accountants on Accounting and Financial Disclosure",
+      "metadata": {
+        "node_id": "0052",
+        "depth": 1,
+        "start_index": 128,
+        "end_index": 128
+      }
+    },
+    {
+      "step": 54,
+      "action": "index_node",
+      "target": "ITEM 9A Controls and Procedures",
+      "metadata": {
+        "node_id": "0053",
+        "depth": 1,
+        "start_index": 128,
+        "end_index": 128
+      }
+    },
+    {
+      "step": 55,
+      "action": "index_node",
+      "target": "ITEM 9B Other Information",
+      "metadata": {
+        "node_id": "0054",
+        "depth": 1,
+        "start_index": 128,
+        "end_index": 129
+      }
+    },
+    {
+      "step": 56,
+      "action": "index_node",
+      "target": "ITEM 10 Directors, Executive Officers and Corporate Governance",
+      "metadata": {
+        "node_id": "0055",
+        "depth": 0,
+        "start_index": 129,
+        "end_index": 129
+      }
+    },
+    {
+      "step": 57,
+      "action": "index_node",
+      "target": "ITEM 11 Executive Compensation",
+      "metadata": {
+        "node_id": "0056",
+        "depth": 0,
+        "start_index": 129,
+        "end_index": 130
+      }
+    },
+    {
+      "step": 58,
+      "action": "index_node",
+      "target": "ITEM 12 Security Ownership of Certain Beneficial Owners and Management and Related Stockholder Matters",
+      "metadata": {
+        "node_id": "0057",
+        "depth": 0,
+        "start_index": 130,
+        "end_index": 130
+      }
+    },
+    {
+      "step": 59,
+      "action": "index_node",
+      "target": "ITEM 13 Certain Relationships and Related Transactions, and Director Independence",
+      "metadata": {
+        "node_id": "0058",
+        "depth": 0,
+        "start_index": 130,
+        "end_index": 130
+      }
+    },
+    {
+      "step": 60,
+      "action": "index_node",
+      "target": "ITEM 14 Principal Accounting Fees and Services",
+      "metadata": {
+        "node_id": "0059",
+        "depth": 0,
+        "start_index": 130,
+        "end_index": 131
+      }
+    },
+    {
+      "step": 61,
+      "action": "index_node",
+      "target": "PART IV",
+      "metadata": {
+        "node_id": "0060",
+        "depth": 0,
+        "start_index": 131,
+        "end_index": 131
+      }
+    },
+    {
+      "step": 62,
+      "action": "index_node",
+      "target": "ITEM 15 Exhibits, Financial Statement Schedules",
+      "metadata": {
+        "node_id": "0061",
+        "depth": 1,
+        "start_index": 131,
+        "end_index": 133
+      }
+    },
+    {
+      "step": 63,
+      "action": "index_node",
+      "target": "ITEM 16 Form 10-K Summary",
+      "metadata": {
+        "node_id": "0062",
+        "depth": 1,
+        "start_index": 133,
+        "end_index": 160
+      }
+    }
+  ],
+  "token_usage": {
+    "input": null,
+    "output": null,
+    "total": null
+  },
+  "latency_ms": null,
+  "metadata": {
+    "adapter_mode": "index_only",
+    "structure_path": "reports\\pageindex\\structures\\3M_2018_10K_structure.json",
+    "doc_name": "3M_2018_10K.pdf",
+    "node_count": 63
+  }
+}

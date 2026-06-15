@@ -168,6 +168,27 @@ Full command after setting a key:
 python scripts\run_pageindex_mvp.py
 ```
 
+Current indexing status:
+
+```text
+4 / 11 unique MVP PDFs have PageIndex structure outputs.
+```
+
+Generated structures:
+
+```text
+reports/pageindex/structures/3M_2018_10K_structure.json
+reports/pageindex/structures/AMAZON_2017_10K_structure.json
+reports/pageindex/structures/AMCOR_2023Q4_EARNINGS_structure.json
+reports/pageindex/structures/JOHNSON_JOHNSON_2023_8K_dated-2023-08-30_structure.json
+```
+
+The current manifest is:
+
+```text
+reports/pageindex/indexing_manifest.json
+```
+
 ### PageIndex QA Adapter
 
 Implemented in:
@@ -207,4 +228,12 @@ Stage 1 is complete when:
 
 ## Current Blocker
 
-Model-backed PageIndex indexing and QA require a provider API key in the current shell. The environment used for this update did not have `DASHSCOPE_API_KEY` or `OPENAI_API_KEY` set, so no paid model calls were run.
+Model-backed PageIndex indexing and QA require a provider API key in the current shell.
+
+The first 4 structures were generated with DashScope/Qwen. Further indexing is currently blocked because DashScope returned:
+
+```text
+The free tier of the model has been exhausted. If you wish to continue access the model on a paid basis, please disable the "use free tier only" mode in the management console.
+```
+
+To continue, disable the provider-side "free tier only" setting for the key or provide a fresh key/model with available quota.
