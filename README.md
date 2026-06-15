@@ -49,6 +49,27 @@ FinanceBench source:
 - https://github.com/patronus-ai/financebench
 - https://arxiv.org/abs/2311.11944
 
+## Current Stage
+
+Status: **Stage 1 - MVP Benchmark Setup**.
+
+Completed:
+
+- PageIndex local demo ran successfully with DashScope/Qwen through LiteLLM.
+- PageIndex demo tree output is stored under `examples/pageindex-demo/`.
+- Unified benchmark schema exists in `benchlab/schemas.py`.
+- FinanceBench MVP subset exists in `datasets/financebench/mvp_questions.jsonl`.
+- PageIndex tree adapter exists in `pipelines/pageindex/adapter.py`.
+- Evidence page evaluator exists in `evaluators/evidence.py`.
+- Upstream PageIndex dependency issue draft exists in `docs/upstream-pageindex-dependency-issue.md`.
+
+Current owner: project owner. PH is on standby for later task assignment.
+
+See:
+
+- [Stage 1 status](docs/stage-1-status.md)
+- [Benchmark schema](docs/schema.md)
+
 ## Project Structure
 
 ```text
@@ -86,7 +107,7 @@ Detailed planning documents:
 
 ## Output Schema
 
-Each pipeline should eventually produce the same JSON-compatible result shape:
+Each pipeline should eventually produce the same JSON-compatible result shape. The canonical models are in `benchlab/schemas.py`:
 
 ```json
 {
@@ -205,14 +226,11 @@ Recommended first setup:
 
 A GPU may become useful later for local LLMs, large embedding jobs, or large rerankers, but it is not required to become a contributor or run the first benchmark.
 
-## Current Status
+## Next Actions
 
-This repository is currently in the planning and scaffolding stage.
-
-Next actions:
-
-1. Push this repository to GitHub.
-2. Invite PH as collaborator.
-3. Create issues for the Week 1 tasks.
-4. Run the first PageIndex local demo.
-5. Select the first FinanceBench sample set.
+1. Download PDFs for the 12 FinanceBench MVP questions.
+2. Run PageIndex indexing on those PDFs.
+3. Add the PageIndex question-answering retrieval step.
+4. Implement the Long-context baseline.
+5. Implement the Vector RAG + reranker baseline.
+6. Generate the first benchmark report.

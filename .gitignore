@@ -8,5 +8,6 @@ __pycache__/
 Thumbs.db
 reports/raw/
 datasets/raw/
+datasets/financebench/financebench_open_source.jsonl
+datasets/financebench/financebench_document_information.jsonl
 *.log
-

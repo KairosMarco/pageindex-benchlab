@@ -1,0 +1,873 @@
+{
+  "method": "pageindex",
+  "question_id": "pageindex_index_demo",
+  "question": "Generate the PageIndex document tree.",
+  "answer": "Generated PageIndex tree with 37 nodes for q1-fy25-earnings.pdf.",
+  "citations": [
+    {
+      "document_id": "q1-fy25-earnings.pdf",
+      "page": 1,
+      "section": "THE WALT DISNEY COMPANY REPORTS FIRST QUARTER EARNINGS FOR FISCAL 2025",
+      "text": null,
+      "metadata": {
+        "node_id": "0000",
+        "depth": 0,
+        "start_index": 1,
+        "end_index": 1
+      }
+    },
+    {
+      "document_id": "q1-fy25-earnings.pdf",
+      "page": 1,
+      "section": "Financial Results for the Quarter:",
+      "text": null,
+      "metadata": {
+        "node_id": "0001",
+        "depth": 0,
+        "start_index": 1,
+        "end_index": 1
+      }
+    },
+    {
+      "document_id": "q1-fy25-earnings.pdf",
+      "page": 1,
+      "section": "Key Points:",
+      "text": null,
+      "metadata": {
+        "node_id": "0002",
+        "depth": 0,
+        "start_index": 1,
+        "end_index": 1
+      }
+    },
+    {
+      "document_id": "q1-fy25-earnings.pdf",
+      "page": 2,
+      "section": "Guidance and Outlook:",
+      "text": null,
+      "metadata": {
+        "node_id": "0003",
+        "depth": 0,
+        "start_index": 2,
+        "end_index": 2
+      }
+    },
+    {
+      "document_id": "q1-fy25-earnings.pdf",
+      "page": 2,
+      "section": "Message From Our CEO:",
+      "text": null,
+      "metadata": {
+        "node_id": "0004",
+        "depth": 0,
+        "start_index": 2,
+        "end_index": 2
+      }
+    },
+    {
+      "document_id": "q1-fy25-earnings.pdf",
+      "page": 3,
+      "section": "SUMMARIZED FINANCIAL RESULTS",
+      "text": null,
+      "metadata": {
+        "node_id": "0005",
+        "depth": 0,
+        "start_index": 3,
+        "end_index": 3
+      }
+    },
+    {
+      "document_id": "q1-fy25-earnings.pdf",
+      "page": 3,
+      "section": "SUMMARIZED SEGMENT FINANCIAL RESULTS",
+      "text": null,
+      "metadata": {
+        "node_id": "0006",
+        "depth": 0,
+        "start_index": 3,
+        "end_index": 3
+      }
+    },
+    {
+      "document_id": "q1-fy25-earnings.pdf",
+      "page": 4,
+      "section": "DISCUSSION OF FIRST QUARTER SEGMENT RESULTS",
+      "text": null,
+      "metadata": {
+        "node_id": "0007",
+        "depth": 0,
+        "start_index": 4,
+        "end_index": 4
+      }
+    },
+    {
+      "document_id": "q1-fy25-earnings.pdf",
+      "page": 4,
+      "section": "Star India",
+      "text": null,
+      "metadata": {
+        "node_id": "0008",
+        "depth": 1,
+        "start_index": 4,
+        "end_index": 4
+      }
+    },
+    {
+      "document_id": "q1-fy25-earnings.pdf",
+      "page": 4,
+      "section": "Entertainment",
+      "text": null,
+      "metadata": {
+        "node_id": "0009",
+        "depth": 1,
+        "start_index": 4,
+        "end_index": 4
+      }
+    },
+    {
+      "document_id": "q1-fy25-earnings.pdf",
+      "page": 5,
+      "section": "Linear Networks",
+      "text": null,
+      "metadata": {
+        "node_id": "0010",
+        "depth": 2,
+        "start_index": 5,
+        "end_index": 5
+      }
+    },
+    {
+      "document_id": "q1-fy25-earnings.pdf",
+      "page": 5,
+      "section": "Direct-to-Consumer",
+      "text": null,
+      "metadata": {
+        "node_id": "0011",
+        "depth": 2,
+        "start_index": 5,
+        "end_index": 6
+      }
+    },
+    {
+      "document_id": "q1-fy25-earnings.pdf",
+      "page": 6,
+      "section": "Key Metrics - First Quarter of Fiscal 2025 Comparison to Fourth Quarter of Fiscal 2024",
+      "text": null,
+      "metadata": {
+        "node_id": "0012",
+        "depth": 3,
+        "start_index": 6,
+        "end_index": 7
+      }
+    },
+    {
+      "document_id": "q1-fy25-earnings.pdf",
+      "page": 7,
+      "section": "Content Sales/Licensing and Other",
+      "text": null,
+      "metadata": {
+        "node_id": "0013",
+        "depth": 2,
+        "start_index": 7,
+        "end_index": 7
+      }
+    },
+    {
+      "document_id": "q1-fy25-earnings.pdf",
+      "page": 7,
+      "section": "Sports",
+      "text": null,
+      "metadata": {
+        "node_id": "0014",
+        "depth": 1,
+        "start_index": 7,
+        "end_index": 8
+      }
+    },
+    {
+      "document_id": "q1-fy25-earnings.pdf",
+      "page": 8,
+      "section": "Key Metrics - First Quarter of Fiscal 2025 Comparison to Fourth Quarter of Fiscal 2024",
+      "text": null,
+      "metadata": {
+        "node_id": "0015",
+        "depth": 2,
+        "start_index": 8,
+        "end_index": 8
+      }
+    },
+    {
+      "document_id": "q1-fy25-earnings.pdf",
+      "page": 9,
+      "section": "Experiences",
+      "text": null,
+      "metadata": {
+        "node_id": "0016",
+        "depth": 1,
+        "start_index": 9,
+        "end_index": 9
+      }
+    },
+    {
+      "document_id": "q1-fy25-earnings.pdf",
+      "page": 9,
+      "section": "OTHER FINANCIAL INFORMATION",
+      "text": null,
+      "metadata": {
+        "node_id": "0017",
+        "depth": 0,
+        "start_index": 9,
+        "end_index": 9
+      }
+    },
+    {
+      "document_id": "q1-fy25-earnings.pdf",
+      "page": 9,
+      "section": "Corporate and Unallocated Shared Expenses",
+      "text": null,
+      "metadata": {
+        "node_id": "0018",
+        "depth": 1,
+        "start_index": 9,
+        "end_index": 9
+      }
+    },
+    {
+      "document_id": "q1-fy25-earnings.pdf",
+      "page": 9,
+      "section": "Restructuring and Impairment Charges",
+      "text": null,
+      "metadata": {
+        "node_id": "0019",
+        "depth": 1,
+        "start_index": 9,
+        "end_index": 9
+      }
+    },
+    {
+      "document_id": "q1-fy25-earnings.pdf",
+      "page": 10,
+      "section": "Interest Expense, net",
+      "text": null,
+      "metadata": {
+        "node_id": "0020",
+        "depth": 1,
+        "start_index": 10,
+        "end_index": 10
+      }
+    },
+    {
+      "document_id": "q1-fy25-earnings.pdf",
+      "page": 10,
+      "section": "Equity in the Income of Investees",
+      "text": null,
+      "metadata": {
+        "node_id": "0021",
+        "depth": 1,
+        "start_index": 10,
+        "end_index": 10
+      }
+    },
+    {
+      "document_id": "q1-fy25-earnings.pdf",
+      "page": 10,
+      "section": "Income Taxes",
+      "text": null,
+      "metadata": {
+        "node_id": "0022",
+        "depth": 1,
+        "start_index": 10,
+        "end_index": 10
+      }
+    },
+    {
+      "document_id": "q1-fy25-earnings.pdf",
+      "page": 11,
+      "section": "Noncontrolling Interests",
+      "text": null,
+      "metadata": {
+        "node_id": "0023",
+        "depth": 1,
+        "start_index": 11,
+        "end_index": 11
+      }
+    },
+    {
+      "document_id": "q1-fy25-earnings.pdf",
+      "page": 11,
+      "section": "Cash from Operations",
+      "text": null,
+      "metadata": {
+        "node_id": "0024",
+        "depth": 1,
+        "start_index": 11,
+        "end_index": 11
+      }
+    },
+    {
+      "document_id": "q1-fy25-earnings.pdf",
+      "page": 12,
+      "section": "Capital Expenditures",
+      "text": null,
+      "metadata": {
+        "node_id": "0025",
+        "depth": 1,
+        "start_index": 12,
+        "end_index": 12
+      }
+    },
+    {
+      "document_id": "q1-fy25-earnings.pdf",
+      "page": 12,
+      "section": "Depreciation Expense",
+      "text": null,
+      "metadata": {
+        "node_id": "0026",
+        "depth": 1,
+        "start_index": 12,
+        "end_index": 12
+      }
+    },
+    {
+      "document_id": "q1-fy25-earnings.pdf",
+      "page": 13,
+      "section": "THE WALT DISNEY COMPANY CONDENSED CONSOLIDATED STATEMENTS OF INCOME",
+      "text": null,
+      "metadata": {
+        "node_id": "0027",
+        "depth": 0,
+        "start_index": 13,
+        "end_index": 13
+      }
+    },
+    {
+      "document_id": "q1-fy25-earnings.pdf",
+      "page": 14,
+      "section": "THE WALT DISNEY COMPANY CONDENSED CONSOLIDATED BALANCE SHEETS",
+      "text": null,
+      "metadata": {
+        "node_id": "0028",
+        "depth": 0,
+        "start_index": 14,
+        "end_index": 14
+      }
+    },
+    {
+      "document_id": "q1-fy25-earnings.pdf",
+      "page": 15,
+      "section": "THE WALT DISNEY COMPANY CONDENSED CONSOLIDATED STATEMENTS OF CASH FLOWS",
+      "text": null,
+      "metadata": {
+        "node_id": "0029",
+        "depth": 0,
+        "start_index": 15,
+        "end_index": 15
+      }
+    },
+    {
+      "document_id": "q1-fy25-earnings.pdf",
+      "page": 16,
+      "section": "DTC PRODUCT DESCRIPTIONS AND KEY DEFINITIONS",
+      "text": null,
+      "metadata": {
+        "node_id": "0030",
+        "depth": 0,
+        "start_index": 16,
+        "end_index": 16
+      }
+    },
+    {
+      "document_id": "q1-fy25-earnings.pdf",
+      "page": 17,
+      "section": "NON-GAAP FINANCIAL MEASURES",
+      "text": null,
+      "metadata": {
+        "node_id": "0031",
+        "depth": 0,
+        "start_index": 17,
+        "end_index": 17
+      }
+    },
+    {
+      "document_id": "q1-fy25-earnings.pdf",
+      "page": 17,
+      "section": "Diluted EPS excluding certain items",
+      "text": null,
+      "metadata": {
+        "node_id": "0032",
+        "depth": 1,
+        "start_index": 17,
+        "end_index": 18
+      }
+    },
+    {
+      "document_id": "q1-fy25-earnings.pdf",
+      "page": 19,
+      "section": "Total segment operating income",
+      "text": null,
+      "metadata": {
+        "node_id": "0033",
+        "depth": 1,
+        "start_index": 19,
+        "end_index": 19
+      }
+    },
+    {
+      "document_id": "q1-fy25-earnings.pdf",
+      "page": 19,
+      "section": "Free cash flow",
+      "text": null,
+      "metadata": {
+        "node_id": "0034",
+        "depth": 1,
+        "start_index": 19,
+        "end_index": 20
+      }
+    },
+    {
+      "document_id": "q1-fy25-earnings.pdf",
+      "page": 21,
+      "section": "FORWARD-LOOKING STATEMENTS",
+      "text": null,
+      "metadata": {
+        "node_id": "0035",
+        "depth": 0,
+        "start_index": 21,
+        "end_index": 21
+      }
+    },
+    {
+      "document_id": "q1-fy25-earnings.pdf",
+      "page": 22,
+      "section": "PREPARED EARNINGS REMARKS AND CONFERENCE CALL INFORMATION",
+      "text": null,
+      "metadata": {
+        "node_id": "0036",
+        "depth": 0,
+        "start_index": 22,
+        "end_index": 22
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "index_node",
+      "target": "THE WALT DISNEY COMPANY REPORTS FIRST QUARTER EARNINGS FOR FISCAL 2025",
+      "metadata": {
+        "node_id": "0000",
+        "depth": 0,
+        "start_index": 1,
+        "end_index": 1
+      }
+    },
+    {
+      "step": 2,
+      "action": "index_node",
+      "target": "Financial Results for the Quarter:",
+      "metadata": {
+        "node_id": "0001",
+        "depth": 0,
+        "start_index": 1,
+        "end_index": 1
+      }
+    },
+    {
+      "step": 3,
+      "action": "index_node",
+      "target": "Key Points:",
+      "metadata": {
+        "node_id": "0002",
+        "depth": 0,
+        "start_index": 1,
+        "end_index": 1
+      }
+    },
+    {
+      "step": 4,
+      "action": "index_node",
+      "target": "Guidance and Outlook:",
+      "metadata": {
+        "node_id": "0003",
+        "depth": 0,
+        "start_index": 2,
+        "end_index": 2
+      }
+    },
+    {
+      "step": 5,
+      "action": "index_node",
+      "target": "Message From Our CEO:",
+      "metadata": {
+        "node_id": "0004",
+        "depth": 0,
+        "start_index": 2,
+        "end_index": 2
+      }
+    },
+    {
+      "step": 6,
+      "action": "index_node",
+      "target": "SUMMARIZED FINANCIAL RESULTS",
+      "metadata": {
+        "node_id": "0005",
+        "depth": 0,
+        "start_index": 3,
+        "end_index": 3
+      }
+    },
+    {
+      "step": 7,
+      "action": "index_node",
+      "target": "SUMMARIZED SEGMENT FINANCIAL RESULTS",
+      "metadata": {
+        "node_id": "0006",
+        "depth": 0,
+        "start_index": 3,
+        "end_index": 3
+      }
+    },
+    {
+      "step": 8,
+      "action": "index_node",
+      "target": "DISCUSSION OF FIRST QUARTER SEGMENT RESULTS",
+      "metadata": {
+        "node_id": "0007",
+        "depth": 0,
+        "start_index": 4,
+        "end_index": 4
+      }
+    },
+    {
+      "step": 9,
+      "action": "index_node",
+      "target": "Star India",
+      "metadata": {
+        "node_id": "0008",
+        "depth": 1,
+        "start_index": 4,
+        "end_index": 4
+      }
+    },
+    {
+      "step": 10,
+      "action": "index_node",
+      "target": "Entertainment",
+      "metadata": {
+        "node_id": "0009",
+        "depth": 1,
+        "start_index": 4,
+        "end_index": 4
+      }
+    },
+    {
+      "step": 11,
+      "action": "index_node",
+      "target": "Linear Networks",
+      "metadata": {
+        "node_id": "0010",
+        "depth": 2,
+        "start_index": 5,
+        "end_index": 5
+      }
+    },
+    {
+      "step": 12,
+      "action": "index_node",
+      "target": "Direct-to-Consumer",
+      "metadata": {
+        "node_id": "0011",
+        "depth": 2,
+        "start_index": 5,
+        "end_index": 6
+      }
+    },
+    {
+      "step": 13,
+      "action": "index_node",
+      "target": "Key Metrics - First Quarter of Fiscal 2025 Comparison to Fourth Quarter of Fiscal 2024",
+      "metadata": {
+        "node_id": "0012",
+        "depth": 3,
+        "start_index": 6,
+        "end_index": 7
+      }
+    },
+    {
+      "step": 14,
+      "action": "index_node",
+      "target": "Content Sales/Licensing and Other",
+      "metadata": {
+        "node_id": "0013",
+        "depth": 2,
+        "start_index": 7,
+        "end_index": 7
+      }
+    },
+    {
+      "step": 15,
+      "action": "index_node",
+      "target": "Sports",
+      "metadata": {
+        "node_id": "0014",
+        "depth": 1,
+        "start_index": 7,
+        "end_index": 8
+      }
+    },
+    {
+      "step": 16,
+      "action": "index_node",
+      "target": "Key Metrics - First Quarter of Fiscal 2025 Comparison to Fourth Quarter of Fiscal 2024",
+      "metadata": {
+        "node_id": "0015",
+        "depth": 2,
+        "start_index": 8,
+        "end_index": 8
+      }
+    },
+    {
+      "step": 17,
+      "action": "index_node",
+      "target": "Experiences",
+      "metadata": {
+        "node_id": "0016",
+        "depth": 1,
+        "start_index": 9,
+        "end_index": 9
+      }
+    },
+    {
+      "step": 18,
+      "action": "index_node",
+      "target": "OTHER FINANCIAL INFORMATION",
+      "metadata": {
+        "node_id": "0017",
+        "depth": 0,
+        "start_index": 9,
+        "end_index": 9
+      }
+    },
+    {
+      "step": 19,
+      "action": "index_node",
+      "target": "Corporate and Unallocated Shared Expenses",
+      "metadata": {
+        "node_id": "0018",
+        "depth": 1,
+        "start_index": 9,
+        "end_index": 9
+      }
+    },
+    {
+      "step": 20,
+      "action": "index_node",
+      "target": "Restructuring and Impairment Charges",
+      "metadata": {
+        "node_id": "0019",
+        "depth": 1,
+        "start_index": 9,
+        "end_index": 9
+      }
+    },
+    {
+      "step": 21,
+      "action": "index_node",
+      "target": "Interest Expense, net",
+      "metadata": {
+        "node_id": "0020",
+        "depth": 1,
+        "start_index": 10,
+        "end_index": 10
+      }
+    },
+    {
+      "step": 22,
+      "action": "index_node",
+      "target": "Equity in the Income of Investees",
+      "metadata": {
+        "node_id": "0021",
+        "depth": 1,
+        "start_index": 10,
+        "end_index": 10
+      }
+    },
+    {
+      "step": 23,
+      "action": "index_node",
+      "target": "Income Taxes",
+      "metadata": {
+        "node_id": "0022",
+        "depth": 1,
+        "start_index": 10,
+        "end_index": 10
+      }
+    },
+    {
+      "step": 24,
+      "action": "index_node",
+      "target": "Noncontrolling Interests",
+      "metadata": {
+        "node_id": "0023",
+        "depth": 1,
+        "start_index": 11,
+        "end_index": 11
+      }
+    },
+    {
+      "step": 25,
+      "action": "index_node",
+      "target": "Cash from Operations",
+      "metadata": {
+        "node_id": "0024",
+        "depth": 1,
+        "start_index": 11,
+        "end_index": 11
+      }
+    },
+    {
+      "step": 26,
+      "action": "index_node",
+      "target": "Capital Expenditures",
+      "metadata": {
+        "node_id": "0025",
+        "depth": 1,
+        "start_index": 12,
+        "end_index": 12
+      }
+    },
+    {
+      "step": 27,
+      "action": "index_node",
+      "target": "Depreciation Expense",
+      "metadata": {
+        "node_id": "0026",
+        "depth": 1,
+        "start_index": 12,
+        "end_index": 12
+      }
+    },
+    {
+      "step": 28,
+      "action": "index_node",
+      "target": "THE WALT DISNEY COMPANY CONDENSED CONSOLIDATED STATEMENTS OF INCOME",
+      "metadata": {
+        "node_id": "0027",
+        "depth": 0,
+        "start_index": 13,
+        "end_index": 13
+      }
+    },
+    {
+      "step": 29,
+      "action": "index_node",
+      "target": "THE WALT DISNEY COMPANY CONDENSED CONSOLIDATED BALANCE SHEETS",
+      "metadata": {
+        "node_id": "0028",
+        "depth": 0,
+        "start_index": 14,
+        "end_index": 14
+      }
+    },
+    {
+      "step": 30,
+      "action": "index_node",
+      "target": "THE WALT DISNEY COMPANY CONDENSED CONSOLIDATED STATEMENTS OF CASH FLOWS",
+      "metadata": {
+        "node_id": "0029",
+        "depth": 0,
+        "start_index": 15,
+        "end_index": 15
+      }
+    },
+    {
+      "step": 31,
+      "action": "index_node",
+      "target": "DTC PRODUCT DESCRIPTIONS AND KEY DEFINITIONS",
+      "metadata": {
+        "node_id": "0030",
+        "depth": 0,
+        "start_index": 16,
+        "end_index": 16
+      }
+    },
+    {
+      "step": 32,
+      "action": "index_node",
+      "target": "NON-GAAP FINANCIAL MEASURES",
+      "metadata": {
+        "node_id": "0031",
+        "depth": 0,
+        "start_index": 17,
+        "end_index": 17
+      }
+    },
+    {
+      "step": 33,
+      "action": "index_node",
+      "target": "Diluted EPS excluding certain items",
+      "metadata": {
+        "node_id": "0032",
+        "depth": 1,
+        "start_index": 17,
+        "end_index": 18
+      }
+    },
+    {
+      "step": 34,
+      "action": "index_node",
+      "target": "Total segment operating income",
+      "metadata": {
+        "node_id": "0033",
+        "depth": 1,
+        "start_index": 19,
+        "end_index": 19
+      }
+    },
+    {
+      "step": 35,
+      "action": "index_node",
+      "target": "Free cash flow",
+      "metadata": {
+        "node_id": "0034",
+        "depth": 1,
+        "start_index": 19,
+        "end_index": 20
+      }
+    },
+    {
+      "step": 36,
+      "action": "index_node",
+      "target": "FORWARD-LOOKING STATEMENTS",
+      "metadata": {
+        "node_id": "0035",
+        "depth": 0,
+        "start_index": 21,
+        "end_index": 21
+      }
+    },
+    {
+      "step": 37,
+      "action": "index_node",
+      "target": "PREPARED EARNINGS REMARKS AND CONFERENCE CALL INFORMATION",
+      "metadata": {
+        "node_id": "0036",
+        "depth": 0,
+        "start_index": 22,
+        "end_index": 22
+      }
+    }
+  ],
+  "token_usage": {
+    "input": null,
+    "output": null,
+    "total": null
+  },
+  "latency_ms": null,
+  "metadata": {
+    "adapter_mode": "index_only",
+    "structure_path": "examples\\pageindex-demo\\q1-fy25-earnings_structure.json",
+    "doc_name": "q1-fy25-earnings.pdf",
+    "node_count": 37
+  }
+}

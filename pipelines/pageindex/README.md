@@ -37,3 +37,25 @@ Observed upstream issue:
 ```text
 litellm==1.83.7 requires python-dotenv==1.0.1, but upstream requirements.txt pins python-dotenv==1.2.2.
 ```
+
+## Adapter
+
+Implemented:
+
+```text
+pipelines/pageindex/adapter.py
+```
+
+Current mode:
+
+```text
+index_only
+```
+
+Example:
+
+```powershell
+python -m pipelines.pageindex.adapter examples\pageindex-demo\q1-fy25-earnings_structure.json --output reports\pageindex-demo-result.json
+```
+
+The adapter converts PageIndex tree JSON into the shared `BenchmarkResult` schema. Full question answering is the next adapter iteration.
