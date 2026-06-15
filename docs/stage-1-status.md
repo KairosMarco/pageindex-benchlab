@@ -171,7 +171,7 @@ python scripts\run_pageindex_mvp.py
 Current indexing status:
 
 ```text
-4 / 11 unique MVP PDFs have PageIndex structure outputs.
+6 / 11 unique MVP PDFs have PageIndex structure outputs.
 ```
 
 Generated structures:
@@ -180,6 +180,8 @@ Generated structures:
 reports/pageindex/structures/3M_2018_10K_structure.json
 reports/pageindex/structures/AMAZON_2017_10K_structure.json
 reports/pageindex/structures/AMCOR_2023Q4_EARNINGS_structure.json
+reports/pageindex/structures/AMD_2022_10K_structure.json
+reports/pageindex/structures/BESTBUY_2023_10K_structure.json
 reports/pageindex/structures/JOHNSON_JOHNSON_2023_8K_dated-2023-08-30_structure.json
 ```
 
@@ -187,6 +189,22 @@ The current manifest is:
 
 ```text
 reports/pageindex/indexing_manifest.json
+```
+
+Latest indexing run:
+
+```text
+Model: dashscope/qwen3.7-max
+Commit: e353d09
+Generated: AMD_2022_10K, BESTBUY_2023_10K
+Failed: BOEING_2022_10K, COSTCO_2021_10K, JPMORGAN_2023Q2_10Q, MICROSOFT_2016_10K, NIKE_2023_10K
+```
+
+Failure notes:
+
+```text
+BOEING_2022_10K timed out after 1800 seconds.
+COSTCO, JPMORGAN, MICROSOFT, and NIKE failed after DashScope returned free-tier exhausted errors.
 ```
 
 ### PageIndex QA Adapter
@@ -209,12 +227,11 @@ The adapter can select candidate PageIndex tree nodes for a question and either 
 
 The next work should convert this setup into actual benchmark execution:
 
-1. Download PDFs for the 12 MVP questions.
-2. Run PageIndex indexing on those PDFs.
-3. Add a question-answering retrieval step for PageIndex.
-4. Implement Long-context baseline.
-5. Implement Vector RAG + reranker baseline.
-6. Generate the first benchmark report.
+1. Resume PageIndex indexing for the 5 failed MVP PDFs after provider quota is available.
+2. Add a question-answering retrieval step for PageIndex.
+3. Implement Long-context baseline.
+4. Implement Vector RAG + reranker baseline.
+5. Generate the first benchmark report.
 
 ## Stage 1 Exit Criteria
 
@@ -228,9 +245,9 @@ Stage 1 is complete when:
 
 ## Current Blocker
 
-Model-backed PageIndex indexing and QA require a provider API key in the current shell.
+Model-backed PageIndex indexing and QA require a provider API key in the current shell and usable provider quota.
 
-The first 4 structures were generated with DashScope/Qwen. Further indexing is currently blocked because DashScope returned:
+The first 6 structures were generated with DashScope/Qwen. Further indexing is currently blocked because DashScope returned:
 
 ```text
 The free tier of the model has been exhausted. If you wish to continue access the model on a paid basis, please disable the "use free tier only" mode in the management console.
