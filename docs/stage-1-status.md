@@ -171,7 +171,7 @@ python scripts\run_pageindex_mvp.py
 Current indexing status:
 
 ```text
-7 / 11 unique MVP PDFs have PageIndex structure outputs.
+8 / 11 unique MVP PDFs have PageIndex structure outputs.
 ```
 
 Generated structures:
@@ -184,6 +184,7 @@ reports/pageindex/structures/AMD_2022_10K_structure.json
 reports/pageindex/structures/BESTBUY_2023_10K_structure.json
 reports/pageindex/structures/BOEING_2022_10K_structure.json
 reports/pageindex/structures/JOHNSON_JOHNSON_2023_8K_dated-2023-08-30_structure.json
+reports/pageindex/structures/MICROSOFT_2016_10K_structure.json
 ```
 
 The current manifest is:
@@ -195,16 +196,16 @@ reports/pageindex/indexing_manifest.json
 Latest indexing run:
 
 ```text
-Model: dashscope/qwen3.7-max-2026-05-20
-Generated: BOEING_2022_10K
-Failed: COSTCO_2021_10K, JPMORGAN_2023Q2_10Q, MICROSOFT_2016_10K, NIKE_2023_10K
+Model: deepseek/deepseek-v4-pro
+Generated: MICROSOFT_2016_10K
+Failed: COSTCO_2021_10K, JPMORGAN_2023Q2_10Q, NIKE_2023_10K
 ```
 
 Failure notes:
 
 ```text
-COSTCO first hit DashScope request-limit errors.
-Later calls failed with DashScope account standing / overdue-payment access errors.
+DeepSeek V4 Pro is reachable and generated MICROSOFT_2016_10K.
+COSTCO, JPMORGAN, and NIKE failed because PageIndex expected JSON fields that were missing from model output during table-of-contents detection.
 ```
 
 ### PageIndex QA Adapter
@@ -227,7 +228,7 @@ The adapter can select candidate PageIndex tree nodes for a question and either 
 
 The next work should convert this setup into actual benchmark execution:
 
-1. Resume PageIndex indexing for the 4 failed MVP PDFs after provider quota is available.
+1. Resume PageIndex indexing for the 3 failed MVP PDFs after the JSON-output issue is handled.
 2. Add a question-answering retrieval step for PageIndex.
 3. Implement Long-context baseline.
 4. Implement Vector RAG + reranker baseline.
@@ -245,12 +246,13 @@ Stage 1 is complete when:
 
 ## Current Blocker
 
-Model-backed PageIndex indexing and QA require a provider API key in the current shell and usable provider quota.
+Model-backed PageIndex indexing and QA require a provider API key in the current shell, usable provider quota, and reliable JSON output.
 
-The first 7 structures were generated with DashScope/Qwen. Further indexing is currently blocked because DashScope returned account access errors:
+The first 8 structures were generated across DashScope/Qwen and DeepSeek. Further indexing is currently blocked because DeepSeek V4 Pro did not always return parseable JSON for PageIndex prompts:
 
 ```text
-Access denied, please make sure your account is in good standing.
+KeyError: 'toc_detected'
+KeyError: 'page_index_given_in_toc'
 ```
 
-To continue, resolve the DashScope account billing / standing issue or provide a fresh key/model with available quota.
+To continue, either harden PageIndex JSON parsing / prompts for DeepSeek output or use a model/provider that consistently returns the required JSON.

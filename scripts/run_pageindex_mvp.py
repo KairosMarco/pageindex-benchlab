@@ -42,6 +42,7 @@ def has_model_key() -> bool:
         os.getenv(name)
         for name in (
             "DASHSCOPE_API_KEY",
+            "DEEPSEEK_API_KEY",
             "OPENAI_API_KEY",
             "ANTHROPIC_API_KEY",
             "GEMINI_API_KEY",

@@ -1,0 +1,955 @@
+{
+  "doc_name": "MICROSOFT_2016_10K.pdf",
+  "structure": [
+    {
+      "title": "Preface",
+      "node_id": "0000",
+      "start_index": 1,
+      "end_index": 3
+    },
+    {
+      "title": "PART I",
+      "node_id": "0001",
+      "start_index": 3,
+      "end_index": 3,
+      "nodes": [
+        {
+          "title": "Item 1. Business",
+          "node_id": "0002",
+          "start_index": 3,
+          "end_index": 15,
+          "nodes": [
+            {
+              "title": "Executive Of ficers of the Registrant",
+              "node_id": "0003",
+              "start_index": 15,
+              "end_index": 17
+            }
+          ]
+        },
+        {
+          "title": "Item 1A. Risk Factors",
+          "node_id": "0004",
+          "start_index": 17,
+          "end_index": 26
+        },
+        {
+          "title": "Item 1B. Unresolved Staf f Comments",
+          "node_id": "0005",
+          "start_index": 26,
+          "end_index": 26
+        },
+        {
+          "title": "Item 2. Properties",
+          "node_id": "0006",
+          "start_index": 26,
+          "end_index": 27
+        },
+        {
+          "title": "Item 3. Legal Proceedings",
+          "node_id": "0007",
+          "start_index": 27,
+          "end_index": 27
+        },
+        {
+          "title": "Item 4. Mine Safety Disclosures",
+          "node_id": "0008",
+          "start_index": 27,
+          "end_index": 28
+        }
+      ]
+    },
+    {
+      "title": "PART II",
+      "node_id": "0009",
+      "start_index": 28,
+      "end_index": 28,
+      "nodes": [
+        {
+          "title": "Item 5. Market for Registrant\u2019 s Common Equity , Related Stockholder Matters, and Issuer Purchases of Equity Securities",
+          "node_id": "0010",
+          "start_index": 28,
+          "end_index": 28
+        },
+        {
+          "title": "Item 6. Selected Financial Data",
+          "node_id": "0011",
+          "start_index": 28,
+          "end_index": 29
+        },
+        {
+          "title": "Item 7. Management\u2019 s Discussion and Analysis of Financial Condition and Results of Operations",
+          "node_id": "0012",
+          "start_index": 29,
+          "end_index": 50
+        },
+        {
+          "title": "Item 7A. Quantitative and Qualitative Disclosures about Market Risk",
+          "node_id": "0013",
+          "start_index": 50,
+          "end_index": 52
+        },
+        {
+          "title": "Item 8. Financial Statements and Supplementary Data",
+          "node_id": "0014",
+          "start_index": 52,
+          "end_index": 52,
+          "nodes": [
+            {
+              "title": "PART II",
+              "node_id": "0015",
+              "start_index": 52,
+              "end_index": 52,
+              "nodes": [
+                {
+                  "title": "ITEM 8. FINANCIAL STATEMENTS AND SUPPLEMENTARY DATA",
+                  "node_id": "0016",
+                  "start_index": 52,
+                  "end_index": 52,
+                  "nodes": [
+                    {
+                      "title": "INCOME STATEMENTS",
+                      "node_id": "0017",
+                      "start_index": 52,
+                      "end_index": 53
+                    },
+                    {
+                      "title": "COMPREHENSIVE INCOME STATEMENTS",
+                      "node_id": "0018",
+                      "start_index": 53,
+                      "end_index": 54
+                    },
+                    {
+                      "title": "BALANCE SHEETS",
+                      "node_id": "0019",
+                      "start_index": 54,
+                      "end_index": 55
+                    },
+                    {
+                      "title": "CASH FLOWS STATEMENTS",
+                      "node_id": "0020",
+                      "start_index": 55,
+                      "end_index": 56
+                    },
+                    {
+                      "title": "STOCKHOLDERS\u2019 EQUITY STATEMENTS",
+                      "node_id": "0021",
+                      "start_index": 56,
+                      "end_index": 57
+                    },
+                    {
+                      "title": "NOTES TO FINANCIAL STATEMENTS",
+                      "node_id": "0022",
+                      "start_index": 57,
+                      "end_index": 57,
+                      "nodes": [
+                        {
+                          "title": "NOTE 1 \u2014 ACCOUNTING POLICIES",
+                          "node_id": "0023",
+                          "start_index": 57,
+                          "end_index": 57,
+                          "nodes": [
+                            {
+                              "title": "Accounting Principles",
+                              "node_id": "0024",
+                              "start_index": 57,
+                              "end_index": 57
+                            },
+                            {
+                              "title": "Principles of Consolidation",
+                              "node_id": "0025",
+                              "start_index": 57,
+                              "end_index": 57
+                            },
+                            {
+                              "title": "Segment Information",
+                              "node_id": "0026",
+                              "start_index": 57,
+                              "end_index": 57
+                            },
+                            {
+                              "title": "Estimates and Assumptions",
+                              "node_id": "0027",
+                              "start_index": 57,
+                              "end_index": 57
+                            },
+                            {
+                              "title": "Foreign Currencies",
+                              "node_id": "0028",
+                              "start_index": 57,
+                              "end_index": 58
+                            },
+                            {
+                              "title": "Product Revenue and Service and Other Revenue",
+                              "node_id": "0029",
+                              "start_index": 58,
+                              "end_index": 58
+                            },
+                            {
+                              "title": "Revenue Recognition",
+                              "node_id": "0030",
+                              "start_index": 58,
+                              "end_index": 59
+                            },
+                            {
+                              "title": "Cost of Revenue",
+                              "node_id": "0031",
+                              "start_index": 59,
+                              "end_index": 59
+                            },
+                            {
+                              "title": "Product Warranty",
+                              "node_id": "0032",
+                              "start_index": 59,
+                              "end_index": 60
+                            },
+                            {
+                              "title": "Research and Development",
+                              "node_id": "0033",
+                              "start_index": 60,
+                              "end_index": 60
+                            },
+                            {
+                              "title": "Sales and Marketing",
+                              "node_id": "0034",
+                              "start_index": 60,
+                              "end_index": 60
+                            },
+                            {
+                              "title": "Stock-Based Compensation",
+                              "node_id": "0035",
+                              "start_index": 60,
+                              "end_index": 60
+                            },
+                            {
+                              "title": "Income Taxes",
+                              "node_id": "0036",
+                              "start_index": 60,
+                              "end_index": 60
+                            },
+                            {
+                              "title": "Fair Value Measurements",
+                              "node_id": "0037",
+                              "start_index": 60,
+                              "end_index": 61
+                            },
+                            {
+                              "title": "Financial Instruments",
+                              "node_id": "0038",
+                              "start_index": 61,
+                              "end_index": 61,
+                              "nodes": [
+                                {
+                                  "title": "Investments",
+                                  "node_id": "0039",
+                                  "start_index": 61,
+                                  "end_index": 62
+                                },
+                                {
+                                  "title": "Derivatives",
+                                  "node_id": "0040",
+                                  "start_index": 62,
+                                  "end_index": 62
+                                }
+                              ]
+                            },
+                            {
+                              "title": "Allowance for Doubtful Accounts",
+                              "node_id": "0041",
+                              "start_index": 62,
+                              "end_index": 62
+                            },
+                            {
+                              "title": "Inventories",
+                              "node_id": "0042",
+                              "start_index": 62,
+                              "end_index": 63
+                            },
+                            {
+                              "title": "Property and Equipment",
+                              "node_id": "0043",
+                              "start_index": 63,
+                              "end_index": 63
+                            },
+                            {
+                              "title": "Goodwill",
+                              "node_id": "0044",
+                              "start_index": 63,
+                              "end_index": 63
+                            },
+                            {
+                              "title": "Intangible Assets",
+                              "node_id": "0045",
+                              "start_index": 63,
+                              "end_index": 63
+                            },
+                            {
+                              "title": "Recent Accounting Guidance",
+                              "node_id": "0046",
+                              "start_index": 63,
+                              "end_index": 63,
+                              "nodes": [
+                                {
+                                  "title": "Recently adopted accounting guidance",
+                                  "node_id": "0047",
+                                  "start_index": 63,
+                                  "end_index": 63,
+                                  "nodes": [
+                                    {
+                                      "title": "Improvements to Employee Share-Based Payment Accounting",
+                                      "node_id": "0048",
+                                      "start_index": 63,
+                                      "end_index": 64
+                                    },
+                                    {
+                                      "title": "Balance Sheet Classification of Deferred Taxes",
+                                      "node_id": "0049",
+                                      "start_index": 64,
+                                      "end_index": 64
+                                    }
+                                  ]
+                                },
+                                {
+                                  "title": "Recent accounting guidance not yet adopted",
+                                  "node_id": "0050",
+                                  "start_index": 64,
+                                  "end_index": 64,
+                                  "nodes": [
+                                    {
+                                      "title": "Financial Instruments \u2013 Credit Losses",
+                                      "node_id": "0051",
+                                      "start_index": 64,
+                                      "end_index": 64
+                                    },
+                                    {
+                                      "title": "Leases",
+                                      "node_id": "0052",
+                                      "start_index": 64,
+                                      "end_index": 65
+                                    },
+                                    {
+                                      "title": "Financial Instruments \u2013 Recognition, Measurement, Presentation, and Disclosure",
+                                      "node_id": "0053",
+                                      "start_index": 65,
+                                      "end_index": 65
+                                    },
+                                    {
+                                      "title": "Revenue from Contracts with Customers",
+                                      "node_id": "0054",
+                                      "start_index": 65,
+                                      "end_index": 65
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "title": "NOTE 2 \u2014 EARNINGS PER SHARE",
+                          "node_id": "0055",
+                          "start_index": 65,
+                          "end_index": 66
+                        },
+                        {
+                          "title": "NOTE 3 \u2014 OTHER INCOME (EXPENSE), NET",
+                          "node_id": "0056",
+                          "start_index": 66,
+                          "end_index": 67
+                        },
+                        {
+                          "title": "NOTE 4 \u2014 INVESTMENTS",
+                          "node_id": "0057",
+                          "start_index": 67,
+                          "end_index": 67,
+                          "nodes": [
+                            {
+                              "title": "Investment Components",
+                              "node_id": "0058",
+                              "start_index": 67,
+                              "end_index": 68
+                            },
+                            {
+                              "title": "Unrealized Losses on Investments",
+                              "node_id": "0059",
+                              "start_index": 68,
+                              "end_index": 68
+                            },
+                            {
+                              "title": "Debt Investment Maturities",
+                              "node_id": "0060",
+                              "start_index": 68,
+                              "end_index": 68
+                            }
+                          ]
+                        },
+                        {
+                          "title": "NOTE 5 \u2014 DERIVATIVES",
+                          "node_id": "0061",
+                          "start_index": 68,
+                          "end_index": 69,
+                          "nodes": [
+                            {
+                              "title": "Foreign Currency",
+                              "node_id": "0062",
+                              "start_index": 69,
+                              "end_index": 69
+                            },
+                            {
+                              "title": "Equity",
+                              "node_id": "0063",
+                              "start_index": 69,
+                              "end_index": 69
+                            },
+                            {
+                              "title": "Interest Rate",
+                              "node_id": "0064",
+                              "start_index": 69,
+                              "end_index": 69
+                            },
+                            {
+                              "title": "Credit",
+                              "node_id": "0065",
+                              "start_index": 69,
+                              "end_index": 70
+                            },
+                            {
+                              "title": "Commodity",
+                              "node_id": "0066",
+                              "start_index": 70,
+                              "end_index": 70
+                            },
+                            {
+                              "title": "Credit-Risk-Related Contingent Features",
+                              "node_id": "0067",
+                              "start_index": 70,
+                              "end_index": 71
+                            },
+                            {
+                              "title": "Fair Values of Derivative Instruments",
+                              "node_id": "0068",
+                              "start_index": 71,
+                              "end_index": 73
+                            }
+                          ]
+                        },
+                        {
+                          "title": "NOTE 6 \u2014 FAIR VALUE MEASUREMENTS",
+                          "node_id": "0069",
+                          "start_index": 73,
+                          "end_index": 73,
+                          "nodes": [
+                            {
+                              "title": "Assets and Liabilities Measured at Fair Value on a Recurring Basis",
+                              "node_id": "0070",
+                              "start_index": 73,
+                              "end_index": 74
+                            },
+                            {
+                              "title": "Financial Assets and Liabilities Measured at Fair Value on a Nonrecurring Basis",
+                              "node_id": "0071",
+                              "start_index": 74,
+                              "end_index": 74
+                            }
+                          ]
+                        },
+                        {
+                          "title": "NOTE 7 \u2014 INVENTORIES",
+                          "node_id": "0072",
+                          "start_index": 74,
+                          "end_index": 74
+                        },
+                        {
+                          "title": "NOTE 8 \u2014 PROPERTY AND EQUIPMENT",
+                          "node_id": "0073",
+                          "start_index": 74,
+                          "end_index": 75
+                        },
+                        {
+                          "title": "NOTE 9 \u2014 BUSINESS COMBINATIONS",
+                          "node_id": "0074",
+                          "start_index": 75,
+                          "end_index": 75,
+                          "nodes": [
+                            {
+                              "title": "Mojang Synergies AB",
+                              "node_id": "0075",
+                              "start_index": 75,
+                              "end_index": 75
+                            },
+                            {
+                              "title": "Nokia\u2019s Devices and Services Business",
+                              "node_id": "0076",
+                              "start_index": 75,
+                              "end_index": 76
+                            },
+                            {
+                              "title": "Other",
+                              "node_id": "0077",
+                              "start_index": 76,
+                              "end_index": 77
+                            }
+                          ]
+                        },
+                        {
+                          "title": "NOTE 10 \u2014 GOODWILL",
+                          "node_id": "0078",
+                          "start_index": 77,
+                          "end_index": 77,
+                          "nodes": [
+                            {
+                              "title": "Goodwill Impairment",
+                              "node_id": "0079",
+                              "start_index": 77,
+                              "end_index": 78
+                            }
+                          ]
+                        },
+                        {
+                          "title": "NOTE 11 \u2014 INTANGIBLE ASSETS",
+                          "node_id": "0080",
+                          "start_index": 78,
+                          "end_index": 79
+                        },
+                        {
+                          "title": "NOTE 12 \u2014 DEBT",
+                          "node_id": "0081",
+                          "start_index": 79,
+                          "end_index": 79,
+                          "nodes": [
+                            {
+                              "title": "Short-term Debt",
+                              "node_id": "0082",
+                              "start_index": 79,
+                              "end_index": 79
+                            },
+                            {
+                              "title": "Long-term Debt",
+                              "node_id": "0083",
+                              "start_index": 79,
+                              "end_index": 81
+                            }
+                          ]
+                        },
+                        {
+                          "title": "NOTE 13 \u2014 INCOME TAXES",
+                          "node_id": "0084",
+                          "start_index": 81,
+                          "end_index": 83,
+                          "nodes": [
+                            {
+                              "title": "Uncertain Tax Positions",
+                              "node_id": "0085",
+                              "start_index": 83,
+                              "end_index": 84
+                            }
+                          ]
+                        },
+                        {
+                          "title": "NOTE 14 \u2014 RESTRUCTURING CHARGES",
+                          "node_id": "0086",
+                          "start_index": 84,
+                          "end_index": 84,
+                          "nodes": [
+                            {
+                              "title": "Phone Hardware Integration",
+                              "node_id": "0087",
+                              "start_index": 84,
+                              "end_index": 84
+                            },
+                            {
+                              "title": "Phone Hardware Restructuring",
+                              "node_id": "0088",
+                              "start_index": 84,
+                              "end_index": 84
+                            },
+                            {
+                              "title": "2016 Restructuring",
+                              "node_id": "0089",
+                              "start_index": 84,
+                              "end_index": 84
+                            },
+                            {
+                              "title": "Changes in the restructuring liability",
+                              "node_id": "0090",
+                              "start_index": 84,
+                              "end_index": 85
+                            }
+                          ]
+                        },
+                        {
+                          "title": "NOTE 15 \u2014 UNEARNED REVENUE",
+                          "node_id": "0091",
+                          "start_index": 85,
+                          "end_index": 85
+                        },
+                        {
+                          "title": "NOTE 16 \u2014 COMMITMENTS",
+                          "node_id": "0092",
+                          "start_index": 85,
+                          "end_index": 85,
+                          "nodes": [
+                            {
+                              "title": "Construction and Operating Lease Commitments",
+                              "node_id": "0093",
+                              "start_index": 85,
+                              "end_index": 85
+                            },
+                            {
+                              "title": "Other Commitments",
+                              "node_id": "0094",
+                              "start_index": 85,
+                              "end_index": 86
+                            }
+                          ]
+                        },
+                        {
+                          "title": "NOTE 17 \u2014 CONTINGENCIES",
+                          "node_id": "0095",
+                          "start_index": 86,
+                          "end_index": 86,
+                          "nodes": [
+                            {
+                              "title": "Patent and Intellectual Property Claims",
+                              "node_id": "0096",
+                              "start_index": 86,
+                              "end_index": 86,
+                              "nodes": [
+                                {
+                                  "title": "IPCom patent litigation",
+                                  "node_id": "0097",
+                                  "start_index": 86,
+                                  "end_index": 86
+                                },
+                                {
+                                  "title": "InterDigital patent litigation",
+                                  "node_id": "0098",
+                                  "start_index": 86,
+                                  "end_index": 86
+                                },
+                                {
+                                  "title": "European copyright levies",
+                                  "node_id": "0099",
+                                  "start_index": 86,
+                                  "end_index": 86
+                                },
+                                {
+                                  "title": "Other patent and intellectual property claims",
+                                  "node_id": "0100",
+                                  "start_index": 86,
+                                  "end_index": 86
+                                }
+                              ]
+                            },
+                            {
+                              "title": "Antitrust, Unfair Competition, and Overcharge Class Actions",
+                              "node_id": "0101",
+                              "start_index": 86,
+                              "end_index": 87
+                            },
+                            {
+                              "title": "Other Antitrust Litigation and Claims",
+                              "node_id": "0102",
+                              "start_index": 87,
+                              "end_index": 87,
+                              "nodes": [
+                                {
+                                  "title": "China State Administration for Industry and Commerce investigation",
+                                  "node_id": "0103",
+                                  "start_index": 87,
+                                  "end_index": 87
+                                }
+                              ]
+                            },
+                            {
+                              "title": "Product-Related Litigation",
+                              "node_id": "0104",
+                              "start_index": 87,
+                              "end_index": 87,
+                              "nodes": [
+                                {
+                                  "title": "U.S. cell phone litigation",
+                                  "node_id": "0105",
+                                  "start_index": 87,
+                                  "end_index": 87
+                                },
+                                {
+                                  "title": "Canadian cell phone class action",
+                                  "node_id": "0106",
+                                  "start_index": 87,
+                                  "end_index": 87
+                                }
+                              ]
+                            },
+                            {
+                              "title": "Other",
+                              "node_id": "0107",
+                              "start_index": 87,
+                              "end_index": 88
+                            },
+                            {
+                              "title": "Indemnifications",
+                              "node_id": "0108",
+                              "start_index": 88,
+                              "end_index": 88
+                            }
+                          ]
+                        },
+                        {
+                          "title": "NOTE 18 \u2014 STOCKHOLDERS\u2019 EQUITY",
+                          "node_id": "0109",
+                          "start_index": 88,
+                          "end_index": 88,
+                          "nodes": [
+                            {
+                              "title": "Shares Outstanding",
+                              "node_id": "0110",
+                              "start_index": 88,
+                              "end_index": 88
+                            },
+                            {
+                              "title": "Share Repurchases",
+                              "node_id": "0111",
+                              "start_index": 88,
+                              "end_index": 89
+                            },
+                            {
+                              "title": "Dividends",
+                              "node_id": "0112",
+                              "start_index": 89,
+                              "end_index": 89
+                            }
+                          ]
+                        },
+                        {
+                          "title": "NOTE 19 \u2014 ACCUMULATED OTHER COMPREHENSIVE INCOME",
+                          "node_id": "0113",
+                          "start_index": 89,
+                          "end_index": 91
+                        },
+                        {
+                          "title": "NOTE 20 \u2014 EMPLOYEE STOCK AND SAVINGS PLANS",
+                          "node_id": "0114",
+                          "start_index": 91,
+                          "end_index": 91,
+                          "nodes": [
+                            {
+                              "title": "Stock Plans",
+                              "node_id": "0115",
+                              "start_index": 91,
+                              "end_index": 91,
+                              "nodes": [
+                                {
+                                  "title": "Executive incentive plan",
+                                  "node_id": "0116",
+                                  "start_index": 91,
+                                  "end_index": 91
+                                },
+                                {
+                                  "title": "Activity for all stock plans",
+                                  "node_id": "0117",
+                                  "start_index": 91,
+                                  "end_index": 92
+                                }
+                              ]
+                            },
+                            {
+                              "title": "Employee Stock Purchase Plan",
+                              "node_id": "0118",
+                              "start_index": 92,
+                              "end_index": 92
+                            },
+                            {
+                              "title": "Savings Plan",
+                              "node_id": "0119",
+                              "start_index": 92,
+                              "end_index": 92
+                            }
+                          ]
+                        },
+                        {
+                          "title": "NOTE 21 \u2014 SEGMENT INFORMATION AND GEOGRAPHIC DATA",
+                          "node_id": "0120",
+                          "start_index": 92,
+                          "end_index": 92,
+                          "nodes": [
+                            {
+                              "title": "Productivity and Business Processes",
+                              "node_id": "0121",
+                              "start_index": 92,
+                              "end_index": 93
+                            },
+                            {
+                              "title": "Intelligent Cloud",
+                              "node_id": "0122",
+                              "start_index": 93,
+                              "end_index": 93
+                            },
+                            {
+                              "title": "More Personal Computing",
+                              "node_id": "0123",
+                              "start_index": 93,
+                              "end_index": 95
+                            }
+                          ]
+                        },
+                        {
+                          "title": "NOTE 22 \u2014 QUARTERLY INFORMATION (UNAUDITED)",
+                          "node_id": "0124",
+                          "start_index": 95,
+                          "end_index": 96
+                        }
+                      ]
+                    },
+                    {
+                      "title": "REPORT OF INDEPENDENT REGISTERED PUBLIC ACCOUNTING FIRM",
+                      "node_id": "0125",
+                      "start_index": 96,
+                      "end_index": 97
+                    }
+                  ]
+                },
+                {
+                  "title": "ITEM 9. CHANGES IN AND DISAGREEMENTS WITH ACCOUNTANTS ON ACCOUNTING AND FINANCIAL DISCLOSURE",
+                  "node_id": "0126",
+                  "start_index": 97,
+                  "end_index": 97
+                },
+                {
+                  "title": "ITEM 9A. CONTROLS AND PROCEDURES",
+                  "node_id": "0127",
+                  "start_index": 97,
+                  "end_index": 97,
+                  "nodes": [
+                    {
+                      "title": "REPORT OF MANAGEMENT ON INTERNAL CONTROL OVER FINANCIAL REPORTING",
+                      "node_id": "0128",
+                      "start_index": 97,
+                      "end_index": 97
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Item 9. Changes in and Disagreements with Accountants on Accounting and Financial Disclosure",
+          "node_id": "0129",
+          "start_index": 97,
+          "end_index": 97
+        },
+        {
+          "title": "Item 9A. Controls and Procedures",
+          "node_id": "0130",
+          "start_index": 97,
+          "end_index": 97,
+          "nodes": [
+            {
+              "title": "Report of Management on Internal Control over Financial Reporting",
+              "node_id": "0131",
+              "start_index": 97,
+              "end_index": 98
+            },
+            {
+              "title": "Report of Independent Registered Public Accounting Firm",
+              "node_id": "0132",
+              "start_index": 98,
+              "end_index": 99
+            }
+          ]
+        },
+        {
+          "title": "Item 9B. Other Information",
+          "node_id": "0133",
+          "start_index": 99,
+          "end_index": 99
+        }
+      ]
+    },
+    {
+      "title": "PART III",
+      "node_id": "0134",
+      "start_index": 99,
+      "end_index": 99,
+      "nodes": [
+        {
+          "title": "Item 10. Directors, Executive Of ficers and Corporate Governance",
+          "node_id": "0135",
+          "start_index": 99,
+          "end_index": 99
+        },
+        {
+          "title": "Item 11. Executive Compensation",
+          "node_id": "0136",
+          "start_index": 99,
+          "end_index": 99
+        },
+        {
+          "title": "Item 12. Security Ownership of Certain Beneficial Owners and Management and Related Stockholder Matters",
+          "node_id": "0137",
+          "start_index": 99,
+          "end_index": 99
+        },
+        {
+          "title": "Item 13. Certain Relationships and Related T ransactions, and Director Independence",
+          "node_id": "0138",
+          "start_index": 99,
+          "end_index": 99
+        },
+        {
+          "title": "Item 14. Principal Accounting Fees and Services",
+          "node_id": "0139",
+          "start_index": 99,
+          "end_index": 100
+        }
+      ]
+    },
+    {
+      "title": "PART IV",
+      "node_id": "0140",
+      "start_index": 100,
+      "end_index": 100,
+      "nodes": [
+        {
+          "title": "Item 15. Exhibits, Financial Statement Schedules",
+          "node_id": "0141",
+          "start_index": 100,
+          "end_index": 104,
+          "nodes": [
+            {
+              "title": "Signatures",
+              "node_id": "0142",
+              "start_index": 104,
+              "end_index": 117
+            },
+            {
+              "title": "Exhibit 31.1 CERTIFICATIONS",
+              "node_id": "0143",
+              "start_index": 118,
+              "end_index": 118
+            },
+            {
+              "title": "Exhibit 31.2 CERTIFICATIONS",
+              "node_id": "0144",
+              "start_index": 119,
+              "end_index": 119
+            },
+            {
+              "title": "Exhibit 32.1 CERTIFICATIONS PURSUANT TO SECTION 906 OF THE SARBANES-OXLEY ACT OF 2002 (18 U.S.C. SECTION 1350)",
+              "node_id": "0145",
+              "start_index": 120,
+              "end_index": 120
+            },
+            {
+              "title": "Exhibit 32.2 CERTIFICATIONS PURSUANT TO SECTION 906 OF THE SARBANES-OXLEY ACT OF 2002 (18 U.S.C. SECTION 1350)",
+              "node_id": "0146",
+              "start_index": 121,
+              "end_index": 121
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
