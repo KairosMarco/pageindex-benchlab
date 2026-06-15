@@ -103,10 +103,11 @@
   },
   {
     "doc_name": "COSTCO_2021_10K",
-    "status": "failed",
+    "status": "generated",
     "pdf_path": "datasets\\raw\\financebench\\pdfs\\COSTCO_2021_10K.pdf",
-    "latency_ms": 27108,
-    "error": "Command '['D:\\\\pageindex-demo\\\\PageIndex\\\\.venv\\\\Scripts\\\\python.exe', 'run_pageindex.py', '--pdf_path', 'D:\\\\pageindex-benchlab\\\\datasets\\\\raw\\\\financebench\\\\pdfs\\\\COSTCO_2021_10K.pdf', '--if-add-node-summary', 'no', '--if-add-doc-description', 'no', '--if-add-node-text', 'no', '--toc-check-pages', '5', '--max-pages-per-node', '8', '--model', 'deepseek/deepseek-v4-pro']' returned non-zero exit status 1.",
+    "structure_path": "reports\\pageindex\\structures\\COSTCO_2021_10K_structure.json",
+    "size_bytes": 23149,
+    "latency_ms": 525253,
     "command": [
       "D:\\pageindex-demo\\PageIndex\\.venv\\Scripts\\python.exe",
       "run_pageindex.py",
@@ -128,10 +129,11 @@
   },
   {
     "doc_name": "JPMORGAN_2023Q2_10Q",
-    "status": "failed",
+    "status": "generated",
     "pdf_path": "datasets\\raw\\financebench\\pdfs\\JPMORGAN_2023Q2_10Q.pdf",
-    "latency_ms": 26634,
-    "error": "Command '['D:\\\\pageindex-demo\\\\PageIndex\\\\.venv\\\\Scripts\\\\python.exe', 'run_pageindex.py', '--pdf_path', 'D:\\\\pageindex-benchlab\\\\datasets\\\\raw\\\\financebench\\\\pdfs\\\\JPMORGAN_2023Q2_10Q.pdf', '--if-add-node-summary', 'no', '--if-add-doc-description', 'no', '--if-add-node-text', 'no', '--toc-check-pages', '5', '--max-pages-per-node', '8', '--model', 'deepseek/deepseek-v4-pro']' returned non-zero exit status 1.",
+    "structure_path": "reports\\pageindex\\structures\\JPMORGAN_2023Q2_10Q_structure.json",
+    "size_bytes": 93132,
+    "latency_ms": 2447104,
     "command": [
       "D:\\pageindex-demo\\PageIndex\\.venv\\Scripts\\python.exe",
       "run_pageindex.py",
@@ -179,10 +181,11 @@
   },
   {
     "doc_name": "NIKE_2023_10K",
-    "status": "failed",
+    "status": "generated",
     "pdf_path": "datasets\\raw\\financebench\\pdfs\\NIKE_2023_10K.pdf",
-    "latency_ms": 22417,
-    "error": "Command '['D:\\\\pageindex-demo\\\\PageIndex\\\\.venv\\\\Scripts\\\\python.exe', 'run_pageindex.py', '--pdf_path', 'D:\\\\pageindex-benchlab\\\\datasets\\\\raw\\\\financebench\\\\pdfs\\\\NIKE_2023_10K.pdf', '--if-add-node-summary', 'no', '--if-add-doc-description', 'no', '--if-add-node-text', 'no', '--toc-check-pages', '5', '--max-pages-per-node', '8', '--model', 'deepseek/deepseek-v4-pro']' returned non-zero exit status 1.",
+    "structure_path": "reports\\pageindex\\structures\\NIKE_2023_10K_structure.json",
+    "size_bytes": 29574,
+    "latency_ms": 980020,
     "command": [
       "D:\\pageindex-demo\\PageIndex\\.venv\\Scripts\\python.exe",
       "run_pageindex.py",

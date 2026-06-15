@@ -1,0 +1,887 @@
+{
+  "doc_name": "NIKE_2023_10K.pdf",
+  "structure": [
+    {
+      "title": "Preface",
+      "node_id": "0000",
+      "start_index": 1,
+      "end_index": 4
+    },
+    {
+      "title": "PART I",
+      "node_id": "0001",
+      "start_index": 5,
+      "end_index": 5,
+      "nodes": [
+        {
+          "title": "ITEM 1. BUSINESS",
+          "node_id": "0002",
+          "start_index": 5,
+          "end_index": 5,
+          "nodes": [
+            {
+              "title": "GENERAL",
+              "node_id": "0003",
+              "start_index": 5,
+              "end_index": 5
+            },
+            {
+              "title": "PRODUCTS",
+              "node_id": "0004",
+              "start_index": 5,
+              "end_index": 6
+            },
+            {
+              "title": "SALES AND MARKETING",
+              "node_id": "0005",
+              "start_index": 6,
+              "end_index": 6
+            },
+            {
+              "title": "OUR MARKETS",
+              "node_id": "0006",
+              "start_index": 6,
+              "end_index": 7
+            },
+            {
+              "title": "SIGNIFICANT CUSTOMER",
+              "node_id": "0007",
+              "start_index": 7,
+              "end_index": 7
+            },
+            {
+              "title": "PRODUCT RESEARCH, DESIGN AND DEVELOPMENT",
+              "node_id": "0008",
+              "start_index": 7,
+              "end_index": 7
+            },
+            {
+              "title": "MANUFACTURING",
+              "node_id": "0009",
+              "start_index": 7,
+              "end_index": 8
+            },
+            {
+              "title": "INTERNATIONAL OPERATIONS AND TRADE",
+              "node_id": "0010",
+              "start_index": 8,
+              "end_index": 9
+            },
+            {
+              "title": "COMPETITION",
+              "node_id": "0011",
+              "start_index": 9,
+              "end_index": 9
+            },
+            {
+              "title": "TRADEMARKS AND PATENTS",
+              "node_id": "0012",
+              "start_index": 9,
+              "end_index": 9
+            },
+            {
+              "title": "HUMAN CAPITAL RESOURCES",
+              "node_id": "0013",
+              "start_index": 10,
+              "end_index": 11
+            },
+            {
+              "title": "AVAILABLE INFORMATION AND WEBSITES",
+              "node_id": "0014",
+              "start_index": 11,
+              "end_index": 11
+            },
+            {
+              "title": "INFORMATION ABOUT OUR EXECUTIVE OFFICERS",
+              "node_id": "0015",
+              "start_index": 12,
+              "end_index": 13
+            }
+          ]
+        },
+        {
+          "title": "ITEM 1A. RISK FACTORS",
+          "node_id": "0016",
+          "start_index": 13,
+          "end_index": 27
+        },
+        {
+          "title": "ITEM 1B. UNRESOLVED STAFF COMMENTS",
+          "node_id": "0017",
+          "start_index": 28,
+          "end_index": 28
+        },
+        {
+          "title": "ITEM 2. PROPERTIES",
+          "node_id": "0018",
+          "start_index": 28,
+          "end_index": 28
+        },
+        {
+          "title": "ITEM 3. LEGAL PROCEEDINGS",
+          "node_id": "0019",
+          "start_index": 28,
+          "end_index": 28
+        },
+        {
+          "title": "ITEM 4. MINE SAFETY DISCLOSURES",
+          "node_id": "0020",
+          "start_index": 28,
+          "end_index": 28
+        }
+      ]
+    },
+    {
+      "title": "PART II",
+      "node_id": "0021",
+      "start_index": 29,
+      "end_index": 29,
+      "nodes": [
+        {
+          "title": "ITEM 5. MARKET FOR REGISTRANT'S COMMON EQUITY, RELATED STOCKHOLDER MATTERS AND ISSUER PURCHASES OF EQUITY SECURITIES",
+          "node_id": "0022",
+          "start_index": 29,
+          "end_index": 30,
+          "nodes": [
+            {
+              "title": "PERFORMANCE GRAPH",
+              "node_id": "0023",
+              "start_index": 30,
+              "end_index": 32
+            }
+          ]
+        },
+        {
+          "title": "ITEM 6. RESERVED",
+          "node_id": "0024",
+          "start_index": 31,
+          "end_index": 31
+        },
+        {
+          "title": "ITEM 7. MANAGEMENT'S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND RESULTS OF OPERATIONS",
+          "node_id": "0025",
+          "start_index": 32,
+          "end_index": 52,
+          "nodes": [
+            {
+              "title": "OVERVIEW",
+              "node_id": "0026",
+              "start_index": 32,
+              "end_index": 32
+            },
+            {
+              "title": "FINANCIAL HIGHLIGHTS",
+              "node_id": "0027",
+              "start_index": 32,
+              "end_index": 32
+            },
+            {
+              "title": "CURRENT ECONOMIC CONDITIONS AND MARKET DYNAMICS",
+              "node_id": "0028",
+              "start_index": 32,
+              "end_index": 33
+            },
+            {
+              "title": "RECENT DEVELOPMENTS",
+              "node_id": "0029",
+              "start_index": 33,
+              "end_index": 33
+            },
+            {
+              "title": "USE OF NON-GAAP FINANCIAL MEASURES",
+              "node_id": "0030",
+              "start_index": 33,
+              "end_index": 34
+            },
+            {
+              "title": "COMPARABLE STORE SALES",
+              "node_id": "0031",
+              "start_index": 34,
+              "end_index": 34
+            },
+            {
+              "title": "RESULTS OF OPERATIONS",
+              "node_id": "0032",
+              "start_index": 35,
+              "end_index": 35,
+              "nodes": [
+                {
+                  "title": "CONSOLIDATED OPERATING RESULTS",
+                  "node_id": "0033",
+                  "start_index": 36,
+                  "end_index": 36,
+                  "nodes": [
+                    {
+                      "title": "REVENUES",
+                      "node_id": "0034",
+                      "start_index": 36,
+                      "end_index": 36,
+                      "nodes": [
+                        {
+                          "title": "FISCAL 2023 NIKE BRAND REVENUE HIGHLIGHTS",
+                          "node_id": "0035",
+                          "start_index": 37,
+                          "end_index": 37
+                        }
+                      ]
+                    },
+                    {
+                      "title": "GROSS MARGIN",
+                      "node_id": "0036",
+                      "start_index": 38,
+                      "end_index": 38
+                    },
+                    {
+                      "title": "TOTAL SELLING AND ADMINISTRATIVE EXPENSE",
+                      "node_id": "0037",
+                      "start_index": 38,
+                      "end_index": 38
+                    },
+                    {
+                      "title": "OTHER (INCOME) EXPENSE, NET",
+                      "node_id": "0038",
+                      "start_index": 39,
+                      "end_index": 39
+                    },
+                    {
+                      "title": "INCOME TAXES",
+                      "node_id": "0039",
+                      "start_index": 39,
+                      "end_index": 39
+                    }
+                  ]
+                },
+                {
+                  "title": "OPERATING SEGMENTS",
+                  "node_id": "0040",
+                  "start_index": 40,
+                  "end_index": 41,
+                  "nodes": [
+                    {
+                      "title": "NORTH AMERICA",
+                      "node_id": "0041",
+                      "start_index": 41,
+                      "end_index": 41,
+                      "nodes": [
+                        {
+                          "title": "FISCAL 2023 COMPARED TO FISCAL 2022",
+                          "node_id": "0042",
+                          "start_index": 41,
+                          "end_index": 41
+                        }
+                      ]
+                    },
+                    {
+                      "title": "EUROPE, MIDDLE EAST & AFRICA",
+                      "node_id": "0043",
+                      "start_index": 42,
+                      "end_index": 42,
+                      "nodes": [
+                        {
+                          "title": "FISCAL 2023 COMPARED TO FISCAL 2022",
+                          "node_id": "0044",
+                          "start_index": 42,
+                          "end_index": 43
+                        }
+                      ]
+                    },
+                    {
+                      "title": "GREATER CHINA",
+                      "node_id": "0045",
+                      "start_index": 43,
+                      "end_index": 43,
+                      "nodes": [
+                        {
+                          "title": "FISCAL 2023 COMPARED TO FISCAL 2022",
+                          "node_id": "0046",
+                          "start_index": 43,
+                          "end_index": 43
+                        }
+                      ]
+                    },
+                    {
+                      "title": "ASIA PACIFIC & LATIN AMERICA",
+                      "node_id": "0047",
+                      "start_index": 44,
+                      "end_index": 44,
+                      "nodes": [
+                        {
+                          "title": "FISCAL 2023 COMPARED TO FISCAL 2022",
+                          "node_id": "0048",
+                          "start_index": 44,
+                          "end_index": 44
+                        }
+                      ]
+                    },
+                    {
+                      "title": "GLOBAL BRAND DIVISIONS",
+                      "node_id": "0049",
+                      "start_index": 45,
+                      "end_index": 45,
+                      "nodes": [
+                        {
+                          "title": "FISCAL 2023 COMPARED TO FISCAL 2022",
+                          "node_id": "0050",
+                          "start_index": 45,
+                          "end_index": 45
+                        }
+                      ]
+                    },
+                    {
+                      "title": "CONVERSE",
+                      "node_id": "0051",
+                      "start_index": 45,
+                      "end_index": 45,
+                      "nodes": [
+                        {
+                          "title": "FISCAL 2023 COMPARED TO FISCAL 2022",
+                          "node_id": "0052",
+                          "start_index": 45,
+                          "end_index": 45
+                        }
+                      ]
+                    },
+                    {
+                      "title": "CORPORATE",
+                      "node_id": "0053",
+                      "start_index": 46,
+                      "end_index": 46,
+                      "nodes": [
+                        {
+                          "title": "FISCAL 2023 COMPARED TO FISCAL 2022",
+                          "node_id": "0054",
+                          "start_index": 46,
+                          "end_index": 46
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "title": "FOREIGN CURRENCY EXPOSURES AND HEDGING PRACTICES",
+              "node_id": "0055",
+              "start_index": 46,
+              "end_index": 46,
+              "nodes": [
+                {
+                  "title": "OVERVIEW",
+                  "node_id": "0056",
+                  "start_index": 46,
+                  "end_index": 47
+                },
+                {
+                  "title": "TRANSACTIONAL EXPOSURES",
+                  "node_id": "0057",
+                  "start_index": 47,
+                  "end_index": 47
+                },
+                {
+                  "title": "MANAGING TRANSACTIONAL EXPOSURES",
+                  "node_id": "0058",
+                  "start_index": 47,
+                  "end_index": 48
+                },
+                {
+                  "title": "TRANSLATIONAL EXPOSURES",
+                  "node_id": "0059",
+                  "start_index": 48,
+                  "end_index": 48
+                },
+                {
+                  "title": "MANAGING TRANSLATIONAL EXPOSURES",
+                  "node_id": "0060",
+                  "start_index": 48,
+                  "end_index": 48
+                },
+                {
+                  "title": "NET INVESTMENTS IN FOREIGN SUBSIDIARIES",
+                  "node_id": "0061",
+                  "start_index": 48,
+                  "end_index": 48
+                }
+              ]
+            },
+            {
+              "title": "LIQUIDITY AND CAPITAL RESOURCES",
+              "node_id": "0062",
+              "start_index": 48,
+              "end_index": 48,
+              "nodes": [
+                {
+                  "title": "CASH FLOW ACTIVITY",
+                  "node_id": "0063",
+                  "start_index": 48,
+                  "end_index": 49
+                },
+                {
+                  "title": "CAPITAL RESOURCES",
+                  "node_id": "0064",
+                  "start_index": 49,
+                  "end_index": 50
+                }
+              ]
+            },
+            {
+              "title": "OFF-BALANCE SHEET ARRANGEMENTS",
+              "node_id": "0065",
+              "start_index": 50,
+              "end_index": 50
+            },
+            {
+              "title": "NEW ACCOUNTING PRONOUNCEMENTS",
+              "node_id": "0066",
+              "start_index": 50,
+              "end_index": 51
+            },
+            {
+              "title": "CRITICAL ACCOUNTING ESTIMATES",
+              "node_id": "0067",
+              "start_index": 51,
+              "end_index": 51,
+              "nodes": [
+                {
+                  "title": "SALES-RELATED RESERVES",
+                  "node_id": "0068",
+                  "start_index": 51,
+                  "end_index": 51
+                },
+                {
+                  "title": "INVENTORY RESERVES",
+                  "node_id": "0069",
+                  "start_index": 51,
+                  "end_index": 51
+                },
+                {
+                  "title": "HEDGE ACCOUNTING FOR DERIVATIVES",
+                  "node_id": "0070",
+                  "start_index": 51,
+                  "end_index": 51
+                },
+                {
+                  "title": "INCOME TAXES",
+                  "node_id": "0071",
+                  "start_index": 52,
+                  "end_index": 52
+                },
+                {
+                  "title": "OTHER CONTINGENCIES",
+                  "node_id": "0072",
+                  "start_index": 52,
+                  "end_index": 61
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "ITEM 7A. QUANTITATIVE AND QUALITATIVE DISCLOSURES ABOUT MARKET RISK",
+          "node_id": "0073",
+          "start_index": 53,
+          "end_index": 54
+        },
+        {
+          "title": "ITEM 8. FINANCIAL STATEMENTS AND SUPPLEMENTARY DATA",
+          "node_id": "0074",
+          "start_index": 55,
+          "end_index": 56,
+          "nodes": [
+            {
+              "title": "MANAGEMENT'S ANNUAL REPORT ON INTERNAL CONTROL OVER FINANCIAL REPORTING",
+              "node_id": "0075",
+              "start_index": 56,
+              "end_index": 56
+            },
+            {
+              "title": "Report of Independent Registered Public Accounting Firm",
+              "node_id": "0076",
+              "start_index": 57,
+              "end_index": 58
+            },
+            {
+              "title": "NIKE, INC. CONSOLIDATED STATEMENTS OF INCOME",
+              "node_id": "0077",
+              "start_index": 59,
+              "end_index": 59
+            },
+            {
+              "title": "NIKE, INC. CONSOLIDATED STATEMENTS OF COMPREHENSIVE INCOME",
+              "node_id": "0078",
+              "start_index": 60,
+              "end_index": 60
+            },
+            {
+              "title": "NIKE, INC. CONSOLIDATED BALANCE SHEETS",
+              "node_id": "0079",
+              "start_index": 61,
+              "end_index": 61
+            },
+            {
+              "title": "NIKE, INC. CONSOLIDATED STATEMENTS OF CASH FLOWS",
+              "node_id": "0080",
+              "start_index": 62,
+              "end_index": 62
+            },
+            {
+              "title": "NIKE, INC. CONSOLIDATED STATEMENTS OF SHAREHOLDERS' EQUITY",
+              "node_id": "0081",
+              "start_index": 63,
+              "end_index": 63
+            },
+            {
+              "title": "NOTES TO CONSOLIDATED FINANCIAL STATEMENTS",
+              "node_id": "0082",
+              "start_index": 64,
+              "end_index": 64,
+              "nodes": [
+                {
+                  "title": "NOTE 1 \u2014 SUMMARY OF SIGNIFICANT ACCOUNTING POLICIES",
+                  "node_id": "0083",
+                  "start_index": 65,
+                  "end_index": 70
+                },
+                {
+                  "title": "NOTE 2 \u2014 PROPERTY, PLANT AND EQUIPMENT",
+                  "node_id": "0084",
+                  "start_index": 71,
+                  "end_index": 71
+                },
+                {
+                  "title": "NOTE 3 \u2014 ACCRUED LIABILITIES",
+                  "node_id": "0085",
+                  "start_index": 71,
+                  "end_index": 71
+                },
+                {
+                  "title": "NOTE 4 \u2014 FAIR VALUE MEASUREMENTS",
+                  "node_id": "0086",
+                  "start_index": 72,
+                  "end_index": 73
+                },
+                {
+                  "title": "NOTE 5 \u2014 SHORT-TERM BORROWINGS AND CREDIT LINES",
+                  "node_id": "0087",
+                  "start_index": 74,
+                  "end_index": 74
+                },
+                {
+                  "title": "NOTE 6 \u2014 LONG-TERM DEBT",
+                  "node_id": "0088",
+                  "start_index": 75,
+                  "end_index": 75
+                },
+                {
+                  "title": "NOTE 7 \u2014 INCOME TAXES",
+                  "node_id": "0089",
+                  "start_index": 76,
+                  "end_index": 78
+                },
+                {
+                  "title": "NOTE 8 \u2014 REDEEMABLE PREFERRED STOCK",
+                  "node_id": "0090",
+                  "start_index": 78,
+                  "end_index": 78
+                },
+                {
+                  "title": "NOTE 9 \u2014 COMMON STOCK AND STOCK-BASED COMPENSATION",
+                  "node_id": "0091",
+                  "start_index": 78,
+                  "end_index": 78,
+                  "nodes": [
+                    {
+                      "title": "COMMON STOCK",
+                      "node_id": "0092",
+                      "start_index": 78,
+                      "end_index": 78
+                    },
+                    {
+                      "title": "STOCK-BASED COMPENSATION",
+                      "node_id": "0093",
+                      "start_index": 79,
+                      "end_index": 79,
+                      "nodes": [
+                        {
+                          "title": "STOCK OPTIONS",
+                          "node_id": "0094",
+                          "start_index": 79,
+                          "end_index": 80
+                        },
+                        {
+                          "title": "EMPLOYEE STOCK PURCHASE PLANS",
+                          "node_id": "0095",
+                          "start_index": 80,
+                          "end_index": 80
+                        },
+                        {
+                          "title": "RESTRICTED STOCK AND RESTRICTED STOCK UNITS",
+                          "node_id": "0096",
+                          "start_index": 80,
+                          "end_index": 80
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "title": "NOTE 10 \u2014 EARNINGS PER SHARE",
+                  "node_id": "0097",
+                  "start_index": 81,
+                  "end_index": 81
+                },
+                {
+                  "title": "NOTE 11 \u2014 BENEFIT PLANS",
+                  "node_id": "0098",
+                  "start_index": 81,
+                  "end_index": 81
+                },
+                {
+                  "title": "NOTE 12 \u2014 RISK MANAGEMENT AND DERIVATIVES",
+                  "node_id": "0099",
+                  "start_index": 81,
+                  "end_index": 83,
+                  "nodes": [
+                    {
+                      "title": "CASH FLOW HEDGES",
+                      "node_id": "0100",
+                      "start_index": 83,
+                      "end_index": 84
+                    },
+                    {
+                      "title": "FAIR VALUE HEDGES",
+                      "node_id": "0101",
+                      "start_index": 84,
+                      "end_index": 84
+                    },
+                    {
+                      "title": "NET INVESTMENT HEDGES",
+                      "node_id": "0102",
+                      "start_index": 84,
+                      "end_index": 84
+                    },
+                    {
+                      "title": "UNDESIGNATED DERIVATIVE INSTRUMENTS",
+                      "node_id": "0103",
+                      "start_index": 84,
+                      "end_index": 84
+                    },
+                    {
+                      "title": "CREDIT RISK",
+                      "node_id": "0104",
+                      "start_index": 84,
+                      "end_index": 84
+                    }
+                  ]
+                },
+                {
+                  "title": "NOTE 13 \u2014 ACCUMULATED OTHER COMPREHENSIVE INCOME (LOSS)",
+                  "node_id": "0105",
+                  "start_index": 85,
+                  "end_index": 86
+                },
+                {
+                  "title": "NOTE 14 \u2014 REVENUES",
+                  "node_id": "0106",
+                  "start_index": 87,
+                  "end_index": 87,
+                  "nodes": [
+                    {
+                      "title": "DISAGGREGATION OF REVENUES",
+                      "node_id": "0107",
+                      "start_index": 87,
+                      "end_index": 88
+                    },
+                    {
+                      "title": "SALES-RELATED RESERVES",
+                      "node_id": "0108",
+                      "start_index": 88,
+                      "end_index": 88
+                    }
+                  ]
+                },
+                {
+                  "title": "NOTE 15 \u2014 OPERATING SEGMENTS AND RELATED INFORMATION",
+                  "node_id": "0109",
+                  "start_index": 88,
+                  "end_index": 91,
+                  "nodes": [
+                    {
+                      "title": "REVENUES AND LONG-LIVED ASSETS BY GEOGRAPHIC AREA",
+                      "node_id": "0110",
+                      "start_index": 91,
+                      "end_index": 91
+                    }
+                  ]
+                },
+                {
+                  "title": "NOTE 16 \u2014 COMMITMENTS AND CONTINGENCIES",
+                  "node_id": "0111",
+                  "start_index": 92,
+                  "end_index": 92,
+                  "nodes": [
+                    {
+                      "title": "BELGIAN CUSTOMS CLAIM",
+                      "node_id": "0112",
+                      "start_index": 92,
+                      "end_index": 92
+                    }
+                  ]
+                },
+                {
+                  "title": "NOTE 17 \u2014 LEASES",
+                  "node_id": "0113",
+                  "start_index": 92,
+                  "end_index": 93
+                },
+                {
+                  "title": "NOTE 18 \u2014 ACQUISITIONS AND DIVESTITURES",
+                  "node_id": "0114",
+                  "start_index": 93,
+                  "end_index": 93,
+                  "nodes": [
+                    {
+                      "title": "ACQUISITIONS",
+                      "node_id": "0115",
+                      "start_index": 93,
+                      "end_index": 93
+                    },
+                    {
+                      "title": "DIVESTITURES",
+                      "node_id": "0116",
+                      "start_index": 93,
+                      "end_index": 93
+                    },
+                    {
+                      "title": "OTHER DIVESTITURES",
+                      "node_id": "0117",
+                      "start_index": 93,
+                      "end_index": 93
+                    }
+                  ]
+                },
+                {
+                  "title": "NOTE 19 \u2014 RESTRUCTURING",
+                  "node_id": "0118",
+                  "start_index": 94,
+                  "end_index": 94
+                }
+              ]
+            },
+            {
+              "title": "ITEM 9. CHANGES IN AND DISAGREEMENTS WITH ACCOUNTANTS ON ACCOUNTING AND FINANCIAL DISCLOSURE",
+              "node_id": "0119",
+              "start_index": 95,
+              "end_index": 95
+            },
+            {
+              "title": "ITEM 9A. CONTROLS AND PROCEDURES",
+              "node_id": "0120",
+              "start_index": 95,
+              "end_index": 95
+            },
+            {
+              "title": "ITEM 9B. OTHER INFORMATION",
+              "node_id": "0121",
+              "start_index": 95,
+              "end_index": 95
+            },
+            {
+              "title": "ITEM 9C. DISCLOSURE REGARDING FOREIGN JURISDICTIONS THAT PREVENT INSPECTIONS",
+              "node_id": "0122",
+              "start_index": 95,
+              "end_index": 95
+            }
+          ]
+        },
+        {
+          "title": "ITEM 9. CHANGES IN AND DISAGREEMENTS WITH ACCOUNTANTS ON ACCOUNTING AND FINANCIAL DISCLOSURE",
+          "node_id": "0123",
+          "start_index": 95,
+          "end_index": 95
+        },
+        {
+          "title": "ITEM 9A. CONTROLS AND PROCEDURES",
+          "node_id": "0124",
+          "start_index": 95,
+          "end_index": 95
+        },
+        {
+          "title": "ITEM 9B. OTHER INFORMATION",
+          "node_id": "0125",
+          "start_index": 95,
+          "end_index": 95
+        },
+        {
+          "title": "ITEM 9C. DISCLOSURE REGARDING FOREIGN JURISDICTIONS THAT PREVENT INSPECTIONS",
+          "node_id": "0126",
+          "start_index": 95,
+          "end_index": 95
+        }
+      ]
+    },
+    {
+      "title": "PART III",
+      "node_id": "0127",
+      "start_index": 96,
+      "end_index": 96,
+      "nodes": [
+        {
+          "title": "ITEM 10. DIRECTORS, EXECUTIVE OFFICERS AND CORPORATE GOVERNANCE",
+          "node_id": "0128",
+          "start_index": 96,
+          "end_index": 96
+        },
+        {
+          "title": "ITEM 11. EXECUTIVE COMPENSATION",
+          "node_id": "0129",
+          "start_index": 96,
+          "end_index": 96
+        },
+        {
+          "title": "ITEM 12. SECURITY OWNERSHIP OF CERTAIN BENEFICIAL OWNERS AND MANAGEMENT AND RELATED STOCKHOLDER MATTERS",
+          "node_id": "0130",
+          "start_index": 96,
+          "end_index": 96
+        },
+        {
+          "title": "ITEM 13. CERTAIN RELATIONSHIPS AND RELATED TRANSACTIONS AND DIRECTOR INDEPENDENCE",
+          "node_id": "0131",
+          "start_index": 96,
+          "end_index": 96
+        },
+        {
+          "title": "ITEM 14. PRINCIPAL ACCOUNTANT FEES AND SERVICES",
+          "node_id": "0132",
+          "start_index": 96,
+          "end_index": 96
+        }
+      ]
+    },
+    {
+      "title": "PART IV",
+      "node_id": "0133",
+      "start_index": 97,
+      "end_index": 97,
+      "nodes": [
+        {
+          "title": "ITEM 15. EXHIBITS AND FINANCIAL STATEMENT SCHEDULES",
+          "node_id": "0134",
+          "start_index": 97,
+          "end_index": 100
+        },
+        {
+          "title": "ITEM 16. FORM 10-K SUMMARY",
+          "node_id": "0135",
+          "start_index": 101,
+          "end_index": 102
+        },
+        {
+          "title": "SIGNATURES",
+          "node_id": "0136",
+          "start_index": 103,
+          "end_index": 29
+        }
+      ]
+    }
+  ]
+}
