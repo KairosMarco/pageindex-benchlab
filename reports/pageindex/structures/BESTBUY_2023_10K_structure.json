@@ -1,0 +1,335 @@
+{
+  "doc_name": "BESTBUY_2023_10K.pdf",
+  "structure": [
+    {
+      "title": "Preface",
+      "node_id": "0000",
+      "start_index": 1,
+      "end_index": 3
+    },
+    {
+      "title": "PART I",
+      "node_id": "0001",
+      "start_index": 4,
+      "end_index": 4,
+      "nodes": [
+        {
+          "title": "Item 1. Business.",
+          "node_id": "0002",
+          "start_index": 4,
+          "end_index": 8
+        },
+        {
+          "title": "Item 1A. Risk Factors.",
+          "node_id": "0003",
+          "start_index": 8,
+          "end_index": 18
+        },
+        {
+          "title": "Item 1B. Unresolved Staff Comments.",
+          "node_id": "0004",
+          "start_index": 18,
+          "end_index": 18
+        },
+        {
+          "title": "Item 2. Properties.",
+          "node_id": "0005",
+          "start_index": 19,
+          "end_index": 20
+        },
+        {
+          "title": "Item 3. Legal Proceedings.",
+          "node_id": "0006",
+          "start_index": 20,
+          "end_index": 20
+        },
+        {
+          "title": "Item 4. Mine Safety Disclosures.",
+          "node_id": "0007",
+          "start_index": 20,
+          "end_index": 20
+        }
+      ]
+    },
+    {
+      "title": "Information about our Executive Officers.",
+      "node_id": "0008",
+      "start_index": 20,
+      "end_index": 21
+    },
+    {
+      "title": "PART II",
+      "node_id": "0009",
+      "start_index": 21,
+      "end_index": 21,
+      "nodes": [
+        {
+          "title": "Item 5. Market for Registrant's Common Equity, Related Stockholder Matters and Issuer Purchases of Equity Securities.",
+          "node_id": "0010",
+          "start_index": 21,
+          "end_index": 22
+        },
+        {
+          "title": "Item 6. [Reserved].",
+          "node_id": "0011",
+          "start_index": 22,
+          "end_index": 22
+        },
+        {
+          "title": "Item 7. Management's Discussion and Analysis of Financial Condition and Results of Operations.",
+          "node_id": "0012",
+          "start_index": 23,
+          "end_index": 33
+        },
+        {
+          "title": "Item 7A. Quantitative and Qualitative Disclosures About Market Risk.",
+          "node_id": "0013",
+          "start_index": 33,
+          "end_index": 34
+        },
+        {
+          "title": "Item 8. Financial Statements and Supplementary Data.",
+          "node_id": "0014",
+          "start_index": 35,
+          "end_index": 35,
+          "nodes": [
+            {
+              "title": "Management's Report on the Consolidated Financial Statements",
+              "node_id": "0015",
+              "start_index": 35,
+              "end_index": 35
+            },
+            {
+              "title": "Management's Report on Internal Control Over Financial Reporting",
+              "node_id": "0016",
+              "start_index": 35,
+              "end_index": 35
+            },
+            {
+              "title": "REPORT OF INDEPENDENT REGISTERED PUBLIC ACCOUNTING FIRM",
+              "node_id": "0017",
+              "start_index": 36,
+              "end_index": 37
+            },
+            {
+              "title": "REPORT OF INDEPENDENT REGISTERED PUBLIC ACCOUNTING FIRM",
+              "node_id": "0018",
+              "start_index": 38,
+              "end_index": 38
+            },
+            {
+              "title": "Consolidated Balance Sheets",
+              "node_id": "0019",
+              "start_index": 39,
+              "end_index": 39
+            },
+            {
+              "title": "Consolidated Statements of Earnings",
+              "node_id": "0020",
+              "start_index": 40,
+              "end_index": 40
+            },
+            {
+              "title": "Consolidated Statements of Comprehensive Income",
+              "node_id": "0021",
+              "start_index": 41,
+              "end_index": 41
+            },
+            {
+              "title": "Consolidated Statements of Cash Flows",
+              "node_id": "0022",
+              "start_index": 42,
+              "end_index": 42
+            },
+            {
+              "title": "Consolidated Statements of Changes in Shareholders' Equity",
+              "node_id": "0023",
+              "start_index": 43,
+              "end_index": 43
+            },
+            {
+              "title": "Notes to Consolidated Financial Statements",
+              "node_id": "0024",
+              "start_index": 44,
+              "end_index": 44,
+              "nodes": [
+                {
+                  "title": "1. Summary of Significant Accounting Policies",
+                  "node_id": "0025",
+                  "start_index": 44,
+                  "end_index": 51
+                },
+                {
+                  "title": "2. Acquisitions",
+                  "node_id": "0026",
+                  "start_index": 51,
+                  "end_index": 51
+                },
+                {
+                  "title": "3. Restructuring",
+                  "node_id": "0027",
+                  "start_index": 51,
+                  "end_index": 52
+                },
+                {
+                  "title": "4. Goodwill and Intangible Assets",
+                  "node_id": "0028",
+                  "start_index": 53,
+                  "end_index": 53
+                },
+                {
+                  "title": "5. Fair Value Measurements",
+                  "node_id": "0029",
+                  "start_index": 53,
+                  "end_index": 54
+                },
+                {
+                  "title": "6. Derivative Instruments",
+                  "node_id": "0030",
+                  "start_index": 54,
+                  "end_index": 54
+                },
+                {
+                  "title": "7. Leases",
+                  "node_id": "0031",
+                  "start_index": 54,
+                  "end_index": 55
+                },
+                {
+                  "title": "8. Debt",
+                  "node_id": "0032",
+                  "start_index": 55,
+                  "end_index": 56
+                },
+                {
+                  "title": "9. Shareholders\u2019 Equity",
+                  "node_id": "0033",
+                  "start_index": 56,
+                  "end_index": 59
+                },
+                {
+                  "title": "10. Revenue",
+                  "node_id": "0034",
+                  "start_index": 59,
+                  "end_index": 60
+                },
+                {
+                  "title": "11. Income Taxes",
+                  "node_id": "0035",
+                  "start_index": 60,
+                  "end_index": 62
+                },
+                {
+                  "title": "12. Benefit Plans",
+                  "node_id": "0036",
+                  "start_index": 62,
+                  "end_index": 62
+                },
+                {
+                  "title": "13. Contingencies and Commitments",
+                  "node_id": "0037",
+                  "start_index": 62,
+                  "end_index": 62
+                },
+                {
+                  "title": "14. Segment and Geographic Information",
+                  "node_id": "0038",
+                  "start_index": 62,
+                  "end_index": 63
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Item 9. Changes in and Disagreements With Accountants on Accounting and Financial Disclosure.",
+          "node_id": "0039",
+          "start_index": 64,
+          "end_index": 64
+        },
+        {
+          "title": "Item 9A. Controls and Procedures.",
+          "node_id": "0040",
+          "start_index": 64,
+          "end_index": 64
+        },
+        {
+          "title": "Item 9B. Other Information.",
+          "node_id": "0041",
+          "start_index": 64,
+          "end_index": 64
+        },
+        {
+          "title": "Item 9C. Disclosure Regarding Foreign Jurisdictions that Prevent Inspections.",
+          "node_id": "0042",
+          "start_index": 64,
+          "end_index": 64
+        }
+      ]
+    },
+    {
+      "title": "PART III",
+      "node_id": "0043",
+      "start_index": 64,
+      "end_index": 64,
+      "nodes": [
+        {
+          "title": "Item 10. Directors, Executive Officers and Corporate Governance.",
+          "node_id": "0044",
+          "start_index": 64,
+          "end_index": 64
+        },
+        {
+          "title": "Item 11. Executive Compensation.",
+          "node_id": "0045",
+          "start_index": 64,
+          "end_index": 64
+        },
+        {
+          "title": "Item 12. Security Ownership of Certain Beneficial Owners and Management and Related Stockholder Matters.",
+          "node_id": "0046",
+          "start_index": 65,
+          "end_index": 65
+        },
+        {
+          "title": "Item 13. Certain Relationships and Related Transactions, and Director Independence.",
+          "node_id": "0047",
+          "start_index": 65,
+          "end_index": 65
+        },
+        {
+          "title": "Item 14. Principal Accountant Fees and Services.",
+          "node_id": "0048",
+          "start_index": 65,
+          "end_index": 65
+        }
+      ]
+    },
+    {
+      "title": "PART IV",
+      "node_id": "0049",
+      "start_index": 65,
+      "end_index": 65,
+      "nodes": [
+        {
+          "title": "Item 15. Exhibit and Financial Statement Schedules.",
+          "node_id": "0050",
+          "start_index": 65,
+          "end_index": 67
+        },
+        {
+          "title": "Item 16. Form 10-K Summary.",
+          "node_id": "0051",
+          "start_index": 67,
+          "end_index": 67
+        }
+      ]
+    },
+    {
+      "title": "Signatures.",
+      "node_id": "0052",
+      "start_index": 68,
+      "end_index": 75
+    }
+  ]
+}

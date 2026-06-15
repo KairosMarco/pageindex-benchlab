@@ -25,8 +25,11 @@
   },
   {
     "doc_name": "AMD_2022_10K",
-    "status": "dry_run",
+    "status": "generated",
     "pdf_path": "datasets\\raw\\financebench\\pdfs\\AMD_2022_10K.pdf",
+    "structure_path": "reports\\pageindex\\structures\\AMD_2022_10K_structure.json",
+    "size_bytes": 13908,
+    "latency_ms": 616806,
     "command": [
       "D:\\pageindex-demo\\PageIndex\\.venv\\Scripts\\python.exe",
       "run_pageindex.py",
@@ -41,13 +44,18 @@
       "--toc-check-pages",
       "5",
       "--max-pages-per-node",
-      "8"
+      "8",
+      "--model",
+      "dashscope/qwen3.7-max"
     ]
   },
   {
     "doc_name": "BESTBUY_2023_10K",
-    "status": "dry_run",
+    "status": "generated",
     "pdf_path": "datasets\\raw\\financebench\\pdfs\\BESTBUY_2023_10K.pdf",
+    "structure_path": "reports\\pageindex\\structures\\BESTBUY_2023_10K_structure.json",
+    "size_bytes": 10116,
+    "latency_ms": 492602,
     "command": [
       "D:\\pageindex-demo\\PageIndex\\.venv\\Scripts\\python.exe",
       "run_pageindex.py",
@@ -62,13 +70,17 @@
       "--toc-check-pages",
       "5",
       "--max-pages-per-node",
-      "8"
+      "8",
+      "--model",
+      "dashscope/qwen3.7-max"
     ]
   },
   {
     "doc_name": "BOEING_2022_10K",
-    "status": "dry_run",
+    "status": "failed",
     "pdf_path": "datasets\\raw\\financebench\\pdfs\\BOEING_2022_10K.pdf",
+    "latency_ms": 1800018,
+    "error": "Command '['D:\\\\pageindex-demo\\\\PageIndex\\\\.venv\\\\Scripts\\\\python.exe', 'run_pageindex.py', '--pdf_path', 'D:\\\\pageindex-benchlab\\\\datasets\\\\raw\\\\financebench\\\\pdfs\\\\BOEING_2022_10K.pdf', '--if-add-node-summary', 'no', '--if-add-doc-description', 'no', '--if-add-node-text', 'no', '--toc-check-pages', '5', '--max-pages-per-node', '8', '--model', 'dashscope/qwen3.7-max']' timed out after 1800 seconds",
     "command": [
       "D:\\pageindex-demo\\PageIndex\\.venv\\Scripts\\python.exe",
       "run_pageindex.py",
@@ -83,13 +95,17 @@
       "--toc-check-pages",
       "5",
       "--max-pages-per-node",
-      "8"
+      "8",
+      "--model",
+      "dashscope/qwen3.7-max"
     ]
   },
   {
     "doc_name": "COSTCO_2021_10K",
-    "status": "dry_run",
+    "status": "failed",
     "pdf_path": "datasets\\raw\\financebench\\pdfs\\COSTCO_2021_10K.pdf",
+    "latency_ms": 175113,
+    "error": "Command '['D:\\\\pageindex-demo\\\\PageIndex\\\\.venv\\\\Scripts\\\\python.exe', 'run_pageindex.py', '--pdf_path', 'D:\\\\pageindex-benchlab\\\\datasets\\\\raw\\\\financebench\\\\pdfs\\\\COSTCO_2021_10K.pdf', '--if-add-node-summary', 'no', '--if-add-doc-description', 'no', '--if-add-node-text', 'no', '--toc-check-pages', '5', '--max-pages-per-node', '8', '--model', 'dashscope/qwen3.7-max']' returned non-zero exit status 1.",
     "command": [
       "D:\\pageindex-demo\\PageIndex\\.venv\\Scripts\\python.exe",
       "run_pageindex.py",
@@ -104,13 +120,17 @@
       "--toc-check-pages",
       "5",
       "--max-pages-per-node",
-      "8"
+      "8",
+      "--model",
+      "dashscope/qwen3.7-max"
     ]
   },
   {
     "doc_name": "JPMORGAN_2023Q2_10Q",
-    "status": "dry_run",
+    "status": "failed",
     "pdf_path": "datasets\\raw\\financebench\\pdfs\\JPMORGAN_2023Q2_10Q.pdf",
+    "latency_ms": 22952,
+    "error": "Command '['D:\\\\pageindex-demo\\\\PageIndex\\\\.venv\\\\Scripts\\\\python.exe', 'run_pageindex.py', '--pdf_path', 'D:\\\\pageindex-benchlab\\\\datasets\\\\raw\\\\financebench\\\\pdfs\\\\JPMORGAN_2023Q2_10Q.pdf', '--if-add-node-summary', 'no', '--if-add-doc-description', 'no', '--if-add-node-text', 'no', '--toc-check-pages', '5', '--max-pages-per-node', '8', '--model', 'dashscope/qwen3.7-max']' returned non-zero exit status 1.",
     "command": [
       "D:\\pageindex-demo\\PageIndex\\.venv\\Scripts\\python.exe",
       "run_pageindex.py",
@@ -125,13 +145,17 @@
       "--toc-check-pages",
       "5",
       "--max-pages-per-node",
-      "8"
+      "8",
+      "--model",
+      "dashscope/qwen3.7-max"
     ]
   },
   {
     "doc_name": "MICROSOFT_2016_10K",
-    "status": "dry_run",
+    "status": "failed",
     "pdf_path": "datasets\\raw\\financebench\\pdfs\\MICROSOFT_2016_10K.pdf",
+    "latency_ms": 15164,
+    "error": "Command '['D:\\\\pageindex-demo\\\\PageIndex\\\\.venv\\\\Scripts\\\\python.exe', 'run_pageindex.py', '--pdf_path', 'D:\\\\pageindex-benchlab\\\\datasets\\\\raw\\\\financebench\\\\pdfs\\\\MICROSOFT_2016_10K.pdf', '--if-add-node-summary', 'no', '--if-add-doc-description', 'no', '--if-add-node-text', 'no', '--toc-check-pages', '5', '--max-pages-per-node', '8', '--model', 'dashscope/qwen3.7-max']' returned non-zero exit status 1.",
     "command": [
       "D:\\pageindex-demo\\PageIndex\\.venv\\Scripts\\python.exe",
       "run_pageindex.py",
@@ -146,13 +170,17 @@
       "--toc-check-pages",
       "5",
       "--max-pages-per-node",
-      "8"
+      "8",
+      "--model",
+      "dashscope/qwen3.7-max"
     ]
   },
   {
     "doc_name": "NIKE_2023_10K",
-    "status": "dry_run",
+    "status": "failed",
     "pdf_path": "datasets\\raw\\financebench\\pdfs\\NIKE_2023_10K.pdf",
+    "latency_ms": 14042,
+    "error": "Command '['D:\\\\pageindex-demo\\\\PageIndex\\\\.venv\\\\Scripts\\\\python.exe', 'run_pageindex.py', '--pdf_path', 'D:\\\\pageindex-benchlab\\\\datasets\\\\raw\\\\financebench\\\\pdfs\\\\NIKE_2023_10K.pdf', '--if-add-node-summary', 'no', '--if-add-doc-description', 'no', '--if-add-node-text', 'no', '--toc-check-pages', '5', '--max-pages-per-node', '8', '--model', 'dashscope/qwen3.7-max']' returned non-zero exit status 1.",
     "command": [
       "D:\\pageindex-demo\\PageIndex\\.venv\\Scripts\\python.exe",
       "run_pageindex.py",
@@ -167,7 +195,9 @@
       "--toc-check-pages",
       "5",
       "--max-pages-per-node",
-      "8"
+      "8",
+      "--model",
+      "dashscope/qwen3.7-max"
     ]
   }
 ]
