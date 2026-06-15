@@ -14,6 +14,7 @@ Stage 1 means the repository now has enough structure to start running repeatabl
 - PageIndex tree output can be converted into the shared schema.
 - Evidence page evaluation logic exists.
 - Upstream PageIndex dependency issue draft exists.
+- FinanceBench MVP PDFs have a reproducible download script and local manifest.
 
 ## Current Ownership
 
@@ -113,6 +114,76 @@ Issue topic:
 requirements.txt dependency conflict: litellm==1.83.7 vs python-dotenv==1.2.2
 ```
 
+### MVP PDF Download
+
+Implemented in:
+
+```text
+scripts/download_mvp_pdfs.py
+```
+
+Local PDFs are downloaded to:
+
+```text
+datasets/raw/financebench/pdfs/
+```
+
+This directory is ignored by git. A manifest is committed at:
+
+```text
+reports/mvp_pdf_manifest.json
+```
+
+Current MVP set:
+
+```text
+12 questions
+11 unique PDFs
+```
+
+### PageIndex Batch Indexing Script
+
+Implemented in:
+
+```text
+scripts/run_pageindex_mvp.py
+```
+
+The script is ready, but full indexing requires a local model provider key such as:
+
+```text
+DASHSCOPE_API_KEY
+OPENAI_API_KEY
+```
+
+Dry-run command:
+
+```powershell
+python scripts\run_pageindex_mvp.py --dry-run --limit 3
+```
+
+Full command after setting a key:
+
+```powershell
+python scripts\run_pageindex_mvp.py
+```
+
+### PageIndex QA Adapter
+
+Implemented in:
+
+```text
+pipelines/pageindex/qa_adapter.py
+```
+
+Current mode:
+
+```text
+tree_node_selection + optional LLM answer generation
+```
+
+The adapter can select candidate PageIndex tree nodes for a question and either output selected citations with `--no-llm` or call an LLM through LiteLLM when a model and provider key are available.
+
 ## Next Stage 1 Work
 
 The next work should convert this setup into actual benchmark execution:
@@ -134,3 +205,6 @@ Stage 1 is complete when:
 - Evidence recall and citation precision are reported.
 - A Markdown benchmark report is generated under `reports/`.
 
+## Current Blocker
+
+Model-backed PageIndex indexing and QA require a provider API key in the current shell. The environment used for this update did not have `DASHSCOPE_API_KEY` or `OPENAI_API_KEY` set, so no paid model calls were run.

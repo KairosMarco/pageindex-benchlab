@@ -62,6 +62,8 @@ Completed:
 - PageIndex tree adapter exists in `pipelines/pageindex/adapter.py`.
 - Evidence page evaluator exists in `evaluators/evidence.py`.
 - Upstream PageIndex dependency issue draft exists in `docs/upstream-pageindex-dependency-issue.md`.
+- FinanceBench MVP PDFs can be downloaded with `scripts/download_mvp_pdfs.py`.
+- PageIndex batch indexing can be run with `scripts/run_pageindex_mvp.py` after setting a provider API key.
 
 Current owner: project owner. PH is on standby for later task assignment.
 
@@ -229,8 +231,9 @@ A GPU may become useful later for local LLMs, large embedding jobs, or large rer
 ## Next Actions
 
 1. Download PDFs for the 12 FinanceBench MVP questions.
-2. Run PageIndex indexing on those PDFs.
-3. Add the PageIndex question-answering retrieval step.
-4. Implement the Long-context baseline.
-5. Implement the Vector RAG + reranker baseline.
-6. Generate the first benchmark report.
+2. Set a fresh model provider API key locally.
+3. Run PageIndex indexing on those PDFs.
+4. Run the PageIndex question-answering retrieval step.
+5. Implement the Long-context baseline.
+6. Implement the Vector RAG + reranker baseline.
+7. Generate the first benchmark report.

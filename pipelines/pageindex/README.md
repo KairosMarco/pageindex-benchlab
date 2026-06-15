@@ -59,3 +59,30 @@ python -m pipelines.pageindex.adapter examples\pageindex-demo\q1-fy25-earnings_s
 ```
 
 The adapter converts PageIndex tree JSON into the shared `BenchmarkResult` schema. Full question answering is the next adapter iteration.
+
+## QA Adapter
+
+Implemented:
+
+```text
+pipelines/pageindex/qa_adapter.py
+```
+
+Current mode:
+
+```text
+tree_node_selection + optional LLM answer generation
+```
+
+No-LLM smoke mode:
+
+```powershell
+python pipelines\pageindex\qa_adapter.py --questions datasets\financebench\mvp_questions.jsonl --question-id fb_mvp_001 --structure reports\pageindex\structures\3M_2018_10K_structure.json --pdf datasets\raw\financebench\pdfs\3M_2018_10K.pdf --no-llm --output reports\pageindex\qa\fb_mvp_001.json
+```
+
+LLM mode requires a LiteLLM model string and provider API key:
+
+```powershell
+$env:DASHSCOPE_API_KEY="YOUR_NEW_KEY"
+python pipelines\pageindex\qa_adapter.py --questions datasets\financebench\mvp_questions.jsonl --question-id fb_mvp_001 --structure reports\pageindex\structures\3M_2018_10K_structure.json --pdf datasets\raw\financebench\pdfs\3M_2018_10K.pdf --model dashscope/qwen3.7-plus --output reports\pageindex\qa\fb_mvp_001.json
+```
