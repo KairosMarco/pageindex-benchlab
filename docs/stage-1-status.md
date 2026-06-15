@@ -171,7 +171,7 @@ python scripts\run_pageindex_mvp.py
 Current indexing status:
 
 ```text
-6 / 11 unique MVP PDFs have PageIndex structure outputs.
+7 / 11 unique MVP PDFs have PageIndex structure outputs.
 ```
 
 Generated structures:
@@ -182,6 +182,7 @@ reports/pageindex/structures/AMAZON_2017_10K_structure.json
 reports/pageindex/structures/AMCOR_2023Q4_EARNINGS_structure.json
 reports/pageindex/structures/AMD_2022_10K_structure.json
 reports/pageindex/structures/BESTBUY_2023_10K_structure.json
+reports/pageindex/structures/BOEING_2022_10K_structure.json
 reports/pageindex/structures/JOHNSON_JOHNSON_2023_8K_dated-2023-08-30_structure.json
 ```
 
@@ -194,17 +195,16 @@ reports/pageindex/indexing_manifest.json
 Latest indexing run:
 
 ```text
-Model: dashscope/qwen3.7-max
-Commit: e353d09
-Generated: AMD_2022_10K, BESTBUY_2023_10K
-Failed: BOEING_2022_10K, COSTCO_2021_10K, JPMORGAN_2023Q2_10Q, MICROSOFT_2016_10K, NIKE_2023_10K
+Model: dashscope/qwen3.7-max-2026-05-20
+Generated: BOEING_2022_10K
+Failed: COSTCO_2021_10K, JPMORGAN_2023Q2_10Q, MICROSOFT_2016_10K, NIKE_2023_10K
 ```
 
 Failure notes:
 
 ```text
-BOEING_2022_10K timed out after 1800 seconds.
-COSTCO, JPMORGAN, MICROSOFT, and NIKE failed after DashScope returned free-tier exhausted errors.
+COSTCO first hit DashScope request-limit errors.
+Later calls failed with DashScope account standing / overdue-payment access errors.
 ```
 
 ### PageIndex QA Adapter
@@ -227,7 +227,7 @@ The adapter can select candidate PageIndex tree nodes for a question and either 
 
 The next work should convert this setup into actual benchmark execution:
 
-1. Resume PageIndex indexing for the 5 failed MVP PDFs after provider quota is available.
+1. Resume PageIndex indexing for the 4 failed MVP PDFs after provider quota is available.
 2. Add a question-answering retrieval step for PageIndex.
 3. Implement Long-context baseline.
 4. Implement Vector RAG + reranker baseline.
@@ -247,10 +247,10 @@ Stage 1 is complete when:
 
 Model-backed PageIndex indexing and QA require a provider API key in the current shell and usable provider quota.
 
-The first 6 structures were generated with DashScope/Qwen. Further indexing is currently blocked because DashScope returned:
+The first 7 structures were generated with DashScope/Qwen. Further indexing is currently blocked because DashScope returned account access errors:
 
 ```text
-The free tier of the model has been exhausted. If you wish to continue access the model on a paid basis, please disable the "use free tier only" mode in the management console.
+Access denied, please make sure your account is in good standing.
 ```
 
-To continue, disable the provider-side "free tier only" setting for the key or provide a fresh key/model with available quota.
+To continue, resolve the DashScope account billing / standing issue or provide a fresh key/model with available quota.

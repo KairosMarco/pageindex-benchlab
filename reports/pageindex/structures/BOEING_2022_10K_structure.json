@@ -1,0 +1,1503 @@
+{
+  "doc_name": "BOEING_2022_10K.pdf",
+  "structure": [
+    {
+      "title": "Preface",
+      "node_id": "0000",
+      "start_index": 1,
+      "end_index": 3
+    },
+    {
+      "title": "PART I",
+      "node_id": "0001",
+      "start_index": 3,
+      "end_index": 3
+    },
+    {
+      "title": "Item 1. Business",
+      "node_id": "0002",
+      "start_index": 3,
+      "end_index": 8,
+      "nodes": [
+        {
+          "title": "Item 1A. Risk Factors",
+          "node_id": "0003",
+          "start_index": 8,
+          "end_index": 19
+        },
+        {
+          "title": "Item 1B. Unresolved Staff Comments",
+          "node_id": "0004",
+          "start_index": 19,
+          "end_index": 20
+        }
+      ]
+    },
+    {
+      "title": "Item 2. Properties",
+      "node_id": "0005",
+      "start_index": 20,
+      "end_index": 20
+    },
+    {
+      "title": "Item 3. Legal Proceedings",
+      "node_id": "0006",
+      "start_index": 20,
+      "end_index": 20
+    },
+    {
+      "title": "Item 4. Mine Safety Disclosures",
+      "node_id": "0007",
+      "start_index": 20,
+      "end_index": 21
+    },
+    {
+      "title": "PART II",
+      "node_id": "0008",
+      "start_index": 21,
+      "end_index": 21
+    },
+    {
+      "title": "Item 5. Market for Registrant\u2019s Common Equity, Related Stockholder Matters and Issuer Purchases of Equity Securities",
+      "node_id": "0009",
+      "start_index": 21,
+      "end_index": 21
+    },
+    {
+      "title": "Item 6. [Reserved]",
+      "node_id": "0010",
+      "start_index": 21,
+      "end_index": 22
+    },
+    {
+      "title": "Item 7. Management\u2019s Discussion and Analysis of Financial Condition and Results of Operations",
+      "node_id": "0011",
+      "start_index": 22,
+      "end_index": 22,
+      "nodes": [
+        {
+          "title": "Consolidated Results of Operations and Financial Condition",
+          "node_id": "0012",
+          "start_index": 22,
+          "end_index": 22,
+          "nodes": [
+            {
+              "title": "Overview",
+              "node_id": "0013",
+              "start_index": 22,
+              "end_index": 22
+            },
+            {
+              "title": "Business Environment and Trends",
+              "node_id": "0014",
+              "start_index": 22,
+              "end_index": 24
+            },
+            {
+              "title": "Consolidated Results of Operations",
+              "node_id": "0015",
+              "start_index": 24,
+              "end_index": 24,
+              "nodes": [
+                {
+                  "title": "Revenues",
+                  "node_id": "0016",
+                  "start_index": 24,
+                  "end_index": 25
+                },
+                {
+                  "title": "Loss From Operations",
+                  "node_id": "0017",
+                  "start_index": 25,
+                  "end_index": 26
+                },
+                {
+                  "title": "Unallocated Items, Eliminations and Other",
+                  "node_id": "0018",
+                  "start_index": 26,
+                  "end_index": 27
+                },
+                {
+                  "title": "Other Earnings Items",
+                  "node_id": "0019",
+                  "start_index": 27,
+                  "end_index": 27
+                }
+              ]
+            },
+            {
+              "title": "Total Costs and Expenses (\u201cCost of Sales\u201d)",
+              "node_id": "0020",
+              "start_index": 27,
+              "end_index": 28
+            },
+            {
+              "title": "Research and Development",
+              "node_id": "0021",
+              "start_index": 28,
+              "end_index": 29
+            },
+            {
+              "title": "Backlog",
+              "node_id": "0022",
+              "start_index": 29,
+              "end_index": 29
+            },
+            {
+              "title": "Additional Considerations",
+              "node_id": "0023",
+              "start_index": 29,
+              "end_index": 30
+            }
+          ]
+        },
+        {
+          "title": "Segment Results of Operations and Financial Condition",
+          "node_id": "0024",
+          "start_index": 30,
+          "end_index": 30,
+          "nodes": [
+            {
+              "title": "Commercial Airplanes",
+              "node_id": "0025",
+              "start_index": 30,
+              "end_index": 30,
+              "nodes": [
+                {
+                  "title": "Business Environment and Trends",
+                  "node_id": "0026",
+                  "start_index": 30,
+                  "end_index": 31
+                },
+                {
+                  "title": "Results of Operations",
+                  "node_id": "0027",
+                  "start_index": 31,
+                  "end_index": 31,
+                  "nodes": [
+                    {
+                      "title": "Revenues",
+                      "node_id": "0028",
+                      "start_index": 31,
+                      "end_index": 31
+                    },
+                    {
+                      "title": "Loss From Operations",
+                      "node_id": "0029",
+                      "start_index": 31,
+                      "end_index": 32
+                    }
+                  ]
+                },
+                {
+                  "title": "Backlog",
+                  "node_id": "0030",
+                  "start_index": 32,
+                  "end_index": 33
+                },
+                {
+                  "title": "Program Highlights",
+                  "node_id": "0031",
+                  "start_index": 33,
+                  "end_index": 36
+                },
+                {
+                  "title": "Additional Considerations",
+                  "node_id": "0032",
+                  "start_index": 36,
+                  "end_index": 37
+                }
+              ]
+            },
+            {
+              "title": "Defense, Space & Security",
+              "node_id": "0033",
+              "start_index": 37,
+              "end_index": 37,
+              "nodes": [
+                {
+                  "title": "Business Environment and Trends",
+                  "node_id": "0034",
+                  "start_index": 37,
+                  "end_index": 37
+                },
+                {
+                  "title": "Results of Operations",
+                  "node_id": "0035",
+                  "start_index": 37,
+                  "end_index": 38,
+                  "nodes": [
+                    {
+                      "title": "Revenues",
+                      "node_id": "0036",
+                      "start_index": 38,
+                      "end_index": 38
+                    },
+                    {
+                      "title": "(Loss)/earnings From Operations",
+                      "node_id": "0037",
+                      "start_index": 38,
+                      "end_index": 39
+                    }
+                  ]
+                },
+                {
+                  "title": "Backlog",
+                  "node_id": "0038",
+                  "start_index": 39,
+                  "end_index": 39
+                },
+                {
+                  "title": "Additional Considerations",
+                  "node_id": "0039",
+                  "start_index": 39,
+                  "end_index": 39
+                }
+              ]
+            },
+            {
+              "title": "Global Services",
+              "node_id": "0040",
+              "start_index": 39,
+              "end_index": 39,
+              "nodes": [
+                {
+                  "title": "Business Environment and Trends",
+                  "node_id": "0041",
+                  "start_index": 39,
+                  "end_index": 40
+                },
+                {
+                  "title": "Results of Operations",
+                  "node_id": "0042",
+                  "start_index": 40,
+                  "end_index": 40,
+                  "nodes": [
+                    {
+                      "title": "Revenues",
+                      "node_id": "0043",
+                      "start_index": 40,
+                      "end_index": 40
+                    },
+                    {
+                      "title": "Earnings From Operations",
+                      "node_id": "0044",
+                      "start_index": 40,
+                      "end_index": 41
+                    }
+                  ]
+                },
+                {
+                  "title": "Backlog",
+                  "node_id": "0045",
+                  "start_index": 41,
+                  "end_index": 41
+                }
+              ]
+            },
+            {
+              "title": "Boeing Capital",
+              "node_id": "0046",
+              "start_index": 41,
+              "end_index": 41,
+              "nodes": [
+                {
+                  "title": "Business Environment and Trends",
+                  "node_id": "0047",
+                  "start_index": 41,
+                  "end_index": 41
+                },
+                {
+                  "title": "Results of Operations",
+                  "node_id": "0048",
+                  "start_index": 41,
+                  "end_index": 41,
+                  "nodes": [
+                    {
+                      "title": "Revenues",
+                      "node_id": "0049",
+                      "start_index": 41,
+                      "end_index": 41
+                    },
+                    {
+                      "title": "Earnings From Operations",
+                      "node_id": "0050",
+                      "start_index": 41,
+                      "end_index": 42
+                    }
+                  ]
+                },
+                {
+                  "title": "Financial Position",
+                  "node_id": "0051",
+                  "start_index": 42,
+                  "end_index": 42
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Liquidity and Capital Resources",
+          "node_id": "0052",
+          "start_index": 42,
+          "end_index": 42,
+          "nodes": [
+            {
+              "title": "Cash Flow Summary",
+              "node_id": "0053",
+              "start_index": 42,
+              "end_index": 42,
+              "nodes": [
+                {
+                  "title": "Operating Activities",
+                  "node_id": "0054",
+                  "start_index": 42,
+                  "end_index": 43
+                },
+                {
+                  "title": "Investing Activities",
+                  "node_id": "0055",
+                  "start_index": 43,
+                  "end_index": 43
+                },
+                {
+                  "title": "Financing Activities",
+                  "node_id": "0056",
+                  "start_index": 43,
+                  "end_index": 45
+                }
+              ]
+            },
+            {
+              "title": "Capital Resources",
+              "node_id": "0057",
+              "start_index": 45,
+              "end_index": 46,
+              "nodes": [
+                {
+                  "title": "Pension and Other Postretirement Benefits",
+                  "node_id": "0058",
+                  "start_index": 46,
+                  "end_index": 46
+                },
+                {
+                  "title": "Purchase Obligations",
+                  "node_id": "0059",
+                  "start_index": 46,
+                  "end_index": 47
+                },
+                {
+                  "title": "Off-Balance Sheet Arrangements",
+                  "node_id": "0060",
+                  "start_index": 47,
+                  "end_index": 47
+                },
+                {
+                  "title": "Commercial Commitments",
+                  "node_id": "0061",
+                  "start_index": 47,
+                  "end_index": 47
+                },
+                {
+                  "title": "Contingent Obligations",
+                  "node_id": "0062",
+                  "start_index": 47,
+                  "end_index": 47,
+                  "nodes": [
+                    {
+                      "title": "Legal",
+                      "node_id": "0063",
+                      "start_index": 47,
+                      "end_index": 47
+                    },
+                    {
+                      "title": "Environmental Remediation",
+                      "node_id": "0064",
+                      "start_index": 47,
+                      "end_index": 47
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Non-GAAP Measures",
+          "node_id": "0065",
+          "start_index": 47,
+          "end_index": 47,
+          "nodes": [
+            {
+              "title": "Core Operating Loss, Core Operating Margin and Core Loss Per Share",
+              "node_id": "0066",
+              "start_index": 47,
+              "end_index": 49
+            },
+            {
+              "title": "Reconciliation of Non-GAAP Measures to GAAP Measures",
+              "node_id": "0067",
+              "start_index": 49,
+              "end_index": 50
+            }
+          ]
+        },
+        {
+          "title": "Critical Accounting Policies & Estimates",
+          "node_id": "0068",
+          "start_index": 50,
+          "end_index": 50,
+          "nodes": [
+            {
+              "title": "Accounting for Long-term Contracts",
+              "node_id": "0069",
+              "start_index": 50,
+              "end_index": 50
+            },
+            {
+              "title": "Program Accounting",
+              "node_id": "0070",
+              "start_index": 50,
+              "end_index": 51,
+              "nodes": [
+                {
+                  "title": "777X Program",
+                  "node_id": "0071",
+                  "start_index": 51,
+                  "end_index": 51
+                },
+                {
+                  "title": "787 Program",
+                  "node_id": "0072",
+                  "start_index": 51,
+                  "end_index": 52
+                }
+              ]
+            },
+            {
+              "title": "Pension Plans",
+              "node_id": "0073",
+              "start_index": 52,
+              "end_index": 52
+            },
+            {
+              "title": "Deferred Income Taxes \u2013 Valuation Allowance",
+              "node_id": "0074",
+              "start_index": 52,
+              "end_index": 53
+            }
+          ]
+        },
+        {
+          "title": "Item 7A. Quantitative and Qualitative Disclosures About Market Risk",
+          "node_id": "0075",
+          "start_index": 53,
+          "end_index": 53,
+          "nodes": [
+            {
+              "title": "Interest Rate Risk",
+              "node_id": "0076",
+              "start_index": 53,
+              "end_index": 53
+            },
+            {
+              "title": "Foreign Currency Exchange Rate Risk",
+              "node_id": "0077",
+              "start_index": 53,
+              "end_index": 53
+            },
+            {
+              "title": "Commodity Price Risk",
+              "node_id": "0078",
+              "start_index": 53,
+              "end_index": 53
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Item 8. Financial Statements and Supplementary Data",
+      "node_id": "0079",
+      "start_index": 54,
+      "end_index": 55,
+      "nodes": [
+        {
+          "title": "Consolidated Statements of Operations",
+          "node_id": "0080",
+          "start_index": 55,
+          "end_index": 56
+        },
+        {
+          "title": "Consolidated Statements of Comprehensive Income",
+          "node_id": "0081",
+          "start_index": 56,
+          "end_index": 57
+        },
+        {
+          "title": "Consolidated Statements of Financial Position",
+          "node_id": "0082",
+          "start_index": 57,
+          "end_index": 59
+        },
+        {
+          "title": "Consolidated Statements of Cash Flows",
+          "node_id": "0083",
+          "start_index": 59,
+          "end_index": 61
+        },
+        {
+          "title": "Consolidated Statements of Equity",
+          "node_id": "0084",
+          "start_index": 61,
+          "end_index": 62
+        },
+        {
+          "title": "Summary of Business Segment Data",
+          "node_id": "0085",
+          "start_index": 62,
+          "end_index": 63
+        },
+        {
+          "title": "Note 1 \u2013 Summary of Significant Accounting Policies",
+          "node_id": "0086",
+          "start_index": 63,
+          "end_index": 74
+        },
+        {
+          "title": "Note 2 \u2013 Goodwill and Acquired Intangibles",
+          "node_id": "0087",
+          "start_index": 74,
+          "end_index": 74
+        },
+        {
+          "title": "Note 3 \u2013 Earnings Per Share",
+          "node_id": "0088",
+          "start_index": 74,
+          "end_index": 76
+        },
+        {
+          "title": "Note 4 \u2013 Income Taxes",
+          "node_id": "0089",
+          "start_index": 76,
+          "end_index": 79
+        },
+        {
+          "title": "Note 5 \u2013 Accounts Receivable, net",
+          "node_id": "0090",
+          "start_index": 79,
+          "end_index": 80
+        },
+        {
+          "title": "Note 6 \u2013 Allowances for Losses on Financial Assets",
+          "node_id": "0091",
+          "start_index": 80,
+          "end_index": 80
+        },
+        {
+          "title": "Note 7 \u2013 Inventories",
+          "node_id": "0092",
+          "start_index": 80,
+          "end_index": 81
+        },
+        {
+          "title": "Note 8 \u2013 Contracts with Customers",
+          "node_id": "0093",
+          "start_index": 81,
+          "end_index": 82
+        },
+        {
+          "title": "Note 9 \u2013 Customer Financing",
+          "node_id": "0094",
+          "start_index": 82,
+          "end_index": 84
+        },
+        {
+          "title": "Note 10 \u2013 Property, Plant and Equipment",
+          "node_id": "0095",
+          "start_index": 84,
+          "end_index": 85
+        },
+        {
+          "title": "Note 11 \u2013 Investments",
+          "node_id": "0096",
+          "start_index": 85,
+          "end_index": 85
+        },
+        {
+          "title": "Note 12 \u2013 Leases",
+          "node_id": "0097",
+          "start_index": 85,
+          "end_index": 87
+        },
+        {
+          "title": "Note 13 \u2013 Liabilities, Commitments and Contingencies",
+          "node_id": "0098",
+          "start_index": 87,
+          "end_index": 92
+        },
+        {
+          "title": "Note 14 \u2013 Arrangements with Off-Balance Sheet Risk",
+          "node_id": "0099",
+          "start_index": 92,
+          "end_index": 93
+        },
+        {
+          "title": "Note 15 \u2013 Debt",
+          "node_id": "0100",
+          "start_index": 93,
+          "end_index": 94
+        },
+        {
+          "title": "Note 16 \u2013 Postretirement Plans",
+          "node_id": "0101",
+          "start_index": 94,
+          "end_index": 103
+        },
+        {
+          "title": "Note 17 \u2013 Share-Based Compensation and Other Compensation Arrangements",
+          "node_id": "0102",
+          "start_index": 103,
+          "end_index": 107
+        },
+        {
+          "title": "Note 18 \u2013 Shareholders\u2019 Equity",
+          "node_id": "0103",
+          "start_index": 107,
+          "end_index": 108
+        },
+        {
+          "title": "Note 19 \u2013 Derivative Financial Instruments",
+          "node_id": "0104",
+          "start_index": 108,
+          "end_index": 110
+        },
+        {
+          "title": "Note 20 \u2013 Fair Value Measurements",
+          "node_id": "0105",
+          "start_index": 110,
+          "end_index": 112
+        },
+        {
+          "title": "Note 21 \u2013 Legal Proceedings",
+          "node_id": "0106",
+          "start_index": 112,
+          "end_index": 113
+        },
+        {
+          "title": "Note 22 \u2013 Segment and Revenue Information",
+          "node_id": "0107",
+          "start_index": 113,
+          "end_index": 119
+        },
+        {
+          "title": "REPORT OF INDEPENDENT REGISTERED PUBLIC ACCOUNTING FIRM",
+          "node_id": "0108",
+          "start_index": 119,
+          "end_index": 124
+        },
+        {
+          "title": "REPORT OF INDEPENDENT REGISTERED PUBLIC ACCOUNTING FIRM",
+          "node_id": "0109",
+          "start_index": 124,
+          "end_index": 126
+        },
+        {
+          "title": "Item 9. Changes in and Disagreements with Accountants on Accounting and Financial Disclosure",
+          "node_id": "0110",
+          "start_index": 126,
+          "end_index": 126
+        },
+        {
+          "title": "Item 9A. Controls and Procedures",
+          "node_id": "0111",
+          "start_index": 126,
+          "end_index": 126
+        },
+        {
+          "title": "Item 9B. Other Information",
+          "node_id": "0112",
+          "start_index": 126,
+          "end_index": 126
+        },
+        {
+          "title": "Item 9C. Disclosure Regarding Foreign Jurisdictions that Prevent Inspections",
+          "node_id": "0113",
+          "start_index": 126,
+          "end_index": 126
+        }
+      ]
+    },
+    {
+      "title": "Item 9. Changes in and Disagreements With Accountants on Accounting and Financial Disclosure",
+      "node_id": "0114",
+      "start_index": 126,
+      "end_index": 126,
+      "nodes": [
+        {
+          "title": "Item 9A. Controls and Procedures",
+          "node_id": "0115",
+          "start_index": 126,
+          "end_index": 126
+        },
+        {
+          "title": "Item 9B. Other Information",
+          "node_id": "0116",
+          "start_index": 126,
+          "end_index": 126
+        },
+        {
+          "title": "Item 9C. Disclosure Regarding Foreign Jurisdictions that Prevent Inspections",
+          "node_id": "0117",
+          "start_index": 126,
+          "end_index": 127
+        }
+      ]
+    },
+    {
+      "title": "PART III",
+      "node_id": "0118",
+      "start_index": 127,
+      "end_index": 127
+    },
+    {
+      "title": "Item 10. Directors, Executive Officers and Corporate Governance",
+      "node_id": "0119",
+      "start_index": 127,
+      "end_index": 130
+    },
+    {
+      "title": "Item 11. Executive Compensation",
+      "node_id": "0120",
+      "start_index": 130,
+      "end_index": 131
+    },
+    {
+      "title": "Item 12. Security Ownership of Certain Beneficial Owners and Management and Related Stockholder Matters",
+      "node_id": "0121",
+      "start_index": 131,
+      "end_index": 131
+    },
+    {
+      "title": "Item 13. Certain Relationships and Related Transactions, and Director Independence",
+      "node_id": "0122",
+      "start_index": 131,
+      "end_index": 131
+    },
+    {
+      "title": "Item 14. Principal Accountant Fees and Services",
+      "node_id": "0123",
+      "start_index": 131,
+      "end_index": 132
+    },
+    {
+      "title": "PART IV",
+      "node_id": "0124",
+      "start_index": 132,
+      "end_index": 132
+    },
+    {
+      "title": "Item 15. Exhibits, Financial Statement Schedules",
+      "node_id": "0125",
+      "start_index": 132,
+      "end_index": 135
+    },
+    {
+      "title": "Item 16. Form 10-K Summary",
+      "node_id": "0126",
+      "start_index": 135,
+      "end_index": 136
+    },
+    {
+      "title": "Signatures",
+      "node_id": "0127",
+      "start_index": 136,
+      "end_index": 142,
+      "nodes": [
+        {
+          "title": "ARTICLE I Introduction",
+          "node_id": "0128",
+          "start_index": 142,
+          "end_index": 143
+        },
+        {
+          "title": "ARTICLE II Definitions",
+          "node_id": "0129",
+          "start_index": 144,
+          "end_index": 144,
+          "nodes": [
+            {
+              "title": "2.1 Account",
+              "node_id": "0130",
+              "start_index": 144,
+              "end_index": 144
+            },
+            {
+              "title": "2.2 Administrator",
+              "node_id": "0131",
+              "start_index": 144,
+              "end_index": 144
+            },
+            {
+              "title": "2.3 Affiliate or Subsidiary",
+              "node_id": "0132",
+              "start_index": 144,
+              "end_index": 144
+            },
+            {
+              "title": "2.4 Authorized Period of Absence",
+              "node_id": "0133",
+              "start_index": 144,
+              "end_index": 144
+            },
+            {
+              "title": "2.5 Base Pay",
+              "node_id": "0134",
+              "start_index": 144,
+              "end_index": 145
+            },
+            {
+              "title": "2.6 Base Pay Deferrals",
+              "node_id": "0135",
+              "start_index": 145,
+              "end_index": 145
+            },
+            {
+              "title": "2.7 Base Pay Rate",
+              "node_id": "0136",
+              "start_index": 145,
+              "end_index": 145
+            },
+            {
+              "title": "2.8 Beneficiary",
+              "node_id": "0137",
+              "start_index": 145,
+              "end_index": 145
+            },
+            {
+              "title": "2.9 Board of Directors",
+              "node_id": "0138",
+              "start_index": 145,
+              "end_index": 145
+            },
+            {
+              "title": "2.10 Boeing 401(k)",
+              "node_id": "0139",
+              "start_index": 145,
+              "end_index": 145
+            },
+            {
+              "title": "2.11 BSS Plan",
+              "node_id": "0140",
+              "start_index": 145,
+              "end_index": 145
+            },
+            {
+              "title": "2.12 Cash Incentive",
+              "node_id": "0141",
+              "start_index": 145,
+              "end_index": 146
+            },
+            {
+              "title": "2.13 Cash Incentive Deferrals",
+              "node_id": "0142",
+              "start_index": 146,
+              "end_index": 146
+            },
+            {
+              "title": "2.14 Code",
+              "node_id": "0143",
+              "start_index": 146,
+              "end_index": 146
+            },
+            {
+              "title": "2.15 Company",
+              "node_id": "0144",
+              "start_index": 146,
+              "end_index": 146
+            },
+            {
+              "title": "2.16 Company Contributions",
+              "node_id": "0145",
+              "start_index": 146,
+              "end_index": 146
+            },
+            {
+              "title": "2.17 Company Non-Elective Contributions",
+              "node_id": "0146",
+              "start_index": 146,
+              "end_index": 146
+            },
+            {
+              "title": "2.18 Compensation",
+              "node_id": "0147",
+              "start_index": 146,
+              "end_index": 146
+            },
+            {
+              "title": "2.19 Compensation Committee",
+              "node_id": "0148",
+              "start_index": 146,
+              "end_index": 146
+            },
+            {
+              "title": "2.20 Contribution Credit",
+              "node_id": "0149",
+              "start_index": 146,
+              "end_index": 146
+            },
+            {
+              "title": "2.21 Controlled Group",
+              "node_id": "0150",
+              "start_index": 146,
+              "end_index": 146
+            },
+            {
+              "title": "2.22 DC SERP Contributions",
+              "node_id": "0151",
+              "start_index": 147,
+              "end_index": 147
+            },
+            {
+              "title": "2.23 Deferral Election",
+              "node_id": "0152",
+              "start_index": 147,
+              "end_index": 147
+            },
+            {
+              "title": "2.24 DCP",
+              "node_id": "0153",
+              "start_index": 147,
+              "end_index": 147
+            },
+            {
+              "title": "2.25 DCP Deferrals",
+              "node_id": "0154",
+              "start_index": 147,
+              "end_index": 147
+            },
+            {
+              "title": "2.26 DCP Matching Contributions",
+              "node_id": "0155",
+              "start_index": 147,
+              "end_index": 147
+            },
+            {
+              "title": "2.27 Earnings Credits",
+              "node_id": "0156",
+              "start_index": 147,
+              "end_index": 147
+            },
+            {
+              "title": "2.28 Election Period",
+              "node_id": "0157",
+              "start_index": 147,
+              "end_index": 147
+            },
+            {
+              "title": "2.29 Eligibility Determination Date",
+              "node_id": "0158",
+              "start_index": 147,
+              "end_index": 148
+            },
+            {
+              "title": "2.30 Eligible Employee",
+              "node_id": "0159",
+              "start_index": 148,
+              "end_index": 148
+            },
+            {
+              "title": "2.31 Employee",
+              "node_id": "0160",
+              "start_index": 148,
+              "end_index": 148
+            },
+            {
+              "title": "2.32 Extra Deferrals",
+              "node_id": "0161",
+              "start_index": 148,
+              "end_index": 148
+            },
+            {
+              "title": "2.33 Executive SSP+ Company Contributions",
+              "node_id": "0162",
+              "start_index": 148,
+              "end_index": 148
+            },
+            {
+              "title": "2.34 Incentive Matching Contributions",
+              "node_id": "0163",
+              "start_index": 148,
+              "end_index": 148
+            },
+            {
+              "title": "2.35 Newly Eligible",
+              "node_id": "0164",
+              "start_index": 148,
+              "end_index": 149
+            },
+            {
+              "title": "2.36 Participant",
+              "node_id": "0165",
+              "start_index": 149,
+              "end_index": 149
+            },
+            {
+              "title": "2.37 Participant Deferrals",
+              "node_id": "0166",
+              "start_index": 149,
+              "end_index": 149
+            },
+            {
+              "title": "2.38 Performance Awards",
+              "node_id": "0167",
+              "start_index": 149,
+              "end_index": 149
+            },
+            {
+              "title": "2.39 Plan",
+              "node_id": "0168",
+              "start_index": 149,
+              "end_index": 149
+            },
+            {
+              "title": "2.40 Plan Year",
+              "node_id": "0169",
+              "start_index": 149,
+              "end_index": 149
+            },
+            {
+              "title": "2.41 PVP",
+              "node_id": "0170",
+              "start_index": 149,
+              "end_index": 149
+            },
+            {
+              "title": "2.42 Restoration Deferrals",
+              "node_id": "0171",
+              "start_index": 149,
+              "end_index": 149
+            },
+            {
+              "title": "2.43 Restoration Matching Contributions",
+              "node_id": "0172",
+              "start_index": 149,
+              "end_index": 149
+            },
+            {
+              "title": "2.44 Restoration SSP+ Company Contributions",
+              "node_id": "0173",
+              "start_index": 149,
+              "end_index": 149
+            },
+            {
+              "title": "2.45 Restoration True-Up Contributions",
+              "node_id": "0174",
+              "start_index": 150,
+              "end_index": 150
+            },
+            {
+              "title": "2.46 Separation from Service",
+              "node_id": "0175",
+              "start_index": 150,
+              "end_index": 150
+            },
+            {
+              "title": "2.47 Service",
+              "node_id": "0176",
+              "start_index": 150,
+              "end_index": 150
+            },
+            {
+              "title": "2.48 Specified Employee",
+              "node_id": "0177",
+              "start_index": 150,
+              "end_index": 150
+            },
+            {
+              "title": "2.49 Unforeseeable Emergency",
+              "node_id": "0178",
+              "start_index": 150,
+              "end_index": 150
+            },
+            {
+              "title": "2.50 US Executive Payroll",
+              "node_id": "0179",
+              "start_index": 150,
+              "end_index": 150
+            },
+            {
+              "title": "2.51 Vested Performance Award Deferrals",
+              "node_id": "0180",
+              "start_index": 150,
+              "end_index": 150
+            }
+          ]
+        },
+        {
+          "title": "ARTICLE III Participant Deferrals",
+          "node_id": "0181",
+          "start_index": 151,
+          "end_index": 151,
+          "nodes": [
+            {
+              "title": "3.1 Annual Participation and Deferrals \u2013 Eligibility",
+              "node_id": "0182",
+              "start_index": 151,
+              "end_index": 151
+            },
+            {
+              "title": "3.2 Mid-Year Participation\u2013 Eligibility",
+              "node_id": "0183",
+              "start_index": 151,
+              "end_index": 152
+            },
+            {
+              "title": "3.3 Deferral Elections",
+              "node_id": "0184",
+              "start_index": 152,
+              "end_index": 154
+            },
+            {
+              "title": "3.4 Cancellation of Deferral Election Due to Unforeseeable Emergency",
+              "node_id": "0185",
+              "start_index": 154,
+              "end_index": 154
+            },
+            {
+              "title": "3.5 Crediting of Deferrals to Account",
+              "node_id": "0186",
+              "start_index": 154,
+              "end_index": 154
+            }
+          ]
+        },
+        {
+          "title": "ARTICLE IV Company Contributions",
+          "node_id": "0187",
+          "start_index": 155,
+          "end_index": 155,
+          "nodes": [
+            {
+              "title": "4.1 Restoration Matching Contributions",
+              "node_id": "0188",
+              "start_index": 155,
+              "end_index": 155
+            },
+            {
+              "title": "4.2 Restoration True-Up Contributions",
+              "node_id": "0189",
+              "start_index": 155,
+              "end_index": 156
+            },
+            {
+              "title": "4.3 Incentive Matching Contributions",
+              "node_id": "0190",
+              "start_index": 156,
+              "end_index": 156
+            },
+            {
+              "title": "4.4 Company Non-Elective Contributions (Component of the Executive Benefit)",
+              "node_id": "0191",
+              "start_index": 156,
+              "end_index": 157
+            },
+            {
+              "title": "4.5 DC SERP Contributions (Component of the Executive Benefit)",
+              "node_id": "0192",
+              "start_index": 157,
+              "end_index": 160
+            }
+          ]
+        },
+        {
+          "title": "ARTICLE V Vesting and Forfeiture Rules",
+          "node_id": "0193",
+          "start_index": 161,
+          "end_index": 161,
+          "nodes": [
+            {
+              "title": "5.1 Vesting",
+              "node_id": "0194",
+              "start_index": 161,
+              "end_index": 161
+            },
+            {
+              "title": "5.2 Extra Deferral Vesting",
+              "node_id": "0195",
+              "start_index": 161,
+              "end_index": 161
+            },
+            {
+              "title": "5.3 Restoration Vesting",
+              "node_id": "0196",
+              "start_index": 161,
+              "end_index": 161
+            },
+            {
+              "title": "5.4 Executive Benefit Vesting",
+              "node_id": "0197",
+              "start_index": 161,
+              "end_index": 161
+            },
+            {
+              "title": "5.5 Executive SSP+ Company Contribution Forfeiture Rules",
+              "node_id": "0198",
+              "start_index": 161,
+              "end_index": 162
+            },
+            {
+              "title": "5.6 DC SERP Vesting",
+              "node_id": "0199",
+              "start_index": 162,
+              "end_index": 165
+            },
+            {
+              "title": "5.7 DC SERP Forfeiture Rules",
+              "node_id": "0200",
+              "start_index": 165,
+              "end_index": 166
+            }
+          ]
+        },
+        {
+          "title": "ARTICLE VI Distributions",
+          "node_id": "0201",
+          "start_index": 167,
+          "end_index": 167,
+          "nodes": [
+            {
+              "title": "6.1 Form and Timing of Distribution",
+              "node_id": "0202",
+              "start_index": 167,
+              "end_index": 170
+            },
+            {
+              "title": "6.2 Death Benefits",
+              "node_id": "0203",
+              "start_index": 171,
+              "end_index": 171
+            },
+            {
+              "title": "6.3 Rehires and Authorized Periods of Absence/Reduced Level of Services",
+              "node_id": "0204",
+              "start_index": 171,
+              "end_index": 173
+            }
+          ]
+        },
+        {
+          "title": "ARTICLE VII Accounts",
+          "node_id": "0205",
+          "start_index": 174,
+          "end_index": 174,
+          "nodes": [
+            {
+              "title": "7.1 Participant Accounts",
+              "node_id": "0206",
+              "start_index": 174,
+              "end_index": 174
+            },
+            {
+              "title": "7.2 Earnings Credits",
+              "node_id": "0207",
+              "start_index": 174,
+              "end_index": 175
+            },
+            {
+              "title": "7.3 Investment Election Changes and Restrictions",
+              "node_id": "0208",
+              "start_index": 175,
+              "end_index": 175
+            },
+            {
+              "title": "7.4 Missing Participants and Improper Credits",
+              "node_id": "0209",
+              "start_index": 175,
+              "end_index": 175
+            }
+          ]
+        },
+        {
+          "title": "ARTICLE VIII Administration",
+          "node_id": "0210",
+          "start_index": 176,
+          "end_index": 176,
+          "nodes": [
+            {
+              "title": "8.1 Plan Administration",
+              "node_id": "0211",
+              "start_index": 176,
+              "end_index": 176
+            },
+            {
+              "title": "8.2 Claims Procedure",
+              "node_id": "0212",
+              "start_index": 176,
+              "end_index": 176
+            }
+          ]
+        },
+        {
+          "title": "ARTICLE IX Amendment and Termination",
+          "node_id": "0213",
+          "start_index": 177,
+          "end_index": 177
+        },
+        {
+          "title": "ARTICLE X Miscellaneous",
+          "node_id": "0214",
+          "start_index": 178,
+          "end_index": 178,
+          "nodes": [
+            {
+              "title": "10.1 No Employment Rights",
+              "node_id": "0215",
+              "start_index": 178,
+              "end_index": 178
+            },
+            {
+              "title": "10.2 Anti-Assignment",
+              "node_id": "0216",
+              "start_index": 178,
+              "end_index": 178
+            },
+            {
+              "title": "10.3 Unfunded Status of Plan",
+              "node_id": "0217",
+              "start_index": 178,
+              "end_index": 178
+            },
+            {
+              "title": "10.4 Delays or Acceleration in Payment",
+              "node_id": "0218",
+              "start_index": 178,
+              "end_index": 178
+            },
+            {
+              "title": "10.5 Involuntary Inclusion in Income",
+              "node_id": "0219",
+              "start_index": 178,
+              "end_index": 178
+            },
+            {
+              "title": "10.6 Compliance with Code Section 409A",
+              "node_id": "0220",
+              "start_index": 178,
+              "end_index": 178
+            },
+            {
+              "title": "10.7 Construction",
+              "node_id": "0221",
+              "start_index": 179,
+              "end_index": 179
+            },
+            {
+              "title": "10.8 Legal Action",
+              "node_id": "0222",
+              "start_index": 179,
+              "end_index": 179
+            },
+            {
+              "title": "10.9 Tax Withholding",
+              "node_id": "0223",
+              "start_index": 179,
+              "end_index": 179
+            },
+            {
+              "title": "10.10 Liability for Benefit Payments",
+              "node_id": "0224",
+              "start_index": 179,
+              "end_index": 179
+            },
+            {
+              "title": "10.11 Recovery of Plan Overpayments",
+              "node_id": "0225",
+              "start_index": 180,
+              "end_index": 180
+            },
+            {
+              "title": "10.12 Notice",
+              "node_id": "0226",
+              "start_index": 180,
+              "end_index": 180
+            }
+          ]
+        },
+        {
+          "title": "APPENDIX A List of Excluded Entities",
+          "node_id": "0227",
+          "start_index": 181,
+          "end_index": 181
+        },
+        {
+          "title": "APPENDIX B Deferred Compensation Plan for Employees of The Boeing Company",
+          "node_id": "0228",
+          "start_index": 182,
+          "end_index": 182
+        },
+        {
+          "title": "1. Forfeiture and Reinstatement of Matching Contributions",
+          "node_id": "0229",
+          "start_index": 182,
+          "end_index": 182
+        },
+        {
+          "title": "2. DCP Deferrals Eligible for Diversification",
+          "node_id": "0230",
+          "start_index": 182,
+          "end_index": 183
+        },
+        {
+          "title": "3. Form and Timing of Distribution.",
+          "node_id": "0231",
+          "start_index": 183,
+          "end_index": 184
+        },
+        {
+          "title": "4. Rehires",
+          "node_id": "0232",
+          "start_index": 184,
+          "end_index": 184
+        },
+        {
+          "title": "EXHIBIT 21 The Boeing Company Subsidiaries",
+          "node_id": "0233",
+          "start_index": 185,
+          "end_index": 185
+        },
+        {
+          "title": "EXHIBIT 23 CONSENT OF INDEPENDENT REGISTERED PUBLIC ACCOUNTING FIRM",
+          "node_id": "0234",
+          "start_index": 186,
+          "end_index": 186
+        },
+        {
+          "title": "EXHIBIT 31.1 CERTIFICATION PURSUANT TO RULE 13a-14 OF THE SECURITIES EXCHANGE ACT OF 1934, AS ADOPTED PURSUANT TO SECTION 302 OF THE SARBANES-OXLEY ACT OF 2002",
+          "node_id": "0235",
+          "start_index": 187,
+          "end_index": 187
+        },
+        {
+          "title": "EXHIBIT 31.2 CERTIFICATION PURSUANT TO RULE 13a-14 OF THE SECURITIES EXCHANGE ACT OF 1934, AS ADOPTED PURSUANT TO SECTION 302 OF THE SARBANES-OXLEY ACT OF 2002",
+          "node_id": "0236",
+          "start_index": 188,
+          "end_index": 188
+        },
+        {
+          "title": "EXHIBIT 32.1 CERTIFICATION PURSUANT TO 18 U.S.C. SECTION 1350, AS ADOPTED PURSUANT TO SECTION 906 OF THE SARBANES-OXLEY ACT OF 2002",
+          "node_id": "0237",
+          "start_index": 189,
+          "end_index": 189
+        },
+        {
+          "title": "EXHIBIT 32.2 CERTIFICATION PURSUANT TO 18 U.S.C. SECTION 1350, AS ADOPTED PURSUANT TO SECTION 906 OF THE SARBANES-OXLEY ACT OF 2002",
+          "node_id": "0238",
+          "start_index": 190,
+          "end_index": 190
+        }
+      ]
+    }
+  ]
+}
