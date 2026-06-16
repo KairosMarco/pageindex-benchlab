@@ -76,6 +76,10 @@ Completed:
   - PageIndex: average evidence recall `1.000`, average citation precision `0.333`.
   - Long-context: average evidence recall `0.917`, average citation precision `0.306`.
   - Vector RAG + reranker MVP: average evidence recall `1.000`, average citation precision `0.333`.
+- Current LLM-judge answer accuracy:
+  - PageIndex: `1.000`
+  - Long-context: `1.000`
+  - Vector RAG + reranker MVP: `0.917`
 
 Current owner: project owner. PH is on standby for later task assignment.
 
@@ -247,6 +251,6 @@ A GPU may become useful later for local LLMs, large embedding jobs, or large rer
 3. Run PageIndex indexing on those PDFs.
 4. Run the PageIndex question-answering retrieval step. Completed for no-LLM retrieval mode.
 5. Implement the Hybrid RAG baseline.
-6. Add answer accuracy evaluation.
-7. Add token and latency aggregation to the cross-method report.
+6. Add token and latency aggregation to the cross-method report.
+7. Implement the Hybrid RAG baseline.
 8. Replace the dependency-light Vector RAG MVP with a LlamaIndex embedding + reranker implementation.

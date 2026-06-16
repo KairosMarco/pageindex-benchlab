@@ -76,3 +76,29 @@ citation_page_base=1
 
 FinanceBench gold evidence is zero-indexed. PageIndex tree ranges from the local demo appear one-indexed.
 
+## AnswerEvalResult
+
+Represents one answer-accuracy evaluation result.
+
+```json
+{
+  "question_id": "fb_mvp_001",
+  "score": 1.0,
+  "verdict": "correct",
+  "rationale": "The predicted answer matches the gold answer.",
+  "gold_answer": "$1577.00",
+  "predicted_answer": "$1,577 million",
+  "metadata": {
+    "mode": "llm_judge",
+    "model": "deepseek/deepseek-v4-pro"
+  }
+}
+```
+
+Allowed verdicts:
+
+```text
+correct
+partial
+incorrect
+```

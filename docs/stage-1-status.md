@@ -43,6 +43,7 @@ Core models:
 - `TokenUsage`
 - `GoldEvidence`
 - `EvidenceEvalResult`
+- `AnswerEvalResult`
 
 ### FinanceBench MVP Subset
 
@@ -94,12 +95,27 @@ Current metrics:
 
 - evidence recall
 - citation precision
+- answer accuracy
 
 Important page-indexing rule:
 
 ```text
 FinanceBench evidence pages are zero-indexed.
 PageIndex tree pages appear one-indexed.
+```
+
+Answer accuracy is implemented in:
+
+```text
+evaluators/answer.py
+scripts/evaluate_answers_mvp.py
+```
+
+Current answer evaluation modes:
+
+```text
+heuristic
+llm judge
 ```
 
 ### Upstream PageIndex Issue Draft
@@ -399,6 +415,14 @@ Average evidence recall: 1.000
 Average citation precision: 0.333
 ```
 
+Current LLM-judge answer accuracy:
+
+```text
+PageIndex LLM: 12 / 12 correct, accuracy 1.000
+Long-context LLM: 12 / 12 correct, accuracy 1.000
+Vector RAG LLM: 11 / 12 correct, accuracy 0.917
+```
+
 Generated artifacts:
 
 ```text
@@ -414,10 +438,10 @@ reports/vector_rag/evidence_eval_llm.json
 
 The next work should convert this setup into actual benchmark execution:
 
-1. Implement Hybrid RAG baseline.
-2. Add answer accuracy evaluation.
-3. Add token and latency aggregation to the cross-method report.
-4. Replace the dependency-light Vector RAG MVP with a LlamaIndex embedding + reranker implementation.
+1. Add token and latency aggregation to the cross-method report.
+2. Implement Hybrid RAG baseline.
+3. Replace the dependency-light Vector RAG MVP with a LlamaIndex embedding + reranker implementation.
+4. Expand the FinanceBench subset beyond 12 questions.
 
 ## Stage 1 Exit Criteria
 
@@ -426,7 +450,7 @@ Stage 1 is complete when:
 - 12 FinanceBench MVP questions can be run through PageIndex. Completed for retrieval-only mode.
 - At least one baseline can run on the same questions. Completed for Long-context LLM mode.
 - All methods produce `BenchmarkResult`. Completed for PageIndex, Long-context, and Vector RAG.
-- Evidence recall and citation precision are reported. Completed for PageIndex, Long-context, and Vector RAG.
+- Evidence recall, citation precision, and answer accuracy are reported. Completed for PageIndex, Long-context, and Vector RAG.
 - A Markdown benchmark report is generated under `reports/`. Completed for current evidence-focused report.
 
 ## Current Blocker
@@ -439,4 +463,4 @@ The first 11 structures are now available. The JSON parsing patch made PageIndex
 Handled empty responses and noisy JSON output
 ```
 
-Next, add Hybrid RAG and answer accuracy evaluation.
+Next, add token/latency aggregation and Hybrid RAG.

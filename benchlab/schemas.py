@@ -72,3 +72,12 @@ class EvidenceEvalResult(BaseModel):
     matched_pages: list[int]
     metadata: dict[str, Any] = Field(default_factory=dict)
 
+
+class AnswerEvalResult(BaseModel):
+    question_id: str
+    score: float
+    verdict: Literal["correct", "partial", "incorrect"]
+    rationale: str
+    gold_answer: str
+    predicted_answer: str
+    metadata: dict[str, Any] = Field(default_factory=dict)
