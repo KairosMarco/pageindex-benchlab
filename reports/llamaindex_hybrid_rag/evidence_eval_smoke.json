@@ -1,0 +1,36 @@
+{
+  "summary": {
+    "result_count": 1,
+    "failure_count": 0,
+    "average_evidence_recall": 0.0,
+    "average_citation_precision": 0.0,
+    "citation_page_base": 1,
+    "results_dir": "reports\\llamaindex_hybrid_rag\\qa_smoke"
+  },
+  "per_question": [
+    {
+      "question_id": "fb_mvp_001",
+      "gold_pages_zero_indexed": [
+        59
+      ],
+      "gold_pages_one_indexed": [
+        60
+      ],
+      "predicted_pages": [
+        49,
+        43,
+        47
+      ],
+      "evidence_recall": 0.0,
+      "citation_precision": 0.0,
+      "matched_pages": [],
+      "metadata": {
+        "citation_page_base": 1,
+        "result_path": "reports\\llamaindex_hybrid_rag\\qa_smoke\\fb_mvp_001.json",
+        "method": "llamaindex_hybrid_rag",
+        "doc_name": "3M_2018_10K"
+      }
+    }
+  ],
+  "failures": []
+}

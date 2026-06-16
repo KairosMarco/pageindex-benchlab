@@ -1,0 +1,29 @@
+[
+  {
+    "question_id": "fb_mvp_001",
+    "doc_name": "3M_2018_10K",
+    "status": "generated",
+    "output_path": "reports\\llamaindex_hybrid_rag\\qa_smoke_cross\\fb_mvp_001.json",
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\3M_2018_10K.pdf",
+    "citation_count": 3,
+    "selected_pages_one_indexed": [
+      47,
+      44,
+      14
+    ],
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "chunk_size": 900,
+    "chunk_overlap": 160,
+    "vector_top_k": 120,
+    "bm25_top_k": 120,
+    "fusion_top_k": 120,
+    "rerank_top_k": 12,
+    "rrf_k": 60,
+    "max_citations": 3,
+    "cross_encoder_model": "cross-encoder/ms-marco-MiniLM-L-6-v2",
+    "cross_encoder_candidates": 60,
+    "latency_ms": 63166,
+    "llm_enabled": false,
+    "model": null
+  }
+]

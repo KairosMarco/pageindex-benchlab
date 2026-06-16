@@ -58,4 +58,16 @@ reports/llamaindex_vector_rag/qa_smoke_cite6_manifest.json
 reports/llamaindex_vector_rag/qa_smoke_cite6/
 reports/llamaindex_vector_rag/qa_smoke_cite12_manifest.json
 reports/llamaindex_vector_rag/qa_smoke_cite12/
+reports/llamaindex_hybrid_rag/evidence_eval_smoke.json
+reports/llamaindex_hybrid_rag/evidence_eval_smoke_cite6.json
+reports/llamaindex_hybrid_rag/evidence_eval_smoke_cite12.json
+reports/llamaindex_hybrid_rag/evidence_eval_smoke_cross.json
+reports/llamaindex_hybrid_rag/qa_smoke_manifest.json
+reports/llamaindex_hybrid_rag/qa_smoke/
+reports/llamaindex_hybrid_rag/qa_smoke_cite6_manifest.json
+reports/llamaindex_hybrid_rag/qa_smoke_cite6/
+reports/llamaindex_hybrid_rag/qa_smoke_cite12_manifest.json
+reports/llamaindex_hybrid_rag/qa_smoke_cite12/
+reports/llamaindex_hybrid_rag/qa_smoke_cross_manifest.json
+reports/llamaindex_hybrid_rag/qa_smoke_cross/
 ```

@@ -176,6 +176,24 @@ python scripts\evaluate_evidence_mvp.py --results-dir reports\llamaindex_vector_
 
 This is currently a diagnostic baseline. Do not add it to the main comparison table until retrieval quality improves or the report explicitly frames it as a weaker baseline.
 
+## Run LlamaIndex Hybrid RAG Diagnostic Baseline
+
+Single-question smoke test:
+
+```powershell
+python scripts\run_llamaindex_hybrid_rag_mvp.py --no-llm --question-id fb_mvp_001 --output-dir reports\llamaindex_hybrid_rag\qa_smoke --manifest reports\llamaindex_hybrid_rag\qa_smoke_manifest.json --force --continue-on-error
+python scripts\evaluate_evidence_mvp.py --results-dir reports\llamaindex_hybrid_rag\qa_smoke --output reports\llamaindex_hybrid_rag\evidence_eval_smoke.json --continue-on-error
+```
+
+Optional cross-encoder diagnostic:
+
+```powershell
+python scripts\run_llamaindex_hybrid_rag_mvp.py --no-llm --question-id fb_mvp_001 --cross-encoder-model cross-encoder/ms-marco-MiniLM-L-6-v2 --output-dir reports\llamaindex_hybrid_rag\qa_smoke_cross --manifest reports\llamaindex_hybrid_rag\qa_smoke_cross_manifest.json --force --continue-on-error
+python scripts\evaluate_evidence_mvp.py --results-dir reports\llamaindex_hybrid_rag\qa_smoke_cross --output reports\llamaindex_hybrid_rag\evidence_eval_smoke_cross.json --continue-on-error
+```
+
+This diagnostic currently shows that the gold page can appear in a wider candidate set, but the top-three citation ranking still needs improvement.
+
 ## Evaluate Answer Accuracy
 
 Heuristic mode:

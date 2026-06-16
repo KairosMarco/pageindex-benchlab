@@ -140,3 +140,18 @@ max_citations=12: evidence recall 0.917, citation precision 0.083
 Interpretation:
 
 The current LlamaIndex vector retriever with `sentence-transformers/all-MiniLM-L6-v2` often places gold pages in the wider candidate set, but it does not reliably rank them into the top citations. This is not yet a strong replacement for the dependency-light Vector RAG MVP.
+
+## LlamaIndex Hybrid Diagnostic Result
+
+Current single-question diagnostic on `fb_mvp_001`:
+
+```text
+top-3 citations: evidence recall 0.000
+top-6 citations: evidence recall 1.000, citation precision 0.167
+top-12 citations: evidence recall 1.000, citation precision 0.091
+cross-encoder rerank top-3: evidence recall 0.000
+```
+
+Interpretation:
+
+BM25/vector fusion finds the relevant evidence in a wider candidate set, but the current reranker still fails to promote the financial statement page into the top three citations. The next stronger baseline should use table-aware and financial-line-item-aware reranking before LLM answer generation.

@@ -1,0 +1,41 @@
+{
+  "summary": {
+    "result_count": 1,
+    "failure_count": 0,
+    "average_evidence_recall": 1.0,
+    "average_citation_precision": 0.16666666666666666,
+    "citation_page_base": 1,
+    "results_dir": "reports\\llamaindex_hybrid_rag\\qa_smoke_cite6"
+  },
+  "per_question": [
+    {
+      "question_id": "fb_mvp_001",
+      "gold_pages_zero_indexed": [
+        59
+      ],
+      "gold_pages_one_indexed": [
+        60
+      ],
+      "predicted_pages": [
+        49,
+        43,
+        47,
+        46,
+        83,
+        60
+      ],
+      "evidence_recall": 1.0,
+      "citation_precision": 0.16666666666666666,
+      "matched_pages": [
+        59
+      ],
+      "metadata": {
+        "citation_page_base": 1,
+        "result_path": "reports\\llamaindex_hybrid_rag\\qa_smoke_cite6\\fb_mvp_001.json",
+        "method": "llamaindex_hybrid_rag",
+        "doc_name": "3M_2018_10K"
+      }
+    }
+  ],
+  "failures": []
+}
