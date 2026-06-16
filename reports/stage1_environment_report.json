@@ -3,12 +3,8 @@
     "python_executable": "D:\\pageindex-demo\\PageIndex\\.venv\\Scripts\\python.exe",
     "python_version": "3.13.9 | packaged by Anaconda, Inc. | (main, Oct 21 2025, 19:09:58) [MSC v.1929 64 bit (AMD64)]",
     "platform": "Windows-11-10.0.26200-SP0",
-    "llamaindex_ready": false,
-    "missing_required_for_llamaindex": [
-      "llama-index",
-      "llama-index-core",
-      "sentence-transformers"
-    ]
+    "llamaindex_ready": true,
+    "missing_required_for_llamaindex": []
   },
   "packages": [
     {
@@ -28,28 +24,28 @@
     },
     {
       "name": "llama-index",
-      "version": null,
-      "available": false
+      "version": "0.14.22",
+      "available": true
     },
     {
       "name": "llama-index-core",
-      "version": null,
-      "available": false
+      "version": "0.14.22",
+      "available": true
     },
     {
       "name": "llama-index-embeddings-huggingface",
-      "version": null,
-      "available": false
+      "version": "0.7.0",
+      "available": true
     },
     {
       "name": "llama-index-retrievers-bm25",
-      "version": null,
-      "available": false
+      "version": "0.7.1",
+      "available": true
     },
     {
       "name": "sentence-transformers",
-      "version": null,
-      "available": false
+      "version": "5.5.1",
+      "available": true
     }
   ],
   "imports": [
@@ -67,14 +63,14 @@
     },
     {
       "module": "llama_index.core",
-      "available": false,
-      "error": "No module named 'llama_index'",
+      "available": true,
+      "error": "",
       "purpose": "LlamaIndex core"
     },
     {
       "module": "sentence_transformers",
-      "available": false,
-      "error": "No module named 'sentence_transformers'",
+      "available": true,
+      "error": "",
       "purpose": "local embedding model support"
     }
   ]
