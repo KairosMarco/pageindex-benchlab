@@ -1,0 +1,221 @@
+{
+  "method": "vector_rag_tfidf_rerank",
+  "question_id": "fb_mvp_004",
+  "question": "Among operations, investing, and financing activities, which brought in the most (or lost the least) cash flow for AMD in FY22?",
+  "answer": "Operating activities brought in the most cash flow for AMD in FY22.\n\nNet cash provided by operating activities was $3,565 million, compared to $1,999 million provided by investing activities, while financing activities resulted in a net cash use of $3,264 million [PAGE 51].",
+  "citations": [
+    {
+      "document_id": "AMD_2022_10K",
+      "page": 51,
+      "section": null,
+      "text": "Table of Contents FINANCIAL CONDITION Liquidity and Capital Resources As of December 31, 2022, our cash, cash equivalents and short-term investments were $5.9 billion compared to $3.6 billion as of December 25, 2021. The increase in cash, cash equivalents and short-term investments was primarily driven by the $2.4 billion of cash and $1.6 billion of short-term investments acquired from the Xilinx acquisition, $1.0 billion from the debt issuance of our 3.924% Notes and 4.393% Notes, and cash flow",
+      "metadata": {
+        "chunk_id": "p51_c0",
+        "word_start": 0,
+        "word_end": 220,
+        "vector_score": 0.2444133824787699,
+        "rerank_score": 44.441338247876985,
+        "matched_terms": [
+          "activities",
+          "cash",
+          "financing",
+          "flow",
+          "flows",
+          "investing",
+          "operating",
+          "operations"
+        ],
+        "citation_source": "llm_answer"
+      }
+    },
+    {
+      "document_id": "AMD_2022_10K",
+      "page": 59,
+      "section": null,
+      "text": "Table of Contents Advanced Micro Devices, Inc. Consolidated Statements of Cash Flows Year Ended December 31, 2022 December 25, 2021 December 26, 2020 (In millions) Supplemental cash flow information: Cash paid during the year for: Interest $ 85 $ 25 $ 31 Income taxes, net of refund $ 685 $ 35 $ 8 Non-cash investing and financing activities: Purchases of property and equipment, accrued but not paid $ 157 $ 72 $ 31 Issuance of common stock to settle convertible debt $ — $ 25 $ 217 Issuance of comm",
+      "metadata": {
+        "chunk_id": "p59_c0",
+        "word_start": 0,
+        "word_end": 165,
+        "vector_score": 0.21626654799097245,
+        "rerank_score": 42.57665479909725,
+        "matched_terms": [
+          "activities",
+          "cash",
+          "financing",
+          "flow",
+          "flows",
+          "investing",
+          "operating"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "AMD_2022_10K",
+      "page": 58,
+      "section": null,
+      "text": "Net cash provided by operating activities 3,565 3,521 1,071 Cash flows from investing activities: Purchases of property and equipment (450) (301) (294) Purchases of short-term investments (2,667) (2,056) (850) Proceeds from maturity of short-term investments 4,310 1,678 192 Cash received from acquisition of Xilinx 2,366 — — Acquisition of Pensando, net of cash acquired (1,544) — — Other (16) (7) — Net cash provided by (used in) investing activities 1,999 (686) (952) Cash flows from financing act",
+      "metadata": {
+        "chunk_id": "p58_c1",
+        "word_start": 180,
+        "word_end": 357,
+        "vector_score": 0.21355248283708916,
+        "rerank_score": 37.255248283708916,
+        "matched_terms": [
+          "activities",
+          "cash",
+          "financing",
+          "flows",
+          "investing",
+          "operating"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "chunk_document",
+      "target": "AMD_2022_10K",
+      "metadata": {
+        "page_count": 121,
+        "chunk_count": 389,
+        "chunk_words": 220,
+        "chunk_overlap": 40
+      }
+    },
+    {
+      "step": 2,
+      "action": "retrieve_and_rerank_chunk",
+      "target": "p51_c0",
+      "metadata": {
+        "page": 51,
+        "initial_rank": 1,
+        "vector_score": 0.2444133824787699,
+        "rerank_score": 44.441338247876985,
+        "matched_terms": [
+          "activities",
+          "cash",
+          "financing",
+          "flow",
+          "flows",
+          "investing",
+          "operating",
+          "operations"
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "action": "retrieve_and_rerank_chunk",
+      "target": "p59_c0",
+      "metadata": {
+        "page": 59,
+        "initial_rank": 2,
+        "vector_score": 0.21626654799097245,
+        "rerank_score": 42.57665479909725,
+        "matched_terms": [
+          "activities",
+          "cash",
+          "financing",
+          "flow",
+          "flows",
+          "investing",
+          "operating"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "retrieve_and_rerank_chunk",
+      "target": "p58_c1",
+      "metadata": {
+        "page": 58,
+        "initial_rank": 3,
+        "vector_score": 0.21355248283708916,
+        "rerank_score": 37.255248283708916,
+        "matched_terms": [
+          "activities",
+          "cash",
+          "financing",
+          "flows",
+          "investing",
+          "operating"
+        ]
+      }
+    },
+    {
+      "step": 5,
+      "action": "retrieve_and_rerank_chunk",
+      "target": "p58_c0",
+      "metadata": {
+        "page": 58,
+        "initial_rank": 5,
+        "vector_score": 0.1192891725031317,
+        "rerank_score": 28.72891725031317,
+        "matched_terms": [
+          "activities",
+          "cash",
+          "flows",
+          "investing",
+          "operating"
+        ]
+      }
+    },
+    {
+      "step": 6,
+      "action": "retrieve_and_rerank_chunk",
+      "target": "p52_c2",
+      "metadata": {
+        "page": 52,
+        "initial_rank": 4,
+        "vector_score": 0.17793478965490034,
+        "rerank_score": 26.643478965490036,
+        "matched_terms": [
+          "activities",
+          "cash",
+          "financing",
+          "investing"
+        ]
+      }
+    },
+    {
+      "step": 7,
+      "action": "retrieve_and_rerank_chunk",
+      "target": "p101_c0",
+      "metadata": {
+        "page": 101,
+        "initial_rank": 17,
+        "vector_score": 0.0735606317393334,
+        "rerank_score": 24.55606317393334,
+        "matched_terms": [
+          "among",
+          "cash",
+          "flows",
+          "operations"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": 2073,
+    "output": 305,
+    "total": 2378
+  },
+  "latency_ms": 7845,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\AMD_2022_10K.pdf",
+    "adapter_mode": "tfidf_vector_search_plus_rerank",
+    "llm_enabled": true,
+    "model": "deepseek/deepseek-v4-pro",
+    "page_count": 121,
+    "chunk_count": 389,
+    "chunk_words": 220,
+    "chunk_overlap": 40,
+    "retrieve_top_k": 20,
+    "rerank_top_k": 6,
+    "max_citations": 3
+  }
+}

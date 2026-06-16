@@ -1,0 +1,208 @@
+{
+  "method": "vector_rag_tfidf_rerank",
+  "question_id": "fb_mvp_002",
+  "question": "What is Amazon's year-over-year change in revenue from FY2016 to FY2017 (in units of percents and round to one decimal place)? Calculate what was asked by utilizing the line items clearly shown in the statement of income.",
+  "answer": "Amazon’s total net sales (revenue) increased by 30.8% from FY2016 to FY2017 [PAGE 38]. This is calculated from the Consolidated Statements of Operations line item “Total net sales,” which was $135,987 million in 2016 and $177,866 million in 2017.",
+  "citations": [
+    {
+      "document_id": "AMAZON_2017_10K",
+      "page": 38,
+      "section": null,
+      "text": "Table of Contents AMAZON.COM, INC. CONSOLIDATED STATEMENTS OF OPERATIONS (in millions, except per share data) Year Ended December 31, 2015 2016 2017 Net product sales $ 79,268 $ 94,665 $ 118,573 Net service sales 27,738 41,322 59,293 Total net sales 107,006 135,987 177,866 Operating expenses: Cost of sales 71,651 88,265 111,934 Fulfillment 13,410 17,619 25,249 Marketing 5,254 7,233 10,069 Technology and content 12,540 16,085 22,620 General and administrative 1,747 2,432 3,674 Other operating exp",
+      "metadata": {
+        "chunk_id": "p38_c0",
+        "word_start": 0,
+        "word_end": 189,
+        "vector_score": 0.09261317385106874,
+        "rerank_score": 31.961317385106874,
+        "matched_terms": [
+          "cost",
+          "income",
+          "net",
+          "operations",
+          "sales"
+        ],
+        "citation_source": "llm_answer"
+      }
+    },
+    {
+      "document_id": "AMAZON_2017_10K",
+      "page": 49,
+      "section": null,
+      "text": " for as a single performance obligation recognized ratably over the membership period and will be classified as service sales. Other changes that we have identified relate primarily to the presentation of revenue. Certain advertising services will be classified as revenue rather than a reduction in cost of sales, and sales of apps, in-app content, and certain digital media content will primarily be presented on a net basis. In January 2016, the FASB issued an ASU which updates certain aspects of",
+      "metadata": {
+        "chunk_id": "p49_c4",
+        "word_start": 720,
+        "word_end": 916,
+        "vector_score": 0.08688878818527002,
+        "rerank_score": 30.238878818527002,
+        "matched_terms": [
+          "cost",
+          "income",
+          "net",
+          "operations",
+          "revenue",
+          "sales"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "AMAZON_2017_10K",
+      "page": 72,
+      "section": null,
+      "text": "Note 12—QUARTERLY RESULTS (UNAUDITED) The following tables contain selected unaudited statement of operations information for each quarter of 2016 and 2017 . The following information reflects all normal recurring adjustments necessary for a fair presentation of the information for the periods presented. The operating results for any quarter are not necessarily indicative of results for any future period. Our business is affected by seasonality, which historically has resulted in higher sales vo",
+      "metadata": {
+        "chunk_id": "p72_c0",
+        "word_start": 0,
+        "word_end": 220,
+        "vector_score": 0.09660542506785953,
+        "rerank_score": 20.41054250678595,
+        "matched_terms": [
+          "income",
+          "net",
+          "operations",
+          "sales",
+          "statement"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "chunk_document",
+      "target": "AMAZON_2017_10K",
+      "metadata": {
+        "page_count": 85,
+        "chunk_count": 274,
+        "chunk_words": 220,
+        "chunk_overlap": 40
+      }
+    },
+    {
+      "step": 2,
+      "action": "retrieve_and_rerank_chunk",
+      "target": "p38_c0",
+      "metadata": {
+        "page": 38,
+        "initial_rank": 7,
+        "vector_score": 0.09261317385106874,
+        "rerank_score": 31.961317385106874,
+        "matched_terms": [
+          "cost",
+          "income",
+          "net",
+          "operations",
+          "sales"
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "action": "retrieve_and_rerank_chunk",
+      "target": "p49_c4",
+      "metadata": {
+        "page": 49,
+        "initial_rank": 10,
+        "vector_score": 0.08688878818527002,
+        "rerank_score": 30.238878818527002,
+        "matched_terms": [
+          "cost",
+          "income",
+          "net",
+          "operations",
+          "revenue",
+          "sales"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "retrieve_and_rerank_chunk",
+      "target": "p72_c0",
+      "metadata": {
+        "page": 72,
+        "initial_rank": 6,
+        "vector_score": 0.09660542506785953,
+        "rerank_score": 20.41054250678595,
+        "matched_terms": [
+          "income",
+          "net",
+          "operations",
+          "sales",
+          "statement"
+        ]
+      }
+    },
+    {
+      "step": 5,
+      "action": "retrieve_and_rerank_chunk",
+      "target": "p76_c0",
+      "metadata": {
+        "page": 76,
+        "initial_rank": 17,
+        "vector_score": 0.07356138878161657,
+        "rerank_score": 19.556138878161658,
+        "matched_terms": [
+          "income",
+          "operations",
+          "statement"
+        ]
+      }
+    },
+    {
+      "step": 6,
+      "action": "retrieve_and_rerank_chunk",
+      "target": "p39_c0",
+      "metadata": {
+        "page": 39,
+        "initial_rank": 1,
+        "vector_score": 0.11961820470861614,
+        "rerank_score": 18.961820470861614,
+        "matched_terms": [
+          "change",
+          "income",
+          "net"
+        ]
+      }
+    },
+    {
+      "step": 7,
+      "action": "retrieve_and_rerank_chunk",
+      "target": "p27_c0",
+      "metadata": {
+        "page": 27,
+        "initial_rank": 15,
+        "vector_score": 0.07575798996895503,
+        "rerank_score": 18.875798996895504,
+        "matched_terms": [
+          "cost",
+          "net",
+          "revenue",
+          "sales"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": 2149,
+    "output": 328,
+    "total": 2477
+  },
+  "latency_ms": 7410,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\AMAZON_2017_10K.pdf",
+    "adapter_mode": "tfidf_vector_search_plus_rerank",
+    "llm_enabled": true,
+    "model": "deepseek/deepseek-v4-pro",
+    "page_count": 85,
+    "chunk_count": 274,
+    "chunk_words": 220,
+    "chunk_overlap": 40,
+    "retrieve_top_k": 20,
+    "rerank_top_k": 6,
+    "max_citations": 3
+  }
+}

@@ -71,9 +71,11 @@ Completed:
 - Current Long-context no-LLM smoke result: average evidence recall `0.583`, average citation precision `0.194`.
 - PageIndex LLM answer generation has been run for all 12 MVP questions with `deepseek/deepseek-v4-pro`.
 - Long-context LLM answer generation has been run for all 12 MVP questions with `deepseek/deepseek-v4-pro`.
+- Vector RAG + reranker MVP has been run for all 12 MVP questions with `deepseek/deepseek-v4-pro`.
 - Current LLM evidence results:
   - PageIndex: average evidence recall `1.000`, average citation precision `0.333`.
   - Long-context: average evidence recall `0.917`, average citation precision `0.306`.
+  - Vector RAG + reranker MVP: average evidence recall `1.000`, average citation precision `0.333`.
 
 Current owner: project owner. PH is on standby for later task assignment.
 
@@ -244,7 +246,7 @@ A GPU may become useful later for local LLMs, large embedding jobs, or large rer
 2. Set a fresh model provider API key locally.
 3. Run PageIndex indexing on those PDFs.
 4. Run the PageIndex question-answering retrieval step. Completed for no-LLM retrieval mode.
-5. Implement the Vector RAG + reranker baseline.
-6. Implement the Hybrid RAG baseline.
-7. Add answer accuracy evaluation.
-8. Generate the first cross-method benchmark report.
+5. Implement the Hybrid RAG baseline.
+6. Add answer accuracy evaluation.
+7. Add token and latency aggregation to the cross-method report.
+8. Replace the dependency-light Vector RAG MVP with a LlamaIndex embedding + reranker implementation.

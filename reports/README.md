@@ -21,4 +21,10 @@ reports/long_context/qa_smoke/
 reports/long_context/evidence_eval_llm.json
 reports/long_context/qa_llm_manifest.json
 reports/long_context/qa_llm/
+reports/vector_rag/evidence_eval_smoke.json
+reports/vector_rag/qa_smoke_manifest.json
+reports/vector_rag/qa_smoke/
+reports/vector_rag/evidence_eval_llm.json
+reports/vector_rag/qa_llm_manifest.json
+reports/vector_rag/qa_llm/
 ```

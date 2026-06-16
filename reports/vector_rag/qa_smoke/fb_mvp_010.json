@@ -1,0 +1,203 @@
+{
+  "method": "vector_rag_tfidf_rerank",
+  "question_id": "fb_mvp_010",
+  "question": "What Was AMCOR's Adjusted Non GAAP EBITDA for FY 2023",
+  "answer": "Retrieved 6 chunks with TF-IDF vector search and reranking.",
+  "citations": [
+    {
+      "document_id": "AMCOR_2023Q4_EARNINGS",
+      "page": 11,
+      "section": null,
+      "text": "Reconciliation of Non-GAAP Measures Reconciliation of adjusted Earnings before interest, tax, depreciation and amortization (EBITDA), Earnings before interest and tax (EBIT), Net income, Earnings per share (EPS) and Free Cash Flow Three Months Ended June 30, 2022 Three Months Ended June 30, 2023 ($ million) EBITDA EBIT Net Income EPS (Diluted US cents)(1) EBITDA EBIT Net Income EPS (Diluted US cents)(1) Net income attributable to Amcor 109 109 109 7.3 181 181 181 12.3 Net income attributable to ",
+      "metadata": {
+        "chunk_id": "p11_c0",
+        "word_start": 0,
+        "word_end": 220,
+        "vector_score": 0.27647420127624034,
+        "rerank_score": 44.64742012762403,
+        "matched_terms": [
+          "adjusted",
+          "ebitda",
+          "gaap",
+          "non",
+          "reconciliation"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "AMCOR_2023Q4_EARNINGS",
+      "page": 12,
+      "section": null,
+      "text": "Twelve Months Ended June 30, 2022 Twelve Months Ended June 30, 2023 ($ million) EBITDA EBIT Net Income EPS (Diluted US cents)(1) EBITDA EBIT Net Income EPS (Diluted US cents)(1) Net income attributable to Amcor 805 805 805 52.9 1,048 1,048 1,048 70.5 Net income attributable to non-controlling interests 10 10 10 10 Tax expense 300 300 193 193 Interest expense, net 135 135 259 259 Depreciation and amortization 579 569 EBITDA, EBIT, Net income and EPS 1,829 1,250 805 52.9 2,080 1,510 1,048 70.5 201",
+      "metadata": {
+        "chunk_id": "p12_c0",
+        "word_start": 0,
+        "word_end": 220,
+        "vector_score": 0.24826192347573,
+        "rerank_score": 36.776192347573,
+        "matched_terms": [
+          "adjusted",
+          "ebitda",
+          "non",
+          "reconciliation"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "AMCOR_2023Q4_EARNINGS",
+      "page": 1,
+      "section": null,
+      "text": "compelling and growing dividend.” Key Financials(1) Twelve Months Ended June 30, GAAP results 2022 $ million 2023 $ million Net sales 14,544 14,694 Net income 805 1,048 EPS (diluted US cents) 52.9 70.5 Twelve Months Ended June 30, Reported ∆% Comparable constant currency ∆% Adjusted non-GAAP results 2022 $ million 2023 $ million Net sales 14,544 14,694 1 — EBITDA 2,117 2,018 (5) 1 EBIT 1,701 1,608 (5) 1 Net income 1,224 1,089 (11) (4) EPS (diluted US cents) 80.5 73.3 (9) (2) Free Cash Flow 1,066",
+      "metadata": {
+        "chunk_id": "p1_c2",
+        "word_start": 360,
+        "word_end": 530,
+        "vector_score": 0.16193329235867238,
+        "rerank_score": 28.04332923586724,
+        "matched_terms": [
+          "adjusted",
+          "ebitda",
+          "gaap",
+          "non"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "chunk_document",
+      "target": "AMCOR_2023Q4_EARNINGS",
+      "metadata": {
+        "page_count": 14,
+        "chunk_count": 40,
+        "chunk_words": 220,
+        "chunk_overlap": 40
+      }
+    },
+    {
+      "step": 2,
+      "action": "retrieve_and_rerank_chunk",
+      "target": "p11_c0",
+      "metadata": {
+        "page": 11,
+        "initial_rank": 1,
+        "vector_score": 0.27647420127624034,
+        "rerank_score": 44.64742012762403,
+        "matched_terms": [
+          "adjusted",
+          "ebitda",
+          "gaap",
+          "non",
+          "reconciliation"
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "action": "retrieve_and_rerank_chunk",
+      "target": "p12_c0",
+      "metadata": {
+        "page": 12,
+        "initial_rank": 2,
+        "vector_score": 0.24826192347573,
+        "rerank_score": 36.776192347573,
+        "matched_terms": [
+          "adjusted",
+          "ebitda",
+          "non",
+          "reconciliation"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "retrieve_and_rerank_chunk",
+      "target": "p12_c1",
+      "metadata": {
+        "page": 12,
+        "initial_rank": 3,
+        "vector_score": 0.17803420996216326,
+        "rerank_score": 29.703420996216327,
+        "matched_terms": [
+          "adjusted",
+          "ebitda",
+          "non",
+          "reconciliation"
+        ]
+      }
+    },
+    {
+      "step": 5,
+      "action": "retrieve_and_rerank_chunk",
+      "target": "p1_c2",
+      "metadata": {
+        "page": 1,
+        "initial_rank": 4,
+        "vector_score": 0.16193329235867238,
+        "rerank_score": 28.04332923586724,
+        "matched_terms": [
+          "adjusted",
+          "ebitda",
+          "gaap",
+          "non"
+        ]
+      }
+    },
+    {
+      "step": 6,
+      "action": "retrieve_and_rerank_chunk",
+      "target": "p7_c3",
+      "metadata": {
+        "page": 7,
+        "initial_rank": 9,
+        "vector_score": 0.129517087776001,
+        "rerank_score": 27.551708777600098,
+        "matched_terms": [
+          "adjusted",
+          "ebitda",
+          "gaap",
+          "non"
+        ]
+      }
+    },
+    {
+      "step": 7,
+      "action": "retrieve_and_rerank_chunk",
+      "target": "p11_c1",
+      "metadata": {
+        "page": 11,
+        "initial_rank": 6,
+        "vector_score": 0.14913709322256313,
+        "rerank_score": 24.663709322256313,
+        "matched_terms": [
+          "adjusted",
+          "ebitda",
+          "reconciliation"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": null,
+    "output": null,
+    "total": null
+  },
+  "latency_ms": 24,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\AMCOR_2023Q4_EARNINGS.pdf",
+    "adapter_mode": "tfidf_vector_search_plus_rerank",
+    "llm_enabled": false,
+    "model": null,
+    "page_count": 14,
+    "chunk_count": 40,
+    "chunk_words": 220,
+    "chunk_overlap": 40,
+    "retrieve_top_k": 20,
+    "rerank_top_k": 6,
+    "max_citations": 3
+  }
+}

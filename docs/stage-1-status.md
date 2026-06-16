@@ -16,6 +16,7 @@ Stage 1 means the repository now has enough structure to start running repeatabl
 - Evidence page evaluation logic exists.
 - Upstream PageIndex dependency issue draft exists.
 - FinanceBench MVP PDFs have a reproducible download script and local manifest.
+- PageIndex, Long-context, and Vector RAG baselines can run on the same MVP questions.
 
 ## Current Ownership
 
@@ -347,14 +348,76 @@ reports/long_context/qa_llm_manifest.json
 reports/long_context/evidence_eval_llm.json
 ```
 
+### Vector RAG + Reranker Baseline
+
+Implemented in:
+
+```text
+pipelines/vector_rag/adapter.py
+scripts/run_vector_rag_mvp.py
+```
+
+Current MVP mode:
+
+```text
+tfidf_vector_search_plus_rerank + optional LLM answer generation
+```
+
+This is a dependency-light baseline that uses pure-Python TF-IDF sparse vectors for retrieval and a lightweight reranker. It establishes the benchmark wiring before replacing the retrieval backend with LlamaIndex embeddings and a stronger reranker.
+
+No-LLM retrieval command:
+
+```powershell
+D:\pageindex-demo\PageIndex\.venv\Scripts\python.exe scripts\run_vector_rag_mvp.py --no-llm --output-dir reports\vector_rag\qa_smoke --manifest reports\vector_rag\qa_smoke_manifest.json --force --continue-on-error
+D:\pageindex-demo\PageIndex\.venv\Scripts\python.exe scripts\evaluate_evidence_mvp.py --results-dir reports\vector_rag\qa_smoke --output reports\vector_rag\evidence_eval_smoke.json --continue-on-error
+```
+
+Current no-LLM retrieval status:
+
+```text
+12 / 12 MVP questions generated outputs.
+0 failures.
+Average evidence recall: 1.000
+Average citation precision: 0.333
+```
+
+LLM answer command:
+
+```powershell
+$env:DEEPSEEK_API_KEY="YOUR_KEY"
+D:\pageindex-demo\PageIndex\.venv\Scripts\python.exe scripts\run_vector_rag_mvp.py --model deepseek/deepseek-v4-pro --output-dir reports\vector_rag\qa_llm --manifest reports\vector_rag\qa_llm_manifest.json --force --continue-on-error
+D:\pageindex-demo\PageIndex\.venv\Scripts\python.exe scripts\evaluate_evidence_mvp.py --results-dir reports\vector_rag\qa_llm --output reports\vector_rag\evidence_eval_llm.json --continue-on-error
+```
+
+Current Vector RAG LLM status:
+
+```text
+Model: deepseek/deepseek-v4-pro
+12 / 12 MVP questions generated LLM answers.
+0 failures.
+Average evidence recall: 1.000
+Average citation precision: 0.333
+```
+
+Generated artifacts:
+
+```text
+reports/vector_rag/qa_smoke/
+reports/vector_rag/qa_smoke_manifest.json
+reports/vector_rag/evidence_eval_smoke.json
+reports/vector_rag/qa_llm/
+reports/vector_rag/qa_llm_manifest.json
+reports/vector_rag/evidence_eval_llm.json
+```
+
 ## Next Stage 1 Work
 
 The next work should convert this setup into actual benchmark execution:
 
-1. Implement Vector RAG + reranker baseline.
-2. Implement Hybrid RAG baseline.
-3. Add answer accuracy evaluation.
-4. Generate the first cross-method benchmark report.
+1. Implement Hybrid RAG baseline.
+2. Add answer accuracy evaluation.
+3. Add token and latency aggregation to the cross-method report.
+4. Replace the dependency-light Vector RAG MVP with a LlamaIndex embedding + reranker implementation.
 
 ## Stage 1 Exit Criteria
 
@@ -362,9 +425,9 @@ Stage 1 is complete when:
 
 - 12 FinanceBench MVP questions can be run through PageIndex. Completed for retrieval-only mode.
 - At least one baseline can run on the same questions. Completed for Long-context LLM mode.
-- All methods produce `BenchmarkResult`.
-- Evidence recall and citation precision are reported.
-- A Markdown benchmark report is generated under `reports/`.
+- All methods produce `BenchmarkResult`. Completed for PageIndex, Long-context, and Vector RAG.
+- Evidence recall and citation precision are reported. Completed for PageIndex, Long-context, and Vector RAG.
+- A Markdown benchmark report is generated under `reports/`. Completed for current evidence-focused report.
 
 ## Current Blocker
 
@@ -376,4 +439,4 @@ The first 11 structures are now available. The JSON parsing patch made PageIndex
 Handled empty responses and noisy JSON output
 ```
 
-Next, build the PageIndex QA retrieval step and then start the baseline comparisons.
+Next, add Hybrid RAG and answer accuracy evaluation.

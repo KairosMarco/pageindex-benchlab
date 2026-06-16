@@ -1,0 +1,261 @@
+{
+  "method": "vector_rag_tfidf_rerank",
+  "question_id": "fb_mvp_001",
+  "question": "What is the FY2018 capital expenditure amount (in USD millions) for 3M? Give a response to the question by relying on the details shown in the cash flow statement.",
+  "answer": "The FY2018 capital expenditure amount for 3M, as shown by purchases of property, plant and equipment on the cash flow statement, was $1,577 million [PAGE 60].",
+  "citations": [
+    {
+      "document_id": "3M_2018_10K",
+      "page": 60,
+      "section": null,
+      "text": "Table of Contents 3M Company and Subsidiaries Consolidated Statement of Cash Flow s Years ended December 31 (Millions) 2018 2017 2016 Cash Flows from Operating Activities Net income including noncontrolling interest $ 5,363 $ 4,869 $ 5,058 Adjustments to reconcile net income including noncontrolling interest to net cash provided by operating activities Depreciation and amortization 1,488 1,544 1,474 Company pension and postretirement contributions (370) (967) (383) Company pension and postretire",
+      "metadata": {
+        "chunk_id": "p60_c0",
+        "word_start": 0,
+        "word_end": 220,
+        "vector_score": 0.3239062358067506,
+        "rerank_score": 58.39062358067506,
+        "matched_terms": [
+          "cash",
+          "equipment",
+          "flow",
+          "flows",
+          "investing",
+          "millions",
+          "operating",
+          "plant",
+          "property",
+          "purchases",
+          "statement"
+        ],
+        "citation_source": "llm_answer"
+      }
+    },
+    {
+      "document_id": "3M_2018_10K",
+      "page": 49,
+      "section": null,
+      "text": "ution of $600 million that 3M made following the signing of tax reform. On a combined basis, these items benefited free cash flow conversion by 3 percentage points. Refer to the preceding “Cash Flows from Operating Activities” section for discussion of additional items that impacted operating cash flow. Refer to the preceding “Cash Flows from Investing Activities” section for discussion on capital spending for property, plant and equipment. Years ended December 31 (Millions) 2018 2017 2016 Major",
+      "metadata": {
+        "chunk_id": "p49_c2",
+        "word_start": 360,
+        "word_end": 580,
+        "vector_score": 0.29089651121554033,
+        "rerank_score": 57.03965112155404,
+        "matched_terms": [
+          "capital",
+          "cash",
+          "equipment",
+          "financing",
+          "flow",
+          "flows",
+          "investing",
+          "millions",
+          "operating",
+          "plant",
+          "property",
+          "purchases"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "3M_2018_10K",
+      "page": 83,
+      "section": null,
+      "text": "Flow Information (Millions) 2018 2017 2016 Cash income tax payments, net of refunds $ 1,560 $ 1,604 $ 1,888 Cash interest payments 328 214 194 Cash interest payments include interest paid on debt and capital lease balances, including net interest payments/receipts related to accreted debt discounts/premiums, payment of debt issue costs, as well as net interest payments/receipts associated with interest rate swap contracts. Cash interest payments exclude the cash paid for early debt extinguishmen",
+      "metadata": {
+        "chunk_id": "p83_c1",
+        "word_start": 180,
+        "word_end": 350,
+        "vector_score": 0.27996279952204384,
+        "rerank_score": 54.89627995220438,
+        "matched_terms": [
+          "capital",
+          "cash",
+          "details",
+          "equipment",
+          "financing",
+          "flow",
+          "flows",
+          "investing",
+          "millions",
+          "statement"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "chunk_document",
+      "target": "3M_2018_10K",
+      "metadata": {
+        "page_count": 160,
+        "chunk_count": 540,
+        "chunk_words": 220,
+        "chunk_overlap": 40
+      }
+    },
+    {
+      "step": 2,
+      "action": "retrieve_and_rerank_chunk",
+      "target": "p60_c0",
+      "metadata": {
+        "page": 60,
+        "initial_rank": 1,
+        "vector_score": 0.3239062358067506,
+        "rerank_score": 58.39062358067506,
+        "matched_terms": [
+          "cash",
+          "equipment",
+          "flow",
+          "flows",
+          "investing",
+          "millions",
+          "operating",
+          "plant",
+          "property",
+          "purchases",
+          "statement"
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "action": "retrieve_and_rerank_chunk",
+      "target": "p49_c2",
+      "metadata": {
+        "page": 49,
+        "initial_rank": 2,
+        "vector_score": 0.29089651121554033,
+        "rerank_score": 57.03965112155404,
+        "matched_terms": [
+          "capital",
+          "cash",
+          "equipment",
+          "financing",
+          "flow",
+          "flows",
+          "investing",
+          "millions",
+          "operating",
+          "plant",
+          "property",
+          "purchases"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "retrieve_and_rerank_chunk",
+      "target": "p83_c1",
+      "metadata": {
+        "page": 83,
+        "initial_rank": 3,
+        "vector_score": 0.27996279952204384,
+        "rerank_score": 54.89627995220438,
+        "matched_terms": [
+          "capital",
+          "cash",
+          "details",
+          "equipment",
+          "financing",
+          "flow",
+          "flows",
+          "investing",
+          "millions",
+          "statement"
+        ]
+      }
+    },
+    {
+      "step": 5,
+      "action": "retrieve_and_rerank_chunk",
+      "target": "p49_c0",
+      "metadata": {
+        "page": 49,
+        "initial_rank": 5,
+        "vector_score": 0.25455651649197236,
+        "rerank_score": 53.25565164919723,
+        "matched_terms": [
+          "amount",
+          "capital",
+          "cash",
+          "details",
+          "equipment",
+          "financing",
+          "flow",
+          "flows",
+          "operating",
+          "plant",
+          "property",
+          "purchases"
+        ]
+      }
+    },
+    {
+      "step": 6,
+      "action": "retrieve_and_rerank_chunk",
+      "target": "p46_c2",
+      "metadata": {
+        "page": 46,
+        "initial_rank": 4,
+        "vector_score": 0.270350230161084,
+        "rerank_score": 50.8850230161084,
+        "matched_terms": [
+          "capital",
+          "cash",
+          "equipment",
+          "flows",
+          "investing",
+          "millions",
+          "operating",
+          "plant",
+          "property",
+          "purchases"
+        ]
+      }
+    },
+    {
+      "step": 7,
+      "action": "retrieve_and_rerank_chunk",
+      "target": "p46_c0",
+      "metadata": {
+        "page": 46,
+        "initial_rank": 9,
+        "vector_score": 0.17700035439081716,
+        "rerank_score": 38.30003543908172,
+        "matched_terms": [
+          "cash",
+          "financing",
+          "flows",
+          "investing",
+          "millions",
+          "operating",
+          "statement"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": 2051,
+    "output": 282,
+    "total": 2333
+  },
+  "latency_ms": 6048,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\3M_2018_10K.pdf",
+    "adapter_mode": "tfidf_vector_search_plus_rerank",
+    "llm_enabled": true,
+    "model": "deepseek/deepseek-v4-pro",
+    "page_count": 160,
+    "chunk_count": 540,
+    "chunk_words": 220,
+    "chunk_overlap": 40,
+    "retrieve_top_k": 20,
+    "rerank_top_k": 6,
+    "max_citations": 3
+  }
+}

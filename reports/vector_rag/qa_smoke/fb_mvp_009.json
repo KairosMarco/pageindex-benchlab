@@ -1,0 +1,219 @@
+{
+  "method": "vector_rag_tfidf_rerank",
+  "question_id": "fb_mvp_009",
+  "question": "Among operations, investing, and financing activities, which brought in the most (or lost the least) cash flow for Nike in FY2023?",
+  "answer": "Retrieved 6 chunks with TF-IDF vector search and reranking.",
+  "citations": [
+    {
+      "document_id": "NIKE_2023_10K",
+      "page": 62,
+      "section": null,
+      "text": "NIKE, INC. CONSOLIDATED STATEMENTS OF CASH FLOWS YEAR ENDED MAY 31, (Dollars in millions) 2023 2022 2021 Cash provided (used) by operations: Net income $ 5,070 $ 6,046 $ 5,727 Adjustments to reconcile net income to net cash provided (used) by operations: Depreciation 703 717 744 Deferred income taxes (117) (650) (385) Stock-based compensation 755 638 611 Amortization, impairment and other 156 123 53 Net foreign currency adjustments (213) (26) (138) Changes in certain working capital components a",
+      "metadata": {
+        "chunk_id": "p62_c0",
+        "word_start": 0,
+        "word_end": 220,
+        "vector_score": 0.1714631060031385,
+        "rerank_score": 38.096310600313856,
+        "matched_terms": [
+          "activities",
+          "cash",
+          "financing",
+          "flows",
+          "investing",
+          "operating",
+          "operations"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "NIKE_2023_10K",
+      "page": 69,
+      "section": null,
+      "text": "rmally designated as a hedge and, if designated, the extent to which the hedge is effective. The Company classifies the cash flows at settlement from derivatives in the same category as the cash flows from the related hedged items. For undesignated hedges and designated cash flow hedges, this is primarily within the Cash provided by operations component of the Consolidated Statements of Cash Flows. For designated net investment hedges, this is within the Cash provided by investing activities com",
+      "metadata": {
+        "chunk_id": "p69_c2",
+        "word_start": 360,
+        "word_end": 580,
+        "vector_score": 0.14648737397563563,
+        "rerank_score": 33.54873739756356,
+        "matched_terms": [
+          "activities",
+          "cash",
+          "flow",
+          "flows",
+          "investing",
+          "operations"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "NIKE_2023_10K",
+      "page": 93,
+      "section": null,
+      "text": "Corporate. The net cash proceeds received are reflected within Other investing activities on the Company's Consolidated Statements of Cash Flows. The related assets and liabilities of these entities within the Company's APLA operating segment were classified as held-for-sale on the Consolidated Balance Sheets within Prepaid expenses and other currents and Accrued liabilities, respectively, until the transactions closed. As of May 31, 2022, held-for-sale assets were $182 million and held-for-sale",
+      "metadata": {
+        "chunk_id": "p93_c2",
+        "word_start": 360,
+        "word_end": 513,
+        "vector_score": 0.13660385987869603,
+        "rerank_score": 32.510385987869604,
+        "matched_terms": [
+          "activities",
+          "cash",
+          "flows",
+          "investing",
+          "operating",
+          "operations"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "chunk_document",
+      "target": "NIKE_2023_10K",
+      "metadata": {
+        "page_count": 106,
+        "chunk_count": 349,
+        "chunk_words": 220,
+        "chunk_overlap": 40
+      }
+    },
+    {
+      "step": 2,
+      "action": "retrieve_and_rerank_chunk",
+      "target": "p62_c0",
+      "metadata": {
+        "page": 62,
+        "initial_rank": 2,
+        "vector_score": 0.1714631060031385,
+        "rerank_score": 38.096310600313856,
+        "matched_terms": [
+          "activities",
+          "cash",
+          "financing",
+          "flows",
+          "investing",
+          "operating",
+          "operations"
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "action": "retrieve_and_rerank_chunk",
+      "target": "p69_c2",
+      "metadata": {
+        "page": 69,
+        "initial_rank": 3,
+        "vector_score": 0.14648737397563563,
+        "rerank_score": 33.54873739756356,
+        "matched_terms": [
+          "activities",
+          "cash",
+          "flow",
+          "flows",
+          "investing",
+          "operations"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "retrieve_and_rerank_chunk",
+      "target": "p93_c2",
+      "metadata": {
+        "page": 93,
+        "initial_rank": 4,
+        "vector_score": 0.13660385987869603,
+        "rerank_score": 32.510385987869604,
+        "matched_terms": [
+          "activities",
+          "cash",
+          "flows",
+          "investing",
+          "operating",
+          "operations"
+        ]
+      }
+    },
+    {
+      "step": 5,
+      "action": "retrieve_and_rerank_chunk",
+      "target": "p62_c1",
+      "metadata": {
+        "page": 62,
+        "initial_rank": 1,
+        "vector_score": 0.18888029501814552,
+        "rerank_score": 29.88802950181455,
+        "matched_terms": [
+          "activities",
+          "cash",
+          "financing",
+          "flow",
+          "investing"
+        ]
+      }
+    },
+    {
+      "step": 6,
+      "action": "retrieve_and_rerank_chunk",
+      "target": "p93_c1",
+      "metadata": {
+        "page": 93,
+        "initial_rank": 6,
+        "vector_score": 0.10107771099607087,
+        "rerank_score": 26.857771099607085,
+        "matched_terms": [
+          "activities",
+          "cash",
+          "flows",
+          "investing",
+          "operating"
+        ]
+      }
+    },
+    {
+      "step": 7,
+      "action": "retrieve_and_rerank_chunk",
+      "target": "p48_c3",
+      "metadata": {
+        "page": 48,
+        "initial_rank": 11,
+        "vector_score": 0.07521518997277121,
+        "rerank_score": 21.02151899727712,
+        "matched_terms": [
+          "cash",
+          "flow",
+          "flows",
+          "operating",
+          "operations"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": null,
+    "output": null,
+    "total": null
+  },
+  "latency_ms": 169,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\NIKE_2023_10K.pdf",
+    "adapter_mode": "tfidf_vector_search_plus_rerank",
+    "llm_enabled": false,
+    "model": null,
+    "page_count": 106,
+    "chunk_count": 349,
+    "chunk_words": 220,
+    "chunk_overlap": 40,
+    "retrieve_top_k": 20,
+    "rerank_top_k": 6,
+    "max_citations": 3
+  }
+}
