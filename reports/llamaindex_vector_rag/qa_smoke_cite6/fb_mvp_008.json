@@ -1,0 +1,406 @@
+{
+  "method": "llamaindex_vector_rag",
+  "question_id": "fb_mvp_008",
+  "question": "What is the FY2016 COGS for Microsoft? Please state answer in USD millions. Provide a response to the question by primarily using the statement of income.",
+  "answer": "Retrieved 12 chunks with LlamaIndex vector retrieval and lightweight reranking.",
+  "citations": [
+    {
+      "document_id": "MICROSOFT_2016_10K",
+      "page": 32,
+      "section": null,
+      "text": "mation and Geographic Data of the Notes to Financial Statements (Part II, Item 8 of this Form 10-K). SUMMARY RESULTS OF OPERATIONS (In millions, except percentages and per share amounts) 2016 2015 2014 Percentage Change 2016 Versus 2015 Percentage Change 2015 Versus 2014 Revenue $ 85,320 $ 93,580 $ 86,833 (9)% 8% Gross margin $ 52,540 $ 60,542 $ 59,755 (13)% 1% Operating income $ 20,182 $ 18,161 $ 27,759 11% (35)% Diluted earnings per share $ 2.10 $ 1.48 $ 2.63 42% (44)% Fiscal year 2016 compare",
+      "metadata": {
+        "chunk_id": "915095e8-a52b-4273-874b-49db7b9993dd",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5543523200699967,
+        "rerank_score": 73.42689867366633,
+        "matched_terms": [
+          "cost",
+          "income",
+          "millions",
+          "operations",
+          "primarily",
+          "revenue",
+          "sales"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "MICROSOFT_2016_10K",
+      "page": 34,
+      "section": null,
+      "text": "Fiscal year 2016 compared with fiscal year 2015 Productivity and Business Processes Productivity and Business Processes revenue increased slightly, primarily due to an increase in Office and Dynamics revenue. Revenue included an unfavorable foreign currency impact of approximately 6%. • Office Commercial revenue increased $135 million or 1%, driven by higher revenue from Office 365 commercial, mainly due to growth in subscribers, offset by lower transactional license volume, reflecting a continu",
+      "metadata": {
+        "chunk_id": "1a4985bf-5c96-4ef6-a6ff-4a46ed3bfb97",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5637753611688342,
+        "rerank_score": 70.37753611688342,
+        "matched_terms": [
+          "cost",
+          "income",
+          "primarily",
+          "revenue",
+          "sales"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "MICROSOFT_2016_10K",
+      "page": 52,
+      "section": null,
+      "text": "Table of Contents PART II Item 8 ITEM 8. FINANCIAL STATEMENTS AND SUPPLEMENTARY DATA INCOME STATEMENTS (In millions, except per share amounts) Year Ended June 30, 2016 2015 2014 Revenue: Product $ 61,502 $ 75,956 $ 72,948 Service and other 23,818 17,624 13,885 Total revenue 85,320 93,580 86,833 Cost of revenue: Product 17,880 21,410 16,681 Service and other 14,900 11,628 10,397 Total cost of revenue 32,780 33,038 27,078 Gross margin 52,540 60,542 59,755 Research and development 11,988 12,046 11,",
+      "metadata": {
+        "chunk_id": "2ccdd06f-e989-4e5f-94e7-c9479a028a21",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5242263223398392,
+        "rerank_score": 69.35596556731727,
+        "matched_terms": [
+          "cost",
+          "income",
+          "millions",
+          "revenue",
+          "sales"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "MICROSOFT_2016_10K",
+      "page": 33,
+      "section": null,
+      "text": "Table of Contents PART II Item 7 Fiscal year 2015 compared with fiscal year 2014 Revenue increased $6.7 billion or 8%, primarily due to higher revenue from More Personal Computing and Intelligent Cloud. More Personal Computing revenue increased, primarily due to higher revenue from Devices, search advertising and Gaming, offset in part by a decline in Windows revenue. Intelligent Cloud revenue increased, primarily due to higher revenue from server products and cloud services. Revenue included an",
+      "metadata": {
+        "chunk_id": "e182e0c9-6979-4033-ab9c-28fe023efcf4",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5097368742046249,
+        "rerank_score": 68.84035408712914,
+        "matched_terms": [
+          "cost",
+          "income",
+          "millions",
+          "operations",
+          "primarily",
+          "revenue",
+          "sales"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "MICROSOFT_2016_10K",
+      "page": 82,
+      "section": null,
+      "text": "Table of Contents PART II Item 8 The reduction from the federal statutory rate is primarily due to earnings taxed at lower rates in foreign jurisdictions resulting from producing and distributing our products and services through our foreign regional operations centers in Ireland, Singapore, and Puerto Rico. Our foreign regional operating centers, which are taxed at rates lower than the U.S. rate, generated 69%, 73%, and 81% of our foreign income before tax in fiscal years 2016, 2015, and 2014, ",
+      "metadata": {
+        "chunk_id": "156fe5d7-4986-4c6a-aba9-5b7d5cd4fd4b",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5331727462193007,
+        "rerank_score": 66.26727462193007,
+        "matched_terms": [
+          "income",
+          "millions",
+          "operations",
+          "primarily",
+          "revenue",
+          "sales"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "MICROSOFT_2016_10K",
+      "page": 31,
+      "section": null,
+      "text": "Table of Contents PART II Item 7 Our international operations provide a significant portion of our total revenue and expenses. Many of these revenue and expenses are denominated in currencies other than the U.S. dollar. As a result, changes in foreign exchange rates may significantly affect revenue and expenses. The strengthening of the U.S. dollar relative to certain foreign currencies throughout fiscal year 2015, and continuing into fiscal year 2016, negatively impacted reported revenue and re",
+      "metadata": {
+        "chunk_id": "51bd2ed5-64bf-48ca-b877-e91b1976b18b",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5215827303321164,
+        "rerank_score": 65.05827303321165,
+        "matched_terms": [
+          "income",
+          "operations",
+          "primarily",
+          "provide",
+          "revenue",
+          "sales"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "llamaindex_build_vector_index",
+      "target": "MICROSOFT_2016_10K",
+      "metadata": {
+        "page_count": 121,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "chunk_size": 900,
+        "chunk_overlap": 160,
+        "retrieve_top_k": 120,
+        "rerank_top_k": 12
+      }
+    },
+    {
+      "step": 2,
+      "action": "llamaindex_retrieve_node",
+      "target": "915095e8-a52b-4273-874b-49db7b9993dd",
+      "metadata": {
+        "page": 32,
+        "retrieval_rank": 2,
+        "initial_rank": 2,
+        "vector_score": 0.5543523200699967,
+        "rerank_score": 73.42689867366633,
+        "matched_terms": [
+          "cost",
+          "income",
+          "millions",
+          "operations",
+          "primarily",
+          "revenue",
+          "sales"
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "action": "llamaindex_retrieve_node",
+      "target": "1a4985bf-5c96-4ef6-a6ff-4a46ed3bfb97",
+      "metadata": {
+        "page": 34,
+        "retrieval_rank": 1,
+        "initial_rank": 1,
+        "vector_score": 0.5637753611688342,
+        "rerank_score": 70.37753611688342,
+        "matched_terms": [
+          "cost",
+          "income",
+          "primarily",
+          "revenue",
+          "sales"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "llamaindex_retrieve_node",
+      "target": "2ccdd06f-e989-4e5f-94e7-c9479a028a21",
+      "metadata": {
+        "page": 52,
+        "retrieval_rank": 9,
+        "initial_rank": 9,
+        "vector_score": 0.5242263223398392,
+        "rerank_score": 69.35596556731727,
+        "matched_terms": [
+          "cost",
+          "income",
+          "millions",
+          "revenue",
+          "sales"
+        ]
+      }
+    },
+    {
+      "step": 5,
+      "action": "llamaindex_retrieve_node",
+      "target": "e182e0c9-6979-4033-ab9c-28fe023efcf4",
+      "metadata": {
+        "page": 33,
+        "retrieval_rank": 17,
+        "initial_rank": 17,
+        "vector_score": 0.5097368742046249,
+        "rerank_score": 68.84035408712914,
+        "matched_terms": [
+          "cost",
+          "income",
+          "millions",
+          "operations",
+          "primarily",
+          "revenue",
+          "sales"
+        ]
+      }
+    },
+    {
+      "step": 6,
+      "action": "llamaindex_retrieve_node",
+      "target": "156fe5d7-4986-4c6a-aba9-5b7d5cd4fd4b",
+      "metadata": {
+        "page": 82,
+        "retrieval_rank": 7,
+        "initial_rank": 7,
+        "vector_score": 0.5331727462193007,
+        "rerank_score": 66.26727462193007,
+        "matched_terms": [
+          "income",
+          "millions",
+          "operations",
+          "primarily",
+          "revenue",
+          "sales"
+        ]
+      }
+    },
+    {
+      "step": 7,
+      "action": "llamaindex_retrieve_node",
+      "target": "51bd2ed5-64bf-48ca-b877-e91b1976b18b",
+      "metadata": {
+        "page": 31,
+        "retrieval_rank": 13,
+        "initial_rank": 13,
+        "vector_score": 0.5215827303321164,
+        "rerank_score": 65.05827303321165,
+        "matched_terms": [
+          "income",
+          "operations",
+          "primarily",
+          "provide",
+          "revenue",
+          "sales"
+        ]
+      }
+    },
+    {
+      "step": 8,
+      "action": "llamaindex_retrieve_node",
+      "target": "7d102d4f-99e1-4a5b-89d9-79f72a385233",
+      "metadata": {
+        "page": 94,
+        "retrieval_rank": 6,
+        "initial_rank": 6,
+        "vector_score": 0.5341164075101545,
+        "rerank_score": 64.36997408434878,
+        "matched_terms": [
+          "income",
+          "millions",
+          "primarily",
+          "revenue",
+          "sales"
+        ]
+      }
+    },
+    {
+      "step": 9,
+      "action": "llamaindex_retrieve_node",
+      "target": "062ca1ab-7447-42fd-af1c-77cf82748f65",
+      "metadata": {
+        "page": 85,
+        "retrieval_rank": 3,
+        "initial_rank": 3,
+        "vector_score": 0.5529488627898772,
+        "rerank_score": 64.27821961232105,
+        "matched_terms": [
+          "millions",
+          "primarily",
+          "revenue",
+          "sales"
+        ]
+      }
+    },
+    {
+      "step": 10,
+      "action": "llamaindex_retrieve_node",
+      "target": "e1caa09e-b02d-430e-b984-caf5b93f41db",
+      "metadata": {
+        "page": 41,
+        "retrieval_rank": 16,
+        "initial_rank": 16,
+        "vector_score": 0.511504529533417,
+        "rerank_score": 64.0254529533417,
+        "matched_terms": [
+          "cost",
+          "income",
+          "operations",
+          "primarily",
+          "revenue",
+          "sales"
+        ]
+      }
+    },
+    {
+      "step": 11,
+      "action": "llamaindex_retrieve_node",
+      "target": "958bb159-1b7a-44bd-9d26-4cb5c4889c37",
+      "metadata": {
+        "page": 55,
+        "retrieval_rank": 11,
+        "initial_rank": 11,
+        "vector_score": 0.5239171169778835,
+        "rerank_score": 63.30837836445501,
+        "matched_terms": [
+          "income",
+          "millions",
+          "operations",
+          "revenue",
+          "sales"
+        ]
+      }
+    },
+    {
+      "step": 12,
+      "action": "llamaindex_retrieve_node",
+      "target": "f1b68b10-1b34-4005-bc1b-3f826b1b8055",
+      "metadata": {
+        "page": 58,
+        "retrieval_rank": 5,
+        "initial_rank": 5,
+        "vector_score": 0.5404627179498921,
+        "rerank_score": 63.01293846165588,
+        "matched_terms": [
+          "income",
+          "provide",
+          "revenue",
+          "sales"
+        ]
+      }
+    },
+    {
+      "step": 13,
+      "action": "llamaindex_retrieve_node",
+      "target": "a81a0e91-2897-4c7b-87bb-4b1cef253884",
+      "metadata": {
+        "page": 95,
+        "retrieval_rank": 8,
+        "initial_rank": 8,
+        "vector_score": 0.5311085139914923,
+        "rerank_score": 62.052518065815896,
+        "matched_terms": [
+          "income",
+          "millions",
+          "primarily",
+          "revenue"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": null,
+    "output": null,
+    "total": null
+  },
+  "latency_ms": 9812,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\MICROSOFT_2016_10K.pdf",
+    "adapter_mode": "llamaindex_vector_retrieval",
+    "llm_enabled": false,
+    "model": null,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "page_count": 121,
+    "chunk_size": 900,
+    "chunk_overlap": 160,
+    "retrieve_top_k": 120,
+    "rerank_top_k": 12,
+    "max_citations": 6
+  }
+}

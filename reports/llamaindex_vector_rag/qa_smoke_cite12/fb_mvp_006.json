@@ -1,0 +1,466 @@
+{
+  "method": "llamaindex_vector_rag",
+  "question_id": "fb_mvp_006",
+  "question": "Has Boeing reported any materially important ongoing legal battles from FY2022?",
+  "answer": "Retrieved 12 chunks with LlamaIndex vector retrieval and lightweight reranking.",
+  "citations": [
+    {
+      "document_id": "BOEING_2022_10K",
+      "page": 113,
+      "section": null,
+      "text": "Table of Contents based upon current information, that the outcome of any such legal proceeding, claim, or government dispute and investigation will not have a material effect on our financial position, results of operations or cash flows. Where it is reasonably possible that we will incur losses in excess of recorded amounts in connection with any of the matters set forth below, we will disclose either the amount or range of reasonably possible losses in excess of such amounts or, where no such",
+      "metadata": {
+        "chunk_id": "15fc6867-5e65-463d-a145-b60409c3d833",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5931645014650386,
+        "rerank_score": 101.31645014650385,
+        "matched_terms": [
+          "accident",
+          "actions",
+          "filed",
+          "has",
+          "lawsuits",
+          "legal",
+          "proceeding"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "BOEING_2022_10K",
+      "page": 19,
+      "section": null,
+      "text": "otentially resulting in significant liabilities. See Note 21 of the Consolidated Financial Statements for discussion of legal proceedings resulting from the October 29, 2018 accident of Lion Air Flight 610 and the March 10, 2019 accident of Ethiopian Airlines Flight 302. The amount of insurance coverage we maintain may be inadequate to cover these or other claims or liabilities. A significant portion of our customer financing portfolio is concentrated among certain customers and in certain types",
+      "metadata": {
+        "chunk_id": "41e36c88-3685-4eeb-bfcb-8333b6969dfe",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.4791535574486771,
+        "rerank_score": 76.77368907820104,
+        "matched_terms": [
+          "accident",
+          "actions",
+          "claims",
+          "legal",
+          "materially",
+          "proceedings"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "BOEING_2022_10K",
+      "page": 2,
+      "section": null,
+      "text": "T I Page Item 1. Business 1 Item 1A. Risk Factors 6 Item 1B. Unresolved Staff Comments 17 Item 2. Properties 18 Item 3. Legal Proceedings 18 Item 4. Mine Safety Disclosures 18 PART II Item 5. Market for Registrant’s Common Equity, Related Stockholder Matters and Issuer Purchases of Equity Securities 19 Item 6. [Reserved] 19 Item 7. Management’s Discussion and Analysis of Financial Condition and Results of Operations 20 Item 7A. Quantitative and Qualitative Disclosures About Market Risk 51 Item 8",
+      "metadata": {
+        "chunk_id": "e0e3c65b-5889-4165-8978-6fd07b822493",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5400386387586659,
+        "rerank_score": 64.99553054253325,
+        "matched_terms": [
+          "legal",
+          "proceedings"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "BOEING_2022_10K",
+      "page": 17,
+      "section": null,
+      "text": " relationships with the U.S. government, the heavily regulated nature of our industry, and in the case of environmental proceedings, our current or past ownership of certain property. Any such inquiry or investigation could result in an adverse ruling against us, which could have a material impact on our financial position, results of operations and/or cash flows. Our operations expose us to the risk of material environmental liabilities. We are subject to various U.S. federal, state, local and ",
+      "metadata": {
+        "chunk_id": "b7deba98-8dac-4728-82c8-d19734f5b16c",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5146033756787397,
+        "rerank_score": 60.42700423454064,
+        "matched_terms": [
+          "claims",
+          "legal",
+          "ongoing",
+          "proceedings"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "BOEING_2022_10K",
+      "page": 4,
+      "section": null,
+      "text": "ntellectual property, we also license intellectual property to and from third parties. For example, the U.S. government has licenses in our patents that are developed in performance of government contracts, and it may use or authorize others to use the inventions covered by such patents for government purposes. Unpatented research, development and engineering skills, as well as certain trademarks, trade secrets and other intellectual property rights, also make an important contribution to our bu",
+      "metadata": {
+        "chunk_id": "3f014383-bc34-4d49-b07a-24a80599aa40",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.520695244809175,
+        "rerank_score": 59.044524480917495,
+        "matched_terms": [
+          "has",
+          "important",
+          "materially"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "BOEING_2022_10K",
+      "page": 188,
+      "section": null,
+      "text": "e registrant’s most recent fiscal quarter (the registrant’s fourth fiscal quarter in the case of an annual report) that has materially affected, or is reasonably likely to materially affect, the registrant’s internal control over financial reporting; and 5. The registrant’s other certifying officer(s) and I have disclosed, based on our most recent evaluation of internal control over financial reporting, to the registrant’s auditors and the audit committee of the registrant’s board of directors (",
+      "metadata": {
+        "chunk_id": "6091b75e-d673-48f9-a94b-3a25c694e588",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5032912367505389,
+        "rerank_score": 55.25412367505388,
+        "matched_terms": [
+          "has",
+          "materially"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "BOEING_2022_10K",
+      "page": 29,
+      "section": null,
+      "text": "2 Unobligated backlog 22,404 21,137 Total Backlog $404,381 $377,499 Contractual backlog of unfilled orders excludes purchase options, announced orders for which definitive contracts have not been executed, orders where customers have the unilateral right to terminate, and unobligated U.S. and non-U.S. government contract funding. The increase in contractual backlog during 2022 was primarily due to an increase in BCA backlog that was partially offset by a decrease in BDS backlog. If we remain una",
+      "metadata": {
+        "chunk_id": "250d0c0d-4124-450d-825c-a74a91cf19ea",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.50044262103517,
+        "rerank_score": 54.95259543685033,
+        "matched_terms": [
+          "has",
+          "ongoing"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "BOEING_2022_10K",
+      "page": 187,
+      "section": null,
+      "text": "e registrant’s most recent fiscal quarter (the registrant’s fourth fiscal quarter in the case of an annual report) that has materially affected, or is reasonably likely to materially affect, the registrant’s internal control over financial reporting; and 5. The registrant’s other certifying officer(s) and I have disclosed, based on our most recent evaluation of internal control over financial reporting, to the registrant’s auditors and the audit committee of the registrant’s board of directors (",
+      "metadata": {
+        "chunk_id": "56d2eb51-b5f1-459c-8852-d5d920681a04",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.4989980629476139,
+        "rerank_score": 54.791472961428056,
+        "matched_terms": [
+          "has",
+          "materially"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "BOEING_2022_10K",
+      "page": 6,
+      "section": null,
+      "text": " government contracts were to be terminated for default, generally the U.S. government would pay only for the work that has been accepted and could require us to pay the difference between the original contract price and the cost to re-procure the contract items, net of the work accepted from the original contract. The U.S. government can also hold us liable for damages resulting from the default. Commercial Aircraft. In the U.S., our commercial aircraft products are required to comply with FAA ",
+      "metadata": {
+        "chunk_id": "0f07f63a-ef1a-4bbb-991c-2b399edeb605",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.4984077441142271,
+        "rerank_score": 54.72410774475605,
+        "matched_terms": [
+          "has",
+          "important"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "BOEING_2022_10K",
+      "page": 20,
+      "section": null,
+      "text": "e, installations and equipment at U.S. government bases for use in connection with various contract activities. Item 3. Legal Proceedings Currently, we are involved in a number of legal proceedings. For a discussion of contingencies related to legal proceedings, see Note 21 to our Consolidated Financial Statements, which is hereby incorporated by reference. Item 4. Mine Safety Disclosures Not applicable (1) (1) 18",
+      "metadata": {
+        "chunk_id": "ed114a69-3c5f-4d63-a056-9407f4e4922b",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.4405529823439547,
+        "rerank_score": 54.69696490106213,
+        "matched_terms": [
+          "legal",
+          "proceedings"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "BOEING_2022_10K",
+      "page": 125,
+      "section": null,
+      "text": "Table of Contents Because of its inherent limitations, internal control over financial reporting may not prevent or detect misstatements. Also, projections of any evaluation of effectiveness to future periods are subject to the risk that controls may become inadequate because of changes in conditions, or that the degree of compliance with the policies or procedures may deteriorate. /s/ Deloitte & Touche LLP Chicago, Illinois January 27, 2023 121",
+      "metadata": {
+        "chunk_id": "d4386c37-c84f-42e4-a54d-751bab86b13a",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5320327332145837,
+        "rerank_score": 54.1866066547917,
+        "matched_terms": [],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "BOEING_2022_10K",
+      "page": 190,
+      "section": null,
+      "text": "n with the Annual Report of The Boeing Company (the “Company”) on Form 10-K for the period ending December 31, 2022, as filed with the Securities and Exchange Commission on the date hereof (the “Report”), I, Brian J. West, Executive Vice President and Chief Financial Officer of the Company, certify, pursuant to 18 U.S.C. § 1350, as adopted pursuant to § 906 of the Sarbanes-Oxley Act of 2002, that: (1) The Report fully complies with the requirements of Section 13(a) or 15(d) of the Securities Exc",
+      "metadata": {
+        "chunk_id": "f666f621-ea06-4ea4-bb08-0b3eb177e7f4",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5115109231317351,
+        "rerank_score": 54.10109231317351,
+        "matched_terms": [
+          "filed"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "llamaindex_build_vector_index",
+      "target": "BOEING_2022_10K",
+      "metadata": {
+        "page_count": 190,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "chunk_size": 900,
+        "chunk_overlap": 160,
+        "retrieve_top_k": 120,
+        "rerank_top_k": 12
+      }
+    },
+    {
+      "step": 2,
+      "action": "llamaindex_retrieve_node",
+      "target": "15fc6867-5e65-463d-a145-b60409c3d833",
+      "metadata": {
+        "page": 113,
+        "retrieval_rank": 1,
+        "initial_rank": 1,
+        "vector_score": 0.5931645014650386,
+        "rerank_score": 101.31645014650385,
+        "matched_terms": [
+          "accident",
+          "actions",
+          "filed",
+          "has",
+          "lawsuits",
+          "legal",
+          "proceeding"
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "action": "llamaindex_retrieve_node",
+      "target": "41e36c88-3685-4eeb-bfcb-8333b6969dfe",
+      "metadata": {
+        "page": 19,
+        "retrieval_rank": 18,
+        "initial_rank": 18,
+        "vector_score": 0.4791535574486771,
+        "rerank_score": 76.77368907820104,
+        "matched_terms": [
+          "accident",
+          "actions",
+          "claims",
+          "legal",
+          "materially",
+          "proceedings"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "llamaindex_retrieve_node",
+      "target": "e0e3c65b-5889-4165-8978-6fd07b822493",
+      "metadata": {
+        "page": 2,
+        "retrieval_rank": 2,
+        "initial_rank": 2,
+        "vector_score": 0.5400386387586659,
+        "rerank_score": 64.99553054253325,
+        "matched_terms": [
+          "legal",
+          "proceedings"
+        ]
+      }
+    },
+    {
+      "step": 5,
+      "action": "llamaindex_retrieve_node",
+      "target": "b7deba98-8dac-4728-82c8-d19734f5b16c",
+      "metadata": {
+        "page": 17,
+        "retrieval_rank": 5,
+        "initial_rank": 5,
+        "vector_score": 0.5146033756787397,
+        "rerank_score": 60.42700423454064,
+        "matched_terms": [
+          "claims",
+          "legal",
+          "ongoing",
+          "proceedings"
+        ]
+      }
+    },
+    {
+      "step": 6,
+      "action": "llamaindex_retrieve_node",
+      "target": "3f014383-bc34-4d49-b07a-24a80599aa40",
+      "metadata": {
+        "page": 4,
+        "retrieval_rank": 4,
+        "initial_rank": 4,
+        "vector_score": 0.520695244809175,
+        "rerank_score": 59.044524480917495,
+        "matched_terms": [
+          "has",
+          "important",
+          "materially"
+        ]
+      }
+    },
+    {
+      "step": 7,
+      "action": "llamaindex_retrieve_node",
+      "target": "6091b75e-d673-48f9-a94b-3a25c694e588",
+      "metadata": {
+        "page": 188,
+        "retrieval_rank": 10,
+        "initial_rank": 10,
+        "vector_score": 0.5032912367505389,
+        "rerank_score": 55.25412367505388,
+        "matched_terms": [
+          "has",
+          "materially"
+        ]
+      }
+    },
+    {
+      "step": 8,
+      "action": "llamaindex_retrieve_node",
+      "target": "250d0c0d-4124-450d-825c-a74a91cf19ea",
+      "metadata": {
+        "page": 29,
+        "retrieval_rank": 12,
+        "initial_rank": 12,
+        "vector_score": 0.50044262103517,
+        "rerank_score": 54.95259543685033,
+        "matched_terms": [
+          "has",
+          "ongoing"
+        ]
+      }
+    },
+    {
+      "step": 9,
+      "action": "llamaindex_retrieve_node",
+      "target": "56d2eb51-b5f1-459c-8852-d5d920681a04",
+      "metadata": {
+        "page": 187,
+        "retrieval_rank": 14,
+        "initial_rank": 14,
+        "vector_score": 0.4989980629476139,
+        "rerank_score": 54.791472961428056,
+        "matched_terms": [
+          "has",
+          "materially"
+        ]
+      }
+    },
+    {
+      "step": 10,
+      "action": "llamaindex_retrieve_node",
+      "target": "0f07f63a-ef1a-4bbb-991c-2b399edeb605",
+      "metadata": {
+        "page": 6,
+        "retrieval_rank": 15,
+        "initial_rank": 15,
+        "vector_score": 0.4984077441142271,
+        "rerank_score": 54.72410774475605,
+        "matched_terms": [
+          "has",
+          "important"
+        ]
+      }
+    },
+    {
+      "step": 11,
+      "action": "llamaindex_retrieve_node",
+      "target": "ed114a69-3c5f-4d63-a056-9407f4e4922b",
+      "metadata": {
+        "page": 20,
+        "retrieval_rank": 44,
+        "initial_rank": 44,
+        "vector_score": 0.4405529823439547,
+        "rerank_score": 54.69696490106213,
+        "matched_terms": [
+          "legal",
+          "proceedings"
+        ]
+      }
+    },
+    {
+      "step": 12,
+      "action": "llamaindex_retrieve_node",
+      "target": "d4386c37-c84f-42e4-a54d-751bab86b13a",
+      "metadata": {
+        "page": 125,
+        "retrieval_rank": 3,
+        "initial_rank": 3,
+        "vector_score": 0.5320327332145837,
+        "rerank_score": 54.1866066547917,
+        "matched_terms": []
+      }
+    },
+    {
+      "step": 13,
+      "action": "llamaindex_retrieve_node",
+      "target": "f666f621-ea06-4ea4-bb08-0b3eb177e7f4",
+      "metadata": {
+        "page": 190,
+        "retrieval_rank": 7,
+        "initial_rank": 7,
+        "vector_score": 0.5115109231317351,
+        "rerank_score": 54.10109231317351,
+        "matched_terms": [
+          "filed"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": null,
+    "output": null,
+    "total": null
+  },
+  "latency_ms": 11531,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\BOEING_2022_10K.pdf",
+    "adapter_mode": "llamaindex_vector_retrieval",
+    "llm_enabled": false,
+    "model": null,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "page_count": 190,
+    "chunk_size": 900,
+    "chunk_overlap": 160,
+    "retrieve_top_k": 120,
+    "rerank_top_k": 12,
+    "max_citations": 12
+  }
+}

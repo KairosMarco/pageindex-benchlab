@@ -1,0 +1,594 @@
+{
+  "method": "llamaindex_vector_rag",
+  "question_id": "fb_mvp_001",
+  "question": "What is the FY2018 capital expenditure amount (in USD millions) for 3M? Give a response to the question by relying on the details shown in the cash flow statement.",
+  "answer": "Retrieved 12 chunks with LlamaIndex vector retrieval and lightweight reranking.",
+  "citations": [
+    {
+      "document_id": "3M_2018_10K",
+      "page": 47,
+      "section": null,
+      "text": "Table of Contents Investments in property, plant and equipment enable growth across many diverse markets, helping to meet product demand and increasing manufacturing efficiency. The Company expects 2019 capital spending to be approximately $1.7 billion to $1.9 billion as 3M continues to invest in its businesses. 3M invests in renewal and maintenance programs, which pertain to cost reduction, cycle time, maintaining and renewing current capacity, eliminating pollution, and compliance. Costs relat",
+      "metadata": {
+        "chunk_id": "ae84282d-bbe1-4710-ba65-deb403aff85c",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.569279320315346,
+        "rerank_score": 80.9279320315346,
+        "matched_terms": [
+          "capital",
+          "cash",
+          "details",
+          "equipment",
+          "financing",
+          "flows",
+          "millions",
+          "plant",
+          "property",
+          "purchases"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "3M_2018_10K",
+      "page": 43,
+      "section": null,
+      "text": "Table of Contents FINANCIAL CONDITION AND LIQUIDI TY The strength and stability of 3M’s business model and strong free cash flow capability, together with proven capital markets access, positions the Company to be able to add further leverage to its capital structure. Investing in 3M’s businesses to drive organic growth remains the first priority for capital deployment, including research and development, capital expenditures, and commercialization capability. Investment in organic growth will b",
+      "metadata": {
+        "chunk_id": "5471d657-7974-4919-a650-c15c904141ed",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5414166973425698,
+        "rerank_score": 76.10833640092365,
+        "matched_terms": [
+          "amount",
+          "capital",
+          "cash",
+          "financing",
+          "flow",
+          "flows",
+          "investing",
+          "operations",
+          "statement"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "3M_2018_10K",
+      "page": 46,
+      "section": null,
+      "text": "In 2017, cash flows provided by operating activities decreased $422 million compared to the same period last year. Factors that decreased operating cash flows were increases in pension contributions, plus year-on-year increases in working capital. In December 2017, 3M contributed $600 million to its U.S. defined benefit pension plan, contributing to a year-on-year increase in pension and postretirement contributions of $584 million. The combination of accounts receivable, inventories and account",
+      "metadata": {
+        "chunk_id": "b1c36c6a-d91f-41cf-bc02-a1528bec3c9f",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.4885295438223542,
+        "rerank_score": 72.69462104890209,
+        "matched_terms": [
+          "capital",
+          "cash",
+          "equipment",
+          "flows",
+          "investing",
+          "millions",
+          "operating",
+          "plant",
+          "property",
+          "purchases"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "3M_2018_10K",
+      "page": 49,
+      "section": null,
+      "text": "Table of Contents Other cash flows from financing activities may include various other items, such as changes in cash overdraft balances, and principal payments for capital leases. In addition, in 2017, this included a payment related to the $96 million in interest expense associated with premiums and fees for the early retirement of debt. See Note 12 for additional details. Free Cash Flow (non-GAAP measure): Free cash flow and free cash flow conversion are not defined under U.S. generally accep",
+      "metadata": {
+        "chunk_id": "54044813-d51b-4c8b-80a4-01bef01c7163",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.40118239497414904,
+        "rerank_score": 71.64323949741491,
+        "matched_terms": [
+          "amount",
+          "capital",
+          "cash",
+          "details",
+          "equipment",
+          "financing",
+          "flow",
+          "flows",
+          "investing",
+          "millions",
+          "operating",
+          "plant",
+          "property",
+          "purchases"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "3M_2018_10K",
+      "page": 26,
+      "section": null,
+      "text": "EA had price growth, while the U.S. selling prices declined slightly. Financial condition: 3M generated $6.4 billion of operating cash flow in 2018, an increase of $199 million when compared to 2017. This followed a decrease of $422 million when comparing 2017 to 2016. Refer to the section entitled “Financial Condition and Liquidity” later in MD&A for a discussion of items impacting cash flows. In November 2018, 3M’s Board of Directors authorized the repurchase of up to $10 billion of 3M’s outst",
+      "metadata": {
+        "chunk_id": "723a4249-19a2-4b2d-8a85-9b4a37513343",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5322340469232905,
+        "rerank_score": 68.18173802566237,
+        "matched_terms": [
+          "capital",
+          "cash",
+          "flow",
+          "flows",
+          "operating",
+          "operations",
+          "purchases"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "3M_2018_10K",
+      "page": 60,
+      "section": null,
+      "text": "Table of Contents 3M Company and Subsidiaries Consolidated Statement of Cash Flow s Years ended December 31 (Millions) 2018 2017 2016 Cash Flows from Operating Activities Net income including noncontrolling interest $ 5,363 $ 4,869 $ 5,058 Adjustments to reconcile net income including noncontrolling interest to net cash provided by operating activities Depreciation and amortization 1,488 1,544 1,474 Company pension and postretirement contributions (370) (967) (383) Company pension and postretire",
+      "metadata": {
+        "chunk_id": "762502ea-6d8e-4299-a738-34e727523ad5",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.39996645056272057,
+        "rerank_score": 67.5049783896054,
+        "matched_terms": [
+          "cash",
+          "equipment",
+          "financing",
+          "flow",
+          "flows",
+          "investing",
+          "millions",
+          "operating",
+          "plant",
+          "property",
+          "purchases",
+          "statement"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "3M_2018_10K",
+      "page": 110,
+      "section": null,
+      "text": "Table of Contents unconditional purchase obligations. The purchase obligation amounts do not represent the entire anticipated purchases in the future, but represent only those items for which the Company is contractually obligated. The majority of 3M’s products and services are purchased as needed, with no unconditional commitment. For this reason, these amounts will not provide an indication of the Company’s expected future cash outflows related to purchases. Warranties/Guarantees: 3M’s accrued",
+      "metadata": {
+        "chunk_id": "8275da55-ca27-4f70-9523-0ba4b0fc6a7e",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.480593826641114,
+        "rerank_score": 63.867715997444726,
+        "matched_terms": [
+          "amount",
+          "cash",
+          "flows",
+          "operations",
+          "property",
+          "purchases"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "3M_2018_10K",
+      "page": 61,
+      "section": null,
+      "text": "cal currencies generally are considered the functional currencies outside the United States. Assets and liabilities for operations in local-currency environments are translated at month-end exchange rates of the period reported. Income and expense items are translated at month-end exchange rates of each applicable month. Cumulative translation adjustments are recorded as a component of accumulated other comprehensive income (loss) in shareholders’ equity. 3M has a subsidiary in Venezuela, the fi",
+      "metadata": {
+        "chunk_id": "8f6ec1d5-abda-4359-b922-76317ebf99c7",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5218545520592643,
+        "rerank_score": 63.1271218725931,
+        "matched_terms": [
+          "amount",
+          "capital",
+          "cash",
+          "operating",
+          "operations"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "3M_2018_10K",
+      "page": 78,
+      "section": null,
+      "text": "s, have been and are intended to be continuously renewed, and the associated products of which are expected to generate cash flows for 3M for an indefinite period of time. Amortization expense for the years ended December 31 follows: (Millions) 2018 2017 2016 Amortization expense $ 249 $ 238 $ 262 Expected amortization expense for acquired amortizable intangible assets recorded as of December 31, 2018 follows: After (Millions) 2019 2020 2021 2022 2023 2023 Amortization expense $ 240 $ 228 $ 219 ",
+      "metadata": {
+        "chunk_id": "dd63301b-b588-4ab9-a386-6c183de1f5ad",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5071924519460473,
+        "rerank_score": 62.635911861271396,
+        "matched_terms": [
+          "cash",
+          "flows",
+          "millions",
+          "statement"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "3M_2018_10K",
+      "page": 83,
+      "section": null,
+      "text": "f Contents Reclassifications out of Accumulated Other Comprehensive Income Attributable to 3M Amounts Reclassified from Details about Accumulated Other Accumulated Other Comprehensive Income Comprehensive Income Components Year ended December 31, Location on Income (Millions) 2018 2017 2016 Statement Gains (losses) associated with defined benefit pension and postretirement plans amortization Transition asset $ — $ — $ 1 See Note 13 Prior service benefit 76 89 92 See Note 13 Net actuarial loss (6",
+      "metadata": {
+        "chunk_id": "f6cc5b7f-6b28-470c-893a-bb19b8466ab6",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.3600821990979749,
+        "rerank_score": 62.20821990979749,
+        "matched_terms": [
+          "capital",
+          "cash",
+          "details",
+          "equipment",
+          "financing",
+          "flow",
+          "flows",
+          "investing",
+          "millions",
+          "statement"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "3M_2018_10K",
+      "page": 42,
+      "section": null,
+      "text": "actors are discussed in Item 1A, “Risk Factors,” of this document. In addition, changes in the weighted average cost of capital could also impact impairment testing results. As indicated above, during the first quarter of 2018, the Company completed its assessment of any potential goodwill impairment for reporting units impacted by changes between reporting units and determined that no impairment existed. Long-lived assets with a definite life are reviewed for impairment whenever events or chang",
+      "metadata": {
+        "chunk_id": "de6afc93-fa9b-4570-b0c9-7084db59044b",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5300470288469136,
+        "rerank_score": 61.95470288469136,
+        "matched_terms": [
+          "amount",
+          "capital",
+          "cash",
+          "operations"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "3M_2018_10K",
+      "page": 44,
+      "section": null,
+      "text": "Table of Contents Cash, Cash Equivalents and Marketable Securities: At December 31, 2018, 3M had $3.3 billion of cash, cash equivalents and marketable securities, of which approximately $3.1 billion was held by the Company’s foreign subsidiaries and approximately $160 million was held by the United States. These balances are invested in bank instruments and other high-quality fixed income securities. At December 31, 2017, cash, cash equivalents and marketable securities held by the Company’s for",
+      "metadata": {
+        "chunk_id": "189b91fa-7e43-4159-acde-0778b2b7b3b3",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5101391490998421,
+        "rerank_score": 61.93891490998421,
+        "matched_terms": [
+          "capital",
+          "cash",
+          "details",
+          "millions",
+          "operations"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "llamaindex_build_vector_index",
+      "target": "3M_2018_10K",
+      "metadata": {
+        "page_count": 160,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "chunk_size": 900,
+        "chunk_overlap": 160,
+        "retrieve_top_k": 120,
+        "rerank_top_k": 12
+      }
+    },
+    {
+      "step": 2,
+      "action": "llamaindex_retrieve_node",
+      "target": "ae84282d-bbe1-4710-ba65-deb403aff85c",
+      "metadata": {
+        "page": 47,
+        "retrieval_rank": 1,
+        "initial_rank": 1,
+        "vector_score": 0.569279320315346,
+        "rerank_score": 80.9279320315346,
+        "matched_terms": [
+          "capital",
+          "cash",
+          "details",
+          "equipment",
+          "financing",
+          "flows",
+          "millions",
+          "plant",
+          "property",
+          "purchases"
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "action": "llamaindex_retrieve_node",
+      "target": "5471d657-7974-4919-a650-c15c904141ed",
+      "metadata": {
+        "page": 43,
+        "retrieval_rank": 5,
+        "initial_rank": 5,
+        "vector_score": 0.5414166973425698,
+        "rerank_score": 76.10833640092365,
+        "matched_terms": [
+          "amount",
+          "capital",
+          "cash",
+          "financing",
+          "flow",
+          "flows",
+          "investing",
+          "operations",
+          "statement"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "llamaindex_retrieve_node",
+      "target": "b1c36c6a-d91f-41cf-bc02-a1528bec3c9f",
+      "metadata": {
+        "page": 46,
+        "retrieval_rank": 20,
+        "initial_rank": 20,
+        "vector_score": 0.4885295438223542,
+        "rerank_score": 72.69462104890209,
+        "matched_terms": [
+          "capital",
+          "cash",
+          "equipment",
+          "flows",
+          "investing",
+          "millions",
+          "operating",
+          "plant",
+          "property",
+          "purchases"
+        ]
+      }
+    },
+    {
+      "step": 5,
+      "action": "llamaindex_retrieve_node",
+      "target": "54044813-d51b-4c8b-80a4-01bef01c7163",
+      "metadata": {
+        "page": 49,
+        "retrieval_rank": 58,
+        "initial_rank": 58,
+        "vector_score": 0.40118239497414904,
+        "rerank_score": 71.64323949741491,
+        "matched_terms": [
+          "amount",
+          "capital",
+          "cash",
+          "details",
+          "equipment",
+          "financing",
+          "flow",
+          "flows",
+          "investing",
+          "millions",
+          "operating",
+          "plant",
+          "property",
+          "purchases"
+        ]
+      }
+    },
+    {
+      "step": 6,
+      "action": "llamaindex_retrieve_node",
+      "target": "723a4249-19a2-4b2d-8a85-9b4a37513343",
+      "metadata": {
+        "page": 26,
+        "retrieval_rank": 6,
+        "initial_rank": 6,
+        "vector_score": 0.5322340469232905,
+        "rerank_score": 68.18173802566237,
+        "matched_terms": [
+          "capital",
+          "cash",
+          "flow",
+          "flows",
+          "operating",
+          "operations",
+          "purchases"
+        ]
+      }
+    },
+    {
+      "step": 7,
+      "action": "llamaindex_retrieve_node",
+      "target": "762502ea-6d8e-4299-a738-34e727523ad5",
+      "metadata": {
+        "page": 60,
+        "retrieval_rank": 60,
+        "initial_rank": 60,
+        "vector_score": 0.39996645056272057,
+        "rerank_score": 67.5049783896054,
+        "matched_terms": [
+          "cash",
+          "equipment",
+          "financing",
+          "flow",
+          "flows",
+          "investing",
+          "millions",
+          "operating",
+          "plant",
+          "property",
+          "purchases",
+          "statement"
+        ]
+      }
+    },
+    {
+      "step": 8,
+      "action": "llamaindex_retrieve_node",
+      "target": "8275da55-ca27-4f70-9523-0ba4b0fc6a7e",
+      "metadata": {
+        "page": 110,
+        "retrieval_rank": 24,
+        "initial_rank": 24,
+        "vector_score": 0.480593826641114,
+        "rerank_score": 63.867715997444726,
+        "matched_terms": [
+          "amount",
+          "cash",
+          "flows",
+          "operations",
+          "property",
+          "purchases"
+        ]
+      }
+    },
+    {
+      "step": 9,
+      "action": "llamaindex_retrieve_node",
+      "target": "8f6ec1d5-abda-4359-b922-76317ebf99c7",
+      "metadata": {
+        "page": 61,
+        "retrieval_rank": 8,
+        "initial_rank": 8,
+        "vector_score": 0.5218545520592643,
+        "rerank_score": 63.1271218725931,
+        "matched_terms": [
+          "amount",
+          "capital",
+          "cash",
+          "operating",
+          "operations"
+        ]
+      }
+    },
+    {
+      "step": 10,
+      "action": "llamaindex_retrieve_node",
+      "target": "dd63301b-b588-4ab9-a386-6c183de1f5ad",
+      "metadata": {
+        "page": 78,
+        "retrieval_rank": 11,
+        "initial_rank": 11,
+        "vector_score": 0.5071924519460473,
+        "rerank_score": 62.635911861271396,
+        "matched_terms": [
+          "cash",
+          "flows",
+          "millions",
+          "statement"
+        ]
+      }
+    },
+    {
+      "step": 11,
+      "action": "llamaindex_retrieve_node",
+      "target": "f6cc5b7f-6b28-470c-893a-bb19b8466ab6",
+      "metadata": {
+        "page": 83,
+        "retrieval_rank": 97,
+        "initial_rank": 97,
+        "vector_score": 0.3600821990979749,
+        "rerank_score": 62.20821990979749,
+        "matched_terms": [
+          "capital",
+          "cash",
+          "details",
+          "equipment",
+          "financing",
+          "flow",
+          "flows",
+          "investing",
+          "millions",
+          "statement"
+        ]
+      }
+    },
+    {
+      "step": 12,
+      "action": "llamaindex_retrieve_node",
+      "target": "de6afc93-fa9b-4570-b0c9-7084db59044b",
+      "metadata": {
+        "page": 42,
+        "retrieval_rank": 7,
+        "initial_rank": 7,
+        "vector_score": 0.5300470288469136,
+        "rerank_score": 61.95470288469136,
+        "matched_terms": [
+          "amount",
+          "capital",
+          "cash",
+          "operations"
+        ]
+      }
+    },
+    {
+      "step": 13,
+      "action": "llamaindex_retrieve_node",
+      "target": "189b91fa-7e43-4159-acde-0778b2b7b3b3",
+      "metadata": {
+        "page": 44,
+        "retrieval_rank": 10,
+        "initial_rank": 10,
+        "vector_score": 0.5101391490998421,
+        "rerank_score": 61.93891490998421,
+        "matched_terms": [
+          "capital",
+          "cash",
+          "details",
+          "millions",
+          "operations"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": null,
+    "output": null,
+    "total": null
+  },
+  "latency_ms": 13640,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\3M_2018_10K.pdf",
+    "adapter_mode": "llamaindex_vector_retrieval",
+    "llm_enabled": false,
+    "model": null,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "page_count": 160,
+    "chunk_size": 900,
+    "chunk_overlap": 160,
+    "retrieve_top_k": 120,
+    "rerank_top_k": 12,
+    "max_citations": 12
+  }
+}

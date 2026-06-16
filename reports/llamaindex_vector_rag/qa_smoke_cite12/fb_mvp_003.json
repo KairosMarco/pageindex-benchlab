@@ -1,0 +1,484 @@
+{
+  "method": "llamaindex_vector_rag",
+  "question_id": "fb_mvp_003",
+  "question": "What are the major products and services that AMD sells as of FY22?",
+  "answer": "Retrieved 12 chunks with LlamaIndex vector retrieval and lightweight reranking.",
+  "citations": [
+    {
+      "document_id": "AMD_2022_10K",
+      "page": 60,
+      "section": null,
+      "text": "any. References herein to AMD or the Company mean Advanced Micro Devices, Inc. and its consolidated subsidiaries. AMD’s products include x86 microprocessors (CPUs) and graphics processing units (GPUs), as standalone devices or as incorporated into accelerated processing units (APUs), chipsets, data center and professional GPUs, embedded processors, semi-custom System-on-Chip (SoC) products, microprocessor and SoC development services and technology, data processing units (DPUs), Field Programmab",
+      "metadata": {
+        "chunk_id": "36985016-8063-4025-9a79-ec419ae68175",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5728885046086405,
+        "rerank_score": 72.28885046086404,
+        "matched_terms": [
+          "cpus",
+          "gpus",
+          "graphics",
+          "processors",
+          "products",
+          "sells",
+          "services"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "AMD_2022_10K",
+      "page": 11,
+      "section": null,
+      "text": "Table of Contents We generally warrant that our products sold to our customers will conform to our approved specifications and be free from defects in material and workmanship under normal use and conditions for one year. We offer up to three-year limited warranties for certain product types, and sometimes provide other warranty periods based on negotiated terms with certain customers. We market and sell our latest products under the AMD trademark. Our client processors include: AMD Ryzen, AMD R",
+      "metadata": {
+        "chunk_id": "8d6de836-36b9-43d9-a34f-3118e30ca643",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.544483657001364,
+        "rerank_score": 63.440032366803074,
+        "matched_terms": [
+          "graphics",
+          "processors",
+          "products",
+          "services"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "AMD_2022_10K",
+      "page": 7,
+      "section": null,
+      "text": "We believe that integrated, balanced computing platforms consisting of CPUs, chipsets and GPUs (either as discrete GPUs or integrated into an APU or SoC) that work together at the system level bring end users improved system stability, increased performance and enhanced power efficiency. In addition, we believe customers also benefit from an all-AMD platform (consisting of an APU or CPU, a discrete GPU, and a chipset when needed), as we are able to optimize interoperability, provide our customer",
+      "metadata": {
+        "chunk_id": "a66b4e19-c46d-457e-80f2-2e00308ef1e5",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5182057655389946,
+        "rerank_score": 60.787243220566126,
+        "matched_terms": [
+          "cpus",
+          "gpus",
+          "processors",
+          "products"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "AMD_2022_10K",
+      "page": 43,
+      "section": null,
+      "text": "esults of Operations” in Part II, Item 7 of our Annual Report on Form 10-K for the fiscal year ended December 25, 2021. Overview 2022 was a transformative year for AMD as we took several major steps that scaled and reshaped our business. In February 2022, we completed our strategic acquisition of Xilinx, Inc. (Xilinx) which expanded our technology and product portfolio to include adaptable hardware platforms that enable hardware acceleration and rapid innovation across a variety of technologies ",
+      "metadata": {
+        "chunk_id": "21f496f6-7988-4973-9757-d8273f224f93",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5156517585475686,
+        "rerank_score": 60.523509188090195,
+        "matched_terms": [
+          "major",
+          "overview",
+          "processors",
+          "products"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "AMD_2022_10K",
+      "page": 13,
+      "section": null,
+      "text": "Table of Contents Competition in Gaming Segment In the graphics market, our principal competitor in the supply of discrete graphics is NVIDIA who is the market share leader. Intel also manufactures and sells embedded graphics processors and integrated graphics processor (IGP) chipsets. Also, Intel has developed their own gaming-focused discrete GPUs and has entered the market. Other competitors include suppliers of discrete graphics and integrated graphics processor (IGP) chipsets. Some of our c",
+      "metadata": {
+        "chunk_id": "1fab3b55-3660-4f7e-8c28-3f00b10d48f0",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.49409762080446507,
+        "rerank_score": 60.3347620804465,
+        "matched_terms": [
+          "gpus",
+          "graphics",
+          "processors",
+          "products",
+          "sells"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "AMD_2022_10K",
+      "page": 19,
+      "section": null,
+      "text": "croprocessors for many years. Intel’s market share, margins and significant financial resources enable it to market its products aggressively, to target our customers and our channel partners with special incentives and to influence customers who do business with us. These aggressive activities have in the past resulted in lower unit sales and a lower average selling price for many of our products and adversely affected our margins and profitability. Intel exerts substantial influence over compu",
+      "metadata": {
+        "chunk_id": "6bb5a1e7-2499-447b-a8af-ea0473fe3af4",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5151290192806558,
+        "rerank_score": 58.462901928065584,
+        "matched_terms": [
+          "gpus",
+          "graphics",
+          "products"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "AMD_2022_10K",
+      "page": 24,
+      "section": null,
+      "text": "If essential equipment, materials, substrates or manufacturing processes are not available to manufacture our products, we could be materially adversely affected. We may purchase equipment, materials and substrates for use by our back-end manufacturing service providers from a number of suppliers and our operations depend upon obtaining deliveries of adequate supplies of equipment and materials on a timely basis. Our third-party suppliers also depend on the same timely delivery of adequate quant",
+      "metadata": {
+        "chunk_id": "333de7a6-a317-4551-a104-326348e6751b",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5288432583964804,
+        "rerank_score": 55.86765917298138,
+        "matched_terms": [
+          "products"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "AMD_2022_10K",
+      "page": 10,
+      "section": null,
+      "text": "Table of Contents FPGAs and Adaptive SoCs. Our FPGA products are hardware-customizable devices that can be tailored to meet the specific needs of each customer, enabling them to differentiate their products and accelerate time-to-market. Our FPGA families include UltraScale+™ (based on 16 nm technology), UltraScale™ (20 nm), 7 Series (28 nm) and older series. Adaptive SoC products include the Zynq SoC and UltraScale+ Multi-Processing System on a Chip (MPSoCs) which combine FPGA technology with a",
+      "metadata": {
+        "chunk_id": "a842ba4d-9ac7-4658-8182-8c3555868a58",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.46418351109343914,
+        "rerank_score": 55.285017776010584,
+        "matched_terms": [
+          "cpus",
+          "gpus",
+          "products",
+          "services"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "AMD_2022_10K",
+      "page": 12,
+      "section": null,
+      "text": "Table of Contents We also work with our customers to create differentiated products that leverage our CPU, GPU and APU technology. Certain customers pay us non-recurring engineering fees for design and development services and a purchase price for the resulting products. One customer accounted for 16% of our consolidated net revenue for the year ended December 31, 2022. Sales to this customer consisted of sales of products from our Gaming segment. A loss of this customer would have a material ad",
+      "metadata": {
+        "chunk_id": "f5095cfd-efe9-49ec-b8c0-563c4984b26f",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.4618299753269289,
+        "rerank_score": 55.04133086602622,
+        "matched_terms": [
+          "cpus",
+          "graphics",
+          "products",
+          "services"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "AMD_2022_10K",
+      "page": 9,
+      "section": null,
+      "text": "Table of Contents Discrete Desktop and Notebook GPUs. Our AMD Radeon series discrete GPU processors for desktop and notebook PCs support current generation application program interfaces (APIs) like DirectX® 12 Ultimate and Vulkan , support high-refresh rate displays using AMD FreeSync™, AMD FreeSync Premium, and AMD FreeSync Premium Pro technologies, and are designed to support VR in PC platforms. Our AMD Radeon Software expands remote gaming functionality and enables new features and customiza",
+      "metadata": {
+        "chunk_id": "6a8e290a-abf3-4af1-9208-7be905e1f7fe",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.43787669789881095,
+        "rerank_score": 54.62100312321443,
+        "matched_terms": [
+          "cpus",
+          "gpus",
+          "graphics",
+          "processors",
+          "products"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "AMD_2022_10K",
+      "page": 112,
+      "section": null,
+      "text": "Exhibit 21 (*) Inactive (**) In the process of being dissolved. (1) 100% owned by Xilinx, Inc. (2) Subsidiary of Solarflare Communications, Inc. (3) 100% owned by ATI Technologies ULC (4) 99.9952% owned by Advanced Micro Devices, Inc., .0048% owned by AMD International Sales & Service, Ltd. (5) 99.9% owned by AMD International Sales & Service, Ltd., 0.1% owned by AMD Far East Ltd. (6) Subsidiary of 1252986 Alberta ULC. (7) Subsidiary of Xilinx Development Corporation (8) Subsidiary of Xilinx Asi",
+      "metadata": {
+        "chunk_id": "1ed709d0-c3e7-45cf-accf-04fdee493215",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5196590333672162,
+        "rerank_score": 52.94090333672162,
+        "matched_terms": [],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "AMD_2022_10K",
+      "page": 110,
+      "section": null,
+      "text": "Advanced Micro Devices (China) Co., Ltd. China Advanced Micro Devices (Shanghai) Co., Ltd. China Advanced Micro Devices Products (China) Co., Ltd China Chengdu Haiguang Microelectronics Technology Co., Ltd. China Xilinx Technology Beijing Limited China Xilinx Technology Shanghai Limited China Advanced Micro Devices SAS France Xilinx SARL France Advanced Micro Devices GmbH Germany Silexica GmbH Germany Xilinx Dresden GmbH Germany Xilinx GmbH Germany Xilinx Hong Kong Limited Hong Kong SAR, China A",
+      "metadata": {
+        "chunk_id": "445a08da-988c-4169-94df-5f4d03a4bcf4",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.4996688591041718,
+        "rerank_score": 52.90855257708385,
+        "matched_terms": [
+          "products"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "llamaindex_build_vector_index",
+      "target": "AMD_2022_10K",
+      "metadata": {
+        "page_count": 121,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "chunk_size": 900,
+        "chunk_overlap": 160,
+        "retrieve_top_k": 120,
+        "rerank_top_k": 12
+      }
+    },
+    {
+      "step": 2,
+      "action": "llamaindex_retrieve_node",
+      "target": "36985016-8063-4025-9a79-ec419ae68175",
+      "metadata": {
+        "page": 60,
+        "retrieval_rank": 1,
+        "initial_rank": 1,
+        "vector_score": 0.5728885046086405,
+        "rerank_score": 72.28885046086404,
+        "matched_terms": [
+          "cpus",
+          "gpus",
+          "graphics",
+          "processors",
+          "products",
+          "sells",
+          "services"
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "action": "llamaindex_retrieve_node",
+      "target": "8d6de836-36b9-43d9-a34f-3118e30ca643",
+      "metadata": {
+        "page": 11,
+        "retrieval_rank": 2,
+        "initial_rank": 2,
+        "vector_score": 0.544483657001364,
+        "rerank_score": 63.440032366803074,
+        "matched_terms": [
+          "graphics",
+          "processors",
+          "products",
+          "services"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "llamaindex_retrieve_node",
+      "target": "a66b4e19-c46d-457e-80f2-2e00308ef1e5",
+      "metadata": {
+        "page": 7,
+        "retrieval_rank": 5,
+        "initial_rank": 5,
+        "vector_score": 0.5182057655389946,
+        "rerank_score": 60.787243220566126,
+        "matched_terms": [
+          "cpus",
+          "gpus",
+          "processors",
+          "products"
+        ]
+      }
+    },
+    {
+      "step": 5,
+      "action": "llamaindex_retrieve_node",
+      "target": "21f496f6-7988-4973-9757-d8273f224f93",
+      "metadata": {
+        "page": 43,
+        "retrieval_rank": 6,
+        "initial_rank": 6,
+        "vector_score": 0.5156517585475686,
+        "rerank_score": 60.523509188090195,
+        "matched_terms": [
+          "major",
+          "overview",
+          "processors",
+          "products"
+        ]
+      }
+    },
+    {
+      "step": 6,
+      "action": "llamaindex_retrieve_node",
+      "target": "1fab3b55-3660-4f7e-8c28-3f00b10d48f0",
+      "metadata": {
+        "page": 13,
+        "retrieval_rank": 10,
+        "initial_rank": 10,
+        "vector_score": 0.49409762080446507,
+        "rerank_score": 60.3347620804465,
+        "matched_terms": [
+          "gpus",
+          "graphics",
+          "processors",
+          "products",
+          "sells"
+        ]
+      }
+    },
+    {
+      "step": 7,
+      "action": "llamaindex_retrieve_node",
+      "target": "6bb5a1e7-2499-447b-a8af-ea0473fe3af4",
+      "metadata": {
+        "page": 19,
+        "retrieval_rank": 7,
+        "initial_rank": 7,
+        "vector_score": 0.5151290192806558,
+        "rerank_score": 58.462901928065584,
+        "matched_terms": [
+          "gpus",
+          "graphics",
+          "products"
+        ]
+      }
+    },
+    {
+      "step": 8,
+      "action": "llamaindex_retrieve_node",
+      "target": "333de7a6-a317-4551-a104-326348e6751b",
+      "metadata": {
+        "page": 24,
+        "retrieval_rank": 3,
+        "initial_rank": 3,
+        "vector_score": 0.5288432583964804,
+        "rerank_score": 55.86765917298138,
+        "matched_terms": [
+          "products"
+        ]
+      }
+    },
+    {
+      "step": 9,
+      "action": "llamaindex_retrieve_node",
+      "target": "a842ba4d-9ac7-4658-8182-8c3555868a58",
+      "metadata": {
+        "page": 10,
+        "retrieval_rank": 17,
+        "initial_rank": 17,
+        "vector_score": 0.46418351109343914,
+        "rerank_score": 55.285017776010584,
+        "matched_terms": [
+          "cpus",
+          "gpus",
+          "products",
+          "services"
+        ]
+      }
+    },
+    {
+      "step": 10,
+      "action": "llamaindex_retrieve_node",
+      "target": "f5095cfd-efe9-49ec-b8c0-563c4984b26f",
+      "metadata": {
+        "page": 12,
+        "retrieval_rank": 18,
+        "initial_rank": 18,
+        "vector_score": 0.4618299753269289,
+        "rerank_score": 55.04133086602622,
+        "matched_terms": [
+          "cpus",
+          "graphics",
+          "products",
+          "services"
+        ]
+      }
+    },
+    {
+      "step": 11,
+      "action": "llamaindex_retrieve_node",
+      "target": "6a8e290a-abf3-4af1-9208-7be905e1f7fe",
+      "metadata": {
+        "page": 9,
+        "retrieval_rank": 21,
+        "initial_rank": 21,
+        "vector_score": 0.43787669789881095,
+        "rerank_score": 54.62100312321443,
+        "matched_terms": [
+          "cpus",
+          "gpus",
+          "graphics",
+          "processors",
+          "products"
+        ]
+      }
+    },
+    {
+      "step": 12,
+      "action": "llamaindex_retrieve_node",
+      "target": "1ed709d0-c3e7-45cf-accf-04fdee493215",
+      "metadata": {
+        "page": 112,
+        "retrieval_rank": 4,
+        "initial_rank": 4,
+        "vector_score": 0.5196590333672162,
+        "rerank_score": 52.94090333672162,
+        "matched_terms": []
+      }
+    },
+    {
+      "step": 13,
+      "action": "llamaindex_retrieve_node",
+      "target": "445a08da-988c-4169-94df-5f4d03a4bcf4",
+      "metadata": {
+        "page": 110,
+        "retrieval_rank": 8,
+        "initial_rank": 8,
+        "vector_score": 0.4996688591041718,
+        "rerank_score": 52.90855257708385,
+        "matched_terms": [
+          "products"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": null,
+    "output": null,
+    "total": null
+  },
+  "latency_ms": 10811,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\AMD_2022_10K.pdf",
+    "adapter_mode": "llamaindex_vector_retrieval",
+    "llm_enabled": false,
+    "model": null,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "page_count": 121,
+    "chunk_size": 900,
+    "chunk_overlap": 160,
+    "retrieve_top_k": 120,
+    "rerank_top_k": 12,
+    "max_citations": 12
+  }
+}

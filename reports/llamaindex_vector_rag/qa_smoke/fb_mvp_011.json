@@ -1,0 +1,340 @@
+{
+  "method": "llamaindex_vector_rag",
+  "question_id": "fb_mvp_011",
+  "question": "Looking at VaR, did the risk that JPM faced in the second fiscal quarter of 2023 decrease compared to the same period in the prior year?",
+  "answer": "Retrieved 12 chunks with LlamaIndex vector retrieval and lightweight reranking.",
+  "citations": [
+    {
+      "document_id": "JPMORGAN_2023Q2_10Q",
+      "page": 85,
+      "section": null,
+      "text": "This VaR does not include the retained loan portfolio, which is not reported at fair value. In the first quarter of 2022, in line with the Firm's internal model governance, the credit risk component of CVA related to certain counterparties was removed from Credit Portfolio VaR due to the widening of the credit spreads for those counterparties to elevated levels. The related hedges were also removed to maintain consistency. This exposure is now reflected in other sensitivity-based measures. (c) C",
+      "metadata": {
+        "chunk_id": "c8c5352c-ac76-4b29-a90c-9debb402f1c8",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.6440553494830491,
+        "rerank_score": 85.4055349483049,
+        "matched_terms": [
+          "average",
+          "compared",
+          "market",
+          "period",
+          "prior",
+          "quarter",
+          "risk",
+          "same",
+          "second",
+          "var"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "JPMORGAN_2023Q2_10Q",
+      "page": 86,
+      "section": null,
+      "text": "VaR backtesting The Firm performs daily VaR model backtesting, which compares the daily Risk Management VaR results with the daily gains and losses that are utilized for VaR backtesting purposes. The gains and losses depicted in the chart below do not reflect the Firm’s reported revenue as they exclude certain components of total net revenue, such as those associated with the execution of new transactions (i.e., intraday client-driven trading and intraday risk management activities), fees, commi",
+      "metadata": {
+        "chunk_id": "c0a32e60-5031-4209-94a0-d58392af1dd3",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5818215971025155,
+        "rerank_score": 69.1738263769182,
+        "matched_terms": [
+          "average",
+          "market",
+          "prior",
+          "risk",
+          "var"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "JPMORGAN_2023Q2_10Q",
+      "page": 87,
+      "section": null,
+      "text": "r from the modeled assumptions, primarily due to customer behavior and competition for deposits. The Firm’s earnings-at-risk scenarios are periodically evaluated and enhanced in response to changes in the composition of the Firm’s balance sheet, changes in market conditions, improvements in the Firm’s simulation and other factors. While a relevant measure of the Firm’s interest rate exposure, the earnings-at-risk analysis does not represent a forecast of the Firm’s net interest income. Refer to ",
+      "metadata": {
+        "chunk_id": "cd423f41-c422-4d60-b089-6141763c83c9",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5062845605153082,
+        "rerank_score": 63.60345605153083,
+        "matched_terms": [
+          "compared",
+          "market",
+          "prior",
+          "quarter",
+          "risk",
+          "second"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "llamaindex_build_vector_index",
+      "target": "JPMORGAN_2023Q2_10Q",
+      "metadata": {
+        "page_count": 217,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "chunk_size": 900,
+        "chunk_overlap": 160,
+        "retrieve_top_k": 120,
+        "rerank_top_k": 12
+      }
+    },
+    {
+      "step": 2,
+      "action": "llamaindex_retrieve_node",
+      "target": "c8c5352c-ac76-4b29-a90c-9debb402f1c8",
+      "metadata": {
+        "page": 85,
+        "retrieval_rank": 1,
+        "initial_rank": 1,
+        "vector_score": 0.6440553494830491,
+        "rerank_score": 85.4055349483049,
+        "matched_terms": [
+          "average",
+          "compared",
+          "market",
+          "period",
+          "prior",
+          "quarter",
+          "risk",
+          "same",
+          "second",
+          "var"
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "action": "llamaindex_retrieve_node",
+      "target": "c0a32e60-5031-4209-94a0-d58392af1dd3",
+      "metadata": {
+        "page": 86,
+        "retrieval_rank": 2,
+        "initial_rank": 2,
+        "vector_score": 0.5818215971025155,
+        "rerank_score": 69.1738263769182,
+        "matched_terms": [
+          "average",
+          "market",
+          "prior",
+          "risk",
+          "var"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "llamaindex_retrieve_node",
+      "target": "cd423f41-c422-4d60-b089-6141763c83c9",
+      "metadata": {
+        "page": 87,
+        "retrieval_rank": 4,
+        "initial_rank": 4,
+        "vector_score": 0.5062845605153082,
+        "rerank_score": 63.60345605153083,
+        "matched_terms": [
+          "compared",
+          "market",
+          "prior",
+          "quarter",
+          "risk",
+          "second"
+        ]
+      }
+    },
+    {
+      "step": 5,
+      "action": "llamaindex_retrieve_node",
+      "target": "1fc24478-0035-44ae-8205-0c2b880f42c2",
+      "metadata": {
+        "page": 42,
+        "retrieval_rank": 11,
+        "initial_rank": 11,
+        "vector_score": 0.46015672643160893,
+        "rerank_score": 58.932339309827555,
+        "matched_terms": [
+          "average",
+          "jpm",
+          "period",
+          "prior",
+          "quarter",
+          "second"
+        ]
+      }
+    },
+    {
+      "step": 6,
+      "action": "llamaindex_retrieve_node",
+      "target": "72b16637-79fd-438f-a3e1-acbf29735520",
+      "metadata": {
+        "page": 89,
+        "retrieval_rank": 5,
+        "initial_rank": 5,
+        "vector_score": 0.49713805777660336,
+        "rerank_score": 58.680472444327,
+        "matched_terms": [
+          "market",
+          "quarter",
+          "risk",
+          "var"
+        ]
+      }
+    },
+    {
+      "step": 7,
+      "action": "llamaindex_retrieve_node",
+      "target": "55fc0a94-8621-4f11-815c-4f057068cb5a",
+      "metadata": {
+        "page": 16,
+        "retrieval_rank": 6,
+        "initial_rank": 6,
+        "vector_score": 0.49288599937247346,
+        "rerank_score": 58.24693327058068,
+        "matched_terms": [
+          "average",
+          "quarter",
+          "risk",
+          "second"
+        ]
+      }
+    },
+    {
+      "step": 8,
+      "action": "llamaindex_retrieve_node",
+      "target": "b2eb75ad-55ad-41a1-a41a-36e53eef2c16",
+      "metadata": {
+        "page": 164,
+        "retrieval_rank": 7,
+        "initial_rank": 7,
+        "vector_score": 0.49127114914774805,
+        "rerank_score": 58.07711491477481,
+        "matched_terms": [
+          "average",
+          "prior",
+          "quarter",
+          "second"
+        ]
+      }
+    },
+    {
+      "step": 9,
+      "action": "llamaindex_retrieve_node",
+      "target": "a52fcfe9-095e-4769-b010-0ef032c40dd1",
+      "metadata": {
+        "page": 25,
+        "retrieval_rank": 8,
+        "initial_rank": 8,
+        "vector_score": 0.4878392908218087,
+        "rerank_score": 57.72559574884754,
+        "matched_terms": [
+          "period",
+          "prior",
+          "quarter",
+          "risk"
+        ]
+      }
+    },
+    {
+      "step": 10,
+      "action": "llamaindex_retrieve_node",
+      "target": "f7ebd887-f866-4f53-b317-65fd407932c8",
+      "metadata": {
+        "page": 46,
+        "retrieval_rank": 27,
+        "initial_rank": 27,
+        "vector_score": 0.41849819476389793,
+        "rerank_score": 56.63315280972313,
+        "matched_terms": [
+          "average",
+          "compared",
+          "market",
+          "period",
+          "prior",
+          "quarter",
+          "risk"
+        ]
+      }
+    },
+    {
+      "step": 11,
+      "action": "llamaindex_retrieve_node",
+      "target": "8ba42b82-cd2e-48a3-91d3-2bca3955ec06",
+      "metadata": {
+        "page": 114,
+        "retrieval_rank": 3,
+        "initial_rank": 3,
+        "vector_score": 0.5121845526161874,
+        "rerank_score": 56.20178859495208,
+        "matched_terms": [
+          "market",
+          "risk"
+        ]
+      }
+    },
+    {
+      "step": 12,
+      "action": "llamaindex_retrieve_node",
+      "target": "6575664e-4c6e-409a-905c-10d1f3821adf",
+      "metadata": {
+        "page": 56,
+        "retrieval_rank": 21,
+        "initial_rank": 21,
+        "vector_score": 0.42471299883401986,
+        "rerank_score": 55.30463321673532,
+        "matched_terms": [
+          "average",
+          "compared",
+          "decrease",
+          "market",
+          "period",
+          "quarter"
+        ]
+      }
+    },
+    {
+      "step": 13,
+      "action": "llamaindex_retrieve_node",
+      "target": "99a0c83c-e67f-49a4-b757-b21a549c8102",
+      "metadata": {
+        "page": 92,
+        "retrieval_rank": 9,
+        "initial_rank": 9,
+        "vector_score": 0.48352521984869096,
+        "rerank_score": 55.28585531820242,
+        "matched_terms": [
+          "compared",
+          "period",
+          "quarter"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": null,
+    "output": null,
+    "total": null
+  },
+  "latency_ms": 12968,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\JPMORGAN_2023Q2_10Q.pdf",
+    "adapter_mode": "llamaindex_vector_retrieval",
+    "llm_enabled": false,
+    "model": null,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "page_count": 217,
+    "chunk_size": 900,
+    "chunk_overlap": 160,
+    "retrieve_top_k": 120,
+    "rerank_top_k": 12,
+    "max_citations": 3
+  }
+}

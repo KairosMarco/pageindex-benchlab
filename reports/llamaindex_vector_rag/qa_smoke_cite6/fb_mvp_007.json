@@ -1,0 +1,397 @@
+{
+  "method": "llamaindex_vector_rag",
+  "question_id": "fb_mvp_007",
+  "question": "Using only the information within the balance sheet, how much total assets did Costco have at the end of FY2021? Answer in USD millions.",
+  "answer": "Retrieved 12 chunks with LlamaIndex vector retrieval and lightweight reranking.",
+  "citations": [
+    {
+      "document_id": "COSTCO_2021_10K",
+      "page": 51,
+      "section": null,
+      "text": "Table of Contents Note 4—Fair Value Measurement Assets and Liabilities Measured at Fair Value on a Recurring Basis The table below presents information regarding the Company’s financial assets and financial liabilities that are measured at fair value on a recurring basis and indicate the level within the hierarchy reflecting the valuation techniques utilized to determine such fair value. Level 2 2021 2020 Investment in government and agency securities $ 393 $ 508 Forward foreign-exchange contrac",
+      "metadata": {
+        "chunk_id": "b7877daa-c8e1-4990-867d-bd8034b53a62",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.6204517483781504,
+        "rerank_score": 82.04517483781504,
+        "matched_terms": [
+          "assets",
+          "balance",
+          "did",
+          "end",
+          "information",
+          "liabilities",
+          "sheets",
+          "total"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "COSTCO_2021_10K",
+      "page": 38,
+      "section": null,
+      "text": "Table of Contents COSTCO WHOLESALE CORPORATION CONSOLIDATED BALANCE SHEETS (amounts in millions, except par value and share data) August 29, 2021 August 30, 2020 ASSETS CURRENT ASSETS Cash and cash equivalents $ 11,258 $ 12,277 Short-term investments 917 1,028 Receivables, net 1,803 1,550 Merchandise inventories 14,215 12,242 Other current assets 1,312 1,023 Total current assets 29,505 28,120 OTHER ASSETS Property and equipment, net 23,492 21,807 Operating lease right-of-use assets 2,890 2,788 O",
+      "metadata": {
+        "chunk_id": "004237aa-a4a6-4bf9-96df-d8a35a3258b1",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5902819541900245,
+        "rerank_score": 80.00350406097776,
+        "matched_terms": [
+          "assets",
+          "balance",
+          "equity",
+          "liabilities",
+          "millions",
+          "sheets",
+          "total"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "COSTCO_2021_10K",
+      "page": 53,
+      "section": null,
+      "text": "Table of Contents Note 6—Leases The tables below present information regarding the Company's lease assets and liabilities. 2021 2020 Assets Operating lease right-of-use assets $ 2,890 $ 2,788 Finance lease assets 1,000 592 Total lease assets $ 3,890 $ 3,380 Liabilities Current Operating lease liabilities $ 222 $ 231 Finance lease liabilities 72 31 Long-term Operating lease liabilities 2,642 2,558 Finance lease liabilities 980 657 Total lease liabilities $ 3,916 $ 3,477 _______________ (1) Includ",
+      "metadata": {
+        "chunk_id": "2bb6b8ea-5403-4bc7-b77d-e4082e65f140",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5830545743351793,
+        "rerank_score": 74.26842039648089,
+        "matched_terms": [
+          "assets",
+          "balance",
+          "information",
+          "liabilities",
+          "sheets",
+          "total"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "COSTCO_2021_10K",
+      "page": 47,
+      "section": null,
+      "text": "s of the Company’s international subsidiaries are the local currency of the country in which the subsidiary is located. Assets and liabilities recorded in foreign currencies are translated at the exchange rate on the balance sheet date. Translation adjustments are recorded in accumulated other comprehensive loss. Revenues and expenses of the Company’s consolidated foreign operations are translated at average exchange rates prevailing during the year. The Company recognizes foreign-currency trans",
+      "metadata": {
+        "chunk_id": "b18084d5-3573-4dcb-8a82-6fba6193325e",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5150277012308573,
+        "rerank_score": 67.39165901197461,
+        "matched_terms": [
+          "assets",
+          "balance",
+          "end",
+          "liabilities",
+          "sheet",
+          "sheets"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "COSTCO_2021_10K",
+      "page": 40,
+      "section": null,
+      "text": "Table of Contents COSTCO WHOLESALE CORPORATION CONSOLIDATED STATEMENTS OF CASH FLOWS (amounts in millions) 52 Weeks Ended 52 Weeks Ended 52 Weeks Ended August 29, 2021 August 30, 2020 September 1, 2019 CASH FLOWS FROM OPERATING ACTIVITIES Net income including noncontrolling interests $ 5,079 $ 4,059 $ 3,704 Adjustments to reconcile net income including noncontrolling interests to net cash provided by operating activities: Depreciation and amortization 1,781 1,645 1,492 Non-cash lease expense 286",
+      "metadata": {
+        "chunk_id": "6d6ac2fd-1975-4701-886d-84275dfaedef",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5562585550091557,
+        "rerank_score": 66.57647278486618,
+        "matched_terms": [
+          "assets",
+          "end",
+          "information",
+          "liabilities",
+          "millions"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "COSTCO_2021_10K",
+      "page": 37,
+      "section": null,
+      "text": "Table of Contents COSTCO WHOLESALE CORPORATION CONSOLIDATED STATEMENTS OF COMPREHENSIVE INCOME (amounts in millions) 52 Weeks Ended 52 Weeks Ended 52 Weeks Ended August 29, 2021 August 30, 2020 September 1, 2019 NET INCOME INCLUDING NONCONTROLLING INTERESTS $ 5,079 $ 4,059 $ 3,704 Foreign-currency translation adjustment and other, net 181 162 (245) Comprehensive income 5,260 4,221 3,459 Less: Comprehensive income attributable to noncontrolling interests 93 80 37 COMPREHENSIVE INCOME ATTRIBUTABLE",
+      "metadata": {
+        "chunk_id": "7a22fbb6-6d0c-403a-a158-4c5aa965b5b8",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.607090236140276,
+        "rerank_score": 63.69667793501525,
+        "matched_terms": [
+          "millions"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "llamaindex_build_vector_index",
+      "target": "COSTCO_2021_10K",
+      "metadata": {
+        "page_count": 76,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "chunk_size": 900,
+        "chunk_overlap": 160,
+        "retrieve_top_k": 120,
+        "rerank_top_k": 12
+      }
+    },
+    {
+      "step": 2,
+      "action": "llamaindex_retrieve_node",
+      "target": "b7877daa-c8e1-4990-867d-bd8034b53a62",
+      "metadata": {
+        "page": 51,
+        "retrieval_rank": 1,
+        "initial_rank": 1,
+        "vector_score": 0.6204517483781504,
+        "rerank_score": 82.04517483781504,
+        "matched_terms": [
+          "assets",
+          "balance",
+          "did",
+          "end",
+          "information",
+          "liabilities",
+          "sheets",
+          "total"
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "action": "llamaindex_retrieve_node",
+      "target": "004237aa-a4a6-4bf9-96df-d8a35a3258b1",
+      "metadata": {
+        "page": 38,
+        "retrieval_rank": 3,
+        "initial_rank": 3,
+        "vector_score": 0.5902819541900245,
+        "rerank_score": 80.00350406097776,
+        "matched_terms": [
+          "assets",
+          "balance",
+          "equity",
+          "liabilities",
+          "millions",
+          "sheets",
+          "total"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "llamaindex_retrieve_node",
+      "target": "2bb6b8ea-5403-4bc7-b77d-e4082e65f140",
+      "metadata": {
+        "page": 53,
+        "retrieval_rank": 4,
+        "initial_rank": 4,
+        "vector_score": 0.5830545743351793,
+        "rerank_score": 74.26842039648089,
+        "matched_terms": [
+          "assets",
+          "balance",
+          "information",
+          "liabilities",
+          "sheets",
+          "total"
+        ]
+      }
+    },
+    {
+      "step": 5,
+      "action": "llamaindex_retrieve_node",
+      "target": "b18084d5-3573-4dcb-8a82-6fba6193325e",
+      "metadata": {
+        "page": 47,
+        "retrieval_rank": 10,
+        "initial_rank": 10,
+        "vector_score": 0.5150277012308573,
+        "rerank_score": 67.39165901197461,
+        "matched_terms": [
+          "assets",
+          "balance",
+          "end",
+          "liabilities",
+          "sheet",
+          "sheets"
+        ]
+      }
+    },
+    {
+      "step": 6,
+      "action": "llamaindex_retrieve_node",
+      "target": "6d6ac2fd-1975-4701-886d-84275dfaedef",
+      "metadata": {
+        "page": 40,
+        "retrieval_rank": 5,
+        "initial_rank": 5,
+        "vector_score": 0.5562585550091557,
+        "rerank_score": 66.57647278486618,
+        "matched_terms": [
+          "assets",
+          "end",
+          "information",
+          "liabilities",
+          "millions"
+        ]
+      }
+    },
+    {
+      "step": 7,
+      "action": "llamaindex_retrieve_node",
+      "target": "7a22fbb6-6d0c-403a-a158-4c5aa965b5b8",
+      "metadata": {
+        "page": 37,
+        "retrieval_rank": 2,
+        "initial_rank": 2,
+        "vector_score": 0.607090236140276,
+        "rerank_score": 63.69667793501525,
+        "matched_terms": [
+          "millions"
+        ]
+      }
+    },
+    {
+      "step": 8,
+      "action": "llamaindex_retrieve_node",
+      "target": "2a5420d4-2103-4eb3-8d06-11c6ba6d67c8",
+      "metadata": {
+        "page": 33,
+        "retrieval_rank": 8,
+        "initial_rank": 8,
+        "vector_score": 0.529574590334384,
+        "rerank_score": 62.87103928035199,
+        "matched_terms": [
+          "balance",
+          "equity",
+          "sheets"
+        ]
+      }
+    },
+    {
+      "step": 9,
+      "action": "llamaindex_retrieve_node",
+      "target": "600d34bb-9b30-41b8-8501-e8364b96ca47",
+      "metadata": {
+        "page": 39,
+        "retrieval_rank": 7,
+        "initial_rank": 7,
+        "vector_score": 0.5388681707279269,
+        "rerank_score": 62.81274299871862,
+        "matched_terms": [
+          "balance",
+          "equity",
+          "millions",
+          "total"
+        ]
+      }
+    },
+    {
+      "step": 10,
+      "action": "llamaindex_retrieve_node",
+      "target": "db800afb-db8e-4f52-b955-33efd744db88",
+      "metadata": {
+        "page": 35,
+        "retrieval_rank": 12,
+        "initial_rank": 12,
+        "vector_score": 0.5088706610376597,
+        "rerank_score": 62.75126363463016,
+        "matched_terms": [
+          "assets",
+          "balance",
+          "equity",
+          "sheets"
+        ]
+      }
+    },
+    {
+      "step": 11,
+      "action": "llamaindex_retrieve_node",
+      "target": "f3114f99-a15e-4089-9730-81dd9ffd7afb",
+      "metadata": {
+        "page": 30,
+        "retrieval_rank": 19,
+        "initial_rank": 19,
+        "vector_score": 0.4695505387673636,
+        "rerank_score": 61.732831654514136,
+        "matched_terms": [
+          "assets",
+          "balance",
+          "end",
+          "information",
+          "liabilities",
+          "sheet",
+          "total"
+        ]
+      }
+    },
+    {
+      "step": 12,
+      "action": "llamaindex_retrieve_node",
+      "target": "fb349ca6-2e77-4c95-a9de-3b052bda3832",
+      "metadata": {
+        "page": 52,
+        "retrieval_rank": 6,
+        "initial_rank": 6,
+        "vector_score": 0.555641345359199,
+        "rerank_score": 60.50240614085817,
+        "matched_terms": [
+          "end",
+          "total"
+        ]
+      }
+    },
+    {
+      "step": 13,
+      "action": "llamaindex_retrieve_node",
+      "target": "fca8c07b-7e04-42d6-8afc-a7b32aab79a7",
+      "metadata": {
+        "page": 41,
+        "retrieval_rank": 15,
+        "initial_rank": 15,
+        "vector_score": 0.4825624730232434,
+        "rerank_score": 59.0834077961515,
+        "matched_terms": [
+          "assets",
+          "end",
+          "equity",
+          "liabilities",
+          "millions"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": null,
+    "output": null,
+    "total": null
+  },
+  "latency_ms": 7785,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\COSTCO_2021_10K.pdf",
+    "adapter_mode": "llamaindex_vector_retrieval",
+    "llm_enabled": false,
+    "model": null,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "page_count": 76,
+    "chunk_size": 900,
+    "chunk_overlap": 160,
+    "retrieve_top_k": 120,
+    "rerank_top_k": 12,
+    "max_citations": 6
+  }
+}

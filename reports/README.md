@@ -49,4 +49,13 @@ reports/hybrid_rag/answer_eval_heuristic.json
 reports/hybrid_rag/answer_eval_llm.json
 reports/hybrid_rag/qa_llm_manifest.json
 reports/hybrid_rag/qa_llm/
+reports/llamaindex_vector_rag/evidence_eval_smoke.json
+reports/llamaindex_vector_rag/evidence_eval_smoke_cite6.json
+reports/llamaindex_vector_rag/evidence_eval_smoke_cite12.json
+reports/llamaindex_vector_rag/qa_smoke_manifest.json
+reports/llamaindex_vector_rag/qa_smoke/
+reports/llamaindex_vector_rag/qa_smoke_cite6_manifest.json
+reports/llamaindex_vector_rag/qa_smoke_cite6/
+reports/llamaindex_vector_rag/qa_smoke_cite12_manifest.json
+reports/llamaindex_vector_rag/qa_smoke_cite12/
 ```

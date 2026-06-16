@@ -1,0 +1,476 @@
+{
+  "method": "llamaindex_vector_rag",
+  "question_id": "fb_mvp_004",
+  "question": "Among operations, investing, and financing activities, which brought in the most (or lost the least) cash flow for AMD in FY22?",
+  "answer": "Retrieved 12 chunks with LlamaIndex vector retrieval and lightweight reranking.",
+  "citations": [
+    {
+      "document_id": "AMD_2022_10K",
+      "page": 58,
+      "section": null,
+      "text": "Table of Contents Advanced Micro Devices, Inc. Consolidated Statements of Cash Flows Year Ended December 31, 2022 December 25, 2021 December 26, 2020 (In millions) Cash flows from operating activities: Net income $ 1,320 $ 3,162 $ 2,490 Adjustments to reconcile net income to net cash provided by operating activities: Depreciation and amortization 4,174 407 312 Stock-based compensation 1,081 379 274 Amortization of debt discount and issuance costs — 5 14 Amortization of operating lease right-of-u",
+      "metadata": {
+        "chunk_id": "7d265c09-e5af-4c53-962b-79cd3dd32a2b",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.6062079982257947,
+        "rerank_score": 79.62079982257947,
+        "matched_terms": [
+          "activities",
+          "cash",
+          "financing",
+          "flows",
+          "investing",
+          "operating"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "AMD_2022_10K",
+      "page": 51,
+      "section": null,
+      "text": "Table of Contents FINANCIAL CONDITION Liquidity and Capital Resources As of December 31, 2022, our cash, cash equivalents and short-term investments were $5.9 billion compared to $3.6 billion as of December 25, 2021. The increase in cash, cash equivalents and short-term investments was primarily driven by the $2.4 billion of cash and $1.6 billion of short-term investments acquired from the Xilinx acquisition, $1.0 billion from the debt issuance of our 3.924% Notes and 4.393% Notes, and cash flow",
+      "metadata": {
+        "chunk_id": "2705738f-a60d-46ef-bc24-bb8a3c8e3bc4",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5897054743928077,
+        "rerank_score": 78.96221410594744,
+        "matched_terms": [
+          "activities",
+          "cash",
+          "financing",
+          "flow",
+          "flows",
+          "investing",
+          "operating",
+          "operations"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "AMD_2022_10K",
+      "page": 59,
+      "section": null,
+      "text": "Table of Contents Advanced Micro Devices, Inc. Consolidated Statements of Cash Flows Year Ended December 31, 2022 December 25, 2021 December 26, 2020 (In millions) Supplemental cash flow information: Cash paid during the year for: Interest $ 85 $ 25 $ 31 Income taxes, net of refund $ 685 $ 35 $ 8 Non-cash investing and financing activities: Purchases of property and equipment, accrued but not paid $ 157 $ 72 $ 31 Issuance of common stock to settle convertible debt $ — $ 25 $ 217 Issuance of comm",
+      "metadata": {
+        "chunk_id": "2b3e2845-e8f1-4236-9c80-d5197888e9de",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5352644454760531,
+        "rerank_score": 74.46811121427197,
+        "matched_terms": [
+          "activities",
+          "cash",
+          "financing",
+          "flow",
+          "flows",
+          "investing",
+          "operating"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "AMD_2022_10K",
+      "page": 52,
+      "section": null,
+      "text": "Table of Contents Net cash provided by operating activities was $3.6 billion in 2022, primarily due to our net income of $1.3 billion in 2022, adjusted for non-cash adjustments of $4.1 billion and net cash outflows of $1.8 billion from changes in our operating assets and liabilities. The primary drivers of the changes in operating assets and liabilities included a $1.4 billion increase in inventories driven primarily by build of advanced process nodes to support the ramp of new products, a $1.1 ",
+      "metadata": {
+        "chunk_id": "b7a82a6e-f595-4dd0-81d9-23ffdaa60b01",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5608353966826987,
+        "rerank_score": 67.0668730016032,
+        "matched_terms": [
+          "activities",
+          "cash",
+          "financing",
+          "investing",
+          "operating"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "AMD_2022_10K",
+      "page": 89,
+      "section": null,
+      "text": "e of Contents For 2022, 2021 and 2020, the Company recorded $118 million, $71 million and $59 million, respectively, of operating lease expense, including short-term lease expense. For 2022 and 2021, the Company recorded $40 million and $26 million, respectively, of variable lease expense, which primarily included operating expenses and property taxes associated with the usage of facilities under the operating leases. For 2022 and 2021, cash paid for operating leases included in operating cash f",
+      "metadata": {
+        "chunk_id": "83e8cdd4-74cb-4a02-927f-5ce250629ae4",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5110767052632509,
+        "rerank_score": 61.007670526325086,
+        "matched_terms": [
+          "cash",
+          "flows",
+          "operating"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "AMD_2022_10K",
+      "page": 93,
+      "section": null,
+      "text": "Micro Devices, Inc. (the Company) as of December 31, 2022 and December 25, 2021, the related consolidated statements of operations, comprehensive income, stockholders’ equity and cash flows for each of the three years in the period ended December 31, 2022, and the related notes (collectively referred to as the “consolidated financial statements”). In our opinion, the consolidated financial statements present fairly, in all material respects, the financial position of the Company as of December 3",
+      "metadata": {
+        "chunk_id": "22c12254-f859-4b81-be71-f9daece79118",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.4693442042897359,
+        "rerank_score": 59.79275376230692,
+        "matched_terms": [
+          "cash",
+          "flows",
+          "operations"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "AMD_2022_10K",
+      "page": 43,
+      "section": null,
+      "text": "decrease in gross margin was primarily due to amortization of intangible assets associated with the Xilinx acquisition. Operating income for 2022 was $1.3 billion compared to operating income of $3.6 billion for 2021. The decrease in operating income was primarily driven by amortization of intangible assets associated with the Xilinx acquisition. Net income for 2022 was $1.3 billion compared to $3.2 billion in the prior year. The decrease in net income was primarily driven by lower operating inc",
+      "metadata": {
+        "chunk_id": "6e28d843-50d7-4f2d-823a-ef7094d1d17b",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5424768579364375,
+        "rerank_score": 59.222685793643755,
+        "matched_terms": [
+          "cash",
+          "operating"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "AMD_2022_10K",
+      "page": 48,
+      "section": null,
+      "text": "Table of Contents Results of Operations During the second quarter of fiscal year 2022, we changed our reporting segments to align our financial reporting with how we manage our business in strategic end markets. This is consistent with how our Chief Operating Decision Maker (CODM) assesses our financial performance and allocates resources. As a result, we report our financial performance based on the following four reportable segments: Data Center, Client, Gaming, and Embedded. Additional inform",
+      "metadata": {
+        "chunk_id": "2092bdeb-5799-4389-8e40-acb5c915f26e",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5408617617401907,
+        "rerank_score": 59.05284284068574,
+        "matched_terms": [
+          "operating",
+          "operations"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "AMD_2022_10K",
+      "page": 56,
+      "section": null,
+      "text": "dated Balance Sheets December 31, 2022 December 25, 2021 (In millions, except par value amounts) ASSETS Current assets: Cash and cash equivalents $ 4,835 $ 2,535 Short-term investments 1,020 1,073 Accounts receivable, net 4,126 2,706 Inventories 3,771 1,955 Receivables from related parties 2 2 Prepaid expenses and other current assets 1,265 312 Total current assets 15,019 8,583 Property and equipment, net 1,513 702 Operating lease right-of-use assets 460 367 Goodwill 24,177 289 Acquisition-relat",
+      "metadata": {
+        "chunk_id": "e9e62e5d-2176-4df6-9d16-be5bff5950d9",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5344161525031729,
+        "rerank_score": 58.36661525031728,
+        "matched_terms": [
+          "cash",
+          "operating"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "AMD_2022_10K",
+      "page": 101,
+      "section": null,
+      "text": "his Annual Report on Form 10-K, as indexed below. Index to Consolidated Financial Statements Consolidated Statements of Operations 51 Consolidated Statements of Comprehensive Income 52 Consolidated Balance Sheets 53 Consolidated Statements of Stockholders’ Equity 54 Consolidated Statements of Cash Flows 55 Notes to Consolidated Financial Statements 57 Reports of Independent Registered Public Accounting Firm (PCAOB ID: 42) 90 All schedules have been omitted because the information is not required",
+      "metadata": {
+        "chunk_id": "326cde54-46f9-40ad-a1b4-981709176ada",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.4013092680881234,
+        "rerank_score": 57.714260142145676,
+        "matched_terms": [
+          "among",
+          "cash",
+          "flows",
+          "operations"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "AMD_2022_10K",
+      "page": 54,
+      "section": null,
+      "text": "of Contents ITEM 8. FINANCIAL STATEMENTS AND SUPPLEMENTARY DATA Advanced Micro Devices, Inc. Consolidated Statements of Operations Year Ended December 31, 2022 December 25, 2021 December 26, 2020 (In millions, except per share amounts) Net revenue $ 23,601 $ 16,434 $ 9,763 Cost of sales 11,550 8,505 5,416 Amortization of acquisition-related intangibles 1,448 — — Total cost of sales 12,998 8,505 5,416 Gross profit 10,603 7,929 4,347 Research and development 5,005 2,845 1,983 Marketing, general an",
+      "metadata": {
+        "chunk_id": "35018bd0-d9fe-41b7-b4b2-ed73e046ee22",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.4904137610682496,
+        "rerank_score": 56.93304277349162,
+        "matched_terms": [
+          "operating",
+          "operations"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "llamaindex_build_vector_index",
+      "target": "AMD_2022_10K",
+      "metadata": {
+        "page_count": 121,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "chunk_size": 900,
+        "chunk_overlap": 160,
+        "retrieve_top_k": 120,
+        "rerank_top_k": 12
+      }
+    },
+    {
+      "step": 2,
+      "action": "llamaindex_retrieve_node",
+      "target": "7d265c09-e5af-4c53-962b-79cd3dd32a2b",
+      "metadata": {
+        "page": 58,
+        "retrieval_rank": 1,
+        "initial_rank": 1,
+        "vector_score": 0.6062079982257947,
+        "rerank_score": 79.62079982257947,
+        "matched_terms": [
+          "activities",
+          "cash",
+          "financing",
+          "flows",
+          "investing",
+          "operating"
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "action": "llamaindex_retrieve_node",
+      "target": "2705738f-a60d-46ef-bc24-bb8a3c8e3bc4",
+      "metadata": {
+        "page": 51,
+        "retrieval_rank": 2,
+        "initial_rank": 2,
+        "vector_score": 0.5897054743928077,
+        "rerank_score": 78.96221410594744,
+        "matched_terms": [
+          "activities",
+          "cash",
+          "financing",
+          "flow",
+          "flows",
+          "investing",
+          "operating",
+          "operations"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "llamaindex_retrieve_node",
+      "target": "2b3e2845-e8f1-4236-9c80-d5197888e9de",
+      "metadata": {
+        "page": 59,
+        "retrieval_rank": 8,
+        "initial_rank": 8,
+        "vector_score": 0.5352644454760531,
+        "rerank_score": 74.46811121427197,
+        "matched_terms": [
+          "activities",
+          "cash",
+          "financing",
+          "flow",
+          "flows",
+          "investing",
+          "operating"
+        ]
+      }
+    },
+    {
+      "step": 5,
+      "action": "llamaindex_retrieve_node",
+      "target": "b7a82a6e-f595-4dd0-81d9-23ffdaa60b01",
+      "metadata": {
+        "page": 52,
+        "retrieval_rank": 3,
+        "initial_rank": 3,
+        "vector_score": 0.5608353966826987,
+        "rerank_score": 67.0668730016032,
+        "matched_terms": [
+          "activities",
+          "cash",
+          "financing",
+          "investing",
+          "operating"
+        ]
+      }
+    },
+    {
+      "step": 6,
+      "action": "llamaindex_retrieve_node",
+      "target": "83e8cdd4-74cb-4a02-927f-5ce250629ae4",
+      "metadata": {
+        "page": 89,
+        "retrieval_rank": 13,
+        "initial_rank": 13,
+        "vector_score": 0.5110767052632509,
+        "rerank_score": 61.007670526325086,
+        "matched_terms": [
+          "cash",
+          "flows",
+          "operating"
+        ]
+      }
+    },
+    {
+      "step": 7,
+      "action": "llamaindex_retrieve_node",
+      "target": "22c12254-f859-4b81-be71-f9daece79118",
+      "metadata": {
+        "page": 93,
+        "retrieval_rank": 18,
+        "initial_rank": 18,
+        "vector_score": 0.4693442042897359,
+        "rerank_score": 59.79275376230692,
+        "matched_terms": [
+          "cash",
+          "flows",
+          "operations"
+        ]
+      }
+    },
+    {
+      "step": 8,
+      "action": "llamaindex_retrieve_node",
+      "target": "6e28d843-50d7-4f2d-823a-ef7094d1d17b",
+      "metadata": {
+        "page": 43,
+        "retrieval_rank": 4,
+        "initial_rank": 4,
+        "vector_score": 0.5424768579364375,
+        "rerank_score": 59.222685793643755,
+        "matched_terms": [
+          "cash",
+          "operating"
+        ]
+      }
+    },
+    {
+      "step": 9,
+      "action": "llamaindex_retrieve_node",
+      "target": "2092bdeb-5799-4389-8e40-acb5c915f26e",
+      "metadata": {
+        "page": 48,
+        "retrieval_rank": 5,
+        "initial_rank": 5,
+        "vector_score": 0.5408617617401907,
+        "rerank_score": 59.05284284068574,
+        "matched_terms": [
+          "operating",
+          "operations"
+        ]
+      }
+    },
+    {
+      "step": 10,
+      "action": "llamaindex_retrieve_node",
+      "target": "eddc463b-94b0-4e28-bea5-fd5f3a2feebf",
+      "metadata": {
+        "page": 43,
+        "retrieval_rank": 6,
+        "initial_rank": 6,
+        "vector_score": 0.5401341590672596,
+        "rerank_score": 58.971749240059296,
+        "matched_terms": [
+          "operating",
+          "operations"
+        ]
+      }
+    },
+    {
+      "step": 11,
+      "action": "llamaindex_retrieve_node",
+      "target": "e9e62e5d-2176-4df6-9d16-be5bff5950d9",
+      "metadata": {
+        "page": 56,
+        "retrieval_rank": 10,
+        "initial_rank": 10,
+        "vector_score": 0.5344161525031729,
+        "rerank_score": 58.36661525031728,
+        "matched_terms": [
+          "cash",
+          "operating"
+        ]
+      }
+    },
+    {
+      "step": 12,
+      "action": "llamaindex_retrieve_node",
+      "target": "326cde54-46f9-40ad-a1b4-981709176ada",
+      "metadata": {
+        "page": 101,
+        "retrieval_rank": 51,
+        "initial_rank": 51,
+        "vector_score": 0.4013092680881234,
+        "rerank_score": 57.714260142145676,
+        "matched_terms": [
+          "among",
+          "cash",
+          "flows",
+          "operations"
+        ]
+      }
+    },
+    {
+      "step": 13,
+      "action": "llamaindex_retrieve_node",
+      "target": "35018bd0-d9fe-41b7-b4b2-ed73e046ee22",
+      "metadata": {
+        "page": 54,
+        "retrieval_rank": 14,
+        "initial_rank": 14,
+        "vector_score": 0.4904137610682496,
+        "rerank_score": 56.93304277349162,
+        "matched_terms": [
+          "operating",
+          "operations"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": null,
+    "output": null,
+    "total": null
+  },
+  "latency_ms": 10300,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\AMD_2022_10K.pdf",
+    "adapter_mode": "llamaindex_vector_retrieval",
+    "llm_enabled": false,
+    "model": null,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "page_count": 121,
+    "chunk_size": 900,
+    "chunk_overlap": 160,
+    "retrieve_top_k": 120,
+    "rerank_top_k": 12,
+    "max_citations": 12
+  }
+}

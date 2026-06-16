@@ -117,11 +117,26 @@ These stronger claims require a larger dataset, stronger baselines, and cost ass
 
 ## Next Implementation Order
 
-1. Install and verify LlamaIndex dependencies in the benchmark environment.
-2. Add `pipelines/llamaindex_vector_rag/adapter.py`.
-3. Add `scripts/run_llamaindex_vector_rag_mvp.py`.
-4. Run no-LLM smoke tests.
-5. Run LLM answer generation on the same 12 questions.
-6. Evaluate evidence and answers.
-7. Regenerate detailed evidence reports and validation reports.
-8. Only then update benchmark conclusions.
+1. Install and verify LlamaIndex dependencies in the benchmark environment. Completed.
+2. Add `pipelines/llamaindex_vector_rag/adapter.py`. Completed.
+3. Add `scripts/run_llamaindex_vector_rag_mvp.py`. Completed.
+4. Run no-LLM smoke tests. Completed as diagnostic runs.
+5. Improve reranking or add Hybrid fusion before LLM answer generation.
+6. Run LLM answer generation on the same 12 questions only after retrieval quality is acceptable.
+7. Evaluate evidence and answers.
+8. Regenerate detailed evidence reports and validation reports.
+9. Only then update benchmark conclusions.
+
+## LlamaIndex Vector Diagnostic Result
+
+Current no-LLM retrieval diagnostics:
+
+```text
+max_citations=3:  evidence recall 0.667, citation precision 0.222
+max_citations=6:  evidence recall 0.833, citation precision 0.139
+max_citations=12: evidence recall 0.917, citation precision 0.083
+```
+
+Interpretation:
+
+The current LlamaIndex vector retriever with `sentence-transformers/all-MiniLM-L6-v2` often places gold pages in the wider candidate set, but it does not reliably rank them into the top citations. This is not yet a strong replacement for the dependency-light Vector RAG MVP.

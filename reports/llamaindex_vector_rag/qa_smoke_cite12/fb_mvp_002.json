@@ -1,0 +1,483 @@
+{
+  "method": "llamaindex_vector_rag",
+  "question_id": "fb_mvp_002",
+  "question": "What is Amazon's year-over-year change in revenue from FY2016 to FY2017 (in units of percents and round to one decimal place)? Calculate what was asked by utilizing the line items clearly shown in the statement of income.",
+  "answer": "Retrieved 12 chunks with LlamaIndex vector retrieval and lightweight reranking.",
+  "citations": [
+    {
+      "document_id": "AMAZON_2017_10K",
+      "page": 38,
+      "section": null,
+      "text": "Table of Contents AMAZON.COM, INC. CONSOLIDATED STATEMENTS OF OPERATIONS (in millions, except per share data) Year Ended December 31, 2015 2016 2017 Net product sales $ 79,268 $ 94,665 $ 118,573 Net service sales 27,738 41,322 59,293 Total net sales 107,006 135,987 177,866 Operating expenses: Cost of sales 71,651 88,265 111,934 Fulfillment 13,410 17,619 25,249 Marketing 5,254 7,233 10,069 Technology and content 12,540 16,085 22,620 General and administrative 1,747 2,432 3,674 Other operating exp",
+      "metadata": {
+        "chunk_id": "2e3d4335-07a3-4244-a8d7-f8d619345b9b",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.6016922154026073,
+        "rerank_score": 83.13413382096249,
+        "matched_terms": [
+          "cost",
+          "income",
+          "net",
+          "operations",
+          "sales"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "AMAZON_2017_10K",
+      "page": 72,
+      "section": null,
+      "text": "Note 12—QUARTERLY RESULTS (UNAUDITED) The following tables contain selected unaudited statement of operations information for each quarter of 2016 and 2017 . The following information reflects all normal recurring adjustments necessary for a fair presentation of the information for the periods presented. The operating results for any quarter are not necessarily indicative of results for any future period. Our business is affected by seasonality, which historically has resulted in higher sales vo",
+      "metadata": {
+        "chunk_id": "7ffca9c0-9cf5-4889-ae50-8a80d95b3a85",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.6415761208118425,
+        "rerank_score": 75.15761208118424,
+        "matched_terms": [
+          "income",
+          "net",
+          "operations",
+          "sales",
+          "statement"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "AMAZON_2017_10K",
+      "page": 49,
+      "section": null,
+      "text": "ing prior periods. The cumulative adjustment will primarily relate to unredeemed gift cards. We will begin to recognize revenue from estimated unredeemed gift cards over the expected customer redemption period, which is substantially within nine months, rather than waiting until gift cards expire or when the likelihood of redemption becomes remote, generally two years from the date of issuance. Other changes relate to Amazon-branded electronic devices sold through retailers, which will be recogn",
+      "metadata": {
+        "chunk_id": "3f408220-d7f5-4e6c-8285-f5800ef6145a",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5120647670166668,
+        "rerank_score": 75.039810035,
+        "matched_terms": [
+          "change",
+          "cost",
+          "income",
+          "net",
+          "operations",
+          "revenue",
+          "sales"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "AMAZON_2017_10K",
+      "page": 43,
+      "section": null,
+      "text": "Amazon’s electronic devices sold through retailers are recognized at the point of sale to consumers. Service sales represent third-party seller fees earned (including commissions) and related shipping fees, AWS sales, certain digital content subscriptions, certain advertising services, and our co-branded credit card agreements. Service sales, net of promotional discounts and return allowances, are recognized when service has been rendered. Return allowances, which reduce revenue and cost of sale",
+      "metadata": {
+        "chunk_id": "02868095-56f2-4929-8ca2-3f305a7aaea4",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5716401101691831,
+        "rerank_score": 72.08506364849727,
+        "matched_terms": [
+          "cost",
+          "net",
+          "revenue",
+          "sales"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "AMAZON_2017_10K",
+      "page": 18,
+      "section": null,
+      "text": "information contained in Item 7 of Part II, “Management’s Discussion and Analysis of Financial Condition and Results of Operations.” Historical results are not necessarily indicative of future results. Year Ended December 31, 2013 2014 2015 2016 2017 (1) (in millions, except per share data) Statements of Operations: Net sales $ 74,452 $ 88,988 $ 107,006 $ 135,987 $ 177,866 Operating income $ 745 $ 178 $ 2,233 $ 4,186 $ 4,106 Net income (loss) $ 274 $ (241) $ 596 $ 2,371 $ 3,033 Basic earnings pe",
+      "metadata": {
+        "chunk_id": "17189390-10d4-4cdd-a0e4-dd2c41ab923b",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5929421563206254,
+        "rerank_score": 71.25035598293972,
+        "matched_terms": [
+          "income",
+          "net",
+          "operations",
+          "sales"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "AMAZON_2017_10K",
+      "page": 27,
+      "section": null,
+      "text": "mation about operating expenses is as follows (in millions): Year Ended December 31, 2015 2016 2017 Operating expenses: Cost of sales $ 71,651 $ 88,265 $ 111,934 Fulfillment 13,410 17,619 25,249 Marketing 5,254 7,233 10,069 Technology and content 12,540 16,085 22,620 General and administrative 1,747 2,432 3,674 Other operating expense, net 171 167 214 Total operating expenses $ 104,773 $ 131,801 $ 173,760 Year-over-year Percentage Growth: Cost of sales 14% 23 % 27% Fulfillment 25 31 43 Marketing",
+      "metadata": {
+        "chunk_id": "7779259a-28ae-43a3-84e3-a2909fb94b10",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5870812902664908,
+        "rerank_score": 70.65549744770172,
+        "matched_terms": [
+          "cost",
+          "net",
+          "revenue",
+          "sales"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "AMAZON_2017_10K",
+      "page": 37,
+      "section": null,
+      "text": "mber 31, 2015 2016 2017 CASH AND CASH EQUIVALENTS, BEGINNING OF PERIOD $ 14,557 $ 15,890 $ 19,334 OPERATING ACTIVITIES: Net income 596 2,371 3,033 Adjustments to reconcile net income to net cash from operating activities: Depreciation of property and equipment, including internal-use software and website development, and other amortization, including capitalized content costs 6,281 8,116 11,478 Stock-based compensation 2,119 2,975 4,215 Other operating expense, net 155 160 202 Other expense (inc",
+      "metadata": {
+        "chunk_id": "47869b1f-2550-4d93-8a6a-2dac6fd64326",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.6086476793043951,
+        "rerank_score": 69.83845214096583,
+        "matched_terms": [
+          "income",
+          "net",
+          "revenue",
+          "sales"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "AMAZON_2017_10K",
+      "page": 26,
+      "section": null,
+      "text": "Table of Contents AWS sales increased 55 % and 43 % in 2016 and 2017 , compared to the comparable prior year periods. The sales growth primarily reflects increased customer usage, partially offset by pricing changes. Pricing changes were driven largely by our continued efforts to reduce prices for our customers. Operating Income (Loss) Operating income (loss) by segment is as follows (in millions): Year Ended December 31, 2015 2016 2017 Operating Income (Loss): North America $ 1,425 $ 2,361 $ 2,",
+      "metadata": {
+        "chunk_id": "1511053a-6fa4-4b6d-8694-c9bcc3e7cf56",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.6207612921720637,
+        "rerank_score": 69.0673572873818,
+        "matched_terms": [
+          "cost",
+          "income",
+          "sales"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "AMAZON_2017_10K",
+      "page": 69,
+      "section": null,
+      "text": "Table of Contents Information on reportable segments and reconciliation to consolidated net income (loss) is as follows (in millions): Year Ended December 31, 2015 2016 2017 North America Net sales $ 63,708 $ 79,785 $ 106,110 Operating expenses 62,283 77,424 103,273 Operating income $ 1,425 $ 2,361 $ 2,837 International Net sales $ 35,418 $ 43,983 $ 54,297 Operating expenses 36,117 45,266 57,359 Operating income (loss) $ (699) $ (1,283) $ (3,062) AWS Net sales $ 7,880 $ 12,219 $ 17,459 Operating",
+      "metadata": {
+        "chunk_id": "96e0bc94-93ba-4b0c-b723-7646542f42a7",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.577790708736476,
+        "rerank_score": 66.7088954350511,
+        "matched_terms": [
+          "income",
+          "net",
+          "revenue",
+          "sales"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "AMAZON_2017_10K",
+      "page": 29,
+      "section": null,
+      "text": "Table of Contents Other Operating Expense, Net Other operating expense, net was $171 million , $167 million , and $214 million during 2015 , 2016 , and 2017 , and was primarily related to the amortization of intangible assets. Interest Income and Expense Our interest income was $50 million , $100 million , and $202 million during 2015 , 2016 , and 2017 . We generally invest our excess cash in investment grade short- to intermediate-term fixed income securities and AAA-rated money market funds. O",
+      "metadata": {
+        "chunk_id": "4ab7c9b3-b574-40df-9e46-4d04e1a9d5fa",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.6130709222817564,
+        "rerank_score": 66.28954836852651,
+        "matched_terms": [
+          "income",
+          "net"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "AMAZON_2017_10K",
+      "page": 22,
+      "section": null,
+      "text": "yments on our long-term obligations. Cash received from our customers and other activities generally corresponds to our net sales. Because consumers primarily use credit cards to buy from us, our receivables from consumers settle quickly. The increase in operating cash flow in 2016 , compared to the comparable prior year period, was primarily due to the increase in net income, excluding non-cash charges such as depreciation, amortization, and stock-based compensation. The increase in operating c",
+      "metadata": {
+        "chunk_id": "5f276c0c-b6a5-4641-86eb-d91fefe71bef",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5797850404729907,
+        "rerank_score": 64.91710053852715,
+        "matched_terms": [
+          "income",
+          "net",
+          "sales"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "llamaindex_build_vector_index",
+      "target": "AMAZON_2017_10K",
+      "metadata": {
+        "page_count": 85,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "chunk_size": 900,
+        "chunk_overlap": 160,
+        "retrieve_top_k": 120,
+        "rerank_top_k": 12
+      }
+    },
+    {
+      "step": 2,
+      "action": "llamaindex_retrieve_node",
+      "target": "2e3d4335-07a3-4244-a8d7-f8d619345b9b",
+      "metadata": {
+        "page": 38,
+        "retrieval_rank": 5,
+        "initial_rank": 5,
+        "vector_score": 0.6016922154026073,
+        "rerank_score": 83.13413382096249,
+        "matched_terms": [
+          "cost",
+          "income",
+          "net",
+          "operations",
+          "sales"
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "action": "llamaindex_retrieve_node",
+      "target": "7ffca9c0-9cf5-4889-ae50-8a80d95b3a85",
+      "metadata": {
+        "page": 72,
+        "retrieval_rank": 1,
+        "initial_rank": 1,
+        "vector_score": 0.6415761208118425,
+        "rerank_score": 75.15761208118424,
+        "matched_terms": [
+          "income",
+          "net",
+          "operations",
+          "sales",
+          "statement"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "llamaindex_retrieve_node",
+      "target": "3f408220-d7f5-4e6c-8285-f5800ef6145a",
+      "metadata": {
+        "page": 49,
+        "retrieval_rank": 20,
+        "initial_rank": 20,
+        "vector_score": 0.5120647670166668,
+        "rerank_score": 75.039810035,
+        "matched_terms": [
+          "change",
+          "cost",
+          "income",
+          "net",
+          "operations",
+          "revenue",
+          "sales"
+        ]
+      }
+    },
+    {
+      "step": 5,
+      "action": "llamaindex_retrieve_node",
+      "target": "02868095-56f2-4929-8ca2-3f305a7aaea4",
+      "metadata": {
+        "page": 43,
+        "retrieval_rank": 10,
+        "initial_rank": 10,
+        "vector_score": 0.5716401101691831,
+        "rerank_score": 72.08506364849727,
+        "matched_terms": [
+          "cost",
+          "net",
+          "revenue",
+          "sales"
+        ]
+      }
+    },
+    {
+      "step": 6,
+      "action": "llamaindex_retrieve_node",
+      "target": "17189390-10d4-4cdd-a0e4-dd2c41ab923b",
+      "metadata": {
+        "page": 18,
+        "retrieval_rank": 6,
+        "initial_rank": 6,
+        "vector_score": 0.5929421563206254,
+        "rerank_score": 71.25035598293972,
+        "matched_terms": [
+          "income",
+          "net",
+          "operations",
+          "sales"
+        ]
+      }
+    },
+    {
+      "step": 7,
+      "action": "llamaindex_retrieve_node",
+      "target": "7779259a-28ae-43a3-84e3-a2909fb94b10",
+      "metadata": {
+        "page": 27,
+        "retrieval_rank": 7,
+        "initial_rank": 7,
+        "vector_score": 0.5870812902664908,
+        "rerank_score": 70.65549744770172,
+        "matched_terms": [
+          "cost",
+          "net",
+          "revenue",
+          "sales"
+        ]
+      }
+    },
+    {
+      "step": 8,
+      "action": "llamaindex_retrieve_node",
+      "target": "47869b1f-2550-4d93-8a6a-2dac6fd64326",
+      "metadata": {
+        "page": 37,
+        "retrieval_rank": 4,
+        "initial_rank": 4,
+        "vector_score": 0.6086476793043951,
+        "rerank_score": 69.83845214096583,
+        "matched_terms": [
+          "income",
+          "net",
+          "revenue",
+          "sales"
+        ]
+      }
+    },
+    {
+      "step": 9,
+      "action": "llamaindex_retrieve_node",
+      "target": "a864bd86-a7ec-4e50-b43d-f9de8112d901",
+      "metadata": {
+        "page": 49,
+        "retrieval_rank": 30,
+        "initial_rank": 30,
+        "vector_score": 0.4837225154023399,
+        "rerank_score": 69.11786557532172,
+        "matched_terms": [
+          "cost",
+          "income",
+          "net",
+          "operations",
+          "revenue",
+          "sales",
+          "statement"
+        ]
+      }
+    },
+    {
+      "step": 10,
+      "action": "llamaindex_retrieve_node",
+      "target": "1511053a-6fa4-4b6d-8694-c9bcc3e7cf56",
+      "metadata": {
+        "page": 26,
+        "retrieval_rank": 2,
+        "initial_rank": 2,
+        "vector_score": 0.6207612921720637,
+        "rerank_score": 69.0673572873818,
+        "matched_terms": [
+          "cost",
+          "income",
+          "sales"
+        ]
+      }
+    },
+    {
+      "step": 11,
+      "action": "llamaindex_retrieve_node",
+      "target": "96e0bc94-93ba-4b0c-b723-7646542f42a7",
+      "metadata": {
+        "page": 69,
+        "retrieval_rank": 9,
+        "initial_rank": 9,
+        "vector_score": 0.577790708736476,
+        "rerank_score": 66.7088954350511,
+        "matched_terms": [
+          "income",
+          "net",
+          "revenue",
+          "sales"
+        ]
+      }
+    },
+    {
+      "step": 12,
+      "action": "llamaindex_retrieve_node",
+      "target": "4ab7c9b3-b574-40df-9e46-4d04e1a9d5fa",
+      "metadata": {
+        "page": 29,
+        "retrieval_rank": 3,
+        "initial_rank": 3,
+        "vector_score": 0.6130709222817564,
+        "rerank_score": 66.28954836852651,
+        "matched_terms": [
+          "income",
+          "net"
+        ]
+      }
+    },
+    {
+      "step": 13,
+      "action": "llamaindex_retrieve_node",
+      "target": "5f276c0c-b6a5-4641-86eb-d91fefe71bef",
+      "metadata": {
+        "page": 22,
+        "retrieval_rank": 8,
+        "initial_rank": 8,
+        "vector_score": 0.5797850404729907,
+        "rerank_score": 64.91710053852715,
+        "matched_terms": [
+          "income",
+          "net",
+          "sales"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": null,
+    "output": null,
+    "total": null
+  },
+  "latency_ms": 11437,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\AMAZON_2017_10K.pdf",
+    "adapter_mode": "llamaindex_vector_retrieval",
+    "llm_enabled": false,
+    "model": null,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "page_count": 85,
+    "chunk_size": 900,
+    "chunk_overlap": 160,
+    "retrieve_top_k": 120,
+    "rerank_top_k": 12,
+    "max_citations": 12
+  }
+}

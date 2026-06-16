@@ -1,0 +1,524 @@
+{
+  "method": "llamaindex_vector_rag",
+  "question_id": "fb_mvp_011",
+  "question": "Looking at VaR, did the risk that JPM faced in the second fiscal quarter of 2023 decrease compared to the same period in the prior year?",
+  "answer": "Retrieved 12 chunks with LlamaIndex vector retrieval and lightweight reranking.",
+  "citations": [
+    {
+      "document_id": "JPMORGAN_2023Q2_10Q",
+      "page": 85,
+      "section": null,
+      "text": "This VaR does not include the retained loan portfolio, which is not reported at fair value. In the first quarter of 2022, in line with the Firm's internal model governance, the credit risk component of CVA related to certain counterparties was removed from Credit Portfolio VaR due to the widening of the credit spreads for those counterparties to elevated levels. The related hedges were also removed to maintain consistency. This exposure is now reflected in other sensitivity-based measures. (c) C",
+      "metadata": {
+        "chunk_id": "6f2433f3-194f-4369-82b3-4748afd625c0",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.6440553494830491,
+        "rerank_score": 85.4055349483049,
+        "matched_terms": [
+          "average",
+          "compared",
+          "market",
+          "period",
+          "prior",
+          "quarter",
+          "risk",
+          "same",
+          "second",
+          "var"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "JPMORGAN_2023Q2_10Q",
+      "page": 86,
+      "section": null,
+      "text": "VaR backtesting The Firm performs daily VaR model backtesting, which compares the daily Risk Management VaR results with the daily gains and losses that are utilized for VaR backtesting purposes. The gains and losses depicted in the chart below do not reflect the Firm’s reported revenue as they exclude certain components of total net revenue, such as those associated with the execution of new transactions (i.e., intraday client-driven trading and intraday risk management activities), fees, commi",
+      "metadata": {
+        "chunk_id": "d0883250-bbfb-45a5-a0b3-6aa114fa83a1",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5818215971025155,
+        "rerank_score": 69.1738263769182,
+        "matched_terms": [
+          "average",
+          "market",
+          "prior",
+          "risk",
+          "var"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "JPMORGAN_2023Q2_10Q",
+      "page": 87,
+      "section": null,
+      "text": "r from the modeled assumptions, primarily due to customer behavior and competition for deposits. The Firm’s earnings-at-risk scenarios are periodically evaluated and enhanced in response to changes in the composition of the Firm’s balance sheet, changes in market conditions, improvements in the Firm’s simulation and other factors. While a relevant measure of the Firm’s interest rate exposure, the earnings-at-risk analysis does not represent a forecast of the Firm’s net interest income. Refer to ",
+      "metadata": {
+        "chunk_id": "ad48e2a7-c4b3-4668-bdbc-4044176b28bd",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5062845605153082,
+        "rerank_score": 63.60345605153083,
+        "matched_terms": [
+          "compared",
+          "market",
+          "prior",
+          "quarter",
+          "risk",
+          "second"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "JPMORGAN_2023Q2_10Q",
+      "page": 42,
+      "section": null,
+      "text": "wance for credit losses to establish the allowance for the First Republic loans and lending-related commitments, in the second quarter of 2023. The prior year provision was $198 million. Selected metrics As of or for the three months ended June 30, As of or for the six months ended June 30, (in millions, except ranking data, headcount and ratios) 2023 2022 Change 2023 2022 Change % of JPM mutual fund assets rated as 4- or 5-star(a) 69 % 72 % 69 % 72 % % of JPM mutual fund assets ranked in 1st or",
+      "metadata": {
+        "chunk_id": "47a819be-a61b-4b13-987c-cbf8976a61ca",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.46015672643160893,
+        "rerank_score": 58.932339309827555,
+        "matched_terms": [
+          "average",
+          "jpm",
+          "period",
+          "prior",
+          "quarter",
+          "second"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "JPMORGAN_2023Q2_10Q",
+      "page": 89,
+      "section": null,
+      "text": "Other sensitivity-based measures The Firm quantifies the market risk of certain debt and equity and credit and funding-related exposures by assessing the potential impact on net revenue, other comprehensive income (“OCI”) and noninterest expense due to changes in relevant market variables. Refer to the predominant business activities that give rise to market risk on page 138 of JPMorgan Chase’s 2022 Form 10-K for additional information on the positions captured in other sensitivity-based measure",
+      "metadata": {
+        "chunk_id": "8a1250d0-bed3-4ac6-85c7-a20c01825030",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.49713805777660336,
+        "rerank_score": 58.680472444327,
+        "matched_terms": [
+          "market",
+          "quarter",
+          "risk",
+          "var"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "JPMORGAN_2023Q2_10Q",
+      "page": 16,
+      "section": null,
+      "text": "Refer to Corporate segment results on pages 45-46, Investment Portfolio Risk Management on page 83, and Notes 2 and 10 for additional information. Loans increased, reflecting: • $150 billion of loans associated with the First Republic acquisition, primarily reflected in CCB, CB and AWM. The increase also included: • growth in new accounts and revolving balances which continued to normalize to pre-pandemic levels in Card Services, and • higher revolver utilization and originations in CB, partiall",
+      "metadata": {
+        "chunk_id": "ce022cff-47ef-43fa-9071-b1eae9d3dde0",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.49288599937247346,
+        "rerank_score": 58.24693327058068,
+        "matched_terms": [
+          "average",
+          "quarter",
+          "risk",
+          "second"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "JPMORGAN_2023Q2_10Q",
+      "page": 164,
+      "section": null,
+      "text": "edominantly driven by net downgrade activity, updates to certain assumptions related to office real estate in CB in the second quarter of 2023, and the impact of the additional weight placed on the adverse scenarios in the first quarter of 2023, and • $649 million in consumer, predominantly driven by Card Services, reflecting loan growth, the net effect of changes in the Firm's macroeconomic outlook, including the impact from the weighted average U.S. unemployment rate peaking in the third quart",
+      "metadata": {
+        "chunk_id": "09634caa-270b-4ac0-88ab-cbb9a1a3b956",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.49127114914774805,
+        "rerank_score": 58.07711491477481,
+        "matched_terms": [
+          "average",
+          "prior",
+          "quarter",
+          "second"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "JPMORGAN_2023Q2_10Q",
+      "page": 25,
+      "section": null,
+      "text": "vely, and $852 million and $1.3 billion for the six months ended June 30, 2023 and 2022, respectively. (c) Included MSR risk management results of $25 million and $28 million for the three months ended June 30, 2023 and 2022, respectively, and $13 million and $137 million for the six months ended June 30, 2023 and 2022, respectively. (d) Includes the impact of the First Republic acquisition. Refer to page 24 for additional information. (e) For the three and six months ended June 30, 2023, includ",
+      "metadata": {
+        "chunk_id": "e8748b4b-9066-45a9-8931-47f6e6f7bf10",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.4878392908218087,
+        "rerank_score": 57.72559574884754,
+        "matched_terms": [
+          "period",
+          "prior",
+          "quarter",
+          "risk"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "JPMORGAN_2023Q2_10Q",
+      "page": 46,
+      "section": null,
+      "text": "expense were not material to net income. Refer to Foreign Exchange Risk on page 22 for additional information. The provision for credit losses was a net benefit of $243 million, reflecting a reduction in the allowance for credit losses associated with the deposit placed with First Republic Bank in the first quarter of 2023. Refer to Note 10 for additional information on the investment securities portfolio, and Note 13 for additional information on the allowance for credit losses. The current per",
+      "metadata": {
+        "chunk_id": "ca347282-71e1-4c5d-b274-1ac3a048f485",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.41849819476389793,
+        "rerank_score": 56.63315280972313,
+        "matched_terms": [
+          "average",
+          "compared",
+          "market",
+          "period",
+          "prior",
+          "quarter",
+          "risk"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "JPMORGAN_2023Q2_10Q",
+      "page": 114,
+      "section": null,
+      "text": " measured at fair value on a recurring basis for the periods indicated. These amounts exclude any effects of the Firm’s risk management activities where the financial instruments are classified as level 1 and 2 of the fair value hierarchy. Refer to Changes in level 3 recurring fair value measurements rollforward tables on pages 108-113 for further information on these instruments. Three months ended June 30, 2023 • $752 million of net losses on assets, driven by losses in net derivative receivab",
+      "metadata": {
+        "chunk_id": "604d62b3-2e8e-449c-802b-037e1506d432",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5121845526161874,
+        "rerank_score": 56.20178859495208,
+        "matched_terms": [
+          "market",
+          "risk"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "JPMORGAN_2023Q2_10Q",
+      "page": 56,
+      "section": null,
+      "text": "e they are generated from customers that maintain operating service relationships with the Firm. The Firm believes that average deposit balances are generally more representative of deposit trends than period-end deposit balances. However, during periods of market disruption those trends could be affected. Average deposits were lower for the three months ended June 30, 2023 compared to the three months ended June 30, 2022. The decrease was driven by: • the continued migration into higher-yieldin",
+      "metadata": {
+        "chunk_id": "cab4fef1-7285-4538-9a60-c770ccf352ce",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.42471299883401986,
+        "rerank_score": 55.30463321673532,
+        "matched_terms": [
+          "average",
+          "compared",
+          "decrease",
+          "market",
+          "period",
+          "quarter"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "JPMORGAN_2023Q2_10Q",
+      "page": 92,
+      "section": null,
+      "text": "adverse scenario assumes an elevated U.S. unemployment rate, averaging approximately 1.6% higher over the eight-quarter forecast, with a peak difference of 2.2% in the first quarter of 2024; lower U.S. real GDP with a slower recovery, remaining approximately 3.1% lower at the end of the eight-quarter forecast, with a peak difference of approximately 3.4% in the third quarter of 2024; and lower national HPI with a peak difference of approximately 10.5% in the first quarter of 2025. This analysis ",
+      "metadata": {
+        "chunk_id": "2f4569ea-d6ac-4997-86ae-d4bca3681095",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.48352521984869096,
+        "rerank_score": 55.28585531820242,
+        "matched_terms": [
+          "compared",
+          "period",
+          "quarter"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "llamaindex_build_vector_index",
+      "target": "JPMORGAN_2023Q2_10Q",
+      "metadata": {
+        "page_count": 217,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "chunk_size": 900,
+        "chunk_overlap": 160,
+        "retrieve_top_k": 120,
+        "rerank_top_k": 12
+      }
+    },
+    {
+      "step": 2,
+      "action": "llamaindex_retrieve_node",
+      "target": "6f2433f3-194f-4369-82b3-4748afd625c0",
+      "metadata": {
+        "page": 85,
+        "retrieval_rank": 1,
+        "initial_rank": 1,
+        "vector_score": 0.6440553494830491,
+        "rerank_score": 85.4055349483049,
+        "matched_terms": [
+          "average",
+          "compared",
+          "market",
+          "period",
+          "prior",
+          "quarter",
+          "risk",
+          "same",
+          "second",
+          "var"
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "action": "llamaindex_retrieve_node",
+      "target": "d0883250-bbfb-45a5-a0b3-6aa114fa83a1",
+      "metadata": {
+        "page": 86,
+        "retrieval_rank": 2,
+        "initial_rank": 2,
+        "vector_score": 0.5818215971025155,
+        "rerank_score": 69.1738263769182,
+        "matched_terms": [
+          "average",
+          "market",
+          "prior",
+          "risk",
+          "var"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "llamaindex_retrieve_node",
+      "target": "ad48e2a7-c4b3-4668-bdbc-4044176b28bd",
+      "metadata": {
+        "page": 87,
+        "retrieval_rank": 4,
+        "initial_rank": 4,
+        "vector_score": 0.5062845605153082,
+        "rerank_score": 63.60345605153083,
+        "matched_terms": [
+          "compared",
+          "market",
+          "prior",
+          "quarter",
+          "risk",
+          "second"
+        ]
+      }
+    },
+    {
+      "step": 5,
+      "action": "llamaindex_retrieve_node",
+      "target": "47a819be-a61b-4b13-987c-cbf8976a61ca",
+      "metadata": {
+        "page": 42,
+        "retrieval_rank": 11,
+        "initial_rank": 11,
+        "vector_score": 0.46015672643160893,
+        "rerank_score": 58.932339309827555,
+        "matched_terms": [
+          "average",
+          "jpm",
+          "period",
+          "prior",
+          "quarter",
+          "second"
+        ]
+      }
+    },
+    {
+      "step": 6,
+      "action": "llamaindex_retrieve_node",
+      "target": "8a1250d0-bed3-4ac6-85c7-a20c01825030",
+      "metadata": {
+        "page": 89,
+        "retrieval_rank": 5,
+        "initial_rank": 5,
+        "vector_score": 0.49713805777660336,
+        "rerank_score": 58.680472444327,
+        "matched_terms": [
+          "market",
+          "quarter",
+          "risk",
+          "var"
+        ]
+      }
+    },
+    {
+      "step": 7,
+      "action": "llamaindex_retrieve_node",
+      "target": "ce022cff-47ef-43fa-9071-b1eae9d3dde0",
+      "metadata": {
+        "page": 16,
+        "retrieval_rank": 6,
+        "initial_rank": 6,
+        "vector_score": 0.49288599937247346,
+        "rerank_score": 58.24693327058068,
+        "matched_terms": [
+          "average",
+          "quarter",
+          "risk",
+          "second"
+        ]
+      }
+    },
+    {
+      "step": 8,
+      "action": "llamaindex_retrieve_node",
+      "target": "09634caa-270b-4ac0-88ab-cbb9a1a3b956",
+      "metadata": {
+        "page": 164,
+        "retrieval_rank": 7,
+        "initial_rank": 7,
+        "vector_score": 0.49127114914774805,
+        "rerank_score": 58.07711491477481,
+        "matched_terms": [
+          "average",
+          "prior",
+          "quarter",
+          "second"
+        ]
+      }
+    },
+    {
+      "step": 9,
+      "action": "llamaindex_retrieve_node",
+      "target": "e8748b4b-9066-45a9-8931-47f6e6f7bf10",
+      "metadata": {
+        "page": 25,
+        "retrieval_rank": 8,
+        "initial_rank": 8,
+        "vector_score": 0.4878392908218087,
+        "rerank_score": 57.72559574884754,
+        "matched_terms": [
+          "period",
+          "prior",
+          "quarter",
+          "risk"
+        ]
+      }
+    },
+    {
+      "step": 10,
+      "action": "llamaindex_retrieve_node",
+      "target": "ca347282-71e1-4c5d-b274-1ac3a048f485",
+      "metadata": {
+        "page": 46,
+        "retrieval_rank": 27,
+        "initial_rank": 27,
+        "vector_score": 0.41849819476389793,
+        "rerank_score": 56.63315280972313,
+        "matched_terms": [
+          "average",
+          "compared",
+          "market",
+          "period",
+          "prior",
+          "quarter",
+          "risk"
+        ]
+      }
+    },
+    {
+      "step": 11,
+      "action": "llamaindex_retrieve_node",
+      "target": "604d62b3-2e8e-449c-802b-037e1506d432",
+      "metadata": {
+        "page": 114,
+        "retrieval_rank": 3,
+        "initial_rank": 3,
+        "vector_score": 0.5121845526161874,
+        "rerank_score": 56.20178859495208,
+        "matched_terms": [
+          "market",
+          "risk"
+        ]
+      }
+    },
+    {
+      "step": 12,
+      "action": "llamaindex_retrieve_node",
+      "target": "cab4fef1-7285-4538-9a60-c770ccf352ce",
+      "metadata": {
+        "page": 56,
+        "retrieval_rank": 21,
+        "initial_rank": 21,
+        "vector_score": 0.42471299883401986,
+        "rerank_score": 55.30463321673532,
+        "matched_terms": [
+          "average",
+          "compared",
+          "decrease",
+          "market",
+          "period",
+          "quarter"
+        ]
+      }
+    },
+    {
+      "step": 13,
+      "action": "llamaindex_retrieve_node",
+      "target": "2f4569ea-d6ac-4997-86ae-d4bca3681095",
+      "metadata": {
+        "page": 92,
+        "retrieval_rank": 9,
+        "initial_rank": 9,
+        "vector_score": 0.48352521984869096,
+        "rerank_score": 55.28585531820242,
+        "matched_terms": [
+          "compared",
+          "period",
+          "quarter"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": null,
+    "output": null,
+    "total": null
+  },
+  "latency_ms": 14348,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\JPMORGAN_2023Q2_10Q.pdf",
+    "adapter_mode": "llamaindex_vector_retrieval",
+    "llm_enabled": false,
+    "model": null,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "page_count": 217,
+    "chunk_size": 900,
+    "chunk_overlap": 160,
+    "retrieve_top_k": 120,
+    "rerank_top_k": 12,
+    "max_citations": 12
+  }
+}

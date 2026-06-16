@@ -155,6 +155,27 @@ python scripts\evaluate_evidence_mvp.py --results-dir reports\hybrid_rag\qa_llm 
 python scripts\evaluate_answers_mvp.py --results-dir reports\hybrid_rag\qa_llm --output reports\hybrid_rag\answer_eval_llm.json --mode llm --model deepseek/deepseek-v4-pro --continue-on-error
 ```
 
+## Run LlamaIndex Vector RAG Diagnostic Baseline
+
+Smoke test without LLM answer generation:
+
+```powershell
+python scripts\run_llamaindex_vector_rag_mvp.py --no-llm --output-dir reports\llamaindex_vector_rag\qa_smoke --manifest reports\llamaindex_vector_rag\qa_smoke_manifest.json --force --continue-on-error
+python scripts\evaluate_evidence_mvp.py --results-dir reports\llamaindex_vector_rag\qa_smoke --output reports\llamaindex_vector_rag\evidence_eval_smoke.json --continue-on-error
+```
+
+Citation-depth diagnostics:
+
+```powershell
+python scripts\run_llamaindex_vector_rag_mvp.py --no-llm --max-citations 6 --output-dir reports\llamaindex_vector_rag\qa_smoke_cite6 --manifest reports\llamaindex_vector_rag\qa_smoke_cite6_manifest.json --force --continue-on-error
+python scripts\evaluate_evidence_mvp.py --results-dir reports\llamaindex_vector_rag\qa_smoke_cite6 --output reports\llamaindex_vector_rag\evidence_eval_smoke_cite6.json --continue-on-error
+
+python scripts\run_llamaindex_vector_rag_mvp.py --no-llm --max-citations 12 --output-dir reports\llamaindex_vector_rag\qa_smoke_cite12 --manifest reports\llamaindex_vector_rag\qa_smoke_cite12_manifest.json --force --continue-on-error
+python scripts\evaluate_evidence_mvp.py --results-dir reports\llamaindex_vector_rag\qa_smoke_cite12 --output reports\llamaindex_vector_rag\evidence_eval_smoke_cite12.json --continue-on-error
+```
+
+This is currently a diagnostic baseline. Do not add it to the main comparison table until retrieval quality improves or the report explicitly frames it as a weaker baseline.
+
 ## Evaluate Answer Accuracy
 
 Heuristic mode:

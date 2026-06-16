@@ -1,0 +1,314 @@
+{
+  "method": "llamaindex_vector_rag",
+  "question_id": "fb_mvp_003",
+  "question": "What are the major products and services that AMD sells as of FY22?",
+  "answer": "Retrieved 12 chunks with LlamaIndex vector retrieval and lightweight reranking.",
+  "citations": [
+    {
+      "document_id": "AMD_2022_10K",
+      "page": 60,
+      "section": null,
+      "text": "any. References herein to AMD or the Company mean Advanced Micro Devices, Inc. and its consolidated subsidiaries. AMD’s products include x86 microprocessors (CPUs) and graphics processing units (GPUs), as standalone devices or as incorporated into accelerated processing units (APUs), chipsets, data center and professional GPUs, embedded processors, semi-custom System-on-Chip (SoC) products, microprocessor and SoC development services and technology, data processing units (DPUs), Field Programmab",
+      "metadata": {
+        "chunk_id": "91f9832e-c35e-4096-87d9-4c559bf43ec2",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5728885046086405,
+        "rerank_score": 72.28885046086404,
+        "matched_terms": [
+          "cpus",
+          "gpus",
+          "graphics",
+          "processors",
+          "products",
+          "sells",
+          "services"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "AMD_2022_10K",
+      "page": 11,
+      "section": null,
+      "text": "Table of Contents We generally warrant that our products sold to our customers will conform to our approved specifications and be free from defects in material and workmanship under normal use and conditions for one year. We offer up to three-year limited warranties for certain product types, and sometimes provide other warranty periods based on negotiated terms with certain customers. We market and sell our latest products under the AMD trademark. Our client processors include: AMD Ryzen, AMD R",
+      "metadata": {
+        "chunk_id": "114991b6-1e22-4d58-9b79-2f80e88b10c7",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.544483657001364,
+        "rerank_score": 63.440032366803074,
+        "matched_terms": [
+          "graphics",
+          "processors",
+          "products",
+          "services"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "AMD_2022_10K",
+      "page": 7,
+      "section": null,
+      "text": "We believe that integrated, balanced computing platforms consisting of CPUs, chipsets and GPUs (either as discrete GPUs or integrated into an APU or SoC) that work together at the system level bring end users improved system stability, increased performance and enhanced power efficiency. In addition, we believe customers also benefit from an all-AMD platform (consisting of an APU or CPU, a discrete GPU, and a chipset when needed), as we are able to optimize interoperability, provide our customer",
+      "metadata": {
+        "chunk_id": "9486f7ab-db58-4690-8f96-7749394e49f7",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5182057655389946,
+        "rerank_score": 60.787243220566126,
+        "matched_terms": [
+          "cpus",
+          "gpus",
+          "processors",
+          "products"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "llamaindex_build_vector_index",
+      "target": "AMD_2022_10K",
+      "metadata": {
+        "page_count": 121,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "chunk_size": 900,
+        "chunk_overlap": 160,
+        "retrieve_top_k": 120,
+        "rerank_top_k": 12
+      }
+    },
+    {
+      "step": 2,
+      "action": "llamaindex_retrieve_node",
+      "target": "91f9832e-c35e-4096-87d9-4c559bf43ec2",
+      "metadata": {
+        "page": 60,
+        "retrieval_rank": 1,
+        "initial_rank": 1,
+        "vector_score": 0.5728885046086405,
+        "rerank_score": 72.28885046086404,
+        "matched_terms": [
+          "cpus",
+          "gpus",
+          "graphics",
+          "processors",
+          "products",
+          "sells",
+          "services"
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "action": "llamaindex_retrieve_node",
+      "target": "114991b6-1e22-4d58-9b79-2f80e88b10c7",
+      "metadata": {
+        "page": 11,
+        "retrieval_rank": 2,
+        "initial_rank": 2,
+        "vector_score": 0.544483657001364,
+        "rerank_score": 63.440032366803074,
+        "matched_terms": [
+          "graphics",
+          "processors",
+          "products",
+          "services"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "llamaindex_retrieve_node",
+      "target": "9486f7ab-db58-4690-8f96-7749394e49f7",
+      "metadata": {
+        "page": 7,
+        "retrieval_rank": 5,
+        "initial_rank": 5,
+        "vector_score": 0.5182057655389946,
+        "rerank_score": 60.787243220566126,
+        "matched_terms": [
+          "cpus",
+          "gpus",
+          "processors",
+          "products"
+        ]
+      }
+    },
+    {
+      "step": 5,
+      "action": "llamaindex_retrieve_node",
+      "target": "332d1a0b-c170-4a53-96e7-dcbb42958616",
+      "metadata": {
+        "page": 43,
+        "retrieval_rank": 6,
+        "initial_rank": 6,
+        "vector_score": 0.5156517585475686,
+        "rerank_score": 60.523509188090195,
+        "matched_terms": [
+          "major",
+          "overview",
+          "processors",
+          "products"
+        ]
+      }
+    },
+    {
+      "step": 6,
+      "action": "llamaindex_retrieve_node",
+      "target": "37fede02-6c78-4aa2-ac74-f432eb1dabfa",
+      "metadata": {
+        "page": 13,
+        "retrieval_rank": 10,
+        "initial_rank": 10,
+        "vector_score": 0.49409762080446507,
+        "rerank_score": 60.3347620804465,
+        "matched_terms": [
+          "gpus",
+          "graphics",
+          "processors",
+          "products",
+          "sells"
+        ]
+      }
+    },
+    {
+      "step": 7,
+      "action": "llamaindex_retrieve_node",
+      "target": "8c8689dd-ccf5-4462-8ff6-fb046192a027",
+      "metadata": {
+        "page": 19,
+        "retrieval_rank": 7,
+        "initial_rank": 7,
+        "vector_score": 0.5151290192806558,
+        "rerank_score": 58.462901928065584,
+        "matched_terms": [
+          "gpus",
+          "graphics",
+          "products"
+        ]
+      }
+    },
+    {
+      "step": 8,
+      "action": "llamaindex_retrieve_node",
+      "target": "234d7291-ebbf-41e3-9f21-4dd82c57372f",
+      "metadata": {
+        "page": 24,
+        "retrieval_rank": 3,
+        "initial_rank": 3,
+        "vector_score": 0.5288432583964804,
+        "rerank_score": 55.86765917298138,
+        "matched_terms": [
+          "products"
+        ]
+      }
+    },
+    {
+      "step": 9,
+      "action": "llamaindex_retrieve_node",
+      "target": "411b0fcb-9c2b-4711-8227-e2e10302ec0c",
+      "metadata": {
+        "page": 10,
+        "retrieval_rank": 17,
+        "initial_rank": 17,
+        "vector_score": 0.46418351109343914,
+        "rerank_score": 55.285017776010584,
+        "matched_terms": [
+          "cpus",
+          "gpus",
+          "products",
+          "services"
+        ]
+      }
+    },
+    {
+      "step": 10,
+      "action": "llamaindex_retrieve_node",
+      "target": "31421da5-4cb2-4c08-adc0-2f1be5232bc4",
+      "metadata": {
+        "page": 12,
+        "retrieval_rank": 18,
+        "initial_rank": 18,
+        "vector_score": 0.4618299753269289,
+        "rerank_score": 55.04133086602622,
+        "matched_terms": [
+          "cpus",
+          "graphics",
+          "products",
+          "services"
+        ]
+      }
+    },
+    {
+      "step": 11,
+      "action": "llamaindex_retrieve_node",
+      "target": "37c90d7d-01f9-47fe-a4ee-8b2d26ac5439",
+      "metadata": {
+        "page": 9,
+        "retrieval_rank": 21,
+        "initial_rank": 21,
+        "vector_score": 0.43787669789881095,
+        "rerank_score": 54.62100312321443,
+        "matched_terms": [
+          "cpus",
+          "gpus",
+          "graphics",
+          "processors",
+          "products"
+        ]
+      }
+    },
+    {
+      "step": 12,
+      "action": "llamaindex_retrieve_node",
+      "target": "11bfa366-661a-492b-9d11-26771ec6a093",
+      "metadata": {
+        "page": 112,
+        "retrieval_rank": 4,
+        "initial_rank": 4,
+        "vector_score": 0.5196590333672162,
+        "rerank_score": 52.94090333672162,
+        "matched_terms": []
+      }
+    },
+    {
+      "step": 13,
+      "action": "llamaindex_retrieve_node",
+      "target": "b5082ba6-456b-4606-9c81-8b8004e0913a",
+      "metadata": {
+        "page": 110,
+        "retrieval_rank": 8,
+        "initial_rank": 8,
+        "vector_score": 0.4996688591041718,
+        "rerank_score": 52.90855257708385,
+        "matched_terms": [
+          "products"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": null,
+    "output": null,
+    "total": null
+  },
+  "latency_ms": 10075,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\AMD_2022_10K.pdf",
+    "adapter_mode": "llamaindex_vector_retrieval",
+    "llm_enabled": false,
+    "model": null,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "page_count": 121,
+    "chunk_size": 900,
+    "chunk_overlap": 160,
+    "retrieve_top_k": 120,
+    "rerank_top_k": 12,
+    "max_citations": 3
+  }
+}

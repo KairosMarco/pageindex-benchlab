@@ -1,0 +1,328 @@
+{
+  "method": "llamaindex_vector_rag",
+  "question_id": "fb_mvp_012",
+  "question": "Which business segment of JnJ will be treated as a discontinued operation from August 30, 2023 onward?",
+  "answer": "Retrieved 12 chunks with LlamaIndex vector retrieval and lightweight reranking.",
+  "citations": [
+    {
+      "document_id": "JOHNSON_JOHNSON_2023_8K_dated-2023-08-30",
+      "page": 4,
+      "section": null,
+      "text": "Exhibit 99.1 Johnson & Johnson Announces Updated Financials and 2023 Guidance Following Completion of the Kenvue Separation • Company expects increased 2023 Reported Sales Growth of 7.0% - 8.0%, Operational Sales Growth of 7.5% - 8.5%, and Adjusted Operational Sales Growth of 6.2% - 7.2%; Figures exclude the COVID-19 Vaccine • Company expects 2023 Adjusted Reported Earnings Per Share (EPS) of $10.00 - $10.10, reflecting increased growth of 12.5% at the mid-point and Adjusted Operational EPS of $",
+      "metadata": {
+        "chunk_id": "67d03b49-748f-4237-bded-0177ccdefb88",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.4504418340292839,
+        "rerank_score": 68.83830104998721,
+        "matched_terms": [
+          "august",
+          "business",
+          "consumer",
+          "discontinued",
+          "health",
+          "jnj",
+          "kenvue",
+          "operations",
+          "separation",
+          "will"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "JOHNSON_JOHNSON_2023_8K_dated-2023-08-30",
+      "page": 6,
+      "section": null,
+      "text": "terial to Johnson & Johnson's results computed in accordance with GAAP. ($ in Billions, except EPS; Shares in Millions) August 2023 (excl. Consumer Health) July 2023 (incl. Consumer Health) Adjusted Operational Sales Change vs. Prior Year / Mid-point 6.2% – 7.2% / 6.7% 6.0% – 7.0% / 6.5% Operational Sales / Mid-point Change vs. Prior Year / Mid-point $83.6B – $84.4B / $84.0B 7.5% – 8.5% / 8.0% $99.3B – $100.3B / $99.8B 7.0% – 8.0% / 7.5% Reported Sales / Mid-point Change vs. Prior Year / Mid-poi",
+      "metadata": {
+        "chunk_id": "5cbeed1c-7e54-4564-bc3e-5ecc4472ede4",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.4611125483411691,
+        "rerank_score": 58.993607775293384,
+        "matched_terms": [
+          "august",
+          "consumer",
+          "health",
+          "kenvue",
+          "separation",
+          "will"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "JOHNSON_JOHNSON_2023_8K_dated-2023-08-30",
+      "page": 8,
+      "section": null,
+      "text": "regarding, among other things: future operating and financial performance, product development, and market position and business strategy. The reader is cautioned not to rely on these forward-looking statements. These statements are based on current expectations of future events. If underlying assumptions prove inaccurate or known or unknown risks or uncertainties materialize, actual results could vary materially from the expectations and projections of Johnson & Johnson. Risks and uncertainties",
+      "metadata": {
+        "chunk_id": "a34a9c27-96e5-4f82-90b4-15d5ee60927d",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.47114415327082726,
+        "rerank_score": 58.02618003296508,
+        "matched_terms": [
+          "business",
+          "consumer",
+          "health",
+          "jnj",
+          "separation"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "llamaindex_build_vector_index",
+      "target": "JOHNSON_JOHNSON_2023_8K_dated-2023-08-30",
+      "metadata": {
+        "page_count": 27,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "chunk_size": 900,
+        "chunk_overlap": 160,
+        "retrieve_top_k": 120,
+        "rerank_top_k": 12
+      }
+    },
+    {
+      "step": 2,
+      "action": "llamaindex_retrieve_node",
+      "target": "67d03b49-748f-4237-bded-0177ccdefb88",
+      "metadata": {
+        "page": 4,
+        "retrieval_rank": 8,
+        "initial_rank": 8,
+        "vector_score": 0.4504418340292839,
+        "rerank_score": 68.83830104998721,
+        "matched_terms": [
+          "august",
+          "business",
+          "consumer",
+          "discontinued",
+          "health",
+          "jnj",
+          "kenvue",
+          "operations",
+          "separation",
+          "will"
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "action": "llamaindex_retrieve_node",
+      "target": "5cbeed1c-7e54-4564-bc3e-5ecc4472ede4",
+      "metadata": {
+        "page": 6,
+        "retrieval_rank": 5,
+        "initial_rank": 5,
+        "vector_score": 0.4611125483411691,
+        "rerank_score": 58.993607775293384,
+        "matched_terms": [
+          "august",
+          "consumer",
+          "health",
+          "kenvue",
+          "separation",
+          "will"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "llamaindex_retrieve_node",
+      "target": "a34a9c27-96e5-4f82-90b4-15d5ee60927d",
+      "metadata": {
+        "page": 8,
+        "retrieval_rank": 4,
+        "initial_rank": 4,
+        "vector_score": 0.47114415327082726,
+        "rerank_score": 58.02618003296508,
+        "matched_terms": [
+          "business",
+          "consumer",
+          "health",
+          "jnj",
+          "separation"
+        ]
+      }
+    },
+    {
+      "step": 5,
+      "action": "llamaindex_retrieve_node",
+      "target": "3bd9ea8a-e86d-4076-bcf1-1f58a4495fe8",
+      "metadata": {
+        "page": 2,
+        "retrieval_rank": 3,
+        "initial_rank": 3,
+        "vector_score": 0.4760459595643854,
+        "rerank_score": 56.54577242702677,
+        "matched_terms": [
+          "august",
+          "kenvue",
+          "operations",
+          "separation"
+        ]
+      }
+    },
+    {
+      "step": 6,
+      "action": "llamaindex_retrieve_node",
+      "target": "95ee7361-380a-405e-b1c8-ac68ca7922f5",
+      "metadata": {
+        "page": 17,
+        "retrieval_rank": 1,
+        "initial_rank": 1,
+        "vector_score": 0.48820621434924544,
+        "rerank_score": 55.82062143492455,
+        "matched_terms": [
+          "business",
+          "health",
+          "operations"
+        ]
+      }
+    },
+    {
+      "step": 7,
+      "action": "llamaindex_retrieve_node",
+      "target": "5a42e262-88cd-4649-932e-acb090aab2ad",
+      "metadata": {
+        "page": 18,
+        "retrieval_rank": 2,
+        "initial_rank": 2,
+        "vector_score": 0.476843052851311,
+        "rerank_score": 52.65489352042522,
+        "matched_terms": [
+          "business",
+          "operations"
+        ]
+      }
+    },
+    {
+      "step": 8,
+      "action": "llamaindex_retrieve_node",
+      "target": "608b3c1c-e9f5-488f-92f5-00d39041ad54",
+      "metadata": {
+        "page": 6,
+        "retrieval_rank": 6,
+        "initial_rank": 6,
+        "vector_score": 0.45535233947650144,
+        "rerank_score": 52.38817512412073,
+        "matched_terms": [
+          "august",
+          "kenvue",
+          "will"
+        ]
+      }
+    },
+    {
+      "step": 9,
+      "action": "llamaindex_retrieve_node",
+      "target": "4ad4a9a5-7773-4647-a5b6-5824cb39c6d1",
+      "metadata": {
+        "page": 5,
+        "retrieval_rank": 7,
+        "initial_rank": 7,
+        "vector_score": 0.4510769920480404,
+        "rerank_score": 49.931228616568745,
+        "matched_terms": [
+          "operations",
+          "segment"
+        ]
+      }
+    },
+    {
+      "step": 10,
+      "action": "llamaindex_retrieve_node",
+      "target": "1594f375-4491-48ed-8e30-018f527e2db4",
+      "metadata": {
+        "page": 15,
+        "retrieval_rank": 15,
+        "initial_rank": 15,
+        "vector_score": 0.40524277569057415,
+        "rerank_score": 49.11251286317506,
+        "matched_terms": [
+          "consumer",
+          "health",
+          "operations",
+          "separation"
+        ]
+      }
+    },
+    {
+      "step": 11,
+      "action": "llamaindex_retrieve_node",
+      "target": "6826fdb6-3069-4094-97bc-37dd65d816bd",
+      "metadata": {
+        "page": 26,
+        "retrieval_rank": 20,
+        "initial_rank": 20,
+        "vector_score": 0.39539987936813253,
+        "rerank_score": 47.98116440740149,
+        "matched_terms": [
+          "consumer",
+          "health",
+          "operations",
+          "separation"
+        ]
+      }
+    },
+    {
+      "step": 12,
+      "action": "llamaindex_retrieve_node",
+      "target": "f8ddc5d2-85be-42ae-ac89-66468310b8e0",
+      "metadata": {
+        "page": 16,
+        "retrieval_rank": 21,
+        "initial_rank": 21,
+        "vector_score": 0.39521555772563055,
+        "rerank_score": 47.93332047844541,
+        "matched_terms": [
+          "consumer",
+          "health",
+          "operations",
+          "separation"
+        ]
+      }
+    },
+    {
+      "step": 13,
+      "action": "llamaindex_retrieve_node",
+      "target": "38bccf04-9284-4bd6-bf03-c41a6823c137",
+      "metadata": {
+        "page": 21,
+        "retrieval_rank": 9,
+        "initial_rank": 9,
+        "vector_score": 0.42101738046860754,
+        "rerank_score": 46.866443929213695,
+        "matched_terms": [
+          "operations",
+          "segment"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": null,
+    "output": null,
+    "total": null
+  },
+  "latency_ms": 9172,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\JOHNSON_JOHNSON_2023_8K_dated-2023-08-30.pdf",
+    "adapter_mode": "llamaindex_vector_retrieval",
+    "llm_enabled": false,
+    "model": null,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "page_count": 27,
+    "chunk_size": 900,
+    "chunk_overlap": 160,
+    "retrieve_top_k": 120,
+    "rerank_top_k": 12,
+    "max_citations": 3
+  }
+}

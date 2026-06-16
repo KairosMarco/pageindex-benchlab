@@ -1,0 +1,423 @@
+{
+  "method": "llamaindex_vector_rag",
+  "question_id": "fb_mvp_010",
+  "question": "What Was AMCOR's Adjusted Non GAAP EBITDA for FY 2023",
+  "answer": "Retrieved 12 chunks with LlamaIndex vector retrieval and lightweight reranking.",
+  "citations": [
+    {
+      "document_id": "AMCOR_2023Q4_EARNINGS",
+      "page": 7,
+      "section": null,
+      "text": "-looking statements in this communication are qualified in their entirety by this cautionary statement. Presentation of non-GAAP information Included in this release are measures of financial performance that are not calculated in accordance with U.S. GAAP. These measures include adjusted EBITDA and EBITDA (calculated as earnings before interest and tax and depreciation and amortization), adjusted EBIT and EBIT (calculated as earnings before interest and tax), adjusted net income, adjusted earni",
+      "metadata": {
+        "chunk_id": "d2b74665-58e6-4a66-b99c-27b9e74c990d",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.6630297786177274,
+        "rerank_score": 83.15297786177273,
+        "matched_terms": [
+          "adjusted",
+          "ebitda",
+          "gaap",
+          "non",
+          "reconciliation"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "AMCOR_2023Q4_EARNINGS",
+      "page": 11,
+      "section": null,
+      "text": "Reconciliation of Non-GAAP Measures Reconciliation of adjusted Earnings before interest, tax, depreciation and amortization (EBITDA), Earnings before interest and tax (EBIT), Net income, Earnings per share (EPS) and Free Cash Flow Three Months Ended June 30, 2022 Three Months Ended June 30, 2023 ($ million) EBITDA EBIT Net Income EPS (Diluted US cents)(1) EBITDA EBIT Net Income EPS (Diluted US cents)(1) Net income attributable to Amcor 109 109 109 7.3 181 181 181 12.3 Net income attributable to ",
+      "metadata": {
+        "chunk_id": "c6af59f0-edf0-46ff-9f45-83afa7fb77ae",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.62716392303768,
+        "rerank_score": 79.466392303768,
+        "matched_terms": [
+          "adjusted",
+          "ebitda",
+          "gaap",
+          "non",
+          "reconciliation"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "AMCOR_2023Q4_EARNINGS",
+      "page": 1,
+      "section": null,
+      "text": "Amcor reports fiscal 2023 results and provides outlook for fiscal 2024 June 2023 quarter: GAAP diluted EPS of 12.3 cps; Adjusted EPS of 19.3 cps Fiscal 2023 Full Year Highlights • Net sales of $14,694 million, in line with the prior year on a comparable constant currency basis; • GAAP Net Income of $1,048 million; GAAP diluted earnings per share (EPS) of 70.5 cps; • Adjusted EPS of 73.3 cps and Adjusted Free Cash Flow of $848 million, in line with guidance provided in May. Adjusted EBIT of $1,60",
+      "metadata": {
+        "chunk_id": "143cfc82-7863-497c-8555-7b4b42614467",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.6516953992631711,
+        "rerank_score": 76.96953992631711,
+        "matched_terms": [
+          "adjusted",
+          "ebitda",
+          "gaap",
+          "non"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "AMCOR_2023Q4_EARNINGS",
+      "page": 3,
+      "section": null,
+      "text": ". Volumes were approximately 7% lower than last year. This was partly offset by price/mix benefits of approximately 2%. GAAP Net Income was $181 million. Adjusted EBIT of $436 million was approximately 7% lower than last year on a comparable constant currency basis. Flexibles Twelve Months Ended June 30, Reported ∆% Comparable constant currency ∆% 2022 $ million 2023 $ million Net sales 11,151 11,154 — 1 Adjusted EBIT 1,517 1,429 (6) 1 Adjusted EBIT / Sales % 13.6 12.8 Twelve months ended June 3",
+      "metadata": {
+        "chunk_id": "53ac9e09-8132-4300-8f7c-f62f40bea002",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.6927972235991081,
+        "rerank_score": 74.2797223599108,
+        "matched_terms": [
+          "adjusted",
+          "gaap"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "AMCOR_2023Q4_EARNINGS",
+      "page": 2,
+      "section": null,
+      "text": "argely reflecting price/mix benefits of approximately 3%. Full year volumes were approximately 3% lower than last year. GAAP Net Income was $1,048 million and includes a $215 million gain on the sale of Amcor's business in Russia on December 23, 2022. Adjusted EBIT of $1,608 million was 1% higher than last year on a comparable constant currency basis. Adjusted EBIT margin of 10.9% includes an adverse impact of approximately 90 basis points related to increased sales dollars associated with passi",
+      "metadata": {
+        "chunk_id": "3e5a5662-b8cf-4903-b325-f60e07143e1e",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.6740135064843281,
+        "rerank_score": 72.30135064843282,
+        "matched_terms": [
+          "adjusted",
+          "gaap"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "AMCOR_2023Q4_EARNINGS",
+      "page": 4,
+      "section": null,
+      "text": "erest expense of $259 million was $124 million higher than the same period last year, reflecting higher interest rates. GAAP income tax expense was $193 million compared with $300 million last year. Excluding amounts related to non-GAAP adjustments, adjusted tax expense for the year ended June 30, 2023 was $250 million compared with $332 million in the prior year. Adjusted tax expense represents an effective tax rate of 18.5% which is lower than 21.2% last year, primarily due to differences in t",
+      "metadata": {
+        "chunk_id": "677fb34a-6096-4d4c-a59f-c233c4f8f85a",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.6227572511258063,
+        "rerank_score": 71.97572511258063,
+        "matched_terms": [
+          "adjusted",
+          "gaap",
+          "non"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "AMCOR_2023Q4_EARNINGS",
+      "page": 12,
+      "section": null,
+      "text": "Twelve Months Ended June 30, 2022 Twelve Months Ended June 30, 2023 ($ million) EBITDA EBIT Net Income EPS (Diluted US cents)(1) EBITDA EBIT Net Income EPS (Diluted US cents)(1) Net income attributable to Amcor 805 805 805 52.9 1,048 1,048 1,048 70.5 Net income attributable to non-controlling interests 10 10 10 10 Tax expense 300 300 193 193 Interest expense, net 135 135 259 259 Depreciation and amortization 579 569 EBITDA, EBIT, Net income and EPS 1,829 1,250 805 52.9 2,080 1,510 1,048 70.5 201",
+      "metadata": {
+        "chunk_id": "a94ecea1-b172-4da8-bfa0-ea7c6e51fe14",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5992676222017209,
+        "rerank_score": 71.5767622201721,
+        "matched_terms": [
+          "adjusted",
+          "ebitda",
+          "non",
+          "reconciliation"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "AMCOR_2023Q4_EARNINGS",
+      "page": 13,
+      "section": null,
+      "text": "Reconciliation of adjusted EBIT by reporting segment Three Months Ended June 30, 2022 Three Months Ended June 30, 2023 ($ million) Flexibles Rigid Packaging Other Total Flexibles Rigid Packaging Other Total Net income attributable to Amcor 109 181 Net income attributable to non- controlling interests 3 4 Tax expense 103 68 Interest expense, net 35 70 EBIT 210 87 (46) 250 283 62 (22) 323 2019 Bemis Integration Plan 12 — (1) 11 — — — — Net loss on disposals 1 — — 1 — — — — Impact of hyperinflation",
+      "metadata": {
+        "chunk_id": "d292522f-b02d-4180-9a14-358d5232b780",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5493223844582077,
+        "rerank_score": 61.43223844582077,
+        "matched_terms": [
+          "adjusted",
+          "non",
+          "reconciliation"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "AMCOR_2023Q4_EARNINGS",
+      "page": 5,
+      "section": null,
+      "text": "Adjusted Free Cash Flow Adjusted Free Cash Flow for fiscal 2023 was $848 million and compares with $1,066 million last year. The year over year variance largely reflects higher interest payments and lower accounts payable balances resulting from moderated purchasing activities due to lower demand and inventory reduction initiatives. June 2023 quarter Adjusted Free Cash Flow of $834 million compares with $803 million in the same quarter last year. Net debt was $6,057 million at June 30, 2023. Lev",
+      "metadata": {
+        "chunk_id": "495f65c9-c159-40b2-b0c6-5dafe58b8fcf",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5648388814744896,
+        "rerank_score": 61.08388814744896,
+        "matched_terms": [
+          "adjusted",
+          "ebitda"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "llamaindex_build_vector_index",
+      "target": "AMCOR_2023Q4_EARNINGS",
+      "metadata": {
+        "page_count": 14,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "chunk_size": 900,
+        "chunk_overlap": 160,
+        "retrieve_top_k": 120,
+        "rerank_top_k": 12
+      }
+    },
+    {
+      "step": 2,
+      "action": "llamaindex_retrieve_node",
+      "target": "d2b74665-58e6-4a66-b99c-27b9e74c990d",
+      "metadata": {
+        "page": 7,
+        "retrieval_rank": 4,
+        "initial_rank": 4,
+        "vector_score": 0.6630297786177274,
+        "rerank_score": 83.15297786177273,
+        "matched_terms": [
+          "adjusted",
+          "ebitda",
+          "gaap",
+          "non",
+          "reconciliation"
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "action": "llamaindex_retrieve_node",
+      "target": "c6af59f0-edf0-46ff-9f45-83afa7fb77ae",
+      "metadata": {
+        "page": 11,
+        "retrieval_rank": 6,
+        "initial_rank": 6,
+        "vector_score": 0.62716392303768,
+        "rerank_score": 79.466392303768,
+        "matched_terms": [
+          "adjusted",
+          "ebitda",
+          "gaap",
+          "non",
+          "reconciliation"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "llamaindex_retrieve_node",
+      "target": "7a47822d-33f7-4882-8c2b-9092ca6ec2ac",
+      "metadata": {
+        "page": 7,
+        "retrieval_rank": 2,
+        "initial_rank": 2,
+        "vector_score": 0.6761516528886993,
+        "rerank_score": 77.56516528886993,
+        "matched_terms": [
+          "gaap",
+          "non",
+          "reconciliation"
+        ]
+      }
+    },
+    {
+      "step": 5,
+      "action": "llamaindex_retrieve_node",
+      "target": "143cfc82-7863-497c-8555-7b4b42614467",
+      "metadata": {
+        "page": 1,
+        "retrieval_rank": 5,
+        "initial_rank": 5,
+        "vector_score": 0.6516953992631711,
+        "rerank_score": 76.96953992631711,
+        "matched_terms": [
+          "adjusted",
+          "ebitda",
+          "gaap",
+          "non"
+        ]
+      }
+    },
+    {
+      "step": 6,
+      "action": "llamaindex_retrieve_node",
+      "target": "53ac9e09-8132-4300-8f7c-f62f40bea002",
+      "metadata": {
+        "page": 3,
+        "retrieval_rank": 1,
+        "initial_rank": 1,
+        "vector_score": 0.6927972235991081,
+        "rerank_score": 74.2797223599108,
+        "matched_terms": [
+          "adjusted",
+          "gaap"
+        ]
+      }
+    },
+    {
+      "step": 7,
+      "action": "llamaindex_retrieve_node",
+      "target": "3e5a5662-b8cf-4903-b325-f60e07143e1e",
+      "metadata": {
+        "page": 2,
+        "retrieval_rank": 3,
+        "initial_rank": 3,
+        "vector_score": 0.6740135064843281,
+        "rerank_score": 72.30135064843282,
+        "matched_terms": [
+          "adjusted",
+          "gaap"
+        ]
+      }
+    },
+    {
+      "step": 8,
+      "action": "llamaindex_retrieve_node",
+      "target": "677fb34a-6096-4d4c-a59f-c233c4f8f85a",
+      "metadata": {
+        "page": 4,
+        "retrieval_rank": 7,
+        "initial_rank": 7,
+        "vector_score": 0.6227572511258063,
+        "rerank_score": 71.97572511258063,
+        "matched_terms": [
+          "adjusted",
+          "gaap",
+          "non"
+        ]
+      }
+    },
+    {
+      "step": 9,
+      "action": "llamaindex_retrieve_node",
+      "target": "a94ecea1-b172-4da8-bfa0-ea7c6e51fe14",
+      "metadata": {
+        "page": 12,
+        "retrieval_rank": 8,
+        "initial_rank": 8,
+        "vector_score": 0.5992676222017209,
+        "rerank_score": 71.5767622201721,
+        "matched_terms": [
+          "adjusted",
+          "ebitda",
+          "non",
+          "reconciliation"
+        ]
+      }
+    },
+    {
+      "step": 10,
+      "action": "llamaindex_retrieve_node",
+      "target": "f03cd59c-c0bf-489c-9279-71b419e188c6",
+      "metadata": {
+        "page": 4,
+        "retrieval_rank": 10,
+        "initial_rank": 10,
+        "vector_score": 0.5494341979024197,
+        "rerank_score": 64.49341979024197,
+        "matched_terms": [
+          "adjusted",
+          "gaap",
+          "non"
+        ]
+      }
+    },
+    {
+      "step": 11,
+      "action": "llamaindex_retrieve_node",
+      "target": "d292522f-b02d-4180-9a14-358d5232b780",
+      "metadata": {
+        "page": 13,
+        "retrieval_rank": 11,
+        "initial_rank": 11,
+        "vector_score": 0.5493223844582077,
+        "rerank_score": 61.43223844582077,
+        "matched_terms": [
+          "adjusted",
+          "non",
+          "reconciliation"
+        ]
+      }
+    },
+    {
+      "step": 12,
+      "action": "llamaindex_retrieve_node",
+      "target": "495f65c9-c159-40b2-b0c6-5dafe58b8fcf",
+      "metadata": {
+        "page": 5,
+        "retrieval_rank": 9,
+        "initial_rank": 9,
+        "vector_score": 0.5648388814744896,
+        "rerank_score": 61.08388814744896,
+        "matched_terms": [
+          "adjusted",
+          "ebitda"
+        ]
+      }
+    },
+    {
+      "step": 13,
+      "action": "llamaindex_retrieve_node",
+      "target": "52d1129a-c40f-46e1-8b93-c4219a5846e5",
+      "metadata": {
+        "page": 2,
+        "retrieval_rank": 12,
+        "initial_rank": 12,
+        "vector_score": 0.5092699973920274,
+        "rerank_score": 60.376999739202745,
+        "matched_terms": [
+          "adjusted",
+          "gaap",
+          "non"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": null,
+    "output": null,
+    "total": null
+  },
+  "latency_ms": 8481,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\AMCOR_2023Q4_EARNINGS.pdf",
+    "adapter_mode": "llamaindex_vector_retrieval",
+    "llm_enabled": false,
+    "model": null,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "page_count": 14,
+    "chunk_size": 900,
+    "chunk_overlap": 160,
+    "retrieve_top_k": 120,
+    "rerank_top_k": 12,
+    "max_citations": 12
+  }
+}

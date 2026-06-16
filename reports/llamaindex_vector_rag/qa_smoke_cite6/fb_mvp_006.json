@@ -1,0 +1,362 @@
+{
+  "method": "llamaindex_vector_rag",
+  "question_id": "fb_mvp_006",
+  "question": "Has Boeing reported any materially important ongoing legal battles from FY2022?",
+  "answer": "Retrieved 12 chunks with LlamaIndex vector retrieval and lightweight reranking.",
+  "citations": [
+    {
+      "document_id": "BOEING_2022_10K",
+      "page": 113,
+      "section": null,
+      "text": "Table of Contents based upon current information, that the outcome of any such legal proceeding, claim, or government dispute and investigation will not have a material effect on our financial position, results of operations or cash flows. Where it is reasonably possible that we will incur losses in excess of recorded amounts in connection with any of the matters set forth below, we will disclose either the amount or range of reasonably possible losses in excess of such amounts or, where no such",
+      "metadata": {
+        "chunk_id": "466d0bb8-52b9-49d3-bbfc-fd0e800e76e6",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5931645014650386,
+        "rerank_score": 101.31645014650385,
+        "matched_terms": [
+          "accident",
+          "actions",
+          "filed",
+          "has",
+          "lawsuits",
+          "legal",
+          "proceeding"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "BOEING_2022_10K",
+      "page": 19,
+      "section": null,
+      "text": "otentially resulting in significant liabilities. See Note 21 of the Consolidated Financial Statements for discussion of legal proceedings resulting from the October 29, 2018 accident of Lion Air Flight 610 and the March 10, 2019 accident of Ethiopian Airlines Flight 302. The amount of insurance coverage we maintain may be inadequate to cover these or other claims or liabilities. A significant portion of our customer financing portfolio is concentrated among certain customers and in certain types",
+      "metadata": {
+        "chunk_id": "6e4ac7f6-be52-4e3e-a1f6-1fa6198d0d28",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.4791535574486771,
+        "rerank_score": 76.77368907820104,
+        "matched_terms": [
+          "accident",
+          "actions",
+          "claims",
+          "legal",
+          "materially",
+          "proceedings"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "BOEING_2022_10K",
+      "page": 2,
+      "section": null,
+      "text": "T I Page Item 1. Business 1 Item 1A. Risk Factors 6 Item 1B. Unresolved Staff Comments 17 Item 2. Properties 18 Item 3. Legal Proceedings 18 Item 4. Mine Safety Disclosures 18 PART II Item 5. Market for Registrant’s Common Equity, Related Stockholder Matters and Issuer Purchases of Equity Securities 19 Item 6. [Reserved] 19 Item 7. Management’s Discussion and Analysis of Financial Condition and Results of Operations 20 Item 7A. Quantitative and Qualitative Disclosures About Market Risk 51 Item 8",
+      "metadata": {
+        "chunk_id": "8b37294e-9d67-45ba-b96c-5899e311e95e",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5400386387586659,
+        "rerank_score": 64.99553054253325,
+        "matched_terms": [
+          "legal",
+          "proceedings"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "BOEING_2022_10K",
+      "page": 17,
+      "section": null,
+      "text": " relationships with the U.S. government, the heavily regulated nature of our industry, and in the case of environmental proceedings, our current or past ownership of certain property. Any such inquiry or investigation could result in an adverse ruling against us, which could have a material impact on our financial position, results of operations and/or cash flows. Our operations expose us to the risk of material environmental liabilities. We are subject to various U.S. federal, state, local and ",
+      "metadata": {
+        "chunk_id": "f2c4afc2-44ae-404b-b728-a8bdaac5316e",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5146033756787397,
+        "rerank_score": 60.42700423454064,
+        "matched_terms": [
+          "claims",
+          "legal",
+          "ongoing",
+          "proceedings"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "BOEING_2022_10K",
+      "page": 4,
+      "section": null,
+      "text": "ntellectual property, we also license intellectual property to and from third parties. For example, the U.S. government has licenses in our patents that are developed in performance of government contracts, and it may use or authorize others to use the inventions covered by such patents for government purposes. Unpatented research, development and engineering skills, as well as certain trademarks, trade secrets and other intellectual property rights, also make an important contribution to our bu",
+      "metadata": {
+        "chunk_id": "0074150a-b3ae-45de-b351-fd93cf51eb9c",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.520695244809175,
+        "rerank_score": 59.044524480917495,
+        "matched_terms": [
+          "has",
+          "important",
+          "materially"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "BOEING_2022_10K",
+      "page": 188,
+      "section": null,
+      "text": "e registrant’s most recent fiscal quarter (the registrant’s fourth fiscal quarter in the case of an annual report) that has materially affected, or is reasonably likely to materially affect, the registrant’s internal control over financial reporting; and 5. The registrant’s other certifying officer(s) and I have disclosed, based on our most recent evaluation of internal control over financial reporting, to the registrant’s auditors and the audit committee of the registrant’s board of directors (",
+      "metadata": {
+        "chunk_id": "e1bded00-735f-4897-b946-acd7d152a154",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5032912367505389,
+        "rerank_score": 55.25412367505388,
+        "matched_terms": [
+          "has",
+          "materially"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "llamaindex_build_vector_index",
+      "target": "BOEING_2022_10K",
+      "metadata": {
+        "page_count": 190,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "chunk_size": 900,
+        "chunk_overlap": 160,
+        "retrieve_top_k": 120,
+        "rerank_top_k": 12
+      }
+    },
+    {
+      "step": 2,
+      "action": "llamaindex_retrieve_node",
+      "target": "466d0bb8-52b9-49d3-bbfc-fd0e800e76e6",
+      "metadata": {
+        "page": 113,
+        "retrieval_rank": 1,
+        "initial_rank": 1,
+        "vector_score": 0.5931645014650386,
+        "rerank_score": 101.31645014650385,
+        "matched_terms": [
+          "accident",
+          "actions",
+          "filed",
+          "has",
+          "lawsuits",
+          "legal",
+          "proceeding"
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "action": "llamaindex_retrieve_node",
+      "target": "6e4ac7f6-be52-4e3e-a1f6-1fa6198d0d28",
+      "metadata": {
+        "page": 19,
+        "retrieval_rank": 18,
+        "initial_rank": 18,
+        "vector_score": 0.4791535574486771,
+        "rerank_score": 76.77368907820104,
+        "matched_terms": [
+          "accident",
+          "actions",
+          "claims",
+          "legal",
+          "materially",
+          "proceedings"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "llamaindex_retrieve_node",
+      "target": "8b37294e-9d67-45ba-b96c-5899e311e95e",
+      "metadata": {
+        "page": 2,
+        "retrieval_rank": 2,
+        "initial_rank": 2,
+        "vector_score": 0.5400386387586659,
+        "rerank_score": 64.99553054253325,
+        "matched_terms": [
+          "legal",
+          "proceedings"
+        ]
+      }
+    },
+    {
+      "step": 5,
+      "action": "llamaindex_retrieve_node",
+      "target": "f2c4afc2-44ae-404b-b728-a8bdaac5316e",
+      "metadata": {
+        "page": 17,
+        "retrieval_rank": 5,
+        "initial_rank": 5,
+        "vector_score": 0.5146033756787397,
+        "rerank_score": 60.42700423454064,
+        "matched_terms": [
+          "claims",
+          "legal",
+          "ongoing",
+          "proceedings"
+        ]
+      }
+    },
+    {
+      "step": 6,
+      "action": "llamaindex_retrieve_node",
+      "target": "0074150a-b3ae-45de-b351-fd93cf51eb9c",
+      "metadata": {
+        "page": 4,
+        "retrieval_rank": 4,
+        "initial_rank": 4,
+        "vector_score": 0.520695244809175,
+        "rerank_score": 59.044524480917495,
+        "matched_terms": [
+          "has",
+          "important",
+          "materially"
+        ]
+      }
+    },
+    {
+      "step": 7,
+      "action": "llamaindex_retrieve_node",
+      "target": "e1bded00-735f-4897-b946-acd7d152a154",
+      "metadata": {
+        "page": 188,
+        "retrieval_rank": 10,
+        "initial_rank": 10,
+        "vector_score": 0.5032912367505389,
+        "rerank_score": 55.25412367505388,
+        "matched_terms": [
+          "has",
+          "materially"
+        ]
+      }
+    },
+    {
+      "step": 8,
+      "action": "llamaindex_retrieve_node",
+      "target": "329ca552-2a79-4e6b-9ac2-c6afc91fed6b",
+      "metadata": {
+        "page": 29,
+        "retrieval_rank": 12,
+        "initial_rank": 12,
+        "vector_score": 0.50044262103517,
+        "rerank_score": 54.95259543685033,
+        "matched_terms": [
+          "has",
+          "ongoing"
+        ]
+      }
+    },
+    {
+      "step": 9,
+      "action": "llamaindex_retrieve_node",
+      "target": "204d4c90-c9f4-4ff8-810d-4ad3f064482a",
+      "metadata": {
+        "page": 187,
+        "retrieval_rank": 14,
+        "initial_rank": 14,
+        "vector_score": 0.4989980629476139,
+        "rerank_score": 54.791472961428056,
+        "matched_terms": [
+          "has",
+          "materially"
+        ]
+      }
+    },
+    {
+      "step": 10,
+      "action": "llamaindex_retrieve_node",
+      "target": "6edc6d2f-c1c4-42b5-83ad-d20fd2e86d54",
+      "metadata": {
+        "page": 6,
+        "retrieval_rank": 15,
+        "initial_rank": 15,
+        "vector_score": 0.4984077441142271,
+        "rerank_score": 54.72410774475605,
+        "matched_terms": [
+          "has",
+          "important"
+        ]
+      }
+    },
+    {
+      "step": 11,
+      "action": "llamaindex_retrieve_node",
+      "target": "b39b2c34-5270-4c8d-9524-9c2530828314",
+      "metadata": {
+        "page": 20,
+        "retrieval_rank": 44,
+        "initial_rank": 44,
+        "vector_score": 0.4405529823439547,
+        "rerank_score": 54.69696490106213,
+        "matched_terms": [
+          "legal",
+          "proceedings"
+        ]
+      }
+    },
+    {
+      "step": 12,
+      "action": "llamaindex_retrieve_node",
+      "target": "0695122a-2764-4286-a4de-42dd26e294a3",
+      "metadata": {
+        "page": 125,
+        "retrieval_rank": 3,
+        "initial_rank": 3,
+        "vector_score": 0.5320327332145837,
+        "rerank_score": 54.1866066547917,
+        "matched_terms": []
+      }
+    },
+    {
+      "step": 13,
+      "action": "llamaindex_retrieve_node",
+      "target": "efe69954-756a-4e54-9e29-64e853b9e927",
+      "metadata": {
+        "page": 190,
+        "retrieval_rank": 7,
+        "initial_rank": 7,
+        "vector_score": 0.5115109231317351,
+        "rerank_score": 54.10109231317351,
+        "matched_terms": [
+          "filed"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": null,
+    "output": null,
+    "total": null
+  },
+  "latency_ms": 10245,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\BOEING_2022_10K.pdf",
+    "adapter_mode": "llamaindex_vector_retrieval",
+    "llm_enabled": false,
+    "model": null,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "page_count": 190,
+    "chunk_size": 900,
+    "chunk_overlap": 160,
+    "retrieve_top_k": 120,
+    "rerank_top_k": 12,
+    "max_citations": 6
+  }
+}
