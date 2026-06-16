@@ -44,6 +44,12 @@ Set a model API key in the current shell. For DashScope/Qwen:
 $env:DASHSCOPE_API_KEY="YOUR_NEW_KEY"
 ```
 
+For DeepSeek:
+
+```powershell
+$env:DEEPSEEK_API_KEY="YOUR_KEY"
+```
+
 Dry run:
 
 ```powershell
@@ -96,5 +102,22 @@ reports/pageindex/evidence_eval.json
 LLM answer mode requires a LiteLLM model name and the matching provider key in the current shell:
 
 ```powershell
-python scripts\run_pageindex_qa_mvp.py --model deepseek/deepseek-v4-pro --force --continue-on-error
+python scripts\run_pageindex_qa_mvp.py --model deepseek/deepseek-v4-pro --output-dir reports\pageindex\qa_llm --manifest reports\pageindex\qa_llm_manifest.json --force --continue-on-error
+python scripts\evaluate_evidence_mvp.py --results-dir reports\pageindex\qa_llm --output reports\pageindex\evidence_eval_llm.json --continue-on-error
+```
+
+## Run Long-context MVP Baseline
+
+Smoke test without LLM answer generation:
+
+```powershell
+python scripts\run_long_context_mvp.py --no-llm --force --continue-on-error
+python scripts\evaluate_evidence_mvp.py --results-dir reports\long_context\qa --output reports\long_context\evidence_eval.json --continue-on-error
+```
+
+LLM mode:
+
+```powershell
+python scripts\run_long_context_mvp.py --model deepseek/deepseek-v4-pro --force --continue-on-error
+python scripts\evaluate_evidence_mvp.py --results-dir reports\long_context\qa --output reports\long_context\evidence_eval.json --continue-on-error
 ```

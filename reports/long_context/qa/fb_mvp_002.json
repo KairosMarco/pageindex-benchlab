@@ -1,0 +1,160 @@
+{
+  "method": "long_context_llm",
+  "question_id": "fb_mvp_002",
+  "question": "What is Amazon's year-over-year change in revenue from FY2016 to FY2017 (in units of percents and round to one decimal place)? Calculate what was asked by utilizing the line items clearly shown in the statement of income.",
+  "answer": "Loaded 85 document pages into long-context mode without LLM generation.",
+  "citations": [
+    {
+      "document_id": "AMAZON_2017_10K",
+      "page": 48,
+      "section": null,
+      "text": "Table of Contents expensed as incurred. These capitalized costs are amortized to “Cost of sales” on an accelerated basis that follows the viewing pattern of customer streams in the first months after availability. Investments We generally invest our excess cash in investment grade short- to intermediate-term fixed income securities and AAA-rated money market funds. Such investments are included in “Cash and cash equivalents” or “Marketable securities” on the accompanying consolidated balance she",
+      "metadata": {
+        "score": 36,
+        "matched_terms": [
+          "change",
+          "cost",
+          "income",
+          "net",
+          "one",
+          "operations",
+          "over",
+          "revenue",
+          "sales",
+          "was"
+        ],
+        "citation_source": "lexical_fallback"
+      }
+    },
+    {
+      "document_id": "AMAZON_2017_10K",
+      "page": 49,
+      "section": null,
+      "text": "Table of Contents unearned revenue as of December 31, 2016 and 2017 . The amortization of previously unearned revenue was approximately $10.0 billion and $14.3 billion in 2016 and 2017 . Foreign Currency We have internationally-focused websites for Australia, Brazil, Canada, China, France, Germany, India, Italy, Japan, Mexico, the Netherlands, Spain, and the United Kingdom . Net sales generated from these websites, as well as most of the related expenses directly incurred from those operations, ",
+      "metadata": {
+        "score": 36,
+        "matched_terms": [
+          "change",
+          "cost",
+          "income",
+          "net",
+          "operations",
+          "over",
+          "revenue",
+          "sales",
+          "statement",
+          "was"
+        ],
+        "citation_source": "lexical_fallback"
+      }
+    },
+    {
+      "document_id": "AMAZON_2017_10K",
+      "page": 47,
+      "section": null,
+      "text": " and capital lease arrangements. Equipment includes assets such as furniture and fixtures, heavy equipment, servers and networking equipment, and internal-use software and website development. Depreciation is recorded on a straight-line basis over the estimated useful lives of the assets (generally the lesser of 40 years or the remaining life of the underlying building, two years for assets such as internal-use software, three years for our servers, five years for networking equipment, five year",
+      "metadata": {
+        "score": 30,
+        "matched_terms": [
+          "change",
+          "cost",
+          "net",
+          "one",
+          "operations",
+          "over",
+          "revenue",
+          "sales"
+        ],
+        "citation_source": "lexical_fallback"
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "load_full_document_context",
+      "target": "AMAZON_2017_10K",
+      "metadata": {
+        "page_count": 85,
+        "original_page_count": 85,
+        "context_chars": 293108,
+        "max_document_chars": null
+      }
+    },
+    {
+      "step": 2,
+      "action": "score_page_for_citation",
+      "target": "page 48",
+      "metadata": {
+        "score": 36,
+        "matched_terms": [
+          "change",
+          "cost",
+          "income",
+          "net",
+          "one",
+          "operations",
+          "over",
+          "revenue",
+          "sales",
+          "was"
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "action": "score_page_for_citation",
+      "target": "page 49",
+      "metadata": {
+        "score": 36,
+        "matched_terms": [
+          "change",
+          "cost",
+          "income",
+          "net",
+          "operations",
+          "over",
+          "revenue",
+          "sales",
+          "statement",
+          "was"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "score_page_for_citation",
+      "target": "page 47",
+      "metadata": {
+        "score": 30,
+        "matched_terms": [
+          "change",
+          "cost",
+          "net",
+          "one",
+          "operations",
+          "over",
+          "revenue",
+          "sales"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": null,
+    "output": null,
+    "total": null
+  },
+  "latency_ms": 103,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\AMAZON_2017_10K.pdf",
+    "adapter_mode": "full_document_context",
+    "llm_enabled": false,
+    "model": null,
+    "context_page_count": 85,
+    "original_page_count": 85,
+    "context_chars": 293108,
+    "max_document_chars": null,
+    "max_citations": 3
+  }
+}

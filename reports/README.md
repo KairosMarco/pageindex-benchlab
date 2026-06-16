@@ -11,4 +11,8 @@ reports/pageindex/pageindex_qa_mvp_report.md
 reports/pageindex/evidence_eval.json
 reports/pageindex/qa_manifest.json
 reports/pageindex/qa/
+reports/long_context/long_context_smoke_report.md
+reports/long_context/evidence_eval.json
+reports/long_context/qa_manifest.json
+reports/long_context/qa/
 ```

@@ -261,12 +261,64 @@ reports/pageindex/evidence_eval.json
 reports/pageindex/pageindex_qa_mvp_report.md
 ```
 
+LLM answer generation command, after setting a provider key:
+
+```powershell
+$env:DEEPSEEK_API_KEY="YOUR_KEY"
+D:\pageindex-demo\PageIndex\.venv\Scripts\python.exe scripts\run_pageindex_qa_mvp.py --model deepseek/deepseek-v4-pro --output-dir reports\pageindex\qa_llm --manifest reports\pageindex\qa_llm_manifest.json --force --continue-on-error
+D:\pageindex-demo\PageIndex\.venv\Scripts\python.exe scripts\evaluate_evidence_mvp.py --results-dir reports\pageindex\qa_llm --output reports\pageindex\evidence_eval_llm.json --continue-on-error
+```
+
+This command was not run in the latest local shell because no model provider API key was available in the process environment.
+
+### Long-context Baseline
+
+Implemented in:
+
+```text
+pipelines/long_context/adapter.py
+scripts/run_long_context_mvp.py
+```
+
+Current mode:
+
+```text
+full_document_context + optional LLM answer generation
+```
+
+No-LLM smoke test command:
+
+```powershell
+D:\pageindex-demo\PageIndex\.venv\Scripts\python.exe scripts\run_long_context_mvp.py --no-llm --force --continue-on-error
+D:\pageindex-demo\PageIndex\.venv\Scripts\python.exe scripts\evaluate_evidence_mvp.py --results-dir reports\long_context\qa --output reports\long_context\evidence_eval.json --continue-on-error
+```
+
+Current no-LLM smoke status:
+
+```text
+12 / 12 MVP questions generated outputs.
+0 failures.
+Average evidence recall: 0.583
+Average citation precision: 0.194
+```
+
+Generated artifacts:
+
+```text
+reports/long_context/qa/
+reports/long_context/qa_manifest.json
+reports/long_context/evidence_eval.json
+reports/long_context/long_context_smoke_report.md
+```
+
+The no-LLM long-context run validates PDF loading, output schema, and evidence evaluator compatibility. It is not the final long-context LLM baseline.
+
 ## Next Stage 1 Work
 
 The next work should convert this setup into actual benchmark execution:
 
-1. Run PageIndex LLM answer generation using the retrieved pages.
-2. Implement Long-context baseline.
+1. Set a provider API key in the local shell and run PageIndex LLM answer generation.
+2. Run Long-context LLM answer generation on the same 12 questions.
 3. Implement Vector RAG + reranker baseline.
 4. Generate the first cross-method benchmark report.
 
@@ -275,7 +327,7 @@ The next work should convert this setup into actual benchmark execution:
 Stage 1 is complete when:
 
 - 12 FinanceBench MVP questions can be run through PageIndex. Completed for retrieval-only mode.
-- At least one baseline can run on the same questions.
+- At least one baseline can run on the same questions. Completed for Long-context no-LLM smoke mode; LLM mode still requires an API key in the current shell.
 - All methods produce `BenchmarkResult`.
 - Evidence recall and citation precision are reported.
 - A Markdown benchmark report is generated under `reports/`.
