@@ -1,0 +1,240 @@
+{
+  "method": "hybrid_rag_bm25_tfidf_rrf",
+  "question_id": "fb_mvp_012",
+  "question": "Which business segment of JnJ will be treated as a discontinued operation from August 30, 2023 onward?",
+  "answer": "The Consumer Health business will be treated as a discontinued operation [PAGE 4].",
+  "citations": [
+    {
+      "document_id": "JOHNSON_JOHNSON_2023_8K_dated-2023-08-30",
+      "page": 4,
+      "section": null,
+      "text": "ction uniquely positions Johnson & Johnson as a Pharmaceutical and MedTech company focused on delivering transformative healthcare solutions to patients,” said Joaquin Duato, Chairman of the Board and Chief Executive Officer. “We are incredibly proud of the focus and dedication of our employees worldwide to achieve this milestone, which we are confident will unlock near- and long- term value for all of our stakeholders.” As previously announced, the Company recently completed an exchange offer t",
+      "metadata": {
+        "chunk_id": "p4_c1",
+        "word_start": 180,
+        "word_end": 360,
+        "vector_score": 0.1598226029765566,
+        "rerank_score": 52.786885245901644,
+        "matched_terms": [
+          "business",
+          "consumer",
+          "discontinued",
+          "health",
+          "kenvue",
+          "operations",
+          "separation",
+          "will"
+        ],
+        "citation_source": "llm_answer"
+      }
+    },
+    {
+      "document_id": "JOHNSON_JOHNSON_2023_8K_dated-2023-08-30",
+      "page": 6,
+      "section": null,
+      "text": "Excludes COVID-19 Vaccine The July 2023 financial measures that were previously communicated reflect amounts before the separation of Kenvue and therefore include the Consumer Health results Average shares outstanding (Diluted) as reported on Q2 2023 Form 10-Q Full Year 2023 Projected Average Shares Outstanding (Diluted) only reflects impact from the Kenvue exchange offer Note: percentages may have been rounded Following completion of the Kenvue exchange offer, the Company has reduced its outsta",
+      "metadata": {
+        "chunk_id": "p6_c1",
+        "word_start": 180,
+        "word_end": 400,
+        "vector_score": 0.09752680733826392,
+        "rerank_score": 41.161840370795595,
+        "matched_terms": [
+          "august",
+          "consumer",
+          "health",
+          "kenvue",
+          "separation"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "JOHNSON_JOHNSON_2023_8K_dated-2023-08-30",
+      "page": 8,
+      "section": null,
+      "text": "ncluding related to product liability claims; changes to applicable laws and regulations, including tax laws and global health care reforms; trends toward health care cost containment; changes in behavior and spending patterns of purchasers of health care products and services; financial instability of international economies and legal systems and sovereign risk; increased scrutiny of the health care industry by government agencies; the Company’s ability to realize the anticipated benefits from ",
+      "metadata": {
+        "chunk_id": "p8_c1",
+        "word_start": 180,
+        "word_end": 400,
+        "vector_score": 0.09157985677072196,
+        "rerank_score": 40.25204425204425,
+        "matched_terms": [
+          "business",
+          "consumer",
+          "health",
+          "jnj",
+          "separation"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "chunk_document",
+      "target": "JOHNSON_JOHNSON_2023_8K_dated-2023-08-30",
+      "metadata": {
+        "page_count": 27,
+        "chunk_count": 55,
+        "chunk_words": 220,
+        "chunk_overlap": 40
+      }
+    },
+    {
+      "step": 2,
+      "action": "hybrid_fuse_and_rerank_chunk",
+      "target": "p4_c1",
+      "metadata": {
+        "page": 4,
+        "bm25_rank": 1,
+        "vector_rank": 1,
+        "fusion_rank": 1,
+        "bm25_score": 10.21388294163476,
+        "vector_score": 0.1598226029765566,
+        "rrf_score": 0.03278688524590164,
+        "rerank_score": 52.786885245901644,
+        "matched_terms": [
+          "business",
+          "consumer",
+          "discontinued",
+          "health",
+          "kenvue",
+          "operations",
+          "separation",
+          "will"
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "action": "hybrid_fuse_and_rerank_chunk",
+      "target": "p4_c0",
+      "metadata": {
+        "page": 4,
+        "bm25_rank": 3,
+        "vector_rank": 3,
+        "fusion_rank": 3,
+        "bm25_score": 6.986024491985024,
+        "vector_score": 0.11780116780732339,
+        "rrf_score": 0.031746031746031744,
+        "rerank_score": 42.67195767195767,
+        "matched_terms": [
+          "august",
+          "jnj",
+          "kenvue",
+          "operations",
+          "separation"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "hybrid_fuse_and_rerank_chunk",
+      "target": "p6_c1",
+      "metadata": {
+        "page": 6,
+        "bm25_rank": 5,
+        "vector_rank": 7,
+        "fusion_rank": 5,
+        "bm25_score": 6.8423797522689735,
+        "vector_score": 0.09752680733826392,
+        "rrf_score": 0.030309988518943745,
+        "rerank_score": 41.161840370795595,
+        "matched_terms": [
+          "august",
+          "consumer",
+          "health",
+          "kenvue",
+          "separation"
+        ]
+      }
+    },
+    {
+      "step": 5,
+      "action": "hybrid_fuse_and_rerank_chunk",
+      "target": "p8_c1",
+      "metadata": {
+        "page": 8,
+        "bm25_rank": 6,
+        "vector_rank": 10,
+        "fusion_rank": 6,
+        "bm25_score": 5.81242994003602,
+        "vector_score": 0.09157985677072196,
+        "rrf_score": 0.029437229437229435,
+        "rerank_score": 40.25204425204425,
+        "matched_terms": [
+          "business",
+          "consumer",
+          "health",
+          "jnj",
+          "separation"
+        ]
+      }
+    },
+    {
+      "step": 6,
+      "action": "hybrid_fuse_and_rerank_chunk",
+      "target": "p2_c0",
+      "metadata": {
+        "page": 2,
+        "bm25_rank": 4,
+        "vector_rank": 6,
+        "fusion_rank": 4,
+        "bm25_score": 6.897245337972724,
+        "vector_score": 0.0983083701906868,
+        "rrf_score": 0.030776515151515152,
+        "rerank_score": 39.66540404040404,
+        "matched_terms": [
+          "august",
+          "kenvue",
+          "operations",
+          "separation"
+        ]
+      }
+    },
+    {
+      "step": 7,
+      "action": "hybrid_fuse_and_rerank_chunk",
+      "target": "p6_c2",
+      "metadata": {
+        "page": 6,
+        "bm25_rank": 2,
+        "vector_rank": 2,
+        "fusion_rank": 2,
+        "bm25_score": 7.149108433396179,
+        "vector_score": 0.1287175856200712,
+        "rrf_score": 0.03225806451612903,
+        "rerank_score": 39.221027479091994,
+        "matched_terms": [
+          "august",
+          "kenvue",
+          "will"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": 1726,
+    "output": 179,
+    "total": 1905
+  },
+  "latency_ms": 5626,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\JOHNSON_JOHNSON_2023_8K_dated-2023-08-30.pdf",
+    "adapter_mode": "bm25_tfidf_rrf_plus_rerank",
+    "llm_enabled": true,
+    "model": "deepseek/deepseek-v4-pro",
+    "page_count": 27,
+    "chunk_count": 55,
+    "chunk_words": 220,
+    "chunk_overlap": 40,
+    "retrieve_top_k": 20,
+    "fusion_top_k": 30,
+    "rerank_top_k": 6,
+    "rrf_k": 60,
+    "max_citations": 3
+  }
+}

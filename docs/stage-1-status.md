@@ -16,7 +16,7 @@ Stage 1 means the repository now has enough structure to start running repeatabl
 - Evidence page evaluation logic exists.
 - Upstream PageIndex dependency issue draft exists.
 - FinanceBench MVP PDFs have a reproducible download script and local manifest.
-- PageIndex, Long-context, and Vector RAG baselines can run on the same MVP questions.
+- PageIndex, Long-context, Vector RAG, and Hybrid RAG baselines can run on the same MVP questions.
 
 ## Current Ownership
 
@@ -415,12 +415,64 @@ Average evidence recall: 1.000
 Average citation precision: 0.333
 ```
 
+### Hybrid RAG Baseline
+
+Implemented in:
+
+```text
+pipelines/hybrid_rag/adapter.py
+scripts/run_hybrid_rag_mvp.py
+```
+
+Current MVP mode:
+
+```text
+bm25_tfidf_rrf_plus_rerank + optional LLM answer generation
+```
+
+This is a dependency-light Hybrid RAG baseline. It combines BM25-style lexical retrieval and TF-IDF vector retrieval with reciprocal-rank fusion, then applies lightweight reranking. It establishes the benchmark wiring before replacing the retrieval backend with LlamaIndex embeddings and stronger rerankers.
+
+No-LLM retrieval command:
+
+```powershell
+D:\pageindex-demo\PageIndex\.venv\Scripts\python.exe scripts\run_hybrid_rag_mvp.py --no-llm --output-dir reports\hybrid_rag\qa_smoke --manifest reports\hybrid_rag\qa_smoke_manifest.json --force --continue-on-error
+D:\pageindex-demo\PageIndex\.venv\Scripts\python.exe scripts\evaluate_evidence_mvp.py --results-dir reports\hybrid_rag\qa_smoke --output reports\hybrid_rag\evidence_eval_smoke.json --continue-on-error
+```
+
+Current no-LLM retrieval status:
+
+```text
+12 / 12 MVP questions generated outputs.
+0 failures.
+Average evidence recall: 1.000
+Average citation precision: 0.333
+```
+
+LLM answer command:
+
+```powershell
+$env:DEEPSEEK_API_KEY="YOUR_KEY"
+D:\pageindex-demo\PageIndex\.venv\Scripts\python.exe scripts\run_hybrid_rag_mvp.py --model deepseek/deepseek-v4-pro --output-dir reports\hybrid_rag\qa_llm --manifest reports\hybrid_rag\qa_llm_manifest.json --force --continue-on-error
+D:\pageindex-demo\PageIndex\.venv\Scripts\python.exe scripts\evaluate_evidence_mvp.py --results-dir reports\hybrid_rag\qa_llm --output reports\hybrid_rag\evidence_eval_llm.json --continue-on-error
+```
+
+Current Hybrid RAG LLM status:
+
+```text
+Model: deepseek/deepseek-v4-pro
+12 / 12 MVP questions generated LLM answers.
+0 failures.
+Average evidence recall: 1.000
+Average citation precision: 0.333
+```
+
 Current LLM-judge answer accuracy:
 
 ```text
 PageIndex LLM: 12 / 12 correct, accuracy 1.000
 Long-context LLM: 12 / 12 correct, accuracy 1.000
 Vector RAG LLM: 11 / 12 correct, accuracy 0.917
+Hybrid RAG LLM: 12 / 12 correct, accuracy 1.000
 ```
 
 Current token and latency summary:
@@ -429,6 +481,7 @@ Current token and latency summary:
 PageIndex LLM: average total tokens 2,984; average latency 7,157 ms
 Long-context LLM: average total tokens 84,843; average latency 14,939 ms
 Vector RAG LLM: average total tokens 2,299; average latency 7,382 ms
+Hybrid RAG LLM: average total tokens 2,413; average latency 10,131 ms
 ```
 
 Generated aggregate reports:
@@ -438,7 +491,7 @@ reports/stage1_metrics_summary.md
 reports/stage1_metrics_summary.json
 ```
 
-Generated artifacts:
+Generated Vector/Hybrid artifacts:
 
 ```text
 reports/vector_rag/qa_smoke/
@@ -447,16 +500,23 @@ reports/vector_rag/evidence_eval_smoke.json
 reports/vector_rag/qa_llm/
 reports/vector_rag/qa_llm_manifest.json
 reports/vector_rag/evidence_eval_llm.json
+reports/hybrid_rag/qa_smoke/
+reports/hybrid_rag/qa_smoke_manifest.json
+reports/hybrid_rag/evidence_eval_smoke.json
+reports/hybrid_rag/qa_llm/
+reports/hybrid_rag/qa_llm_manifest.json
+reports/hybrid_rag/evidence_eval_llm.json
 ```
 
 ## Next Stage 1 Work
 
-The next work should convert this setup into actual benchmark execution:
+The next work should strengthen the benchmark beyond the dependency-light MVP baselines:
 
-1. Implement Hybrid RAG baseline.
-2. Replace the dependency-light Vector RAG MVP with a LlamaIndex embedding + reranker implementation.
-3. Expand the FinanceBench subset beyond 12 questions.
+1. Replace the dependency-light Vector/Hybrid RAG MVPs with LlamaIndex embedding + reranker implementations.
+2. Expand the FinanceBench subset beyond 12 questions.
+3. Add per-method failure-case notes and cost estimates.
 4. Prepare a PageIndex upstream issue or PR using the benchmark findings.
+5. Add GraphRAG and HyperGraphRAG after the larger subset is stable.
 
 ## Stage 1 Exit Criteria
 
@@ -464,8 +524,8 @@ Stage 1 is complete when:
 
 - 12 FinanceBench MVP questions can be run through PageIndex. Completed for retrieval-only mode.
 - At least one baseline can run on the same questions. Completed for Long-context LLM mode.
-- All methods produce `BenchmarkResult`. Completed for PageIndex, Long-context, and Vector RAG.
-- Evidence recall, citation precision, and answer accuracy are reported. Completed for PageIndex, Long-context, and Vector RAG.
+- All methods produce `BenchmarkResult`. Completed for PageIndex, Long-context, Vector RAG, and Hybrid RAG.
+- Evidence recall, citation precision, and answer accuracy are reported. Completed for PageIndex, Long-context, Vector RAG, and Hybrid RAG.
 - A Markdown benchmark report is generated under `reports/`. Completed for current evidence-focused report.
 
 ## Current Blocker
@@ -478,4 +538,4 @@ The first 11 structures are now available. The JSON parsing patch made PageIndex
 Handled empty responses and noisy JSON output
 ```
 
-Next, add Hybrid RAG and expand the question set.
+Next, replace the dependency-light Vector/Hybrid implementations with stronger LlamaIndex baselines and expand the question set.

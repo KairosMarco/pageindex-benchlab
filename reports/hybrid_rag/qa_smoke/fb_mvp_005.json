@@ -1,0 +1,241 @@
+{
+  "method": "hybrid_rag_bm25_tfidf_rrf",
+  "question_id": "fb_mvp_005",
+  "question": "Are Best Buy's gross margins historically consistent (not fluctuating more than roughly 2% each year)? If gross margins are not a relevant metric for a company like this, then please state that and explain why.",
+  "answer": "Retrieved 6 chunks with BM25/vector hybrid fusion and reranking.",
+  "citations": [
+    {
+      "document_id": "BESTBUY_2023_10K",
+      "page": 40,
+      "section": null,
+      "text": "Consolidated Statements of Earnings $ and shares in millions, except per share amounts Fiscal Years Ended January 28, 2023 January 29, 2022 January 30, 2021 Revenue $ 46,298 $ 51,761 $ 47,262 Cost of sales 36,386 40,121 36,689 Gross profit 9,912 11,640 10,573 Selling, general and administrative expenses 7,970 8,635 7,928 Restructuring charges 147 (34) 254 Operating income 1,795 3,039 2,391 Other income (expense): Investment income and other 28 10 38 Interest expense (35) (25) (52) Earnings befor",
+      "metadata": {
+        "chunk_id": "p40_c0",
+        "word_start": 0,
+        "word_end": 151,
+        "vector_score": 0.09387455826353844,
+        "rerank_score": 54.266458495966695,
+        "matched_terms": [
+          "cost",
+          "earnings",
+          "gross",
+          "profit",
+          "revenue",
+          "sales"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "BESTBUY_2023_10K",
+      "page": 25,
+      "section": null,
+      "text": "inancial data was as follows ($ in millions, except per share amounts): Consolidated Performance Summary 2023 2022 2021 Revenue $ 46,298 $ 51,761 $ 47,262 Revenue % change (10.6)% 9.5 % 8.3 % Comparable sales % change (9.9)% 10.4 % 9.7 % Gross profit $ 9,912 $ 11,640 $ 10,573 Gross profit as a % of revenue(1) 21.4 % 22.5 % 22.4 % SG&A $ 7,970 $ 8,635 $ 7,928 SG&A as a % of revenue(1) 17.2 % 16.7 % 16.8 % Restructuring charges $ 147 $ (34) $ 254 Operating income $ 1,795 $ 3,039 $ 2,391 Operating ",
+      "metadata": {
+        "chunk_id": "p25_c0",
+        "word_start": 0,
+        "word_end": 220,
+        "vector_score": 0.08202927494828476,
+        "rerank_score": 50.383212860071204,
+        "matched_terms": [
+          "cost",
+          "earnings",
+          "gross",
+          "profit",
+          "revenue",
+          "sales"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "BESTBUY_2023_10K",
+      "page": 27,
+      "section": null,
+      "text": " for the International segment was as follows ($ in millions): International Segment Performance Summary 2023 2022 2021 Revenue $ 3,504 $ 3,931 $ 3,969 Revenue % change (10.9)% (1.0)% 12.6 % Comparable sales % change (5.4)% 3.3 % 15.0 % Gross profit $ 806 $ 938 $ 853 Gross profit as a % of revenue 23.0 % 23.9 % 21.5 % SG&A $ 638 $ 689 $ 689 SG&A as a % of revenue 18.2 % 17.5 % 17.4 % Restructuring charges $ 7 $ 5 $ 121 Operating income $ 161 $ 244 $ 43 Operating income as a % of revenue 4.6 % 6.",
+      "metadata": {
+        "chunk_id": "p27_c0",
+        "word_start": 0,
+        "word_end": 220,
+        "vector_score": 0.10004622497739123,
+        "rerank_score": 45.501479513596415,
+        "matched_terms": [
+          "each",
+          "gross",
+          "profit",
+          "revenue",
+          "sales"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "chunk_document",
+      "target": "BESTBUY_2023_10K",
+      "metadata": {
+        "page_count": 75,
+        "chunk_count": 269,
+        "chunk_words": 220,
+        "chunk_overlap": 40
+      }
+    },
+    {
+      "step": 2,
+      "action": "hybrid_fuse_and_rerank_chunk",
+      "target": "p40_c0",
+      "metadata": {
+        "page": 40,
+        "bm25_rank": 1,
+        "vector_rank": 3,
+        "fusion_rank": 1,
+        "bm25_score": 14.270116655793034,
+        "vector_score": 0.09387455826353844,
+        "rrf_score": 0.032266458495966696,
+        "rerank_score": 54.266458495966695,
+        "matched_terms": [
+          "cost",
+          "earnings",
+          "gross",
+          "profit",
+          "revenue",
+          "sales"
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "action": "hybrid_fuse_and_rerank_chunk",
+      "target": "p25_c0",
+      "metadata": {
+        "page": 25,
+        "bm25_rank": 2,
+        "vector_rank": 5,
+        "fusion_rank": 4,
+        "bm25_score": 12.572656864920932,
+        "vector_score": 0.08202927494828476,
+        "rrf_score": 0.0315136476426799,
+        "rerank_score": 50.383212860071204,
+        "matched_terms": [
+          "cost",
+          "earnings",
+          "gross",
+          "profit",
+          "revenue",
+          "sales"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "hybrid_fuse_and_rerank_chunk",
+      "target": "p27_c0",
+      "metadata": {
+        "page": 27,
+        "bm25_rank": 6,
+        "vector_rank": 1,
+        "fusion_rank": 2,
+        "bm25_score": 11.63784433987451,
+        "vector_score": 0.10004622497739123,
+        "rrf_score": 0.031544957774465976,
+        "rerank_score": 45.501479513596415,
+        "matched_terms": [
+          "each",
+          "gross",
+          "profit",
+          "revenue",
+          "sales"
+        ]
+      }
+    },
+    {
+      "step": 5,
+      "action": "hybrid_fuse_and_rerank_chunk",
+      "target": "p26_c1",
+      "metadata": {
+        "page": 26,
+        "bm25_rank": 3,
+        "vector_rank": 7,
+        "fusion_rank": 6,
+        "bm25_score": 12.420901561412578,
+        "vector_score": 0.08091081119265835,
+        "rrf_score": 0.030798389007344232,
+        "rerank_score": 44.5809977029964,
+        "matched_terms": [
+          "gross",
+          "margin",
+          "profit",
+          "revenue",
+          "sales"
+        ]
+      }
+    },
+    {
+      "step": 6,
+      "action": "hybrid_fuse_and_rerank_chunk",
+      "target": "p28_c3",
+      "metadata": {
+        "page": 28,
+        "bm25_rank": 7,
+        "vector_rank": 9,
+        "fusion_rank": 8,
+        "bm25_score": 11.330450762500414,
+        "vector_score": 0.07471104550056301,
+        "rrf_score": 0.029418126757516764,
+        "rerank_score": 43.113778931429806,
+        "matched_terms": [
+          "each",
+          "earnings",
+          "gross",
+          "profit",
+          "sales"
+        ]
+      }
+    },
+    {
+      "step": 7,
+      "action": "hybrid_fuse_and_rerank_chunk",
+      "target": "p23_c2",
+      "metadata": {
+        "page": 23,
+        "bm25_rank": 5,
+        "vector_rank": 2,
+        "fusion_rank": 3,
+        "bm25_score": 11.714507450600259,
+        "vector_score": 0.09511260089793101,
+        "rrf_score": 0.0315136476426799,
+        "rerank_score": 42.42669112094077,
+        "matched_terms": [
+          "earnings",
+          "like",
+          "metric",
+          "revenue",
+          "sales"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": null,
+    "output": null,
+    "total": null
+  },
+  "latency_ms": 180,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\BESTBUY_2023_10K.pdf",
+    "adapter_mode": "bm25_tfidf_rrf_plus_rerank",
+    "llm_enabled": false,
+    "model": null,
+    "page_count": 75,
+    "chunk_count": 269,
+    "chunk_words": 220,
+    "chunk_overlap": 40,
+    "retrieve_top_k": 20,
+    "fusion_top_k": 30,
+    "rerank_top_k": 6,
+    "rrf_k": 60,
+    "max_citations": 3
+  }
+}

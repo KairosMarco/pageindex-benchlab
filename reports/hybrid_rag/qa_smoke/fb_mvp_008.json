@@ -1,0 +1,237 @@
+{
+  "method": "hybrid_rag_bm25_tfidf_rrf",
+  "question_id": "fb_mvp_008",
+  "question": "What is the FY2016 COGS for Microsoft? Please state answer in USD millions. Provide a response to the question by primarily using the statement of income.",
+  "answer": "Retrieved 6 chunks with BM25/vector hybrid fusion and reranking.",
+  "citations": [
+    {
+      "document_id": "MICROSOFT_2016_10K",
+      "page": 52,
+      "section": null,
+      "text": "Table of Contents PART II Item 8 ITEM 8. FINANCIAL STATEMENTS AND SUPPLEMENTARY DATA INCOME STATEMENTS (In millions, except per share amounts) Year Ended June 30, 2016 2015 2014 Revenue: Product $ 61,502 $ 75,956 $ 72,948 Service and other 23,818 17,624 13,885 Total revenue 85,320 93,580 86,833 Cost of revenue: Product 17,880 21,410 16,681 Service and other 14,900 11,628 10,397 Total cost of revenue 32,780 33,038 27,078 Gross margin 52,540 60,542 59,755 Research and development 11,988 12,046 11,",
+      "metadata": {
+        "chunk_id": "p52_c0",
+        "word_start": 0,
+        "word_end": 177,
+        "vector_score": 0.12338670025806764,
+        "rerank_score": 47.49889822595705,
+        "matched_terms": [
+          "cost",
+          "income",
+          "millions",
+          "revenue",
+          "sales"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "MICROSOFT_2016_10K",
+      "page": 34,
+      "section": null,
+      "text": "mainly due to growth in Premier Support Services. Revenue included an unfavorable foreign currency impact of approximately 5%. Intelligent Cloud operating income decreased $513 million or 5%, primarily due to higher operating expenses, offset in part by higher gross margin. Operating expenses increased $989 million or 12%, mainly due to higher research and development expenses and sales and marketing expenses. Research and development expenses increased $567 million or 21% and sales and marketin",
+      "metadata": {
+        "chunk_id": "p34_c2",
+        "word_start": 360,
+        "word_end": 577,
+        "vector_score": 0.12745668303140506,
+        "rerank_score": 44.416130536130545,
+        "matched_terms": [
+          "cost",
+          "income",
+          "primarily",
+          "revenue",
+          "sales"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "MICROSOFT_2016_10K",
+      "page": 84,
+      "section": null,
+      "text": "iated with each of these plans were included in impairment, integration, and restructuring expenses on our consolidated income statement, and reflected in Corporate and Other in our table of operating income (loss) by segment in Note 21– Segment Information and Geographic Data. Changes in the restructuring liability were as follows: (In millions) Severance Other Total Restructuring liability as of June 30, 2015 $ 588 $ 249 $ 837 Restructuring charges 372 129 501 Reversal of prior year restructur",
+      "metadata": {
+        "chunk_id": "p84_c2",
+        "word_start": 360,
+        "word_end": 495,
+        "vector_score": 0.19346346895370542,
+        "rerank_score": 43.786885245901644,
+        "matched_terms": [
+          "income",
+          "millions",
+          "operations",
+          "primarily",
+          "statement"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "chunk_document",
+      "target": "MICROSOFT_2016_10K",
+      "metadata": {
+        "page_count": 121,
+        "chunk_count": 370,
+        "chunk_words": 220,
+        "chunk_overlap": 40
+      }
+    },
+    {
+      "step": 2,
+      "action": "hybrid_fuse_and_rerank_chunk",
+      "target": "p52_c0",
+      "metadata": {
+        "page": 52,
+        "bm25_rank": 3,
+        "vector_rank": 8,
+        "fusion_rank": 3,
+        "bm25_score": 9.098393056992112,
+        "vector_score": 0.12338670025806764,
+        "rrf_score": 0.03057889822595705,
+        "rerank_score": 47.49889822595705,
+        "matched_terms": [
+          "cost",
+          "income",
+          "millions",
+          "revenue",
+          "sales"
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "action": "hybrid_fuse_and_rerank_chunk",
+      "target": "p34_c2",
+      "metadata": {
+        "page": 34,
+        "bm25_rank": 6,
+        "vector_rank": 5,
+        "fusion_rank": 4,
+        "bm25_score": 8.498435371471746,
+        "vector_score": 0.12745668303140506,
+        "rrf_score": 0.030536130536130537,
+        "rerank_score": 44.416130536130545,
+        "matched_terms": [
+          "cost",
+          "income",
+          "primarily",
+          "revenue",
+          "sales"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "hybrid_fuse_and_rerank_chunk",
+      "target": "p84_c2",
+      "metadata": {
+        "page": 84,
+        "bm25_rank": 1,
+        "vector_rank": 1,
+        "fusion_rank": 1,
+        "bm25_score": 10.782300624020294,
+        "vector_score": 0.19346346895370542,
+        "rrf_score": 0.03278688524590164,
+        "rerank_score": 43.786885245901644,
+        "matched_terms": [
+          "income",
+          "millions",
+          "operations",
+          "primarily",
+          "statement"
+        ]
+      }
+    },
+    {
+      "step": 5,
+      "action": "hybrid_fuse_and_rerank_chunk",
+      "target": "p35_c2",
+      "metadata": {
+        "page": 35,
+        "bm25_rank": 5,
+        "vector_rank": 13,
+        "fusion_rank": 8,
+        "bm25_score": 8.674473244489237,
+        "vector_score": 0.11182306614802974,
+        "rrf_score": 0.029083245521601686,
+        "rerank_score": 42.80324552160168,
+        "matched_terms": [
+          "cost",
+          "income",
+          "primarily",
+          "revenue",
+          "sales"
+        ]
+      }
+    },
+    {
+      "step": 6,
+      "action": "hybrid_fuse_and_rerank_chunk",
+      "target": "p34_c1",
+      "metadata": {
+        "page": 34,
+        "bm25_rank": 4,
+        "vector_rank": 17,
+        "fusion_rank": 9,
+        "bm25_score": 8.674473244489237,
+        "vector_score": 0.11043949264501535,
+        "rrf_score": 0.028612012987012988,
+        "rerank_score": 42.29201298701299,
+        "matched_terms": [
+          "cost",
+          "income",
+          "primarily",
+          "revenue",
+          "sales"
+        ]
+      }
+    },
+    {
+      "step": 7,
+      "action": "hybrid_fuse_and_rerank_chunk",
+      "target": "p36_c1",
+      "metadata": {
+        "page": 36,
+        "bm25_rank": 9,
+        "vector_rank": 12,
+        "fusion_rank": 10,
+        "bm25_score": 8.010731258827903,
+        "vector_score": 0.11335323315289836,
+        "rrf_score": 0.028381642512077296,
+        "rerank_score": 42.02164251207729,
+        "matched_terms": [
+          "cost",
+          "income",
+          "primarily",
+          "revenue",
+          "sales"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": null,
+    "output": null,
+    "total": null
+  },
+  "latency_ms": 208,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\MICROSOFT_2016_10K.pdf",
+    "adapter_mode": "bm25_tfidf_rrf_plus_rerank",
+    "llm_enabled": false,
+    "model": null,
+    "page_count": 121,
+    "chunk_count": 370,
+    "chunk_words": 220,
+    "chunk_overlap": 40,
+    "retrieve_top_k": 20,
+    "fusion_top_k": 30,
+    "rerank_top_k": 6,
+    "rrf_k": 60,
+    "max_citations": 3
+  }
+}

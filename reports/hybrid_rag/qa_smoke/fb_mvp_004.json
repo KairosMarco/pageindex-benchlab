@@ -1,0 +1,248 @@
+{
+  "method": "hybrid_rag_bm25_tfidf_rrf",
+  "question_id": "fb_mvp_004",
+  "question": "Among operations, investing, and financing activities, which brought in the most (or lost the least) cash flow for AMD in FY22?",
+  "answer": "Retrieved 6 chunks with BM25/vector hybrid fusion and reranking.",
+  "citations": [
+    {
+      "document_id": "AMD_2022_10K",
+      "page": 59,
+      "section": null,
+      "text": "Table of Contents Advanced Micro Devices, Inc. Consolidated Statements of Cash Flows Year Ended December 31, 2022 December 25, 2021 December 26, 2020 (In millions) Supplemental cash flow information: Cash paid during the year for: Interest $ 85 $ 25 $ 31 Income taxes, net of refund $ 685 $ 35 $ 8 Non-cash investing and financing activities: Purchases of property and equipment, accrued but not paid $ 157 $ 72 $ 31 Issuance of common stock to settle convertible debt $ — $ 25 $ 217 Issuance of comm",
+      "metadata": {
+        "chunk_id": "p59_c0",
+        "word_start": 0,
+        "word_end": 165,
+        "vector_score": 0.21626654799097245,
+        "rerank_score": 53.21458625525947,
+        "matched_terms": [
+          "activities",
+          "cash",
+          "financing",
+          "flow",
+          "flows",
+          "investing",
+          "operating"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "AMD_2022_10K",
+      "page": 51,
+      "section": null,
+      "text": "Table of Contents FINANCIAL CONDITION Liquidity and Capital Resources As of December 31, 2022, our cash, cash equivalents and short-term investments were $5.9 billion compared to $3.6 billion as of December 25, 2021. The increase in cash, cash equivalents and short-term investments was primarily driven by the $2.4 billion of cash and $1.6 billion of short-term investments acquired from the Xilinx acquisition, $1.0 billion from the debt issuance of our 3.924% Notes and 4.393% Notes, and cash flow",
+      "metadata": {
+        "chunk_id": "p51_c0",
+        "word_start": 0,
+        "word_end": 220,
+        "vector_score": 0.2444133824787699,
+        "rerank_score": 52.786885245901644,
+        "matched_terms": [
+          "activities",
+          "cash",
+          "financing",
+          "flow",
+          "flows",
+          "investing",
+          "operating",
+          "operations"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "AMD_2022_10K",
+      "page": 58,
+      "section": null,
+      "text": "Net cash provided by operating activities 3,565 3,521 1,071 Cash flows from investing activities: Purchases of property and equipment (450) (301) (294) Purchases of short-term investments (2,667) (2,056) (850) Proceeds from maturity of short-term investments 4,310 1,678 192 Cash received from acquisition of Xilinx 2,366 — — Acquisition of Pensando, net of cash acquired (1,544) — — Other (16) (7) — Net cash provided by (used in) investing activities 1,999 (686) (952) Cash flows from financing act",
+      "metadata": {
+        "chunk_id": "p58_c1",
+        "word_start": 180,
+        "word_end": 357,
+        "vector_score": 0.21355248283708916,
+        "rerank_score": 47.659075224292614,
+        "matched_terms": [
+          "activities",
+          "cash",
+          "financing",
+          "flows",
+          "investing",
+          "operating"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "chunk_document",
+      "target": "AMD_2022_10K",
+      "metadata": {
+        "page_count": 121,
+        "chunk_count": 389,
+        "chunk_words": 220,
+        "chunk_overlap": 40
+      }
+    },
+    {
+      "step": 2,
+      "action": "hybrid_fuse_and_rerank_chunk",
+      "target": "p59_c0",
+      "metadata": {
+        "page": 59,
+        "bm25_rank": 2,
+        "vector_rank": 2,
+        "fusion_rank": 2,
+        "bm25_score": 20.63844771458578,
+        "vector_score": 0.21626654799097245,
+        "rrf_score": 0.03225806451612903,
+        "rerank_score": 53.21458625525947,
+        "matched_terms": [
+          "activities",
+          "cash",
+          "financing",
+          "flow",
+          "flows",
+          "investing",
+          "operating"
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "action": "hybrid_fuse_and_rerank_chunk",
+      "target": "p51_c0",
+      "metadata": {
+        "page": 51,
+        "bm25_rank": 1,
+        "vector_rank": 1,
+        "fusion_rank": 1,
+        "bm25_score": 23.041436449660843,
+        "vector_score": 0.2444133824787699,
+        "rrf_score": 0.03278688524590164,
+        "rerank_score": 52.786885245901644,
+        "matched_terms": [
+          "activities",
+          "cash",
+          "financing",
+          "flow",
+          "flows",
+          "investing",
+          "operating",
+          "operations"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "hybrid_fuse_and_rerank_chunk",
+      "target": "p58_c1",
+      "metadata": {
+        "page": 58,
+        "bm25_rank": 3,
+        "vector_rank": 3,
+        "fusion_rank": 3,
+        "bm25_score": 19.865985979708856,
+        "vector_score": 0.21355248283708916,
+        "rrf_score": 0.031746031746031744,
+        "rerank_score": 47.659075224292614,
+        "matched_terms": [
+          "activities",
+          "cash",
+          "financing",
+          "flows",
+          "investing",
+          "operating"
+        ]
+      }
+    },
+    {
+      "step": 5,
+      "action": "hybrid_fuse_and_rerank_chunk",
+      "target": "p58_c0",
+      "metadata": {
+        "page": 58,
+        "bm25_rank": 5,
+        "vector_rank": 5,
+        "fusion_rank": 5,
+        "bm25_score": 12.748581937628973,
+        "vector_score": 0.1192891725031317,
+        "rrf_score": 0.03076923076923077,
+        "rerank_score": 47.595317725752516,
+        "matched_terms": [
+          "activities",
+          "cash",
+          "flows",
+          "investing",
+          "operating"
+        ]
+      }
+    },
+    {
+      "step": 6,
+      "action": "hybrid_fuse_and_rerank_chunk",
+      "target": "p47_c1",
+      "metadata": {
+        "page": 47,
+        "bm25_rank": 6,
+        "vector_rank": 6,
+        "fusion_rank": 6,
+        "bm25_score": 11.952089515585232,
+        "vector_score": 0.10786195300068478,
+        "rrf_score": 0.030303030303030304,
+        "rerank_score": 44.08563899868248,
+        "matched_terms": [
+          "among",
+          "cash",
+          "flows",
+          "least",
+          "operations"
+        ]
+      }
+    },
+    {
+      "step": 7,
+      "action": "hybrid_fuse_and_rerank_chunk",
+      "target": "p101_c0",
+      "metadata": {
+        "page": 101,
+        "bm25_rank": 14,
+        "vector_rank": 17,
+        "fusion_rank": 16,
+        "bm25_score": 8.29461013650893,
+        "vector_score": 0.0735606317393334,
+        "rrf_score": 0.026500526500526502,
+        "rerank_score": 43.84835258748303,
+        "matched_terms": [
+          "among",
+          "cash",
+          "flows",
+          "operations"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": null,
+    "output": null,
+    "total": null
+  },
+  "latency_ms": 434,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\AMD_2022_10K.pdf",
+    "adapter_mode": "bm25_tfidf_rrf_plus_rerank",
+    "llm_enabled": false,
+    "model": null,
+    "page_count": 121,
+    "chunk_count": 389,
+    "chunk_words": 220,
+    "chunk_overlap": 40,
+    "retrieve_top_k": 20,
+    "fusion_top_k": 30,
+    "rerank_top_k": 6,
+    "rrf_k": 60,
+    "max_citations": 3
+  }
+}

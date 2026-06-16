@@ -1,6 +1,6 @@
 {
   "summary": {
-    "method_count": 3,
+    "method_count": 4,
     "question_count": 12
   },
   "methods": [
@@ -88,6 +88,35 @@
       "average_latency_ms": 7381.75,
       "median_latency_ms": 7081.5,
       "total_latency_ms": 88581,
+      "missing_token_usage_count": 0,
+      "missing_latency_count": 0
+    },
+    {
+      "key": "hybrid_rag",
+      "label": "Hybrid RAG",
+      "result_count": 12,
+      "results_dir": "reports\\hybrid_rag\\qa_llm",
+      "evidence_eval": "reports\\hybrid_rag\\evidence_eval_llm.json",
+      "answer_eval": "reports\\hybrid_rag\\answer_eval_llm.json",
+      "average_evidence_recall": 1.0,
+      "average_citation_precision": 0.3333333333333333,
+      "answer_accuracy": 1.0,
+      "average_answer_score": 1.0,
+      "answer_verdict_counts": {
+        "correct": 12,
+        "partial": 0,
+        "incorrect": 0
+      },
+      "total_input_tokens": 23504,
+      "total_output_tokens": 5446,
+      "total_tokens": 28950,
+      "average_input_tokens": 1958.667,
+      "average_output_tokens": 453.833,
+      "average_total_tokens": 2412.5,
+      "median_total_tokens": 2462.5,
+      "average_latency_ms": 10130.667,
+      "median_latency_ms": 8393.5,
+      "total_latency_ms": 121568,
       "missing_token_usage_count": 0,
       "missing_latency_count": 0
     }

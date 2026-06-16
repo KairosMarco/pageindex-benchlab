@@ -1,0 +1,240 @@
+{
+  "method": "hybrid_rag_bm25_tfidf_rrf",
+  "question_id": "fb_mvp_003",
+  "question": "What are the major products and services that AMD sells as of FY22?",
+  "answer": "As of FY22, AMD's major products and services are organized into four categories, as well as IP licensing [PAGE 4 | CHUNK p4_c2][PAGE 60 | CHUNK p60_c0][PAGE 67 | CHUNK p67_c2]:\n\n- **Data Center:** Server microprocessors (e.g., AMD EPYC CPUs), graphics processing units (GPUs), data processing units (DPUs, e.g., AMD Pensando), Field Programmable Gate Arrays (FPGAs, e.g., Virtex, Kintex), and Adaptive System-on-Chip (SoC) products (e.g., Zynq, Versal) [PAGE 4 | CHUNK p4_c2][PAGE 7 | CHUNK p7_c0].\n- **Client:** CPUs, accelerated processing units (APUs) that integrate CPUs and GPUs, and chipsets for desktop and notebook personal computers [PAGE 4 | CHUNK p4_c2].\n- **Gaming:** Discrete GPUs, and semi-custom SoC products and development services [PAGE 4 | CHUNK p4_c2].\n- **Embedded:** Embedded CPUs, GPUs, APUs, FPGAs, and Adaptive SoC products [PAGE 4 | CHUNK p4_c2][PAGE 9 | CHUNK p9_c3].\n- **Intellectual Property:** AMD may also sell or license portions of its IP portfolio [PAGE 4 | CHUNK p4_c2][PAGE 60 | CHUNK p60_c0].",
+  "citations": [
+    {
+      "document_id": "AMD_2022_10K",
+      "page": 4,
+      "section": null,
+      "text": "” “we,” “us,” “management,” “our” or the “Company” mean Advanced Micro Devices, Inc. and our consolidated subsidiaries. Overview We are a global semiconductor company primarily offering: • server microprocessors (CPUs) and graphics processing units (GPUs), data processing units (DPUs), Field Programmable Gate Arrays (FPGAs), and Adaptive System-on-Chip (SoC) products for data centers; • CPUs, accelerated processing units (APUs) that integrate CPUs and GPUs, and chipsets for desktop and notebook ",
+      "metadata": {
+        "chunk_id": "p4_c2",
+        "word_start": 360,
+        "word_end": 578,
+        "vector_score": 0.1416925765878054,
+        "rerank_score": 45.52247488101534,
+        "matched_terms": [
+          "cpus",
+          "gpus",
+          "graphics",
+          "overview",
+          "products",
+          "services"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "AMD_2022_10K",
+      "page": 60,
+      "section": null,
+      "text": "any. References herein to AMD or the Company mean Advanced Micro Devices, Inc. and its consolidated subsidiaries. AMD’s products include x86 microprocessors (CPUs) and graphics processing units (GPUs), as standalone devices or as incorporated into accelerated processing units (APUs), chipsets, data center and professional GPUs, embedded processors, semi-custom System-on-Chip (SoC) products, microprocessor and SoC development services and technology, data processing units (DPUs), Field Programmab",
+      "metadata": {
+        "chunk_id": "p60_c0",
+        "word_start": 0,
+        "word_end": 220,
+        "vector_score": 0.13398607421406053,
+        "rerank_score": 44.659075224292614,
+        "matched_terms": [
+          "cpus",
+          "gpus",
+          "graphics",
+          "processors",
+          "products",
+          "services"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "AMD_2022_10K",
+      "page": 7,
+      "section": null,
+      "text": "Table of Contents Data Center Products Server CPUs. Our CPUs for server platforms currently include the AMD EPYC™ Series processors – AMD EPYC 9004 Series, AMD EPYC 7003 Series and AMD EPYC 7002 Series. Our 4 Gen AMD EPYC 9004 Series processors are built on the “Zen 4” core and are designed to deliver leadership performance and energy efficiency across multiple market segments and workloads. Our 3 Gen AMD EPYC processors include AMD 3D V-Cache™ technology for leadership performance in technical ",
+      "metadata": {
+        "chunk_id": "p7_c0",
+        "word_start": 0,
+        "word_end": 220,
+        "vector_score": 0.14476023875435773,
+        "rerank_score": 42.97496436208126,
+        "matched_terms": [
+          "cpus",
+          "major",
+          "processors",
+          "products",
+          "services"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "chunk_document",
+      "target": "AMD_2022_10K",
+      "metadata": {
+        "page_count": 121,
+        "chunk_count": 389,
+        "chunk_words": 220,
+        "chunk_overlap": 40
+      }
+    },
+    {
+      "step": 2,
+      "action": "hybrid_fuse_and_rerank_chunk",
+      "target": "p4_c2",
+      "metadata": {
+        "page": 4,
+        "bm25_rank": 1,
+        "vector_rank": 2,
+        "fusion_rank": 1,
+        "bm25_score": 14.066767335213836,
+        "vector_score": 0.1416925765878054,
+        "rrf_score": 0.03252247488101534,
+        "rerank_score": 45.52247488101534,
+        "matched_terms": [
+          "cpus",
+          "gpus",
+          "graphics",
+          "overview",
+          "products",
+          "services"
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "action": "hybrid_fuse_and_rerank_chunk",
+      "target": "p60_c0",
+      "metadata": {
+        "page": 60,
+        "bm25_rank": 3,
+        "vector_rank": 3,
+        "fusion_rank": 3,
+        "bm25_score": 13.558770371936296,
+        "vector_score": 0.13398607421406053,
+        "rrf_score": 0.031746031746031744,
+        "rerank_score": 44.659075224292614,
+        "matched_terms": [
+          "cpus",
+          "gpus",
+          "graphics",
+          "processors",
+          "products",
+          "services"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "hybrid_fuse_and_rerank_chunk",
+      "target": "p7_c0",
+      "metadata": {
+        "page": 7,
+        "bm25_rank": 4,
+        "vector_rank": 1,
+        "fusion_rank": 2,
+        "bm25_score": 12.244141222458072,
+        "vector_score": 0.14476023875435773,
+        "rrf_score": 0.032018442622950824,
+        "rerank_score": 42.97496436208126,
+        "matched_terms": [
+          "cpus",
+          "major",
+          "processors",
+          "products",
+          "services"
+        ]
+      }
+    },
+    {
+      "step": 5,
+      "action": "hybrid_fuse_and_rerank_chunk",
+      "target": "p13_c0",
+      "metadata": {
+        "page": 13,
+        "bm25_rank": 5,
+        "vector_rank": 5,
+        "fusion_rank": 4,
+        "bm25_score": 11.52367637997892,
+        "vector_score": 0.1286466990032561,
+        "rrf_score": 0.03076923076923077,
+        "rerank_score": 41.63879598662208,
+        "matched_terms": [
+          "gpus",
+          "graphics",
+          "processors",
+          "products",
+          "sells"
+        ]
+      }
+    },
+    {
+      "step": 6,
+      "action": "hybrid_fuse_and_rerank_chunk",
+      "target": "p9_c3",
+      "metadata": {
+        "page": 9,
+        "bm25_rank": 2,
+        "vector_rank": 9,
+        "fusion_rank": 5,
+        "bm25_score": 13.730356161291567,
+        "vector_score": 0.1138408328914559,
+        "rrf_score": 0.030621785881252923,
+        "rerank_score": 41.44787283777466,
+        "matched_terms": [
+          "cpus",
+          "gpus",
+          "graphics",
+          "processors",
+          "products"
+        ]
+      }
+    },
+    {
+      "step": 7,
+      "action": "hybrid_fuse_and_rerank_chunk",
+      "target": "p67_c2",
+      "metadata": {
+        "page": 67,
+        "bm25_rank": 6,
+        "vector_rank": 6,
+        "fusion_rank": 6,
+        "bm25_score": 11.14730678333984,
+        "vector_score": 0.12476163693590729,
+        "rrf_score": 0.030303030303030304,
+        "rerank_score": 39.08563899868248,
+        "matched_terms": [
+          "cpus",
+          "gpus",
+          "products",
+          "services"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": 1697,
+    "output": 962,
+    "total": 2659
+  },
+  "latency_ms": 15477,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\AMD_2022_10K.pdf",
+    "adapter_mode": "bm25_tfidf_rrf_plus_rerank",
+    "llm_enabled": true,
+    "model": "deepseek/deepseek-v4-pro",
+    "page_count": 121,
+    "chunk_count": 389,
+    "chunk_words": 220,
+    "chunk_overlap": 40,
+    "retrieve_top_k": 20,
+    "fusion_top_k": 30,
+    "rerank_top_k": 6,
+    "rrf_k": 60,
+    "max_citations": 3
+  }
+}

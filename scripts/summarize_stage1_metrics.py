@@ -51,6 +51,13 @@ DEFAULT_METHODS = [
         evidence_eval=ROOT / "reports" / "vector_rag" / "evidence_eval_llm.json",
         answer_eval=ROOT / "reports" / "vector_rag" / "answer_eval_llm.json",
     ),
+    MethodConfig(
+        key="hybrid_rag",
+        label="Hybrid RAG",
+        results_dir=ROOT / "reports" / "hybrid_rag" / "qa_llm",
+        evidence_eval=ROOT / "reports" / "hybrid_rag" / "evidence_eval_llm.json",
+        answer_eval=ROOT / "reports" / "hybrid_rag" / "answer_eval_llm.json",
+    ),
 ]
 
 
@@ -177,9 +184,10 @@ def render_markdown(methods: list[dict[str, Any]]) -> str:
             "",
             "## Notes",
             "",
-            "- PageIndex and Vector RAG both hit every gold evidence page in this 12-question MVP subset.",
+            "- PageIndex, Vector RAG, and Hybrid RAG hit every gold evidence page in this 12-question MVP subset.",
             "- Long-context used far more input tokens because it sends full document text to the model.",
             "- Vector RAG matched PageIndex on page-level evidence but had one LLM-judge answer miss on `fb_mvp_006`.",
+            "- Hybrid RAG matched PageIndex on page-level evidence and LLM-judge answer accuracy in this MVP subset.",
             "- This report does not estimate monetary cost because provider pricing can vary by account and date.",
             "",
             "## Artifact Paths",

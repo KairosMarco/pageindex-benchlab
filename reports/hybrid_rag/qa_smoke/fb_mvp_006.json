@@ -1,0 +1,224 @@
+{
+  "method": "hybrid_rag_bm25_tfidf_rrf",
+  "question_id": "fb_mvp_006",
+  "question": "Has Boeing reported any materially important ongoing legal battles from FY2022?",
+  "answer": "Retrieved 6 chunks with BM25/vector hybrid fusion and reranking.",
+  "citations": [
+    {
+      "document_id": "BOEING_2022_10K",
+      "page": 113,
+      "section": null,
+      "text": "Table of Contents based upon current information, that the outcome of any such legal proceeding, claim, or government dispute and investigation will not have a material effect on our financial position, results of operations or cash flows. Where it is reasonably possible that we will incur losses in excess of recorded amounts in connection with any of the matters set forth below, we will disclose either the amount or range of reasonably possible losses in excess of such amounts or, where no such",
+      "metadata": {
+        "chunk_id": "p113_c0",
+        "word_start": 0,
+        "word_end": 220,
+        "vector_score": 0.15091285306622257,
+        "rerank_score": 70.78688524590164,
+        "matched_terms": [
+          "accident",
+          "actions",
+          "filed",
+          "legal",
+          "proceeding"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "BOEING_2022_10K",
+      "page": 19,
+      "section": null,
+      "text": "otentially resulting in significant liabilities. See Note 21 of the Consolidated Financial Statements for discussion of legal proceedings resulting from the October 29, 2018 accident of Lion Air Flight 610 and the March 10, 2019 accident of Ethiopian Airlines Flight 302. The amount of insurance coverage we maintain may be inadequate to cover these or other claims or liabilities. A significant portion of our customer financing portfolio is concentrated among certain customers and in certain types",
+      "metadata": {
+        "chunk_id": "p19_c0",
+        "word_start": 0,
+        "word_end": 220,
+        "vector_score": 0.10469938839886123,
+        "rerank_score": 56.71831797235023,
+        "matched_terms": [
+          "accident",
+          "claims",
+          "legal",
+          "proceedings"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "BOEING_2022_10K",
+      "page": 47,
+      "section": null,
+      "text": " We have significant contingent obligations that arise in the ordinary course of business, which include the following: Legal Various legal proceedings, claims and investigations are pending against us. Legal contingencies are discussed in Note 21 to our Consolidated Financial Statements. Environmental Remediation We are involved with various environmental remediation activities and have recorded a liability of $752 million at December 31, 2022. For additional information, see Note 13 to our Con",
+      "metadata": {
+        "chunk_id": "p47_c1",
+        "word_start": 180,
+        "word_end": 400,
+        "vector_score": 0.07725850352482586,
+        "rerank_score": 43.18802521008403,
+        "matched_terms": [
+          "claims",
+          "legal",
+          "proceedings"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "chunk_document",
+      "target": "BOEING_2022_10K",
+      "metadata": {
+        "page_count": 190,
+        "chunk_count": 486,
+        "chunk_words": 220,
+        "chunk_overlap": 40
+      }
+    },
+    {
+      "step": 2,
+      "action": "hybrid_fuse_and_rerank_chunk",
+      "target": "p113_c0",
+      "metadata": {
+        "page": 113,
+        "bm25_rank": 1,
+        "vector_rank": 1,
+        "fusion_rank": 1,
+        "bm25_score": 18.660218391336702,
+        "vector_score": 0.15091285306622257,
+        "rrf_score": 0.03278688524590164,
+        "rerank_score": 70.78688524590164,
+        "matched_terms": [
+          "accident",
+          "actions",
+          "filed",
+          "legal",
+          "proceeding"
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "action": "hybrid_fuse_and_rerank_chunk",
+      "target": "p19_c0",
+      "metadata": {
+        "page": 19,
+        "bm25_rank": 2,
+        "vector_rank": 4,
+        "fusion_rank": 2,
+        "bm25_score": 12.749200159867991,
+        "vector_score": 0.10469938839886123,
+        "rrf_score": 0.031754032258064516,
+        "rerank_score": 56.71831797235023,
+        "matched_terms": [
+          "accident",
+          "claims",
+          "legal",
+          "proceedings"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "hybrid_fuse_and_rerank_chunk",
+      "target": "p47_c1",
+      "metadata": {
+        "page": 47,
+        "bm25_rank": 4,
+        "vector_rank": 8,
+        "fusion_rank": 5,
+        "bm25_score": 9.012078875867056,
+        "vector_score": 0.07725850352482586,
+        "rrf_score": 0.030330882352941176,
+        "rerank_score": 43.18802521008403,
+        "matched_terms": [
+          "claims",
+          "legal",
+          "proceedings"
+        ]
+      }
+    },
+    {
+      "step": 5,
+      "action": "hybrid_fuse_and_rerank_chunk",
+      "target": "p16_c2",
+      "metadata": {
+        "page": 16,
+        "bm25_rank": 3,
+        "vector_rank": 3,
+        "fusion_rank": 3,
+        "bm25_score": 11.847782050180317,
+        "vector_score": 0.11007871143240397,
+        "rrf_score": 0.031746031746031744,
+        "rerank_score": 38.67460317460318,
+        "matched_terms": [
+          "lawsuits",
+          "legal",
+          "litigation"
+        ]
+      }
+    },
+    {
+      "step": 6,
+      "action": "hybrid_fuse_and_rerank_chunk",
+      "target": "p4_c0",
+      "metadata": {
+        "page": 4,
+        "bm25_rank": 5,
+        "vector_rank": 2,
+        "fusion_rank": 4,
+        "bm25_score": 8.794680292204045,
+        "vector_score": 0.1170043695209866,
+        "rrf_score": 0.0315136476426799,
+        "rerank_score": 38.406504785537045,
+        "matched_terms": [
+          "has",
+          "important",
+          "materially"
+        ]
+      }
+    },
+    {
+      "step": 7,
+      "action": "hybrid_fuse_and_rerank_chunk",
+      "target": "p54_c0",
+      "metadata": {
+        "page": 54,
+        "bm25_rank": 14,
+        "vector_rank": 15,
+        "fusion_rank": 11,
+        "bm25_score": 6.7375260974342694,
+        "vector_score": 0.06987725939747245,
+        "rrf_score": 0.02684684684684685,
+        "rerank_score": 37.489703989704,
+        "matched_terms": [
+          "legal",
+          "proceedings"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": null,
+    "output": null,
+    "total": null
+  },
+  "latency_ms": 287,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\BOEING_2022_10K.pdf",
+    "adapter_mode": "bm25_tfidf_rrf_plus_rerank",
+    "llm_enabled": false,
+    "model": null,
+    "page_count": 190,
+    "chunk_count": 486,
+    "chunk_words": 220,
+    "chunk_overlap": 40,
+    "retrieve_top_k": 20,
+    "fusion_top_k": 30,
+    "rerank_top_k": 6,
+    "rrf_k": 60,
+    "max_citations": 3
+  }
+}

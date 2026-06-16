@@ -72,18 +72,22 @@ Completed:
 - PageIndex LLM answer generation has been run for all 12 MVP questions with `deepseek/deepseek-v4-pro`.
 - Long-context LLM answer generation has been run for all 12 MVP questions with `deepseek/deepseek-v4-pro`.
 - Vector RAG + reranker MVP has been run for all 12 MVP questions with `deepseek/deepseek-v4-pro`.
+- Hybrid RAG MVP has been run for all 12 MVP questions with `deepseek/deepseek-v4-pro`.
 - Current LLM evidence results:
   - PageIndex: average evidence recall `1.000`, average citation precision `0.333`.
   - Long-context: average evidence recall `0.917`, average citation precision `0.306`.
   - Vector RAG + reranker MVP: average evidence recall `1.000`, average citation precision `0.333`.
+  - Hybrid RAG MVP: average evidence recall `1.000`, average citation precision `0.333`.
 - Current LLM-judge answer accuracy:
   - PageIndex: `1.000`
   - Long-context: `1.000`
   - Vector RAG + reranker MVP: `0.917`
+  - Hybrid RAG MVP: `1.000`
 - Current average total tokens per answer:
   - PageIndex: `2,984`
   - Long-context: `84,843`
   - Vector RAG + reranker MVP: `2,299`
+  - Hybrid RAG MVP: `2,413`
 
 Current owner: project owner. PH is on standby for later task assignment.
 
@@ -250,11 +254,8 @@ A GPU may become useful later for local LLMs, large embedding jobs, or large rer
 
 ## Next Actions
 
-1. Download PDFs for the 12 FinanceBench MVP questions.
-2. Set a fresh model provider API key locally.
-3. Run PageIndex indexing on those PDFs.
-4. Run the PageIndex question-answering retrieval step. Completed for no-LLM retrieval mode.
-5. Implement the Hybrid RAG baseline.
-6. Replace the dependency-light Vector RAG MVP with a LlamaIndex embedding + reranker implementation.
-7. Expand the FinanceBench subset beyond 12 questions.
-8. Prepare a PageIndex upstream issue or PR using the benchmark findings.
+1. Replace the dependency-light Vector/Hybrid RAG MVPs with LlamaIndex embedding + reranker implementations.
+2. Expand the FinanceBench subset beyond 12 questions.
+3. Add per-method failure-case notes and cost estimates.
+4. Prepare a PageIndex upstream issue or PR using the benchmark findings.
+5. Add GraphRAG and HyperGraphRAG after the larger subset is stable.

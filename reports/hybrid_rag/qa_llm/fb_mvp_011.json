@@ -1,0 +1,257 @@
+{
+  "method": "hybrid_rag_bm25_tfidf_rrf",
+  "question_id": "fb_mvp_011",
+  "question": "Looking at VaR, did the risk that JPM faced in the second fiscal quarter of 2023 decrease compared to the same period in the prior year?",
+  "answer": "Yes, the risk decreased. Average total VaR decreased by $7 million for the three months ended June 30, 2023, compared with the same period in the prior year [PAGE 85].",
+  "citations": [
+    {
+      "document_id": "JPMORGAN_2023Q2_10Q",
+      "page": 85,
+      "section": null,
+      "text": "income offset by market volatility relating to commodities rolling out of the one-year historical look-back period. Year over year results Average total VaR decreased by $7 million for the three months ended June 30, 2023, compared with the same period in the prior year predominantly driven by risk reductions impacting Credit Portfolio VaR as well as fixed income. The following graph presents daily Risk Management VaR for the five trailing quarters. Daily Risk Management VaR $ millions 0 50 100 ",
+      "metadata": {
+        "chunk_id": "p85_c3",
+        "word_start": 540,
+        "word_end": 636,
+        "vector_score": 0.2471607011755297,
+        "rerank_score": 53.786885245901644,
+        "matched_terms": [
+          "average",
+          "compared",
+          "market",
+          "period",
+          "prior",
+          "quarter",
+          "risk",
+          "same",
+          "second",
+          "var"
+        ],
+        "citation_source": "llm_answer"
+      }
+    },
+    {
+      "document_id": "JPMORGAN_2023Q2_10Q",
+      "page": 54,
+      "section": null,
+      "text": " cash outflows. JPMorgan Chase Bank, N.A.’s HQLA was further impacted by a reduction in cash primarily driven by higher average loans, a dividend payment to the Parent Company, and a decline in average deposits. JPMorgan Chase Bank, N.A.’s average LCR for the three months ended June 30, 2023 decreased when compared with the same period in the prior year, reflecting a decrease in JPMorgan Chase Bank, N.A.’s HQLA as a result of a reduction in cash from a decline in average deposits and loan growth",
+      "metadata": {
+        "chunk_id": "p54_c3",
+        "word_start": 540,
+        "word_end": 760,
+        "vector_score": 0.14366942039058903,
+        "rerank_score": 46.66269841269841,
+        "matched_terms": [
+          "average",
+          "compared",
+          "decrease",
+          "market",
+          "period",
+          "prior",
+          "same"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "JPMORGAN_2023Q2_10Q",
+      "page": 56,
+      "section": null,
+      "text": "relationships with the Firm. The Firm believes that average deposit balances are generally more representative of deposit trends than period-end deposit balances. However, during periods of market disruption those trends could be affected. Average deposits were lower for the three months ended June 30, 2023 compared to the three months ended June 30, 2022. The decrease was driven by: • the continued migration into higher-yielding investments in AWM as a result of the rising interest rate environ",
+      "metadata": {
+        "chunk_id": "p56_c2",
+        "word_start": 360,
+        "word_end": 580,
+        "vector_score": 0.11277335317242047,
+        "rerank_score": 43.143321852277076,
+        "matched_terms": [
+          "average",
+          "compared",
+          "decrease",
+          "market",
+          "period",
+          "quarter"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "chunk_document",
+      "target": "JPMORGAN_2023Q2_10Q",
+      "metadata": {
+        "page_count": 217,
+        "chunk_count": 677,
+        "chunk_words": 220,
+        "chunk_overlap": 40
+      }
+    },
+    {
+      "step": 2,
+      "action": "hybrid_fuse_and_rerank_chunk",
+      "target": "p85_c3",
+      "metadata": {
+        "page": 85,
+        "bm25_rank": 1,
+        "vector_rank": 1,
+        "fusion_rank": 1,
+        "bm25_score": 26.228537299972356,
+        "vector_score": 0.2471607011755297,
+        "rrf_score": 0.03278688524590164,
+        "rerank_score": 53.786885245901644,
+        "matched_terms": [
+          "average",
+          "compared",
+          "market",
+          "period",
+          "prior",
+          "quarter",
+          "risk",
+          "same",
+          "second",
+          "var"
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "action": "hybrid_fuse_and_rerank_chunk",
+      "target": "p85_c2",
+      "metadata": {
+        "page": 85,
+        "bm25_rank": 2,
+        "vector_rank": 4,
+        "fusion_rank": 2,
+        "bm25_score": 15.181064677236424,
+        "vector_score": 0.1354109044530079,
+        "rrf_score": 0.031754032258064516,
+        "rerank_score": 48.71236559139785,
+        "matched_terms": [
+          "average",
+          "compared",
+          "market",
+          "period",
+          "quarter",
+          "risk",
+          "same",
+          "var"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "hybrid_fuse_and_rerank_chunk",
+      "target": "p54_c3",
+      "metadata": {
+        "page": 54,
+        "bm25_rank": 3,
+        "vector_rank": 3,
+        "fusion_rank": 3,
+        "bm25_score": 14.717486596152066,
+        "vector_score": 0.14366942039058903,
+        "rrf_score": 0.031746031746031744,
+        "rerank_score": 46.66269841269841,
+        "matched_terms": [
+          "average",
+          "compared",
+          "decrease",
+          "market",
+          "period",
+          "prior",
+          "same"
+        ]
+      }
+    },
+    {
+      "step": 5,
+      "action": "hybrid_fuse_and_rerank_chunk",
+      "target": "p56_c2",
+      "metadata": {
+        "page": 56,
+        "bm25_rank": 5,
+        "vector_rank": 7,
+        "fusion_rank": 5,
+        "bm25_score": 12.512137661173078,
+        "vector_score": 0.11277335317242047,
+        "rrf_score": 0.030309988518943745,
+        "rerank_score": 43.143321852277076,
+        "matched_terms": [
+          "average",
+          "compared",
+          "decrease",
+          "market",
+          "period",
+          "quarter"
+        ]
+      }
+    },
+    {
+      "step": 6,
+      "action": "hybrid_fuse_and_rerank_chunk",
+      "target": "p31_c3",
+      "metadata": {
+        "page": 31,
+        "bm25_rank": 4,
+        "vector_rank": 9,
+        "fusion_rank": 6,
+        "bm25_score": 12.519035839798443,
+        "vector_score": 0.10871931613716906,
+        "rrf_score": 0.030117753623188408,
+        "rerank_score": 42.90942028985507,
+        "matched_terms": [
+          "average",
+          "compared",
+          "market",
+          "prior",
+          "quarter",
+          "second"
+        ]
+      }
+    },
+    {
+      "step": 7,
+      "action": "hybrid_fuse_and_rerank_chunk",
+      "target": "p67_c0",
+      "metadata": {
+        "page": 67,
+        "bm25_rank": 6,
+        "vector_rank": 5,
+        "fusion_rank": 4,
+        "bm25_score": 11.946087335840842,
+        "vector_score": 0.13534758631671165,
+        "rrf_score": 0.030536130536130537,
+        "rerank_score": 41.41113053613054,
+        "matched_terms": [
+          "compared",
+          "decrease",
+          "period",
+          "prior",
+          "same"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": 1754,
+    "output": 308,
+    "total": 2062
+  },
+  "latency_ms": 8823,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\JPMORGAN_2023Q2_10Q.pdf",
+    "adapter_mode": "bm25_tfidf_rrf_plus_rerank",
+    "llm_enabled": true,
+    "model": "deepseek/deepseek-v4-pro",
+    "page_count": 217,
+    "chunk_count": 677,
+    "chunk_words": 220,
+    "chunk_overlap": 40,
+    "retrieve_top_k": 20,
+    "fusion_top_k": 30,
+    "rerank_top_k": 6,
+    "rrf_k": 60,
+    "max_citations": 3
+  }
+}

@@ -36,4 +36,12 @@ reports/vector_rag/answer_eval_heuristic.json
 reports/vector_rag/answer_eval_llm.json
 reports/vector_rag/qa_llm_manifest.json
 reports/vector_rag/qa_llm/
+reports/hybrid_rag/evidence_eval_smoke.json
+reports/hybrid_rag/qa_smoke_manifest.json
+reports/hybrid_rag/qa_smoke/
+reports/hybrid_rag/evidence_eval_llm.json
+reports/hybrid_rag/answer_eval_heuristic.json
+reports/hybrid_rag/answer_eval_llm.json
+reports/hybrid_rag/qa_llm_manifest.json
+reports/hybrid_rag/qa_llm/
 ```
