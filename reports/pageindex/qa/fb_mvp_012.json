@@ -1,0 +1,187 @@
+{
+  "method": "pageindex_tree_qa",
+  "question_id": "fb_mvp_012",
+  "question": "Which business segment of JnJ will be treated as a discontinued operation from August 30, 2023 onward?",
+  "answer": "Selected 3 PageIndex nodes and 3 scored pages for answering.",
+  "citations": [
+    {
+      "document_id": "JOHNSON_JOHNSON_2023_8K_dated-2023-08-30",
+      "page": 4,
+      "section": "Exhibit 99.1 Johnson & Johnson Announces Updated Financials and 2023 Guidance Following Completion of the Kenvue Separation",
+      "text": "Exhibit 99.1 Johnson & Johnson Announces Updated Financials and 2023 Guidance Following Completion of the Kenvue Separation • Company expects increased 2023 Reported Sales Growth of 7.0% - 8.0%, Operational Sales Growth of 7.5% - 8.5%, and Adjusted Operational Sales Growth of 6.2% - 7.2%; Figures exclude the COVID-19 Vaccine • Company expects 2023 Adjusted Reported Earnings Per Share (EPS) of $10.00 - $10.10, reflecting increased growth of 12.5% at the mid-point and Adjusted Operational EPS of $",
+      "metadata": {
+        "score": 37,
+        "matched_page_terms": [
+          "august",
+          "business",
+          "consumer",
+          "discontinued",
+          "health",
+          "jnj",
+          "kenvue",
+          "operations",
+          "separation",
+          "will"
+        ],
+        "matched_section_terms": [
+          "kenvue",
+          "separation"
+        ],
+        "node_id": "0004",
+        "start_index": 4,
+        "end_index": 5
+      }
+    },
+    {
+      "document_id": "JOHNSON_JOHNSON_2023_8K_dated-2023-08-30",
+      "page": 6,
+      "section": "UPDATED FULL-YEAR 2023 GUIDANCE:",
+      "text": "terial to Johnson & Johnson's results computed in accordance with GAAP. ($ in Billions, except EPS; Shares in Millions) August 2023 (excl. Consumer Health) July 2023 (incl. Consumer Health) Adjusted Operational Sales Change vs. Prior Year / Mid-point 6.2% – 7.2% / 6.7% 6.0% – 7.0% / 6.5% Operational Sales / Mid-point Change vs. Prior Year / Mid-point $83.6B – $84.4B / $84.0B 7.5% – 8.5% / 8.0% $99.3B – $100.3B / $99.8B 7.0% – 8.0% / 7.5% Reported Sales / Mid-point Change vs. Prior Year / Mid-poi",
+      "metadata": {
+        "score": 18,
+        "matched_page_terms": [
+          "august",
+          "consumer",
+          "health",
+          "kenvue",
+          "separation",
+          "will"
+        ],
+        "matched_section_terms": [],
+        "node_id": "0008",
+        "start_index": 6,
+        "end_index": 7
+      }
+    },
+    {
+      "document_id": "JOHNSON_JOHNSON_2023_8K_dated-2023-08-30",
+      "page": 8,
+      "section": "NOTE TO INVESTORS CONCERNING FORWARD-LOOKING STATEMENTS:",
+      "text": "regarding, among other things: future operating and financial performance, product development, and market position and business strategy. The reader is cautioned not to rely on these forward-looking statements. These statements are based on current expectations of future events. If underlying assumptions prove inaccurate or known or unknown risks or uncertainties materialize, actual results could vary materially from the expectations and projections of Johnson & Johnson. Risks and uncertainties",
+      "metadata": {
+        "score": 15,
+        "matched_page_terms": [
+          "business",
+          "consumer",
+          "health",
+          "jnj",
+          "separation"
+        ],
+        "matched_section_terms": [],
+        "node_id": "0012",
+        "start_index": 8,
+        "end_index": 8
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "select_tree_node",
+      "target": "Exhibit 99.1 Johnson & Johnson Announces Updated Financials and 2023 Guidance Following Completion of the Kenvue Separation",
+      "metadata": {
+        "node_id": "0004",
+        "start_index": 4,
+        "end_index": 5
+      }
+    },
+    {
+      "step": 2,
+      "action": "select_tree_node",
+      "target": "Item 2.02 Results of Operations and Financial Condition",
+      "metadata": {
+        "node_id": "0001",
+        "start_index": 2,
+        "end_index": 2
+      }
+    },
+    {
+      "step": 3,
+      "action": "select_tree_node",
+      "target": "SEGMENT SALES RESULTS:",
+      "metadata": {
+        "node_id": "0007",
+        "start_index": 5,
+        "end_index": 5
+      }
+    },
+    {
+      "step": 4,
+      "action": "score_page",
+      "target": "page 4",
+      "metadata": {
+        "score": 37,
+        "section": "Exhibit 99.1 Johnson & Johnson Announces Updated Financials and 2023 Guidance Following Completion of the Kenvue Separation",
+        "matched_page_terms": [
+          "august",
+          "business",
+          "consumer",
+          "discontinued",
+          "health",
+          "jnj",
+          "kenvue",
+          "operations",
+          "separation",
+          "will"
+        ],
+        "matched_section_terms": [
+          "kenvue",
+          "separation"
+        ]
+      }
+    },
+    {
+      "step": 5,
+      "action": "score_page",
+      "target": "page 6",
+      "metadata": {
+        "score": 18,
+        "section": "UPDATED FULL-YEAR 2023 GUIDANCE:",
+        "matched_page_terms": [
+          "august",
+          "consumer",
+          "health",
+          "kenvue",
+          "separation",
+          "will"
+        ],
+        "matched_section_terms": []
+      }
+    },
+    {
+      "step": 6,
+      "action": "score_page",
+      "target": "page 8",
+      "metadata": {
+        "score": 15,
+        "section": "NOTE TO INVESTORS CONCERNING FORWARD-LOOKING STATEMENTS:",
+        "matched_page_terms": [
+          "business",
+          "consumer",
+          "health",
+          "jnj",
+          "separation"
+        ],
+        "matched_section_terms": []
+      }
+    }
+  ],
+  "token_usage": {
+    "input": null,
+    "output": null,
+    "total": null
+  },
+  "latency_ms": 167,
+  "metadata": {
+    "structure_path": "reports\\pageindex\\structures\\JOHNSON_JOHNSON_2023_8K_dated-2023-08-30_structure.json",
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\JOHNSON_JOHNSON_2023_8K_dated-2023-08-30.pdf",
+    "selected_pages_one_indexed": [
+      4,
+      6,
+      8
+    ],
+    "max_pages": 3,
+    "adapter_mode": "tree_page_scoring",
+    "llm_enabled": false
+  }
+}

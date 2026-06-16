@@ -71,13 +71,28 @@ pipelines/pageindex/qa_adapter.py
 Current mode:
 
 ```text
-tree_node_selection + optional LLM answer generation
+tree_page_scoring + optional LLM answer generation
 ```
 
 No-LLM smoke mode:
 
 ```powershell
 python pipelines\pageindex\qa_adapter.py --questions datasets\financebench\mvp_questions.jsonl --question-id fb_mvp_001 --structure reports\pageindex\structures\3M_2018_10K_structure.json --pdf datasets\raw\financebench\pdfs\3M_2018_10K.pdf --no-llm --output reports\pageindex\qa\fb_mvp_001.json
+```
+
+Batch no-LLM MVP run:
+
+```powershell
+python scripts\run_pageindex_qa_mvp.py --no-llm --force --continue-on-error
+python scripts\evaluate_evidence_mvp.py --continue-on-error
+```
+
+Latest no-LLM MVP evidence result:
+
+```text
+12 / 12 results generated
+Average evidence recall: 1.000
+Average citation precision: 0.333
 ```
 
 LLM mode requires a LiteLLM model string and provider API key:

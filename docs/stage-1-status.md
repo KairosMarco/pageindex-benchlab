@@ -1,6 +1,6 @@
 # Stage 1 Status
 
-Date: 2026-06-15
+Date: 2026-06-16
 
 ## Current Stage
 
@@ -12,6 +12,7 @@ Stage 1 means the repository now has enough structure to start running repeatabl
 - FinanceBench MVP question subset exists.
 - PageIndex local demo result is preserved.
 - PageIndex tree output can be converted into the shared schema.
+- PageIndex MVP question retrieval can run in batch.
 - Evidence page evaluation logic exists.
 - Upstream PageIndex dependency issue draft exists.
 - FinanceBench MVP PDFs have a reproducible download script and local manifest.
@@ -221,25 +222,59 @@ pipelines/pageindex/qa_adapter.py
 Current mode:
 
 ```text
-tree_node_selection + optional LLM answer generation
+tree_page_scoring + optional LLM answer generation
 ```
 
 The adapter can select candidate PageIndex tree nodes for a question and either output selected citations with `--no-llm` or call an LLM through LiteLLM when a model and provider key are available.
+
+### PageIndex MVP QA Batch Run
+
+Implemented in:
+
+```text
+scripts/run_pageindex_qa_mvp.py
+scripts/evaluate_evidence_mvp.py
+```
+
+Latest retrieval-only command:
+
+```powershell
+D:\pageindex-demo\PageIndex\.venv\Scripts\python.exe scripts\run_pageindex_qa_mvp.py --no-llm --force --continue-on-error
+D:\pageindex-demo\PageIndex\.venv\Scripts\python.exe scripts\evaluate_evidence_mvp.py --continue-on-error
+```
+
+Current no-LLM PageIndex retrieval status:
+
+```text
+12 / 12 MVP questions generated QA outputs.
+0 failures.
+Average evidence recall: 1.000
+Average citation precision: 0.333
+```
+
+Generated artifacts:
+
+```text
+reports/pageindex/qa/
+reports/pageindex/qa_manifest.json
+reports/pageindex/evidence_eval.json
+reports/pageindex/pageindex_qa_mvp_report.md
+```
 
 ## Next Stage 1 Work
 
 The next work should convert this setup into actual benchmark execution:
 
-1. Add a question-answering retrieval step for PageIndex.
+1. Run PageIndex LLM answer generation using the retrieved pages.
 2. Implement Long-context baseline.
 3. Implement Vector RAG + reranker baseline.
-4. Generate the first benchmark report.
+4. Generate the first cross-method benchmark report.
 
 ## Stage 1 Exit Criteria
 
 Stage 1 is complete when:
 
-- 12 FinanceBench MVP questions can be run through PageIndex.
+- 12 FinanceBench MVP questions can be run through PageIndex. Completed for retrieval-only mode.
 - At least one baseline can run on the same questions.
 - All methods produce `BenchmarkResult`.
 - Evidence recall and citation precision are reported.

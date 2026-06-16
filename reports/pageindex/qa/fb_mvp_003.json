@@ -1,0 +1,157 @@
+{
+  "method": "pageindex_tree_qa",
+  "question_id": "fb_mvp_003",
+  "question": "What are the major products and services that AMD sells as of FY22?",
+  "answer": "Selected 1 PageIndex nodes and 3 scored pages for answering.",
+  "citations": [
+    {
+      "document_id": "AMD_2022_10K",
+      "page": 60,
+      "section": "NOTE 1 – The Company",
+      "text": "any. References herein to AMD or the Company mean Advanced Micro Devices, Inc. and its consolidated subsidiaries. AMD’s products include x86 microprocessors (CPUs) and graphics processing units (GPUs), as standalone devices or as incorporated into accelerated processing units (APUs), chipsets, data center and professional GPUs, embedded processors, semi-custom System-on-Chip (SoC) products, microprocessor and SoC development services and technology, data processing units (DPUs), Field Programmab",
+      "metadata": {
+        "score": 21,
+        "matched_page_terms": [
+          "cpus",
+          "gpus",
+          "graphics",
+          "processors",
+          "products",
+          "sells",
+          "services"
+        ],
+        "matched_section_terms": [],
+        "node_id": "0036",
+        "start_index": 60,
+        "end_index": 60
+      }
+    },
+    {
+      "document_id": "AMD_2022_10K",
+      "page": 4,
+      "section": "Preface",
+      "text": "g other things: possible impact of future accounting rules on AMD’s consolidated financial statements; demand for AMD’s products; the growth, change and competitive landscape of the markets in which AMD participates; international sales will continue to be a significant portion of total sales in the foreseeable future; that AMD’s cash, cash equivalents and short-term investment balances together with the availability under that certain revolving credit facility (the Revolving Credit Agreement) m",
+      "metadata": {
+        "score": 18,
+        "matched_page_terms": [
+          "cpus",
+          "gpus",
+          "graphics",
+          "overview",
+          "products",
+          "services"
+        ],
+        "matched_section_terms": [],
+        "node_id": "0000",
+        "start_index": 1,
+        "end_index": 4
+      }
+    },
+    {
+      "document_id": "AMD_2022_10K",
+      "page": 7,
+      "section": "ITEM 1. Business",
+      "text": "Table of Contents Data Center Products Server CPUs. Our CPUs for server platforms currently include the AMD EPYC™ Series processors – AMD EPYC 9004 Series, AMD EPYC 7003 Series and AMD EPYC 7002 Series. Our 4 Gen AMD EPYC 9004 Series processors are built on the “Zen 4” core and are designed to deliver leadership performance and energy efficiency across multiple market segments and workloads. Our 3 Gen AMD EPYC processors include AMD 3D V-Cache™ technology for leadership performance in technical ",
+      "metadata": {
+        "score": 18,
+        "matched_page_terms": [
+          "cpus",
+          "gpus",
+          "major",
+          "processors",
+          "products",
+          "services"
+        ],
+        "matched_section_terms": [],
+        "node_id": "0002",
+        "start_index": 4,
+        "end_index": 17
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "select_tree_node",
+      "target": "ITEM 14. Principal Accounting Fees and Services",
+      "metadata": {
+        "node_id": "0068",
+        "start_index": 100,
+        "end_index": 101
+      }
+    },
+    {
+      "step": 2,
+      "action": "score_page",
+      "target": "page 60",
+      "metadata": {
+        "score": 21,
+        "section": "NOTE 1 – The Company",
+        "matched_page_terms": [
+          "cpus",
+          "gpus",
+          "graphics",
+          "processors",
+          "products",
+          "sells",
+          "services"
+        ],
+        "matched_section_terms": []
+      }
+    },
+    {
+      "step": 3,
+      "action": "score_page",
+      "target": "page 4",
+      "metadata": {
+        "score": 18,
+        "section": "Preface",
+        "matched_page_terms": [
+          "cpus",
+          "gpus",
+          "graphics",
+          "overview",
+          "products",
+          "services"
+        ],
+        "matched_section_terms": []
+      }
+    },
+    {
+      "step": 4,
+      "action": "score_page",
+      "target": "page 7",
+      "metadata": {
+        "score": 18,
+        "section": "ITEM 1. Business",
+        "matched_page_terms": [
+          "cpus",
+          "gpus",
+          "major",
+          "processors",
+          "products",
+          "services"
+        ],
+        "matched_section_terms": []
+      }
+    }
+  ],
+  "token_usage": {
+    "input": null,
+    "output": null,
+    "total": null
+  },
+  "latency_ms": 305,
+  "metadata": {
+    "structure_path": "reports\\pageindex\\structures\\AMD_2022_10K_structure.json",
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\AMD_2022_10K.pdf",
+    "selected_pages_one_indexed": [
+      60,
+      4,
+      7
+    ],
+    "max_pages": 3,
+    "adapter_mode": "tree_page_scoring",
+    "llm_enabled": false
+  }
+}

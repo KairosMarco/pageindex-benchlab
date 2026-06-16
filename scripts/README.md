@@ -64,3 +64,37 @@ reports/pageindex/structures/
 
 Do not commit API keys.
 
+## Run PageIndex MVP QA
+
+Run retrieval-only QA on all 12 MVP questions:
+
+```powershell
+python scripts\run_pageindex_qa_mvp.py --no-llm --force --continue-on-error
+```
+
+Use `--max-pages` to control how many citation pages are returned per question. The default is 3.
+
+Outputs:
+
+```text
+reports/pageindex/qa/
+reports/pageindex/qa_manifest.json
+```
+
+Run evidence evaluation:
+
+```powershell
+python scripts\evaluate_evidence_mvp.py --continue-on-error
+```
+
+Output:
+
+```text
+reports/pageindex/evidence_eval.json
+```
+
+LLM answer mode requires a LiteLLM model name and the matching provider key in the current shell:
+
+```powershell
+python scripts\run_pageindex_qa_mvp.py --model deepseek/deepseek-v4-pro --force --continue-on-error
+```

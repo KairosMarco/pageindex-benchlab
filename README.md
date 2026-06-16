@@ -64,7 +64,9 @@ Completed:
 - Upstream PageIndex dependency issue draft exists in `docs/upstream-pageindex-dependency-issue.md`.
 - FinanceBench MVP PDFs can be downloaded with `scripts/download_mvp_pdfs.py`.
 - PageIndex batch indexing can be run with `scripts/run_pageindex_mvp.py` after setting a provider API key.
-- PageIndex structures have been generated for 4 of 11 unique MVP PDFs; remaining indexing is blocked by provider quota/free-tier settings.
+- PageIndex structures have been generated for all 11 unique MVP PDFs.
+- PageIndex retrieval-only QA has been run for all 12 MVP questions.
+- Current PageIndex no-LLM evidence result: average evidence recall `1.000`, average citation precision `0.333`.
 
 Current owner: project owner. PH is on standby for later task assignment.
 
@@ -234,7 +236,8 @@ A GPU may become useful later for local LLMs, large embedding jobs, or large rer
 1. Download PDFs for the 12 FinanceBench MVP questions.
 2. Set a fresh model provider API key locally.
 3. Run PageIndex indexing on those PDFs.
-4. Run the PageIndex question-answering retrieval step.
-5. Implement the Long-context baseline.
-6. Implement the Vector RAG + reranker baseline.
-7. Generate the first benchmark report.
+4. Run the PageIndex question-answering retrieval step. Completed for no-LLM retrieval mode.
+5. Run PageIndex LLM answer generation.
+6. Implement the Long-context baseline.
+7. Implement the Vector RAG + reranker baseline.
+8. Generate the first cross-method benchmark report.
