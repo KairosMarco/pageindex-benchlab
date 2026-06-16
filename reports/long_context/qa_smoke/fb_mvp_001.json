@@ -167,7 +167,7 @@
     "output": null,
     "total": null
   },
-  "latency_ms": 337,
+  "latency_ms": 344,
   "metadata": {
     "pdf_path": "datasets\\raw\\financebench\\pdfs\\3M_2018_10K.pdf",
     "adapter_mode": "full_document_context",

@@ -143,7 +143,7 @@
     "output": null,
     "total": null
   },
-  "latency_ms": 335,
+  "latency_ms": 331,
   "metadata": {
     "pdf_path": "datasets\\raw\\financebench\\pdfs\\JPMORGAN_2023Q2_10Q.pdf",
     "adapter_mode": "full_document_context",

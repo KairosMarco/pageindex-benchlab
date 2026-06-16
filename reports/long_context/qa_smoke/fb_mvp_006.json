@@ -117,7 +117,7 @@
     "output": null,
     "total": null
   },
-  "latency_ms": 212,
+  "latency_ms": 213,
   "metadata": {
     "pdf_path": "datasets\\raw\\financebench\\pdfs\\BOEING_2022_10K.pdf",
     "adapter_mode": "full_document_context",

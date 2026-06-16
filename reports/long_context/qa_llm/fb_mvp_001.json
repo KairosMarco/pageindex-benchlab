@@ -1,0 +1,180 @@
+{
+  "method": "long_context_llm",
+  "question_id": "fb_mvp_001",
+  "question": "What is the FY2018 capital expenditure amount (in USD millions) for 3M? Give a response to the question by relying on the details shown in the cash flow statement.",
+  "answer": "The FY2018 capital expenditure amount for 3M, as shown in the cash flow statement, is $1,577 million [PAGE 60]. This is also listed as total capital spending in the geographic area supplemental information [PAGE 39].",
+  "citations": [
+    {
+      "document_id": "3M_2018_10K",
+      "page": 60,
+      "section": null,
+      "text": "Table of Contents 3M Company and Subsidiaries Consolidated Statement of Cash Flow s Years ended December 31 (Millions) 2018 2017 2016 Cash Flows from Operating Activities Net income including noncontrolling interest $ 5,363 $ 4,869 $ 5,058 Adjustments to reconcile net income including noncontrolling interest to net cash provided by operating activities Depreciation and amortization 1,488 1,544 1,474 Company pension and postretirement contributions (370) (967) (383) Company pension and postretire",
+      "metadata": {
+        "score": 39,
+        "matched_terms": [
+          "cash",
+          "equipment",
+          "financing",
+          "flow",
+          "flows",
+          "investing",
+          "millions",
+          "operating",
+          "plant",
+          "property",
+          "purchases",
+          "statement"
+        ],
+        "citation_source": "llm_answer"
+      }
+    },
+    {
+      "document_id": "3M_2018_10K",
+      "page": 39,
+      "section": null,
+      "text": "Table of Contents Geographic Area Supplemental Information Property, Plant and Equipment - net Employees as of December 31, Capital Spending as of December 31, (Millions, except Employees) 2018 2017 2016 2018 2017 2016 2018 2017 United States 37,412 36,958 35,748 $ 994 $ 852 $ 834 $ 4,915 $ 4,891 Asia Pacific 18,971 18,283 18,124 238 209 228 1,624 1,672 Europe, Middle East and Africa 20,884 20,869 20,203 295 256 294 1,751 1,798 Latin America and Canada 16,249 15,426 17,509 50 56 64 448 505 Total",
+      "metadata": {
+        "score": 33,
+        "matched_terms": [
+          "amount",
+          "capital",
+          "cash",
+          "equipment",
+          "flows",
+          "investing",
+          "millions",
+          "plant",
+          "property",
+          "statement"
+        ],
+        "citation_source": "llm_answer"
+      }
+    },
+    {
+      "document_id": "3M_2018_10K",
+      "page": 49,
+      "section": null,
+      "text": "Table of Contents Other cash flows from financing activities may include various other items, such as changes in cash overdraft balances, and principal payments for capital leases. In addition, in 2017, this included a payment related to the $96 million in interest expense associated with premiums and fees for the early retirement of debt. See Note 12 for additional details. Free Cash Flow (non-GAAP measure): Free cash flow and free cash flow conversion are not defined under U.S. generally accep",
+      "metadata": {
+        "score": 48,
+        "matched_terms": [
+          "amount",
+          "capital",
+          "cash",
+          "details",
+          "equipment",
+          "financing",
+          "flow",
+          "flows",
+          "investing",
+          "millions",
+          "operating",
+          "operations",
+          "plant",
+          "property",
+          "purchases"
+        ],
+        "citation_source": "lexical_fallback"
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "load_full_document_context",
+      "target": "3M_2018_10K",
+      "metadata": {
+        "page_count": 160,
+        "original_page_count": 160,
+        "context_chars": 609374,
+        "max_document_chars": null
+      }
+    },
+    {
+      "step": 2,
+      "action": "score_page_for_citation",
+      "target": "page 49",
+      "metadata": {
+        "score": 48,
+        "matched_terms": [
+          "amount",
+          "capital",
+          "cash",
+          "details",
+          "equipment",
+          "financing",
+          "flow",
+          "flows",
+          "investing",
+          "millions",
+          "operating",
+          "operations",
+          "plant",
+          "property",
+          "purchases"
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "action": "score_page_for_citation",
+      "target": "page 46",
+      "metadata": {
+        "score": 39,
+        "matched_terms": [
+          "capital",
+          "cash",
+          "equipment",
+          "financing",
+          "flows",
+          "investing",
+          "millions",
+          "operating",
+          "plant",
+          "property",
+          "purchases",
+          "statement"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "score_page_for_citation",
+      "target": "page 60",
+      "metadata": {
+        "score": 39,
+        "matched_terms": [
+          "cash",
+          "equipment",
+          "financing",
+          "flow",
+          "flows",
+          "investing",
+          "millions",
+          "operating",
+          "plant",
+          "property",
+          "purchases",
+          "statement"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": 139252,
+    "output": 353,
+    "total": 139605
+  },
+  "latency_ms": 20845,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\3M_2018_10K.pdf",
+    "adapter_mode": "full_document_context",
+    "llm_enabled": true,
+    "model": "deepseek/deepseek-v4-pro",
+    "context_page_count": 160,
+    "original_page_count": 160,
+    "context_chars": 609374,
+    "max_document_chars": null,
+    "max_citations": 3
+  }
+}

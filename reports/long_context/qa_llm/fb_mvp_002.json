@@ -2,8 +2,25 @@
   "method": "long_context_llm",
   "question_id": "fb_mvp_002",
   "question": "What is Amazon's year-over-year change in revenue from FY2016 to FY2017 (in units of percents and round to one decimal place)? Calculate what was asked by utilizing the line items clearly shown in the statement of income.",
-  "answer": "Loaded 85 document pages into long-context mode without LLM generation.",
+  "answer": "Amazon's total net sales increased from $135,987 million in FY2016 to $177,866 million in FY2017, representing a year-over-year increase of 30.8% [PAGE 38].",
   "citations": [
+    {
+      "document_id": "AMAZON_2017_10K",
+      "page": 38,
+      "section": null,
+      "text": "Table of Contents AMAZON.COM, INC. CONSOLIDATED STATEMENTS OF OPERATIONS (in millions, except per share data) Year Ended December 31, 2015 2016 2017 Net product sales $ 79,268 $ 94,665 $ 118,573 Net service sales 27,738 41,322 59,293 Total net sales 107,006 135,987 177,866 Operating expenses: Cost of sales 71,651 88,265 111,934 Fulfillment 13,410 17,619 25,249 Marketing 5,254 7,233 10,069 Technology and content 12,540 16,085 22,620 General and administrative 1,747 2,432 3,674 Other operating exp",
+      "metadata": {
+        "score": 24,
+        "matched_terms": [
+          "cost",
+          "income",
+          "net",
+          "operations",
+          "sales"
+        ],
+        "citation_source": "llm_answer"
+      }
+    },
     {
       "document_id": "AMAZON_2017_10K",
       "page": 48,
@@ -44,26 +61,6 @@
           "sales",
           "statement",
           "was"
-        ],
-        "citation_source": "lexical_fallback"
-      }
-    },
-    {
-      "document_id": "AMAZON_2017_10K",
-      "page": 47,
-      "section": null,
-      "text": " and capital lease arrangements. Equipment includes assets such as furniture and fixtures, heavy equipment, servers and networking equipment, and internal-use software and website development. Depreciation is recorded on a straight-line basis over the estimated useful lives of the assets (generally the lesser of 40 years or the remaining life of the underlying building, two years for assets such as internal-use software, three years for our servers, five years for networking equipment, five year",
-      "metadata": {
-        "score": 30,
-        "matched_terms": [
-          "change",
-          "cost",
-          "net",
-          "one",
-          "operations",
-          "over",
-          "revenue",
-          "sales"
         ],
         "citation_source": "lexical_fallback"
       }
@@ -141,16 +138,16 @@
     }
   ],
   "token_usage": {
-    "input": null,
-    "output": null,
-    "total": null
+    "input": 64708,
+    "output": 595,
+    "total": 65303
   },
-  "latency_ms": 103,
+  "latency_ms": 16003,
   "metadata": {
     "pdf_path": "datasets\\raw\\financebench\\pdfs\\AMAZON_2017_10K.pdf",
     "adapter_mode": "full_document_context",
-    "llm_enabled": false,
-    "model": null,
+    "llm_enabled": true,
+    "model": "deepseek/deepseek-v4-pro",
     "context_page_count": 85,
     "original_page_count": 85,
     "context_chars": 293108,

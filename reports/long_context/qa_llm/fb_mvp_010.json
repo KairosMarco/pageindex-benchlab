@@ -1,0 +1,131 @@
+{
+  "method": "long_context_llm",
+  "question_id": "fb_mvp_010",
+  "question": "What Was AMCOR's Adjusted Non GAAP EBITDA for FY 2023",
+  "answer": "Amcor's Adjusted Non-GAAP EBITDA for fiscal year 2023 was $2,018 million [PAGE 1][PAGE 12].",
+  "citations": [
+    {
+      "document_id": "AMCOR_2023Q4_EARNINGS",
+      "page": 1,
+      "section": null,
+      "text": "Amcor reports fiscal 2023 results and provides outlook for fiscal 2024 June 2023 quarter: GAAP diluted EPS of 12.3 cps; Adjusted EPS of 19.3 cps Fiscal 2023 Full Year Highlights • Net sales of $14,694 million, in line with the prior year on a comparable constant currency basis; • GAAP Net Income of $1,048 million; GAAP diluted earnings per share (EPS) of 70.5 cps; • Adjusted EPS of 73.3 cps and Adjusted Free Cash Flow of $848 million, in line with guidance provided in May. Adjusted EBIT of $1,60",
+      "metadata": {
+        "score": 15,
+        "matched_terms": [
+          "adjusted",
+          "ebitda",
+          "gaap",
+          "non"
+        ],
+        "citation_source": "llm_answer"
+      }
+    },
+    {
+      "document_id": "AMCOR_2023Q4_EARNINGS",
+      "page": 12,
+      "section": null,
+      "text": "Twelve Months Ended June 30, 2022 Twelve Months Ended June 30, 2023 ($ million) EBITDA EBIT Net Income EPS (Diluted US cents)(1) EBITDA EBIT Net Income EPS (Diluted US cents)(1) Net income attributable to Amcor 805 805 805 52.9 1,048 1,048 1,048 70.5 Net income attributable to non-controlling interests 10 10 10 10 Tax expense 300 300 193 193 Interest expense, net 135 135 259 259 Depreciation and amortization 579 569 EBITDA, EBIT, Net income and EPS 1,829 1,250 805 52.9 2,080 1,510 1,048 70.5 201",
+      "metadata": {
+        "score": 15,
+        "matched_terms": [
+          "adjusted",
+          "ebitda",
+          "non",
+          "reconciliation"
+        ],
+        "citation_source": "llm_answer"
+      }
+    },
+    {
+      "document_id": "AMCOR_2023Q4_EARNINGS",
+      "page": 7,
+      "section": null,
+      "text": "ly. Actual results could differ materially from those currently anticipated due to a number of risks and uncertainties. None of Amcor or any of its respective directors, executive officers, or advisors provide any representation, assurance, or guarantee that the occurrence of the events expressed or implied in any forward-looking statements will actually occur. Risks and uncertainties that could cause actual results to differ from expectations include, but are not limited to: changes in consumer",
+      "metadata": {
+        "score": 21,
+        "matched_terms": [
+          "adjusted",
+          "ebitda",
+          "gaap",
+          "non",
+          "reconciliation"
+        ],
+        "citation_source": "lexical_fallback"
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "load_full_document_context",
+      "target": "AMCOR_2023Q4_EARNINGS",
+      "metadata": {
+        "page_count": 14,
+        "original_page_count": 14,
+        "context_chars": 44932,
+        "max_document_chars": null
+      }
+    },
+    {
+      "step": 2,
+      "action": "score_page_for_citation",
+      "target": "page 7",
+      "metadata": {
+        "score": 21,
+        "matched_terms": [
+          "adjusted",
+          "ebitda",
+          "gaap",
+          "non",
+          "reconciliation"
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "action": "score_page_for_citation",
+      "target": "page 11",
+      "metadata": {
+        "score": 21,
+        "matched_terms": [
+          "adjusted",
+          "ebitda",
+          "gaap",
+          "non",
+          "reconciliation"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "score_page_for_citation",
+      "target": "page 1",
+      "metadata": {
+        "score": 15,
+        "matched_terms": [
+          "adjusted",
+          "ebitda",
+          "gaap",
+          "non"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": 11286,
+    "output": 327,
+    "total": 11613
+  },
+  "latency_ms": 8325,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\AMCOR_2023Q4_EARNINGS.pdf",
+    "adapter_mode": "full_document_context",
+    "llm_enabled": true,
+    "model": "deepseek/deepseek-v4-pro",
+    "context_page_count": 14,
+    "original_page_count": 14,
+    "context_chars": 44932,
+    "max_document_chars": null,
+    "max_citations": 3
+  }
+}

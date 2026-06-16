@@ -11,8 +11,14 @@ reports/pageindex/pageindex_qa_mvp_report.md
 reports/pageindex/evidence_eval.json
 reports/pageindex/qa_manifest.json
 reports/pageindex/qa/
+reports/pageindex/evidence_eval_llm.json
+reports/pageindex/qa_llm_manifest.json
+reports/pageindex/qa_llm/
 reports/long_context/long_context_smoke_report.md
-reports/long_context/evidence_eval.json
-reports/long_context/qa_manifest.json
-reports/long_context/qa/
+reports/long_context/evidence_eval_smoke.json
+reports/long_context/qa_smoke_manifest.json
+reports/long_context/qa_smoke/
+reports/long_context/evidence_eval_llm.json
+reports/long_context/qa_llm_manifest.json
+reports/long_context/qa_llm/
 ```

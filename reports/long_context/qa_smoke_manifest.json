@@ -1,0 +1,242 @@
+[
+  {
+    "question_id": "fb_mvp_001",
+    "doc_name": "3M_2018_10K",
+    "status": "generated",
+    "output_path": "reports\\long_context\\qa_smoke\\fb_mvp_001.json",
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\3M_2018_10K.pdf",
+    "citation_count": 3,
+    "selected_pages_one_indexed": [
+      49,
+      46,
+      60
+    ],
+    "max_citations": 3,
+    "context_page_count": 160,
+    "context_chars": 609374,
+    "max_document_chars": null,
+    "latency_ms": 345,
+    "llm_enabled": false,
+    "model": null
+  },
+  {
+    "question_id": "fb_mvp_002",
+    "doc_name": "AMAZON_2017_10K",
+    "status": "generated",
+    "output_path": "reports\\long_context\\qa_smoke\\fb_mvp_002.json",
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\AMAZON_2017_10K.pdf",
+    "citation_count": 3,
+    "selected_pages_one_indexed": [
+      48,
+      49,
+      47
+    ],
+    "max_citations": 3,
+    "context_page_count": 85,
+    "context_chars": 293108,
+    "max_document_chars": null,
+    "latency_ms": 102,
+    "llm_enabled": false,
+    "model": null
+  },
+  {
+    "question_id": "fb_mvp_003",
+    "doc_name": "AMD_2022_10K",
+    "status": "generated",
+    "output_path": "reports\\long_context\\qa_smoke\\fb_mvp_003.json",
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\AMD_2022_10K.pdf",
+    "citation_count": 3,
+    "selected_pages_one_indexed": [
+      60,
+      4,
+      7
+    ],
+    "max_citations": 3,
+    "context_page_count": 121,
+    "context_chars": 413749,
+    "max_document_chars": null,
+    "latency_ms": 307,
+    "llm_enabled": false,
+    "model": null
+  },
+  {
+    "question_id": "fb_mvp_004",
+    "doc_name": "AMD_2022_10K",
+    "status": "generated",
+    "output_path": "reports\\long_context\\qa_smoke\\fb_mvp_004.json",
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\AMD_2022_10K.pdf",
+    "citation_count": 3,
+    "selected_pages_one_indexed": [
+      51,
+      47,
+      59
+    ],
+    "max_citations": 3,
+    "context_page_count": 121,
+    "context_chars": 413749,
+    "max_document_chars": null,
+    "latency_ms": 314,
+    "llm_enabled": false,
+    "model": null
+  },
+  {
+    "question_id": "fb_mvp_005",
+    "doc_name": "BESTBUY_2023_10K",
+    "status": "generated",
+    "output_path": "reports\\long_context\\qa_smoke\\fb_mvp_005.json",
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\BESTBUY_2023_10K.pdf",
+    "citation_count": 3,
+    "selected_pages_one_indexed": [
+      23,
+      25,
+      31
+    ],
+    "max_citations": 3,
+    "context_page_count": 75,
+    "context_chars": 305877,
+    "max_document_chars": null,
+    "latency_ms": 109,
+    "llm_enabled": false,
+    "model": null
+  },
+  {
+    "question_id": "fb_mvp_006",
+    "doc_name": "BOEING_2022_10K",
+    "status": "generated",
+    "output_path": "reports\\long_context\\qa_smoke\\fb_mvp_006.json",
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\BOEING_2022_10K.pdf",
+    "citation_count": 3,
+    "selected_pages_one_indexed": [
+      16,
+      19,
+      113
+    ],
+    "max_citations": 3,
+    "context_page_count": 190,
+    "context_chars": 510162,
+    "max_document_chars": null,
+    "latency_ms": 214,
+    "llm_enabled": false,
+    "model": null
+  },
+  {
+    "question_id": "fb_mvp_007",
+    "doc_name": "COSTCO_2021_10K",
+    "status": "generated",
+    "output_path": "reports\\long_context\\qa_smoke\\fb_mvp_007.json",
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\COSTCO_2021_10K.pdf",
+    "citation_count": 3,
+    "selected_pages_one_indexed": [
+      38,
+      51,
+      45
+    ],
+    "max_citations": 3,
+    "context_page_count": 76,
+    "context_chars": 222279,
+    "max_document_chars": null,
+    "latency_ms": 99,
+    "llm_enabled": false,
+    "model": null
+  },
+  {
+    "question_id": "fb_mvp_008",
+    "doc_name": "MICROSOFT_2016_10K",
+    "status": "generated",
+    "output_path": "reports\\long_context\\qa_smoke\\fb_mvp_008.json",
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\MICROSOFT_2016_10K.pdf",
+    "citation_count": 3,
+    "selected_pages_one_indexed": [
+      32,
+      33,
+      25
+    ],
+    "max_citations": 3,
+    "context_page_count": 121,
+    "context_chars": 413444,
+    "max_document_chars": null,
+    "latency_ms": 140,
+    "llm_enabled": false,
+    "model": null
+  },
+  {
+    "question_id": "fb_mvp_009",
+    "doc_name": "NIKE_2023_10K",
+    "status": "generated",
+    "output_path": "reports\\long_context\\qa_smoke\\fb_mvp_009.json",
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\NIKE_2023_10K.pdf",
+    "citation_count": 3,
+    "selected_pages_one_indexed": [
+      62,
+      69,
+      14
+    ],
+    "max_citations": 3,
+    "context_page_count": 106,
+    "context_chars": 376926,
+    "max_document_chars": null,
+    "latency_ms": 149,
+    "llm_enabled": false,
+    "model": null
+  },
+  {
+    "question_id": "fb_mvp_010",
+    "doc_name": "AMCOR_2023Q4_EARNINGS",
+    "status": "generated",
+    "output_path": "reports\\long_context\\qa_smoke\\fb_mvp_010.json",
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\AMCOR_2023Q4_EARNINGS.pdf",
+    "citation_count": 3,
+    "selected_pages_one_indexed": [
+      7,
+      11,
+      1
+    ],
+    "max_citations": 3,
+    "context_page_count": 14,
+    "context_chars": 44932,
+    "max_document_chars": null,
+    "latency_ms": 21,
+    "llm_enabled": false,
+    "model": null
+  },
+  {
+    "question_id": "fb_mvp_011",
+    "doc_name": "JPMORGAN_2023Q2_10Q",
+    "status": "generated",
+    "output_path": "reports\\long_context\\qa_smoke\\fb_mvp_011.json",
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\JPMORGAN_2023Q2_10Q.pdf",
+    "citation_count": 3,
+    "selected_pages_one_indexed": [
+      85,
+      54,
+      8
+    ],
+    "max_citations": 3,
+    "context_page_count": 217,
+    "context_chars": 745545,
+    "max_document_chars": null,
+    "latency_ms": 333,
+    "llm_enabled": false,
+    "model": null
+  },
+  {
+    "question_id": "fb_mvp_012",
+    "doc_name": "JOHNSON_JOHNSON_2023_8K_dated-2023-08-30",
+    "status": "generated",
+    "output_path": "reports\\long_context\\qa_smoke\\fb_mvp_012.json",
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\JOHNSON_JOHNSON_2023_8K_dated-2023-08-30.pdf",
+    "citation_count": 3,
+    "selected_pages_one_indexed": [
+      4,
+      6,
+      8
+    ],
+    "max_citations": 3,
+    "context_page_count": 27,
+    "context_chars": 57066,
+    "max_document_chars": null,
+    "latency_ms": 107,
+    "llm_enabled": false,
+    "model": null
+  }
+]

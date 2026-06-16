@@ -139,7 +139,7 @@
     "output": null,
     "total": null
   },
-  "latency_ms": 308,
+  "latency_ms": 306,
   "metadata": {
     "pdf_path": "datasets\\raw\\financebench\\pdfs\\AMD_2022_10K.pdf",
     "adapter_mode": "full_document_context",

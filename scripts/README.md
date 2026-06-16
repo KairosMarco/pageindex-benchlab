@@ -111,13 +111,13 @@ python scripts\evaluate_evidence_mvp.py --results-dir reports\pageindex\qa_llm -
 Smoke test without LLM answer generation:
 
 ```powershell
-python scripts\run_long_context_mvp.py --no-llm --force --continue-on-error
-python scripts\evaluate_evidence_mvp.py --results-dir reports\long_context\qa --output reports\long_context\evidence_eval.json --continue-on-error
+python scripts\run_long_context_mvp.py --no-llm --output-dir reports\long_context\qa_smoke --manifest reports\long_context\qa_smoke_manifest.json --force --continue-on-error
+python scripts\evaluate_evidence_mvp.py --results-dir reports\long_context\qa_smoke --output reports\long_context\evidence_eval_smoke.json --continue-on-error
 ```
 
 LLM mode:
 
 ```powershell
-python scripts\run_long_context_mvp.py --model deepseek/deepseek-v4-pro --force --continue-on-error
-python scripts\evaluate_evidence_mvp.py --results-dir reports\long_context\qa --output reports\long_context\evidence_eval.json --continue-on-error
+python scripts\run_long_context_mvp.py --model deepseek/deepseek-v4-pro --output-dir reports\long_context\qa_llm --manifest reports\long_context\qa_llm_manifest.json --force --continue-on-error
+python scripts\evaluate_evidence_mvp.py --results-dir reports\long_context\qa_llm --output reports\long_context\evidence_eval_llm.json --continue-on-error
 ```

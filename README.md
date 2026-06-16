@@ -69,6 +69,11 @@ Completed:
 - Current PageIndex no-LLM evidence result: average evidence recall `1.000`, average citation precision `0.333`.
 - Long-context baseline code exists and the no-LLM smoke test has been run for all 12 MVP questions.
 - Current Long-context no-LLM smoke result: average evidence recall `0.583`, average citation precision `0.194`.
+- PageIndex LLM answer generation has been run for all 12 MVP questions with `deepseek/deepseek-v4-pro`.
+- Long-context LLM answer generation has been run for all 12 MVP questions with `deepseek/deepseek-v4-pro`.
+- Current LLM evidence results:
+  - PageIndex: average evidence recall `1.000`, average citation precision `0.333`.
+  - Long-context: average evidence recall `0.917`, average citation precision `0.306`.
 
 Current owner: project owner. PH is on standby for later task assignment.
 
@@ -239,7 +244,7 @@ A GPU may become useful later for local LLMs, large embedding jobs, or large rer
 2. Set a fresh model provider API key locally.
 3. Run PageIndex indexing on those PDFs.
 4. Run the PageIndex question-answering retrieval step. Completed for no-LLM retrieval mode.
-5. Run PageIndex LLM answer generation.
-6. Run Long-context LLM answer generation.
-7. Implement the Vector RAG + reranker baseline.
+5. Implement the Vector RAG + reranker baseline.
+6. Implement the Hybrid RAG baseline.
+7. Add answer accuracy evaluation.
 8. Generate the first cross-method benchmark report.

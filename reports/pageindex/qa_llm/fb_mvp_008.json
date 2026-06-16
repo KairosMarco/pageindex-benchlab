@@ -1,0 +1,199 @@
+{
+  "method": "pageindex_tree_qa",
+  "question_id": "fb_mvp_008",
+  "question": "What is the FY2016 COGS for Microsoft? Please state answer in USD millions. Provide a response to the question by primarily using the statement of income.",
+  "answer": "FY2016 COGS for Microsoft, listed as \"Total cost of revenue\" on the income statement, was $32,780 million (Page 52).",
+  "citations": [
+    {
+      "document_id": "MICROSOFT_2016_10K",
+      "page": 52,
+      "section": "INCOME STATEMENTS",
+      "text": "Table of Contents PART II Item 8 ITEM 8. FINANCIAL STATEMENTS AND SUPPLEMENTARY DATA INCOME STATEMENTS (In millions, except per share amounts) Year Ended June 30, 2016 2015 2014 Revenue: Product $ 61,502 $ 75,956 $ 72,948 Service and other 23,818 17,624 13,885 Total revenue 85,320 93,580 86,833 Cost of revenue: Product 17,880 21,410 16,681 Service and other 14,900 11,628 10,397 Total cost of revenue 32,780 33,038 27,078 Gross margin 52,540 60,542 59,755 Research and development 11,988 12,046 11,",
+      "metadata": {
+        "score": 38,
+        "matched_page_terms": [
+          "cost",
+          "income",
+          "millions",
+          "revenue",
+          "sales"
+        ],
+        "matched_section_terms": [
+          "income"
+        ],
+        "node_id": "0017",
+        "start_index": 52,
+        "end_index": 53
+      }
+    },
+    {
+      "document_id": "MICROSOFT_2016_10K",
+      "page": 31,
+      "section": "Item 7. Management’ s Discussion and Analysis of Financial Condition and Results of Operations",
+      "text": "Table of Contents PART II Item 7 Our international operations provide a significant portion of our total revenue and expenses. Many of these revenue and expenses are denominated in currencies other than the U.S. dollar. As a result, changes in foreign exchange rates may significantly affect revenue and expenses. The strengthening of the U.S. dollar relative to certain foreign currencies throughout fiscal year 2015, and continuing into fiscal year 2016, negatively impacted reported revenue and re",
+      "metadata": {
+        "score": 27,
+        "matched_page_terms": [
+          "income",
+          "operations",
+          "provide",
+          "revenue",
+          "sales"
+        ],
+        "matched_section_terms": [
+          "operations"
+        ],
+        "node_id": "0012",
+        "start_index": 29,
+        "end_index": 50
+      }
+    },
+    {
+      "document_id": "MICROSOFT_2016_10K",
+      "page": 58,
+      "section": "Product Revenue and Service and Other Revenue",
+      "text": "Table of Contents PART II Item 8 Product Revenue and Service and Other Revenue Service revenue exceeded 10% of total revenue for the first time in fiscal year 2016. As a result, we have separately disclosed product revenue and service and other revenue on our consolidated income statements. Product revenue includes sales from operating systems; cross-device productivity applications; server applications; business solution applications; desktop and server management tools; software development to",
+      "metadata": {
+        "score": 24,
+        "matched_page_terms": [
+          "income",
+          "provide",
+          "revenue",
+          "sales"
+        ],
+        "matched_section_terms": [
+          "revenue"
+        ],
+        "node_id": "0029",
+        "start_index": 58,
+        "end_index": 58
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "select_tree_node",
+      "target": "Cost of Revenue",
+      "metadata": {
+        "node_id": "0031",
+        "start_index": 59,
+        "end_index": 59
+      }
+    },
+    {
+      "step": 2,
+      "action": "select_tree_node",
+      "target": "Item 7. Management’ s Discussion and Analysis of Financial Condition and Results of Operations",
+      "metadata": {
+        "node_id": "0012",
+        "start_index": 29,
+        "end_index": 50
+      }
+    },
+    {
+      "step": 3,
+      "action": "select_tree_node",
+      "target": "INCOME STATEMENTS",
+      "metadata": {
+        "node_id": "0017",
+        "start_index": 52,
+        "end_index": 53
+      }
+    },
+    {
+      "step": 4,
+      "action": "select_tree_node",
+      "target": "COMPREHENSIVE INCOME STATEMENTS",
+      "metadata": {
+        "node_id": "0018",
+        "start_index": 53,
+        "end_index": 54
+      }
+    },
+    {
+      "step": 5,
+      "action": "select_tree_node",
+      "target": "Product Revenue and Service and Other Revenue",
+      "metadata": {
+        "node_id": "0029",
+        "start_index": 58,
+        "end_index": 58
+      }
+    },
+    {
+      "step": 6,
+      "action": "score_page",
+      "target": "page 52",
+      "metadata": {
+        "score": 38,
+        "section": "INCOME STATEMENTS",
+        "matched_page_terms": [
+          "cost",
+          "income",
+          "millions",
+          "revenue",
+          "sales"
+        ],
+        "matched_section_terms": [
+          "income"
+        ]
+      }
+    },
+    {
+      "step": 7,
+      "action": "score_page",
+      "target": "page 31",
+      "metadata": {
+        "score": 27,
+        "section": "Item 7. Management’ s Discussion and Analysis of Financial Condition and Results of Operations",
+        "matched_page_terms": [
+          "income",
+          "operations",
+          "provide",
+          "revenue",
+          "sales"
+        ],
+        "matched_section_terms": [
+          "operations"
+        ]
+      }
+    },
+    {
+      "step": 8,
+      "action": "score_page",
+      "target": "page 58",
+      "metadata": {
+        "score": 24,
+        "section": "Product Revenue and Service and Other Revenue",
+        "matched_page_terms": [
+          "income",
+          "provide",
+          "revenue",
+          "sales"
+        ],
+        "matched_section_terms": [
+          "revenue"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": 2146,
+    "output": 193,
+    "total": 2339
+  },
+  "latency_ms": 4587,
+  "metadata": {
+    "structure_path": "reports\\pageindex\\structures\\MICROSOFT_2016_10K_structure.json",
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\MICROSOFT_2016_10K.pdf",
+    "selected_pages_one_indexed": [
+      52,
+      31,
+      58
+    ],
+    "max_pages": 3,
+    "adapter_mode": "tree_page_scoring",
+    "llm_enabled": true
+  }
+}
