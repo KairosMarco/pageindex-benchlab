@@ -1,0 +1,81 @@
+{
+  "summary": {
+    "python_executable": "D:\\pageindex-demo\\PageIndex\\.venv\\Scripts\\python.exe",
+    "python_version": "3.13.9 | packaged by Anaconda, Inc. | (main, Oct 21 2025, 19:09:58) [MSC v.1929 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "llamaindex_ready": false,
+    "missing_required_for_llamaindex": [
+      "llama-index",
+      "llama-index-core",
+      "sentence-transformers"
+    ]
+  },
+  "packages": [
+    {
+      "name": "pydantic",
+      "version": "2.12.5",
+      "available": true
+    },
+    {
+      "name": "pymupdf",
+      "version": "1.26.4",
+      "available": true
+    },
+    {
+      "name": "litellm",
+      "version": "1.83.7",
+      "available": true
+    },
+    {
+      "name": "llama-index",
+      "version": null,
+      "available": false
+    },
+    {
+      "name": "llama-index-core",
+      "version": null,
+      "available": false
+    },
+    {
+      "name": "llama-index-embeddings-huggingface",
+      "version": null,
+      "available": false
+    },
+    {
+      "name": "llama-index-retrievers-bm25",
+      "version": null,
+      "available": false
+    },
+    {
+      "name": "sentence-transformers",
+      "version": null,
+      "available": false
+    }
+  ],
+  "imports": [
+    {
+      "module": "fitz",
+      "available": true,
+      "error": "",
+      "purpose": "PyMuPDF PDF extraction"
+    },
+    {
+      "module": "litellm",
+      "available": true,
+      "error": "",
+      "purpose": "LLM provider wrapper"
+    },
+    {
+      "module": "llama_index.core",
+      "available": false,
+      "error": "No module named 'llama_index'",
+      "purpose": "LlamaIndex core"
+    },
+    {
+      "module": "sentence_transformers",
+      "available": false,
+      "error": "No module named 'sentence_transformers'",
+      "purpose": "local embedding model support"
+    }
+  ]
+}

@@ -181,3 +181,23 @@ Outputs:
 reports/stage1_metrics_summary.json
 reports/stage1_metrics_summary.md
 ```
+
+## Generate Detailed Stage 1 Evidence Report
+
+```powershell
+python scripts\check_stage1_environment.py
+python scripts\generate_stage1_evidence_report.py
+python scripts\validate_stage1_artifacts.py
+```
+
+Outputs:
+
+```text
+reports/stage1_detailed_evidence_report.md
+reports/stage1_detailed_evidence_report.json
+reports/stage1_per_question_results.csv
+reports/stage1_validation_report.json
+reports/stage1_environment_report.json
+```
+
+The validation script checks that method result counts, evidence metrics, answer metrics, token usage, latency, and known failure cases are consistent with the committed raw JSON artifacts.

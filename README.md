@@ -88,6 +88,10 @@ Completed:
   - Long-context: `84,843`
   - Vector RAG + reranker MVP: `2,299`
   - Hybrid RAG MVP: `2,413`
+- Detailed evidence-backed reports now exist:
+  - `reports/stage1_detailed_evidence_report.md`
+  - `reports/stage1_per_question_results.csv`
+  - `reports/stage1_validation_report.json`
 
 Current owner: project owner. PH is on standby for later task assignment.
 

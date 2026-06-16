@@ -1,0 +1,1869 @@
+{
+  "summary": {
+    "question_count": 12,
+    "method_count": 4,
+    "record_count": 48,
+    "failure_or_risk_count": 2
+  },
+  "supported_claims": [
+    "PageIndex, Vector RAG, and Hybrid RAG all reached 1.000 page-level evidence recall on the 12-question MVP subset.",
+    "Long-context reached 1.000 LLM-judge answer accuracy, but used 28.4x PageIndex's average total tokens in this run.",
+    "Vector RAG had one answer-generation failure despite 1.000 evidence recall, showing that retrieval success does not guarantee final answer correctness.",
+    "Hybrid RAG matched PageIndex's current answer accuracy and evidence recall, while using fewer average tokens (2412 vs 2984).",
+    "PageIndex currently has lower average latency than Hybrid RAG in this MVP run (7157 ms vs 10131 ms).",
+    "Vector RAG used the fewest average tokens, but its answer accuracy was lower (0.917) because of `fb_mvp_006`."
+  ],
+  "unsupported_claims": [
+    "The current 12-question MVP is too small to prove broad benchmark superiority; it only validates wiring and early failure modes.",
+    "It cannot prove general superiority across FinanceBench, legal contracts, medical documents, or all long documents.",
+    "It cannot yet isolate retrieval quality from answer-generation quality, because the same LLM is used after retrieval.",
+    "It cannot yet estimate real production cost, because provider pricing and account-level discounts are not recorded.",
+    "It cannot yet evaluate GraphRAG or HyperGraphRAG, because those adapters have not been run on the same questions."
+  ],
+  "method_metrics": {
+    "pageindex": {
+      "key": "pageindex",
+      "label": "PageIndex",
+      "result_count": 12,
+      "results_dir": "reports\\pageindex\\qa_llm",
+      "evidence_eval": "reports\\pageindex\\evidence_eval_llm.json",
+      "answer_eval": "reports\\pageindex\\answer_eval_llm.json",
+      "average_evidence_recall": 1.0,
+      "average_citation_precision": 0.3333333333333333,
+      "answer_accuracy": 1.0,
+      "average_answer_score": 1.0,
+      "answer_verdict_counts": {
+        "correct": 12,
+        "partial": 0,
+        "incorrect": 0
+      },
+      "total_input_tokens": 31336,
+      "total_output_tokens": 4475,
+      "total_tokens": 35811,
+      "average_input_tokens": 2611.333,
+      "average_output_tokens": 372.917,
+      "average_total_tokens": 2984.25,
+      "median_total_tokens": 2895.0,
+      "average_latency_ms": 7156.75,
+      "median_latency_ms": 6069.0,
+      "total_latency_ms": 85881,
+      "missing_token_usage_count": 0,
+      "missing_latency_count": 0
+    },
+    "long_context": {
+      "key": "long_context",
+      "label": "Long-context",
+      "result_count": 12,
+      "results_dir": "reports\\long_context\\qa_llm",
+      "evidence_eval": "reports\\long_context\\evidence_eval_llm.json",
+      "answer_eval": "reports\\long_context\\answer_eval_llm.json",
+      "average_evidence_recall": 0.9166666666666666,
+      "average_citation_precision": 0.3055555555555555,
+      "answer_accuracy": 1.0,
+      "average_answer_score": 1.0,
+      "answer_verdict_counts": {
+        "correct": 12,
+        "partial": 0,
+        "incorrect": 0
+      },
+      "total_input_tokens": 1013398,
+      "total_output_tokens": 4719,
+      "total_tokens": 1018117,
+      "average_input_tokens": 84449.833,
+      "average_output_tokens": 393.25,
+      "average_total_tokens": 84843.083,
+      "median_total_tokens": 86211.5,
+      "average_latency_ms": 14938.5,
+      "median_latency_ms": 14691.5,
+      "total_latency_ms": 179262,
+      "missing_token_usage_count": 0,
+      "missing_latency_count": 0
+    },
+    "vector_rag": {
+      "key": "vector_rag",
+      "label": "Vector RAG + reranker",
+      "result_count": 12,
+      "results_dir": "reports\\vector_rag\\qa_llm",
+      "evidence_eval": "reports\\vector_rag\\evidence_eval_llm.json",
+      "answer_eval": "reports\\vector_rag\\answer_eval_llm.json",
+      "average_evidence_recall": 1.0,
+      "average_citation_precision": 0.3333333333333333,
+      "answer_accuracy": 0.9166666666666666,
+      "average_answer_score": 0.9166666666666666,
+      "answer_verdict_counts": {
+        "correct": 11,
+        "partial": 0,
+        "incorrect": 1
+      },
+      "total_input_tokens": 23685,
+      "total_output_tokens": 3900,
+      "total_tokens": 27585,
+      "average_input_tokens": 1973.75,
+      "average_output_tokens": 325.0,
+      "average_total_tokens": 2298.75,
+      "median_total_tokens": 2281.5,
+      "average_latency_ms": 7381.75,
+      "median_latency_ms": 7081.5,
+      "total_latency_ms": 88581,
+      "missing_token_usage_count": 0,
+      "missing_latency_count": 0
+    },
+    "hybrid_rag": {
+      "key": "hybrid_rag",
+      "label": "Hybrid RAG",
+      "result_count": 12,
+      "results_dir": "reports\\hybrid_rag\\qa_llm",
+      "evidence_eval": "reports\\hybrid_rag\\evidence_eval_llm.json",
+      "answer_eval": "reports\\hybrid_rag\\answer_eval_llm.json",
+      "average_evidence_recall": 1.0,
+      "average_citation_precision": 0.3333333333333333,
+      "answer_accuracy": 1.0,
+      "average_answer_score": 1.0,
+      "answer_verdict_counts": {
+        "correct": 12,
+        "partial": 0,
+        "incorrect": 0
+      },
+      "total_input_tokens": 23504,
+      "total_output_tokens": 5446,
+      "total_tokens": 28950,
+      "average_input_tokens": 1958.667,
+      "average_output_tokens": 453.833,
+      "average_total_tokens": 2412.5,
+      "median_total_tokens": 2462.5,
+      "average_latency_ms": 10130.667,
+      "median_latency_ms": 8393.5,
+      "total_latency_ms": 121568,
+      "missing_token_usage_count": 0,
+      "missing_latency_count": 0
+    }
+  },
+  "records": [
+    {
+      "question_id": "fb_mvp_001",
+      "company": "3M",
+      "doc_name": "3M_2018_10K",
+      "question_type": "metrics-generated",
+      "question_reasoning": "Information extraction",
+      "question": "What is the FY2018 capital expenditure amount (in USD millions) for 3M? Give a response to the question by relying on the details shown in the cash flow statement.",
+      "gold_answer": "$1577.00",
+      "gold_pages_one_indexed": [
+        60
+      ],
+      "method_key": "pageindex",
+      "method_label": "PageIndex",
+      "predicted_pages": [
+        49,
+        60,
+        83
+      ],
+      "matched_pages_zero_indexed": [
+        59
+      ],
+      "evidence_recall": 1.0,
+      "citation_precision": 0.3333333333333333,
+      "answer_verdict": "correct",
+      "answer_score": 1.0,
+      "answer_rationale": "The predicted answer states the capital expenditure as $1,577 million, which matches the gold answer of $1577.00 (in millions). The monetary amount is identical, so the answer is correct.",
+      "predicted_answer": "The FY2018 capital expenditure amount for 3M is $1,577 million. This is shown as \"Purchases of property, plant and equipment (PP&E)\" on the cash flow statement (page 60) and also referenced in the free cash flow calculation (page 49).",
+      "citation_count": 3,
+      "input_tokens": 2613,
+      "output_tokens": 327,
+      "total_tokens": 2940,
+      "latency_ms": 6420,
+      "adapter_mode": "tree_page_scoring",
+      "model": null,
+      "method_average_total_tokens": 2984.25
+    },
+    {
+      "question_id": "fb_mvp_001",
+      "company": "3M",
+      "doc_name": "3M_2018_10K",
+      "question_type": "metrics-generated",
+      "question_reasoning": "Information extraction",
+      "question": "What is the FY2018 capital expenditure amount (in USD millions) for 3M? Give a response to the question by relying on the details shown in the cash flow statement.",
+      "gold_answer": "$1577.00",
+      "gold_pages_one_indexed": [
+        60
+      ],
+      "method_key": "long_context",
+      "method_label": "Long-context",
+      "predicted_pages": [
+        60,
+        39,
+        49
+      ],
+      "matched_pages_zero_indexed": [
+        59
+      ],
+      "evidence_recall": 1.0,
+      "citation_precision": 0.3333333333333333,
+      "answer_verdict": "correct",
+      "answer_score": 1.0,
+      "answer_rationale": "The predicted answer states the capital expenditure as $1,577 million, which matches the gold answer amount of $1577.00 million. It fully answers the question.",
+      "predicted_answer": "The FY2018 capital expenditure amount for 3M, as shown in the cash flow statement, is $1,577 million [PAGE 60]. This is also listed as total capital spending in the geographic area supplemental information [PAGE 39].",
+      "citation_count": 3,
+      "input_tokens": 139252,
+      "output_tokens": 353,
+      "total_tokens": 139605,
+      "latency_ms": 20845,
+      "adapter_mode": "full_document_context",
+      "model": "deepseek/deepseek-v4-pro",
+      "method_average_total_tokens": 84843.083
+    },
+    {
+      "question_id": "fb_mvp_001",
+      "company": "3M",
+      "doc_name": "3M_2018_10K",
+      "question_type": "metrics-generated",
+      "question_reasoning": "Information extraction",
+      "question": "What is the FY2018 capital expenditure amount (in USD millions) for 3M? Give a response to the question by relying on the details shown in the cash flow statement.",
+      "gold_answer": "$1577.00",
+      "gold_pages_one_indexed": [
+        60
+      ],
+      "method_key": "vector_rag",
+      "method_label": "Vector RAG + reranker",
+      "predicted_pages": [
+        60,
+        49,
+        83
+      ],
+      "matched_pages_zero_indexed": [
+        59
+      ],
+      "evidence_recall": 1.0,
+      "citation_precision": 0.3333333333333333,
+      "answer_verdict": "correct",
+      "answer_score": 1.0,
+      "answer_rationale": "The predicted answer provides the exact figure of $1,577 million, which matches the gold answer of $1577.00 million. Both refer to the FY2018 capital expenditure amount for 3M as shown in the cash flow statement.",
+      "predicted_answer": "The FY2018 capital expenditure amount for 3M, as shown by purchases of property, plant and equipment on the cash flow statement, was $1,577 million [PAGE 60].",
+      "citation_count": 3,
+      "input_tokens": 2051,
+      "output_tokens": 282,
+      "total_tokens": 2333,
+      "latency_ms": 6048,
+      "adapter_mode": "tfidf_vector_search_plus_rerank",
+      "model": "deepseek/deepseek-v4-pro",
+      "method_average_total_tokens": 2298.75
+    },
+    {
+      "question_id": "fb_mvp_001",
+      "company": "3M",
+      "doc_name": "3M_2018_10K",
+      "question_type": "metrics-generated",
+      "question_reasoning": "Information extraction",
+      "question": "What is the FY2018 capital expenditure amount (in USD millions) for 3M? Give a response to the question by relying on the details shown in the cash flow statement.",
+      "gold_answer": "$1577.00",
+      "gold_pages_one_indexed": [
+        60
+      ],
+      "method_key": "hybrid_rag",
+      "method_label": "Hybrid RAG",
+      "predicted_pages": [
+        49,
+        60,
+        83
+      ],
+      "matched_pages_zero_indexed": [
+        59
+      ],
+      "evidence_recall": 1.0,
+      "citation_precision": 0.3333333333333333,
+      "answer_verdict": "correct",
+      "answer_score": 1.0,
+      "answer_rationale": "The predicted answer correctly states the FY2018 capital expenditure as $1,577 million, matching the gold answer $1577.00, and references the cash flow statement.",
+      "predicted_answer": "Based on the cash flow statement, the FY2018 capital expenditure amount for 3M, listed as \"Purchases of property, plant and equipment (PP&E)\", was $1,577 million [PAGE 60, PAGE 46, PAGE 49].",
+      "citation_count": 3,
+      "input_tokens": 2051,
+      "output_tokens": 296,
+      "total_tokens": 2347,
+      "latency_ms": 7188,
+      "adapter_mode": "bm25_tfidf_rrf_plus_rerank",
+      "model": "deepseek/deepseek-v4-pro",
+      "method_average_total_tokens": 2412.5
+    },
+    {
+      "question_id": "fb_mvp_002",
+      "company": "Amazon",
+      "doc_name": "AMAZON_2017_10K",
+      "question_type": "metrics-generated",
+      "question_reasoning": "Numerical reasoning",
+      "question": "What is Amazon's year-over-year change in revenue from FY2016 to FY2017 (in units of percents and round to one decimal place)? Calculate what was asked by utilizing the line items clearly shown in the statement of income.",
+      "gold_answer": "30.8%",
+      "gold_pages_one_indexed": [
+        38
+      ],
+      "method_key": "pageindex",
+      "method_label": "PageIndex",
+      "predicted_pages": [
+        49,
+        38,
+        48
+      ],
+      "matched_pages_zero_indexed": [
+        37
+      ],
+      "evidence_recall": 1.0,
+      "citation_precision": 0.3333333333333333,
+      "answer_verdict": "correct",
+      "answer_score": 1.0,
+      "answer_rationale": "The predicted answer gives the year-over-year change as 30.8%, which exactly matches the gold answer. It also provides the calculation, confirming it derived the same result.",
+      "predicted_answer": "The year-over-year change in revenue from FY2016 to FY2017 is 30.8%.\n\nThis is calculated using the \"Total net sales\" figures shown in the Consolidated Statements of Operations: ($177,866 - $135,987) / $135,987 = 30.8% (Page 38).",
+      "citation_count": 3,
+      "input_tokens": 2716,
+      "output_tokens": 398,
+      "total_tokens": 3114,
+      "latency_ms": 6946,
+      "adapter_mode": "tree_page_scoring",
+      "model": null,
+      "method_average_total_tokens": 2984.25
+    },
+    {
+      "question_id": "fb_mvp_002",
+      "company": "Amazon",
+      "doc_name": "AMAZON_2017_10K",
+      "question_type": "metrics-generated",
+      "question_reasoning": "Numerical reasoning",
+      "question": "What is Amazon's year-over-year change in revenue from FY2016 to FY2017 (in units of percents and round to one decimal place)? Calculate what was asked by utilizing the line items clearly shown in the statement of income.",
+      "gold_answer": "30.8%",
+      "gold_pages_one_indexed": [
+        38
+      ],
+      "method_key": "long_context",
+      "method_label": "Long-context",
+      "predicted_pages": [
+        38,
+        48,
+        49
+      ],
+      "matched_pages_zero_indexed": [
+        37
+      ],
+      "evidence_recall": 1.0,
+      "citation_precision": 0.3333333333333333,
+      "answer_verdict": "correct",
+      "answer_score": 1.0,
+      "answer_rationale": "The predicted answer states the year-over-year increase as 30.8%, which exactly matches the gold answer of 30.8%.",
+      "predicted_answer": "Amazon's total net sales increased from $135,987 million in FY2016 to $177,866 million in FY2017, representing a year-over-year increase of 30.8% [PAGE 38].",
+      "citation_count": 3,
+      "input_tokens": 64708,
+      "output_tokens": 595,
+      "total_tokens": 65303,
+      "latency_ms": 16003,
+      "adapter_mode": "full_document_context",
+      "model": "deepseek/deepseek-v4-pro",
+      "method_average_total_tokens": 84843.083
+    },
+    {
+      "question_id": "fb_mvp_002",
+      "company": "Amazon",
+      "doc_name": "AMAZON_2017_10K",
+      "question_type": "metrics-generated",
+      "question_reasoning": "Numerical reasoning",
+      "question": "What is Amazon's year-over-year change in revenue from FY2016 to FY2017 (in units of percents and round to one decimal place)? Calculate what was asked by utilizing the line items clearly shown in the statement of income.",
+      "gold_answer": "30.8%",
+      "gold_pages_one_indexed": [
+        38
+      ],
+      "method_key": "vector_rag",
+      "method_label": "Vector RAG + reranker",
+      "predicted_pages": [
+        38,
+        49,
+        72
+      ],
+      "matched_pages_zero_indexed": [
+        37
+      ],
+      "evidence_recall": 1.0,
+      "citation_precision": 0.3333333333333333,
+      "answer_verdict": "correct",
+      "answer_score": 1.0,
+      "answer_rationale": "The predicted answer gives the exact percentage change (30.8%) as the gold answer and correctly identifies the revenue line item and amounts used for the calculation.",
+      "predicted_answer": "Amazon’s total net sales (revenue) increased by 30.8% from FY2016 to FY2017 [PAGE 38]. This is calculated from the Consolidated Statements of Operations line item “Total net sales,” which was $135,987 million in 2016 and $177,866 million in 2017.",
+      "citation_count": 3,
+      "input_tokens": 2149,
+      "output_tokens": 328,
+      "total_tokens": 2477,
+      "latency_ms": 7410,
+      "adapter_mode": "tfidf_vector_search_plus_rerank",
+      "model": "deepseek/deepseek-v4-pro",
+      "method_average_total_tokens": 2298.75
+    },
+    {
+      "question_id": "fb_mvp_002",
+      "company": "Amazon",
+      "doc_name": "AMAZON_2017_10K",
+      "question_type": "metrics-generated",
+      "question_reasoning": "Numerical reasoning",
+      "question": "What is Amazon's year-over-year change in revenue from FY2016 to FY2017 (in units of percents and round to one decimal place)? Calculate what was asked by utilizing the line items clearly shown in the statement of income.",
+      "gold_answer": "30.8%",
+      "gold_pages_one_indexed": [
+        38
+      ],
+      "method_key": "hybrid_rag",
+      "method_label": "Hybrid RAG",
+      "predicted_pages": [
+        38,
+        49,
+        72
+      ],
+      "matched_pages_zero_indexed": [
+        37
+      ],
+      "evidence_recall": 1.0,
+      "citation_precision": 0.3333333333333333,
+      "answer_verdict": "correct",
+      "answer_score": 1.0,
+      "answer_rationale": "Predicted answer provides the exact percentage 30.8%, matching the gold answer, and includes the calculation and source.",
+      "predicted_answer": "Year-over-year revenue change from FY2016 to FY2017: **30.8%**  \nCalculation: (($177,866M – $135,987M) / $135,987M) × 100 = 30.8%  \nSource: Total net sales figures from the Consolidated Statements of Operations [PAGE 38 | CHUNK p38_c0].",
+      "citation_count": 3,
+      "input_tokens": 2231,
+      "output_tokens": 378,
+      "total_tokens": 2609,
+      "latency_ms": 10494,
+      "adapter_mode": "bm25_tfidf_rrf_plus_rerank",
+      "model": "deepseek/deepseek-v4-pro",
+      "method_average_total_tokens": 2412.5
+    },
+    {
+      "question_id": "fb_mvp_003",
+      "company": "AMD",
+      "doc_name": "AMD_2022_10K",
+      "question_type": "domain-relevant",
+      "question_reasoning": "Information extraction",
+      "question": "What are the major products and services that AMD sells as of FY22?",
+      "gold_answer": "AMD sells server microprocessors (CPUs) and graphics processing units (GPUs), data processing units (DPUs), Field Programmable Gate Arrays (FPGAs), and Adaptive System-on-Chip (SoC) products for data centers; CPUs, accelerated processing units (APUs) that integrate CPUs and GPUs, and chipsets for desktop and notebook personal computers; discrete GPUs, and semi-custom SoC products and development services; and embedded CPUs, GPUs, APUs, FPGAs, and Adaptive SoC products.",
+      "gold_pages_one_indexed": [
+        4
+      ],
+      "method_key": "pageindex",
+      "method_label": "PageIndex",
+      "predicted_pages": [
+        60,
+        4,
+        7
+      ],
+      "matched_pages_zero_indexed": [
+        3
+      ],
+      "evidence_recall": 1.0,
+      "citation_precision": 0.3333333333333333,
+      "answer_verdict": "correct",
+      "answer_score": 1.0,
+      "answer_rationale": "The predicted answer includes all the major products and services mentioned in the gold answer (server CPUs/GPUs/DPUs/FPGAs/Adaptive SoCs for data centers; CPUs, APUs, chipsets for PCs; discrete GPUs and semi-custom SoCs with development services; embedded CPUs, GPUs, APUs, FPGAs, Adaptive SoCs). It adds additional details about microprocessor/SoC development services and IP licensing, but these do not contradict the gold answer and the core answer matches completely.",
+      "predicted_answer": "Based on the provided document pages, as of FY22, AMD's major products and services include:\n\n*   Server microprocessors (CPUs), graphics processing units (GPUs), data processing units (DPUs), Field Programmable Gate Arrays (FPGAs), and Adaptive System-on-Chip (SoC) products for data centers. (Page 4)\n*   CPUs, accelerated processing units (APUs), and chipsets for desktop and notebook personal computers. (Page 4)\n*   Discrete GPUs, and semi-custom SoC products and development services. (Page 4)\n*   Embedded CPUs, GPUs, APUs, FPGAs, and Adaptive SoC products. (Page 4)\n*   Microprocessor and SoC development services and technology. (Page 60)\n*   The company may also sell or license portions of its intellectual property (IP) portfolio. (Page 4, Page 60)",
+      "citation_count": 3,
+      "input_tokens": 2754,
+      "output_tokens": 672,
+      "total_tokens": 3426,
+      "latency_ms": 11469,
+      "adapter_mode": "tree_page_scoring",
+      "model": null,
+      "method_average_total_tokens": 2984.25
+    },
+    {
+      "question_id": "fb_mvp_003",
+      "company": "AMD",
+      "doc_name": "AMD_2022_10K",
+      "question_type": "domain-relevant",
+      "question_reasoning": "Information extraction",
+      "question": "What are the major products and services that AMD sells as of FY22?",
+      "gold_answer": "AMD sells server microprocessors (CPUs) and graphics processing units (GPUs), data processing units (DPUs), Field Programmable Gate Arrays (FPGAs), and Adaptive System-on-Chip (SoC) products for data centers; CPUs, accelerated processing units (APUs) that integrate CPUs and GPUs, and chipsets for desktop and notebook personal computers; discrete GPUs, and semi-custom SoC products and development services; and embedded CPUs, GPUs, APUs, FPGAs, and Adaptive SoC products.",
+      "gold_pages_one_indexed": [
+        4
+      ],
+      "method_key": "long_context",
+      "method_label": "Long-context",
+      "predicted_pages": [
+        4,
+        60,
+        7
+      ],
+      "matched_pages_zero_indexed": [
+        3
+      ],
+      "evidence_recall": 1.0,
+      "citation_precision": 0.3333333333333333,
+      "answer_verdict": "correct",
+      "answer_score": 1.0,
+      "answer_rationale": "The predicted answer covers all product and service categories from the gold answer (server CPUs/GPUs/DPUs/FPGAs/Adaptive SoCs, desktop/notebook CPUs/APUs/chipsets, discrete GPUs/semi-custom SoCs/development services, embedded CPUs/GPUs/APUs/FPGAs/Adaptive SoCs). The extra line about IP licensing does not contradict the gold answer and does not omit required information, so the answer fully matches.",
+      "predicted_answer": "As of FY22, AMD's major products and services included:\n\n- Server CPUs, GPUs, DPUs, FPGAs, and Adaptive SoC products for data centers.\n- CPUs, APUs (integrating CPUs and GPUs), and chipsets for desktop and notebook PCs.\n- Discrete GPUs, semi-custom SoC products, and development services.\n- Embedded CPUs, GPUs, APUs, FPGAs, and Adaptive SoC products.\n- Sale or licensing of portions of its intellectual property portfolio.\n\n[PAGE 4]",
+      "citation_count": 3,
+      "input_tokens": 88478,
+      "output_tokens": 687,
+      "total_tokens": 89165,
+      "latency_ms": 19247,
+      "adapter_mode": "full_document_context",
+      "model": "deepseek/deepseek-v4-pro",
+      "method_average_total_tokens": 84843.083
+    },
+    {
+      "question_id": "fb_mvp_003",
+      "company": "AMD",
+      "doc_name": "AMD_2022_10K",
+      "question_type": "domain-relevant",
+      "question_reasoning": "Information extraction",
+      "question": "What are the major products and services that AMD sells as of FY22?",
+      "gold_answer": "AMD sells server microprocessors (CPUs) and graphics processing units (GPUs), data processing units (DPUs), Field Programmable Gate Arrays (FPGAs), and Adaptive System-on-Chip (SoC) products for data centers; CPUs, accelerated processing units (APUs) that integrate CPUs and GPUs, and chipsets for desktop and notebook personal computers; discrete GPUs, and semi-custom SoC products and development services; and embedded CPUs, GPUs, APUs, FPGAs, and Adaptive SoC products.",
+      "gold_pages_one_indexed": [
+        4
+      ],
+      "method_key": "vector_rag",
+      "method_label": "Vector RAG + reranker",
+      "predicted_pages": [
+        4,
+        67,
+        60
+      ],
+      "matched_pages_zero_indexed": [
+        3
+      ],
+      "evidence_recall": 1.0,
+      "citation_precision": 0.3333333333333333,
+      "answer_verdict": "correct",
+      "answer_score": 1.0,
+      "answer_rationale": "The predicted answer lists all the major products and services mentioned in the gold answer: server CPUs, GPUs, DPUs, FPGAs, Adaptive SoCs for data centers; CPUs, APUs, chipsets for client PCs; discrete GPUs, semi-custom SoC products and development services; embedded CPUs, GPUs, APUs, FPGAs, and Adaptive SoC products. The gold answer does not include IP licensing, but the predicted answer adds it as an additional service that is factually accurate and does not contradict the gold answer. Thus, it fully answers the question and matches the gold answer in content.",
+      "predicted_answer": "Based on the provided document chunks, as of FY22, AMD's major products and services include:\n\n*   Server CPUs, GPUs, DPUs, FPGAs, and Adaptive SoC products for data centers [PAGE 4].\n*   CPUs, APUs (integrating CPUs and GPUs), and chipsets for desktop and notebook personal computers [PAGE 4].\n*   Discrete GPUs, and semi-custom SoC products and development services [PAGE 4].\n*   Embedded CPUs, GPUs, APUs, FPGAs, and Adaptive SoC products [PAGE 4][PAGE 67].\n*   From time to time, the sale or license of portions of its IP portfolio [PAGE 4][PAGE 60].",
+      "citation_count": 3,
+      "input_tokens": 1697,
+      "output_tokens": 502,
+      "total_tokens": 2199,
+      "latency_ms": 9314,
+      "adapter_mode": "tfidf_vector_search_plus_rerank",
+      "model": "deepseek/deepseek-v4-pro",
+      "method_average_total_tokens": 2298.75
+    },
+    {
+      "question_id": "fb_mvp_003",
+      "company": "AMD",
+      "doc_name": "AMD_2022_10K",
+      "question_type": "domain-relevant",
+      "question_reasoning": "Information extraction",
+      "question": "What are the major products and services that AMD sells as of FY22?",
+      "gold_answer": "AMD sells server microprocessors (CPUs) and graphics processing units (GPUs), data processing units (DPUs), Field Programmable Gate Arrays (FPGAs), and Adaptive System-on-Chip (SoC) products for data centers; CPUs, accelerated processing units (APUs) that integrate CPUs and GPUs, and chipsets for desktop and notebook personal computers; discrete GPUs, and semi-custom SoC products and development services; and embedded CPUs, GPUs, APUs, FPGAs, and Adaptive SoC products.",
+      "gold_pages_one_indexed": [
+        4
+      ],
+      "method_key": "hybrid_rag",
+      "method_label": "Hybrid RAG",
+      "predicted_pages": [
+        4,
+        60,
+        7
+      ],
+      "matched_pages_zero_indexed": [
+        3
+      ],
+      "evidence_recall": 1.0,
+      "citation_precision": 0.3333333333333333,
+      "answer_verdict": "correct",
+      "answer_score": 1.0,
+      "answer_rationale": "The predicted answer includes all the major products and services listed in the gold answer (server CPUs/GPUs, DPUs, FPGAs, Adaptive SoCs for data centers; CPUs, APUs, chipsets for client; discrete GPUs, semi-custom SoCs and development services; and embedded CPUs, GPUs, APUs, FPGAs, Adaptive SoCs). The extra mention of IP licensing does not contradict or omit any gold answer item, so the answer is fully correct.",
+      "predicted_answer": "As of FY22, AMD's major products and services are organized into four categories, as well as IP licensing [PAGE 4 | CHUNK p4_c2][PAGE 60 | CHUNK p60_c0][PAGE 67 | CHUNK p67_c2]:\n\n- **Data Center:** Server microprocessors (e.g., AMD EPYC CPUs), graphics processing units (GPUs), data processing units (DPUs, e.g., AMD Pensando), Field Programmable Gate Arrays (FPGAs, e.g., Virtex, Kintex), and Adaptive System-on-Chip (SoC) products (e.g., Zynq, Versal) [PAGE 4 | CHUNK p4_c2][PAGE 7 | CHUNK p7_c0].\n- **Client:** CPUs, accelerated processing units (APUs) that integrate CPUs and GPUs, and chipsets for desktop and notebook personal computers [PAGE 4 | CHUNK p4_c2].\n- **Gaming:** Discrete GPUs, and semi-custom SoC products and development services [PAGE 4 | CHUNK p4_c2].\n- **Embedded:** Embedded CPUs, GPUs, APUs, FPGAs, and Adaptive SoC products [PAGE 4 | CHUNK p4_c2][PAGE 9 | CHUNK p9_c3].\n- **Intellectual Property:** AMD may also sell or license portions of its IP portfolio [PAGE 4 | CHUNK p4_c2][PAGE 60 | CHUNK p60_c0].",
+      "citation_count": 3,
+      "input_tokens": 1697,
+      "output_tokens": 962,
+      "total_tokens": 2659,
+      "latency_ms": 15477,
+      "adapter_mode": "bm25_tfidf_rrf_plus_rerank",
+      "model": "deepseek/deepseek-v4-pro",
+      "method_average_total_tokens": 2412.5
+    },
+    {
+      "question_id": "fb_mvp_004",
+      "company": "AMD",
+      "doc_name": "AMD_2022_10K",
+      "question_type": "domain-relevant",
+      "question_reasoning": "Numerical reasoning",
+      "question": "Among operations, investing, and financing activities, which brought in the most (or lost the least) cash flow for AMD in FY22?",
+      "gold_answer": "In 2022, AMD brought in the most cashflow from Operations",
+      "gold_pages_one_indexed": [
+        58
+      ],
+      "method_key": "pageindex",
+      "method_label": "PageIndex",
+      "predicted_pages": [
+        59,
+        58,
+        51
+      ],
+      "matched_pages_zero_indexed": [
+        57
+      ],
+      "evidence_recall": 1.0,
+      "citation_precision": 0.3333333333333333,
+      "answer_verdict": "correct",
+      "answer_score": 1.0,
+      "answer_rationale": "The predicted answer correctly identifies operating activities as the source of the most cash flow for AMD in FY22, matching the gold answer. The inclusion of the exact cash flow amount is additional detail that does not conflict with the gold answer.",
+      "predicted_answer": "Operating activities brought in the most cash flow for AMD in FY22, providing $3,565 million. (Pages 58 and 51)",
+      "citation_count": 3,
+      "input_tokens": 1807,
+      "output_tokens": 313,
+      "total_tokens": 2120,
+      "latency_ms": 6104,
+      "adapter_mode": "tree_page_scoring",
+      "model": null,
+      "method_average_total_tokens": 2984.25
+    },
+    {
+      "question_id": "fb_mvp_004",
+      "company": "AMD",
+      "doc_name": "AMD_2022_10K",
+      "question_type": "domain-relevant",
+      "question_reasoning": "Numerical reasoning",
+      "question": "Among operations, investing, and financing activities, which brought in the most (or lost the least) cash flow for AMD in FY22?",
+      "gold_answer": "In 2022, AMD brought in the most cashflow from Operations",
+      "gold_pages_one_indexed": [
+        58
+      ],
+      "method_key": "long_context",
+      "method_label": "Long-context",
+      "predicted_pages": [
+        58,
+        51,
+        47
+      ],
+      "matched_pages_zero_indexed": [
+        57
+      ],
+      "evidence_recall": 1.0,
+      "citation_precision": 0.3333333333333333,
+      "answer_verdict": "correct",
+      "answer_score": 1.0,
+      "answer_rationale": "The predicted answer correctly identifies operating activities as the one that brought in the most cash flow for AMD in FY22, which fully matches the gold answer.",
+      "predicted_answer": "Operating activities brought in the most cash flow for AMD in FY22, providing $3,565 million. [PAGE 58]",
+      "citation_count": 3,
+      "input_tokens": 88491,
+      "output_tokens": 290,
+      "total_tokens": 88781,
+      "latency_ms": 13380,
+      "adapter_mode": "full_document_context",
+      "model": "deepseek/deepseek-v4-pro",
+      "method_average_total_tokens": 84843.083
+    },
+    {
+      "question_id": "fb_mvp_004",
+      "company": "AMD",
+      "doc_name": "AMD_2022_10K",
+      "question_type": "domain-relevant",
+      "question_reasoning": "Numerical reasoning",
+      "question": "Among operations, investing, and financing activities, which brought in the most (or lost the least) cash flow for AMD in FY22?",
+      "gold_answer": "In 2022, AMD brought in the most cashflow from Operations",
+      "gold_pages_one_indexed": [
+        58
+      ],
+      "method_key": "vector_rag",
+      "method_label": "Vector RAG + reranker",
+      "predicted_pages": [
+        51,
+        59,
+        58
+      ],
+      "matched_pages_zero_indexed": [
+        57
+      ],
+      "evidence_recall": 1.0,
+      "citation_precision": 0.3333333333333333,
+      "answer_verdict": "correct",
+      "answer_score": 1.0,
+      "answer_rationale": "The predicted answer correctly identifies operating activities as bringing in the most cash flow, which fully matches the gold answer.",
+      "predicted_answer": "Operating activities brought in the most cash flow for AMD in FY22.\n\nNet cash provided by operating activities was $3,565 million, compared to $1,999 million provided by investing activities, while financing activities resulted in a net cash use of $3,264 million [PAGE 51].",
+      "citation_count": 3,
+      "input_tokens": 2073,
+      "output_tokens": 305,
+      "total_tokens": 2378,
+      "latency_ms": 7845,
+      "adapter_mode": "tfidf_vector_search_plus_rerank",
+      "model": "deepseek/deepseek-v4-pro",
+      "method_average_total_tokens": 2298.75
+    },
+    {
+      "question_id": "fb_mvp_004",
+      "company": "AMD",
+      "doc_name": "AMD_2022_10K",
+      "question_type": "domain-relevant",
+      "question_reasoning": "Numerical reasoning",
+      "question": "Among operations, investing, and financing activities, which brought in the most (or lost the least) cash flow for AMD in FY22?",
+      "gold_answer": "In 2022, AMD brought in the most cashflow from Operations",
+      "gold_pages_one_indexed": [
+        58
+      ],
+      "method_key": "hybrid_rag",
+      "method_label": "Hybrid RAG",
+      "predicted_pages": [
+        59,
+        51,
+        58
+      ],
+      "matched_pages_zero_indexed": [
+        57
+      ],
+      "evidence_recall": 1.0,
+      "citation_precision": 0.3333333333333333,
+      "answer_verdict": "correct",
+      "answer_score": 1.0,
+      "answer_rationale": "The predicted answer correctly identifies operating activities as the source of the most cash flow, matching the gold answer that says Operations. The additional numerical detail does not conflict.",
+      "predicted_answer": "Operating activities brought in the most cash flow for AMD in FY22, providing $3,565 million [PAGE 51 | CHUNK p51_c0] [PAGE 58 | CHUNK p58_c0].",
+      "citation_count": 3,
+      "input_tokens": 2028,
+      "output_tokens": 487,
+      "total_tokens": 2515,
+      "latency_ms": 9895,
+      "adapter_mode": "bm25_tfidf_rrf_plus_rerank",
+      "model": "deepseek/deepseek-v4-pro",
+      "method_average_total_tokens": 2412.5
+    },
+    {
+      "question_id": "fb_mvp_005",
+      "company": "Best Buy",
+      "doc_name": "BESTBUY_2023_10K",
+      "question_type": "domain-relevant",
+      "question_reasoning": "Logical reasoning (based on numerical reasoning) OR Logical reasoning",
+      "question": "Are Best Buy's gross margins historically consistent (not fluctuating more than roughly 2% each year)? If gross margins are not a relevant metric for a company like this, then please state that and explain why.",
+      "gold_answer": "Yes, the margins have been consistent, there has been a minor decline of 1.1% in gross margins between FY2022 and FY2023.",
+      "gold_pages_one_indexed": [
+        40
+      ],
+      "method_key": "pageindex",
+      "method_label": "PageIndex",
+      "predicted_pages": [
+        40,
+        25,
+        28
+      ],
+      "matched_pages_zero_indexed": [
+        39
+      ],
+      "evidence_recall": 1.0,
+      "citation_precision": 0.3333333333333333,
+      "answer_verdict": "correct",
+      "answer_score": 1.0,
+      "answer_rationale": "The predicted answer states that gross margins are historically consistent, provides specific percentages showing a 1.1% fluctuation, and confirms that gross margin is a relevant metric. This fully matches the gold answer's conclusion of consistent margins with a minor 1.1% decline, and additionally addresses the relevance question appropriately.",
+      "predicted_answer": "Based on the provided document pages, Best Buy's gross margins have been historically consistent, fluctuating within a range of just over 1%.\n\n*   The gross profit as a percentage of revenue for the fiscal years 2023, 2022, and 2021 was 21.4%, 22.5%, and 22.4%, respectively (page 25).\n*   This represents a maximum fluctuation of 1.1% between the highest (22.5% in FY2022) and lowest (21.4% in FY2023) rates, which is less than the 2% threshold specified in the question.\n\nGross margin is a relevant metric for this company, as it is reported and analyzed in its own results of operations (page 25). However, page 25 also notes that because retailers vary in how they record supply chain costs between cost of sales and SG&A, the gross profit rate may not be comparable to other retailers.",
+      "citation_count": 3,
+      "input_tokens": 3016,
+      "output_tokens": 674,
+      "total_tokens": 3690,
+      "latency_ms": 11601,
+      "adapter_mode": "tree_page_scoring",
+      "model": null,
+      "method_average_total_tokens": 2984.25
+    },
+    {
+      "question_id": "fb_mvp_005",
+      "company": "Best Buy",
+      "doc_name": "BESTBUY_2023_10K",
+      "question_type": "domain-relevant",
+      "question_reasoning": "Logical reasoning (based on numerical reasoning) OR Logical reasoning",
+      "question": "Are Best Buy's gross margins historically consistent (not fluctuating more than roughly 2% each year)? If gross margins are not a relevant metric for a company like this, then please state that and explain why.",
+      "gold_answer": "Yes, the margins have been consistent, there has been a minor decline of 1.1% in gross margins between FY2022 and FY2023.",
+      "gold_pages_one_indexed": [
+        40
+      ],
+      "method_key": "long_context",
+      "method_label": "Long-context",
+      "predicted_pages": [
+        25,
+        26,
+        23
+      ],
+      "matched_pages_zero_indexed": [],
+      "evidence_recall": 0.0,
+      "citation_precision": 0.0,
+      "answer_verdict": "correct",
+      "answer_score": 1.0,
+      "answer_rationale": "The predicted answer directly confirms that gross margins are historically consistent with fluctuations less than 2% each year, and specifically highlights the 1.1% decline between FY2022 and FY2023. This matches the gold answer's statement that margins have been consistent with a minor decline of 1.1% between those years. The answer also correctly addresses the relevance of gross margin, which the gold answer implicitly acknowledges by giving a direct response.",
+      "predicted_answer": "Based on the provided document pages, gross margin is a relevant metric for Best Buy, and the company's gross margins have been historically consistent, fluctuating less than 2% each year.\n\nBest Buy reports its gross profit as a percentage of revenue. The consolidated performance summary on [PAGE 25] shows the following gross profit rates for the last three fiscal years:\n*   **Fiscal 2023:** 21.4%\n*   **Fiscal 2022:** 22.5%\n*   **Fiscal 2021:** 22.4%\n\nThe year-over-year change was a decrease of 1.1% in fiscal 2023 and an increase of 0.1% in fiscal 2022 [PAGE 25]. The document explains that the decrease in fiscal 2023 was \"primarily due to lower product margin rates, including increased promotions, lower services margin rates... and higher supply chain costs\" [PAGE 26].",
+      "citation_count": 3,
+      "input_tokens": 67817,
+      "output_tokens": 668,
+      "total_tokens": 68485,
+      "latency_ms": 16568,
+      "adapter_mode": "full_document_context",
+      "model": "deepseek/deepseek-v4-pro",
+      "method_average_total_tokens": 84843.083
+    },
+    {
+      "question_id": "fb_mvp_005",
+      "company": "Best Buy",
+      "doc_name": "BESTBUY_2023_10K",
+      "question_type": "domain-relevant",
+      "question_reasoning": "Logical reasoning (based on numerical reasoning) OR Logical reasoning",
+      "question": "Are Best Buy's gross margins historically consistent (not fluctuating more than roughly 2% each year)? If gross margins are not a relevant metric for a company like this, then please state that and explain why.",
+      "gold_answer": "Yes, the margins have been consistent, there has been a minor decline of 1.1% in gross margins between FY2022 and FY2023.",
+      "gold_pages_one_indexed": [
+        40
+      ],
+      "method_key": "vector_rag",
+      "method_label": "Vector RAG + reranker",
+      "predicted_pages": [
+        40,
+        25,
+        27
+      ],
+      "matched_pages_zero_indexed": [
+        39
+      ],
+      "evidence_recall": 1.0,
+      "citation_precision": 0.3333333333333333,
+      "answer_verdict": "correct",
+      "answer_score": 1.0,
+      "answer_rationale": "The predicted answer states that Best Buy's gross margins are consistent, within the 2% threshold, and specifically notes a 1.1% decline from FY2022 to FY2023, matching the gold answer. It also confirms that gross margin is a relevant metric.",
+      "predicted_answer": "Based on the retrieved document chunks, Best Buy's gross profit as a percentage of revenue (gross margin) has been relatively consistent, fluctuating within the 2% threshold you asked about [PAGE 25 | CHUNK p25_c0].\n\n*   Fiscal 2021: 22.4%\n*   Fiscal 2022: 22.5%\n*   Fiscal 2023: 21.4%\n\nThe margin fluctuated by 0.1% from fiscal 2021 to 2022, and by 1.1% from fiscal 2022 to 2023. Gross margin remains a reported and relevant metric for the company, though a note cautions that its calculation may not be comparable to other retailers due to differences in how supply chain costs are recorded between cost of sales and SG&A [PAGE 25 | CHUNK p25_c0].",
+      "citation_count": 3,
+      "input_tokens": 2004,
+      "output_tokens": 591,
+      "total_tokens": 2595,
+      "latency_ms": 10731,
+      "adapter_mode": "tfidf_vector_search_plus_rerank",
+      "model": "deepseek/deepseek-v4-pro",
+      "method_average_total_tokens": 2298.75
+    },
+    {
+      "question_id": "fb_mvp_005",
+      "company": "Best Buy",
+      "doc_name": "BESTBUY_2023_10K",
+      "question_type": "domain-relevant",
+      "question_reasoning": "Logical reasoning (based on numerical reasoning) OR Logical reasoning",
+      "question": "Are Best Buy's gross margins historically consistent (not fluctuating more than roughly 2% each year)? If gross margins are not a relevant metric for a company like this, then please state that and explain why.",
+      "gold_answer": "Yes, the margins have been consistent, there has been a minor decline of 1.1% in gross margins between FY2022 and FY2023.",
+      "gold_pages_one_indexed": [
+        40
+      ],
+      "method_key": "hybrid_rag",
+      "method_label": "Hybrid RAG",
+      "predicted_pages": [
+        25,
+        40,
+        27
+      ],
+      "matched_pages_zero_indexed": [
+        39
+      ],
+      "evidence_recall": 1.0,
+      "citation_precision": 0.3333333333333333,
+      "answer_verdict": "correct",
+      "answer_score": 1.0,
+      "answer_rationale": "The predicted answer correctly states that gross margins are historically consistent, quantifies the fluctuation as 1.1%, and confirms the metric is relevant, matching the gold answer's intent and conclusion.",
+      "predicted_answer": "Based on the provided data, Best Buy's gross margin has been historically consistent over the last three fiscal years, fluctuating by 1.1% [PAGE 25]. Gross margin is a relevant metric for the company and is reported as a key performance indicator.\n\nThe consolidated gross profit as a percentage of revenue was:\n*   21.4% in fiscal 2023\n*   22.5% in fiscal 2022\n*   22.4% in fiscal 2021 [PAGE 25]\n\nWhile there is a caveat that Best Buy's gross profit rate may not be comparable to other retailers due to differences in supply chain cost accounting, the metric itself is still used and analyzed by the company [PAGE 25].",
+      "citation_count": 3,
+      "input_tokens": 1960,
+      "output_tokens": 550,
+      "total_tokens": 2510,
+      "latency_ms": 13465,
+      "adapter_mode": "bm25_tfidf_rrf_plus_rerank",
+      "model": "deepseek/deepseek-v4-pro",
+      "method_average_total_tokens": 2412.5
+    },
+    {
+      "question_id": "fb_mvp_006",
+      "company": "Boeing",
+      "doc_name": "BOEING_2022_10K",
+      "question_type": "domain-relevant",
+      "question_reasoning": "Information extraction",
+      "question": "Has Boeing reported any materially important ongoing legal battles from FY2022?",
+      "gold_answer": "Yes. Multiple lawsuits have been filed against Boeing resulting from a 2018 Lion Air crash and a 2019 Ethiopian Airlines crash.",
+      "gold_pages_one_indexed": [
+        113
+      ],
+      "method_key": "pageindex",
+      "method_label": "PageIndex",
+      "predicted_pages": [
+        113,
+        19,
+        20
+      ],
+      "matched_pages_zero_indexed": [
+        112
+      ],
+      "evidence_recall": 1.0,
+      "citation_precision": 0.3333333333333333,
+      "answer_verdict": "correct",
+      "answer_score": 1.0,
+      "answer_rationale": "The predicted answer correctly states 'Yes', acknowledges materially important ongoing legal battles, and specifically references the multiple legal actions from the 2018 and 2019 accidents (737 MAX crashes), matching the gold answer's mention of lawsuits from the Lion Air and Ethiopian Airlines crashes. The additional Embraer information does not contradict or detract from the core answer.",
+      "predicted_answer": "Yes, Boeing reported ongoing legal battles from FY2022 that are materially important. Page 113 details the following:\n\n*   **737 MAX Accidents:** Multiple legal actions remain pending from the 2018 and 2019 accidents, and Boeing \"cannot reasonably estimate a range of loss, if any... that we may incur as a result of any remaining pending lawsuits or other matters related to the accidents and the 737 MAX.\"\n*   **Embraer Arbitration:** A dispute over Boeing's termination of agreements with Embraer S.A. is \"currently in arbitration,\" with Boeing unable to reasonably estimate a range of possible loss (page 113).",
+      "citation_count": 3,
+      "input_tokens": 1991,
+      "output_tokens": 527,
+      "total_tokens": 2518,
+      "latency_ms": 12005,
+      "adapter_mode": "tree_page_scoring",
+      "model": null,
+      "method_average_total_tokens": 2984.25
+    },
+    {
+      "question_id": "fb_mvp_006",
+      "company": "Boeing",
+      "doc_name": "BOEING_2022_10K",
+      "question_type": "domain-relevant",
+      "question_reasoning": "Information extraction",
+      "question": "Has Boeing reported any materially important ongoing legal battles from FY2022?",
+      "gold_answer": "Yes. Multiple lawsuits have been filed against Boeing resulting from a 2018 Lion Air crash and a 2019 Ethiopian Airlines crash.",
+      "gold_pages_one_indexed": [
+        113
+      ],
+      "method_key": "long_context",
+      "method_label": "Long-context",
+      "predicted_pages": [
+        113,
+        16,
+        19
+      ],
+      "matched_pages_zero_indexed": [
+        112
+      ],
+      "evidence_recall": 1.0,
+      "citation_precision": 0.3333333333333333,
+      "answer_verdict": "correct",
+      "answer_score": 1.0,
+      "answer_rationale": "The predicted answer correctly states that Boeing reported materially important ongoing legal battles in FY2022, specifically citing legal actions from the 737 MAX accidents (which include the Lion Air and Ethiopian Airlines crashes mentioned in the gold answer). It provides additional detail about an arbitration dispute, but this does not contradict or omit the required information. The core question is fully addressed.",
+      "predicted_answer": "Yes, Boeing has reported materially important ongoing legal battles. The document states that multiple legal actions have been filed against the company as a result of the 737 MAX accidents, and it cannot reasonably estimate a range of loss for any remaining pending lawsuits [PAGE 113]. Additionally, there is an ongoing arbitration dispute with Embraer S.A. regarding terminated joint venture agreements, for which the company also cannot reasonably estimate a potential loss, with completion expected in late 2023 or early 2024 [PAGE 113].",
+      "citation_count": 3,
+      "input_tokens": 114042,
+      "output_tokens": 549,
+      "total_tokens": 114591,
+      "latency_ms": 22328,
+      "adapter_mode": "full_document_context",
+      "model": "deepseek/deepseek-v4-pro",
+      "method_average_total_tokens": 84843.083
+    },
+    {
+      "question_id": "fb_mvp_006",
+      "company": "Boeing",
+      "doc_name": "BOEING_2022_10K",
+      "question_type": "domain-relevant",
+      "question_reasoning": "Information extraction",
+      "question": "Has Boeing reported any materially important ongoing legal battles from FY2022?",
+      "gold_answer": "Yes. Multiple lawsuits have been filed against Boeing resulting from a 2018 Lion Air crash and a 2019 Ethiopian Airlines crash.",
+      "gold_pages_one_indexed": [
+        113
+      ],
+      "method_key": "vector_rag",
+      "method_label": "Vector RAG + reranker",
+      "predicted_pages": [
+        113,
+        19,
+        47
+      ],
+      "matched_pages_zero_indexed": [
+        112
+      ],
+      "evidence_recall": 1.0,
+      "citation_precision": 0.3333333333333333,
+      "answer_verdict": "incorrect",
+      "answer_score": 0.0,
+      "answer_rationale": "The gold answer states that Boeing has reported materially important ongoing legal battles (yes). The predicted answer acknowledges the litigation but states that Boeing does not believe it will have a material effect, effectively denying the materiality and contradicting the gold answer.",
+      "predicted_answer": "Based on the provided document chunks, Boeing reported ongoing litigation related to the 737 MAX accidents, but stated that it does not believe the outcome will have a material effect [PAGE 113]. The company disclosed that multiple legal actions were filed as a result of the Lion Air Flight 610 and Ethiopian Airlines Flight 302 accidents [PAGE 19 | PAGE 113]. While a shareholder derivative settlement and an SEC investigation were concluded in 2022, the underlying accident-related legal proceedings were still ongoing [PAGE 113].",
+      "citation_count": 3,
+      "input_tokens": 1773,
+      "output_tokens": 457,
+      "total_tokens": 2230,
+      "latency_ms": 11254,
+      "adapter_mode": "tfidf_vector_search_plus_rerank",
+      "model": "deepseek/deepseek-v4-pro",
+      "method_average_total_tokens": 2298.75
+    },
+    {
+      "question_id": "fb_mvp_006",
+      "company": "Boeing",
+      "doc_name": "BOEING_2022_10K",
+      "question_type": "domain-relevant",
+      "question_reasoning": "Information extraction",
+      "question": "Has Boeing reported any materially important ongoing legal battles from FY2022?",
+      "gold_answer": "Yes. Multiple lawsuits have been filed against Boeing resulting from a 2018 Lion Air crash and a 2019 Ethiopian Airlines crash.",
+      "gold_pages_one_indexed": [
+        113
+      ],
+      "method_key": "hybrid_rag",
+      "method_label": "Hybrid RAG",
+      "predicted_pages": [
+        113,
+        19,
+        47
+      ],
+      "matched_pages_zero_indexed": [
+        112
+      ],
+      "evidence_recall": 1.0,
+      "citation_precision": 0.3333333333333333,
+      "answer_verdict": "correct",
+      "answer_score": 1.0,
+      "answer_rationale": "The predicted answer states that Boeing reported ongoing legal battles related to the Lion Air and Ethiopian Airlines crashes, which directly matches the gold answer's substance. The additional details (737 MAX, flight numbers, Note 21 references) supplement but do not contradict the gold answer.",
+      "predicted_answer": "Yes, Boeing reported ongoing legal battles related to the 737 MAX accidents. Multiple legal actions were filed as a result of the Lion Air Flight 610 and Ethiopian Airlines Flight 302 crashes, and these proceedings are discussed in Note 21 of the Consolidated Financial Statements as material contingencies [PAGE 113][PAGE 19][PAGE 47].",
+      "citation_count": 3,
+      "input_tokens": 1773,
+      "output_tokens": 1152,
+      "total_tokens": 2925,
+      "latency_ms": 21967,
+      "adapter_mode": "bm25_tfidf_rrf_plus_rerank",
+      "model": "deepseek/deepseek-v4-pro",
+      "method_average_total_tokens": 2412.5
+    },
+    {
+      "question_id": "fb_mvp_007",
+      "company": "Costco",
+      "doc_name": "COSTCO_2021_10K",
+      "question_type": "metrics-generated",
+      "question_reasoning": "Information extraction",
+      "question": "Using only the information within the balance sheet, how much total assets did Costco have at the end of FY2021? Answer in USD millions.",
+      "gold_answer": "$59268.00",
+      "gold_pages_one_indexed": [
+        38
+      ],
+      "method_key": "pageindex",
+      "method_label": "PageIndex",
+      "predicted_pages": [
+        38,
+        51,
+        45
+      ],
+      "matched_pages_zero_indexed": [
+        37
+      ],
+      "evidence_recall": 1.0,
+      "citation_precision": 0.3333333333333333,
+      "answer_verdict": "correct",
+      "answer_score": 1.0,
+      "answer_rationale": "The predicted answer states total assets as $59,268 million, which matches the gold answer of $59,268.00. Both express the same value in USD millions, fully answering the question.",
+      "predicted_answer": "According to the consolidated balance sheet, total assets at the end of FY2021 were $59,268 million.\n\nPage 38",
+      "citation_count": 3,
+      "input_tokens": 2082,
+      "output_tokens": 245,
+      "total_tokens": 2327,
+      "latency_ms": 5046,
+      "adapter_mode": "tree_page_scoring",
+      "model": null,
+      "method_average_total_tokens": 2984.25
+    },
+    {
+      "question_id": "fb_mvp_007",
+      "company": "Costco",
+      "doc_name": "COSTCO_2021_10K",
+      "question_type": "metrics-generated",
+      "question_reasoning": "Information extraction",
+      "question": "Using only the information within the balance sheet, how much total assets did Costco have at the end of FY2021? Answer in USD millions.",
+      "gold_answer": "$59268.00",
+      "gold_pages_one_indexed": [
+        38
+      ],
+      "method_key": "long_context",
+      "method_label": "Long-context",
+      "predicted_pages": [
+        38,
+        51,
+        45
+      ],
+      "matched_pages_zero_indexed": [
+        37
+      ],
+      "evidence_recall": 1.0,
+      "citation_precision": 0.3333333333333333,
+      "answer_verdict": "correct",
+      "answer_score": 1.0,
+      "answer_rationale": "The predicted answer states $59,268 million, which exactly matches the gold answer's $59268.00 after ignoring formatting differences like commas and trailing zeros.",
+      "predicted_answer": "Costco had total assets of $59,268 million at the end of FY2021 [PAGE 38].",
+      "citation_count": 3,
+      "input_tokens": 49059,
+      "output_tokens": 172,
+      "total_tokens": 49231,
+      "latency_ms": 7114,
+      "adapter_mode": "full_document_context",
+      "model": "deepseek/deepseek-v4-pro",
+      "method_average_total_tokens": 84843.083
+    },
+    {
+      "question_id": "fb_mvp_007",
+      "company": "Costco",
+      "doc_name": "COSTCO_2021_10K",
+      "question_type": "metrics-generated",
+      "question_reasoning": "Information extraction",
+      "question": "Using only the information within the balance sheet, how much total assets did Costco have at the end of FY2021? Answer in USD millions.",
+      "gold_answer": "$59268.00",
+      "gold_pages_one_indexed": [
+        38
+      ],
+      "method_key": "vector_rag",
+      "method_label": "Vector RAG + reranker",
+      "predicted_pages": [
+        38,
+        51,
+        53
+      ],
+      "matched_pages_zero_indexed": [
+        37
+      ],
+      "evidence_recall": 1.0,
+      "citation_precision": 0.3333333333333333,
+      "answer_verdict": "correct",
+      "answer_score": 1.0,
+      "answer_rationale": "The predicted answer states total assets of $59,268 million, which exactly matches the gold answer of $59268.00 million. The answer is complete and correct.",
+      "predicted_answer": "At the end of FY2021, Costco's total assets were $59,268 million [PAGE 38].",
+      "citation_count": 3,
+      "input_tokens": 2259,
+      "output_tokens": 272,
+      "total_tokens": 2531,
+      "latency_ms": 6207,
+      "adapter_mode": "tfidf_vector_search_plus_rerank",
+      "model": "deepseek/deepseek-v4-pro",
+      "method_average_total_tokens": 2298.75
+    },
+    {
+      "question_id": "fb_mvp_007",
+      "company": "Costco",
+      "doc_name": "COSTCO_2021_10K",
+      "question_type": "metrics-generated",
+      "question_reasoning": "Information extraction",
+      "question": "Using only the information within the balance sheet, how much total assets did Costco have at the end of FY2021? Answer in USD millions.",
+      "gold_answer": "$59268.00",
+      "gold_pages_one_indexed": [
+        38
+      ],
+      "method_key": "hybrid_rag",
+      "method_label": "Hybrid RAG",
+      "predicted_pages": [
+        38,
+        51,
+        53
+      ],
+      "matched_pages_zero_indexed": [
+        37
+      ],
+      "evidence_recall": 1.0,
+      "citation_precision": 0.3333333333333333,
+      "answer_verdict": "correct",
+      "answer_score": 1.0,
+      "answer_rationale": "The predicted answer states Costco's total assets at the end of FY2021 were $59,268 million, which matches the gold answer of $59268.00 million. It fully answers the question.",
+      "predicted_answer": "According to the consolidated balance sheet, Costco's total assets at the end of FY2021 (August 29, 2021) were $59,268 million [PAGE 38].",
+      "citation_count": 3,
+      "input_tokens": 2085,
+      "output_tokens": 330,
+      "total_tokens": 2415,
+      "latency_ms": 7964,
+      "adapter_mode": "bm25_tfidf_rrf_plus_rerank",
+      "model": "deepseek/deepseek-v4-pro",
+      "method_average_total_tokens": 2412.5
+    },
+    {
+      "question_id": "fb_mvp_008",
+      "company": "Microsoft",
+      "doc_name": "MICROSOFT_2016_10K",
+      "question_type": "metrics-generated",
+      "question_reasoning": "Information extraction",
+      "question": "What is the FY2016 COGS for Microsoft? Please state answer in USD millions. Provide a response to the question by primarily using the statement of income.",
+      "gold_answer": "$32780.00",
+      "gold_pages_one_indexed": [
+        52
+      ],
+      "method_key": "pageindex",
+      "method_label": "PageIndex",
+      "predicted_pages": [
+        52,
+        31,
+        58
+      ],
+      "matched_pages_zero_indexed": [
+        51
+      ],
+      "evidence_recall": 1.0,
+      "citation_precision": 0.3333333333333333,
+      "answer_verdict": "correct",
+      "answer_score": 1.0,
+      "answer_rationale": "The predicted answer states FY2016 COGS as $32,780 million, which matches the gold answer of $32,780.00. It is in the requested units (USD millions) and fully answers the question.",
+      "predicted_answer": "FY2016 COGS for Microsoft, listed as \"Total cost of revenue\" on the income statement, was $32,780 million (Page 52).",
+      "citation_count": 3,
+      "input_tokens": 2146,
+      "output_tokens": 193,
+      "total_tokens": 2339,
+      "latency_ms": 4587,
+      "adapter_mode": "tree_page_scoring",
+      "model": null,
+      "method_average_total_tokens": 2984.25
+    },
+    {
+      "question_id": "fb_mvp_008",
+      "company": "Microsoft",
+      "doc_name": "MICROSOFT_2016_10K",
+      "question_type": "metrics-generated",
+      "question_reasoning": "Information extraction",
+      "question": "What is the FY2016 COGS for Microsoft? Please state answer in USD millions. Provide a response to the question by primarily using the statement of income.",
+      "gold_answer": "$32780.00",
+      "gold_pages_one_indexed": [
+        52
+      ],
+      "method_key": "long_context",
+      "method_label": "Long-context",
+      "predicted_pages": [
+        52,
+        32,
+        33
+      ],
+      "matched_pages_zero_indexed": [
+        51
+      ],
+      "evidence_recall": 1.0,
+      "citation_precision": 0.3333333333333333,
+      "answer_verdict": "correct",
+      "answer_score": 1.0,
+      "answer_rationale": "The predicted answer states the FY2016 COGS as $32,780 million, which exactly matches the gold answer of $32780.00 when expressed in USD millions. It fully answers the question.",
+      "predicted_answer": "The FY2016 Cost of Goods Sold (COGS), labeled as \"Total cost of revenue\" on the income statement, is $32,780 million [PAGE 52].",
+      "citation_count": 3,
+      "input_tokens": 90640,
+      "output_tokens": 163,
+      "total_tokens": 90803,
+      "latency_ms": 10856,
+      "adapter_mode": "full_document_context",
+      "model": "deepseek/deepseek-v4-pro",
+      "method_average_total_tokens": 84843.083
+    },
+    {
+      "question_id": "fb_mvp_008",
+      "company": "Microsoft",
+      "doc_name": "MICROSOFT_2016_10K",
+      "question_type": "metrics-generated",
+      "question_reasoning": "Information extraction",
+      "question": "What is the FY2016 COGS for Microsoft? Please state answer in USD millions. Provide a response to the question by primarily using the statement of income.",
+      "gold_answer": "$32780.00",
+      "gold_pages_one_indexed": [
+        52
+      ],
+      "method_key": "vector_rag",
+      "method_label": "Vector RAG + reranker",
+      "predicted_pages": [
+        52,
+        84,
+        34
+      ],
+      "matched_pages_zero_indexed": [
+        51
+      ],
+      "evidence_recall": 1.0,
+      "citation_precision": 0.3333333333333333,
+      "answer_verdict": "correct",
+      "answer_score": 1.0,
+      "answer_rationale": "The predicted answer provides the FY2016 COGS as $32,780 million, which exactly matches the gold answer of $32780.00. It fully answers the question using the income statement.",
+      "predicted_answer": "The FY2016 cost of revenue (COGS) for Microsoft was $32,780 million. [PAGE 52]",
+      "citation_count": 3,
+      "input_tokens": 1880,
+      "output_tokens": 150,
+      "total_tokens": 2030,
+      "latency_ms": 4899,
+      "adapter_mode": "tfidf_vector_search_plus_rerank",
+      "model": "deepseek/deepseek-v4-pro",
+      "method_average_total_tokens": 2298.75
+    },
+    {
+      "question_id": "fb_mvp_008",
+      "company": "Microsoft",
+      "doc_name": "MICROSOFT_2016_10K",
+      "question_type": "metrics-generated",
+      "question_reasoning": "Information extraction",
+      "question": "What is the FY2016 COGS for Microsoft? Please state answer in USD millions. Provide a response to the question by primarily using the statement of income.",
+      "gold_answer": "$32780.00",
+      "gold_pages_one_indexed": [
+        52
+      ],
+      "method_key": "hybrid_rag",
+      "method_label": "Hybrid RAG",
+      "predicted_pages": [
+        52,
+        34,
+        84
+      ],
+      "matched_pages_zero_indexed": [
+        51
+      ],
+      "evidence_recall": 1.0,
+      "citation_precision": 0.3333333333333333,
+      "answer_verdict": "correct",
+      "answer_score": 1.0,
+      "answer_rationale": "The predicted answer correctly states the FY2016 COGS as $32,780 million, matching the gold answer of $32780.00 million, only differing in formatting.",
+      "predicted_answer": "The FY2016 cost of revenue (COGS) for Microsoft is $32,780 million [PAGE 52].",
+      "citation_count": 3,
+      "input_tokens": 1880,
+      "output_tokens": 236,
+      "total_tokens": 2116,
+      "latency_ms": 5835,
+      "adapter_mode": "bm25_tfidf_rrf_plus_rerank",
+      "model": "deepseek/deepseek-v4-pro",
+      "method_average_total_tokens": 2412.5
+    },
+    {
+      "question_id": "fb_mvp_009",
+      "company": "Nike",
+      "doc_name": "NIKE_2023_10K",
+      "question_type": "domain-relevant",
+      "question_reasoning": "Numerical reasoning",
+      "question": "Among operations, investing, and financing activities, which brought in the most (or lost the least) cash flow for Nike in FY2023?",
+      "gold_answer": "Among the three, cash flow from operations was the highest for Nike in FY2023.",
+      "gold_pages_one_indexed": [
+        62
+      ],
+      "method_key": "pageindex",
+      "method_label": "PageIndex",
+      "predicted_pages": [
+        62,
+        69,
+        93
+      ],
+      "matched_pages_zero_indexed": [
+        61
+      ],
+      "evidence_recall": 1.0,
+      "citation_precision": 0.3333333333333333,
+      "answer_verdict": "correct",
+      "answer_score": 1.0,
+      "answer_rationale": "The predicted answer correctly identifies operations as the activity that brought in the most cash flow for Nike in FY2023, matching the gold answer. It includes additional numerical details that do not conflict with the gold answer.",
+      "predicted_answer": "Operations brought in the most cash flow for Nike in FY2023, with $5,841 million provided. This compares to investing activities, which provided $564 million, and financing activities, which used $7,447 million.\n\n[PAGE 62]",
+      "citation_count": 3,
+      "input_tokens": 2571,
+      "output_tokens": 279,
+      "total_tokens": 2850,
+      "latency_ms": 6034,
+      "adapter_mode": "tree_page_scoring",
+      "model": null,
+      "method_average_total_tokens": 2984.25
+    },
+    {
+      "question_id": "fb_mvp_009",
+      "company": "Nike",
+      "doc_name": "NIKE_2023_10K",
+      "question_type": "domain-relevant",
+      "question_reasoning": "Numerical reasoning",
+      "question": "Among operations, investing, and financing activities, which brought in the most (or lost the least) cash flow for Nike in FY2023?",
+      "gold_answer": "Among the three, cash flow from operations was the highest for Nike in FY2023.",
+      "gold_pages_one_indexed": [
+        62
+      ],
+      "method_key": "long_context",
+      "method_label": "Long-context",
+      "predicted_pages": [
+        62,
+        69,
+        14
+      ],
+      "matched_pages_zero_indexed": [
+        61
+      ],
+      "evidence_recall": 1.0,
+      "citation_precision": 0.3333333333333333,
+      "answer_verdict": "correct",
+      "answer_score": 1.0,
+      "answer_rationale": "The predicted answer correctly identifies operations as the activity that brought in the most cash flow, matching the gold answer. The additional dollar figure does not contradict or alter the correctness.",
+      "predicted_answer": "Operations brought in the most cash flow, providing $5,841 million in FY2023 [PAGE 62].",
+      "citation_count": 3,
+      "input_tokens": 83359,
+      "output_tokens": 283,
+      "total_tokens": 83642,
+      "latency_ms": 12006,
+      "adapter_mode": "full_document_context",
+      "model": "deepseek/deepseek-v4-pro",
+      "method_average_total_tokens": 84843.083
+    },
+    {
+      "question_id": "fb_mvp_009",
+      "company": "Nike",
+      "doc_name": "NIKE_2023_10K",
+      "question_type": "domain-relevant",
+      "question_reasoning": "Numerical reasoning",
+      "question": "Among operations, investing, and financing activities, which brought in the most (or lost the least) cash flow for Nike in FY2023?",
+      "gold_answer": "Among the three, cash flow from operations was the highest for Nike in FY2023.",
+      "gold_pages_one_indexed": [
+        62
+      ],
+      "method_key": "vector_rag",
+      "method_label": "Vector RAG + reranker",
+      "predicted_pages": [
+        62,
+        69,
+        93
+      ],
+      "matched_pages_zero_indexed": [
+        61
+      ],
+      "evidence_recall": 1.0,
+      "citation_precision": 0.3333333333333333,
+      "answer_verdict": "correct",
+      "answer_score": 1.0,
+      "answer_rationale": "The predicted answer correctly states that operations activities brought in the most cash flow, fully matching the gold answer and providing correct supporting figures.",
+      "predicted_answer": "Operations activities brought in the most cash flow for Nike in FY2023, providing $5,841 million [PAGE 62]. In comparison, investing activities provided $564 million, while financing activities resulted in a cash outflow of $7,447 million [PAGE 62].",
+      "citation_count": 3,
+      "input_tokens": 1980,
+      "output_tokens": 249,
+      "total_tokens": 2229,
+      "latency_ms": 5604,
+      "adapter_mode": "tfidf_vector_search_plus_rerank",
+      "model": "deepseek/deepseek-v4-pro",
+      "method_average_total_tokens": 2298.75
+    },
+    {
+      "question_id": "fb_mvp_009",
+      "company": "Nike",
+      "doc_name": "NIKE_2023_10K",
+      "question_type": "domain-relevant",
+      "question_reasoning": "Numerical reasoning",
+      "question": "Among operations, investing, and financing activities, which brought in the most (or lost the least) cash flow for Nike in FY2023?",
+      "gold_answer": "Among the three, cash flow from operations was the highest for Nike in FY2023.",
+      "gold_pages_one_indexed": [
+        62
+      ],
+      "method_key": "hybrid_rag",
+      "method_label": "Hybrid RAG",
+      "predicted_pages": [
+        62,
+        69,
+        93
+      ],
+      "matched_pages_zero_indexed": [
+        61
+      ],
+      "evidence_recall": 1.0,
+      "citation_precision": 0.3333333333333333,
+      "answer_verdict": "correct",
+      "answer_score": 1.0,
+      "answer_rationale": "The predicted answer correctly states that operations brought in the most cash, which matches the gold answer that cash flow from operations was the highest. The numbers provided further confirm the correctness.",
+      "predicted_answer": "Operations brought in the most cash for Nike in FY2023, generating $5,841 million. Investing activities provided $564 million, while financing activities used $7,447 million [PAGE 62 | CHUNK p62_c0][PAGE 62 | CHUNK p62_c1].",
+      "citation_count": 3,
+      "input_tokens": 1980,
+      "output_tokens": 326,
+      "total_tokens": 2306,
+      "latency_ms": 7318,
+      "adapter_mode": "bm25_tfidf_rrf_plus_rerank",
+      "model": "deepseek/deepseek-v4-pro",
+      "method_average_total_tokens": 2412.5
+    },
+    {
+      "question_id": "fb_mvp_010",
+      "company": "Amcor",
+      "doc_name": "AMCOR_2023Q4_EARNINGS",
+      "question_type": "novel-generated",
+      "question_reasoning": "",
+      "question": "What Was AMCOR's Adjusted Non GAAP EBITDA for FY 2023",
+      "gold_answer": "AMCOR's Adj. EBITDA was $2,018mn in FY 2023",
+      "gold_pages_one_indexed": [
+        12
+      ],
+      "method_key": "pageindex",
+      "method_label": "PageIndex",
+      "predicted_pages": [
+        11,
+        7,
+        12
+      ],
+      "matched_pages_zero_indexed": [
+        11
+      ],
+      "evidence_recall": 1.0,
+      "citation_precision": 0.3333333333333333,
+      "answer_verdict": "correct",
+      "answer_score": 1.0,
+      "answer_rationale": "The predicted answer states Amcor's Adjusted Non-GAAP EBITDA for FY 2023 was $2,018 million, which exactly matches the gold answer of $2,018mn. The slight wording differences and additional source citation do not affect correctness.",
+      "predicted_answer": "According to the provided document pages, Amcor's Adjusted Non-GAAP EBITDA for the twelve months ended June 30, 2023 (FY 2023) was $2,018 million.\n\n**Source:** Page 12",
+      "citation_count": 3,
+      "input_tokens": 3647,
+      "output_tokens": 335,
+      "total_tokens": 3982,
+      "latency_ms": 5928,
+      "adapter_mode": "tree_page_scoring",
+      "model": null,
+      "method_average_total_tokens": 2984.25
+    },
+    {
+      "question_id": "fb_mvp_010",
+      "company": "Amcor",
+      "doc_name": "AMCOR_2023Q4_EARNINGS",
+      "question_type": "novel-generated",
+      "question_reasoning": "",
+      "question": "What Was AMCOR's Adjusted Non GAAP EBITDA for FY 2023",
+      "gold_answer": "AMCOR's Adj. EBITDA was $2,018mn in FY 2023",
+      "gold_pages_one_indexed": [
+        12
+      ],
+      "method_key": "long_context",
+      "method_label": "Long-context",
+      "predicted_pages": [
+        1,
+        12,
+        7
+      ],
+      "matched_pages_zero_indexed": [
+        11
+      ],
+      "evidence_recall": 1.0,
+      "citation_precision": 0.3333333333333333,
+      "answer_verdict": "correct",
+      "answer_score": 1.0,
+      "answer_rationale": "The predicted answer states Amcor's Adjusted Non-GAAP EBITDA for FY 2023 as $2,018 million, which exactly matches the gold answer's $2,018mn for the same period.",
+      "predicted_answer": "Amcor's Adjusted Non-GAAP EBITDA for fiscal year 2023 was $2,018 million [PAGE 1][PAGE 12].",
+      "citation_count": 3,
+      "input_tokens": 11286,
+      "output_tokens": 327,
+      "total_tokens": 11613,
+      "latency_ms": 8325,
+      "adapter_mode": "full_document_context",
+      "model": "deepseek/deepseek-v4-pro",
+      "method_average_total_tokens": 84843.083
+    },
+    {
+      "question_id": "fb_mvp_010",
+      "company": "Amcor",
+      "doc_name": "AMCOR_2023Q4_EARNINGS",
+      "question_type": "novel-generated",
+      "question_reasoning": "",
+      "question": "What Was AMCOR's Adjusted Non GAAP EBITDA for FY 2023",
+      "gold_answer": "AMCOR's Adj. EBITDA was $2,018mn in FY 2023",
+      "gold_pages_one_indexed": [
+        12
+      ],
+      "method_key": "vector_rag",
+      "method_label": "Vector RAG + reranker",
+      "predicted_pages": [
+        11,
+        12,
+        1
+      ],
+      "matched_pages_zero_indexed": [
+        11
+      ],
+      "evidence_recall": 1.0,
+      "citation_precision": 0.3333333333333333,
+      "answer_verdict": "correct",
+      "answer_score": 1.0,
+      "answer_rationale": "The predicted answer states the same company, metric, fiscal year, and amount as the gold answer: $2,018 million for Amcor's adjusted non-GAAP EBITDA in FY 2023.",
+      "predicted_answer": "Amcor's adjusted non-GAAP EBITDA for FY 2023 was $2,018 million [PAGE 12 | CHUNK p12_c0] [PAGE 1 | CHUNK p1_c2].",
+      "citation_count": 3,
+      "input_tokens": 2339,
+      "output_tokens": 329,
+      "total_tokens": 2668,
+      "latency_ms": 7132,
+      "adapter_mode": "tfidf_vector_search_plus_rerank",
+      "model": "deepseek/deepseek-v4-pro",
+      "method_average_total_tokens": 2298.75
+    },
+    {
+      "question_id": "fb_mvp_010",
+      "company": "Amcor",
+      "doc_name": "AMCOR_2023Q4_EARNINGS",
+      "question_type": "novel-generated",
+      "question_reasoning": "",
+      "question": "What Was AMCOR's Adjusted Non GAAP EBITDA for FY 2023",
+      "gold_answer": "AMCOR's Adj. EBITDA was $2,018mn in FY 2023",
+      "gold_pages_one_indexed": [
+        12
+      ],
+      "method_key": "hybrid_rag",
+      "method_label": "Hybrid RAG",
+      "predicted_pages": [
+        12,
+        11,
+        7
+      ],
+      "matched_pages_zero_indexed": [
+        11
+      ],
+      "evidence_recall": 1.0,
+      "citation_precision": 0.3333333333333333,
+      "answer_verdict": "correct",
+      "answer_score": 1.0,
+      "answer_rationale": "The predicted answer states Amcor's Adjusted Non-GAAP EBITDA for FY 2023 as $2,018 million, which matches the gold answer's $2,018mn exactly. The additional detail (twelve months ended June 30, 2023) does not conflict and the value is fully correct.",
+      "predicted_answer": "Amcor's Adjusted Non-GAAP EBITDA for FY 2023 (the twelve months ended June 30, 2023) was $2,018 million [PAGE 12].",
+      "citation_count": 3,
+      "input_tokens": 2339,
+      "output_tokens": 242,
+      "total_tokens": 2581,
+      "latency_ms": 7516,
+      "adapter_mode": "bm25_tfidf_rrf_plus_rerank",
+      "model": "deepseek/deepseek-v4-pro",
+      "method_average_total_tokens": 2412.5
+    },
+    {
+      "question_id": "fb_mvp_011",
+      "company": "JPMorgan",
+      "doc_name": "JPMORGAN_2023Q2_10Q",
+      "question_type": "novel-generated",
+      "question_reasoning": "",
+      "question": "Looking at VaR, did the risk that JPM faced in the second fiscal quarter of 2023 decrease compared to the same period in the prior year?",
+      "gold_answer": "Yes. It decreased.",
+      "gold_pages_one_indexed": [
+        85
+      ],
+      "method_key": "pageindex",
+      "method_label": "PageIndex",
+      "predicted_pages": [
+        85,
+        54,
+        87
+      ],
+      "matched_pages_zero_indexed": [
+        84
+      ],
+      "evidence_recall": 1.0,
+      "citation_precision": 0.3333333333333333,
+      "answer_verdict": "correct",
+      "answer_score": 1.0,
+      "answer_rationale": "The predicted answer correctly states that the risk decreased, which matches the gold answer. The additional detail does not alter correctness.",
+      "predicted_answer": "Yes, the risk decreased. According to page 85, the average total VaR \"decreased by $7 million for the three months ended June 30, 2023, compared with the same period in the prior year.\"",
+      "citation_count": 3,
+      "input_tokens": 3886,
+      "output_tokens": 336,
+      "total_tokens": 4222,
+      "latency_ms": 5659,
+      "adapter_mode": "tree_page_scoring",
+      "model": null,
+      "method_average_total_tokens": 2984.25
+    },
+    {
+      "question_id": "fb_mvp_011",
+      "company": "JPMorgan",
+      "doc_name": "JPMORGAN_2023Q2_10Q",
+      "question_type": "novel-generated",
+      "question_reasoning": "",
+      "question": "Looking at VaR, did the risk that JPM faced in the second fiscal quarter of 2023 decrease compared to the same period in the prior year?",
+      "gold_answer": "Yes. It decreased.",
+      "gold_pages_one_indexed": [
+        85
+      ],
+      "method_key": "long_context",
+      "method_label": "Long-context",
+      "predicted_pages": [
+        85,
+        54,
+        8
+      ],
+      "matched_pages_zero_indexed": [
+        84
+      ],
+      "evidence_recall": 1.0,
+      "citation_precision": 0.3333333333333333,
+      "answer_verdict": "correct",
+      "answer_score": 1.0,
+      "answer_rationale": "The predicted answer correctly states that the VaR decreased, which fully matches the gold answer 'Yes. It decreased.' The extra details do not contradict or deviate from this, making it correct.",
+      "predicted_answer": "Yes, the VaR decreased. For the second quarter of 2023, average total VaR was $47 million, compared to $54 million in the same period of the prior year, a decrease of $7 million driven by reductions in Credit Portfolio VaR and fixed income risk. [PAGE 85]",
+      "citation_count": 3,
+      "input_tokens": 199177,
+      "output_tokens": 452,
+      "total_tokens": 199629,
+      "latency_ms": 28837,
+      "adapter_mode": "full_document_context",
+      "model": "deepseek/deepseek-v4-pro",
+      "method_average_total_tokens": 84843.083
+    },
+    {
+      "question_id": "fb_mvp_011",
+      "company": "JPMorgan",
+      "doc_name": "JPMORGAN_2023Q2_10Q",
+      "question_type": "novel-generated",
+      "question_reasoning": "",
+      "question": "Looking at VaR, did the risk that JPM faced in the second fiscal quarter of 2023 decrease compared to the same period in the prior year?",
+      "gold_answer": "Yes. It decreased.",
+      "gold_pages_one_indexed": [
+        85
+      ],
+      "method_key": "vector_rag",
+      "method_label": "Vector RAG + reranker",
+      "predicted_pages": [
+        85,
+        54,
+        67
+      ],
+      "matched_pages_zero_indexed": [
+        84
+      ],
+      "evidence_recall": 1.0,
+      "citation_precision": 0.3333333333333333,
+      "answer_verdict": "correct",
+      "answer_score": 1.0,
+      "answer_rationale": "The predicted answer directly states that the risk decreased, matching the gold answer exactly. The additional detail about the $7 million decrease and reference to page 85 is consistent and does not introduce any error.",
+      "predicted_answer": "Yes, the risk decreased. Average total VaR decreased by $7 million for the three months ended June 30, 2023, compared with the same period in the prior year [PAGE 85].",
+      "citation_count": 3,
+      "input_tokens": 1754,
+      "output_tokens": 247,
+      "total_tokens": 2001,
+      "latency_ms": 7031,
+      "adapter_mode": "tfidf_vector_search_plus_rerank",
+      "model": "deepseek/deepseek-v4-pro",
+      "method_average_total_tokens": 2298.75
+    },
+    {
+      "question_id": "fb_mvp_011",
+      "company": "JPMorgan",
+      "doc_name": "JPMORGAN_2023Q2_10Q",
+      "question_type": "novel-generated",
+      "question_reasoning": "",
+      "question": "Looking at VaR, did the risk that JPM faced in the second fiscal quarter of 2023 decrease compared to the same period in the prior year?",
+      "gold_answer": "Yes. It decreased.",
+      "gold_pages_one_indexed": [
+        85
+      ],
+      "method_key": "hybrid_rag",
+      "method_label": "Hybrid RAG",
+      "predicted_pages": [
+        85,
+        54,
+        56
+      ],
+      "matched_pages_zero_indexed": [
+        84
+      ],
+      "evidence_recall": 1.0,
+      "citation_precision": 0.3333333333333333,
+      "answer_verdict": "correct",
+      "answer_score": 1.0,
+      "answer_rationale": "The predicted answer correctly states that the risk decreased and provides supporting detail that matches the gold answer's conclusion.",
+      "predicted_answer": "Yes, the risk decreased. Average total VaR decreased by $7 million for the three months ended June 30, 2023, compared with the same period in the prior year [PAGE 85].",
+      "citation_count": 3,
+      "input_tokens": 1754,
+      "output_tokens": 308,
+      "total_tokens": 2062,
+      "latency_ms": 8823,
+      "adapter_mode": "bm25_tfidf_rrf_plus_rerank",
+      "model": "deepseek/deepseek-v4-pro",
+      "method_average_total_tokens": 2412.5
+    },
+    {
+      "question_id": "fb_mvp_012",
+      "company": "Johnson & Johnson",
+      "doc_name": "JOHNSON_JOHNSON_2023_8K_dated-2023-08-30",
+      "question_type": "novel-generated",
+      "question_reasoning": "",
+      "question": "Which business segment of JnJ will be treated as a discontinued operation from August 30, 2023 onward?",
+      "gold_answer": "The Consumer Health business segment will be treated as a discontinued operation from August 30, 2023 onward.",
+      "gold_pages_one_indexed": [
+        4
+      ],
+      "method_key": "pageindex",
+      "method_label": "PageIndex",
+      "predicted_pages": [
+        4,
+        6,
+        8
+      ],
+      "matched_pages_zero_indexed": [
+        3
+      ],
+      "evidence_recall": 1.0,
+      "citation_precision": 0.3333333333333333,
+      "answer_verdict": "correct",
+      "answer_score": 1.0,
+      "answer_rationale": "The predicted answer identifies the same business segment (Consumer Health) and the same effective date (August 30, 2023) as the gold answer. The slight wording difference ('Consumer Health business' vs 'Consumer Health business segment') does not change the meaning or completeness.",
+      "predicted_answer": "The Consumer Health business will be treated as a discontinued operation from August 30, 2023 onward (Page 4).",
+      "citation_count": 3,
+      "input_tokens": 2107,
+      "output_tokens": 176,
+      "total_tokens": 2283,
+      "latency_ms": 4082,
+      "adapter_mode": "tree_page_scoring",
+      "model": null,
+      "method_average_total_tokens": 2984.25
+    },
+    {
+      "question_id": "fb_mvp_012",
+      "company": "Johnson & Johnson",
+      "doc_name": "JOHNSON_JOHNSON_2023_8K_dated-2023-08-30",
+      "question_type": "novel-generated",
+      "question_reasoning": "",
+      "question": "Which business segment of JnJ will be treated as a discontinued operation from August 30, 2023 onward?",
+      "gold_answer": "The Consumer Health business segment will be treated as a discontinued operation from August 30, 2023 onward.",
+      "gold_pages_one_indexed": [
+        4
+      ],
+      "method_key": "long_context",
+      "method_label": "Long-context",
+      "predicted_pages": [
+        4,
+        6,
+        8
+      ],
+      "matched_pages_zero_indexed": [
+        3
+      ],
+      "evidence_recall": 1.0,
+      "citation_precision": 0.3333333333333333,
+      "answer_verdict": "correct",
+      "answer_score": 1.0,
+      "answer_rationale": "The predicted answer identifies the Consumer Health business segment as the discontinued operation, matching the gold answer exactly in substance. The additional \"[PAGE 4]\" is just a source reference and does not affect correctness.",
+      "predicted_answer": "The Consumer Health business segment will be treated as a discontinued operation [PAGE 4].",
+      "citation_count": 3,
+      "input_tokens": 17089,
+      "output_tokens": 180,
+      "total_tokens": 17269,
+      "latency_ms": 3753,
+      "adapter_mode": "full_document_context",
+      "model": "deepseek/deepseek-v4-pro",
+      "method_average_total_tokens": 84843.083
+    },
+    {
+      "question_id": "fb_mvp_012",
+      "company": "Johnson & Johnson",
+      "doc_name": "JOHNSON_JOHNSON_2023_8K_dated-2023-08-30",
+      "question_type": "novel-generated",
+      "question_reasoning": "",
+      "question": "Which business segment of JnJ will be treated as a discontinued operation from August 30, 2023 onward?",
+      "gold_answer": "The Consumer Health business segment will be treated as a discontinued operation from August 30, 2023 onward.",
+      "gold_pages_one_indexed": [
+        4
+      ],
+      "method_key": "vector_rag",
+      "method_label": "Vector RAG + reranker",
+      "predicted_pages": [
+        4,
+        6,
+        8
+      ],
+      "matched_pages_zero_indexed": [
+        3
+      ],
+      "evidence_recall": 1.0,
+      "citation_precision": 0.3333333333333333,
+      "answer_verdict": "correct",
+      "answer_score": 1.0,
+      "answer_rationale": "The predicted answer correctly identifies the Consumer Health business as the segment to be treated as a discontinued operation, matching the gold answer's specification of the Consumer Health business segment. The citation '[PAGE 4]' does not affect the correctness.",
+      "predicted_answer": "The Consumer Health business will be treated as a discontinued operation [PAGE 4].",
+      "citation_count": 3,
+      "input_tokens": 1726,
+      "output_tokens": 188,
+      "total_tokens": 1914,
+      "latency_ms": 5106,
+      "adapter_mode": "tfidf_vector_search_plus_rerank",
+      "model": "deepseek/deepseek-v4-pro",
+      "method_average_total_tokens": 2298.75
+    },
+    {
+      "question_id": "fb_mvp_012",
+      "company": "Johnson & Johnson",
+      "doc_name": "JOHNSON_JOHNSON_2023_8K_dated-2023-08-30",
+      "question_type": "novel-generated",
+      "question_reasoning": "",
+      "question": "Which business segment of JnJ will be treated as a discontinued operation from August 30, 2023 onward?",
+      "gold_answer": "The Consumer Health business segment will be treated as a discontinued operation from August 30, 2023 onward.",
+      "gold_pages_one_indexed": [
+        4
+      ],
+      "method_key": "hybrid_rag",
+      "method_label": "Hybrid RAG",
+      "predicted_pages": [
+        4,
+        6,
+        8
+      ],
+      "matched_pages_zero_indexed": [
+        3
+      ],
+      "evidence_recall": 1.0,
+      "citation_precision": 0.3333333333333333,
+      "answer_verdict": "correct",
+      "answer_score": 1.0,
+      "answer_rationale": "The predicted answer correctly identifies the Consumer Health business (segment) as the discontinued operation, which fully matches the gold answer. The citation '[PAGE 4]' does not affect correctness.",
+      "predicted_answer": "The Consumer Health business will be treated as a discontinued operation [PAGE 4].",
+      "citation_count": 3,
+      "input_tokens": 1726,
+      "output_tokens": 179,
+      "total_tokens": 1905,
+      "latency_ms": 5626,
+      "adapter_mode": "bm25_tfidf_rrf_plus_rerank",
+      "model": "deepseek/deepseek-v4-pro",
+      "method_average_total_tokens": 2412.5
+    }
+  ]
+}

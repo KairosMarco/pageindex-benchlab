@@ -1,0 +1,399 @@
+{
+  "summary": {
+    "status": "pass",
+    "question_count": 12,
+    "method_count": 4,
+    "check_count": 39,
+    "failed_check_count": 0
+  },
+  "method_summaries": [
+    {
+      "key": "pageindex",
+      "label": "PageIndex",
+      "result_count": 12,
+      "evidence_eval": "reports\\pageindex\\evidence_eval_llm.json",
+      "answer_eval": "reports\\pageindex\\answer_eval_llm.json",
+      "computed_average_evidence_recall": 1.0,
+      "computed_average_citation_precision": 0.3333333333333333,
+      "computed_answer_accuracy": 1.0,
+      "computed_average_answer_score": 1.0
+    },
+    {
+      "key": "long_context",
+      "label": "Long-context",
+      "result_count": 12,
+      "evidence_eval": "reports\\long_context\\evidence_eval_llm.json",
+      "answer_eval": "reports\\long_context\\answer_eval_llm.json",
+      "computed_average_evidence_recall": 0.9166666666666666,
+      "computed_average_citation_precision": 0.3055555555555555,
+      "computed_answer_accuracy": 1.0,
+      "computed_average_answer_score": 1.0
+    },
+    {
+      "key": "vector_rag",
+      "label": "Vector RAG + reranker",
+      "result_count": 12,
+      "evidence_eval": "reports\\vector_rag\\evidence_eval_llm.json",
+      "answer_eval": "reports\\vector_rag\\answer_eval_llm.json",
+      "computed_average_evidence_recall": 1.0,
+      "computed_average_citation_precision": 0.3333333333333333,
+      "computed_answer_accuracy": 0.9166666666666666,
+      "computed_average_answer_score": 0.9166666666666666
+    },
+    {
+      "key": "hybrid_rag",
+      "label": "Hybrid RAG",
+      "result_count": 12,
+      "evidence_eval": "reports\\hybrid_rag\\evidence_eval_llm.json",
+      "answer_eval": "reports\\hybrid_rag\\answer_eval_llm.json",
+      "computed_average_evidence_recall": 1.0,
+      "computed_average_citation_precision": 0.3333333333333333,
+      "computed_answer_accuracy": 1.0,
+      "computed_average_answer_score": 1.0
+    }
+  ],
+  "detailed_report_summary": {
+    "record_count": 48,
+    "failure_or_risk_count": 2
+  },
+  "checks": [
+    {
+      "name": "pageindex: result count matches question count",
+      "status": "pass",
+      "details": {
+        "missing": [],
+        "extra": []
+      }
+    },
+    {
+      "name": "pageindex: evidence eval covers all questions",
+      "status": "pass",
+      "details": {
+        "missing": [],
+        "extra": []
+      }
+    },
+    {
+      "name": "pageindex: answer eval covers all questions",
+      "status": "pass",
+      "details": {
+        "missing": [],
+        "extra": []
+      }
+    },
+    {
+      "name": "pageindex: no missing token usage",
+      "status": "pass",
+      "details": {
+        "missing_question_ids": []
+      }
+    },
+    {
+      "name": "pageindex: no missing latency",
+      "status": "pass",
+      "details": {
+        "missing_question_ids": []
+      }
+    },
+    {
+      "name": "pageindex: evidence recall summary matches per-question rows",
+      "status": "pass",
+      "details": {
+        "computed": 1.0,
+        "summary": 1.0
+      }
+    },
+    {
+      "name": "pageindex: citation precision summary matches per-question rows",
+      "status": "pass",
+      "details": {
+        "computed": 0.3333333333333333,
+        "summary": 0.3333333333333333
+      }
+    },
+    {
+      "name": "pageindex: answer accuracy summary matches per-question rows",
+      "status": "pass",
+      "details": {
+        "computed": 1.0,
+        "summary": 1.0
+      }
+    },
+    {
+      "name": "pageindex: answer score summary matches per-question rows",
+      "status": "pass",
+      "details": {
+        "computed": 1.0,
+        "summary": 1.0
+      }
+    },
+    {
+      "name": "long_context: result count matches question count",
+      "status": "pass",
+      "details": {
+        "missing": [],
+        "extra": []
+      }
+    },
+    {
+      "name": "long_context: evidence eval covers all questions",
+      "status": "pass",
+      "details": {
+        "missing": [],
+        "extra": []
+      }
+    },
+    {
+      "name": "long_context: answer eval covers all questions",
+      "status": "pass",
+      "details": {
+        "missing": [],
+        "extra": []
+      }
+    },
+    {
+      "name": "long_context: no missing token usage",
+      "status": "pass",
+      "details": {
+        "missing_question_ids": []
+      }
+    },
+    {
+      "name": "long_context: no missing latency",
+      "status": "pass",
+      "details": {
+        "missing_question_ids": []
+      }
+    },
+    {
+      "name": "long_context: evidence recall summary matches per-question rows",
+      "status": "pass",
+      "details": {
+        "computed": 0.9166666666666666,
+        "summary": 0.9166666666666666
+      }
+    },
+    {
+      "name": "long_context: citation precision summary matches per-question rows",
+      "status": "pass",
+      "details": {
+        "computed": 0.3055555555555555,
+        "summary": 0.3055555555555555
+      }
+    },
+    {
+      "name": "long_context: answer accuracy summary matches per-question rows",
+      "status": "pass",
+      "details": {
+        "computed": 1.0,
+        "summary": 1.0
+      }
+    },
+    {
+      "name": "long_context: answer score summary matches per-question rows",
+      "status": "pass",
+      "details": {
+        "computed": 1.0,
+        "summary": 1.0
+      }
+    },
+    {
+      "name": "vector_rag: result count matches question count",
+      "status": "pass",
+      "details": {
+        "missing": [],
+        "extra": []
+      }
+    },
+    {
+      "name": "vector_rag: evidence eval covers all questions",
+      "status": "pass",
+      "details": {
+        "missing": [],
+        "extra": []
+      }
+    },
+    {
+      "name": "vector_rag: answer eval covers all questions",
+      "status": "pass",
+      "details": {
+        "missing": [],
+        "extra": []
+      }
+    },
+    {
+      "name": "vector_rag: no missing token usage",
+      "status": "pass",
+      "details": {
+        "missing_question_ids": []
+      }
+    },
+    {
+      "name": "vector_rag: no missing latency",
+      "status": "pass",
+      "details": {
+        "missing_question_ids": []
+      }
+    },
+    {
+      "name": "vector_rag: evidence recall summary matches per-question rows",
+      "status": "pass",
+      "details": {
+        "computed": 1.0,
+        "summary": 1.0
+      }
+    },
+    {
+      "name": "vector_rag: citation precision summary matches per-question rows",
+      "status": "pass",
+      "details": {
+        "computed": 0.3333333333333333,
+        "summary": 0.3333333333333333
+      }
+    },
+    {
+      "name": "vector_rag: answer accuracy summary matches per-question rows",
+      "status": "pass",
+      "details": {
+        "computed": 0.9166666666666666,
+        "summary": 0.9166666666666666
+      }
+    },
+    {
+      "name": "vector_rag: answer score summary matches per-question rows",
+      "status": "pass",
+      "details": {
+        "computed": 0.9166666666666666,
+        "summary": 0.9166666666666666
+      }
+    },
+    {
+      "name": "hybrid_rag: result count matches question count",
+      "status": "pass",
+      "details": {
+        "missing": [],
+        "extra": []
+      }
+    },
+    {
+      "name": "hybrid_rag: evidence eval covers all questions",
+      "status": "pass",
+      "details": {
+        "missing": [],
+        "extra": []
+      }
+    },
+    {
+      "name": "hybrid_rag: answer eval covers all questions",
+      "status": "pass",
+      "details": {
+        "missing": [],
+        "extra": []
+      }
+    },
+    {
+      "name": "hybrid_rag: no missing token usage",
+      "status": "pass",
+      "details": {
+        "missing_question_ids": []
+      }
+    },
+    {
+      "name": "hybrid_rag: no missing latency",
+      "status": "pass",
+      "details": {
+        "missing_question_ids": []
+      }
+    },
+    {
+      "name": "hybrid_rag: evidence recall summary matches per-question rows",
+      "status": "pass",
+      "details": {
+        "computed": 1.0,
+        "summary": 1.0
+      }
+    },
+    {
+      "name": "hybrid_rag: citation precision summary matches per-question rows",
+      "status": "pass",
+      "details": {
+        "computed": 0.3333333333333333,
+        "summary": 0.3333333333333333
+      }
+    },
+    {
+      "name": "hybrid_rag: answer accuracy summary matches per-question rows",
+      "status": "pass",
+      "details": {
+        "computed": 1.0,
+        "summary": 1.0
+      }
+    },
+    {
+      "name": "hybrid_rag: answer score summary matches per-question rows",
+      "status": "pass",
+      "details": {
+        "computed": 1.0,
+        "summary": 1.0
+      }
+    },
+    {
+      "name": "detailed report record count matches questions x methods",
+      "status": "pass",
+      "details": {
+        "expected": 48,
+        "actual": 48
+      }
+    },
+    {
+      "name": "detailed report covers every question-method pair",
+      "status": "pass",
+      "details": {
+        "missing": [],
+        "extra": []
+      }
+    },
+    {
+      "name": "known Vector RAG Boeing failure is preserved",
+      "status": "pass",
+      "details": {
+        "record": {
+          "question_id": "fb_mvp_006",
+          "company": "Boeing",
+          "doc_name": "BOEING_2022_10K",
+          "question_type": "domain-relevant",
+          "question_reasoning": "Information extraction",
+          "question": "Has Boeing reported any materially important ongoing legal battles from FY2022?",
+          "gold_answer": "Yes. Multiple lawsuits have been filed against Boeing resulting from a 2018 Lion Air crash and a 2019 Ethiopian Airlines crash.",
+          "gold_pages_one_indexed": [
+            113
+          ],
+          "method_key": "vector_rag",
+          "method_label": "Vector RAG + reranker",
+          "predicted_pages": [
+            113,
+            19,
+            47
+          ],
+          "matched_pages_zero_indexed": [
+            112
+          ],
+          "evidence_recall": 1.0,
+          "citation_precision": 0.3333333333333333,
+          "answer_verdict": "incorrect",
+          "answer_score": 0.0,
+          "answer_rationale": "The gold answer states that Boeing has reported materially important ongoing legal battles (yes). The predicted answer acknowledges the litigation but states that Boeing does not believe it will have a material effect, effectively denying the materiality and contradicting the gold answer.",
+          "predicted_answer": "Based on the provided document chunks, Boeing reported ongoing litigation related to the 737 MAX accidents, but stated that it does not believe the outcome will have a material effect [PAGE 113]. The company disclosed that multiple legal actions were filed as a result of the Lion Air Flight 610 and Ethiopian Airlines Flight 302 accidents [PAGE 19 | PAGE 113]. While a shareholder derivative settlement and an SEC investigation were concluded in 2022, the underlying accident-related legal proceedings were still ongoing [PAGE 113].",
+          "citation_count": 3,
+          "input_tokens": 1773,
+          "output_tokens": 457,
+          "total_tokens": 2230,
+          "latency_ms": 11254,
+          "adapter_mode": "tfidf_vector_search_plus_rerank",
+          "model": "deepseek/deepseek-v4-pro",
+          "method_average_total_tokens": 2298.75
+        }
+      }
+    }
+  ]
+}

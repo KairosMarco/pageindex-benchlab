@@ -489,6 +489,18 @@ Generated aggregate reports:
 ```text
 reports/stage1_metrics_summary.md
 reports/stage1_metrics_summary.json
+reports/stage1_detailed_evidence_report.md
+reports/stage1_detailed_evidence_report.json
+reports/stage1_per_question_results.csv
+reports/stage1_validation_report.json
+```
+
+Current artifact validation:
+
+```text
+scripts/validate_stage1_artifacts.py
+39 checks passed
+0 failed checks
 ```
 
 Generated Vector/Hybrid artifacts:
