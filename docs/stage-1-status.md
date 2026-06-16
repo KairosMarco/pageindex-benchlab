@@ -423,6 +423,21 @@ Long-context LLM: 12 / 12 correct, accuracy 1.000
 Vector RAG LLM: 11 / 12 correct, accuracy 0.917
 ```
 
+Current token and latency summary:
+
+```text
+PageIndex LLM: average total tokens 2,984; average latency 7,157 ms
+Long-context LLM: average total tokens 84,843; average latency 14,939 ms
+Vector RAG LLM: average total tokens 2,299; average latency 7,382 ms
+```
+
+Generated aggregate reports:
+
+```text
+reports/stage1_metrics_summary.md
+reports/stage1_metrics_summary.json
+```
+
 Generated artifacts:
 
 ```text
@@ -438,10 +453,10 @@ reports/vector_rag/evidence_eval_llm.json
 
 The next work should convert this setup into actual benchmark execution:
 
-1. Add token and latency aggregation to the cross-method report.
-2. Implement Hybrid RAG baseline.
-3. Replace the dependency-light Vector RAG MVP with a LlamaIndex embedding + reranker implementation.
-4. Expand the FinanceBench subset beyond 12 questions.
+1. Implement Hybrid RAG baseline.
+2. Replace the dependency-light Vector RAG MVP with a LlamaIndex embedding + reranker implementation.
+3. Expand the FinanceBench subset beyond 12 questions.
+4. Prepare a PageIndex upstream issue or PR using the benchmark findings.
 
 ## Stage 1 Exit Criteria
 
@@ -463,4 +478,4 @@ The first 11 structures are now available. The JSON parsing patch made PageIndex
 Handled empty responses and noisy JSON output
 ```
 
-Next, add token/latency aggregation and Hybrid RAG.
+Next, add Hybrid RAG and expand the question set.

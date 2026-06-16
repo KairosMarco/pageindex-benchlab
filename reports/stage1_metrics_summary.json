@@ -1,0 +1,95 @@
+{
+  "summary": {
+    "method_count": 3,
+    "question_count": 12
+  },
+  "methods": [
+    {
+      "key": "pageindex",
+      "label": "PageIndex",
+      "result_count": 12,
+      "results_dir": "reports\\pageindex\\qa_llm",
+      "evidence_eval": "reports\\pageindex\\evidence_eval_llm.json",
+      "answer_eval": "reports\\pageindex\\answer_eval_llm.json",
+      "average_evidence_recall": 1.0,
+      "average_citation_precision": 0.3333333333333333,
+      "answer_accuracy": 1.0,
+      "average_answer_score": 1.0,
+      "answer_verdict_counts": {
+        "correct": 12,
+        "partial": 0,
+        "incorrect": 0
+      },
+      "total_input_tokens": 31336,
+      "total_output_tokens": 4475,
+      "total_tokens": 35811,
+      "average_input_tokens": 2611.333,
+      "average_output_tokens": 372.917,
+      "average_total_tokens": 2984.25,
+      "median_total_tokens": 2895.0,
+      "average_latency_ms": 7156.75,
+      "median_latency_ms": 6069.0,
+      "total_latency_ms": 85881,
+      "missing_token_usage_count": 0,
+      "missing_latency_count": 0
+    },
+    {
+      "key": "long_context",
+      "label": "Long-context",
+      "result_count": 12,
+      "results_dir": "reports\\long_context\\qa_llm",
+      "evidence_eval": "reports\\long_context\\evidence_eval_llm.json",
+      "answer_eval": "reports\\long_context\\answer_eval_llm.json",
+      "average_evidence_recall": 0.9166666666666666,
+      "average_citation_precision": 0.3055555555555555,
+      "answer_accuracy": 1.0,
+      "average_answer_score": 1.0,
+      "answer_verdict_counts": {
+        "correct": 12,
+        "partial": 0,
+        "incorrect": 0
+      },
+      "total_input_tokens": 1013398,
+      "total_output_tokens": 4719,
+      "total_tokens": 1018117,
+      "average_input_tokens": 84449.833,
+      "average_output_tokens": 393.25,
+      "average_total_tokens": 84843.083,
+      "median_total_tokens": 86211.5,
+      "average_latency_ms": 14938.5,
+      "median_latency_ms": 14691.5,
+      "total_latency_ms": 179262,
+      "missing_token_usage_count": 0,
+      "missing_latency_count": 0
+    },
+    {
+      "key": "vector_rag",
+      "label": "Vector RAG + reranker",
+      "result_count": 12,
+      "results_dir": "reports\\vector_rag\\qa_llm",
+      "evidence_eval": "reports\\vector_rag\\evidence_eval_llm.json",
+      "answer_eval": "reports\\vector_rag\\answer_eval_llm.json",
+      "average_evidence_recall": 1.0,
+      "average_citation_precision": 0.3333333333333333,
+      "answer_accuracy": 0.9166666666666666,
+      "average_answer_score": 0.9166666666666666,
+      "answer_verdict_counts": {
+        "correct": 11,
+        "partial": 0,
+        "incorrect": 1
+      },
+      "total_input_tokens": 23685,
+      "total_output_tokens": 3900,
+      "total_tokens": 27585,
+      "average_input_tokens": 1973.75,
+      "average_output_tokens": 325.0,
+      "average_total_tokens": 2298.75,
+      "median_total_tokens": 2281.5,
+      "average_latency_ms": 7381.75,
+      "median_latency_ms": 7081.5,
+      "total_latency_ms": 88581,
+      "missing_token_usage_count": 0,
+      "missing_latency_count": 0
+    }
+  ]
+}

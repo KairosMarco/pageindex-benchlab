@@ -80,6 +80,10 @@ Completed:
   - PageIndex: `1.000`
   - Long-context: `1.000`
   - Vector RAG + reranker MVP: `0.917`
+- Current average total tokens per answer:
+  - PageIndex: `2,984`
+  - Long-context: `84,843`
+  - Vector RAG + reranker MVP: `2,299`
 
 Current owner: project owner. PH is on standby for later task assignment.
 
@@ -251,6 +255,6 @@ A GPU may become useful later for local LLMs, large embedding jobs, or large rer
 3. Run PageIndex indexing on those PDFs.
 4. Run the PageIndex question-answering retrieval step. Completed for no-LLM retrieval mode.
 5. Implement the Hybrid RAG baseline.
-6. Add token and latency aggregation to the cross-method report.
-7. Implement the Hybrid RAG baseline.
-8. Replace the dependency-light Vector RAG MVP with a LlamaIndex embedding + reranker implementation.
+6. Replace the dependency-light Vector RAG MVP with a LlamaIndex embedding + reranker implementation.
+7. Expand the FinanceBench subset beyond 12 questions.
+8. Prepare a PageIndex upstream issue or PR using the benchmark findings.

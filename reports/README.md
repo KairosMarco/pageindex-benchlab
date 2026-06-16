@@ -7,6 +7,9 @@ Do not commit raw model outputs containing private or paid data unless they are 
 Current committed PageIndex MVP reports:
 
 ```text
+reports/stage1_metrics_summary.md
+reports/stage1_metrics_summary.json
+reports/stage1_retrieval_comparison.md
 reports/pageindex/pageindex_qa_mvp_report.md
 reports/pageindex/evidence_eval.json
 reports/pageindex/qa_manifest.json

@@ -4,23 +4,29 @@ Date: 2026-06-16
 
 ## Current Comparable Results
 
-| Method | Mode | Questions | Failures | Avg evidence recall | Avg citation precision | LLM-judge answer accuracy | Status |
-|---|---|---:|---:|---:|---:|---:|---|
-| PageIndex | Retrieval-only, tree page scoring | 12 | 0 | 1.000 | 0.333 | n/a | Completed |
-| Long-context | No-LLM smoke, lexical fallback citations | 12 | 0 | 0.583 | 0.194 | n/a | Wiring validated |
-| PageIndex | LLM answer generation, DeepSeek V4 Pro | 12 | 0 | 1.000 | 0.333 | 1.000 | Completed |
-| Long-context | LLM answer generation, DeepSeek V4 Pro | 12 | 0 | 0.917 | 0.306 | 1.000 | Completed |
-| Vector RAG + reranker | No-LLM retrieval, TF-IDF MVP | 12 | 0 | 1.000 | 0.333 | n/a | Completed |
-| Vector RAG + reranker | LLM answer generation, TF-IDF MVP + DeepSeek V4 Pro | 12 | 0 | 1.000 | 0.333 | 0.917 | Completed |
+| Method | Mode | Questions | Failures | Avg evidence recall | Avg citation precision | LLM-judge answer accuracy | Avg total tokens | Avg latency ms | Status |
+|---|---|---:|---:|---:|---:|---:|---:|---:|---|
+| PageIndex | LLM answer generation, DeepSeek V4 Pro | 12 | 0 | 1.000 | 0.333 | 1.000 | 2,984 | 7,157 | Completed |
+| Long-context | LLM answer generation, DeepSeek V4 Pro | 12 | 0 | 0.917 | 0.306 | 1.000 | 84,843 | 14,939 | Completed |
+| Vector RAG + reranker | LLM answer generation, TF-IDF MVP + DeepSeek V4 Pro | 12 | 0 | 1.000 | 0.333 | 0.917 | 2,299 | 7,382 | Completed |
+
+Retrieval-only and smoke-test results are retained in method-specific report folders. The table above focuses on answer-generating LLM runs.
 
 ## Notes
 
 - PageIndex currently has the best evidence recall and citation precision on the MVP subset.
-- Long-context LLM is a strong baseline, but it missed the gold evidence page for `fb_mvp_005`.
-- The dependency-light Vector RAG MVP matches PageIndex on page-level evidence for this small subset after reranking. The next comparison needs answer accuracy, latency, token use, and a larger question set.
+- Long-context LLM reaches perfect judged answer accuracy but uses roughly 28x the average total tokens of PageIndex in this MVP run.
+- The dependency-light Vector RAG MVP matches PageIndex on page-level evidence for this small subset after reranking, and uses the fewest tokens.
 - LLM-judge answer accuracy separates the methods: PageIndex and Long-context were judged correct on all 12 questions; Vector RAG had one incorrect answer on `fb_mvp_006`.
 - The Vector RAG miss is a useful failure case: it retrieved the correct legal-disclosure page, but the answer mixed the existence of lawsuits with Boeing's material-effect qualification.
-- The next comparison needs token use, latency, a larger question set, and a stronger embedding-based Vector RAG implementation.
+- The next comparison needs a larger question set and a stronger embedding-based Vector RAG implementation.
+
+Detailed token and latency aggregation is available at:
+
+```text
+reports/stage1_metrics_summary.md
+reports/stage1_metrics_summary.json
+```
 
 ## Next Runs
 

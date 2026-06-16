@@ -151,3 +151,16 @@ LLM judge mode:
 ```powershell
 python scripts\evaluate_answers_mvp.py --results-dir reports\pageindex\qa_llm --output reports\pageindex\answer_eval_llm.json --mode llm --model deepseek/deepseek-v4-pro --continue-on-error
 ```
+
+## Summarize Stage 1 Metrics
+
+```powershell
+python scripts\summarize_stage1_metrics.py
+```
+
+Outputs:
+
+```text
+reports/stage1_metrics_summary.json
+reports/stage1_metrics_summary.md
+```
