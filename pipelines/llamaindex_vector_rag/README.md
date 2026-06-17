@@ -27,16 +27,30 @@ questions: 12
 failures: 0
 evidence recall: 1.000
 citation precision: 0.333
+
+Finance-aware reranker, LLM, rerank_top_k=12:
+questions: 12
+failures: 0
+evidence recall: 1.000
+answer accuracy: 1.000
+average total tokens: 8,964
+
+Finance-aware reranker, LLM, rerank_top_k=3:
+questions: 12
+failures: 0
+evidence recall: 1.000
+answer accuracy: 1.000
+average total tokens: 2,424
 ```
 
 Interpretation:
 
 The generic embedding retriever often placed the gold page in a wider candidate set, but did not reliably rank the table evidence into the top three citations. The label-free finance-aware reranker improves top-three evidence retrieval on the 12-question FinanceBench MVP subset by boosting chunks that match the financial statement, year, and line item requested by the question.
 
-This is still a retrieval-only diagnostic result. It should not be treated as a complete replacement for the dependency-light Vector RAG MVP until answer generation, evidence evaluation, and answer judging have been run under the same Stage 1 protocol.
+The `rerank_top_k=3` LLM validation preserved answer accuracy while reducing average total tokens by about 73% versus the original `rerank_top_k=12` diagnostic. This is the recommended MVP configuration for the next larger-subset test.
 
 Next work:
 
-- Run LLM answer generation for `reports/llamaindex_vector_rag/qa_llm_finance/`.
-- Run evidence evaluation and LLM answer judging for the generated answers.
-- Promote this baseline into the main comparison only if the full answer-level report passes validation.
+- Run the `rerank_top_k=3` configuration on a larger FinanceBench subset.
+- Re-check whether the finance-aware reranker generalizes beyond the 12-question MVP subset.
+- Promote this baseline into the main comparison only after the larger-subset report passes validation.

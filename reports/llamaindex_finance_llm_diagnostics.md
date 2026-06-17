@@ -46,6 +46,7 @@ For this run, both candidate methods passed the mechanical promotion gate. The n
 - These results make the candidates materially stronger than the earlier generic LlamaIndex diagnostics.
 - The candidates used substantially more average tokens than the current PageIndex, dependency-light Vector RAG, and dependency-light Hybrid RAG rows because the LlamaIndex runs pass more retrieved chunk text into answer generation.
 - This still does not prove broad method superiority; the next larger subset must test whether the finance-aware reranker generalizes beyond the 12 MVP questions.
+- Follow-up context tuning found that `rerank_top_k=3` preserves 1.000 answer accuracy while reducing average total tokens by about 73%; see `reports/llamaindex_context_tuning.md`.
 
 ## Artifacts
 

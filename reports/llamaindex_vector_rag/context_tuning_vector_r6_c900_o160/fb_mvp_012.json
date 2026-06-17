@@ -1,0 +1,270 @@
+{
+  "method": "llamaindex_vector_rag",
+  "question_id": "fb_mvp_012",
+  "question": "Which business segment of JnJ will be treated as a discontinued operation from August 30, 2023 onward?",
+  "answer": "Retrieved 6 chunks with LlamaIndex vector retrieval and lightweight reranking.",
+  "citations": [
+    {
+      "document_id": "JOHNSON_JOHNSON_2023_8K_dated-2023-08-30",
+      "page": 4,
+      "section": null,
+      "text": "Exhibit 99.1 Johnson & Johnson Announces Updated Financials and 2023 Guidance Following Completion of the Kenvue Separation • Company expects increased 2023 Reported Sales Growth of 7.0% - 8.0%, Operational Sales Growth of 7.5% - 8.5%, and Adjusted Operational Sales Growth of 6.2% - 7.2%; Figures exclude the COVID-19 Vaccine • Company expects 2023 Adjusted Reported Earnings Per Share (EPS) of $10.00 - $10.10, reflecting increased growth of 12.5% at the mid-point and Adjusted Operational EPS of $",
+      "metadata": {
+        "chunk_id": "5f61c8fe-0f6b-4d96-90b9-347d073b4f85",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.4504418340292839,
+        "rerank_score": 108.58830104998721,
+        "matched_terms": [
+          "august",
+          "business",
+          "consumer",
+          "discontinued",
+          "health",
+          "jnj",
+          "kenvue",
+          "operations",
+          "separation",
+          "will"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "JOHNSON_JOHNSON_2023_8K_dated-2023-08-30",
+      "page": 6,
+      "section": null,
+      "text": "terial to Johnson & Johnson's results computed in accordance with GAAP. ($ in Billions, except EPS; Shares in Millions) August 2023 (excl. Consumer Health) July 2023 (incl. Consumer Health) Adjusted Operational Sales Change vs. Prior Year / Mid-point 6.2% – 7.2% / 6.7% 6.0% – 7.0% / 6.5% Operational Sales / Mid-point Change vs. Prior Year / Mid-point $83.6B – $84.4B / $84.0B 7.5% – 8.5% / 8.0% $99.3B – $100.3B / $99.8B 7.0% – 8.0% / 7.5% Reported Sales / Mid-point Change vs. Prior Year / Mid-poi",
+      "metadata": {
+        "chunk_id": "ee54ad37-b884-4774-88ff-bc0b0311cbb4",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.4611125483411691,
+        "rerank_score": 86.99360777529338,
+        "matched_terms": [
+          "august",
+          "consumer",
+          "health",
+          "kenvue",
+          "separation",
+          "will"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "JOHNSON_JOHNSON_2023_8K_dated-2023-08-30",
+      "page": 8,
+      "section": null,
+      "text": "regarding, among other things: future operating and financial performance, product development, and market position and business strategy. The reader is cautioned not to rely on these forward-looking statements. These statements are based on current expectations of future events. If underlying assumptions prove inaccurate or known or unknown risks or uncertainties materialize, actual results could vary materially from the expectations and projections of Johnson & Johnson. Risks and uncertainties",
+      "metadata": {
+        "chunk_id": "78d2995d-fce7-43e9-9f98-10dff144781c",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.47114415327082726,
+        "rerank_score": 78.02618003296507,
+        "matched_terms": [
+          "business",
+          "consumer",
+          "health",
+          "jnj",
+          "separation"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "llamaindex_build_vector_index",
+      "target": "JOHNSON_JOHNSON_2023_8K_dated-2023-08-30",
+      "metadata": {
+        "page_count": 27,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "chunk_size": 900,
+        "chunk_overlap": 160,
+        "retrieve_top_k": 120,
+        "rerank_top_k": 6,
+        "finance_rerank": true,
+        "answer_context_chunk_count": 6,
+        "answer_context_chars": 13564,
+        "answer_context_words": 2022
+      }
+    },
+    {
+      "step": 2,
+      "action": "llamaindex_retrieve_node",
+      "target": "5f61c8fe-0f6b-4d96-90b9-347d073b4f85",
+      "metadata": {
+        "page": 4,
+        "retrieval_rank": 8,
+        "initial_rank": 8,
+        "vector_score": 0.4504418340292839,
+        "rerank_score": 108.58830104998721,
+        "finance_boost": 39.75,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "requested_year_present",
+          "consumer_health_term",
+          "discontinued_operations_term"
+        ],
+        "matched_terms": [
+          "august",
+          "business",
+          "consumer",
+          "discontinued",
+          "health",
+          "jnj",
+          "kenvue",
+          "operations",
+          "separation",
+          "will"
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "action": "llamaindex_retrieve_node",
+      "target": "ee54ad37-b884-4774-88ff-bc0b0311cbb4",
+      "metadata": {
+        "page": 6,
+        "retrieval_rank": 5,
+        "initial_rank": 5,
+        "vector_score": 0.4611125483411691,
+        "rerank_score": 86.99360777529338,
+        "finance_boost": 28.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "requested_year_present",
+          "consumer_health_term"
+        ],
+        "matched_terms": [
+          "august",
+          "consumer",
+          "health",
+          "kenvue",
+          "separation",
+          "will"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "llamaindex_retrieve_node",
+      "target": "78d2995d-fce7-43e9-9f98-10dff144781c",
+      "metadata": {
+        "page": 8,
+        "retrieval_rank": 4,
+        "initial_rank": 4,
+        "vector_score": 0.47114415327082726,
+        "rerank_score": 78.02618003296507,
+        "finance_boost": 20.0,
+        "finance_boost_reasons": [
+          "requested_year_present",
+          "consumer_health_term"
+        ],
+        "matched_terms": [
+          "business",
+          "consumer",
+          "health",
+          "jnj",
+          "separation"
+        ]
+      }
+    },
+    {
+      "step": 5,
+      "action": "llamaindex_retrieve_node",
+      "target": "56975b6d-fece-4b40-a811-e1928202cc50",
+      "metadata": {
+        "page": 15,
+        "retrieval_rank": 15,
+        "initial_rank": 15,
+        "vector_score": 0.40524277569057415,
+        "rerank_score": 74.98751286317507,
+        "finance_boost": 25.875,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "requested_year_present",
+          "consumer_health_term"
+        ],
+        "matched_terms": [
+          "consumer",
+          "health",
+          "operations",
+          "separation"
+        ]
+      }
+    },
+    {
+      "step": 6,
+      "action": "llamaindex_retrieve_node",
+      "target": "65e7a1b7-cc81-43af-ad00-393968b086f1",
+      "metadata": {
+        "page": 27,
+        "retrieval_rank": 27,
+        "initial_rank": 27,
+        "vector_score": 0.3713319046152535,
+        "rerank_score": 73.3684845791724,
+        "finance_boost": 28.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "requested_year_present",
+          "consumer_health_term"
+        ],
+        "matched_terms": [
+          "consumer",
+          "health",
+          "operations",
+          "separation"
+        ]
+      }
+    },
+    {
+      "step": 7,
+      "action": "llamaindex_retrieve_node",
+      "target": "ef0a3b03-a0ad-408f-ab1c-24420380ffd1",
+      "metadata": {
+        "page": 12,
+        "retrieval_rank": 25,
+        "initial_rank": 25,
+        "vector_score": 0.37968677835231224,
+        "rerank_score": 73.26279548229006,
+        "finance_boost": 28.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "requested_year_present",
+          "discontinued_operations_term"
+        ],
+        "matched_terms": [
+          "discontinued",
+          "operations"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": null,
+    "output": null,
+    "total": null
+  },
+  "latency_ms": 10447,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\JOHNSON_JOHNSON_2023_8K_dated-2023-08-30.pdf",
+    "adapter_mode": "llamaindex_vector_retrieval",
+    "llm_enabled": false,
+    "model": null,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "page_count": 27,
+    "chunk_size": 900,
+    "chunk_overlap": 160,
+    "retrieve_top_k": 120,
+    "rerank_top_k": 6,
+    "max_citations": 3,
+    "finance_rerank": true,
+    "answer_context_chunk_count": 6,
+    "answer_context_chars": 13564,
+    "answer_context_words": 2022
+  }
+}

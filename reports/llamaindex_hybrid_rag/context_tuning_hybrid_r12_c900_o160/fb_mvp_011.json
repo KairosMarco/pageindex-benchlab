@@ -1,0 +1,493 @@
+{
+  "method": "llamaindex_hybrid_rag",
+  "question_id": "fb_mvp_011",
+  "question": "Looking at VaR, did the risk that JPM faced in the second fiscal quarter of 2023 decrease compared to the same period in the prior year?",
+  "answer": "Retrieved 12 chunks with LlamaIndex BM25/vector hybrid fusion.",
+  "citations": [
+    {
+      "document_id": "JPMORGAN_2023Q2_10Q",
+      "page": 85,
+      "section": null,
+      "text": "This VaR does not include the retained loan portfolio, which is not reported at fair value. In the first quarter of 2022, in line with the Firm's internal model governance, the credit risk component of CVA related to certain counterparties was removed from Credit Portfolio VaR due to the widening of the credit spreads for those counterparties to elevated levels. The related hedges were also removed to maintain consistency. This exposure is now reflected in other sensitivity-based measures. (c) C",
+      "metadata": {
+        "chunk_id": "68b6bb4e-bcca-4741-84e0-76dcbd804b74",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.6327237147203982,
+        "rerank_score": 86.28688524590164,
+        "matched_terms": [
+          "average",
+          "compared",
+          "market",
+          "period",
+          "prior",
+          "quarter",
+          "risk",
+          "same",
+          "second",
+          "var"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "JPMORGAN_2023Q2_10Q",
+      "page": 84,
+      "section": null,
+      "text": "MARKET RISK MANAGEMENT Market risk is the risk associated with the effect of changes in market factors such as interest and foreign exchange rates, equity and commodity prices, credit spreads or implied volatilities, on the value of assets and liabilities held for both the short and long term. Refer to Market Risk Management on pages 131-138 of JPMorgan Chase’s 2022 Form 10-K for a discussion of the Firm’s Market Risk Management organization, market risk measurement, risk monitoring and control,",
+      "metadata": {
+        "chunk_id": "31de7a7a-5d32-446e-bef5-5704f474d880",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.46718553073672403,
+        "rerank_score": 57.80549796588953,
+        "matched_terms": [
+          "market",
+          "period",
+          "risk",
+          "var"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "JPMORGAN_2023Q2_10Q",
+      "page": 54,
+      "section": null,
+      "text": "that are not transferable to non-bank affiliates. (e) End-of-period HQLA balances were $791.5 billion, $758.9 billion, and $721.1 billion for June 30, 2023, March 31, 2023 and June 30, 2022, respectively. The Firm’s average LCR decreased during the three months ended June 30, 2023, compared with the three months period ended March 31, 2023, due to long-term debt maturities, common stock repurchases and common stock dividends paid, predominantly offset by a dividend payment from JPMorgan Chase Ba",
+      "metadata": {
+        "chunk_id": "05536459-c9f3-49c0-8c56-741d92c5b91f",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.3994901818926249,
+        "rerank_score": 56.42857142857143,
+        "matched_terms": [
+          "average",
+          "compared",
+          "decrease",
+          "market",
+          "period",
+          "prior",
+          "risk",
+          "same"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "llamaindex_build_hybrid_index",
+      "target": "JPMORGAN_2023Q2_10Q",
+      "metadata": {
+        "page_count": 217,
+        "node_count": 351,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "chunk_size": 900,
+        "chunk_overlap": 160,
+        "vector_top_k": 120,
+        "bm25_top_k": 120,
+        "fusion_top_k": 120,
+        "rerank_top_k": 12,
+        "rrf_k": 60,
+        "finance_rerank": true,
+        "cross_encoder_model": null,
+        "cross_encoder_candidates": 60,
+        "answer_context_chunk_count": 12,
+        "answer_context_chars": 34987,
+        "answer_context_words": 5434
+      }
+    },
+    {
+      "step": 2,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "68b6bb4e-bcca-4741-84e0-76dcbd804b74",
+      "metadata": {
+        "page": 85,
+        "bm25_rank": 1,
+        "vector_rank": 1,
+        "fusion_rank": 1,
+        "bm25_score": 14.399358749389648,
+        "vector_score": 0.6327237147203982,
+        "rrf_score": 0.03278688524590164,
+        "rerank_score": 86.28688524590164,
+        "finance_boost": 32.5,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "requested_year_present",
+          "var_line_item",
+          "risk_direction_term"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "average",
+          "compared",
+          "market",
+          "period",
+          "prior",
+          "quarter",
+          "risk",
+          "same",
+          "second",
+          "var"
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "31de7a7a-5d32-446e-bef5-5704f474d880",
+      "metadata": {
+        "page": 84,
+        "bm25_rank": 23,
+        "vector_rank": 10,
+        "fusion_rank": 6,
+        "bm25_score": 4.625567436218262,
+        "vector_score": 0.46718553073672403,
+        "rrf_score": 0.026333907056798625,
+        "rerank_score": 57.80549796588953,
+        "finance_boost": 22.5,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "var_line_item"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "market",
+          "period",
+          "risk",
+          "var"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "05536459-c9f3-49c0-8c56-741d92c5b91f",
+      "metadata": {
+        "page": 54,
+        "bm25_rank": 3,
+        "vector_rank": 39,
+        "fusion_rank": 9,
+        "bm25_score": 6.7113871574401855,
+        "vector_score": 0.3994901818926249,
+        "rrf_score": 0.025974025974025976,
+        "rerank_score": 56.42857142857143,
+        "finance_boost": 13.5,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "requested_year_present",
+          "risk_direction_term"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "average",
+          "compared",
+          "decrease",
+          "market",
+          "period",
+          "prior",
+          "risk",
+          "same"
+        ]
+      }
+    },
+    {
+      "step": 5,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "9dae11bf-ea4e-4a76-ac58-a49eb2f29933",
+      "metadata": {
+        "page": 42,
+        "bm25_rank": 9,
+        "vector_rank": 11,
+        "fusion_rank": 3,
+        "bm25_score": 5.993919849395752,
+        "vector_score": 0.45202762218432363,
+        "rrf_score": 0.028577260665441927,
+        "rerank_score": 53.56589702907829,
+        "finance_boost": 12.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "requested_year_present"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "average",
+          "jpm",
+          "period",
+          "prior",
+          "quarter",
+          "second"
+        ]
+      }
+    },
+    {
+      "step": 6,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "e2937a22-885b-4644-a7b0-3fe2f5643b76",
+      "metadata": {
+        "page": 87,
+        "bm25_rank": 19,
+        "vector_rank": 4,
+        "fusion_rank": 4,
+        "bm25_score": 4.832225799560547,
+        "vector_score": 0.5127528601360039,
+        "rrf_score": 0.028283227848101264,
+        "rerank_score": 50.01618239355581,
+        "finance_boost": 8.75,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "requested_year_present"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "compared",
+          "market",
+          "prior",
+          "quarter",
+          "risk",
+          "second"
+        ]
+      }
+    },
+    {
+      "step": 7,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "3a1ee706-a72f-449f-9725-49b7b65ea9ac",
+      "metadata": {
+        "page": 46,
+        "bm25_rank": 13,
+        "vector_rank": 20,
+        "fusion_rank": 7,
+        "bm25_score": 5.345228672027588,
+        "vector_score": 0.42086087116733145,
+        "rrf_score": 0.0261986301369863,
+        "rerank_score": 48.164539227895396,
+        "finance_boost": 7.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "requested_year_present"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "average",
+          "compared",
+          "market",
+          "period",
+          "prior",
+          "quarter",
+          "risk"
+        ]
+      }
+    },
+    {
+      "step": 8,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "2cfa5c44-04ef-4ecf-bdba-8fe0077fc990",
+      "metadata": {
+        "page": 205,
+        "bm25_rank": 56,
+        "vector_rank": 98,
+        "fusion_rank": 53,
+        "bm25_score": 3.2303059101104736,
+        "vector_score": 0.3560633332301237,
+        "rrf_score": 0.014949803579223046,
+        "rerank_score": 47.6543490337685,
+        "finance_boost": 24.0,
+        "finance_boost_reasons": [
+          "requested_year_present",
+          "var_line_item"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "market",
+          "prior",
+          "risk",
+          "var"
+        ]
+      }
+    },
+    {
+      "step": 9,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "5a2648f9-5430-4f1e-813a-015b22c829b3",
+      "metadata": {
+        "page": 86,
+        "bm25_rank": 11,
+        "vector_rank": 2,
+        "fusion_rank": 2,
+        "bm25_score": 5.552346706390381,
+        "vector_score": 0.5569273927006982,
+        "rrf_score": 0.03021353930031804,
+        "rerank_score": 47.33285748213622,
+        "finance_boost": 6.125,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "requested_year_present"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "average",
+          "market",
+          "prior",
+          "risk",
+          "var"
+        ]
+      }
+    },
+    {
+      "step": 10,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "9666f351-05c7-4cf8-ac70-625790a06a03",
+      "metadata": {
+        "page": 164,
+        "bm25_rank": 29,
+        "vector_rank": 7,
+        "fusion_rank": 8,
+        "bm25_score": 4.374035835266113,
+        "vector_score": 0.4853774006459587,
+        "rrf_score": 0.026161328190508135,
+        "rerank_score": 45.3715554632354,
+        "finance_boost": 10.25,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "requested_year_present"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "average",
+          "prior",
+          "quarter",
+          "second"
+        ]
+      }
+    },
+    {
+      "step": 11,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "650095e2-6834-4813-ab13-c2609e5a0d36",
+      "metadata": {
+        "page": 10,
+        "bm25_rank": 4,
+        "vector_rank": 58,
+        "fusion_rank": 12,
+        "bm25_score": 6.591298580169678,
+        "vector_score": 0.3866853311763998,
+        "rrf_score": 0.02409957627118644,
+        "rerank_score": 44.412076271186436,
+        "finance_boost": 9.375,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "risk_direction_term"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "compared",
+          "market",
+          "prior",
+          "quarter",
+          "second"
+        ]
+      }
+    },
+    {
+      "step": 12,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "d48aad5a-b3af-4dc2-bb7b-d8871d2c8cd5",
+      "metadata": {
+        "page": 67,
+        "bm25_rank": 7,
+        "vector_rank": null,
+        "fusion_rank": 54,
+        "bm25_score": 6.069409370422363,
+        "vector_score": null,
+        "rrf_score": 0.014925373134328358,
+        "rerank_score": 44.249236770691994,
+        "finance_boost": 16.625,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "requested_year_present",
+          "risk_direction_term"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "compared",
+          "decrease",
+          "period",
+          "prior",
+          "risk",
+          "same"
+        ]
+      }
+    },
+    {
+      "step": 13,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "b2bbd1bc-caa3-4cb6-a61f-52c5f8e5d5d2",
+      "metadata": {
+        "page": 85,
+        "bm25_rank": 25,
+        "vector_rank": 27,
+        "fusion_rank": 15,
+        "bm25_score": 4.562244415283203,
+        "vector_score": 0.4154956189249741,
+        "rrf_score": 0.02325895875591616,
+        "rerank_score": 44.1794133013707,
+        "finance_boost": 12.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "requested_year_present"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "market",
+          "quarter",
+          "risk",
+          "var"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": null,
+    "output": null,
+    "total": null
+  },
+  "latency_ms": 14110,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\JPMORGAN_2023Q2_10Q.pdf",
+    "adapter_mode": "llamaindex_bm25_vector_rrf_plus_rerank",
+    "llm_enabled": false,
+    "model": null,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "page_count": 217,
+    "node_count": 351,
+    "chunk_size": 900,
+    "chunk_overlap": 160,
+    "vector_top_k": 120,
+    "bm25_top_k": 120,
+    "fusion_top_k": 120,
+    "rerank_top_k": 12,
+    "rrf_k": 60,
+    "max_citations": 3,
+    "finance_rerank": true,
+    "cross_encoder_model": null,
+    "cross_encoder_candidates": 60,
+    "answer_context_chunk_count": 12,
+    "answer_context_chars": 34987,
+    "answer_context_words": 5434
+  }
+}

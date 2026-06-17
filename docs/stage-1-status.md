@@ -590,6 +590,26 @@ Average total tokens: 9,216
 Average latency: 18,596 ms
 ```
 
+Current low-context tuning result:
+
+```text
+LlamaIndex Vector RAG + finance rerank, rerank_top_k=3:
+12 / 12 MVP questions generated LLM answers.
+0 generation or evaluation failures.
+Average evidence recall: 1.000
+LLM-judge answer accuracy: 1.000
+Average total tokens: 2,424
+Token reduction vs rerank_top_k=12: 73.0%
+
+LlamaIndex Hybrid RAG + finance rerank, rerank_top_k=3:
+12 / 12 MVP questions generated LLM answers.
+0 generation or evaluation failures.
+Average evidence recall: 1.000
+LLM-judge answer accuracy: 1.000
+Average total tokens: 2,520
+Token reduction vs rerank_top_k=12: 72.7%
+```
+
 Generated LLM diagnostic artifacts:
 
 ```text
@@ -603,6 +623,16 @@ reports/llamaindex_hybrid_rag/qa_llm_finance/
 reports/llamaindex_hybrid_rag/qa_llm_finance_manifest.json
 reports/llamaindex_hybrid_rag/evidence_eval_llm_finance.json
 reports/llamaindex_hybrid_rag/answer_eval_llm_finance.json
+reports/llamaindex_context_tuning.md
+reports/llamaindex_context_tuning.json
+reports/llamaindex_vector_rag/qa_llm_finance_r3/
+reports/llamaindex_vector_rag/qa_llm_finance_r3_manifest.json
+reports/llamaindex_vector_rag/evidence_eval_llm_finance_r3.json
+reports/llamaindex_vector_rag/answer_eval_llm_finance_r3.json
+reports/llamaindex_hybrid_rag/qa_llm_finance_r3/
+reports/llamaindex_hybrid_rag/qa_llm_finance_r3_manifest.json
+reports/llamaindex_hybrid_rag/evidence_eval_llm_finance_r3.json
+reports/llamaindex_hybrid_rag/answer_eval_llm_finance_r3.json
 ```
 
 LLM diagnostic command, after setting a provider key:
@@ -619,7 +649,7 @@ These LlamaIndex finance-aware rows pass the mechanical promotion gate on the 12
 The next work should strengthen the benchmark beyond the dependency-light MVP baselines:
 
 1. Expand the FinanceBench subset beyond 12 questions.
-2. Tune LlamaIndex candidate chunk size and retrieved context count to reduce token usage.
+2. Use `rerank_top_k=3` as the next LlamaIndex finance-aware MVP configuration and verify it on the larger subset.
 3. Add per-method failure-case notes and cost estimates.
 4. Prepare a PageIndex upstream issue or PR using the benchmark findings.
 5. Add GraphRAG and HyperGraphRAG after the larger subset is stable.

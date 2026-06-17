@@ -1,0 +1,461 @@
+{
+  "method": "llamaindex_hybrid_rag",
+  "question_id": "fb_mvp_002",
+  "question": "What is Amazon's year-over-year change in revenue from FY2016 to FY2017 (in units of percents and round to one decimal place)? Calculate what was asked by utilizing the line items clearly shown in the statement of income.",
+  "answer": "Retrieved 12 chunks with LlamaIndex BM25/vector hybrid fusion.",
+  "citations": [
+    {
+      "document_id": "AMAZON_2017_10K",
+      "page": 38,
+      "section": null,
+      "text": "Table of Contents AMAZON.COM, INC. CONSOLIDATED STATEMENTS OF OPERATIONS (in millions, except per share data) Year Ended December 31, 2015 2016 2017 Net product sales $ 79,268 $ 94,665 $ 118,573 Net service sales 27,738 41,322 59,293 Total net sales 107,006 135,987 177,866 Operating expenses: Cost of sales 71,651 88,265 111,934 Fulfillment 13,410 17,619 25,249 Marketing 5,254 7,233 10,069 Technology and content 12,540 16,085 22,620 General and administrative 1,747 2,432 3,674 Other operating exp",
+      "metadata": {
+        "chunk_id": "2a75fa8e-7a2a-45be-a584-4da5deaa8f1c",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.582318300519766,
+        "rerank_score": 87.91258449153186,
+        "matched_terms": [
+          "cost",
+          "income",
+          "net",
+          "operations",
+          "sales"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "AMAZON_2017_10K",
+      "page": 49,
+      "section": null,
+      "text": "ing prior periods. The cumulative adjustment will primarily relate to unredeemed gift cards. We will begin to recognize revenue from estimated unredeemed gift cards over the expected customer redemption period, which is substantially within nine months, rather than waiting until gift cards expire or when the likelihood of redemption becomes remote, generally two years from the date of issuance. Other changes relate to Amazon-branded electronic devices sold through retailers, which will be recogn",
+      "metadata": {
+        "chunk_id": "5eecb6f8-6fb2-4a6f-95b2-616a7e5b643c",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5118456820639457,
+        "rerank_score": 67.55728519295594,
+        "matched_terms": [
+          "change",
+          "cost",
+          "income",
+          "net",
+          "operations",
+          "revenue",
+          "sales"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "AMAZON_2017_10K",
+      "page": 77,
+      "section": null,
+      "text": " between the Company and each of its Directors (incorporated by reference to Exhibit 10.1 to the Company’s Registration Statement on Form S-1 (Registration No. 333-23795) filed March 24, 1997, as amended on April 21, 1997). 10.4† Form of Restricted Stock Unit Agreement for Officers and Employees (incorporated by reference to the Company’s Annual Report on Form 10-K for the Year ended December 31, 2002). 10.5† Form of Restricted Stock Unit Agreement for Directors (incorporated by reference to the",
+      "metadata": {
+        "chunk_id": "09bd8244-e4eb-4f57-938b-518d87b96f08",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.35982380389869384,
+        "rerank_score": 59.60089241145891,
+        "matched_terms": [
+          "income",
+          "operations",
+          "statement"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "llamaindex_build_hybrid_index",
+      "target": "AMAZON_2017_10K",
+      "metadata": {
+        "page_count": 85,
+        "node_count": 114,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "chunk_size": 900,
+        "chunk_overlap": 160,
+        "vector_top_k": 120,
+        "bm25_top_k": 120,
+        "fusion_top_k": 120,
+        "rerank_top_k": 12,
+        "rrf_k": 60,
+        "finance_rerank": true,
+        "cross_encoder_model": null,
+        "cross_encoder_candidates": 60,
+        "answer_context_chunk_count": 12,
+        "answer_context_chars": 39313,
+        "answer_context_words": 5922
+      }
+    },
+    {
+      "step": 2,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "2a75fa8e-7a2a-45be-a584-4da5deaa8f1c",
+      "metadata": {
+        "page": 38,
+        "bm25_rank": 66,
+        "vector_rank": 6,
+        "fusion_rank": 21,
+        "bm25_score": 2.352107048034668,
+        "vector_score": 0.582318300519766,
+        "rrf_score": 0.023088023088023088,
+        "rerank_score": 87.91258449153186,
+        "finance_boost": 42.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "income_statement_title",
+          "total_net_sales_line_item"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "cost",
+          "income",
+          "net",
+          "operations",
+          "sales"
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "5eecb6f8-6fb2-4a6f-95b2-616a7e5b643c",
+      "metadata": {
+        "page": 49,
+        "bm25_rank": 7,
+        "vector_rank": 19,
+        "fusion_rank": 4,
+        "bm25_score": 4.969546318054199,
+        "vector_score": 0.5118456820639457,
+        "rrf_score": 0.027583600982429624,
+        "rerank_score": 67.55728519295594,
+        "finance_boost": 16.0,
+        "finance_boost_reasons": [
+          "income_statement_title"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "change",
+          "cost",
+          "income",
+          "net",
+          "operations",
+          "revenue",
+          "sales"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "38dfc319-73ab-4dd9-84f3-7b044e03643b",
+      "metadata": {
+        "page": 49,
+        "bm25_rank": 10,
+        "vector_rank": 35,
+        "fusion_rank": 13,
+        "bm25_score": 4.545290470123291,
+        "vector_score": 0.46225814008768973,
+        "rrf_score": 0.02481203007518797,
+        "rerank_score": 65.08176691729324,
+        "finance_boost": 19.375,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "income_statement_title"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "cost",
+          "income",
+          "net",
+          "operations",
+          "revenue",
+          "sales",
+          "statement"
+        ]
+      }
+    },
+    {
+      "step": 5,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "09bd8244-e4eb-4f57-938b-518d87b96f08",
+      "metadata": {
+        "page": 77,
+        "bm25_rank": 6,
+        "vector_rank": 71,
+        "fusion_rank": 22,
+        "bm25_score": 5.250599384307861,
+        "vector_score": 0.35982380389869384,
+        "rrf_score": 0.022785102937774693,
+        "rerank_score": 59.60089241145891,
+        "finance_boost": 24.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "income_statement_title"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "income",
+          "operations",
+          "statement"
+        ]
+      }
+    },
+    {
+      "step": 6,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "9d60bb57-7824-4628-9edd-78bf6748d5c1",
+      "metadata": {
+        "page": 47,
+        "bm25_rank": 1,
+        "vector_rank": 75,
+        "fusion_rank": 16,
+        "bm25_score": 6.204154014587402,
+        "vector_score": 0.34390154654480776,
+        "rrf_score": 0.023800850030358228,
+        "rerank_score": 56.66927108298981,
+        "finance_boost": 16.0,
+        "finance_boost_reasons": [
+          "income_statement_title"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "change",
+          "cost",
+          "net",
+          "operations",
+          "sales"
+        ]
+      }
+    },
+    {
+      "step": 7,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "90453c34-79d5-4aa8-bd19-cda59e46c455",
+      "metadata": {
+        "page": 43,
+        "bm25_rank": 90,
+        "vector_rank": 7,
+        "fusion_rank": 27,
+        "bm25_score": 1.5877368450164795,
+        "vector_score": 0.5812681347888885,
+        "rrf_score": 0.021592039800995024,
+        "rerank_score": 56.48896962555643,
+        "finance_boost": 20.125,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "total_net_sales_line_item"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "cost",
+          "net",
+          "revenue",
+          "sales"
+        ]
+      }
+    },
+    {
+      "step": 8,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "fb8920c3-1a91-4006-9b46-6c78be1a7810",
+      "metadata": {
+        "page": 76,
+        "bm25_rank": 41,
+        "vector_rank": 46,
+        "fusion_rank": 45,
+        "bm25_score": 3.112603187561035,
+        "vector_score": 0.4310010313487343,
+        "rrf_score": 0.019334952363160844,
+        "rerank_score": 55.948987450880146,
+        "finance_boost": 24.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "income_statement_title"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "income",
+          "operations",
+          "statement"
+        ]
+      }
+    },
+    {
+      "step": 9,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "db1d6330-159f-4d20-923e-f8bb488deb91",
+      "metadata": {
+        "page": 44,
+        "bm25_rank": 43,
+        "vector_rank": 40,
+        "fusion_rank": 40,
+        "bm25_score": 3.0788323879241943,
+        "vector_score": 0.4474745498674928,
+        "rrf_score": 0.019708737864077668,
+        "rerank_score": 53.36663260091977,
+        "finance_boost": 16.0,
+        "finance_boost_reasons": [
+          "income_statement_title"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "cost",
+          "operations",
+          "revenue",
+          "sales"
+        ]
+      }
+    },
+    {
+      "step": 10,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "11dd7ac7-ff06-4cf5-9d69-0fd4d88d1adb",
+      "metadata": {
+        "page": 30,
+        "bm25_rank": 44,
+        "vector_rank": 50,
+        "fusion_rank": 50,
+        "bm25_score": 3.0657455921173096,
+        "vector_score": 0.4201509178061936,
+        "rrf_score": 0.018706293706293706,
+        "rerank_score": 53.0264691448902,
+        "finance_boost": 21.75,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "income_statement_title"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "income",
+          "net",
+          "operations"
+        ]
+      }
+    },
+    {
+      "step": 11,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "508ea1dc-bc66-4637-a8eb-4c0d88c968b2",
+      "metadata": {
+        "page": 48,
+        "bm25_rank": 58,
+        "vector_rank": 86,
+        "fusion_rank": 87,
+        "bm25_score": 2.6570687294006348,
+        "vector_score": 0.3050927459410752,
+        "rrf_score": 0.015323891339679591,
+        "rerank_score": 52.56950537476731,
+        "finance_boost": 16.0,
+        "finance_boost_reasons": [
+          "income_statement_title"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "change",
+          "cost",
+          "income",
+          "net",
+          "operations",
+          "sales"
+        ]
+      }
+    },
+    {
+      "step": 12,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "b4429477-5a5c-45fa-b470-b1462b695405",
+      "metadata": {
+        "page": 74,
+        "bm25_rank": 18,
+        "vector_rank": 45,
+        "fusion_rank": 23,
+        "bm25_score": 4.09207010269165,
+        "vector_score": 0.4373391200047908,
+        "rrf_score": 0.022344322344322345,
+        "rerank_score": 51.401339888181994,
+        "finance_boost": 18.25,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "income_statement_title"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "income",
+          "operations"
+        ]
+      }
+    },
+    {
+      "step": 13,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "b0b3085f-bcd0-4ee7-8387-ef7192bb736c",
+      "metadata": {
+        "page": 36,
+        "bm25_rank": 23,
+        "vector_rank": 26,
+        "fusion_rank": 18,
+        "bm25_score": 3.755608558654785,
+        "vector_score": 0.4809233027359307,
+        "rrf_score": 0.023676099747828524,
+        "rerank_score": 49.90197694081098,
+        "finance_boost": 18.375,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "income_statement_title"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "income",
+          "operations"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": null,
+    "output": null,
+    "total": null
+  },
+  "latency_ms": 20991,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\AMAZON_2017_10K.pdf",
+    "adapter_mode": "llamaindex_bm25_vector_rrf_plus_rerank",
+    "llm_enabled": false,
+    "model": null,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "page_count": 85,
+    "node_count": 114,
+    "chunk_size": 900,
+    "chunk_overlap": 160,
+    "vector_top_k": 120,
+    "bm25_top_k": 120,
+    "fusion_top_k": 120,
+    "rerank_top_k": 12,
+    "rrf_k": 60,
+    "max_citations": 3,
+    "finance_rerank": true,
+    "cross_encoder_model": null,
+    "cross_encoder_candidates": 60,
+    "answer_context_chunk_count": 12,
+    "answer_context_chars": 39313,
+    "answer_context_words": 5922
+  }
+}

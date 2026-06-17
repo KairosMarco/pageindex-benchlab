@@ -1,0 +1,199 @@
+{
+  "summary": {
+    "result_count": 12,
+    "failure_count": 0,
+    "average_answer_score": 1.0,
+    "accuracy": 1.0,
+    "verdict_counts": {
+      "correct": 12,
+      "partial": 0,
+      "incorrect": 0
+    },
+    "mode": "llm",
+    "model": "deepseek/deepseek-v4-pro",
+    "results_dir": "reports\\llamaindex_hybrid_rag\\qa_llm_finance_r3"
+  },
+  "per_question": [
+    {
+      "question_id": "fb_mvp_001",
+      "score": 1.0,
+      "verdict": "correct",
+      "rationale": "The predicted answer provides the correct capital expenditure amount of $1,577 million, which matches the gold answer ($1577.00). It also correctly references the relevant line item from the cash flow statement as requested.",
+      "gold_answer": "$1577.00",
+      "predicted_answer": "The FY2018 capital expenditure amount for 3M is $1,577 million, as shown in the \"Purchases of property, plant and equipment (PP&E)\" line under Cash Flows from Investing Activities [PAGE 60].",
+      "metadata": {
+        "mode": "llm_judge",
+        "model": "deepseek/deepseek-v4-pro",
+        "result_path": "reports\\llamaindex_hybrid_rag\\qa_llm_finance_r3\\fb_mvp_001.json",
+        "method": "llamaindex_hybrid_rag",
+        "doc_name": "3M_2018_10K"
+      }
+    },
+    {
+      "question_id": "fb_mvp_002",
+      "score": 1.0,
+      "verdict": "correct",
+      "rationale": "The predicted answer explicitly states the year-over-year revenue change as 30.8%, which matches the gold answer exactly.",
+      "gold_answer": "30.8%",
+      "predicted_answer": "Amazon's total net sales increased from $135,987 million in 2016 to $177,866 million in 2017, yielding a year-over-year revenue change of 30.8% [PAGE 38].",
+      "metadata": {
+        "mode": "llm_judge",
+        "model": "deepseek/deepseek-v4-pro",
+        "result_path": "reports\\llamaindex_hybrid_rag\\qa_llm_finance_r3\\fb_mvp_002.json",
+        "method": "llamaindex_hybrid_rag",
+        "doc_name": "AMAZON_2017_10K"
+      }
+    },
+    {
+      "question_id": "fb_mvp_003",
+      "score": 1.0,
+      "verdict": "correct",
+      "rationale": "The predicted answer contains all the product and service categories listed in the gold answer, including data center CPUs/GPUs, client CPUs/APUs/chipsets, discrete GPUs, semi-custom SoCs, and embedded processors. The additional mentions of ACAP products, a software stack, and IP licensing do not contradict the gold answer; the predicted answer fully covers the required information.",
+      "gold_answer": "AMD sells server microprocessors (CPUs) and graphics processing units (GPUs), data processing units (DPUs), Field Programmable Gate Arrays (FPGAs), and Adaptive System-on-Chip (SoC) products for data centers; CPUs, accelerated processing units (APUs) that integrate CPUs and GPUs, and chipsets for desktop and notebook personal computers; discrete GPUs, and semi-custom SoC products and development services; and embedded CPUs, GPUs, APUs, FPGAs, and Adaptive SoC products.",
+      "predicted_answer": "As of fiscal year 2022, AMD's major products and services include:\n\n- Server microprocessors (CPUs), server graphics processing units (GPUs), data processing units (DPUs), Field Programmable Gate Arrays (FPGAs), and Adaptive System-on-Chip (SoC) products for data centers;  \n- CPUs, accelerated processing units (APUs) integrating CPUs and GPUs, and chipsets for desktop and notebook personal computers;  \n- Discrete GPUs, and semi-custom SoC products and development services;  \n- Embedded CPUs, GPUs, APUs, FPGAs, and Adaptive SoC products;  \n- Adaptive Compute Acceleration Platform (ACAP) products and a software stack;  \n- From time to time, sale or licensing of portions of its intellectual property (IP) portfolio.  \n\n[PAGE 4 | CHUNK 9769595c] [PAGE 43 | CHUNK e9469943] [PAGE 60 | CHUNK 99971112]",
+      "metadata": {
+        "mode": "llm_judge",
+        "model": "deepseek/deepseek-v4-pro",
+        "result_path": "reports\\llamaindex_hybrid_rag\\qa_llm_finance_r3\\fb_mvp_003.json",
+        "method": "llamaindex_hybrid_rag",
+        "doc_name": "AMD_2022_10K"
+      }
+    },
+    {
+      "question_id": "fb_mvp_004",
+      "score": 1.0,
+      "verdict": "correct",
+      "rationale": "The predicted answer correctly states that operating activities brought in the most cash flow in FY22, matching the gold answer.",
+      "gold_answer": "In 2022, AMD brought in the most cashflow from Operations",
+      "predicted_answer": "Operating activities brought in the most cash flow in FY22, with net cash provided of $3,565 million, compared to $1,999 million from investing activities and a loss of $(3,264) million from financing activities [PAGE 58].",
+      "metadata": {
+        "mode": "llm_judge",
+        "model": "deepseek/deepseek-v4-pro",
+        "result_path": "reports\\llamaindex_hybrid_rag\\qa_llm_finance_r3\\fb_mvp_004.json",
+        "method": "llamaindex_hybrid_rag",
+        "doc_name": "AMD_2022_10K"
+      }
+    },
+    {
+      "question_id": "fb_mvp_005",
+      "score": 1.0,
+      "verdict": "correct",
+      "rationale": "The predicted answer directly states that Best Buy's gross margins have been historically consistent, fluctuating less than 2% each year, and highlights the 1.1% decline between FY2022 and FY2023, which matches the gold answer exactly.",
+      "gold_answer": "Yes, the margins have been consistent, there has been a minor decline of 1.1% in gross margins between FY2022 and FY2023.",
+      "predicted_answer": "Based on the provided data, Best Buy's gross margins have historically been consistent, fluctuating less than 2% each year.\n\n- Fiscal 2021: $10,573 / $47,262 = 22.4%\n- Fiscal 2022: $11,640 / $51,761 = 22.5%\n- Fiscal 2023: $9,912 / $46,298 = 21.4%\n\nFrom fiscal 2021 to 2022, the margin changed by only 0.1%. From fiscal 2022 to 2023, it declined by 1.1%. Both annual changes are within the stated 2% threshold [PAGE 40].",
+      "metadata": {
+        "mode": "llm_judge",
+        "model": "deepseek/deepseek-v4-pro",
+        "result_path": "reports\\llamaindex_hybrid_rag\\qa_llm_finance_r3\\fb_mvp_005.json",
+        "method": "llamaindex_hybrid_rag",
+        "doc_name": "BESTBUY_2023_10K"
+      }
+    },
+    {
+      "question_id": "fb_mvp_006",
+      "score": 1.0,
+      "verdict": "correct",
+      "rationale": "The predicted answer confirms Boeing reported ongoing legal battles and correctly identifies the 737 MAX accident lawsuits (corresponding to the Lion Air and Ethiopian Airlines crashes) as per the gold answer. Additional details about Embraer do not contradict or omit the required information.",
+      "gold_answer": "Yes. Multiple lawsuits have been filed against Boeing resulting from a 2018 Lion Air crash and a 2019 Ethiopian Airlines crash.",
+      "predicted_answer": "Yes, Boeing reported ongoing legal battles from FY2022. The company disclosed that multiple legal actions remain pending due to the 737 MAX accidents and that it cannot reasonably estimate a range of potential loss from these matters [PAGE 113]. Additionally, Boeing reported an ongoing arbitration dispute with Embraer regarding the termination of joint venture agreements, for which it also could not reasonably estimate a range of loss, with completion expected in late 2023 or early 2024 [PAGE 113].",
+      "metadata": {
+        "mode": "llm_judge",
+        "model": "deepseek/deepseek-v4-pro",
+        "result_path": "reports\\llamaindex_hybrid_rag\\qa_llm_finance_r3\\fb_mvp_006.json",
+        "method": "llamaindex_hybrid_rag",
+        "doc_name": "BOEING_2022_10K"
+      }
+    },
+    {
+      "question_id": "fb_mvp_007",
+      "score": 1.0,
+      "verdict": "correct",
+      "rationale": "The predicted answer states total assets as $59,268 million, which is numerically equivalent to the gold answer of $59268.00 million. The answer is complete and matches exactly.",
+      "gold_answer": "$59268.00",
+      "predicted_answer": "At the end of FY2021, Costco's total assets were $59,268 million [PAGE 38].",
+      "metadata": {
+        "mode": "llm_judge",
+        "model": "deepseek/deepseek-v4-pro",
+        "result_path": "reports\\llamaindex_hybrid_rag\\qa_llm_finance_r3\\fb_mvp_007.json",
+        "method": "llamaindex_hybrid_rag",
+        "doc_name": "COSTCO_2021_10K"
+      }
+    },
+    {
+      "question_id": "fb_mvp_008",
+      "score": 1.0,
+      "verdict": "correct",
+      "rationale": "The predicted answer states the FY2016 COGS as $32,780 million, which matches the gold answer value of $32780.00 exactly, and it correctly references the statement of income.",
+      "gold_answer": "$32780.00",
+      "predicted_answer": "The FY2016 cost of goods sold (total cost of revenue) for Microsoft is $32,780 million, as shown on the income statement. [PAGE 52]",
+      "metadata": {
+        "mode": "llm_judge",
+        "model": "deepseek/deepseek-v4-pro",
+        "result_path": "reports\\llamaindex_hybrid_rag\\qa_llm_finance_r3\\fb_mvp_008.json",
+        "method": "llamaindex_hybrid_rag",
+        "doc_name": "MICROSOFT_2016_10K"
+      }
+    },
+    {
+      "question_id": "fb_mvp_009",
+      "score": 1.0,
+      "verdict": "correct",
+      "rationale": "The predicted answer correctly identifies operations as the activity that brought in the most cash flow, matching the gold answer. The additional details (amounts and page reference) support the conclusion without contradicting it.",
+      "gold_answer": "Among the three, cash flow from operations was the highest for Nike in FY2023.",
+      "predicted_answer": "Operations brought in the most cash flow in FY2023 at $5,841 million, compared to investing activities ($564 million inflow) and financing activities ($7,447 million outflow) [PAGE 62].",
+      "metadata": {
+        "mode": "llm_judge",
+        "model": "deepseek/deepseek-v4-pro",
+        "result_path": "reports\\llamaindex_hybrid_rag\\qa_llm_finance_r3\\fb_mvp_009.json",
+        "method": "llamaindex_hybrid_rag",
+        "doc_name": "NIKE_2023_10K"
+      }
+    },
+    {
+      "question_id": "fb_mvp_010",
+      "score": 1.0,
+      "verdict": "correct",
+      "rationale": "The predicted answer matches the gold answer, providing the same adjusted EBITDA amount of $2,018 million for FY 2023.",
+      "gold_answer": "AMCOR's Adj. EBITDA was $2,018mn in FY 2023",
+      "predicted_answer": "Amcor's Adjusted Non-GAAP EBITDA for the twelve months ended June 30, 2023 (FY 2023) was $2,018 million [PAGE 12].",
+      "metadata": {
+        "mode": "llm_judge",
+        "model": "deepseek/deepseek-v4-pro",
+        "result_path": "reports\\llamaindex_hybrid_rag\\qa_llm_finance_r3\\fb_mvp_010.json",
+        "method": "llamaindex_hybrid_rag",
+        "doc_name": "AMCOR_2023Q4_EARNINGS"
+      }
+    },
+    {
+      "question_id": "fb_mvp_011",
+      "score": 1.0,
+      "verdict": "correct",
+      "rationale": "The predicted answer correctly states that the risk decreased, matching the gold answer. The additional details (page reference, VaR decrease, drivers) do not conflict and are supportive, so the answer is fully correct.",
+      "gold_answer": "Yes. It decreased.",
+      "predicted_answer": "Yes, the risk decreased. [PAGE 85] states that average total VaR for the three months ended June 30, 2023, decreased by $7 million compared to the same period in the prior year, driven by risk reductions in Credit Portfolio VaR and fixed income.",
+      "metadata": {
+        "mode": "llm_judge",
+        "model": "deepseek/deepseek-v4-pro",
+        "result_path": "reports\\llamaindex_hybrid_rag\\qa_llm_finance_r3\\fb_mvp_011.json",
+        "method": "llamaindex_hybrid_rag",
+        "doc_name": "JPMORGAN_2023Q2_10Q"
+      }
+    },
+    {
+      "question_id": "fb_mvp_012",
+      "score": 1.0,
+      "verdict": "correct",
+      "rationale": "The predicted answer identifies the Consumer Health business, which matches the gold answer's specification of the Consumer Health business segment. The slight wording difference (omitting 'segment' and adding a page reference) does not change the correctness.",
+      "gold_answer": "The Consumer Health business segment will be treated as a discontinued operation from August 30, 2023 onward.",
+      "predicted_answer": "The Consumer Health business. [PAGE 4]",
+      "metadata": {
+        "mode": "llm_judge",
+        "model": "deepseek/deepseek-v4-pro",
+        "result_path": "reports\\llamaindex_hybrid_rag\\qa_llm_finance_r3\\fb_mvp_012.json",
+        "method": "llamaindex_hybrid_rag",
+        "doc_name": "JOHNSON_JOHNSON_2023_8K_dated-2023-08-30"
+      }
+    }
+  ],
+  "failures": []
+}

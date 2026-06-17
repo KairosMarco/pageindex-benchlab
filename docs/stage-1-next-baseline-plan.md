@@ -159,9 +159,22 @@ average total tokens: 8,964
 average latency: 16,723 ms
 ```
 
+Low-context validation:
+
+```text
+rerank_top_k: 3
+questions: 12
+failures: 0
+evidence recall: 1.000
+citation precision: 0.333
+LLM-judge answer accuracy: 1.000
+average total tokens: 2,424
+token reduction vs rerank_top_k=12: 73.0%
+```
+
 Interpretation:
 
-The finance-aware LlamaIndex Vector candidate now passes the mechanical promotion gate on the 12-question MVP subset. It should still be treated as a stronger-baseline diagnostic until the larger subset confirms that the finance-aware reranker generalizes.
+The finance-aware LlamaIndex Vector candidate now passes the mechanical promotion gate on the 12-question MVP subset. The `rerank_top_k=3` variant preserved answer accuracy while substantially reducing token use, so it should be the next larger-subset candidate.
 
 ## LlamaIndex Hybrid Diagnostic Result
 
@@ -196,6 +209,19 @@ average total tokens: 9,216
 average latency: 18,596 ms
 ```
 
+Low-context validation:
+
+```text
+rerank_top_k: 3
+questions: 12
+failures: 0
+evidence recall: 1.000
+citation precision: 0.347
+LLM-judge answer accuracy: 1.000
+average total tokens: 2,520
+token reduction vs rerank_top_k=12: 72.7%
+```
+
 Interpretation:
 
-The finance-aware LlamaIndex Hybrid candidate now passes the mechanical promotion gate on the 12-question MVP subset. Its average token usage and latency are higher than the current PageIndex and dependency-light Hybrid rows in this run, so the next technical work is retrieval-context size tuning rather than claiming broad superiority.
+The finance-aware LlamaIndex Hybrid candidate now passes the mechanical promotion gate on the 12-question MVP subset. The `rerank_top_k=3` variant preserved answer accuracy while substantially reducing token use, so the next technical work is larger-subset validation rather than more MVP-only tuning.

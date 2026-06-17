@@ -1,0 +1,219 @@
+{
+  "method": "llamaindex_hybrid_rag",
+  "question_id": "fb_mvp_004",
+  "question": "Among operations, investing, and financing activities, which brought in the most (or lost the least) cash flow for AMD in FY22?",
+  "answer": "Retrieved 3 chunks with LlamaIndex BM25/vector hybrid fusion.",
+  "citations": [
+    {
+      "document_id": "AMD_2022_10K",
+      "page": 58,
+      "section": null,
+      "text": "Table of Contents Advanced Micro Devices, Inc. Consolidated Statements of Cash Flows Year Ended December 31, 2022 December 25, 2021 December 26, 2020 (In millions) Cash flows from operating activities: Net income $ 1,320 $ 3,162 $ 2,490 Adjustments to reconcile net income to net cash provided by operating activities: Depreciation and amortization 4,174 407 312 Stock-based compensation 1,081 379 274 Amortization of debt discount and issuance costs — 5 14 Amortization of operating lease right-of-u",
+      "metadata": {
+        "chunk_id": "c667e9a2-dabc-4bf6-9187-6338eb55befb",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.6028884678990996,
+        "rerank_score": 101.78688524590164,
+        "matched_terms": [
+          "activities",
+          "cash",
+          "financing",
+          "flows",
+          "investing",
+          "operating"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "AMD_2022_10K",
+      "page": 59,
+      "section": null,
+      "text": "Table of Contents Advanced Micro Devices, Inc. Consolidated Statements of Cash Flows Year Ended December 31, 2022 December 25, 2021 December 26, 2020 (In millions) Supplemental cash flow information: Cash paid during the year for: Interest $ 85 $ 25 $ 31 Income taxes, net of refund $ 685 $ 35 $ 8 Non-cash investing and financing activities: Purchases of property and equipment, accrued but not paid $ 157 $ 72 $ 31 Issuance of common stock to settle convertible debt $ — $ 25 $ 217 Issuance of comm",
+      "metadata": {
+        "chunk_id": "cb7828ae-cc57-4b58-9fed-da7555905ec0",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5518644956057976,
+        "rerank_score": 73.72718253968254,
+        "matched_terms": [
+          "activities",
+          "cash",
+          "financing",
+          "flow",
+          "flows",
+          "investing",
+          "operating"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "AMD_2022_10K",
+      "page": 101,
+      "section": null,
+      "text": "his Annual Report on Form 10-K, as indexed below. Index to Consolidated Financial Statements Consolidated Statements of Operations 51 Consolidated Statements of Comprehensive Income 52 Consolidated Balance Sheets 53 Consolidated Statements of Stockholders’ Equity 54 Consolidated Statements of Cash Flows 55 Notes to Consolidated Financial Statements 57 Reports of Independent Registered Public Accounting Firm (PCAOB ID: 42) 90 All schedules have been omitted because the information is not required",
+      "metadata": {
+        "chunk_id": "f95d387d-e050-41b2-ba98-2c09aaf90be8",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.41657803423915796,
+        "rerank_score": 67.52462121212122,
+        "matched_terms": [
+          "among",
+          "cash",
+          "flows",
+          "operations"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "llamaindex_build_hybrid_index",
+      "target": "AMD_2022_10K",
+      "metadata": {
+        "page_count": 121,
+        "node_count": 157,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "chunk_size": 900,
+        "chunk_overlap": 160,
+        "vector_top_k": 120,
+        "bm25_top_k": 120,
+        "fusion_top_k": 120,
+        "rerank_top_k": 3,
+        "rrf_k": 60,
+        "finance_rerank": true,
+        "cross_encoder_model": null,
+        "cross_encoder_candidates": 60,
+        "answer_context_chunk_count": 3,
+        "answer_context_chars": 5852,
+        "answer_context_words": 933
+      }
+    },
+    {
+      "step": 2,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "c667e9a2-dabc-4bf6-9187-6338eb55befb",
+      "metadata": {
+        "page": 58,
+        "bm25_rank": 1,
+        "vector_rank": 1,
+        "fusion_rank": 1,
+        "bm25_score": 6.556124687194824,
+        "vector_score": 0.6028884678990996,
+        "rrf_score": 0.03278688524590164,
+        "rerank_score": 101.78688524590164,
+        "finance_boost": 50.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "cash_flow_statement_title",
+          "operating_cash_flow_section",
+          "investing_cash_flow_section",
+          "financing_cash_flow_section"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "activities",
+          "cash",
+          "financing",
+          "flows",
+          "investing",
+          "operating"
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "cb7828ae-cc57-4b58-9fed-da7555905ec0",
+      "metadata": {
+        "page": 59,
+        "bm25_rank": 4,
+        "vector_rank": 3,
+        "fusion_rank": 4,
+        "bm25_score": 5.719232559204102,
+        "vector_score": 0.5518644956057976,
+        "rrf_score": 0.03149801587301587,
+        "rerank_score": 73.72718253968254,
+        "finance_boost": 21.25,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "cash_flow_statement_title"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "activities",
+          "cash",
+          "financing",
+          "flow",
+          "flows",
+          "investing",
+          "operating"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "f95d387d-e050-41b2-ba98-2c09aaf90be8",
+      "metadata": {
+        "page": 101,
+        "bm25_rank": 12,
+        "vector_rank": 39,
+        "fusion_rank": 14,
+        "bm25_score": 3.8536221981048584,
+        "vector_score": 0.41657803423915796,
+        "rrf_score": 0.02398989898989899,
+        "rerank_score": 67.52462121212122,
+        "finance_boost": 25.625,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "cash_flow_statement_title"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "among",
+          "cash",
+          "flows",
+          "operations"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": null,
+    "output": null,
+    "total": null
+  },
+  "latency_ms": 11313,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\AMD_2022_10K.pdf",
+    "adapter_mode": "llamaindex_bm25_vector_rrf_plus_rerank",
+    "llm_enabled": false,
+    "model": null,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "page_count": 121,
+    "node_count": 157,
+    "chunk_size": 900,
+    "chunk_overlap": 160,
+    "vector_top_k": 120,
+    "bm25_top_k": 120,
+    "fusion_top_k": 120,
+    "rerank_top_k": 3,
+    "rrf_k": 60,
+    "max_citations": 3,
+    "finance_rerank": true,
+    "cross_encoder_model": null,
+    "cross_encoder_candidates": 60,
+    "answer_context_chunk_count": 3,
+    "answer_context_chars": 5852,
+    "answer_context_words": 933
+  }
+}

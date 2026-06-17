@@ -32,6 +32,17 @@ DEFAULT_RERANK_TOP_K = 12
 DEFAULT_MAX_CITATIONS = VECTOR_DEFAULT_MAX_CITATIONS
 
 
+def context_size(chunks: list[dict[str, Any]]) -> dict[str, int]:
+    """Measure the exact retrieved context passed to answer generation."""
+
+    texts = [chunk.get("text") or "" for chunk in chunks]
+    return {
+        "answer_context_chunk_count": len(texts),
+        "answer_context_chars": sum(len(text) for text in texts),
+        "answer_context_words": sum(len(text.split()) for text in texts),
+    }
+
+
 def build_documents(pages: list[dict[str, Any]], document_id: str) -> list[Document]:
     return [
         Document(
@@ -157,6 +168,7 @@ def run_llamaindex_vector_rag_qa(
         rerank_top_k=rerank_top_k,
         finance_rerank=finance_rerank,
     )
+    context_metrics = context_size(reranked_chunks)
 
     if no_llm:
         answer = f"Retrieved {len(reranked_chunks)} chunks with LlamaIndex vector retrieval and lightweight reranking."
@@ -182,6 +194,7 @@ def run_llamaindex_vector_rag_qa(
                 "retrieve_top_k": retrieve_top_k,
                 "rerank_top_k": rerank_top_k,
                 "finance_rerank": finance_rerank,
+                **context_metrics,
             },
         )
     ]
@@ -226,6 +239,7 @@ def run_llamaindex_vector_rag_qa(
             "rerank_top_k": rerank_top_k,
             "max_citations": max_citations,
             "finance_rerank": finance_rerank,
+            **context_metrics,
         },
     )
 

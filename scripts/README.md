@@ -203,6 +203,25 @@ reports/llamaindex_finance_llm_diagnostics.md
 reports/llamaindex_finance_llm_diagnostics.json
 ```
 
+Run context-size tuning without LLM calls:
+
+```powershell
+python scripts\run_llamaindex_context_tuning.py --rerank-top-k 3 --rerank-top-k 6 --rerank-top-k 9 --rerank-top-k 12 --force --continue-on-error
+```
+
+Validate the lowest-context passing LLM candidates:
+
+```powershell
+$env:DEEPSEEK_API_KEY="YOUR_KEY"
+python scripts\run_llamaindex_vector_rag_mvp.py --model deepseek/deepseek-v4-pro --rerank-top-k 3 --output-dir reports\llamaindex_vector_rag\qa_llm_finance_r3 --manifest reports\llamaindex_vector_rag\qa_llm_finance_r3_manifest.json --force --continue-on-error
+python scripts\evaluate_evidence_mvp.py --results-dir reports\llamaindex_vector_rag\qa_llm_finance_r3 --output reports\llamaindex_vector_rag\evidence_eval_llm_finance_r3.json --continue-on-error
+python scripts\evaluate_answers_mvp.py --results-dir reports\llamaindex_vector_rag\qa_llm_finance_r3 --output reports\llamaindex_vector_rag\answer_eval_llm_finance_r3.json --mode llm --model deepseek/deepseek-v4-pro --continue-on-error
+
+python scripts\run_llamaindex_hybrid_rag_mvp.py --model deepseek/deepseek-v4-pro --rerank-top-k 3 --output-dir reports\llamaindex_hybrid_rag\qa_llm_finance_r3 --manifest reports\llamaindex_hybrid_rag\qa_llm_finance_r3_manifest.json --force --continue-on-error
+python scripts\evaluate_evidence_mvp.py --results-dir reports\llamaindex_hybrid_rag\qa_llm_finance_r3 --output reports\llamaindex_hybrid_rag\evidence_eval_llm_finance_r3.json --continue-on-error
+python scripts\evaluate_answers_mvp.py --results-dir reports\llamaindex_hybrid_rag\qa_llm_finance_r3 --output reports\llamaindex_hybrid_rag\answer_eval_llm_finance_r3.json --mode llm --model deepseek/deepseek-v4-pro --continue-on-error
+```
+
 ## Run LlamaIndex Hybrid RAG Diagnostic Baseline
 
 Current finance-aware smoke test without LLM answer generation:

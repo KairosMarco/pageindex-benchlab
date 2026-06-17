@@ -42,6 +42,17 @@ DEFAULT_CROSS_ENCODER_MODEL = "cross-encoder/ms-marco-MiniLM-L-6-v2"
 DEFAULT_CROSS_ENCODER_CANDIDATES = 60
 
 
+def context_size(chunks: list[dict[str, Any]]) -> dict[str, int]:
+    """Measure the exact retrieved context passed to answer generation."""
+
+    texts = [chunk.get("text") or "" for chunk in chunks]
+    return {
+        "answer_context_chunk_count": len(texts),
+        "answer_context_chars": sum(len(text) for text in texts),
+        "answer_context_words": sum(len(text.split()) for text in texts),
+    }
+
+
 def configure_llamaindex(embed_model_name: str, *, chunk_size: int, chunk_overlap: int) -> HuggingFaceEmbedding:
     embed_model = HuggingFaceEmbedding(model_name=embed_model_name)
     Settings.embed_model = embed_model
@@ -266,6 +277,7 @@ def run_llamaindex_hybrid_rag_qa(
         cross_encoder_model=cross_encoder_model,
         cross_encoder_candidates=cross_encoder_candidates,
     )
+    context_metrics = context_size(reranked_chunks)
 
     if no_llm:
         answer = f"Retrieved {len(reranked_chunks)} chunks with LlamaIndex BM25/vector hybrid fusion."
@@ -297,6 +309,7 @@ def run_llamaindex_hybrid_rag_qa(
                 "finance_rerank": finance_rerank,
                 "cross_encoder_model": cross_encoder_model,
                 "cross_encoder_candidates": cross_encoder_candidates,
+                **context_metrics,
             },
         )
     ]
@@ -352,6 +365,7 @@ def run_llamaindex_hybrid_rag_qa(
             "finance_rerank": finance_rerank,
             "cross_encoder_model": cross_encoder_model,
             "cross_encoder_candidates": cross_encoder_candidates,
+            **context_metrics,
         },
     )
 
