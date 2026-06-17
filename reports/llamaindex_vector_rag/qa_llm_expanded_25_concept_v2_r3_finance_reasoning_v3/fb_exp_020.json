@@ -1,0 +1,163 @@
+{
+  "method": "llamaindex_vector_rag",
+  "question_id": "fb_exp_020",
+  "question": "Is CVS Health a capital-intensive business based on FY2022 data?",
+  "answer": "Based on a broad asset-intensity definition—where low return on assets (ROA) and a large total asset base serve as direct indicators—CVS Health exhibits characteristics of a capital-intensive business in FY2022, though with the caveat that its physical property and equipment is a relatively small portion of total assets.\n\n**Definition:** Under the broad definition, capital intensity is assessed by examining the scale of total assets required to generate earnings, not solely by PP&E intensity. A low ROA coupled with a substantial asset base (including goodwill, intangibles, and operating leases) is evidence of a capital-intensive operation.\n\n**Findings:**\n- **Low ROA:** Net income attributable to CVS Health was $4,149 million, and total assets were $228,275 million, yielding an ROA of approximately 1.8% [PAGE 108][PAGE 110].\n- **Large asset base:** Total assets were $228.3 billion, with significant balances in goodwill ($78.2 billion), intangible assets ($24.8 billion), and operating lease right-of-use assets ($17.9 billion), all of which are required operating assets [PAGE 110].\n- **PP&E caveat:** Property and equipment (net) was $12.9 billion, representing only about 5.6% of total assets. This indicates that, while the company is not heavily asset-intensive in the traditional heavy-industrial or fixed-asset sense, its overall operations still rely on a very large pool of intangible and leased operating assets [PAGE 110].\n\n**Conclusion:** Yes, with caveats. The low ROA and substantial total asset base, driven extensively by acquired goodwill, intangibles, and operating leases, support the classification of CVS Health as a capital-intensive business. The primary caveat is that its physical PP&E intensity is relatively low [PAGE 110].",
+  "citations": [
+    {
+      "document_id": "CVSHEALTH_2022_10K",
+      "page": 108,
+      "section": null,
+      "text": "Index to Consolidated Financial Statements Consolidated Statements of Operations For the Years Ended December 31, In millions, except per share amounts 2022 2021 2020 Revenues: Products $ 226,616 $ 203,738 $ 190,688 Premiums 85,330 76,132 69,364 Services 9,683 11,042 7,856 Net investment income 838 1,199 798 Total revenues 322,467 292,111 268,706 Operating costs: Cost of products sold 196,892 175,803 163,981 Benefit costs 71,281 64,260 55,679 Opioid litigation charges 5,803 — — Loss on assets he",
+      "metadata": {
+        "chunk_id": "f65238e9-32ca-4f55-9b3d-e3150016d63b",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.48872130048488693,
+        "rerank_score": 75.68046338182202,
+        "matched_terms": [],
+        "citation_source": "llm_answer"
+      }
+    },
+    {
+      "document_id": "CVSHEALTH_2022_10K",
+      "page": 110,
+      "section": null,
+      "text": "0 shares outstanding at December 31, 2022 and 1,744 shares issued and 1,322 shares outstanding at December 31, 2021 and capital surplus 48,193 47,377 Treasury stock, at cost: 458 and 422 shares at December 31, 2022 and 2021 (31,858) (28,173) Retained earnings 56,145 54,906 Accumulated other comprehensive income (loss) (1,465) 965 Total CVS Health shareholders’ equity 71,015 75,075 Noncontrolling interests 300 306 Total shareholders’ equity 71,315 75,381 Total liabilities and shareholders’ equity",
+      "metadata": {
+        "chunk_id": "79af685b-9e2e-4987-817d-59b2702d51fc",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.42447766330382863,
+        "rerank_score": 108.82276633038286,
+        "matched_terms": [
+          "capital"
+        ],
+        "citation_source": "llm_answer"
+      }
+    },
+    {
+      "document_id": "CVSHEALTH_2022_10K",
+      "page": 133,
+      "section": null,
+      "text": "/Other segment for the years ended December 31, 2022, 2021 and 2020. Discontinued Operations In connection with certain business dispositions completed between 1995 and 1997, the Company retained guarantees on store lease obligations for a number of former subsidiaries, including Linens ‘n Things and Bob’s Stores, each of which subsequently filed for bankruptcy. The Company’s loss from discontinued operations includes lease-related costs that the Company believes it will likely be required to sa",
+      "metadata": {
+        "chunk_id": "a319361d-2426-459b-abc9-0a57625170f6",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.44563907558835825,
+        "rerank_score": 72.87224089216916,
+        "matched_terms": [
+          "based",
+          "business"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "llamaindex_build_vector_index",
+      "target": "CVSHEALTH_2022_10K",
+      "metadata": {
+        "page_count": 213,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "chunk_size": 900,
+        "chunk_overlap": 160,
+        "retrieve_top_k": 120,
+        "rerank_top_k": 3,
+        "finance_rerank": true,
+        "answer_prompt_mode": "finance_reasoning_v3",
+        "answer_context_chunk_count": 3,
+        "answer_context_chars": 8564,
+        "answer_context_words": 1237
+      }
+    },
+    {
+      "step": 2,
+      "action": "llamaindex_retrieve_node",
+      "target": "79af685b-9e2e-4987-817d-59b2702d51fc",
+      "metadata": {
+        "page": 110,
+        "retrieval_rank": 76,
+        "initial_rank": 76,
+        "vector_score": 0.42447766330382863,
+        "rerank_score": 108.82276633038286,
+        "finance_boost": 64.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "balance_sheet_title",
+          "total_assets_line_item",
+          "capital_intensity_balance_sheet_lines"
+        ],
+        "matched_terms": [
+          "capital"
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "action": "llamaindex_retrieve_node",
+      "target": "f65238e9-32ca-4f55-9b3d-e3150016d63b",
+      "metadata": {
+        "page": 108,
+        "retrieval_rank": 24,
+        "initial_rank": 24,
+        "vector_score": 0.48872130048488693,
+        "rerank_score": 75.68046338182202,
+        "finance_boost": 26.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "capital_intensity_income_statement_lines"
+        ],
+        "matched_terms": []
+      }
+    },
+    {
+      "step": 4,
+      "action": "llamaindex_retrieve_node",
+      "target": "a319361d-2426-459b-abc9-0a57625170f6",
+      "metadata": {
+        "page": 133,
+        "retrieval_rank": 54,
+        "initial_rank": 54,
+        "vector_score": 0.44563907558835825,
+        "rerank_score": 72.87224089216916,
+        "finance_boost": 23.75,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "capital_intensity_income_statement_lines"
+        ],
+        "matched_terms": [
+          "based",
+          "business"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": 2698,
+    "output": 973,
+    "total": 3671
+  },
+  "latency_ms": 33394,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\CVSHEALTH_2022_10K.pdf",
+    "adapter_mode": "llamaindex_vector_retrieval",
+    "llm_enabled": true,
+    "model": "deepseek/deepseek-v4-pro",
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "page_count": 213,
+    "chunk_size": 900,
+    "chunk_overlap": 160,
+    "retrieve_top_k": 120,
+    "rerank_top_k": 3,
+    "max_citations": 3,
+    "finance_rerank": true,
+    "answer_prompt_mode": "finance_reasoning_v3",
+    "answer_context_chunk_count": 3,
+    "answer_context_chars": 8564,
+    "answer_context_words": 1237
+  }
+}

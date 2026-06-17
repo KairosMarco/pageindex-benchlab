@@ -12,7 +12,9 @@ from llama_index.embeddings.huggingface import HuggingFaceEmbedding
 from benchlab.schemas import BenchmarkQuestion, BenchmarkResult, RetrievalTraceStep, TokenUsage
 from pipelines.finance_rerank import financial_line_item_boost
 from pipelines.vector_rag.adapter import (
+    DEFAULT_ANSWER_PROMPT_MODE,
     DEFAULT_MAX_CITATIONS as VECTOR_DEFAULT_MAX_CITATIONS,
+    SUPPORTED_ANSWER_PROMPT_MODES,
     answer_with_llm,
     build_citations,
     extract_pages,
@@ -151,6 +153,7 @@ def run_llamaindex_vector_rag_qa(
     rerank_top_k: int = DEFAULT_RERANK_TOP_K,
     max_citations: int = DEFAULT_MAX_CITATIONS,
     finance_rerank: bool = True,
+    answer_prompt_mode: str = DEFAULT_ANSWER_PROMPT_MODE,
 ) -> BenchmarkResult:
     started = time.perf_counter()
     pages = extract_pages(pdf_path)
@@ -177,7 +180,12 @@ def run_llamaindex_vector_rag_qa(
     else:
         if not model:
             raise ValueError("model is required unless --no-llm is set")
-        answer, token_usage = answer_with_llm(model, question.question, reranked_chunks)
+        answer, token_usage = answer_with_llm(
+            model,
+            question.question,
+            reranked_chunks,
+            prompt_mode=answer_prompt_mode,
+        )
         cited_pages = parse_cited_pages(answer)
 
     citations = build_citations(question, reranked_chunks, cited_pages, max_citations)
@@ -192,10 +200,11 @@ def run_llamaindex_vector_rag_qa(
                 "chunk_size": chunk_size,
                 "chunk_overlap": chunk_overlap,
                 "retrieve_top_k": retrieve_top_k,
-                "rerank_top_k": rerank_top_k,
-                "finance_rerank": finance_rerank,
-                **context_metrics,
-            },
+            "rerank_top_k": rerank_top_k,
+            "finance_rerank": finance_rerank,
+            "answer_prompt_mode": answer_prompt_mode,
+            **context_metrics,
+        },
         )
     ]
     trace.extend(
@@ -239,6 +248,7 @@ def run_llamaindex_vector_rag_qa(
             "rerank_top_k": rerank_top_k,
             "max_citations": max_citations,
             "finance_rerank": finance_rerank,
+            "answer_prompt_mode": answer_prompt_mode,
             **context_metrics,
         },
     )
@@ -258,6 +268,11 @@ def main() -> None:
     parser.add_argument("--rerank-top-k", type=int, default=DEFAULT_RERANK_TOP_K)
     parser.add_argument("--max-citations", type=int, default=DEFAULT_MAX_CITATIONS)
     parser.add_argument("--disable-finance-rerank", action="store_true")
+    parser.add_argument(
+        "--answer-prompt-mode",
+        choices=SUPPORTED_ANSWER_PROMPT_MODES,
+        default=DEFAULT_ANSWER_PROMPT_MODE,
+    )
     parser.add_argument("--output", type=Path, required=True)
     args = parser.parse_args()
 
@@ -274,6 +289,7 @@ def main() -> None:
         rerank_top_k=args.rerank_top_k,
         max_citations=args.max_citations,
         finance_rerank=not args.disable_finance_rerank,
+        answer_prompt_mode=args.answer_prompt_mode,
     )
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(result.model_dump_json(indent=2) + "\n", encoding="utf-8")

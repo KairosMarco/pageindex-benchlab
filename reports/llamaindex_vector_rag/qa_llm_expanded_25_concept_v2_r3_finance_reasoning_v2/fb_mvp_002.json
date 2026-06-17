@@ -1,0 +1,189 @@
+{
+  "method": "llamaindex_vector_rag",
+  "question_id": "fb_mvp_002",
+  "question": "What is Amazon's year-over-year change in revenue from FY2016 to FY2017 (in units of percents and round to one decimal place)? Calculate what was asked by utilizing the line items clearly shown in the statement of income.",
+  "answer": "The year-over-year change in revenue (total net sales) from FY2016 to FY2017 is calculated as follows:\n\n- FY2016 total net sales: $135,987 million  \n- FY2017 total net sales: $177,866 million  \n\nChange = ($177,866 - $135,987) / $135,987 = $41,879 / $135,987 ≈ 0.30795, or 30.8% when rounded to one decimal place [PAGE 38].",
+  "citations": [
+    {
+      "document_id": "AMAZON_2017_10K",
+      "page": 38,
+      "section": null,
+      "text": "Table of Contents AMAZON.COM, INC. CONSOLIDATED STATEMENTS OF OPERATIONS (in millions, except per share data) Year Ended December 31, 2015 2016 2017 Net product sales $ 79,268 $ 94,665 $ 118,573 Net service sales 27,738 41,322 59,293 Total net sales 107,006 135,987 177,866 Operating expenses: Cost of sales 71,651 88,265 111,934 Fulfillment 13,410 17,619 25,249 Marketing 5,254 7,233 10,069 Technology and content 12,540 16,085 22,620 General and administrative 1,747 2,432 3,674 Other operating exp",
+      "metadata": {
+        "chunk_id": "530f5956-dcdf-40ff-b5e0-72999a046644",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.6016922154026073,
+        "rerank_score": 125.13413382096249,
+        "matched_terms": [
+          "cost",
+          "income",
+          "net",
+          "operations",
+          "sales"
+        ],
+        "citation_source": "llm_answer"
+      }
+    },
+    {
+      "document_id": "AMAZON_2017_10K",
+      "page": 43,
+      "section": null,
+      "text": "Amazon’s electronic devices sold through retailers are recognized at the point of sale to consumers. Service sales represent third-party seller fees earned (including commissions) and related shipping fees, AWS sales, certain digital content subscriptions, certain advertising services, and our co-branded credit card agreements. Service sales, net of promotional discounts and return allowances, are recognized when service has been rendered. Return allowances, which reduce revenue and cost of sale",
+      "metadata": {
+        "chunk_id": "65f09ba3-9814-41c0-90ea-7ca0fc82df21",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5716401101691831,
+        "rerank_score": 92.21006364849727,
+        "matched_terms": [
+          "cost",
+          "net",
+          "revenue",
+          "sales"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "AMAZON_2017_10K",
+      "page": 49,
+      "section": null,
+      "text": "ing prior periods. The cumulative adjustment will primarily relate to unredeemed gift cards. We will begin to recognize revenue from estimated unredeemed gift cards over the expected customer redemption period, which is substantially within nine months, rather than waiting until gift cards expire or when the likelihood of redemption becomes remote, generally two years from the date of issuance. Other changes relate to Amazon-branded electronic devices sold through retailers, which will be recogn",
+      "metadata": {
+        "chunk_id": "b10055cb-b513-4e37-9f0e-0b9383eb86d0",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5120647670166668,
+        "rerank_score": 91.039810035,
+        "matched_terms": [
+          "change",
+          "cost",
+          "income",
+          "net",
+          "operations",
+          "revenue",
+          "sales"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "llamaindex_build_vector_index",
+      "target": "AMAZON_2017_10K",
+      "metadata": {
+        "page_count": 85,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "chunk_size": 900,
+        "chunk_overlap": 160,
+        "retrieve_top_k": 120,
+        "rerank_top_k": 3,
+        "finance_rerank": true,
+        "answer_prompt_mode": "finance_reasoning_v2",
+        "answer_context_chunk_count": 3,
+        "answer_context_chars": 5216,
+        "answer_context_words": 797
+      }
+    },
+    {
+      "step": 2,
+      "action": "llamaindex_retrieve_node",
+      "target": "530f5956-dcdf-40ff-b5e0-72999a046644",
+      "metadata": {
+        "page": 38,
+        "retrieval_rank": 5,
+        "initial_rank": 5,
+        "vector_score": 0.6016922154026073,
+        "rerank_score": 125.13413382096249,
+        "finance_boost": 42.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "income_statement_title",
+          "total_net_sales_line_item"
+        ],
+        "matched_terms": [
+          "cost",
+          "income",
+          "net",
+          "operations",
+          "sales"
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "action": "llamaindex_retrieve_node",
+      "target": "65f09ba3-9814-41c0-90ea-7ca0fc82df21",
+      "metadata": {
+        "page": 43,
+        "retrieval_rank": 10,
+        "initial_rank": 10,
+        "vector_score": 0.5716401101691831,
+        "rerank_score": 92.21006364849727,
+        "finance_boost": 20.125,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "total_net_sales_line_item"
+        ],
+        "matched_terms": [
+          "cost",
+          "net",
+          "revenue",
+          "sales"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "llamaindex_retrieve_node",
+      "target": "b10055cb-b513-4e37-9f0e-0b9383eb86d0",
+      "metadata": {
+        "page": 49,
+        "retrieval_rank": 20,
+        "initial_rank": 20,
+        "vector_score": 0.5120647670166668,
+        "rerank_score": 91.039810035,
+        "finance_boost": 16.0,
+        "finance_boost_reasons": [
+          "income_statement_title"
+        ],
+        "matched_terms": [
+          "change",
+          "cost",
+          "income",
+          "net",
+          "operations",
+          "revenue",
+          "sales"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": 1699,
+    "output": 442,
+    "total": 2141
+  },
+  "latency_ms": 25240,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\AMAZON_2017_10K.pdf",
+    "adapter_mode": "llamaindex_vector_retrieval",
+    "llm_enabled": true,
+    "model": "deepseek/deepseek-v4-pro",
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "page_count": 85,
+    "chunk_size": 900,
+    "chunk_overlap": 160,
+    "retrieve_top_k": 120,
+    "rerank_top_k": 3,
+    "max_citations": 3,
+    "finance_rerank": true,
+    "answer_prompt_mode": "finance_reasoning_v2",
+    "answer_context_chunk_count": 3,
+    "answer_context_chars": 5216,
+    "answer_context_words": 797
+  }
+}

@@ -1,0 +1,29 @@
+[
+  {
+    "question_id": "fb_exp_020",
+    "doc_name": "CVSHEALTH_2022_10K",
+    "status": "generated",
+    "output_path": "reports\\llamaindex_vector_rag\\qa_llm_expanded_25_concept_v2_r3_finance_reasoning_v2_probe\\fb_exp_020.json",
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\CVSHEALTH_2022_10K.pdf",
+    "citation_count": 3,
+    "selected_pages_one_indexed": [
+      108,
+      110,
+      133
+    ],
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "chunk_size": 900,
+    "chunk_overlap": 160,
+    "retrieve_top_k": 120,
+    "rerank_top_k": 3,
+    "max_citations": 3,
+    "finance_rerank": true,
+    "answer_prompt_mode": "finance_reasoning_v2",
+    "answer_context_chunk_count": 3,
+    "answer_context_chars": 8564,
+    "answer_context_words": 1237,
+    "latency_ms": 37329,
+    "llm_enabled": true,
+    "model": "deepseek/deepseek-v4-pro"
+  }
+]

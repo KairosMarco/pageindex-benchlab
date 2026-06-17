@@ -261,6 +261,34 @@ reports/llamaindex_hybrid_rag/qa_llm_expanded_25_concept_v2_r3/
 
 The aggregate report is stable by default: rerunning one method still summarizes all known expanded LLM methods if their artifacts already exist. Use `--summary-selected-only` only when a deliberately single-method report is needed.
 
+Run LlamaIndex Vector answer-prompt ablations:
+
+```powershell
+$env:DEEPSEEK_API_KEY="YOUR_KEY"
+python scripts\run_llamaindex_expanded_llm_diagnostics.py --method vector --summary-selected-only --answer-prompt-mode finance_reasoning_v2 --force --continue-on-error
+python scripts\validate_expanded_llm_artifacts.py --diagnostics-json reports\llamaindex_expanded_llm_diagnostics_finance_reasoning_v2.json --required-method vector --output reports\expanded_llm_validation_report_finance_reasoning_v2.json
+
+python scripts\run_llamaindex_expanded_llm_diagnostics.py --method vector --summary-selected-only --answer-prompt-mode finance_reasoning_v3 --force --continue-on-error
+python scripts\validate_expanded_llm_artifacts.py --diagnostics-json reports\llamaindex_expanded_llm_diagnostics_finance_reasoning_v3.json --required-method vector --output reports\expanded_llm_validation_report_finance_reasoning_v3.json
+
+python scripts\summarize_finance_prompt_variants.py
+```
+
+This writes:
+
+```text
+reports/finance_prompt_variant_summary.md
+reports/finance_prompt_variant_summary.json
+reports/llamaindex_expanded_llm_diagnostics_finance_reasoning_v2.md
+reports/llamaindex_expanded_llm_diagnostics_finance_reasoning_v2.json
+reports/llamaindex_expanded_llm_diagnostics_finance_reasoning_v3.md
+reports/llamaindex_expanded_llm_diagnostics_finance_reasoning_v3.json
+reports/expanded_llm_validation_report_finance_reasoning_v2.json
+reports/expanded_llm_validation_report_finance_reasoning_v3.json
+```
+
+The prompt variants are answer-generation ablations. Keep the default prompt as the main cross-method baseline unless a report explicitly compares prompt modes.
+
 Summarize expanded cost and quality across committed LlamaIndex and Long-context artifacts:
 
 ```powershell

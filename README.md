@@ -120,6 +120,14 @@ Completed:
 - Expanded cross-method cost/quality summary now exists:
   - `reports/expanded_cost_quality_summary.md`
   - Shared answer failure across LlamaIndex Vector, LlamaIndex Hybrid, and Long-context: `fb_exp_020`.
+- LlamaIndex Vector answer-prompt variants have been tested as an answer-generation ablation:
+  - Default prompt: answer accuracy `0.920`, verdicts `23 correct / 1 partial / 1 incorrect`, average total tokens `2,543`.
+  - `finance_reasoning_v2`: answer accuracy `0.960`, verdicts `24 correct / 0 partial / 1 incorrect`, average total tokens `2,885`.
+  - `finance_reasoning_v3`: answer accuracy `0.920`, verdicts `23 correct / 2 partial / 0 incorrect`, average total tokens `2,978`.
+  - The prompt variants fixed some hard reasoning cases, especially `fb_exp_020`, but introduced other formatting or scope regressions. The default prompt remains the main cross-method baseline.
+- Finance prompt variant summary now exists:
+  - `reports/finance_prompt_variant_summary.md`
+  - `reports/finance_prompt_variant_summary.json`
 
 Current owner: project owner. PH is on standby for later task assignment.
 

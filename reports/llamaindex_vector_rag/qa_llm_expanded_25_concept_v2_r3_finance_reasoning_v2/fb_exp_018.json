@@ -1,0 +1,164 @@
+{
+  "method": "llamaindex_vector_rag",
+  "question_id": "fb_exp_018",
+  "question": "Which region had the Highest EBITDAR Contribution for MGM during FY2022?",
+  "answer": "Based on the provided document chunks, the region with the highest EBITDAR contribution for MGM during FY2022 is Las Vegas Strip Resorts.\n\nApplying the definition of \"Adjusted Property EBITDAR\" as shown in the supplemental data, the twelve-month figures for FY2022 are as follows [PAGE 13]:\n- Las Vegas Strip Resorts: $3,142,308 thousand\n- Regional Operations: $1,294,630 thousand\n- MGM China: $(203,136) thousand loss\n\nThese figures are corroborated by the text description for Regional Operations (\"Adjusted Property EBITDAR of $1.3 billion\") and MGM China (\"Adjusted Property EBITDAR loss of $203 million\") [PAGE 4]. The Las Vegas Strip Resorts segment significantly exceeds all other regions and segments in Adjusted Property EBITDAR contribution.",
+  "citations": [
+    {
+      "document_id": "MGMRESORTS_2022Q4_EARNINGS",
+      "page": 13,
+      "section": null,
+      "text": "6 $ 3,056,892 $ 13,127,485 $ 9,680,140 MGM RESORTS INTERNATIONAL AND SUBSIDIARIES SUPPLEMENTAL DATA – ADJUSTED PROPERTY EBITDAR AND ADJUSTED EBITDAR (In thousands) (Unaudited) Three months ended Twelve months ended December 31, 2022 December 31, 2021 December 31, 2022 December 31, 2021 Las Vegas Strip Resorts $ 877,052 $ 698,739 $ 3,142,308 $ 1,738,211 Regional Operations 319,517 309,250 1,294,630 1,217,814 MGM China (54,979) 5,015 (203,136) 25,367 Unconsolidated affiliates(1) (43,029) (49,698) ",
+      "metadata": {
+        "chunk_id": "189ece7a-5073-43e2-95a6-157d705d6ada",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5081315444105207,
+        "rerank_score": 63.76553539343301,
+        "matched_terms": [
+          "during",
+          "ebitdar"
+        ],
+        "citation_source": "llm_answer"
+      }
+    },
+    {
+      "document_id": "MGMRESORTS_2022Q4_EARNINGS",
+      "page": 4,
+      "section": null,
+      "text": "Page 4 of 15 • Same-Store Adjusted Property EBITDAR of $2.1 billion in the current year compared to $1.5 billion in the prior year, an increase of 42%; and • Adjusted Property EBITDAR margin of 37.4% in the current year compared to 36.7% in the prior year, an increase of 72 basis points. Regional Operations • Net revenues of $3.8 billion in the current year compared to $3.4 billion in the prior year, an increase of 12%; • Adjusted Property EBITDAR of $1.3 billion in the current year compared to ",
+      "metadata": {
+        "chunk_id": "6bddb7dc-aa5d-4510-bd51-858dc19e6002",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5211414209479458,
+        "rerank_score": 62.86414209479458,
+        "matched_terms": [
+          "contribution",
+          "ebitdar"
+        ],
+        "citation_source": "llm_answer"
+      }
+    },
+    {
+      "document_id": "MGMRESORTS_2022Q4_EARNINGS",
+      "page": 14,
+      "section": null,
+      "text": "NTERNATIONAL AND SUBSIDIARIES RECONCILIATION OF NET INCOME (LOSS) ATTRIBUTABLE TO MGM RESORTS INTERNATIONAL TO ADJUSTED EBITDAR (In thousands) (Unaudited) Three months ended Twelve months ended December 31, 2022 December 31, 2021 December 31, 2022 December 31, 2021 Net income attributable to MGM Resorts International $ 284,002 $ 131,013 $ 1,473,093 $ 1,254,370 Plus: Net loss attributable to noncontrolling interests (604,016) (14,926) (1,266,362) (45,981) Net income (loss) (320,014) 116,087 206,7",
+      "metadata": {
+        "chunk_id": "beda114d-6853-4a87-85d9-e46d89285710",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.483441660089949,
+        "rerank_score": 59.15368981851871,
+        "matched_terms": [
+          "ebitdar"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "llamaindex_build_vector_index",
+      "target": "MGMRESORTS_2022Q4_EARNINGS",
+      "metadata": {
+        "page_count": 15,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "chunk_size": 900,
+        "chunk_overlap": 160,
+        "retrieve_top_k": 120,
+        "rerank_top_k": 3,
+        "finance_rerank": true,
+        "answer_prompt_mode": "finance_reasoning_v2",
+        "answer_context_chunk_count": 3,
+        "answer_context_chars": 7158,
+        "answer_context_words": 988
+      }
+    },
+    {
+      "step": 2,
+      "action": "llamaindex_retrieve_node",
+      "target": "189ece7a-5073-43e2-95a6-157d705d6ada",
+      "metadata": {
+        "page": 13,
+        "retrieval_rank": 2,
+        "initial_rank": 2,
+        "vector_score": 0.5081315444105207,
+        "rerank_score": 63.76553539343301,
+        "finance_boost": 8.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "matched_terms": [
+          "during",
+          "ebitdar"
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "action": "llamaindex_retrieve_node",
+      "target": "6bddb7dc-aa5d-4510-bd51-858dc19e6002",
+      "metadata": {
+        "page": 4,
+        "retrieval_rank": 1,
+        "initial_rank": 1,
+        "vector_score": 0.5211414209479458,
+        "rerank_score": 62.86414209479458,
+        "finance_boost": 5.75,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "matched_terms": [
+          "contribution",
+          "ebitdar"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "llamaindex_retrieve_node",
+      "target": "beda114d-6853-4a87-85d9-e46d89285710",
+      "metadata": {
+        "page": 14,
+        "retrieval_rank": 5,
+        "initial_rank": 5,
+        "vector_score": 0.483441660089949,
+        "rerank_score": 59.15368981851871,
+        "finance_boost": 8.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "matched_terms": [
+          "ebitdar"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": 2717,
+    "output": 608,
+    "total": 3325
+  },
+  "latency_ms": 18955,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\MGMRESORTS_2022Q4_EARNINGS.pdf",
+    "adapter_mode": "llamaindex_vector_retrieval",
+    "llm_enabled": true,
+    "model": "deepseek/deepseek-v4-pro",
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "page_count": 15,
+    "chunk_size": 900,
+    "chunk_overlap": 160,
+    "retrieve_top_k": 120,
+    "rerank_top_k": 3,
+    "max_citations": 3,
+    "finance_rerank": true,
+    "answer_prompt_mode": "finance_reasoning_v2",
+    "answer_context_chunk_count": 3,
+    "answer_context_chars": 7158,
+    "answer_context_words": 988
+  }
+}

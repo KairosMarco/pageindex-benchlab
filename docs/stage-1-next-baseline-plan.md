@@ -129,7 +129,7 @@ These stronger claims require a larger dataset, stronger baselines, and cost ass
 10. Run expanded LLM answer generation only after retrieval quality is acceptable. Completed for LlamaIndex Vector and Hybrid `concept_v2`, `rerank_top_k=3`.
 11. Run expanded Long-context LLM baseline on the same 25-question set. Completed.
 12. Add expanded cost estimates and decide whether to test stricter finance reasoning prompts. Completed.
-13. Decide whether to preserve the current reasoning failures as benchmark findings or run a stricter answer-prompt variant.
+13. Decide whether to preserve the current reasoning failures as benchmark findings or run a stricter answer-prompt variant. Completed as a prompt-ablation diagnostic.
 
 ## LlamaIndex Vector Diagnostic Result
 
@@ -313,6 +313,55 @@ fb_exp_020: capital-intensity interpretation failure after retrieving the right 
 Interpretation:
 
 The expanded LLM run shows that the current LlamaIndex candidates are no longer failing primarily at retrieval on this 25-question subset. The remaining gap is answer reasoning and judging strictness on concept-heavy financial questions.
+
+## Finance Prompt Variant Result
+
+Prompt-variant diagnostics were run for LlamaIndex Vector RAG only. The default prompt remains the cross-method comparison baseline; the finance prompts are answer-generation ablations.
+
+Run commands:
+
+```powershell
+python scripts\run_llamaindex_expanded_llm_diagnostics.py --method vector --summary-selected-only --answer-prompt-mode finance_reasoning_v2 --force --continue-on-error
+python scripts\run_llamaindex_expanded_llm_diagnostics.py --method vector --summary-selected-only --answer-prompt-mode finance_reasoning_v3 --force --continue-on-error
+python scripts\summarize_finance_prompt_variants.py
+```
+
+Results:
+
+```text
+Default prompt:
+answer accuracy: 0.920
+verdicts: 23 correct, 1 partial, 1 incorrect
+average total tokens: 2,543
+
+finance_reasoning_v2:
+answer accuracy: 0.960
+verdicts: 24 correct, 0 partial, 1 incorrect
+average total tokens: 2,885
+
+finance_reasoning_v3:
+answer accuracy: 0.920
+verdicts: 23 correct, 2 partial, 0 incorrect
+average total tokens: 2,978
+```
+
+Validation:
+
+```text
+reports/expanded_llm_validation_report_finance_reasoning_v2.json
+status=pass
+checks=21
+failed=0
+
+reports/expanded_llm_validation_report_finance_reasoning_v3.json
+status=pass
+checks=21
+failed=0
+```
+
+Interpretation:
+
+`finance_reasoning_v2` improved correct-only accuracy by fixing `fb_exp_020`, but it introduced a rounding-format failure on `fb_exp_019`. `finance_reasoning_v3` fixed the targeted rounding and capital-intensity probes, but the full run still had two partial answers. This confirms that prompt tuning should be treated as an ablation with tradeoffs, not a universally stronger replacement for the default prompt.
 
 ## Expanded Long-context Result
 

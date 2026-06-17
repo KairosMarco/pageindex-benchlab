@@ -23,6 +23,10 @@ from pipelines.llamaindex_vector_rag.adapter import (  # noqa: E402
     DEFAULT_RETRIEVE_TOP_K,
     run_llamaindex_vector_rag_qa,
 )
+from pipelines.vector_rag.adapter import (  # noqa: E402
+    DEFAULT_ANSWER_PROMPT_MODE,
+    SUPPORTED_ANSWER_PROMPT_MODES,
+)
 
 
 DEFAULT_QUESTIONS = ROOT / "datasets" / "financebench" / "mvp_questions.jsonl"
@@ -84,6 +88,12 @@ def main() -> None:
         action="store_true",
         help="Disable the label-free finance line-item boost and run the generic reranker only.",
     )
+    parser.add_argument(
+        "--answer-prompt-mode",
+        choices=SUPPORTED_ANSWER_PROMPT_MODES,
+        default=DEFAULT_ANSWER_PROMPT_MODE,
+        help="Answer-generation prompt template. Default preserves the historical baseline prompt.",
+    )
     parser.add_argument("--force", action="store_true", help="Re-run questions even if the output JSON already exists.")
     parser.add_argument("--continue-on-error", action="store_true")
     args = parser.parse_args()
@@ -137,6 +147,7 @@ def main() -> None:
                 rerank_top_k=args.rerank_top_k,
                 max_citations=args.max_citations,
                 finance_rerank=not args.disable_finance_rerank,
+                answer_prompt_mode=args.answer_prompt_mode,
             )
             result.metadata = compact_result_metadata(result.metadata)
             output_path.write_text(result.model_dump_json(indent=2) + "\n", encoding="utf-8")
@@ -156,6 +167,7 @@ def main() -> None:
                     "rerank_top_k": args.rerank_top_k,
                     "max_citations": args.max_citations,
                     "finance_rerank": not args.disable_finance_rerank,
+                    "answer_prompt_mode": args.answer_prompt_mode,
                     "answer_context_chunk_count": result.metadata.get("answer_context_chunk_count"),
                     "answer_context_chars": result.metadata.get("answer_context_chars"),
                     "answer_context_words": result.metadata.get("answer_context_words"),

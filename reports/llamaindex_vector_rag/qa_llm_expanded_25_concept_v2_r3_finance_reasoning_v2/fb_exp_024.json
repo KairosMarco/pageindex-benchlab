@@ -1,0 +1,203 @@
+{
+  "method": "llamaindex_vector_rag",
+  "question_id": "fb_exp_024",
+  "question": "By drawing conclusions from the information stated only in the statement of financial position, what is General Mills's FY2020 working capital ratio? Define working capital ratio as total current assets divided by total current liabilities. Round your answer to two decimal places.",
+  "answer": "Applying the definition of the working capital ratio as total current assets divided by total current liabilities, the data from the consolidated balance sheet for May 31, 2020 (FY2020) is used.\n\nTotal current assets: $5,121.3 million [PAGE 50]\nTotal current liabilities: $7,491.5 million [PAGE 50]\n\nCalculation: $5,121.3 / $7,491.5 = 0.6836, which rounds to 0.68.\n\n**Answer:** The FY2020 working capital ratio is 0.68. [PAGE 50]",
+  "citations": [
+    {
+      "document_id": "GENERALMILLS_2020_10K",
+      "page": 50,
+      "section": null,
+      "text": "50 Consolidated Balance Sheets GENERAL MILLS, INC. AND SUBSIDIARIES (In Millions, Except Par Value) May 31, 2020 May 26, 2019 ASSETS Current assets: Cash and cash equivalents $ 1,677.8 $ 450.0 Receivables 1,615.1 1,679.7 Inventories 1,426.3 1,559.3 Prepaid expenses and other current assets 402.1 497.5 Total current assets 5,121.3 4,186.5 Land, buildings, and equipment 3,580.6 3,787.2 Goodwill 13,923.2 13,995.8 Other intangible assets 7,095.8 7,166.8 Other assets 1,085.8 974.9 Total assets $ 30,8",
+      "metadata": {
+        "chunk_id": "56aa49af-16f7-4a74-98e8-3225c05c9a14",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5006405444977473,
+        "rerank_score": 143.03905444977474,
+        "matched_terms": [
+          "assets",
+          "balance",
+          "capital",
+          "current",
+          "financial",
+          "liabilities",
+          "sheets",
+          "total"
+        ],
+        "citation_source": "llm_answer"
+      }
+    },
+    {
+      "document_id": "GENERALMILLS_2020_10K",
+      "page": 17,
+      "section": null,
+      "text": "17 ITEM 6 - Selected Financial Data The following table sets forth selected financial data for each of the fiscal years in the five-year period ended May 31, 2020: Fiscal Year In Millions, Except Per Share Data, Percentages and Ratios 2020 (a) 2019 2018 2017 2016 Operating data: Net sales $ 17,626.6 $ 16,865.2 $ 15,740.4 $ 15,619.8 $ 16,563.1 Gross margin (b) (d) 6,129.9 5,756.8 5,435.6 5,567.8 5,843.3 Selling, general, and administrative expenses (d) 3,151.6 2,935.8 2,850.1 2,888.8 3,141.4 Oper",
+      "metadata": {
+        "chunk_id": "426fc03b-d13b-41b9-a161-9b88126cde63",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.4604648714333576,
+        "rerank_score": 87.97148714333575,
+        "matched_terms": [
+          "assets",
+          "balance",
+          "capital",
+          "current",
+          "financial",
+          "total"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "GENERALMILLS_2020_10K",
+      "page": 66,
+      "section": null,
+      "text": " amount of our equity swaps was $146.9 million. These swap contracts mature in fiscal 2021. FAIR VALUE MEASUREMENTS AND FINANCIAL STATEMENT PRESENTATION The fair values of our assets, liabilities, and derivative positions recorded at fair value and their respective levels in the fair value hierarchy as of May 31, 2020, and May 26, 2019, were as follows: May 31, 2020 May 31, 2020 Fair Values of Assets Fair Values of Liabilities In Millions Level 1 Level 2 Level 3 Total Level 1 Level 2 Level 3 Tot",
+      "metadata": {
+        "chunk_id": "bf1f310a-a826-49fd-8570-54dc3a1e5d16",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.2723081578366449,
+        "rerank_score": 72.41414911699783,
+        "matched_terms": [
+          "assets",
+          "balance",
+          "current",
+          "financial",
+          "liabilities",
+          "position",
+          "statement",
+          "total"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "llamaindex_build_vector_index",
+      "target": "GENERALMILLS_2020_10K",
+      "metadata": {
+        "page_count": 127,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "chunk_size": 900,
+        "chunk_overlap": 160,
+        "retrieve_top_k": 120,
+        "rerank_top_k": 3,
+        "finance_rerank": true,
+        "answer_prompt_mode": "finance_reasoning_v2",
+        "answer_context_chunk_count": 3,
+        "answer_context_chars": 6550,
+        "answer_context_words": 1016
+      }
+    },
+    {
+      "step": 2,
+      "action": "llamaindex_retrieve_node",
+      "target": "56aa49af-16f7-4a74-98e8-3225c05c9a14",
+      "metadata": {
+        "page": 50,
+        "retrieval_rank": 4,
+        "initial_rank": 4,
+        "vector_score": 0.5006405444977473,
+        "rerank_score": 143.03905444977474,
+        "finance_boost": 70.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "balance_sheet_title",
+          "total_assets_line_item",
+          "working_capital_line_items"
+        ],
+        "matched_terms": [
+          "assets",
+          "balance",
+          "capital",
+          "current",
+          "financial",
+          "liabilities",
+          "sheets",
+          "total"
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "action": "llamaindex_retrieve_node",
+      "target": "426fc03b-d13b-41b9-a161-9b88126cde63",
+      "metadata": {
+        "page": 17,
+        "retrieval_rank": 10,
+        "initial_rank": 10,
+        "vector_score": 0.4604648714333576,
+        "rerank_score": 87.97148714333575,
+        "finance_boost": 26.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "total_assets_line_item"
+        ],
+        "matched_terms": [
+          "assets",
+          "balance",
+          "capital",
+          "current",
+          "financial",
+          "total"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "llamaindex_retrieve_node",
+      "target": "bf1f310a-a826-49fd-8570-54dc3a1e5d16",
+      "metadata": {
+        "page": 66,
+        "retrieval_rank": 99,
+        "initial_rank": 99,
+        "vector_score": 0.2723081578366449,
+        "rerank_score": 72.41414911699783,
+        "finance_boost": 26.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "total_assets_line_item"
+        ],
+        "matched_terms": [
+          "assets",
+          "balance",
+          "current",
+          "financial",
+          "liabilities",
+          "position",
+          "statement",
+          "total"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": 2813,
+    "output": 349,
+    "total": 3162
+  },
+  "latency_ms": 21518,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\GENERALMILLS_2020_10K.pdf",
+    "adapter_mode": "llamaindex_vector_retrieval",
+    "llm_enabled": true,
+    "model": "deepseek/deepseek-v4-pro",
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "page_count": 127,
+    "chunk_size": 900,
+    "chunk_overlap": 160,
+    "retrieve_top_k": 120,
+    "rerank_top_k": 3,
+    "max_citations": 3,
+    "finance_rerank": true,
+    "answer_prompt_mode": "finance_reasoning_v2",
+    "answer_context_chunk_count": 3,
+    "answer_context_chars": 6550,
+    "answer_context_words": 1016
+  }
+}

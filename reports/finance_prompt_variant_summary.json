@@ -1,0 +1,293 @@
+{
+  "summary": {
+    "date": "2026-06-17",
+    "question_file": "datasets\\financebench\\expanded_questions_25.jsonl",
+    "question_count": 25,
+    "variant_count": 3,
+    "probe_count": 3
+  },
+  "variants": [
+    {
+      "key": "default",
+      "label": "default prompt",
+      "complete": true,
+      "result_count": 25,
+      "expected_count": 25,
+      "average_evidence_recall": 1.0,
+      "average_citation_precision": 0.36,
+      "answer_accuracy": 0.92,
+      "average_answer_score": 0.94,
+      "verdict_counts": {
+        "correct": 23,
+        "partial": 1,
+        "incorrect": 1
+      },
+      "incorrect_count": 1,
+      "partial_count": 1,
+      "issue_rows": [
+        {
+          "question_id": "fb_exp_017",
+          "score": 0.5,
+          "verdict": "partial",
+          "rationale": "The predicted answer correctly states that Corning has positive working capital, matching the gold answer's yes/no conclusion. However, it calculates working capital using total current assets and total current liabilities ($2,278 million), while the gold answer specifies a working capital of $831 million and notes that only operating current assets and liabilities were considered. This variance in amount and methodology makes the answer directionally right but incomplete/missing important detail.",
+          "gold_answer": "Yes. Corning had a positive working capital amount of $831 million by FY 2022 close. This answer considers only operating current assets and current liabilities that were clearly shown in the balance sheet.",
+          "predicted_answer": "Based on the provided FY2022 data, Corning had positive working capital. The calculation, using data from the Consolidated Balance Sheets, is as follows:\n\n*   **Total Current Assets:** $7,453 million [PAGE 60]\n*   **Total Current Liabilities:** $5,175 million [PAGE 60]\n\nSubtracting current liabilities from current assets results in a positive working capital of $2,278 million. The retrieved document chunks do not contain any information suggesting that working capital is not a useful or relevant metric for this company.",
+          "metadata": {
+            "mode": "llm_judge",
+            "model": "deepseek/deepseek-v4-pro",
+            "result_path": "reports\\llamaindex_vector_rag\\qa_llm_expanded_25_concept_v2_r3\\fb_exp_017.json",
+            "method": "llamaindex_vector_rag",
+            "doc_name": "CORNING_2022_10K"
+          }
+        },
+        {
+          "question_id": "fb_exp_020",
+          "score": 0.0,
+          "verdict": "incorrect",
+          "rationale": "The predicted answer concludes 'No, CVS Health does not appear to be a highly capital-intensive business', while the gold answer states 'Yes, CVS Health requires an extensive asset base to operate'. These are directly contradictory conclusions, making the prediction incorrect despite noting the same low fixed-asset ratio.",
+          "gold_answer": "Yes, CVS Health requires an extensive asset base to operate, which is evident from its ROA of only 1.82% in 2022 and 3.39% in 2021, though it should be noted that a significant portion of this asset base is goodwill, and CVS's fixed assets/total assets ratio is on the lower side of 5.6%.",
+          "predicted_answer": "No, CVS Health does not appear to be a highly capital-intensive business based on its FY2022 balance sheet. Property and equipment, net, was $12,873 million, which represents less than 6% of total assets of $228,275 million [PAGE 110]. This indicates that physical fixed assets are a relatively small component of the company's overall asset base.",
+          "metadata": {
+            "mode": "llm_judge",
+            "model": "deepseek/deepseek-v4-pro",
+            "result_path": "reports\\llamaindex_vector_rag\\qa_llm_expanded_25_concept_v2_r3\\fb_exp_020.json",
+            "method": "llamaindex_vector_rag",
+            "doc_name": "CVSHEALTH_2022_10K"
+          }
+        }
+      ],
+      "results_dir": "reports\\llamaindex_vector_rag\\qa_llm_expanded_25_concept_v2_r3",
+      "evidence_eval": "reports\\llamaindex_vector_rag\\evidence_eval_qa_llm_expanded_25_concept_v2_r3.json",
+      "answer_eval": "reports\\llamaindex_vector_rag\\answer_eval_qa_llm_expanded_25_concept_v2_r3.json",
+      "diagnostics": "reports\\llamaindex_expanded_llm_diagnostics.json",
+      "average_total_tokens": 2543.2,
+      "total_tokens": 63580,
+      "average_latency_ms": 16497.16,
+      "token_usage_count": 25,
+      "latency_count": 25,
+      "selected_question_outcomes": {
+        "fb_exp_017": "partial",
+        "fb_exp_019": "correct",
+        "fb_exp_020": "incorrect",
+        "fb_mvp_006": "correct"
+      }
+    },
+    {
+      "key": "finance_reasoning_v2",
+      "label": "finance reasoning v2",
+      "complete": true,
+      "result_count": 25,
+      "expected_count": 25,
+      "average_evidence_recall": 1.0,
+      "average_citation_precision": 0.36,
+      "answer_accuracy": 0.96,
+      "average_answer_score": 0.96,
+      "verdict_counts": {
+        "correct": 24,
+        "partial": 0,
+        "incorrect": 1
+      },
+      "incorrect_count": 1,
+      "partial_count": 0,
+      "issue_rows": [
+        {
+          "question_id": "fb_exp_019",
+          "score": 0.0,
+          "verdict": "incorrect",
+          "rationale": "The gold answer states $0.40 billion, but the predicted answer is $0.389 billion (approximately $0.39 billion). These amounts materially differ, and the predicted answer does not round to the gold value (0.389 rounds to 0.39, not 0.40).",
+          "gold_answer": "$0.40",
+          "predicted_answer": "According to the Consolidated Statements of Cash Flows, dividends paid for the year ended December 31, 2020, were $389 million [PAGE 86]. This converts to $0.389 billion (or approximately $0.39 billion) [PAGE 86].",
+          "metadata": {
+            "mode": "llm_judge",
+            "model": "deepseek/deepseek-v4-pro",
+            "result_path": "reports\\llamaindex_vector_rag\\qa_llm_expanded_25_concept_v2_r3_finance_reasoning_v2\\fb_exp_019.json",
+            "method": "llamaindex_vector_rag",
+            "doc_name": "AMERICANWATERWORKS_2020_10K"
+          }
+        }
+      ],
+      "results_dir": "reports\\llamaindex_vector_rag\\qa_llm_expanded_25_concept_v2_r3_finance_reasoning_v2",
+      "evidence_eval": "reports\\llamaindex_vector_rag\\evidence_eval_qa_llm_expanded_25_concept_v2_r3_finance_reasoning_v2.json",
+      "answer_eval": "reports\\llamaindex_vector_rag\\answer_eval_qa_llm_expanded_25_concept_v2_r3_finance_reasoning_v2.json",
+      "diagnostics": "reports\\llamaindex_expanded_llm_diagnostics_finance_reasoning_v2.json",
+      "average_total_tokens": 2885.24,
+      "total_tokens": 72131,
+      "average_latency_ms": 22909.96,
+      "token_usage_count": 25,
+      "latency_count": 25,
+      "selected_question_outcomes": {
+        "fb_exp_017": "correct",
+        "fb_exp_019": "incorrect",
+        "fb_exp_020": "correct",
+        "fb_mvp_006": "correct"
+      }
+    },
+    {
+      "key": "finance_reasoning_v3",
+      "label": "finance reasoning v3",
+      "complete": true,
+      "result_count": 25,
+      "expected_count": 25,
+      "average_evidence_recall": 1.0,
+      "average_citation_precision": 0.36,
+      "answer_accuracy": 0.92,
+      "average_answer_score": 0.96,
+      "verdict_counts": {
+        "correct": 23,
+        "partial": 2,
+        "incorrect": 0
+      },
+      "incorrect_count": 0,
+      "partial_count": 2,
+      "issue_rows": [
+        {
+          "question_id": "fb_exp_017",
+          "score": 0.5,
+          "verdict": "partial",
+          "rationale": "The predicted answer correctly states that Corning had positive working capital in FY2022, which aligns with the gold answer's core conclusion. However, it calculates working capital using total current assets and total current liabilities ($2,278 million) instead of the operating current assets and liabilities used in the gold answer ($831 million). While the question primarily asks for a yes/no on positivity, the gold answer includes a specific amount under a particular definition, and the predicted answer's differing amount and methodology indicate incomplete alignment with the gold answer's precise metric. Thus it is directionally right but lacks the important detail of focusing on operating items.",
+          "gold_answer": "Yes. Corning had a positive working capital amount of $831 million by FY 2022 close. This answer considers only operating current assets and current liabilities that were clearly shown in the balance sheet.",
+          "predicted_answer": "Applying the standard definition of working capital as current assets minus current liabilities:\n\nFrom Corning's Consolidated Balance Sheets for FY2022 [PAGE 60], total current assets were $7,453 million and total current liabilities were $5,175 million.\n\nCurrent Assets – Current Liabilities = $7,453 million – $5,175 million = $2,278 million.\n\nTherefore, yes, Corning had positive working capital in FY2022 [PAGE 60]. The metric is directly calculable from the presented balance sheet, which includes standard current operating items such as trade receivables, inventories, and accounts payable, so it remains a relevant metric.",
+          "metadata": {
+            "mode": "llm_judge",
+            "model": "deepseek/deepseek-v4-pro",
+            "result_path": "reports\\llamaindex_vector_rag\\qa_llm_expanded_25_concept_v2_r3_finance_reasoning_v3\\fb_exp_017.json",
+            "method": "llamaindex_vector_rag",
+            "doc_name": "CORNING_2022_10K"
+          }
+        },
+        {
+          "question_id": "fb_mvp_006",
+          "score": 0.5,
+          "verdict": "partial",
+          "rationale": "The predicted answer correctly identifies that Boeing reported materially important ongoing legal battles and specifically mentions the lawsuits related to the 2018 Lion Air and 2019 Ethiopian Airlines crashes, which matches the gold answer. However, it adds an additional legal matter (Embraer arbitration) not present in the gold answer. Since the gold answer only references the crash lawsuits, the inclusion of Embraer arbitration goes beyond the gold standard and may be considered an extra claim not supported by the given reference, making the predicted answer partially correct.",
+          "gold_answer": "Yes. Multiple lawsuits have been filed against Boeing resulting from a 2018 Lion Air crash and a 2019 Ethiopian Airlines crash.",
+          "predicted_answer": "Yes, Boeing reported materially important ongoing legal battles from FY2022. The two key matters disclosed are:\n\n1.  **737 MAX Accidents Litigation**: Multiple legal actions remain pending related to the Lion Air Flight 610 (2018) and Ethiopian Airlines Flight 302 (2019) accidents. Although Boeing settled a Department of Justice investigation and an SEC investigation, the company states it \"cannot reasonably estimate a range of loss, if any... that we may incur as a result of any remaining pending lawsuits or other matters related to the accidents and the 737 MAX\" [PAGE 113].\n\n2.  **Embraer Arbitration**: Boeing is in a dispute with Embraer S.A. over the termination of agreements to establish joint ventures. Embraer has disputed Boeing's right to terminate the agreements, and the matter is in arbitration. Boeing states it \"cannot reasonably estimate a range of loss, if any, that may result from the arbitration\" [PAGE 113].",
+          "metadata": {
+            "mode": "llm_judge",
+            "model": "deepseek/deepseek-v4-pro",
+            "result_path": "reports\\llamaindex_vector_rag\\qa_llm_expanded_25_concept_v2_r3_finance_reasoning_v3\\fb_mvp_006.json",
+            "method": "llamaindex_vector_rag",
+            "doc_name": "BOEING_2022_10K"
+          }
+        }
+      ],
+      "results_dir": "reports\\llamaindex_vector_rag\\qa_llm_expanded_25_concept_v2_r3_finance_reasoning_v3",
+      "evidence_eval": "reports\\llamaindex_vector_rag\\evidence_eval_qa_llm_expanded_25_concept_v2_r3_finance_reasoning_v3.json",
+      "answer_eval": "reports\\llamaindex_vector_rag\\answer_eval_qa_llm_expanded_25_concept_v2_r3_finance_reasoning_v3.json",
+      "diagnostics": "reports\\llamaindex_expanded_llm_diagnostics_finance_reasoning_v3.json",
+      "average_total_tokens": 2978.32,
+      "total_tokens": 74458,
+      "average_latency_ms": 23454.76,
+      "token_usage_count": 25,
+      "latency_count": 25,
+      "selected_question_outcomes": {
+        "fb_exp_017": "partial",
+        "fb_exp_019": "correct",
+        "fb_exp_020": "correct",
+        "fb_mvp_006": "partial"
+      }
+    }
+  ],
+  "probes": [
+    {
+      "key": "finance_reasoning_v1_probe",
+      "label": "v1 hard-case probe",
+      "complete": true,
+      "result_count": 1,
+      "expected_count": 1,
+      "average_evidence_recall": 1.0,
+      "average_citation_precision": 0.6666666666666666,
+      "answer_accuracy": 0.0,
+      "average_answer_score": 0.0,
+      "verdict_counts": {
+        "correct": 0,
+        "partial": 0,
+        "incorrect": 1
+      },
+      "incorrect_count": 1,
+      "partial_count": 0,
+      "issue_rows": [
+        {
+          "question_id": "fb_exp_020",
+          "score": 0.0,
+          "verdict": "incorrect",
+          "rationale": "The predicted answer says 'No', while the gold answer says 'Yes'. They are opposite conclusions, so the predicted answer is incorrect.",
+          "gold_answer": "Yes, CVS Health requires an extensive asset base to operate, which is evident from its ROA of only 1.82% in 2022 and 3.39% in 2021, though it should be noted that a significant portion of this asset base is goodwill, and CVS's fixed assets/total assets ratio is on the lower side of 5.6%.",
+          "predicted_answer": "No, based on FY2022 data, CVS Health does not exhibit the hallmarks of a capital-intensive business when its full balance sheet is considered.  \n\n**Supporting evidence:**  \n- Property and equipment, net was $12.9 billion, and operating lease right-of-use assets added $17.9 billion, for a combined tangible fixed‑asset base of $30.8 billion. That represents only 13.5% of total assets ($228.3 billion) [PAGE 110].  \n- By contrast, goodwill ($78.2 billion) and other intangible assets ($24.8 billion) together account for 45% of total assets, reflecting an acquisition‑driven, intangible‑heavy business model (e.g., the Aetna health insurance business and pharmacy benefits management) rather than one that requires heavy physical capital [PAGE 110].  \n- Return on assets (net income $4.2 billion ÷ total assets $228.3 billion) was about 1.8%, a figure that can signal capital intensity but is here explained by the enormous goodwill and intangible base, not by a large physical‑asset burden [PAGE 108, 110].  \n\nWhile the retail pharmacy segment does operate a network of leased stores, the overall balance sheet is dominated by intangible assets, and the business generates revenue primarily through products, premiums, and services that are not intensive in fixed capital. Therefore, on a consolidated FY2022 basis, CVS Health is best characterized as a business that is not capital‑intensive.",
+          "metadata": {
+            "mode": "llm_judge",
+            "model": "deepseek/deepseek-v4-pro",
+            "result_path": "reports\\llamaindex_vector_rag\\qa_llm_expanded_25_concept_v2_r3_finance_reasoning_v1_probe\\fb_exp_020.json",
+            "method": "llamaindex_vector_rag",
+            "doc_name": "CVSHEALTH_2022_10K"
+          }
+        }
+      ],
+      "results_dir": "reports\\llamaindex_vector_rag\\qa_llm_expanded_25_concept_v2_r3_finance_reasoning_v1_probe",
+      "evidence_eval": "reports\\llamaindex_vector_rag\\evidence_eval_qa_llm_expanded_25_concept_v2_r3_finance_reasoning_v1_probe.json",
+      "answer_eval": "reports\\llamaindex_vector_rag\\answer_eval_qa_llm_expanded_25_concept_v2_r3_finance_reasoning_v1_probe.json",
+      "diagnostics": null,
+      "average_total_tokens": 3975.0,
+      "total_tokens": 3975,
+      "average_latency_ms": 45736.0,
+      "token_usage_count": 1,
+      "latency_count": 1
+    },
+    {
+      "key": "finance_reasoning_v2_probe",
+      "label": "v2 hard-case probe",
+      "complete": true,
+      "result_count": 1,
+      "expected_count": 1,
+      "average_evidence_recall": 1.0,
+      "average_citation_precision": 0.6666666666666666,
+      "answer_accuracy": 1.0,
+      "average_answer_score": 1.0,
+      "verdict_counts": {
+        "correct": 1,
+        "partial": 0,
+        "incorrect": 0
+      },
+      "incorrect_count": 0,
+      "partial_count": 0,
+      "issue_rows": [],
+      "results_dir": "reports\\llamaindex_vector_rag\\qa_llm_expanded_25_concept_v2_r3_finance_reasoning_v2_probe",
+      "evidence_eval": "reports\\llamaindex_vector_rag\\evidence_eval_qa_llm_expanded_25_concept_v2_r3_finance_reasoning_v2_probe.json",
+      "answer_eval": "reports\\llamaindex_vector_rag\\answer_eval_qa_llm_expanded_25_concept_v2_r3_finance_reasoning_v2_probe.json",
+      "diagnostics": null,
+      "average_total_tokens": 3578.0,
+      "total_tokens": 3578,
+      "average_latency_ms": 37328.0,
+      "token_usage_count": 1,
+      "latency_count": 1
+    },
+    {
+      "key": "finance_reasoning_v3_probe",
+      "label": "v3 rounding plus hard-case probe",
+      "complete": true,
+      "result_count": 2,
+      "expected_count": 2,
+      "average_evidence_recall": 1.0,
+      "average_citation_precision": 0.5,
+      "answer_accuracy": 1.0,
+      "average_answer_score": 1.0,
+      "verdict_counts": {
+        "correct": 2,
+        "partial": 0,
+        "incorrect": 0
+      },
+      "incorrect_count": 0,
+      "partial_count": 0,
+      "issue_rows": [],
+      "results_dir": "reports\\llamaindex_vector_rag\\qa_llm_expanded_25_concept_v2_r3_finance_reasoning_v3_probe",
+      "evidence_eval": "reports\\llamaindex_vector_rag\\evidence_eval_qa_llm_expanded_25_concept_v2_r3_finance_reasoning_v3_probe.json",
+      "answer_eval": "reports\\llamaindex_vector_rag\\answer_eval_qa_llm_expanded_25_concept_v2_r3_finance_reasoning_v3_probe.json",
+      "diagnostics": null,
+      "average_total_tokens": 3336.0,
+      "total_tokens": 6672,
+      "average_latency_ms": 31437.0,
+      "token_usage_count": 2,
+      "latency_count": 2
+    }
+  ]
+}

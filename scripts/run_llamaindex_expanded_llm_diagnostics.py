@@ -21,6 +21,10 @@ if str(ROOT) not in sys.path:
 load_dotenv(ROOT / ".env")
 
 from benchlab.schemas import BenchmarkResult  # noqa: E402
+from pipelines.vector_rag.adapter import (  # noqa: E402
+    DEFAULT_ANSWER_PROMPT_MODE,
+    SUPPORTED_ANSWER_PROMPT_MODES,
+)
 
 
 DEFAULT_MODEL = "deepseek/deepseek-v4-pro"
@@ -125,8 +129,16 @@ def question_label(questions: Path) -> str:
     return stem
 
 
-def artifact_stem(questions: Path, variant_suffix: str, rerank_top_k: int) -> str:
-    return f"qa_llm_{question_label(questions)}_{variant_suffix}_r{rerank_top_k}"
+def artifact_stem(
+    questions: Path,
+    variant_suffix: str,
+    rerank_top_k: int,
+    answer_prompt_mode: str = DEFAULT_ANSWER_PROMPT_MODE,
+) -> str:
+    stem = f"qa_llm_{question_label(questions)}_{variant_suffix}_r{rerank_top_k}"
+    if answer_prompt_mode != DEFAULT_ANSWER_PROMPT_MODE:
+        stem = f"{stem}_{answer_prompt_mode}"
+    return stem
 
 
 def artifact_paths(
@@ -135,8 +147,9 @@ def artifact_paths(
     questions: Path,
     variant_suffix: str,
     rerank_top_k: int,
+    answer_prompt_mode: str = DEFAULT_ANSWER_PROMPT_MODE,
 ) -> dict[str, Path]:
-    stem = artifact_stem(questions, variant_suffix, rerank_top_k)
+    stem = artifact_stem(questions, variant_suffix, rerank_top_k, answer_prompt_mode)
     return {
         "results_dir": config.base_report_dir / stem,
         "manifest": config.base_report_dir / f"{stem}_manifest.json",
@@ -163,6 +176,7 @@ def run_method(
     pdf_dir: Path,
     model: str,
     answer_mode: str,
+    answer_prompt_mode: str,
     variant_suffix: str,
     rerank_top_k: int,
     chunk_size: int,
@@ -176,6 +190,7 @@ def run_method(
         questions=questions,
         variant_suffix=variant_suffix,
         rerank_top_k=rerank_top_k,
+        answer_prompt_mode=answer_prompt_mode,
     )
 
     # The existing runner names are MVP-oriented, but both accept an explicit question file.
@@ -194,6 +209,8 @@ def run_method(
         str(chunk_size),
         "--chunk-overlap",
         str(chunk_overlap),
+        "--answer-prompt-mode",
+        answer_prompt_mode,
         "--output-dir",
         str(paths["results_dir"]),
         "--manifest",
@@ -337,6 +354,7 @@ def summarize_method(
     questions: Path,
     variant_suffix: str,
     rerank_top_k: int,
+    answer_prompt_mode: str,
     chunk_size: int,
     chunk_overlap: int,
     paths: dict[str, Path],
@@ -409,6 +427,7 @@ def summarize_method(
         "chunk_size": chunk_size,
         "chunk_overlap": chunk_overlap,
         "variant_suffix": variant_suffix,
+        "answer_prompt_mode": answer_prompt_mode,
         "token_usage_complete": token_usage_complete,
         "latency_complete": latency_complete,
         "results_dir": rel(paths["results_dir"]),
@@ -494,6 +513,7 @@ def render_markdown(payload: dict[str, Any]) -> str:
         f"- Question count: `{payload['summary']['question_count']}`",
         f"- Model: `{payload['summary']['model']}`",
         f"- Reranker variant label: `{payload['summary']['variant_suffix']}`",
+        f"- Answer prompt mode: `{payload['summary']['answer_prompt_mode']}`",
         f"- Chunking: `chunk_size={payload['summary']['chunk_size']}`, `chunk_overlap={payload['summary']['chunk_overlap']}`",
         f"- Rerank top-k: `{payload['summary']['rerank_top_k']}`",
         "",
@@ -542,7 +562,14 @@ def render_markdown(payload: dict[str, Any]) -> str:
     all_recall_full = all(method.get("average_evidence_recall") == 1.0 for method in payload["methods"])
     all_accuracy_full = all(method.get("answer_accuracy") == 1.0 for method in payload["methods"])
     lines.extend(["", "## Interpretation", ""])
-    if all_gate_passed and all_recall_full and all_accuracy_full:
+    if payload["summary"].get("answer_prompt_mode") != DEFAULT_ANSWER_PROMPT_MODE:
+        lines.extend(
+            [
+                "- This is a prompt-variant diagnostic run. Compare it against the default-prompt expanded LLM baseline before making any quality claim.",
+                "- A stricter finance reasoning prompt is useful only if it fixes reasoning failures without causing regressions on extraction and arithmetic questions.",
+            ]
+        )
+    elif all_gate_passed and all_recall_full and all_accuracy_full:
         lines.extend(
             [
                 "- On this 25-question expanded FinanceBench subset, both tested LlamaIndex candidates completed answer generation and evaluation with zero mechanical failures.",
@@ -585,6 +612,7 @@ def write_summary(
     questions: Path,
     model: str,
     answer_mode: str,
+    answer_prompt_mode: str,
     variant_suffix: str,
     rerank_top_k: int,
     chunk_size: int,
@@ -599,6 +627,7 @@ def write_summary(
             questions=questions,
             variant_suffix=variant_suffix,
             rerank_top_k=rerank_top_k,
+            answer_prompt_mode=answer_prompt_mode,
             chunk_size=chunk_size,
             chunk_overlap=chunk_overlap,
             paths=artifact_paths(
@@ -606,6 +635,7 @@ def write_summary(
                 questions=questions,
                 variant_suffix=variant_suffix,
                 rerank_top_k=rerank_top_k,
+                answer_prompt_mode=answer_prompt_mode,
             ),
         )
         for config in configs
@@ -617,6 +647,7 @@ def write_summary(
             "question_count": len(question_rows),
             "model": model,
             "answer_mode": answer_mode,
+            "answer_prompt_mode": answer_prompt_mode,
             "variant_suffix": variant_suffix,
             "rerank_top_k": rerank_top_k,
             "chunk_size": chunk_size,
@@ -641,6 +672,12 @@ def main() -> None:
     parser.add_argument("--method", choices=sorted(METHODS), action="append")
     parser.add_argument("--model", default=DEFAULT_MODEL)
     parser.add_argument("--answer-mode", choices=("heuristic", "llm"), default="llm")
+    parser.add_argument(
+        "--answer-prompt-mode",
+        choices=SUPPORTED_ANSWER_PROMPT_MODES,
+        default=DEFAULT_ANSWER_PROMPT_MODE,
+        help="Prompt template used by the answer-generation runners.",
+    )
     parser.add_argument("--variant-suffix", default="concept_v2")
     parser.add_argument("--rerank-top-k", type=int, default=3)
     parser.add_argument("--chunk-size", type=int, default=900)
@@ -658,6 +695,16 @@ def main() -> None:
     parser.add_argument("--output-md", type=Path, default=DEFAULT_OUTPUT_MD)
     args = parser.parse_args()
 
+    output_json = args.output_json
+    output_md = args.output_md
+    if args.answer_prompt_mode != DEFAULT_ANSWER_PROMPT_MODE:
+        if output_json == DEFAULT_OUTPUT_JSON:
+            output_json = output_json.with_name(
+                f"{output_json.stem}_{args.answer_prompt_mode}{output_json.suffix}"
+            )
+        if output_md == DEFAULT_OUTPUT_MD:
+            output_md = output_md.with_name(f"{output_md.stem}_{args.answer_prompt_mode}{output_md.suffix}")
+
     run_configs = [METHODS[method] for method in selected_methods(args.method)]
     if not args.summary_only:
         if not args.dry_run and not has_model_key():
@@ -672,6 +719,7 @@ def main() -> None:
                 pdf_dir=args.pdf_dir,
                 model=args.model,
                 answer_mode=args.answer_mode,
+                answer_prompt_mode=args.answer_prompt_mode,
                 variant_suffix=args.variant_suffix,
                 rerank_top_k=args.rerank_top_k,
                 chunk_size=args.chunk_size,
@@ -691,12 +739,13 @@ def main() -> None:
             questions=args.questions,
             model=args.model,
             answer_mode=args.answer_mode,
+            answer_prompt_mode=args.answer_prompt_mode,
             variant_suffix=args.variant_suffix,
             rerank_top_k=args.rerank_top_k,
             chunk_size=args.chunk_size,
             chunk_overlap=args.chunk_overlap,
-            output_json=args.output_json,
-            output_md=args.output_md,
+            output_json=output_json,
+            output_md=output_md,
         )
 
 

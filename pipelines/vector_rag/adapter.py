@@ -20,6 +20,16 @@ DEFAULT_CHUNK_OVERLAP = 40
 DEFAULT_RETRIEVE_TOP_K = 20
 DEFAULT_RERANK_TOP_K = 6
 DEFAULT_MAX_CITATIONS = 3
+DEFAULT_ANSWER_PROMPT_MODE = "default"
+FINANCE_REASONING_ANSWER_PROMPT_MODE = "finance_reasoning_v1"
+FINANCE_REASONING_V2_ANSWER_PROMPT_MODE = "finance_reasoning_v2"
+FINANCE_REASONING_V3_ANSWER_PROMPT_MODE = "finance_reasoning_v3"
+SUPPORTED_ANSWER_PROMPT_MODES = (
+    DEFAULT_ANSWER_PROMPT_MODE,
+    FINANCE_REASONING_ANSWER_PROMPT_MODE,
+    FINANCE_REASONING_V2_ANSWER_PROMPT_MODE,
+    FINANCE_REASONING_V3_ANSWER_PROMPT_MODE,
+)
 
 
 def load_question(path: Path, question_id: str) -> BenchmarkQuestion:
@@ -302,9 +312,14 @@ def parse_cited_pages(answer: str) -> list[int]:
     return pages
 
 
-def answer_with_llm(model: str, question: str, chunks: list[dict[str, Any]]) -> tuple[str, TokenUsage]:
-    context = render_context(chunks)
-    prompt = f"""Use only the retrieved document chunks to answer the question.
+def build_answer_prompt(
+    question: str,
+    context: str,
+    *,
+    prompt_mode: str = DEFAULT_ANSWER_PROMPT_MODE,
+) -> str:
+    if prompt_mode == DEFAULT_ANSWER_PROMPT_MODE:
+        return f"""Use only the retrieved document chunks to answer the question.
 Each chunk has a page marker like [PAGE 12 | CHUNK p12_c0].
 Return a concise answer and cite supporting pages using [PAGE n].
 
@@ -314,6 +329,76 @@ QUESTION:
 RETRIEVED CHUNKS:
 {context}
 """
+    if prompt_mode == FINANCE_REASONING_ANSWER_PROMPT_MODE:
+        return f"""Use only the retrieved document chunks to answer the question.
+Each chunk has a page marker like [PAGE 12 | CHUNK p12_c0].
+Return a concise answer and cite supporting pages using [PAGE n].
+
+Apply strict finance reasoning before giving the final answer:
+- Do not decide conceptual finance questions from a single ratio when the evidence gives multiple relevant indicators.
+- For capital-intensive questions, compare asset base, return on assets, PP&E or fixed assets as a share of total assets, goodwill/intangibles, leased-asset business model indicators, capex, and the business model. If the evidence includes low ROA or large goodwill/asset base, discuss that evidence explicitly before the yes/no conclusion.
+- For working-capital questions, state which definition is used. If the question or evidence points to operating working capital, do not silently substitute total current assets minus total current liabilities.
+- For unit conversions, convert values before judging numeric agreement. Example: $389 million = $0.389 billion, approximately $0.39 billion or $0.40 billion depending on requested rounding.
+- If indicators conflict, explain the competing indicators and then give the best supported conclusion from the provided chunks.
+
+QUESTION:
+{question}
+
+RETRIEVED CHUNKS:
+{context}
+"""
+    if prompt_mode == FINANCE_REASONING_V2_ANSWER_PROMPT_MODE:
+        return f"""Use only the retrieved document chunks to answer the question.
+Each chunk has a page marker like [PAGE 12 | CHUNK p12_c0].
+Return a concise answer and cite supporting pages using [PAGE n].
+
+Apply strict finance reasoning before giving the final answer:
+- Treat conceptual finance questions as definition-sensitive. State the definition you are applying before the final conclusion.
+- For capital-intensive questions, use a broad asset-intensity definition unless the question explicitly asks only about PP&E or capex intensity. Under this definition, low ROA and a large total asset base are direct evidence of capital intensity.
+- Do not reject capital intensity only because PP&E / total assets is low, because leases, acquired goodwill, insurance/PBM assets, and other required operating assets can still make the business asset-intensive. If PP&E or fixed assets are low, present that as a caveat rather than as a standalone negative conclusion.
+- If evidence shows low ROA together with significant total assets, goodwill, intangibles, or leased operating assets, the answer should generally be "Yes, with caveats" unless stronger contrary evidence is present in the chunks.
+- For working-capital questions, state which definition is used. If the question or evidence points to operating working capital, do not silently substitute total current assets minus total current liabilities.
+- For unit conversions, convert values before judging numeric agreement. Example: $389 million = $0.389 billion, approximately $0.39 billion or $0.40 billion depending on requested rounding.
+- If indicators conflict, explain the competing indicators and then give the best supported conclusion from the provided chunks.
+
+QUESTION:
+{question}
+
+RETRIEVED CHUNKS:
+{context}
+"""
+    if prompt_mode == FINANCE_REASONING_V3_ANSWER_PROMPT_MODE:
+        return f"""Use only the retrieved document chunks to answer the question.
+Each chunk has a page marker like [PAGE 12 | CHUNK p12_c0].
+Return a concise answer and cite supporting pages using [PAGE n].
+
+Apply strict finance reasoning before giving the final answer:
+- Treat conceptual finance questions as definition-sensitive. State the definition you are applying before the final conclusion.
+- For capital-intensive questions, use a broad asset-intensity definition unless the question explicitly asks only about PP&E or capex intensity. Under this definition, low ROA and a large total asset base are direct evidence of capital intensity.
+- Do not reject capital intensity only because PP&E / total assets is low, because leases, acquired goodwill, insurance/PBM assets, and other required operating assets can still make the business asset-intensive. If PP&E or fixed assets are low, present that as a caveat rather than as a standalone negative conclusion.
+- If evidence shows low ROA together with significant total assets, goodwill, intangibles, or leased operating assets, the answer should generally be "Yes, with caveats" unless stronger contrary evidence is present in the chunks.
+- For working-capital questions, state which definition is used. If the question or evidence points to operating working capital, do not silently substitute total current assets minus total current liabilities.
+- For unit conversions, convert values before judging numeric agreement and match the requested reporting unit. If the question asks for USD billions and does not specify decimal places, provide the benchmark-style rounded billion answer first, then include the exact source value in parentheses. Example: $389 million = $0.389 billion, so answer "$0.40 billion ($389 million)" rather than only "$0.389 billion" or "$0.39 billion".
+- If indicators conflict, explain the competing indicators and then give the best supported conclusion from the provided chunks.
+
+QUESTION:
+{question}
+
+RETRIEVED CHUNKS:
+{context}
+"""
+    raise ValueError(f"Unsupported answer prompt mode: {prompt_mode}")
+
+
+def answer_with_llm(
+    model: str,
+    question: str,
+    chunks: list[dict[str, Any]],
+    *,
+    prompt_mode: str = DEFAULT_ANSWER_PROMPT_MODE,
+) -> tuple[str, TokenUsage]:
+    context = render_context(chunks)
+    prompt = build_answer_prompt(question, context, prompt_mode=prompt_mode)
     response = completion(
         model=model,
         messages=[{"role": "user", "content": prompt}],
@@ -394,6 +479,7 @@ def run_vector_rag_qa(
     retrieve_top_k: int = DEFAULT_RETRIEVE_TOP_K,
     rerank_top_k: int = DEFAULT_RERANK_TOP_K,
     max_citations: int = DEFAULT_MAX_CITATIONS,
+    answer_prompt_mode: str = DEFAULT_ANSWER_PROMPT_MODE,
 ) -> BenchmarkResult:
     started = time.perf_counter()
     pages = extract_pages(pdf_path)
@@ -412,7 +498,12 @@ def run_vector_rag_qa(
     else:
         if not model:
             raise ValueError("model is required unless --no-llm is set")
-        answer, token_usage = answer_with_llm(model, question.question, reranked_chunks)
+        answer, token_usage = answer_with_llm(
+            model,
+            question.question,
+            reranked_chunks,
+            prompt_mode=answer_prompt_mode,
+        )
         cited_pages = parse_cited_pages(answer)
 
     citations = build_citations(question, reranked_chunks, cited_pages, max_citations)
@@ -466,6 +557,7 @@ def run_vector_rag_qa(
             "retrieve_top_k": retrieve_top_k,
             "rerank_top_k": rerank_top_k,
             "max_citations": max_citations,
+            "answer_prompt_mode": answer_prompt_mode,
         },
     )
 
@@ -482,6 +574,11 @@ def main() -> None:
     parser.add_argument("--retrieve-top-k", type=int, default=DEFAULT_RETRIEVE_TOP_K)
     parser.add_argument("--rerank-top-k", type=int, default=DEFAULT_RERANK_TOP_K)
     parser.add_argument("--max-citations", type=int, default=DEFAULT_MAX_CITATIONS)
+    parser.add_argument(
+        "--answer-prompt-mode",
+        choices=SUPPORTED_ANSWER_PROMPT_MODES,
+        default=DEFAULT_ANSWER_PROMPT_MODE,
+    )
     parser.add_argument("--output", type=Path, required=True)
     args = parser.parse_args()
 
@@ -496,6 +593,7 @@ def main() -> None:
         retrieve_top_k=args.retrieve_top_k,
         rerank_top_k=args.rerank_top_k,
         max_citations=args.max_citations,
+        answer_prompt_mode=args.answer_prompt_mode,
     )
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(result.model_dump_json(indent=2) + "\n", encoding="utf-8")

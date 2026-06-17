@@ -18,7 +18,9 @@ from benchlab.schemas import BenchmarkQuestion, BenchmarkResult, RetrievalTraceS
 from pipelines.finance_rerank import financial_line_item_boost
 from pipelines.llamaindex_vector_rag.adapter import DEFAULT_EMBED_MODEL
 from pipelines.vector_rag.adapter import (
+    DEFAULT_ANSWER_PROMPT_MODE,
     DEFAULT_MAX_CITATIONS as VECTOR_DEFAULT_MAX_CITATIONS,
+    SUPPORTED_ANSWER_PROMPT_MODES,
     answer_with_llm,
     build_citations,
     expanded_question_terms,
@@ -259,6 +261,7 @@ def run_llamaindex_hybrid_rag_qa(
     finance_rerank: bool = True,
     cross_encoder_model: str | None = None,
     cross_encoder_candidates: int = DEFAULT_CROSS_ENCODER_CANDIDATES,
+    answer_prompt_mode: str = DEFAULT_ANSWER_PROMPT_MODE,
 ) -> BenchmarkResult:
     started = time.perf_counter()
     pages = extract_pages(pdf_path)
@@ -286,7 +289,12 @@ def run_llamaindex_hybrid_rag_qa(
     else:
         if not model:
             raise ValueError("model is required unless --no-llm is set")
-        answer, token_usage = answer_with_llm(model, question.question, reranked_chunks)
+        answer, token_usage = answer_with_llm(
+            model,
+            question.question,
+            reranked_chunks,
+            prompt_mode=answer_prompt_mode,
+        )
         cited_pages = parse_cited_pages(answer)
 
     citations = build_citations(question, reranked_chunks, cited_pages, max_citations)
@@ -309,6 +317,7 @@ def run_llamaindex_hybrid_rag_qa(
                 "finance_rerank": finance_rerank,
                 "cross_encoder_model": cross_encoder_model,
                 "cross_encoder_candidates": cross_encoder_candidates,
+                "answer_prompt_mode": answer_prompt_mode,
                 **context_metrics,
             },
         )
@@ -365,6 +374,7 @@ def run_llamaindex_hybrid_rag_qa(
             "finance_rerank": finance_rerank,
             "cross_encoder_model": cross_encoder_model,
             "cross_encoder_candidates": cross_encoder_candidates,
+            "answer_prompt_mode": answer_prompt_mode,
             **context_metrics,
         },
     )
@@ -389,6 +399,11 @@ def main() -> None:
     parser.add_argument("--disable-finance-rerank", action="store_true")
     parser.add_argument("--cross-encoder-model", default=None)
     parser.add_argument("--cross-encoder-candidates", type=int, default=DEFAULT_CROSS_ENCODER_CANDIDATES)
+    parser.add_argument(
+        "--answer-prompt-mode",
+        choices=SUPPORTED_ANSWER_PROMPT_MODES,
+        default=DEFAULT_ANSWER_PROMPT_MODE,
+    )
     parser.add_argument("--output", type=Path, required=True)
     args = parser.parse_args()
 
@@ -410,6 +425,7 @@ def main() -> None:
         finance_rerank=not args.disable_finance_rerank,
         cross_encoder_model=args.cross_encoder_model,
         cross_encoder_candidates=args.cross_encoder_candidates,
+        answer_prompt_mode=args.answer_prompt_mode,
     )
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(result.model_dump_json(indent=2) + "\n", encoding="utf-8")

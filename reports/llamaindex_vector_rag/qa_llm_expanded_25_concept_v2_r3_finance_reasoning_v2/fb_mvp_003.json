@@ -1,0 +1,191 @@
+{
+  "method": "llamaindex_vector_rag",
+  "question_id": "fb_mvp_003",
+  "question": "What are the major products and services that AMD sells as of FY22?",
+  "answer": "Based on the provided document chunks, as of fiscal year 2022, AMD's major products and services include:\n\n*   Server microprocessors (CPUs), graphics processing units (GPUs), data processing units (DPUs), Field Programmable Gate Arrays (FPGAs), and Adaptive System-on-Chip (SoC) products for data centers [PAGE 4].\n*   CPUs, accelerated processing units (APUs) that integrate CPUs and GPUs, and chipsets for desktop and notebook personal computers [PAGE 4].\n*   Discrete GPUs, and semi-custom SoC products and development services [PAGE 4].\n*   Embedded CPUs, GPUs, APUs, FPGAs, and Adaptive SoC products [PAGE 4].\n*   From time to time, the company may also sell or license portions of its intellectual property (IP) portfolio [PAGE 60][PAGE 4].",
+  "citations": [
+    {
+      "document_id": "AMD_2022_10K",
+      "page": 4,
+      "section": null,
+      "text": "g other things: possible impact of future accounting rules on AMD’s consolidated financial statements; demand for AMD’s products; the growth, change and competitive landscape of the markets in which AMD participates; international sales will continue to be a significant portion of total sales in the foreseeable future; that AMD’s cash, cash equivalents and short-term investment balances together with the availability under that certain revolving credit facility (the Revolving Credit Agreement) m",
+      "metadata": {
+        "chunk_id": "8de0f972-f0db-4927-88d0-d6e8b75d3760",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.277972651468817,
+        "rerank_score": 78.98893181354836,
+        "matched_terms": [
+          "cpus",
+          "gpus",
+          "graphics",
+          "overview",
+          "products",
+          "services"
+        ],
+        "citation_source": "llm_answer"
+      }
+    },
+    {
+      "document_id": "AMD_2022_10K",
+      "page": 60,
+      "section": null,
+      "text": "any. References herein to AMD or the Company mean Advanced Micro Devices, Inc. and its consolidated subsidiaries. AMD’s products include x86 microprocessors (CPUs) and graphics processing units (GPUs), as standalone devices or as incorporated into accelerated processing units (APUs), chipsets, data center and professional GPUs, embedded processors, semi-custom System-on-Chip (SoC) products, microprocessor and SoC development services and technology, data processing units (DPUs), Field Programmab",
+      "metadata": {
+        "chunk_id": "485f2383-8033-44d2-9c3c-5433eb435fe7",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5728885046086405,
+        "rerank_score": 90.53885046086404,
+        "matched_terms": [
+          "cpus",
+          "gpus",
+          "graphics",
+          "processors",
+          "products",
+          "sells",
+          "services"
+        ],
+        "citation_source": "llm_answer"
+      }
+    },
+    {
+      "document_id": "AMD_2022_10K",
+      "page": 43,
+      "section": null,
+      "text": "esults of Operations” in Part II, Item 7 of our Annual Report on Form 10-K for the fiscal year ended December 25, 2021. Overview 2022 was a transformative year for AMD as we took several major steps that scaled and reshaped our business. In February 2022, we completed our strategic acquisition of Xilinx, Inc. (Xilinx) which expanded our technology and product portfolio to include adaptable hardware platforms that enable hardware acceleration and rapid innovation across a variety of technologies ",
+      "metadata": {
+        "chunk_id": "79aa556b-48d1-4429-9d4a-b437ff296212",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5156517585475686,
+        "rerank_score": 76.02350918809019,
+        "matched_terms": [
+          "major",
+          "overview",
+          "processors",
+          "products"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "llamaindex_build_vector_index",
+      "target": "AMD_2022_10K",
+      "metadata": {
+        "page_count": 121,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "chunk_size": 900,
+        "chunk_overlap": 160,
+        "retrieve_top_k": 120,
+        "rerank_top_k": 3,
+        "finance_rerank": true,
+        "answer_prompt_mode": "finance_reasoning_v2",
+        "answer_context_chunk_count": 3,
+        "answer_context_chars": 12269,
+        "answer_context_words": 1815
+      }
+    },
+    {
+      "step": 2,
+      "action": "llamaindex_retrieve_node",
+      "target": "485f2383-8033-44d2-9c3c-5433eb435fe7",
+      "metadata": {
+        "page": 60,
+        "retrieval_rank": 1,
+        "initial_rank": 1,
+        "vector_score": 0.5728885046086405,
+        "rerank_score": 90.53885046086404,
+        "finance_boost": 18.25,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "amd_product_terms"
+        ],
+        "matched_terms": [
+          "cpus",
+          "gpus",
+          "graphics",
+          "processors",
+          "products",
+          "sells",
+          "services"
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "action": "llamaindex_retrieve_node",
+      "target": "8de0f972-f0db-4927-88d0-d6e8b75d3760",
+      "metadata": {
+        "page": 4,
+        "retrieval_rank": 98,
+        "initial_rank": 98,
+        "vector_score": 0.277972651468817,
+        "rerank_score": 78.98893181354836,
+        "finance_boost": 39.0,
+        "finance_boost_reasons": [
+          "business_overview_intro",
+          "amd_product_terms"
+        ],
+        "matched_terms": [
+          "cpus",
+          "gpus",
+          "graphics",
+          "overview",
+          "products",
+          "services"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "llamaindex_retrieve_node",
+      "target": "79aa556b-48d1-4429-9d4a-b437ff296212",
+      "metadata": {
+        "page": 43,
+        "retrieval_rank": 6,
+        "initial_rank": 6,
+        "vector_score": 0.5156517585475686,
+        "rerank_score": 76.02350918809019,
+        "finance_boost": 15.5,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "amd_product_terms"
+        ],
+        "matched_terms": [
+          "major",
+          "overview",
+          "processors",
+          "products"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": 2983,
+    "output": 563,
+    "total": 3546
+  },
+  "latency_ms": 23932,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\AMD_2022_10K.pdf",
+    "adapter_mode": "llamaindex_vector_retrieval",
+    "llm_enabled": true,
+    "model": "deepseek/deepseek-v4-pro",
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "page_count": 121,
+    "chunk_size": 900,
+    "chunk_overlap": 160,
+    "retrieve_top_k": 120,
+    "rerank_top_k": 3,
+    "max_citations": 3,
+    "finance_rerank": true,
+    "answer_prompt_mode": "finance_reasoning_v2",
+    "answer_context_chunk_count": 3,
+    "answer_context_chars": 12269,
+    "answer_context_words": 1815
+  }
+}

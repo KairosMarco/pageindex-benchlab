@@ -911,14 +911,76 @@ Interpretation:
 - Long-context was far more token-expensive and had weaker citation grounding.
 - The shared `fb_exp_020` failure should be used as a targeted reasoning-prompt or benchmark-analysis case before making claims about method superiority.
 
+### Finance Prompt Variant Ablation
+
+The LlamaIndex Vector answer-generation prompt now supports explicit prompt modes. The default prompt remains the main cross-method baseline. The finance prompts are an answer-generation ablation intended to test whether stricter financial reasoning instructions fix failures after evidence retrieval has already succeeded.
+
+Summary report:
+
+```text
+reports/finance_prompt_variant_summary.md
+reports/finance_prompt_variant_summary.json
+```
+
+Validated prompt-variant artifacts:
+
+```text
+reports/expanded_llm_validation_report_finance_reasoning_v2.json
+reports/expanded_llm_validation_report_finance_reasoning_v3.json
+```
+
+Full-run Vector results:
+
+```text
+Default prompt:
+questions: 25
+evidence recall: 1.000
+answer accuracy: 0.920
+verdicts: 23 correct, 1 partial, 1 incorrect
+average total tokens: 2,543
+
+finance_reasoning_v2:
+questions: 25
+evidence recall: 1.000
+answer accuracy: 0.960
+verdicts: 24 correct, 0 partial, 1 incorrect
+average total tokens: 2,885
+
+finance_reasoning_v3:
+questions: 25
+evidence recall: 1.000
+answer accuracy: 0.920
+verdicts: 23 correct, 2 partial, 0 incorrect
+average total tokens: 2,978
+```
+
+Targeted probes:
+
+```text
+finance_reasoning_v1 probe on fb_exp_020:
+answer accuracy: 0.000
+
+finance_reasoning_v2 probe on fb_exp_020:
+answer accuracy: 1.000
+
+finance_reasoning_v3 probe on fb_exp_019 and fb_exp_020:
+answer accuracy: 1.000
+```
+
+Interpretation:
+
+- `finance_reasoning_v2` fixed `fb_exp_020` capital-intensity reasoning and improved correct-only answer accuracy to `0.960`, but it introduced a rounding-format failure on `fb_exp_019`.
+- `finance_reasoning_v3` fixed both targeted probe questions, but the full run still had two partial answers: `fb_exp_017` working-capital definition and `fb_mvp_006` extra legal-scope detail.
+- Stronger prompts can trade one answer failure mode for another. This should be reported as a prompt ablation, not as a replacement for the default cross-method comparison.
+
 ## Next Stage 1 Work
 
 The next work should strengthen the benchmark beyond the dependency-light MVP baselines:
 
-1. Decide whether to improve answer prompting for concept/reasoning questions or preserve the current failures as benchmark evidence.
-2. Prepare a PageIndex upstream issue or PR using the benchmark findings.
-3. Start PageIndex expanded QA once indexing costs and provider reliability are acceptable.
-4. Add GraphRAG and HyperGraphRAG after the expanded baselines are stable.
+1. Prepare a PageIndex upstream issue or PR using the benchmark findings and prompt-ablation evidence.
+2. Start PageIndex expanded QA once indexing costs and provider reliability are acceptable.
+3. Add GraphRAG and HyperGraphRAG after the expanded baselines are stable.
+4. Consider evaluator refinements for rounding tolerance and extra-but-supported legal details before further prompt tuning.
 
 ## Stage 1 Exit Criteria
 

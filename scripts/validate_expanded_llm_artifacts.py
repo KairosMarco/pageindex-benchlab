@@ -130,7 +130,11 @@ def validate_method(checks: list[Check], method: dict[str, Any], expected_questi
         )
 
 
-def validate(diagnostics_path: Path, expected_question_count: int) -> dict[str, Any]:
+def validate(
+    diagnostics_path: Path,
+    expected_question_count: int,
+    required_methods: list[str],
+) -> dict[str, Any]:
     checks: list[Check] = []
     add_check(checks, "diagnostics file exists", diagnostics_path.exists(), path=rel(diagnostics_path))
     if not diagnostics_path.exists():
@@ -159,7 +163,6 @@ def validate(diagnostics_path: Path, expected_question_count: int) -> dict[str, 
         actual=summary.get("mechanical_gate_passed"),
     )
     methods_present = sorted(method.get("method") for method in methods if method.get("method"))
-    required_methods = ["hybrid", "vector"]
     add_check(
         checks,
         "required methods present",
@@ -186,10 +189,16 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="Validate expanded LlamaIndex LLM diagnostics artifacts.")
     parser.add_argument("--diagnostics-json", type=Path, default=DEFAULT_DIAGNOSTICS)
     parser.add_argument("--expected-question-count", type=int, default=25)
+    parser.add_argument(
+        "--required-method",
+        choices=("hybrid", "vector"),
+        action="append",
+        help="Required method in diagnostics. Defaults to both vector and hybrid.",
+    )
     parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
     args = parser.parse_args()
 
-    payload = validate(args.diagnostics_json, args.expected_question_count)
+    payload = validate(args.diagnostics_json, args.expected_question_count, args.required_method or ["hybrid", "vector"])
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     print(

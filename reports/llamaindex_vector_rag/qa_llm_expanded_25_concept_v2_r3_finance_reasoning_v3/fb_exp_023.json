@@ -1,0 +1,153 @@
+{
+  "method": "llamaindex_vector_rag",
+  "question_id": "fb_exp_023",
+  "question": "Did Pfizer grow its PPNE between FY20 and FY21?",
+  "answer": "Yes, Pfizer grew its Property, Plant and Equipment, net (PP&E) between FY20 and FY21.\n\nApplying the definition from the retrieved chunks, PP&E is stated as the net value after accumulated depreciation. According to [PAGE 88], the net PP&E balance increased from $13,745 million as of December 31, 2020, to $14,882 million as of December 31, 2021. This increase is also reflected on the consolidated balance sheet [PAGE 59].",
+  "citations": [
+    {
+      "document_id": "PFIZER_2021_10K",
+      "page": 88,
+      "section": null,
+      "text": "Included in Other noncurrent assets. There are no recoverability issues for these amounts. B. Other Current Liabilities Other current liabilities includes, among other things, amounts payable to BioNTech for the gross profit split for Comirnaty, which totaled $9.7 billion as of December 31, 2021 and $25 million as of December 31, 2020. Note 9. Property, Plant and Equipment (PP&E) The following summarizes the components of Property, plant and equipment: Useful Lives As of December 31, (MILLIONS) ",
+      "metadata": {
+        "chunk_id": "23297ef7-e6b8-4ac4-a1de-d6cea40a4b7e",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.460100078496434,
+        "rerank_score": 78.86834118297674,
+        "matched_terms": [],
+        "citation_source": "llm_answer"
+      }
+    },
+    {
+      "document_id": "PFIZER_2021_10K",
+      "page": 59,
+      "section": null,
+      "text": "Consolidated Balance Sheets Pfizer Inc. and Subsidiary Companies As of December 31, (MILLIONS, EXCEPT PER COMMON SHARE DATA) 2021 2020 Assets Cash and cash equivalents $ 1,944 $ 1,786 Short-term investments 29,125 10,437 Trade accounts receivable, less allowance for doubtful accounts: 2021—$492; 2020—$508 11,479 7,913 Inventories 9,059 8,020 Current tax assets 4,266 3,264 Other current assets 3,820 3,646 Total current assets 59,693 35,067 Equity-method investments 16,472 16,856 Long-term investm",
+      "metadata": {
+        "chunk_id": "0a2d502e-ec32-4c23-ad9d-47d69bff6712",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.4150745419586932,
+        "rerank_score": 110.09912086253598,
+        "matched_terms": [],
+        "citation_source": "llm_answer"
+      }
+    },
+    {
+      "document_id": "PFIZER_2021_10K",
+      "page": 61,
+      "section": null,
+      "text": "Consolidated Statements of Cash Flows Pfizer Inc. and Subsidiary Companies Year Ended December 31, (MILLIONS) 2021 2020 2019 Operating Activities Net income before allocation to noncontrolling interests $ 22,025 $ 9,195 $ 16,056 Discontinued operations—net of tax (434) 2,529 5,318 Net income from continuing operations before allocation to noncontrolling interests 22,459 6,666 10,738 Adjustments to reconcile net income before allocation to noncontrolling interests to net cash provided by operatin",
+      "metadata": {
+        "chunk_id": "840a87f2-9caa-4130-991b-3b2dc4715226",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.3664858163841184,
+        "rerank_score": 70.82358163841184,
+        "matched_terms": [],
+        "citation_source": "rerank_fallback"
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "llamaindex_build_vector_index",
+      "target": "PFIZER_2021_10K",
+      "metadata": {
+        "page_count": 143,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "chunk_size": 900,
+        "chunk_overlap": 160,
+        "retrieve_top_k": 120,
+        "rerank_top_k": 3,
+        "finance_rerank": true,
+        "answer_prompt_mode": "finance_reasoning_v3",
+        "answer_context_chunk_count": 3,
+        "answer_context_chars": 6370,
+        "answer_context_words": 867
+      }
+    },
+    {
+      "step": 2,
+      "action": "llamaindex_retrieve_node",
+      "target": "0a2d502e-ec32-4c23-ad9d-47d69bff6712",
+      "metadata": {
+        "page": 59,
+        "retrieval_rank": 50,
+        "initial_rank": 50,
+        "vector_score": 0.4150745419586932,
+        "rerank_score": 110.09912086253598,
+        "finance_boost": 68.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "balance_sheet_title",
+          "total_assets_line_item",
+          "ppne_line_item"
+        ],
+        "matched_terms": []
+      }
+    },
+    {
+      "step": 3,
+      "action": "llamaindex_retrieve_node",
+      "target": "23297ef7-e6b8-4ac4-a1de-d6cea40a4b7e",
+      "metadata": {
+        "page": 88,
+        "retrieval_rank": 18,
+        "initial_rank": 18,
+        "vector_score": 0.460100078496434,
+        "rerank_score": 78.86834118297674,
+        "finance_boost": 32.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "ppne_line_item"
+        ],
+        "matched_terms": []
+      }
+    },
+    {
+      "step": 4,
+      "action": "llamaindex_retrieve_node",
+      "target": "840a87f2-9caa-4130-991b-3b2dc4715226",
+      "metadata": {
+        "page": 61,
+        "retrieval_rank": 100,
+        "initial_rank": 100,
+        "vector_score": 0.3664858163841184,
+        "rerank_score": 70.82358163841184,
+        "finance_boost": 34.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "ppne_line_item"
+        ],
+        "matched_terms": []
+      }
+    }
+  ],
+  "token_usage": {
+    "input": 2462,
+    "output": 340,
+    "total": 2802
+  },
+  "latency_ms": 23555,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\PFIZER_2021_10K.pdf",
+    "adapter_mode": "llamaindex_vector_retrieval",
+    "llm_enabled": true,
+    "model": "deepseek/deepseek-v4-pro",
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "page_count": 143,
+    "chunk_size": 900,
+    "chunk_overlap": 160,
+    "retrieve_top_k": 120,
+    "rerank_top_k": 3,
+    "max_citations": 3,
+    "finance_rerank": true,
+    "answer_prompt_mode": "finance_reasoning_v3",
+    "answer_context_chunk_count": 3,
+    "answer_context_chars": 6370,
+    "answer_context_words": 867
+  }
+}

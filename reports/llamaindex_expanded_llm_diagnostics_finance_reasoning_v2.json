@@ -1,0 +1,695 @@
+{
+  "summary": {
+    "date": "2026-06-17",
+    "question_file": "datasets\\financebench\\expanded_questions_25.jsonl",
+    "question_count": 25,
+    "model": "deepseek/deepseek-v4-pro",
+    "answer_mode": "llm",
+    "answer_prompt_mode": "finance_reasoning_v2",
+    "variant_suffix": "concept_v2",
+    "rerank_top_k": 3,
+    "chunk_size": 900,
+    "chunk_overlap": 160,
+    "method_count": 1,
+    "mechanical_gate_passed": true
+  },
+  "methods": [
+    {
+      "key": "llamaindex_vector_rag_expanded_llm",
+      "method": "vector",
+      "label": "LlamaIndex Vector RAG + finance concept_v2 rerank",
+      "status": "complete",
+      "mechanical_gate_passed": true,
+      "question_file": "datasets\\financebench\\expanded_questions_25.jsonl",
+      "question_count": 25,
+      "result_count": 25,
+      "manifest_count": 25,
+      "generation_failure_count": 0,
+      "evaluation_failure_count": 0,
+      "evidence_eval_failure_count": 0,
+      "answer_eval_failure_count": 0,
+      "average_evidence_recall": 1.0,
+      "average_citation_precision": 0.36,
+      "answer_accuracy": 0.96,
+      "average_answer_score": 0.96,
+      "answer_verdict_counts": {
+        "correct": 24,
+        "partial": 0,
+        "incorrect": 1
+      },
+      "rerank_top_k": 3,
+      "chunk_size": 900,
+      "chunk_overlap": 160,
+      "variant_suffix": "concept_v2",
+      "answer_prompt_mode": "finance_reasoning_v2",
+      "token_usage_complete": true,
+      "latency_complete": true,
+      "results_dir": "reports\\llamaindex_vector_rag\\qa_llm_expanded_25_concept_v2_r3_finance_reasoning_v2",
+      "manifest": "reports\\llamaindex_vector_rag\\qa_llm_expanded_25_concept_v2_r3_finance_reasoning_v2_manifest.json",
+      "evidence_eval": "reports\\llamaindex_vector_rag\\evidence_eval_qa_llm_expanded_25_concept_v2_r3_finance_reasoning_v2.json",
+      "answer_eval": "reports\\llamaindex_vector_rag\\answer_eval_qa_llm_expanded_25_concept_v2_r3_finance_reasoning_v2.json",
+      "generation_failures": [],
+      "evaluation_failures": [],
+      "answer_issue_rows": [
+        {
+          "question_id": "fb_exp_019",
+          "doc_name": "AMERICANWATERWORKS_2020_10K",
+          "question_type": "metrics-generated",
+          "question_reasoning": "Information extraction",
+          "evidence_recall": 1.0,
+          "citation_precision": 0.3333333333333333,
+          "gold_pages_one_indexed": [
+            86
+          ],
+          "predicted_pages": [
+            86,
+            66,
+            93
+          ],
+          "answer_verdict": "incorrect",
+          "answer_score": 0.0,
+          "answer_rationale": "The gold answer states $0.40 billion, but the predicted answer is $0.389 billion (approximately $0.39 billion). These amounts materially differ, and the predicted answer does not round to the gold value (0.389 rounds to 0.39, not 0.40).",
+          "total_tokens": 2859,
+          "latency_ms": 23560,
+          "answer_context_words": 1324,
+          "answer_context_chunks": 3,
+          "result_path": "reports\\llamaindex_vector_rag\\qa_llm_expanded_25_concept_v2_r3_finance_reasoning_v2\\fb_exp_019.json"
+        }
+      ],
+      "evidence_issue_rows": [],
+      "per_question": [
+        {
+          "question_id": "fb_exp_013",
+          "doc_name": "ADOBE_2016_10K",
+          "question_type": "metrics-generated",
+          "question_reasoning": "Numerical reasoning",
+          "evidence_recall": 1.0,
+          "citation_precision": 0.3333333333333333,
+          "gold_pages_one_indexed": [
+            62
+          ],
+          "predicted_pages": [
+            62,
+            92,
+            82
+          ],
+          "answer_verdict": "correct",
+          "answer_score": 1.0,
+          "answer_rationale": "The predicted answer provides the exact same percentage (65.4%) as the gold answer, with a clear calculation from the income statement.",
+          "total_tokens": 3106,
+          "latency_ms": 24899,
+          "answer_context_words": 989,
+          "answer_context_chunks": 3,
+          "result_path": "reports\\llamaindex_vector_rag\\qa_llm_expanded_25_concept_v2_r3_finance_reasoning_v2\\fb_exp_013.json"
+        },
+        {
+          "question_id": "fb_exp_014",
+          "doc_name": "AMERICANEXPRESS_2022_10K",
+          "question_type": "domain-relevant",
+          "question_reasoning": "Logical reasoning (based on numerical reasoning) OR Numerical reasoning OR Logical reasoning",
+          "evidence_recall": 1.0,
+          "citation_precision": 0.3333333333333333,
+          "gold_pages_one_indexed": [
+            96
+          ],
+          "predicted_pages": [
+            96,
+            47,
+            136
+          ],
+          "answer_verdict": "correct",
+          "answer_score": 1.0,
+          "answer_rationale": "The predicted answer states that gross margin is not a useful metric for American Express and explains why, which fully matches the gold answer stating that performance is not measured through gross margin.",
+          "total_tokens": 3480,
+          "latency_ms": 32302,
+          "answer_context_words": 1453,
+          "answer_context_chunks": 3,
+          "result_path": "reports\\llamaindex_vector_rag\\qa_llm_expanded_25_concept_v2_r3_finance_reasoning_v2\\fb_exp_014.json"
+        },
+        {
+          "question_id": "fb_exp_015",
+          "doc_name": "FOOTLOCKER_2022_8K_dated-2022-05-20",
+          "question_type": "novel-generated",
+          "question_reasoning": null,
+          "evidence_recall": 1.0,
+          "citation_precision": 0.5,
+          "gold_pages_one_indexed": [
+            2
+          ],
+          "predicted_pages": [
+            2,
+            3
+          ],
+          "answer_verdict": "correct",
+          "answer_score": 1.0,
+          "answer_rationale": "Both answers state 'Yes' and identify Richard A. Johnson as the nominee with substantially more votes against. The predicted answer adds supporting detail but matches the gold answer fully.",
+          "total_tokens": 2238,
+          "latency_ms": 25423,
+          "answer_context_words": 706,
+          "answer_context_chunks": 3,
+          "result_path": "reports\\llamaindex_vector_rag\\qa_llm_expanded_25_concept_v2_r3_finance_reasoning_v2\\fb_exp_015.json"
+        },
+        {
+          "question_id": "fb_exp_016",
+          "doc_name": "BLOCK_2016_10K",
+          "question_type": "metrics-generated",
+          "question_reasoning": "Numerical reasoning",
+          "evidence_recall": 1.0,
+          "citation_precision": 0.3333333333333333,
+          "gold_pages_one_indexed": [
+            68
+          ],
+          "predicted_pages": [
+            68,
+            41,
+            76
+          ],
+          "answer_verdict": "correct",
+          "answer_score": 1.0,
+          "answer_rationale": "The predicted answer gives the working capital ratio as 1.73, matching the gold answer exactly.",
+          "total_tokens": 3788,
+          "latency_ms": 25114,
+          "answer_context_words": 977,
+          "answer_context_chunks": 3,
+          "result_path": "reports\\llamaindex_vector_rag\\qa_llm_expanded_25_concept_v2_r3_finance_reasoning_v2\\fb_exp_016.json"
+        },
+        {
+          "question_id": "fb_exp_017",
+          "doc_name": "CORNING_2022_10K",
+          "question_type": "domain-relevant",
+          "question_reasoning": "Numerical reasoning OR Logical reasoning",
+          "evidence_recall": 1.0,
+          "citation_precision": 0.3333333333333333,
+          "gold_pages_one_indexed": [
+            60
+          ],
+          "predicted_pages": [
+            60,
+            20,
+            104
+          ],
+          "answer_verdict": "correct",
+          "answer_score": 1.0,
+          "answer_rationale": "The predicted answer correctly states that Corning has positive working capital for FY2022, which matches the gold answer's affirmative conclusion. The difference in the specific dollar amount ($2,278 million vs. $831 million) arises from using the broad standard definition of total current assets minus total current liabilities versus an operating working capital approach. However, the question only asks whether working capital is positive, and the predicted answer directly and accurately answers that with supported data, so it fully meets the requirement.",
+          "total_tokens": 2615,
+          "latency_ms": 20469,
+          "answer_context_words": 827,
+          "answer_context_chunks": 3,
+          "result_path": "reports\\llamaindex_vector_rag\\qa_llm_expanded_25_concept_v2_r3_finance_reasoning_v2\\fb_exp_017.json"
+        },
+        {
+          "question_id": "fb_exp_018",
+          "doc_name": "MGMRESORTS_2022Q4_EARNINGS",
+          "question_type": "novel-generated",
+          "question_reasoning": null,
+          "evidence_recall": 1.0,
+          "citation_precision": 0.3333333333333333,
+          "gold_pages_one_indexed": [
+            13
+          ],
+          "predicted_pages": [
+            13,
+            4,
+            14
+          ],
+          "answer_verdict": "correct",
+          "answer_score": 1.0,
+          "answer_rationale": "Both answers identify the Las Vegas resorts (Las Vegas Strip Resorts) as the region with the highest EBITDAR contribution for MGM in FY2022. The predicted answer fully answers the question and matches the gold answer's core identification, with additional supporting detail.",
+          "total_tokens": 3325,
+          "latency_ms": 18955,
+          "answer_context_words": 988,
+          "answer_context_chunks": 3,
+          "result_path": "reports\\llamaindex_vector_rag\\qa_llm_expanded_25_concept_v2_r3_finance_reasoning_v2\\fb_exp_018.json"
+        },
+        {
+          "question_id": "fb_exp_019",
+          "doc_name": "AMERICANWATERWORKS_2020_10K",
+          "question_type": "metrics-generated",
+          "question_reasoning": "Information extraction",
+          "evidence_recall": 1.0,
+          "citation_precision": 0.3333333333333333,
+          "gold_pages_one_indexed": [
+            86
+          ],
+          "predicted_pages": [
+            86,
+            66,
+            93
+          ],
+          "answer_verdict": "incorrect",
+          "answer_score": 0.0,
+          "answer_rationale": "The gold answer states $0.40 billion, but the predicted answer is $0.389 billion (approximately $0.39 billion). These amounts materially differ, and the predicted answer does not round to the gold value (0.389 rounds to 0.39, not 0.40).",
+          "total_tokens": 2859,
+          "latency_ms": 23560,
+          "answer_context_words": 1324,
+          "answer_context_chunks": 3,
+          "result_path": "reports\\llamaindex_vector_rag\\qa_llm_expanded_25_concept_v2_r3_finance_reasoning_v2\\fb_exp_019.json"
+        },
+        {
+          "question_id": "fb_exp_020",
+          "doc_name": "CVSHEALTH_2022_10K",
+          "question_type": "domain-relevant",
+          "question_reasoning": "Logical reasoning (based on numerical reasoning)",
+          "evidence_recall": 1.0,
+          "citation_precision": 0.6666666666666666,
+          "gold_pages_one_indexed": [
+            108,
+            110
+          ],
+          "predicted_pages": [
+            110,
+            108,
+            133
+          ],
+          "answer_verdict": "correct",
+          "answer_score": 1.0,
+          "answer_rationale": "The predicted answer correctly concludes that CVS Health is capital-intensive based on FY2022 data, citing a low ROA of ~1.82% and total assets. It matches the gold answer's key figures (1.82% ROA, 5.6% fixed assets/total assets ratio) and the important caveat that the asset base is dominated by goodwill. There are no material differences or missing required details.",
+          "total_tokens": 3344,
+          "latency_ms": 31072,
+          "answer_context_words": 1237,
+          "answer_context_chunks": 3,
+          "result_path": "reports\\llamaindex_vector_rag\\qa_llm_expanded_25_concept_v2_r3_finance_reasoning_v2\\fb_exp_020.json"
+        },
+        {
+          "question_id": "fb_exp_021",
+          "doc_name": "PEPSICO_2023Q1_EARNINGS",
+          "question_type": "novel-generated",
+          "question_reasoning": null,
+          "evidence_recall": 1.0,
+          "citation_precision": 0.3333333333333333,
+          "gold_pages_one_indexed": [
+            1
+          ],
+          "predicted_pages": [
+            1,
+            3,
+            2
+          ],
+          "answer_verdict": "correct",
+          "answer_score": 1.0,
+          "answer_rationale": "The predicted answer fully captures the gold answer's reason (a strong start to FY2023) and provides additional supporting details without contradicting it.",
+          "total_tokens": 2467,
+          "latency_ms": 17435,
+          "answer_context_words": 921,
+          "answer_context_chunks": 3,
+          "result_path": "reports\\llamaindex_vector_rag\\qa_llm_expanded_25_concept_v2_r3_finance_reasoning_v2\\fb_exp_021.json"
+        },
+        {
+          "question_id": "fb_exp_022",
+          "doc_name": "COCACOLA_2021_10K",
+          "question_type": "metrics-generated",
+          "question_reasoning": "Numerical reasoning",
+          "evidence_recall": 1.0,
+          "citation_precision": 0.3333333333333333,
+          "gold_pages_one_indexed": [
+            62
+          ],
+          "predicted_pages": [
+            62,
+            128,
+            68
+          ],
+          "answer_verdict": "correct",
+          "answer_score": 1.0,
+          "answer_rationale": "The predicted answer calculates the exact same COGS % margin (39.7%) as the gold answer, using the correct line items from the income statement.",
+          "total_tokens": 2972,
+          "latency_ms": 27015,
+          "answer_context_words": 1532,
+          "answer_context_chunks": 3,
+          "result_path": "reports\\llamaindex_vector_rag\\qa_llm_expanded_25_concept_v2_r3_finance_reasoning_v2\\fb_exp_022.json"
+        },
+        {
+          "question_id": "fb_exp_023",
+          "doc_name": "PFIZER_2021_10K",
+          "question_type": "novel-generated",
+          "question_reasoning": null,
+          "evidence_recall": 1.0,
+          "citation_precision": 0.3333333333333333,
+          "gold_pages_one_indexed": [
+            59
+          ],
+          "predicted_pages": [
+            59,
+            88,
+            61
+          ],
+          "answer_verdict": "correct",
+          "answer_score": 1.0,
+          "answer_rationale": "The predicted answer fully answers the question, stating Pfizer grew its PPNE between FY20 and FY21, and provides supporting figures that demonstrate a positive year-over-year change, consistent with the gold answer.",
+          "total_tokens": 2658,
+          "latency_ms": 21875,
+          "answer_context_words": 867,
+          "answer_context_chunks": 3,
+          "result_path": "reports\\llamaindex_vector_rag\\qa_llm_expanded_25_concept_v2_r3_finance_reasoning_v2\\fb_exp_023.json"
+        },
+        {
+          "question_id": "fb_exp_024",
+          "doc_name": "GENERALMILLS_2020_10K",
+          "question_type": "metrics-generated",
+          "question_reasoning": "Numerical reasoning",
+          "evidence_recall": 1.0,
+          "citation_precision": 0.3333333333333333,
+          "gold_pages_one_indexed": [
+            50
+          ],
+          "predicted_pages": [
+            50,
+            17,
+            66
+          ],
+          "answer_verdict": "correct",
+          "answer_score": 1.0,
+          "answer_rationale": "The predicted answer provides the exact working capital ratio of 0.68 after appropriate rounding, matching the gold answer. It includes the calculation (5,121.3 / 7,491.5 = 0.6836 -> 0.68) and supports the conclusion with page references.",
+          "total_tokens": 3162,
+          "latency_ms": 21518,
+          "answer_context_words": 1016,
+          "answer_context_chunks": 3,
+          "result_path": "reports\\llamaindex_vector_rag\\qa_llm_expanded_25_concept_v2_r3_finance_reasoning_v2\\fb_exp_024.json"
+        },
+        {
+          "question_id": "fb_exp_025",
+          "doc_name": "ULTABEAUTY_2023Q4_EARNINGS",
+          "question_type": "novel-generated",
+          "question_reasoning": null,
+          "evidence_recall": 1.0,
+          "citation_precision": 0.5,
+          "gold_pages_one_indexed": [
+            2
+          ],
+          "predicted_pages": [
+            2,
+            6
+          ],
+          "answer_verdict": "correct",
+          "answer_score": 1.0,
+          "answer_rationale": "The predicted answer identifies the same drivers as the gold answer: lower marketing expenses and leverage of incentive compensation due to higher sales. The additional note in the gold answer about fiscal year reference does not change the core answer to the question.",
+          "total_tokens": 2747,
+          "latency_ms": 21407,
+          "answer_context_words": 884,
+          "answer_context_chunks": 3,
+          "result_path": "reports\\llamaindex_vector_rag\\qa_llm_expanded_25_concept_v2_r3_finance_reasoning_v2\\fb_exp_025.json"
+        },
+        {
+          "question_id": "fb_mvp_001",
+          "doc_name": "3M_2018_10K",
+          "question_type": "metrics-generated",
+          "question_reasoning": "Information extraction",
+          "evidence_recall": 1.0,
+          "citation_precision": 0.3333333333333333,
+          "gold_pages_one_indexed": [
+            60
+          ],
+          "predicted_pages": [
+            60,
+            49,
+            46
+          ],
+          "answer_verdict": "correct",
+          "answer_score": 1.0,
+          "answer_rationale": "The predicted answer correctly states the FY2018 capital expenditure as $1,577 million, matching the gold answer exactly.",
+          "total_tokens": 2808,
+          "latency_ms": 21094,
+          "answer_context_words": 1145,
+          "answer_context_chunks": 3,
+          "result_path": "reports\\llamaindex_vector_rag\\qa_llm_expanded_25_concept_v2_r3_finance_reasoning_v2\\fb_mvp_001.json"
+        },
+        {
+          "question_id": "fb_mvp_002",
+          "doc_name": "AMAZON_2017_10K",
+          "question_type": "metrics-generated",
+          "question_reasoning": "Numerical reasoning",
+          "evidence_recall": 1.0,
+          "citation_precision": 0.3333333333333333,
+          "gold_pages_one_indexed": [
+            38
+          ],
+          "predicted_pages": [
+            38,
+            43,
+            49
+          ],
+          "answer_verdict": "correct",
+          "answer_score": 1.0,
+          "answer_rationale": "The predicted answer calculates the year-over-year revenue change as 30.8%, which matches the gold answer exactly.",
+          "total_tokens": 2141,
+          "latency_ms": 25240,
+          "answer_context_words": 797,
+          "answer_context_chunks": 3,
+          "result_path": "reports\\llamaindex_vector_rag\\qa_llm_expanded_25_concept_v2_r3_finance_reasoning_v2\\fb_mvp_002.json"
+        },
+        {
+          "question_id": "fb_mvp_003",
+          "doc_name": "AMD_2022_10K",
+          "question_type": "domain-relevant",
+          "question_reasoning": "Information extraction",
+          "evidence_recall": 1.0,
+          "citation_precision": 0.3333333333333333,
+          "gold_pages_one_indexed": [
+            4
+          ],
+          "predicted_pages": [
+            4,
+            60,
+            43
+          ],
+          "answer_verdict": "correct",
+          "answer_score": 1.0,
+          "answer_rationale": "The predicted answer covers all major product and service categories listed in the gold answer (data center, client, gaming, and embedded products) and only adds a mention of selling or licensing IP, which does not contradict the gold answer. The core information matches completely.",
+          "total_tokens": 3546,
+          "latency_ms": 23932,
+          "answer_context_words": 1815,
+          "answer_context_chunks": 3,
+          "result_path": "reports\\llamaindex_vector_rag\\qa_llm_expanded_25_concept_v2_r3_finance_reasoning_v2\\fb_mvp_003.json"
+        },
+        {
+          "question_id": "fb_mvp_004",
+          "doc_name": "AMD_2022_10K",
+          "question_type": "domain-relevant",
+          "question_reasoning": "Numerical reasoning",
+          "evidence_recall": 1.0,
+          "citation_precision": 0.3333333333333333,
+          "gold_pages_one_indexed": [
+            58
+          ],
+          "predicted_pages": [
+            58,
+            59,
+            51
+          ],
+          "answer_verdict": "correct",
+          "answer_score": 1.0,
+          "answer_rationale": "The predicted answer states that operating activities brought in the most cash for FY22, matching the gold answer's statement that the most cashflow came from Operations. The additional numerical details do not contradict and still fully answer the question.",
+          "total_tokens": 2481,
+          "latency_ms": 20190,
+          "answer_context_words": 1064,
+          "answer_context_chunks": 3,
+          "result_path": "reports\\llamaindex_vector_rag\\qa_llm_expanded_25_concept_v2_r3_finance_reasoning_v2\\fb_mvp_004.json"
+        },
+        {
+          "question_id": "fb_mvp_005",
+          "doc_name": "BESTBUY_2023_10K",
+          "question_type": "domain-relevant",
+          "question_reasoning": "Logical reasoning (based on numerical reasoning) OR Logical reasoning",
+          "evidence_recall": 1.0,
+          "citation_precision": 0.3333333333333333,
+          "gold_pages_one_indexed": [
+            40
+          ],
+          "predicted_pages": [
+            25,
+            40,
+            36
+          ],
+          "answer_verdict": "correct",
+          "answer_score": 1.0,
+          "answer_rationale": "The predicted answer correctly states that Best Buy's gross margins are historically consistent, and it identifies the 1.1% decline between FY2022 and FY2023, which matches the gold answer. The additional details (exact percentages and references) do not contradict the gold answer and fully address the question.",
+          "total_tokens": 3095,
+          "latency_ms": 25296,
+          "answer_context_words": 1180,
+          "answer_context_chunks": 3,
+          "result_path": "reports\\llamaindex_vector_rag\\qa_llm_expanded_25_concept_v2_r3_finance_reasoning_v2\\fb_mvp_005.json"
+        },
+        {
+          "question_id": "fb_mvp_006",
+          "doc_name": "BOEING_2022_10K",
+          "question_type": "domain-relevant",
+          "question_reasoning": "Information extraction",
+          "evidence_recall": 1.0,
+          "citation_precision": 0.3333333333333333,
+          "gold_pages_one_indexed": [
+            113
+          ],
+          "predicted_pages": [
+            113,
+            19,
+            2
+          ],
+          "answer_verdict": "correct",
+          "answer_score": 1.0,
+          "answer_rationale": "The predicted answer correctly answers 'Yes' and identifies the material legal battles as those related to the two 737 MAX accidents (which correspond to the 2018 Lion Air and 2019 Ethiopian Airlines crashes stated in the gold answer). The extra detail about Embraer arbitration is additional but does not contradict or omit the core information.",
+          "total_tokens": 2613,
+          "latency_ms": 28000,
+          "answer_context_words": 1273,
+          "answer_context_chunks": 3,
+          "result_path": "reports\\llamaindex_vector_rag\\qa_llm_expanded_25_concept_v2_r3_finance_reasoning_v2\\fb_mvp_006.json"
+        },
+        {
+          "question_id": "fb_mvp_007",
+          "doc_name": "COSTCO_2021_10K",
+          "question_type": "metrics-generated",
+          "question_reasoning": "Information extraction",
+          "evidence_recall": 1.0,
+          "citation_precision": 0.3333333333333333,
+          "gold_pages_one_indexed": [
+            38
+          ],
+          "predicted_pages": [
+            38,
+            51,
+            64
+          ],
+          "answer_verdict": "correct",
+          "answer_score": 1.0,
+          "answer_rationale": "The predicted answer provides the correct total assets figure of $59,268 million, which matches the gold answer of $59268.00.",
+          "total_tokens": 2690,
+          "latency_ms": 20653,
+          "answer_context_words": 1084,
+          "answer_context_chunks": 3,
+          "result_path": "reports\\llamaindex_vector_rag\\qa_llm_expanded_25_concept_v2_r3_finance_reasoning_v2\\fb_mvp_007.json"
+        },
+        {
+          "question_id": "fb_mvp_008",
+          "doc_name": "MICROSOFT_2016_10K",
+          "question_type": "metrics-generated",
+          "question_reasoning": "Information extraction",
+          "evidence_recall": 1.0,
+          "citation_precision": 0.3333333333333333,
+          "gold_pages_one_indexed": [
+            52
+          ],
+          "predicted_pages": [
+            52,
+            32,
+            34
+          ],
+          "answer_verdict": "correct",
+          "answer_score": 1.0,
+          "answer_rationale": "The predicted answer states the FY2016 COGS as $32,780 million, which matches the gold answer of $32780.00 in millions of USD. Wording differences are ignored as per instructions.",
+          "total_tokens": 2728,
+          "latency_ms": 16596,
+          "answer_context_words": 1289,
+          "answer_context_chunks": 3,
+          "result_path": "reports\\llamaindex_vector_rag\\qa_llm_expanded_25_concept_v2_r3_finance_reasoning_v2\\fb_mvp_008.json"
+        },
+        {
+          "question_id": "fb_mvp_009",
+          "doc_name": "NIKE_2023_10K",
+          "question_type": "domain-relevant",
+          "question_reasoning": "Numerical reasoning",
+          "evidence_recall": 1.0,
+          "citation_precision": 0.3333333333333333,
+          "gold_pages_one_indexed": [
+            62
+          ],
+          "predicted_pages": [
+            62,
+            93,
+            48
+          ],
+          "answer_verdict": "correct",
+          "answer_score": 1.0,
+          "answer_rationale": "The predicted answer correctly identifies operating activities as bringing in the most cash for Nike in FY2023, which matches the gold answer. The inclusion of specific cash flow figures further confirms the accuracy.",
+          "total_tokens": 2696,
+          "latency_ms": 17197,
+          "answer_context_words": 1179,
+          "answer_context_chunks": 3,
+          "result_path": "reports\\llamaindex_vector_rag\\qa_llm_expanded_25_concept_v2_r3_finance_reasoning_v2\\fb_mvp_009.json"
+        },
+        {
+          "question_id": "fb_mvp_010",
+          "doc_name": "AMCOR_2023Q4_EARNINGS",
+          "question_type": "novel-generated",
+          "question_reasoning": null,
+          "evidence_recall": 1.0,
+          "citation_precision": 0.3333333333333333,
+          "gold_pages_one_indexed": [
+            12
+          ],
+          "predicted_pages": [
+            12,
+            11,
+            7
+          ],
+          "answer_verdict": "correct",
+          "answer_score": 1.0,
+          "answer_rationale": "The predicted answer provides the exact same figure ($2,018 million) as the gold answer, fully answering the question about Amcor's Adjusted Non-GAAP EBITDA for FY 2023.",
+          "total_tokens": 3366,
+          "latency_ms": 20695,
+          "answer_context_words": 1504,
+          "answer_context_chunks": 3,
+          "result_path": "reports\\llamaindex_vector_rag\\qa_llm_expanded_25_concept_v2_r3_finance_reasoning_v2\\fb_mvp_010.json"
+        },
+        {
+          "question_id": "fb_mvp_011",
+          "doc_name": "JPMORGAN_2023Q2_10Q",
+          "question_type": "novel-generated",
+          "question_reasoning": null,
+          "evidence_recall": 1.0,
+          "citation_precision": 0.3333333333333333,
+          "gold_pages_one_indexed": [
+            85
+          ],
+          "predicted_pages": [
+            84,
+            85,
+            86
+          ],
+          "answer_verdict": "correct",
+          "answer_score": 1.0,
+          "answer_rationale": "The predicted answer correctly concludes that the risk decreased, matching the gold answer's 'Yes. It decreased.' The extra supporting details do not contradict the gold answer and indeed confirm it.",
+          "total_tokens": 2584,
+          "latency_ms": 23044,
+          "answer_context_words": 1164,
+          "answer_context_chunks": 3,
+          "result_path": "reports\\llamaindex_vector_rag\\qa_llm_expanded_25_concept_v2_r3_finance_reasoning_v2\\fb_mvp_011.json"
+        },
+        {
+          "question_id": "fb_mvp_012",
+          "doc_name": "JOHNSON_JOHNSON_2023_8K_dated-2023-08-30",
+          "question_type": "novel-generated",
+          "question_reasoning": null,
+          "evidence_recall": 1.0,
+          "citation_precision": 0.3333333333333333,
+          "gold_pages_one_indexed": [
+            4
+          ],
+          "predicted_pages": [
+            4,
+            6,
+            8
+          ],
+          "answer_verdict": "correct",
+          "answer_score": 1.0,
+          "answer_rationale": "The predicted answer correctly identifies the Consumer Health business segment as the discontinued operation from August 30, 2023 onward, matching the gold answer exactly. The citation '[PAGE 4]' is extraneous but does not alter correctness.",
+          "total_tokens": 2622,
+          "latency_ms": 19768,
+          "answer_context_words": 1240,
+          "answer_context_chunks": 3,
+          "result_path": "reports\\llamaindex_vector_rag\\qa_llm_expanded_25_concept_v2_r3_finance_reasoning_v2\\fb_mvp_012.json"
+        }
+      ],
+      "average_total_tokens": 2885.24,
+      "median_total_tokens": 2747.0,
+      "total_tokens": 72131,
+      "average_input_tokens": 2463.56,
+      "average_output_tokens": 421.68,
+      "average_latency_ms": 22909.96,
+      "median_latency_ms": 21875.0,
+      "average_context_words": 1138.2,
+      "average_context_chunks": 3.0,
+      "average_context_chars": 7710.44,
+      "token_usage_count": 25,
+      "latency_count": 25
+    }
+  ]
+}
