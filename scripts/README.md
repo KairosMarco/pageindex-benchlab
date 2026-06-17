@@ -183,6 +183,26 @@ python scripts\evaluate_evidence_mvp.py --results-dir reports\llamaindex_vector_
 
 This is currently a diagnostic baseline. The finance-aware reranker reaches 1.000 evidence recall on the 12-question no-LLM MVP run, but it still needs LLM answer generation and answer judging before it can be added to the main answer-level comparison table.
 
+Run finance-aware LLM diagnostics for Vector and Hybrid candidates:
+
+```powershell
+$env:DEEPSEEK_API_KEY="YOUR_KEY"
+python scripts\run_llamaindex_finance_llm_diagnostics.py --force --continue-on-error
+```
+
+This runs:
+
+```text
+reports/llamaindex_vector_rag/qa_llm_finance/
+reports/llamaindex_vector_rag/evidence_eval_llm_finance.json
+reports/llamaindex_vector_rag/answer_eval_llm_finance.json
+reports/llamaindex_hybrid_rag/qa_llm_finance/
+reports/llamaindex_hybrid_rag/evidence_eval_llm_finance.json
+reports/llamaindex_hybrid_rag/answer_eval_llm_finance.json
+reports/llamaindex_finance_llm_diagnostics.md
+reports/llamaindex_finance_llm_diagnostics.json
+```
+
 ## Run LlamaIndex Hybrid RAG Diagnostic Baseline
 
 Current finance-aware smoke test without LLM answer generation:

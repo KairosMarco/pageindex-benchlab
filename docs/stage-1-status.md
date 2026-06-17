@@ -520,11 +520,66 @@ reports/hybrid_rag/qa_llm_manifest.json
 reports/hybrid_rag/evidence_eval_llm.json
 ```
 
+### LlamaIndex Finance-aware Diagnostic Baselines
+
+Implemented in:
+
+```text
+pipelines/llamaindex_vector_rag/adapter.py
+pipelines/llamaindex_hybrid_rag/adapter.py
+pipelines/finance_rerank.py
+scripts/run_llamaindex_finance_llm_diagnostics.py
+```
+
+Current diagnostic mode:
+
+```text
+LlamaIndex embedding retrieval + label-free finance-aware reranking
+```
+
+The finance-aware reranker uses only the question text and candidate chunk text. It does not read FinanceBench gold evidence pages, so the retrieval diagnostic does not leak labels into ranking.
+
+Current no-LLM retrieval diagnostics:
+
+```text
+LlamaIndex Vector RAG + finance rerank:
+12 / 12 MVP questions generated outputs.
+0 failures.
+Average evidence recall: 1.000
+Average citation precision: 0.333
+
+LlamaIndex Hybrid RAG + finance rerank:
+12 / 12 MVP questions generated outputs.
+0 failures.
+Average evidence recall: 1.000
+Average citation precision: 0.333
+```
+
+Generated diagnostic artifacts:
+
+```text
+reports/llamaindex_vector_rag/qa_smoke_finance/
+reports/llamaindex_vector_rag/qa_smoke_finance_manifest.json
+reports/llamaindex_vector_rag/evidence_eval_smoke_finance.json
+reports/llamaindex_hybrid_rag/qa_smoke_finance/
+reports/llamaindex_hybrid_rag/qa_smoke_finance_manifest.json
+reports/llamaindex_hybrid_rag/evidence_eval_smoke_finance.json
+```
+
+LLM diagnostic command, after setting a provider key:
+
+```powershell
+$env:DEEPSEEK_API_KEY="YOUR_KEY"
+D:\pageindex-demo\PageIndex\.venv\Scripts\python.exe scripts\run_llamaindex_finance_llm_diagnostics.py --force --continue-on-error
+```
+
+These LlamaIndex finance-aware rows are not yet promoted into the main answer-level comparison table. Promotion requires generated answers, evidence evaluation, answer judging, complete token/latency data, and reviewed failure cases.
+
 ## Next Stage 1 Work
 
 The next work should strengthen the benchmark beyond the dependency-light MVP baselines:
 
-1. Replace the dependency-light Vector/Hybrid RAG MVPs with LlamaIndex embedding + reranker implementations.
+1. Run LlamaIndex finance-aware LLM answer generation and answer judging.
 2. Expand the FinanceBench subset beyond 12 questions.
 3. Add per-method failure-case notes and cost estimates.
 4. Prepare a PageIndex upstream issue or PR using the benchmark findings.

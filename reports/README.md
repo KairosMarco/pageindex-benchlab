@@ -15,6 +15,8 @@ reports/stage1_detailed_evidence_report.json
 reports/stage1_per_question_results.csv
 reports/stage1_validation_report.json
 reports/stage1_environment_report.json
+reports/llamaindex_finance_llm_diagnostics.md
+reports/llamaindex_finance_llm_diagnostics.json
 reports/pageindex/pageindex_qa_mvp_report.md
 reports/pageindex/evidence_eval.json
 reports/pageindex/qa_manifest.json
@@ -76,4 +78,17 @@ reports/llamaindex_hybrid_rag/qa_smoke_cross_manifest.json
 reports/llamaindex_hybrid_rag/qa_smoke_cross/
 reports/llamaindex_hybrid_rag/qa_smoke_finance_manifest.json
 reports/llamaindex_hybrid_rag/qa_smoke_finance/
+```
+
+The following artifacts are generated only after running the finance-aware LlamaIndex LLM diagnostics:
+
+```text
+reports/llamaindex_vector_rag/evidence_eval_llm_finance.json
+reports/llamaindex_vector_rag/answer_eval_llm_finance.json
+reports/llamaindex_vector_rag/qa_llm_finance_manifest.json
+reports/llamaindex_vector_rag/qa_llm_finance/
+reports/llamaindex_hybrid_rag/evidence_eval_llm_finance.json
+reports/llamaindex_hybrid_rag/answer_eval_llm_finance.json
+reports/llamaindex_hybrid_rag/qa_llm_finance_manifest.json
+reports/llamaindex_hybrid_rag/qa_llm_finance/
 ```

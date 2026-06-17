@@ -92,6 +92,11 @@ Completed:
   - `reports/stage1_detailed_evidence_report.md`
   - `reports/stage1_per_question_results.csv`
   - `reports/stage1_validation_report.json`
+- LlamaIndex Vector and Hybrid diagnostic baselines now have a label-free finance-aware reranker.
+- Current finance-aware LlamaIndex retrieval-only diagnostics:
+  - LlamaIndex Vector RAG: average evidence recall `1.000`, average citation precision `0.333`.
+  - LlamaIndex Hybrid RAG: average evidence recall `1.000`, average citation precision `0.333`.
+- LlamaIndex finance-aware LLM diagnostics can be run with `scripts/run_llamaindex_finance_llm_diagnostics.py`, but these candidates are not yet promoted into the main answer-level table.
 
 Current owner: project owner. PH is on standby for later task assignment.
 
@@ -258,7 +263,7 @@ A GPU may become useful later for local LLMs, large embedding jobs, or large rer
 
 ## Next Actions
 
-1. Replace the dependency-light Vector/Hybrid RAG MVPs with LlamaIndex embedding + reranker implementations.
+1. Run LlamaIndex finance-aware LLM answer generation and answer judging.
 2. Expand the FinanceBench subset beyond 12 questions.
 3. Add per-method failure-case notes and cost estimates.
 4. Prepare a PageIndex upstream issue or PR using the benchmark findings.

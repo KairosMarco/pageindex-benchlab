@@ -1,0 +1,55 @@
+{
+  "summary": {
+    "date": "2026-06-17",
+    "candidate_count": 2,
+    "complete_count": 0
+  },
+  "methods": [
+    {
+      "key": "llamaindex_vector_rag_finance",
+      "label": "LlamaIndex Vector RAG + finance rerank",
+      "status": "missing_artifacts",
+      "result_count": 0,
+      "manifest_count": 0,
+      "failure_count": 0,
+      "average_evidence_recall": null,
+      "average_citation_precision": null,
+      "answer_accuracy": null,
+      "average_answer_score": null,
+      "answer_verdict_counts": null,
+      "average_total_tokens": null,
+      "median_total_tokens": null,
+      "total_tokens": null,
+      "average_latency_ms": null,
+      "median_latency_ms": null,
+      "results_dir": "reports\\llamaindex_vector_rag\\qa_llm_finance",
+      "manifest": "reports\\llamaindex_vector_rag\\qa_llm_finance_manifest.json",
+      "evidence_eval": "reports\\llamaindex_vector_rag\\evidence_eval_llm_finance.json",
+      "answer_eval": "reports\\llamaindex_vector_rag\\answer_eval_llm_finance.json",
+      "failures": []
+    },
+    {
+      "key": "llamaindex_hybrid_rag_finance",
+      "label": "LlamaIndex Hybrid RAG + finance rerank",
+      "status": "missing_artifacts",
+      "result_count": 0,
+      "manifest_count": 0,
+      "failure_count": 0,
+      "average_evidence_recall": null,
+      "average_citation_precision": null,
+      "answer_accuracy": null,
+      "average_answer_score": null,
+      "answer_verdict_counts": null,
+      "average_total_tokens": null,
+      "median_total_tokens": null,
+      "total_tokens": null,
+      "average_latency_ms": null,
+      "median_latency_ms": null,
+      "results_dir": "reports\\llamaindex_hybrid_rag\\qa_llm_finance",
+      "manifest": "reports\\llamaindex_hybrid_rag\\qa_llm_finance_manifest.json",
+      "evidence_eval": "reports\\llamaindex_hybrid_rag\\evidence_eval_llm_finance.json",
+      "answer_eval": "reports\\llamaindex_hybrid_rag\\answer_eval_llm_finance.json",
+      "failures": []
+    }
+  ]
+}
