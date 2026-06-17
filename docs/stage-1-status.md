@@ -642,17 +642,97 @@ $env:DEEPSEEK_API_KEY="YOUR_KEY"
 D:\pageindex-demo\PageIndex\.venv\Scripts\python.exe scripts\run_llamaindex_finance_llm_diagnostics.py --force --continue-on-error
 ```
 
-These LlamaIndex finance-aware rows pass the mechanical promotion gate on the 12-question MVP subset. They remain documented as stronger-baseline diagnostics until the larger FinanceBench subset is ready.
+These LlamaIndex finance-aware rows pass the mechanical promotion gate on the 12-question MVP subset. They remain documented as stronger-baseline diagnostics until expanded answer generation is run on the 25-question subset.
+
+### Expanded FinanceBench Retrieval Diagnostics
+
+The expanded retrieval set is:
+
+```text
+datasets/financebench/expanded_questions_25.jsonl
+```
+
+It contains 25 questions, preserving the original 12 MVP questions and adding 13 deterministic balanced FinanceBench selections.
+
+PDF manifest:
+
+```text
+reports/expanded_25_pdf_manifest.json
+```
+
+Validation:
+
+```text
+reports/expanded_retrieval_validation_report.json
+status: pass
+checks: 22
+failed: 0
+```
+
+Default expanded retrieval result, before concept-signal improvement:
+
+```text
+LlamaIndex Vector RAG + finance rerank:
+questions: 25
+failures: 0 generation failures
+evidence recall: 0.880
+failure cases: fb_exp_014, fb_exp_020, fb_exp_023
+
+LlamaIndex Hybrid RAG + finance rerank:
+questions: 25
+failures: 0 generation failures
+evidence recall: 0.840
+failure cases: fb_exp_014, fb_exp_017, fb_exp_020, fb_exp_023
+```
+
+The default failures are documented in:
+
+```text
+reports/llamaindex_expanded_retrieval.md
+reports/llamaindex_expanded_retrieval.json
+```
+
+`concept_v2` expanded retrieval result:
+
+```text
+LlamaIndex Vector RAG + finance rerank, rerank_top_k=3:
+questions: 25
+failures: 0
+evidence recall: 1.000
+citation precision: 0.360
+average context words: 1,138
+
+LlamaIndex Hybrid RAG + finance rerank, rerank_top_k=3:
+questions: 25
+failures: 0
+evidence recall: 1.000
+citation precision: 0.360
+average context words: 1,160
+```
+
+The `concept_v2` results are documented in:
+
+```text
+reports/llamaindex_expanded_retrieval_concept_v2.md
+reports/llamaindex_expanded_retrieval_concept_v2.json
+```
+
+Interpretation:
+
+- The 12-question MVP result did not fully generalize to 25 questions.
+- The failures were mostly concept-heavy finance questions: financial-services gross margin, working capital, capital intensity, and PPNE growth.
+- The improved reranker still uses only question text and candidate chunk text. It does not inspect FinanceBench gold evidence pages during retrieval.
+- Expanded LLM answer generation should use `concept_v2` with `rerank_top_k=3`, because it preserved retrieval recall with the smallest context.
 
 ## Next Stage 1 Work
 
 The next work should strengthen the benchmark beyond the dependency-light MVP baselines:
 
-1. Expand the FinanceBench subset beyond 12 questions.
-2. Use `rerank_top_k=3` as the next LlamaIndex finance-aware MVP configuration and verify it on the larger subset.
+1. Run expanded LLM answer generation for `concept_v2`, `rerank_top_k=3`.
+2. Evaluate expanded evidence and answers with the same Stage 1 evaluators.
 3. Add per-method failure-case notes and cost estimates.
 4. Prepare a PageIndex upstream issue or PR using the benchmark findings.
-5. Add GraphRAG and HyperGraphRAG after the larger subset is stable.
+5. Add GraphRAG and HyperGraphRAG after the expanded baseline is stable.
 
 ## Stage 1 Exit Criteria
 
@@ -674,4 +754,4 @@ The first 11 structures are now available. The JSON parsing patch made PageIndex
 Handled empty responses and noisy JSON output
 ```
 
-Next, expand the question set and tune the stronger LlamaIndex baselines for lower answer-generation context size.
+Next, run expanded LLM answer generation for the validated `concept_v2` LlamaIndex candidates.

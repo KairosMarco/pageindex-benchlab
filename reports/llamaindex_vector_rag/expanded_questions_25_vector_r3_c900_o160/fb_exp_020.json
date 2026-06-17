@@ -1,0 +1,160 @@
+{
+  "method": "llamaindex_vector_rag",
+  "question_id": "fb_exp_020",
+  "question": "Is CVS Health a capital-intensive business based on FY2022 data?",
+  "answer": "Retrieved 3 chunks with LlamaIndex vector retrieval and lightweight reranking.",
+  "citations": [
+    {
+      "document_id": "CVSHEALTH_2022_10K",
+      "page": 81,
+      "section": null,
+      "text": " 972 19.4 % $ (1,176) (19.0)% Adjusted operating income as a % of total revenues 6.5 % 6.1 % 8.2 % Premium revenues (by business): Government $ 63,141 $ 55,739 $ 48,928 $ 7,402 13.3 % $ 6,811 13.9 % Commercial 22,133 20,325 20,373 1,808 8.9 % (48) (0.2)% (1) See “Segment Analysis” above in this MD&A for a reconciliation of operating income (GAAP measure) to adjusted operating income for the Health Care Benefits segment, which represents the Company’s principal measure of segment performance. Com",
+      "metadata": {
+        "chunk_id": "16b21353-1579-4170-8a65-c596c3057fa6",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5796884266703429,
+        "rerank_score": 68.95217600036763,
+        "matched_terms": [
+          "business"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "CVSHEALTH_2022_10K",
+      "page": 114,
+      "section": null,
+      "text": "dated Financial Statements Notes to Consolidated Financial Statements 1. Significant Accounting Policies Description of Business CVS Health Corporation, together with its subsidiaries (collectively, “CVS Health” or the “Company”), has more than 9,000 retail locations, more than 1,100 walk-in medical clinics, a leading pharmacy benefits manager with over 110 million plan members with expanding specialty pharmacy solutions and a dedicated senior pharmacy care business serving more than one million",
+      "metadata": {
+        "chunk_id": "43855956-4baf-4348-b906-0d46799d8ee9",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.589461367082764,
+        "rerank_score": 64.1961367082764,
+        "matched_terms": [
+          "business"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "CVSHEALTH_2022_10K",
+      "page": 70,
+      "section": null,
+      "text": "R, SYY, WBA, WMT). (3) Includes 63 companies. The year-ended values of each investment shown in the preceding graph are based on share price appreciation plus dividends, with the dividends reinvested as of the last business day of the month during which such dividends were ex-dividend. The calculations exclude trading commissions and taxes. Total shareholder returns from each investment can be calculated from the year-end investment values shown beneath the graph. Item 6. Reserved Not applicable",
+      "metadata": {
+        "chunk_id": "3bc0c184-809e-4ddc-a4db-9bc6cd8adc6a",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5241687074319862,
+        "rerank_score": 64.09187074319861,
+        "matched_terms": [
+          "based",
+          "business"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "llamaindex_build_vector_index",
+      "target": "CVSHEALTH_2022_10K",
+      "metadata": {
+        "page_count": 213,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "chunk_size": 900,
+        "chunk_overlap": 160,
+        "retrieve_top_k": 120,
+        "rerank_top_k": 3,
+        "finance_rerank": true,
+        "answer_context_chunk_count": 3,
+        "answer_context_chars": 8652,
+        "answer_context_words": 1300
+      }
+    },
+    {
+      "step": 2,
+      "action": "llamaindex_retrieve_node",
+      "target": "16b21353-1579-4170-8a65-c596c3057fa6",
+      "metadata": {
+        "page": 81,
+        "retrieval_rank": 3,
+        "initial_rank": 3,
+        "vector_score": 0.5796884266703429,
+        "rerank_score": 68.95217600036763,
+        "finance_boost": 8.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "matched_terms": [
+          "business"
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "action": "llamaindex_retrieve_node",
+      "target": "43855956-4baf-4348-b906-0d46799d8ee9",
+      "metadata": {
+        "page": 114,
+        "retrieval_rank": 1,
+        "initial_rank": 1,
+        "vector_score": 0.589461367082764,
+        "rerank_score": 64.1961367082764,
+        "finance_boost": 2.25,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "matched_terms": [
+          "business"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "llamaindex_retrieve_node",
+      "target": "3bc0c184-809e-4ddc-a4db-9bc6cd8adc6a",
+      "metadata": {
+        "page": 70,
+        "retrieval_rank": 10,
+        "initial_rank": 10,
+        "vector_score": 0.5241687074319862,
+        "rerank_score": 64.09187074319861,
+        "finance_boost": 6.75,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "matched_terms": [
+          "based",
+          "business"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": null,
+    "output": null,
+    "total": null
+  },
+  "latency_ms": 12926,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\CVSHEALTH_2022_10K.pdf",
+    "adapter_mode": "llamaindex_vector_retrieval",
+    "llm_enabled": false,
+    "model": null,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "page_count": 213,
+    "chunk_size": 900,
+    "chunk_overlap": 160,
+    "retrieve_top_k": 120,
+    "rerank_top_k": 3,
+    "max_citations": 3,
+    "finance_rerank": true,
+    "answer_context_chunk_count": 3,
+    "answer_context_chars": 8652,
+    "answer_context_words": 1300
+  }
+}

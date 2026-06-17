@@ -1,0 +1,228 @@
+{
+  "method": "llamaindex_vector_rag",
+  "question_id": "fb_exp_025",
+  "question": "What drove the reduction in SG&A expense as a percent of net sales in FY2023?",
+  "answer": "Retrieved 6 chunks with LlamaIndex vector retrieval and lightweight reranking.",
+  "citations": [
+    {
+      "document_id": "ULTABEAUTY_2023Q4_EARNINGS",
+      "page": 2,
+      "section": null,
+      "text": "As a percentage of net sales, SG&A expenses decreased to 23.5% compared to 23.9% in fiscal 2021, primarily due to lower marketing expenses and leverage of incentive compensation due to higher sales, partially offset by deleverage of corporate overhead due to strategic investments and deleverage of store payroll and benefits due to wage investments. Operating income increased 26.3% to $1.6 billion, or 16.1% of net sales, compared to $1.3 billion, or 15.0% of net sales, in fiscal 2021. The tax rat",
+      "metadata": {
+        "chunk_id": "a8fe1ee7-3f4c-465d-9c68-940a9a55a6bb",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.7485934487814634,
+        "rerank_score": 81.85934487814635,
+        "matched_terms": [
+          "net",
+          "sales"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "ULTABEAUTY_2023Q4_EARNINGS",
+      "page": 6,
+      "section": null,
+      "text": "f Income (In thousands, except per share data) 13 Weeks Ended January 28, January 29, 2023 2022 (Unaudited) (Unaudited) Net sales $ 3,226,773 100.0% $ 2,729,388 100.0% Cost of sales 2,014,270 62.4% 1,702,059 62.4% Gross profit 1,212,503 37.6% 1,027,329 37.6% Selling, general and administrative expenses 762,706 23.6% 649,968 23.8% Pre-opening expenses 2,179 0.1% 1,739 0.1% Operating income 447,618 13.9% 375,622 13.8% Interest (income) expense, net (4,378) (0.1%) 467 0.1% Income before income taxe",
+      "metadata": {
+        "chunk_id": "9613a4d5-75d4-4a47-b9b2-65c1e9a48068",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.4399450059483408,
+        "rerank_score": 64.59450059483407,
+        "matched_terms": [
+          "expense",
+          "net",
+          "sales"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "ULTABEAUTY_2023Q4_EARNINGS",
+      "page": 3,
+      "section": null,
+      "text": "Cash and cash equivalents at the end of the fourth quarter of fiscal 2022 were $737.9 million. Merchandise inventories, net at the end of the fourth quarter of fiscal 2022 totaled $1.6 billion compared to $1.5 billion at the end of the fourth quarter of fiscal 2021. The $104.2 million increase was primarily due to the opening of 47 new stores since January 29, 2022, inventory to support new brand launches and brand expansions, and inventory cost increases. Share Repurchase Program During the fou",
+      "metadata": {
+        "chunk_id": "a3ef030a-8823-4ef6-a668-7d9e5920485f",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.47932522759867574,
+        "rerank_score": 61.85752275986757,
+        "matched_terms": [
+          "expense",
+          "net",
+          "sales"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "llamaindex_build_vector_index",
+      "target": "ULTABEAUTY_2023Q4_EARNINGS",
+      "metadata": {
+        "page_count": 9,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "chunk_size": 900,
+        "chunk_overlap": 160,
+        "retrieve_top_k": 120,
+        "rerank_top_k": 6,
+        "finance_rerank": true,
+        "answer_context_chunk_count": 6,
+        "answer_context_chars": 13169,
+        "answer_context_words": 1902
+      }
+    },
+    {
+      "step": 2,
+      "action": "llamaindex_retrieve_node",
+      "target": "a8fe1ee7-3f4c-465d-9c68-940a9a55a6bb",
+      "metadata": {
+        "page": 2,
+        "retrieval_rank": 1,
+        "initial_rank": 1,
+        "vector_score": 0.7485934487814634,
+        "rerank_score": 81.85934487814635,
+        "finance_boost": 2.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "matched_terms": [
+          "net",
+          "sales"
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "action": "llamaindex_retrieve_node",
+      "target": "94e04816-5c8c-4a89-9406-cb032d4b73bb",
+      "metadata": {
+        "page": 2,
+        "retrieval_rank": 2,
+        "initial_rank": 2,
+        "vector_score": 0.6714836328252184,
+        "rerank_score": 80.04836328252185,
+        "finance_boost": 8.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "matched_terms": [
+          "net",
+          "sales"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "llamaindex_retrieve_node",
+      "target": "9613a4d5-75d4-4a47-b9b2-65c1e9a48068",
+      "metadata": {
+        "page": 6,
+        "retrieval_rank": 5,
+        "initial_rank": 5,
+        "vector_score": 0.4399450059483408,
+        "rerank_score": 64.59450059483407,
+        "finance_boost": 8.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "matched_terms": [
+          "expense",
+          "net",
+          "sales"
+        ]
+      }
+    },
+    {
+      "step": 5,
+      "action": "llamaindex_retrieve_node",
+      "target": "a3ef030a-8823-4ef6-a668-7d9e5920485f",
+      "metadata": {
+        "page": 3,
+        "retrieval_rank": 3,
+        "initial_rank": 3,
+        "vector_score": 0.47932522759867574,
+        "rerank_score": 61.85752275986757,
+        "finance_boost": 7.125,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "matched_terms": [
+          "expense",
+          "net",
+          "sales"
+        ]
+      }
+    },
+    {
+      "step": 6,
+      "action": "llamaindex_retrieve_node",
+      "target": "6d69235f-0f93-42b1-91cf-cdcf48cd3a16",
+      "metadata": {
+        "page": 1,
+        "retrieval_rank": 4,
+        "initial_rank": 4,
+        "vector_score": 0.440586265485226,
+        "rerank_score": 56.75862654852261,
+        "finance_boost": 8.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "matched_terms": [
+          "net",
+          "sales"
+        ]
+      }
+    },
+    {
+      "step": 7,
+      "action": "llamaindex_retrieve_node",
+      "target": "e1d1eddf-02ed-4b0d-ae11-bc6974267616",
+      "metadata": {
+        "page": 8,
+        "retrieval_rank": 6,
+        "initial_rank": 6,
+        "vector_score": 0.43074241535177865,
+        "rerank_score": 55.57424153517786,
+        "finance_boost": 8.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "matched_terms": [
+          "expense",
+          "net"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": null,
+    "output": null,
+    "total": null
+  },
+  "latency_ms": 7279,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\ULTABEAUTY_2023Q4_EARNINGS.pdf",
+    "adapter_mode": "llamaindex_vector_retrieval",
+    "llm_enabled": false,
+    "model": null,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "page_count": 9,
+    "chunk_size": 900,
+    "chunk_overlap": 160,
+    "retrieve_top_k": 120,
+    "rerank_top_k": 6,
+    "max_citations": 3,
+    "finance_rerank": true,
+    "answer_context_chunk_count": 6,
+    "answer_context_chars": 13169,
+    "answer_context_words": 1902
+  }
+}

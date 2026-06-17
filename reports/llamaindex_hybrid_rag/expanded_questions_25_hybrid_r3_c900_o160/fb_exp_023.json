@@ -1,0 +1,185 @@
+{
+  "method": "llamaindex_hybrid_rag",
+  "question_id": "fb_exp_023",
+  "question": "Did Pfizer grow its PPNE between FY20 and FY21?",
+  "answer": "Retrieved 3 chunks with LlamaIndex BM25/vector hybrid fusion.",
+  "citations": [
+    {
+      "document_id": "PFIZER_2021_10K",
+      "page": 119,
+      "section": null,
+      "text": "4.22 Fourth Supplemental Indenture, dated as of May 28, 2020, between us and The Bank of New York Mellon, as trustee, is incorporated by reference from our Current Report on Form 8-K filed on May 28, 2020. 4.23 Fifth Supplemental Indenture, dated as of August 18, 2021 between us and The Bank of New York Mellon, as trustee, is incorporated by reference from our Current Report on Form 8-K filed on August 18, 2021. *4.24 Description of Pfizer’s Securities. 4.25 Except as set forth in Exhibits 4.1-2",
+      "metadata": {
+        "chunk_id": "edddb178-a96f-4ed1-8fec-44c99e092070",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.38638590845595605,
+        "rerank_score": 36.24827850790902,
+        "matched_terms": [
+          "between",
+          "its"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "PFIZER_2021_10K",
+      "page": 41,
+      "section": null,
+      "text": "Revenues—Selected Product Discussion Biopharma Revenue (MILLIONS) Year Ended Dec. 31, % Change Product Global Revenues Region 2021 2020 Total Oper. Operational Results Commentary Comirnaty $36,781 * U.S. $ 7,809 $ 154 * Driven by global uptake, following a growing number of regulatory approvals and temporary authorizations. Int’l. 28,972 — * * Worldwide $ 36,781 $ 154 * * Eliquis $5,970 Up 19% (operationally) U.S. $ 3,160 $ 2,688 18 Global growth driven primarily by continued increased adoption ",
+      "metadata": {
+        "chunk_id": "e8e1b837-d7ff-4302-9dbe-d356da1a404c",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.4610472112171026,
+        "rerank_score": 33.24446998544937,
+        "matched_terms": [],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "PFIZER_2021_10K",
+      "page": 76,
+      "section": null,
+      "text": "Subsidiary Companies the development costs until commercialization of the vaccine. Thereafter, BioNTech was to repay us its 50 percent share of these development costs through reductions in gross profit sharing and milestone payments to BioNTech over time. On January 29, 2021, we and BioNTech signed an amended version of the April 2020 agreement. Under the January 2021 agreement, BioNTech paid us their 50 percent share of prior development costs in a lump sum payment during the first quarter of ",
+      "metadata": {
+        "chunk_id": "c0bf99ee-b8cf-4217-9bdc-beb918e58600",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.3926817819794611,
+        "rerank_score": 31.718294878088695,
+        "matched_terms": [
+          "between",
+          "its"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "llamaindex_build_hybrid_index",
+      "target": "PFIZER_2021_10K",
+      "metadata": {
+        "page_count": 143,
+        "node_count": 258,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "chunk_size": 900,
+        "chunk_overlap": 160,
+        "vector_top_k": 120,
+        "bm25_top_k": 120,
+        "fusion_top_k": 120,
+        "rerank_top_k": 3,
+        "rrf_k": 60,
+        "finance_rerank": true,
+        "cross_encoder_model": null,
+        "cross_encoder_candidates": 60,
+        "answer_context_chunk_count": 3,
+        "answer_context_chars": 10518,
+        "answer_context_words": 1634
+      }
+    },
+    {
+      "step": 2,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "edddb178-a96f-4ed1-8fec-44c99e092070",
+      "metadata": {
+        "page": 119,
+        "bm25_rank": 4,
+        "vector_rank": 71,
+        "fusion_rank": 3,
+        "bm25_score": 1.8228082656860352,
+        "vector_score": 0.38638590845595605,
+        "rrf_score": 0.02325858778625954,
+        "rerank_score": 36.24827850790902,
+        "finance_boost": 8.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "between",
+          "its"
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "e8e1b837-d7ff-4302-9dbe-d356da1a404c",
+      "metadata": {
+        "page": 41,
+        "bm25_rank": 30,
+        "vector_rank": 14,
+        "fusion_rank": 2,
+        "bm25_score": 1.1719858646392822,
+        "vector_score": 0.4610472112171026,
+        "rrf_score": 0.024624624624624628,
+        "rerank_score": 33.24446998544937,
+        "finance_boost": 7.625,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": []
+      }
+    },
+    {
+      "step": 4,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "c0bf99ee-b8cf-4217-9bdc-beb918e58600",
+      "metadata": {
+        "page": 76,
+        "bm25_rank": 15,
+        "vector_rank": 66,
+        "fusion_rank": 11,
+        "bm25_score": 1.519775390625,
+        "vector_score": 0.3926817819794611,
+        "rrf_score": 0.021269841269841272,
+        "rerank_score": 31.718294878088695,
+        "finance_boost": 5.5,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "between",
+          "its"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": null,
+    "output": null,
+    "total": null
+  },
+  "latency_ms": 14140,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\PFIZER_2021_10K.pdf",
+    "adapter_mode": "llamaindex_bm25_vector_rrf_plus_rerank",
+    "llm_enabled": false,
+    "model": null,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "page_count": 143,
+    "node_count": 258,
+    "chunk_size": 900,
+    "chunk_overlap": 160,
+    "vector_top_k": 120,
+    "bm25_top_k": 120,
+    "fusion_top_k": 120,
+    "rerank_top_k": 3,
+    "rrf_k": 60,
+    "max_citations": 3,
+    "finance_rerank": true,
+    "cross_encoder_model": null,
+    "cross_encoder_candidates": 60,
+    "answer_context_chunk_count": 3,
+    "answer_context_chars": 10518,
+    "answer_context_words": 1634
+  }
+}

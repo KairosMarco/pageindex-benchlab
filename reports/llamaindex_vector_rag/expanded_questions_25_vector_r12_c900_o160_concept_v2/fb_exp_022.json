@@ -1,0 +1,365 @@
+{
+  "method": "llamaindex_vector_rag",
+  "question_id": "fb_exp_022",
+  "question": "What is Coca Cola's FY2021 COGS % margin? Calculate what was asked by utilizing the line items clearly shown in the income statement.",
+  "answer": "Retrieved 12 chunks with LlamaIndex vector retrieval and lightweight reranking.",
+  "citations": [
+    {
+      "document_id": "COCACOLA_2021_10K",
+      "page": 62,
+      "section": null,
+      "text": "THE COCA-COLA COMPANY AND SUBSIDIARIES CONSOLIDATED STATEMENTS OF INCOME (In millions except per share data) Year Ended December 31, 2021 2020 2019 Net Operating Revenues $ 38,655 $ 33,014 $ 37,266 Cost of goods sold 15,357 13,433 14,619 Gross Profit 23,298 19,581 22,647 Selling, general and administrative expenses 12,144 9,731 12,103 Other operating charges 846 853 458 Operating Income 10,308 8,997 10,086 Interest income 276 370 563 Interest expense 1,597 1,437 946 Equity income (loss) — net 1,",
+      "metadata": {
+        "chunk_id": "db3a358d-aab1-4327-b7b5-db83006abf0d",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.568841811702786,
+        "rerank_score": 93.8841811702786,
+        "matched_terms": [
+          "cost",
+          "goods",
+          "income"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "COCACOLA_2021_10K",
+      "page": 128,
+      "section": null,
+      "text": "ca-Cola Company and subsidiaries (the Company) as of December 31, 2021 and 2020, the related consolidated statements of income, comprehensive income, shareowners’ equity and cash flows for each of the three years in the period ended December 31, 2021, and the related notes (collectively referred to as the “consolidated financial statements”). In our opinion, the consolidated financial statements present fairly, in all material respects, the financial position of the Company as of December 31, 20",
+      "metadata": {
+        "chunk_id": "f949c5f7-4557-408f-b3cf-e6dfc00b21bc",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5210939100996836,
+        "rerank_score": 82.05939100996837,
+        "matched_terms": [
+          "income",
+          "operations",
+          "revenue"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "COCACOLA_2021_10K",
+      "page": 68,
+      "section": null,
+      "text": "e ability to exercise significant influence over operating and financial policies of the investee. Our consolidated net income includes our Company’s proportionate share of the net income or loss of these companies. Our judgment regarding the level of influence over each equity method investee includes considering key factors such as our ownership interest, representation on the board of directors, participation in policy-making decisions, other commercial arrangements and material intercompany ",
+      "metadata": {
+        "chunk_id": "a0c0e87b-08e6-4aaf-9757-fba95d3c85a8",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.48660310090778797,
+        "rerank_score": 82.01864342411213,
+        "matched_terms": [
+          "cost",
+          "goods",
+          "income",
+          "revenue",
+          "sales",
+          "statement"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "llamaindex_build_vector_index",
+      "target": "COCACOLA_2021_10K",
+      "metadata": {
+        "page_count": 183,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "chunk_size": 900,
+        "chunk_overlap": 160,
+        "retrieve_top_k": 120,
+        "rerank_top_k": 12,
+        "finance_rerank": true,
+        "answer_context_chunk_count": 12,
+        "answer_context_chars": 34141,
+        "answer_context_words": 5178
+      }
+    },
+    {
+      "step": 2,
+      "action": "llamaindex_retrieve_node",
+      "target": "db3a358d-aab1-4327-b7b5-db83006abf0d",
+      "metadata": {
+        "page": 62,
+        "retrieval_rank": 1,
+        "initial_rank": 1,
+        "vector_score": 0.568841811702786,
+        "rerank_score": 93.8841811702786,
+        "finance_boost": 24.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "income_statement_title"
+        ],
+        "matched_terms": [
+          "cost",
+          "goods",
+          "income"
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "action": "llamaindex_retrieve_node",
+      "target": "f949c5f7-4557-408f-b3cf-e6dfc00b21bc",
+      "metadata": {
+        "page": 128,
+        "retrieval_rank": 7,
+        "initial_rank": 7,
+        "vector_score": 0.5210939100996836,
+        "rerank_score": 82.05939100996837,
+        "finance_boost": 20.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "income_statement_title"
+        ],
+        "matched_terms": [
+          "income",
+          "operations",
+          "revenue"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "llamaindex_retrieve_node",
+      "target": "a0c0e87b-08e6-4aaf-9757-fba95d3c85a8",
+      "metadata": {
+        "page": 68,
+        "retrieval_rank": 18,
+        "initial_rank": 18,
+        "vector_score": 0.48660310090778797,
+        "rerank_score": 82.01864342411213,
+        "finance_boost": 17.5,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "income_statement_title"
+        ],
+        "matched_terms": [
+          "cost",
+          "goods",
+          "income",
+          "revenue",
+          "sales",
+          "statement"
+        ]
+      }
+    },
+    {
+      "step": 5,
+      "action": "llamaindex_retrieve_node",
+      "target": "ab82a443-50f4-4627-82da-4d16327e4d9f",
+      "metadata": {
+        "page": 61,
+        "retrieval_rank": 9,
+        "initial_rank": 9,
+        "vector_score": 0.5144457212372912,
+        "rerank_score": 74.87790545706245,
+        "finance_boost": 17.5,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "income_statement_title"
+        ],
+        "matched_terms": [
+          "income"
+        ]
+      }
+    },
+    {
+      "step": 6,
+      "action": "llamaindex_retrieve_node",
+      "target": "54f0f27c-243a-4148-862f-57a813034811",
+      "metadata": {
+        "page": 140,
+        "retrieval_rank": 44,
+        "initial_rank": 44,
+        "vector_score": 0.43174282034409484,
+        "rerank_score": 72.81594870107615,
+        "finance_boost": 24.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "income_statement_title"
+        ],
+        "matched_terms": [
+          "income"
+        ]
+      }
+    },
+    {
+      "step": 7,
+      "action": "llamaindex_retrieve_node",
+      "target": "ddf4193b-2b70-42ec-8653-762eb53a0bf9",
+      "metadata": {
+        "page": 130,
+        "retrieval_rank": 25,
+        "initial_rank": 25,
+        "vector_score": 0.47809642084301657,
+        "rerank_score": 71.85964208430165,
+        "finance_boost": 18.25,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "income_statement_title"
+        ],
+        "matched_terms": [
+          "income"
+        ]
+      }
+    },
+    {
+      "step": 8,
+      "action": "llamaindex_retrieve_node",
+      "target": "ec493fdd-6f47-4286-b5f3-6d3d8f611c12",
+      "metadata": {
+        "page": 95,
+        "retrieval_rank": 70,
+        "initial_rank": 70,
+        "vector_score": 0.4016909464905917,
+        "rerank_score": 70.84409464905917,
+        "finance_boost": 21.25,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "income_statement_title"
+        ],
+        "matched_terms": [
+          "cost",
+          "income",
+          "statement"
+        ]
+      }
+    },
+    {
+      "step": 9,
+      "action": "llamaindex_retrieve_node",
+      "target": "4304a374-e655-4e0b-8b5d-c0c014dd50f6",
+      "metadata": {
+        "page": 119,
+        "retrieval_rank": 63,
+        "initial_rank": 63,
+        "vector_score": 0.40785044936253045,
+        "rerank_score": 68.64337826958638,
+        "finance_boost": 22.375,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "income_statement_title"
+        ],
+        "matched_terms": [
+          "income"
+        ]
+      }
+    },
+    {
+      "step": 10,
+      "action": "llamaindex_retrieve_node",
+      "target": "f59c7561-0d97-4cf3-9a1a-e5fc1206aa3d",
+      "metadata": {
+        "page": 49,
+        "retrieval_rank": 13,
+        "initial_rank": 13,
+        "vector_score": 0.5045830679687198,
+        "rerank_score": 68.48330679687199,
+        "finance_boost": 7.125,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "matched_terms": [
+          "cost",
+          "income",
+          "margin",
+          "operations",
+          "sales"
+        ]
+      }
+    },
+    {
+      "step": 11,
+      "action": "llamaindex_retrieve_node",
+      "target": "edcdae9e-4d91-4c34-93f4-5376310bcab6",
+      "metadata": {
+        "page": 122,
+        "retrieval_rank": 5,
+        "initial_rank": 5,
+        "vector_score": 0.5494395380334713,
+        "rerank_score": 67.91062047001381,
+        "finance_boost": 8.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "matched_terms": [
+          "income",
+          "operations"
+        ]
+      }
+    },
+    {
+      "step": 12,
+      "action": "llamaindex_retrieve_node",
+      "target": "78cd4248-b46a-4c8d-95c0-355f40b214dd",
+      "metadata": {
+        "page": 66,
+        "retrieval_rank": 3,
+        "initial_rank": 3,
+        "vector_score": 0.5638238179691596,
+        "rerank_score": 67.36571513024928,
+        "finance_boost": 8.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "matched_terms": [
+          "income"
+        ]
+      }
+    },
+    {
+      "step": 13,
+      "action": "llamaindex_retrieve_node",
+      "target": "5a08ba3a-da8f-4d9d-909d-019d9e2d41ce",
+      "metadata": {
+        "page": 77,
+        "retrieval_rank": 8,
+        "initial_rank": 8,
+        "vector_score": 0.5183985562055247,
+        "rerank_score": 65.53152228721913,
+        "finance_boost": 4.75,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "matched_terms": [
+          "cost",
+          "income",
+          "operations",
+          "revenue"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": null,
+    "output": null,
+    "total": null
+  },
+  "latency_ms": 12032,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\COCACOLA_2021_10K.pdf",
+    "adapter_mode": "llamaindex_vector_retrieval",
+    "llm_enabled": false,
+    "model": null,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "page_count": 183,
+    "chunk_size": 900,
+    "chunk_overlap": 160,
+    "retrieve_top_k": 120,
+    "rerank_top_k": 12,
+    "max_citations": 3,
+    "finance_rerank": true,
+    "answer_context_chunk_count": 12,
+    "answer_context_chars": 34141,
+    "answer_context_words": 5178
+  }
+}

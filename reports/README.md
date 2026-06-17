@@ -19,6 +19,12 @@ reports/llamaindex_finance_llm_diagnostics.md
 reports/llamaindex_finance_llm_diagnostics.json
 reports/llamaindex_context_tuning.md
 reports/llamaindex_context_tuning.json
+reports/llamaindex_expanded_retrieval.md
+reports/llamaindex_expanded_retrieval.json
+reports/llamaindex_expanded_retrieval_concept_v2.md
+reports/llamaindex_expanded_retrieval_concept_v2.json
+reports/expanded_retrieval_validation_report.json
+reports/expanded_25_pdf_manifest.json
 reports/pageindex/pageindex_qa_mvp_report.md
 reports/pageindex/evidence_eval.json
 reports/pageindex/qa_manifest.json

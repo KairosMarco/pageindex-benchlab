@@ -1,0 +1,193 @@
+{
+  "method": "llamaindex_hybrid_rag",
+  "question_id": "fb_exp_017",
+  "question": "Does Corning have positive working capital based on FY2022 data? If working capital is not a useful or relevant metric for this company, then please state that and explain why.",
+  "answer": "Retrieved 3 chunks with LlamaIndex BM25/vector hybrid fusion.",
+  "citations": [
+    {
+      "document_id": "CORNING_2022_10K",
+      "page": 34,
+      "section": null,
+      "text": "Table of Contents LIQUIDITY AND CAPITAL RESOURCES Our financial condition and liquidity are strong. We are not aware of any known trends, demands, commitments, events or uncertainties that will result in or that are reasonably likely to result in a material decrease in our liquidity. In addition, other than items discussed, there are no known material trends, favorable or unfavorable, in our capital resources and no expected material changes in the mix of such resources. Our major source of fund",
+      "metadata": {
+        "chunk_id": "88f962a6-255b-4d2b-be17-8a9b173dc512",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.4256792583054281,
+        "rerank_score": 37.24803986725395,
+        "matched_terms": [
+          "capital",
+          "data",
+          "working"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "CORNING_2022_10K",
+      "page": 61,
+      "section": null,
+      "text": "oss on disposal of assets 189 57 138 Severance charges (reversals) 70 (13) 148 Severance payments (11) (26) (147) Share-based compensation expense 175 190 207 Translation (gain) loss on Japanese yen-denominated debt (191) (180) 86 Deferred tax (benefit) provision (46) 16 (20) Pension plan contributions (24) (221) Translated earnings contract (gain) loss (351) (354) 38 Unrealized translation loss (gain) on transactions 68 77 (133) (Gain) loss on investment (8) 23 (107) Asbestos claim payments (13",
+      "metadata": {
+        "chunk_id": "92668646-da9b-4e72-829d-ecd94454a39b",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5064829268401121,
+        "rerank_score": 36.35442682459338,
+        "matched_terms": [
+          "based",
+          "capital"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "CORNING_2022_10K",
+      "page": 23,
+      "section": null,
+      "text": "organized as follows: • Overview • Results of Operations • Segment Analysis • Core Performance Measures • Liquidity and Capital Resources • Environment • Critical Accounting Estimates • New Accounting Standards • Forward-Looking Statements OVERVIEW We introduced our 2020-to-2023 Strategy & Growth Framework with a focus on capturing opportunities to sell more Corning content through each of our Market- Access Platforms. Our goals included core sales growth at a compound annual growth rate of 6 to",
+      "metadata": {
+        "chunk_id": "f107b567-9833-49b7-a4cc-ce5fed2a2b64",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5174556450669239,
+        "rerank_score": 35.869502430819566,
+        "matched_terms": [
+          "capital",
+          "data"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "llamaindex_build_hybrid_index",
+      "target": "CORNING_2022_10K",
+      "metadata": {
+        "page_count": 159,
+        "node_count": 201,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "chunk_size": 900,
+        "chunk_overlap": 160,
+        "vector_top_k": 120,
+        "bm25_top_k": 120,
+        "fusion_top_k": 120,
+        "rerank_top_k": 3,
+        "rrf_k": 60,
+        "finance_rerank": true,
+        "cross_encoder_model": null,
+        "cross_encoder_candidates": 60,
+        "answer_context_chunk_count": 3,
+        "answer_context_chars": 9863,
+        "answer_context_words": 1375
+      }
+    },
+    {
+      "step": 2,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "88f962a6-255b-4d2b-be17-8a9b173dc512",
+      "metadata": {
+        "page": 34,
+        "bm25_rank": 1,
+        "vector_rank": 51,
+        "fusion_rank": 6,
+        "bm25_score": 8.269255638122559,
+        "vector_score": 0.4256792583054281,
+        "rrf_score": 0.02540245163195983,
+        "rerank_score": 37.24803986725395,
+        "finance_boost": 4.875,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "capital",
+          "data",
+          "working"
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "92668646-da9b-4e72-829d-ecd94454a39b",
+      "metadata": {
+        "page": 61,
+        "bm25_rank": 43,
+        "vector_rank": 13,
+        "fusion_rank": 10,
+        "bm25_score": 2.979053497314453,
+        "vector_score": 0.5064829268401121,
+        "rrf_score": 0.02340736800106397,
+        "rerank_score": 36.35442682459338,
+        "finance_boost": 8.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "based",
+          "capital"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "f107b567-9833-49b7-a4cc-ce5fed2a2b64",
+      "metadata": {
+        "page": 23,
+        "bm25_rank": 14,
+        "vector_rank": 9,
+        "fusion_rank": 3,
+        "bm25_score": 4.433096885681152,
+        "vector_score": 0.5174556450669239,
+        "rrf_score": 0.028006267136701922,
+        "rerank_score": 35.869502430819566,
+        "finance_boost": 2.875,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "capital",
+          "data"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": null,
+    "output": null,
+    "total": null
+  },
+  "latency_ms": 13159,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\CORNING_2022_10K.pdf",
+    "adapter_mode": "llamaindex_bm25_vector_rrf_plus_rerank",
+    "llm_enabled": false,
+    "model": null,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "page_count": 159,
+    "node_count": 201,
+    "chunk_size": 900,
+    "chunk_overlap": 160,
+    "vector_top_k": 120,
+    "bm25_top_k": 120,
+    "fusion_top_k": 120,
+    "rerank_top_k": 3,
+    "rrf_k": 60,
+    "max_citations": 3,
+    "finance_rerank": true,
+    "cross_encoder_model": null,
+    "cross_encoder_candidates": 60,
+    "answer_context_chunk_count": 3,
+    "answer_context_chars": 9863,
+    "answer_context_words": 1375
+  }
+}

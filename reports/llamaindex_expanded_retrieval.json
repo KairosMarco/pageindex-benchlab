@@ -1,0 +1,583 @@
+{
+  "summary": {
+    "date": "2026-06-17",
+    "question_file": "datasets\\financebench\\expanded_questions_25.jsonl",
+    "method_count": 6,
+    "rerank_top_k_values": [
+      3,
+      6,
+      12
+    ],
+    "chunk_size": 900,
+    "chunk_overlap": 160,
+    "variant_suffix": null
+  },
+  "methods": [
+    {
+      "method": "vector",
+      "method_key": "llamaindex_vector_rag",
+      "label": "LlamaIndex Vector RAG + finance rerank",
+      "question_file": "datasets\\financebench\\expanded_questions_25.jsonl",
+      "question_count": 25,
+      "result_count": 25,
+      "coverage": 1.0,
+      "failure_count": 0,
+      "manifest_failure_count": 0,
+      "average_evidence_recall": 0.88,
+      "average_citation_precision": 0.30666666666666664,
+      "average_context_chunks": 3.0,
+      "average_context_words": 1126.56,
+      "average_latency_ms": 10079.96,
+      "rerank_top_k": 3,
+      "chunk_size": 900,
+      "chunk_overlap": 160,
+      "results_dir": "reports\\llamaindex_vector_rag\\expanded_questions_25_vector_r3_c900_o160",
+      "manifest": "reports\\llamaindex_vector_rag\\expanded_questions_25_vector_r3_c900_o160_manifest.json",
+      "evidence_eval": "reports\\llamaindex_vector_rag\\evidence_eval_expanded_questions_25_vector_r3_c900_o160.json",
+      "manifest_failures": []
+    },
+    {
+      "method": "vector",
+      "method_key": "llamaindex_vector_rag",
+      "label": "LlamaIndex Vector RAG + finance rerank",
+      "question_file": "datasets\\financebench\\expanded_questions_25.jsonl",
+      "question_count": 25,
+      "result_count": 25,
+      "coverage": 1.0,
+      "failure_count": 0,
+      "manifest_failure_count": 0,
+      "average_evidence_recall": 0.88,
+      "average_citation_precision": 0.29333333333333333,
+      "average_context_chunks": 5.96,
+      "average_context_words": 2314.64,
+      "average_latency_ms": 12585.16,
+      "rerank_top_k": 6,
+      "chunk_size": 900,
+      "chunk_overlap": 160,
+      "results_dir": "reports\\llamaindex_vector_rag\\expanded_questions_25_vector_r6_c900_o160",
+      "manifest": "reports\\llamaindex_vector_rag\\expanded_questions_25_vector_r6_c900_o160_manifest.json",
+      "evidence_eval": "reports\\llamaindex_vector_rag\\evidence_eval_expanded_questions_25_vector_r6_c900_o160.json",
+      "manifest_failures": []
+    },
+    {
+      "method": "vector",
+      "method_key": "llamaindex_vector_rag",
+      "label": "LlamaIndex Vector RAG + finance rerank",
+      "question_file": "datasets\\financebench\\expanded_questions_25.jsonl",
+      "question_count": 25,
+      "result_count": 25,
+      "coverage": 1.0,
+      "failure_count": 0,
+      "manifest_failure_count": 0,
+      "average_evidence_recall": 0.88,
+      "average_citation_precision": 0.29333333333333333,
+      "average_context_chunks": 11.64,
+      "average_context_words": 4565.6,
+      "average_latency_ms": 10648.76,
+      "rerank_top_k": 12,
+      "chunk_size": 900,
+      "chunk_overlap": 160,
+      "results_dir": "reports\\llamaindex_vector_rag\\expanded_questions_25_vector_r12_c900_o160",
+      "manifest": "reports\\llamaindex_vector_rag\\expanded_questions_25_vector_r12_c900_o160_manifest.json",
+      "evidence_eval": "reports\\llamaindex_vector_rag\\evidence_eval_expanded_questions_25_vector_r12_c900_o160.json",
+      "manifest_failures": []
+    },
+    {
+      "method": "hybrid",
+      "method_key": "llamaindex_hybrid_rag",
+      "label": "LlamaIndex Hybrid RAG + finance rerank",
+      "question_file": "datasets\\financebench\\expanded_questions_25.jsonl",
+      "question_count": 25,
+      "result_count": 25,
+      "coverage": 1.0,
+      "failure_count": 0,
+      "manifest_failure_count": 0,
+      "average_evidence_recall": 0.84,
+      "average_citation_precision": 0.29333333333333333,
+      "average_context_chunks": 3.0,
+      "average_context_words": 1220.92,
+      "average_latency_ms": 13538.24,
+      "rerank_top_k": 3,
+      "chunk_size": 900,
+      "chunk_overlap": 160,
+      "results_dir": "reports\\llamaindex_hybrid_rag\\expanded_questions_25_hybrid_r3_c900_o160",
+      "manifest": "reports\\llamaindex_hybrid_rag\\expanded_questions_25_hybrid_r3_c900_o160_manifest.json",
+      "evidence_eval": "reports\\llamaindex_hybrid_rag\\evidence_eval_expanded_questions_25_hybrid_r3_c900_o160.json",
+      "manifest_failures": []
+    },
+    {
+      "method": "hybrid",
+      "method_key": "llamaindex_hybrid_rag",
+      "label": "LlamaIndex Hybrid RAG + finance rerank",
+      "question_file": "datasets\\financebench\\expanded_questions_25.jsonl",
+      "question_count": 25,
+      "result_count": 25,
+      "coverage": 1.0,
+      "failure_count": 0,
+      "manifest_failure_count": 0,
+      "average_evidence_recall": 0.84,
+      "average_citation_precision": 0.28,
+      "average_context_chunks": 5.96,
+      "average_context_words": 2515.36,
+      "average_latency_ms": 9809.4,
+      "rerank_top_k": 6,
+      "chunk_size": 900,
+      "chunk_overlap": 160,
+      "results_dir": "reports\\llamaindex_hybrid_rag\\expanded_questions_25_hybrid_r6_c900_o160",
+      "manifest": "reports\\llamaindex_hybrid_rag\\expanded_questions_25_hybrid_r6_c900_o160_manifest.json",
+      "evidence_eval": "reports\\llamaindex_hybrid_rag\\evidence_eval_expanded_questions_25_hybrid_r6_c900_o160.json",
+      "manifest_failures": []
+    },
+    {
+      "method": "hybrid",
+      "method_key": "llamaindex_hybrid_rag",
+      "label": "LlamaIndex Hybrid RAG + finance rerank",
+      "question_file": "datasets\\financebench\\expanded_questions_25.jsonl",
+      "question_count": 25,
+      "result_count": 25,
+      "coverage": 1.0,
+      "failure_count": 0,
+      "manifest_failure_count": 0,
+      "average_evidence_recall": 0.84,
+      "average_citation_precision": 0.28,
+      "average_context_chunks": 11.64,
+      "average_context_words": 5060.68,
+      "average_latency_ms": 9911.88,
+      "rerank_top_k": 12,
+      "chunk_size": 900,
+      "chunk_overlap": 160,
+      "results_dir": "reports\\llamaindex_hybrid_rag\\expanded_questions_25_hybrid_r12_c900_o160",
+      "manifest": "reports\\llamaindex_hybrid_rag\\expanded_questions_25_hybrid_r12_c900_o160_manifest.json",
+      "evidence_eval": "reports\\llamaindex_hybrid_rag\\evidence_eval_expanded_questions_25_hybrid_r12_c900_o160.json",
+      "manifest_failures": []
+    }
+  ],
+  "failures": [
+    {
+      "method": "vector",
+      "label": "LlamaIndex Vector RAG + finance rerank",
+      "rerank_top_k": 3,
+      "question_id": "fb_exp_014",
+      "doc_name": "AMERICANEXPRESS_2022_10K",
+      "question_type": "domain-relevant",
+      "question_reasoning": "Logical reasoning (based on numerical reasoning) OR Numerical reasoning OR Logical reasoning",
+      "gold_pages_one_indexed": [
+        96
+      ],
+      "predicted_pages": [
+        47,
+        54,
+        57
+      ],
+      "evidence_recall": 0.0,
+      "citation_precision": 0.0,
+      "question": "What drove gross margin change as of the FY2022 for American Express? If gross margin is not a useful metric for a company like this, then please state that and explain why."
+    },
+    {
+      "method": "vector",
+      "label": "LlamaIndex Vector RAG + finance rerank",
+      "rerank_top_k": 3,
+      "question_id": "fb_exp_020",
+      "doc_name": "CVSHEALTH_2022_10K",
+      "question_type": "domain-relevant",
+      "question_reasoning": "Logical reasoning (based on numerical reasoning)",
+      "gold_pages_one_indexed": [
+        108,
+        110
+      ],
+      "predicted_pages": [
+        81,
+        114,
+        70
+      ],
+      "evidence_recall": 0.0,
+      "citation_precision": 0.0,
+      "question": "Is CVS Health a capital-intensive business based on FY2022 data?"
+    },
+    {
+      "method": "vector",
+      "label": "LlamaIndex Vector RAG + finance rerank",
+      "rerank_top_k": 3,
+      "question_id": "fb_exp_023",
+      "doc_name": "PFIZER_2021_10K",
+      "question_type": "novel-generated",
+      "question_reasoning": null,
+      "gold_pages_one_indexed": [
+        59
+      ],
+      "predicted_pages": [
+        42,
+        64,
+        139
+      ],
+      "evidence_recall": 0.0,
+      "citation_precision": 0.0,
+      "question": "Did Pfizer grow its PPNE between FY20 and FY21?"
+    },
+    {
+      "method": "vector",
+      "label": "LlamaIndex Vector RAG + finance rerank",
+      "rerank_top_k": 6,
+      "question_id": "fb_exp_014",
+      "doc_name": "AMERICANEXPRESS_2022_10K",
+      "question_type": "domain-relevant",
+      "question_reasoning": "Logical reasoning (based on numerical reasoning) OR Numerical reasoning OR Logical reasoning",
+      "gold_pages_one_indexed": [
+        96
+      ],
+      "predicted_pages": [
+        47,
+        54,
+        57
+      ],
+      "evidence_recall": 0.0,
+      "citation_precision": 0.0,
+      "question": "What drove gross margin change as of the FY2022 for American Express? If gross margin is not a useful metric for a company like this, then please state that and explain why."
+    },
+    {
+      "method": "vector",
+      "label": "LlamaIndex Vector RAG + finance rerank",
+      "rerank_top_k": 6,
+      "question_id": "fb_exp_020",
+      "doc_name": "CVSHEALTH_2022_10K",
+      "question_type": "domain-relevant",
+      "question_reasoning": "Logical reasoning (based on numerical reasoning)",
+      "gold_pages_one_indexed": [
+        108,
+        110
+      ],
+      "predicted_pages": [
+        81,
+        114,
+        70
+      ],
+      "evidence_recall": 0.0,
+      "citation_precision": 0.0,
+      "question": "Is CVS Health a capital-intensive business based on FY2022 data?"
+    },
+    {
+      "method": "vector",
+      "label": "LlamaIndex Vector RAG + finance rerank",
+      "rerank_top_k": 6,
+      "question_id": "fb_exp_023",
+      "doc_name": "PFIZER_2021_10K",
+      "question_type": "novel-generated",
+      "question_reasoning": null,
+      "gold_pages_one_indexed": [
+        59
+      ],
+      "predicted_pages": [
+        42,
+        64,
+        139
+      ],
+      "evidence_recall": 0.0,
+      "citation_precision": 0.0,
+      "question": "Did Pfizer grow its PPNE between FY20 and FY21?"
+    },
+    {
+      "method": "vector",
+      "label": "LlamaIndex Vector RAG + finance rerank",
+      "rerank_top_k": 12,
+      "question_id": "fb_exp_014",
+      "doc_name": "AMERICANEXPRESS_2022_10K",
+      "question_type": "domain-relevant",
+      "question_reasoning": "Logical reasoning (based on numerical reasoning) OR Numerical reasoning OR Logical reasoning",
+      "gold_pages_one_indexed": [
+        96
+      ],
+      "predicted_pages": [
+        47,
+        54,
+        57
+      ],
+      "evidence_recall": 0.0,
+      "citation_precision": 0.0,
+      "question": "What drove gross margin change as of the FY2022 for American Express? If gross margin is not a useful metric for a company like this, then please state that and explain why."
+    },
+    {
+      "method": "vector",
+      "label": "LlamaIndex Vector RAG + finance rerank",
+      "rerank_top_k": 12,
+      "question_id": "fb_exp_020",
+      "doc_name": "CVSHEALTH_2022_10K",
+      "question_type": "domain-relevant",
+      "question_reasoning": "Logical reasoning (based on numerical reasoning)",
+      "gold_pages_one_indexed": [
+        108,
+        110
+      ],
+      "predicted_pages": [
+        81,
+        114,
+        70
+      ],
+      "evidence_recall": 0.0,
+      "citation_precision": 0.0,
+      "question": "Is CVS Health a capital-intensive business based on FY2022 data?"
+    },
+    {
+      "method": "vector",
+      "label": "LlamaIndex Vector RAG + finance rerank",
+      "rerank_top_k": 12,
+      "question_id": "fb_exp_023",
+      "doc_name": "PFIZER_2021_10K",
+      "question_type": "novel-generated",
+      "question_reasoning": null,
+      "gold_pages_one_indexed": [
+        59
+      ],
+      "predicted_pages": [
+        42,
+        64,
+        139
+      ],
+      "evidence_recall": 0.0,
+      "citation_precision": 0.0,
+      "question": "Did Pfizer grow its PPNE between FY20 and FY21?"
+    },
+    {
+      "method": "hybrid",
+      "label": "LlamaIndex Hybrid RAG + finance rerank",
+      "rerank_top_k": 3,
+      "question_id": "fb_exp_014",
+      "doc_name": "AMERICANEXPRESS_2022_10K",
+      "question_type": "domain-relevant",
+      "question_reasoning": "Logical reasoning (based on numerical reasoning) OR Numerical reasoning OR Logical reasoning",
+      "gold_pages_one_indexed": [
+        96
+      ],
+      "predicted_pages": [
+        47,
+        147,
+        44
+      ],
+      "evidence_recall": 0.0,
+      "citation_precision": 0.0,
+      "question": "What drove gross margin change as of the FY2022 for American Express? If gross margin is not a useful metric for a company like this, then please state that and explain why."
+    },
+    {
+      "method": "hybrid",
+      "label": "LlamaIndex Hybrid RAG + finance rerank",
+      "rerank_top_k": 3,
+      "question_id": "fb_exp_017",
+      "doc_name": "CORNING_2022_10K",
+      "question_type": "domain-relevant",
+      "question_reasoning": "Numerical reasoning OR Logical reasoning",
+      "gold_pages_one_indexed": [
+        60
+      ],
+      "predicted_pages": [
+        34,
+        61,
+        23
+      ],
+      "evidence_recall": 0.0,
+      "citation_precision": 0.0,
+      "question": "Does Corning have positive working capital based on FY2022 data? If working capital is not a useful or relevant metric for this company, then please state that and explain why."
+    },
+    {
+      "method": "hybrid",
+      "label": "LlamaIndex Hybrid RAG + finance rerank",
+      "rerank_top_k": 3,
+      "question_id": "fb_exp_020",
+      "doc_name": "CVSHEALTH_2022_10K",
+      "question_type": "domain-relevant",
+      "question_reasoning": "Logical reasoning (based on numerical reasoning)",
+      "gold_pages_one_indexed": [
+        108,
+        110
+      ],
+      "predicted_pages": [
+        70,
+        142,
+        4
+      ],
+      "evidence_recall": 0.0,
+      "citation_precision": 0.0,
+      "question": "Is CVS Health a capital-intensive business based on FY2022 data?"
+    },
+    {
+      "method": "hybrid",
+      "label": "LlamaIndex Hybrid RAG + finance rerank",
+      "rerank_top_k": 3,
+      "question_id": "fb_exp_023",
+      "doc_name": "PFIZER_2021_10K",
+      "question_type": "novel-generated",
+      "question_reasoning": null,
+      "gold_pages_one_indexed": [
+        59
+      ],
+      "predicted_pages": [
+        119,
+        41,
+        76
+      ],
+      "evidence_recall": 0.0,
+      "citation_precision": 0.0,
+      "question": "Did Pfizer grow its PPNE between FY20 and FY21?"
+    },
+    {
+      "method": "hybrid",
+      "label": "LlamaIndex Hybrid RAG + finance rerank",
+      "rerank_top_k": 6,
+      "question_id": "fb_exp_014",
+      "doc_name": "AMERICANEXPRESS_2022_10K",
+      "question_type": "domain-relevant",
+      "question_reasoning": "Logical reasoning (based on numerical reasoning) OR Numerical reasoning OR Logical reasoning",
+      "gold_pages_one_indexed": [
+        96
+      ],
+      "predicted_pages": [
+        47,
+        147,
+        44
+      ],
+      "evidence_recall": 0.0,
+      "citation_precision": 0.0,
+      "question": "What drove gross margin change as of the FY2022 for American Express? If gross margin is not a useful metric for a company like this, then please state that and explain why."
+    },
+    {
+      "method": "hybrid",
+      "label": "LlamaIndex Hybrid RAG + finance rerank",
+      "rerank_top_k": 6,
+      "question_id": "fb_exp_017",
+      "doc_name": "CORNING_2022_10K",
+      "question_type": "domain-relevant",
+      "question_reasoning": "Numerical reasoning OR Logical reasoning",
+      "gold_pages_one_indexed": [
+        60
+      ],
+      "predicted_pages": [
+        34,
+        61,
+        23
+      ],
+      "evidence_recall": 0.0,
+      "citation_precision": 0.0,
+      "question": "Does Corning have positive working capital based on FY2022 data? If working capital is not a useful or relevant metric for this company, then please state that and explain why."
+    },
+    {
+      "method": "hybrid",
+      "label": "LlamaIndex Hybrid RAG + finance rerank",
+      "rerank_top_k": 6,
+      "question_id": "fb_exp_020",
+      "doc_name": "CVSHEALTH_2022_10K",
+      "question_type": "domain-relevant",
+      "question_reasoning": "Logical reasoning (based on numerical reasoning)",
+      "gold_pages_one_indexed": [
+        108,
+        110
+      ],
+      "predicted_pages": [
+        70,
+        142,
+        4
+      ],
+      "evidence_recall": 0.0,
+      "citation_precision": 0.0,
+      "question": "Is CVS Health a capital-intensive business based on FY2022 data?"
+    },
+    {
+      "method": "hybrid",
+      "label": "LlamaIndex Hybrid RAG + finance rerank",
+      "rerank_top_k": 6,
+      "question_id": "fb_exp_023",
+      "doc_name": "PFIZER_2021_10K",
+      "question_type": "novel-generated",
+      "question_reasoning": null,
+      "gold_pages_one_indexed": [
+        59
+      ],
+      "predicted_pages": [
+        119,
+        41,
+        76
+      ],
+      "evidence_recall": 0.0,
+      "citation_precision": 0.0,
+      "question": "Did Pfizer grow its PPNE between FY20 and FY21?"
+    },
+    {
+      "method": "hybrid",
+      "label": "LlamaIndex Hybrid RAG + finance rerank",
+      "rerank_top_k": 12,
+      "question_id": "fb_exp_014",
+      "doc_name": "AMERICANEXPRESS_2022_10K",
+      "question_type": "domain-relevant",
+      "question_reasoning": "Logical reasoning (based on numerical reasoning) OR Numerical reasoning OR Logical reasoning",
+      "gold_pages_one_indexed": [
+        96
+      ],
+      "predicted_pages": [
+        47,
+        147,
+        44
+      ],
+      "evidence_recall": 0.0,
+      "citation_precision": 0.0,
+      "question": "What drove gross margin change as of the FY2022 for American Express? If gross margin is not a useful metric for a company like this, then please state that and explain why."
+    },
+    {
+      "method": "hybrid",
+      "label": "LlamaIndex Hybrid RAG + finance rerank",
+      "rerank_top_k": 12,
+      "question_id": "fb_exp_017",
+      "doc_name": "CORNING_2022_10K",
+      "question_type": "domain-relevant",
+      "question_reasoning": "Numerical reasoning OR Logical reasoning",
+      "gold_pages_one_indexed": [
+        60
+      ],
+      "predicted_pages": [
+        34,
+        61,
+        23
+      ],
+      "evidence_recall": 0.0,
+      "citation_precision": 0.0,
+      "question": "Does Corning have positive working capital based on FY2022 data? If working capital is not a useful or relevant metric for this company, then please state that and explain why."
+    },
+    {
+      "method": "hybrid",
+      "label": "LlamaIndex Hybrid RAG + finance rerank",
+      "rerank_top_k": 12,
+      "question_id": "fb_exp_020",
+      "doc_name": "CVSHEALTH_2022_10K",
+      "question_type": "domain-relevant",
+      "question_reasoning": "Logical reasoning (based on numerical reasoning)",
+      "gold_pages_one_indexed": [
+        108,
+        110
+      ],
+      "predicted_pages": [
+        70,
+        142,
+        4
+      ],
+      "evidence_recall": 0.0,
+      "citation_precision": 0.0,
+      "question": "Is CVS Health a capital-intensive business based on FY2022 data?"
+    },
+    {
+      "method": "hybrid",
+      "label": "LlamaIndex Hybrid RAG + finance rerank",
+      "rerank_top_k": 12,
+      "question_id": "fb_exp_023",
+      "doc_name": "PFIZER_2021_10K",
+      "question_type": "novel-generated",
+      "question_reasoning": null,
+      "gold_pages_one_indexed": [
+        59
+      ],
+      "predicted_pages": [
+        119,
+        41,
+        76
+      ],
+      "evidence_recall": 0.0,
+      "citation_precision": 0.0,
+      "question": "Did Pfizer grow its PPNE between FY20 and FY21?"
+    }
+  ]
+}

@@ -1,0 +1,320 @@
+{
+  "method": "llamaindex_vector_rag",
+  "question_id": "fb_mvp_001",
+  "question": "What is the FY2018 capital expenditure amount (in USD millions) for 3M? Give a response to the question by relying on the details shown in the cash flow statement.",
+  "answer": "Retrieved 6 chunks with LlamaIndex vector retrieval and lightweight reranking.",
+  "citations": [
+    {
+      "document_id": "3M_2018_10K",
+      "page": 60,
+      "section": null,
+      "text": "Table of Contents 3M Company and Subsidiaries Consolidated Statement of Cash Flow s Years ended December 31 (Millions) 2018 2017 2016 Cash Flows from Operating Activities Net income including noncontrolling interest $ 5,363 $ 4,869 $ 5,058 Adjustments to reconcile net income including noncontrolling interest to net cash provided by operating activities Depreciation and amortization 1,488 1,544 1,474 Company pension and postretirement contributions (370) (967) (383) Company pension and postretire",
+      "metadata": {
+        "chunk_id": "79c68c7d-cb20-4a54-b72a-cf55d821109d",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.39996645056272057,
+        "rerank_score": 145.50497838960538,
+        "matched_terms": [
+          "cash",
+          "equipment",
+          "financing",
+          "flow",
+          "flows",
+          "investing",
+          "millions",
+          "operating",
+          "plant",
+          "property",
+          "purchases",
+          "statement"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "3M_2018_10K",
+      "page": 49,
+      "section": null,
+      "text": "Table of Contents Other cash flows from financing activities may include various other items, such as changes in cash overdraft balances, and principal payments for capital leases. In addition, in 2017, this included a payment related to the $96 million in interest expense associated with premiums and fees for the early retirement of debt. See Note 12 for additional details. Free Cash Flow (non-GAAP measure): Free cash flow and free cash flow conversion are not defined under U.S. generally accep",
+      "metadata": {
+        "chunk_id": "b7f96666-c9c4-439f-a013-8b107b5871fc",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.40118239497414904,
+        "rerank_score": 129.3932394974149,
+        "matched_terms": [
+          "amount",
+          "capital",
+          "cash",
+          "details",
+          "equipment",
+          "financing",
+          "flow",
+          "flows",
+          "investing",
+          "millions",
+          "operating",
+          "plant",
+          "property",
+          "purchases"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "3M_2018_10K",
+      "page": 46,
+      "section": null,
+      "text": "In 2017, cash flows provided by operating activities decreased $422 million compared to the same period last year. Factors that decreased operating cash flows were increases in pension contributions, plus year-on-year increases in working capital. In December 2017, 3M contributed $600 million to its U.S. defined benefit pension plan, contributing to a year-on-year increase in pension and postretirement contributions of $584 million. The combination of accounts receivable, inventories and account",
+      "metadata": {
+        "chunk_id": "d390b2c4-c1ec-4f56-be74-073c06d06233",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.4885295438223542,
+        "rerank_score": 113.31962104890209,
+        "matched_terms": [
+          "capital",
+          "cash",
+          "equipment",
+          "flows",
+          "investing",
+          "millions",
+          "operating",
+          "plant",
+          "property",
+          "purchases"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "llamaindex_build_vector_index",
+      "target": "3M_2018_10K",
+      "metadata": {
+        "page_count": 160,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "chunk_size": 900,
+        "chunk_overlap": 160,
+        "retrieve_top_k": 120,
+        "rerank_top_k": 6,
+        "finance_rerank": true,
+        "answer_context_chunk_count": 6,
+        "answer_context_chars": 18910,
+        "answer_context_words": 2689
+      }
+    },
+    {
+      "step": 2,
+      "action": "llamaindex_retrieve_node",
+      "target": "79c68c7d-cb20-4a54-b72a-cf55d821109d",
+      "metadata": {
+        "page": 60,
+        "retrieval_rank": 60,
+        "initial_rank": 60,
+        "vector_score": 0.39996645056272057,
+        "rerank_score": 145.50497838960538,
+        "finance_boost": 78.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "cash_flow_statement_title",
+          "operating_cash_flow_section",
+          "investing_cash_flow_section",
+          "financing_cash_flow_section",
+          "capex_line_item"
+        ],
+        "matched_terms": [
+          "cash",
+          "equipment",
+          "financing",
+          "flow",
+          "flows",
+          "investing",
+          "millions",
+          "operating",
+          "plant",
+          "property",
+          "purchases",
+          "statement"
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "action": "llamaindex_retrieve_node",
+      "target": "b7f96666-c9c4-439f-a013-8b107b5871fc",
+      "metadata": {
+        "page": 49,
+        "retrieval_rank": 58,
+        "initial_rank": 58,
+        "vector_score": 0.40118239497414904,
+        "rerank_score": 129.3932394974149,
+        "finance_boost": 57.75,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "operating_cash_flow_section",
+          "investing_cash_flow_section",
+          "financing_cash_flow_section",
+          "capex_line_item"
+        ],
+        "matched_terms": [
+          "amount",
+          "capital",
+          "cash",
+          "details",
+          "equipment",
+          "financing",
+          "flow",
+          "flows",
+          "investing",
+          "millions",
+          "operating",
+          "plant",
+          "property",
+          "purchases"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "llamaindex_retrieve_node",
+      "target": "d390b2c4-c1ec-4f56-be74-073c06d06233",
+      "metadata": {
+        "page": 46,
+        "retrieval_rank": 20,
+        "initial_rank": 20,
+        "vector_score": 0.4885295438223542,
+        "rerank_score": 113.31962104890209,
+        "finance_boost": 40.625,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "investing_cash_flow_section",
+          "capex_line_item"
+        ],
+        "matched_terms": [
+          "capital",
+          "cash",
+          "equipment",
+          "flows",
+          "investing",
+          "millions",
+          "operating",
+          "plant",
+          "property",
+          "purchases"
+        ]
+      }
+    },
+    {
+      "step": 5,
+      "action": "llamaindex_retrieve_node",
+      "target": "7a1c5285-0f23-4a17-a758-bb584fb8f741",
+      "metadata": {
+        "page": 47,
+        "retrieval_rank": 1,
+        "initial_rank": 1,
+        "vector_score": 0.569279320315346,
+        "rerank_score": 95.9279320315346,
+        "finance_boost": 15.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "financing_cash_flow_section"
+        ],
+        "matched_terms": [
+          "capital",
+          "cash",
+          "details",
+          "equipment",
+          "financing",
+          "flows",
+          "millions",
+          "plant",
+          "property",
+          "purchases"
+        ]
+      }
+    },
+    {
+      "step": 6,
+      "action": "llamaindex_retrieve_node",
+      "target": "e8e1388a-2d89-4720-a615-776cd6595a54",
+      "metadata": {
+        "page": 46,
+        "retrieval_rank": 68,
+        "initial_rank": 68,
+        "vector_score": 0.3875128960597291,
+        "rerank_score": 91.44295627263958,
+        "finance_boost": 33.25,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "cash_flow_statement_title",
+          "operating_cash_flow_section"
+        ],
+        "matched_terms": [
+          "capital",
+          "cash",
+          "financing",
+          "flows",
+          "investing",
+          "millions",
+          "operating",
+          "statement"
+        ]
+      }
+    },
+    {
+      "step": 7,
+      "action": "llamaindex_retrieve_node",
+      "target": "12ed81c9-c07f-4519-a53d-7df4884d9a95",
+      "metadata": {
+        "page": 43,
+        "retrieval_rank": 5,
+        "initial_rank": 5,
+        "vector_score": 0.5414166973425698,
+        "rerank_score": 88.85833640092365,
+        "finance_boost": 12.75,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "financing_cash_flow_section"
+        ],
+        "matched_terms": [
+          "amount",
+          "capital",
+          "cash",
+          "financing",
+          "flow",
+          "flows",
+          "investing",
+          "operations",
+          "statement"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": null,
+    "output": null,
+    "total": null
+  },
+  "latency_ms": 11444,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\3M_2018_10K.pdf",
+    "adapter_mode": "llamaindex_vector_retrieval",
+    "llm_enabled": false,
+    "model": null,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "page_count": 160,
+    "chunk_size": 900,
+    "chunk_overlap": 160,
+    "retrieve_top_k": 120,
+    "rerank_top_k": 6,
+    "max_citations": 3,
+    "finance_rerank": true,
+    "answer_context_chunk_count": 6,
+    "answer_context_chars": 18910,
+    "answer_context_words": 2689
+  }
+}

@@ -209,6 +209,18 @@ Run context-size tuning without LLM calls:
 python scripts\run_llamaindex_context_tuning.py --rerank-top-k 3 --rerank-top-k 6 --rerank-top-k 9 --rerank-top-k 12 --force --continue-on-error
 ```
 
+Build and validate the 25-question expanded FinanceBench retrieval set:
+
+```powershell
+python datasets\financebench\build_expanded_subset.py --target-count 25
+python scripts\download_mvp_pdfs.py --questions datasets\financebench\expanded_questions_25.jsonl --manifest reports\expanded_25_pdf_manifest.json --continue-on-error
+python scripts\run_llamaindex_expanded_retrieval.py --rerank-top-k 3 --rerank-top-k 6 --rerank-top-k 12 --force --continue-on-error
+python scripts\run_llamaindex_expanded_retrieval.py --variant-suffix concept_v2 --rerank-top-k 3 --rerank-top-k 6 --rerank-top-k 12 --force --continue-on-error --output-json reports\llamaindex_expanded_retrieval_concept_v2.json --output-md reports\llamaindex_expanded_retrieval_concept_v2.md
+python scripts\validate_expanded_retrieval_artifacts.py
+```
+
+The default expanded retrieval run preserves the failure case evidence for the first finance-aware reranker. The `concept_v2` run validates the improved label-free concept signals before any expanded LLM answer-generation spend.
+
 Validate the lowest-context passing LLM candidates:
 
 ```powershell

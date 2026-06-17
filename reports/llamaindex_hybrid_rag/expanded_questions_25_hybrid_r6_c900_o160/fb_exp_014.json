@@ -1,0 +1,260 @@
+{
+  "method": "llamaindex_hybrid_rag",
+  "question_id": "fb_exp_014",
+  "question": "What drove gross margin change as of the FY2022 for American Express? If gross margin is not a useful metric for a company like this, then please state that and explain why.",
+  "answer": "Retrieved 6 chunks with LlamaIndex BM25/vector hybrid fusion.",
+  "citations": [
+    {
+      "document_id": "AMERICANEXPRESS_2022_10K",
+      "page": 47,
+      "section": null,
+      "text": ", 2021, filed with the SEC on February 11, 2022. Beginning in the first quarter of 2022, we made reporting presentation changes to our Consolidated Statements of Income to separately present revenues earned from processed volumes, previously reported in Discount revenue, Other fees and commissions and Other revenue, as Processed revenue. The remaining balances from Other fees and commissions and Other revenue were combined as Service fees and other revenue. We also disaggregated Marketing and bu",
+      "metadata": {
+        "chunk_id": "400dce21-eeef-45a7-a4f4-480721024e57",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.4217135508071088,
+        "rerank_score": 46.53921568627451,
+        "matched_terms": [
+          "change"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "AMERICANEXPRESS_2022_10K",
+      "page": 147,
+      "section": null,
+      "text": " 3,637 Employee compensation and benefits 353 359 Net operating loss and tax credit carryforwards 411 398 Other 776 809 Gross deferred tax assets 5,592 5,203 Valuation allowance (537) (472) Deferred tax assets after valuation allowance 5,055 4,731 Deferred tax liabilities: Intangibles and fixed assets 671 1,320 Deferred revenue 126 189 Deferred interest 118 133 Investment in joint ventures 17 183 Other 618 521 Gross deferred tax liabilities 1,550 2,346 Net deferred tax assets $ 3,505 $ 2,385 The",
+      "metadata": {
+        "chunk_id": "52491dc5-b452-4656-9c7a-e2dd09d9dc74",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.2894768250336754,
+        "rerank_score": 44.64884684281236,
+        "matched_terms": [
+          "gross"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "AMERICANEXPRESS_2022_10K",
+      "page": 44,
+      "section": null,
+      "text": "Table of Contents TABLE 1: SUMMARY OF FINANCIAL PERFORMANCE Years Ended December 31, Change Change (Millions, except percentages, per share amounts and where indicated) 2022 2021 2020 2022 vs. 2021 2021 vs. 2020 Selected Income Statement Data Total revenues net of interest expense $ 52,862 $ 42,380 $ 36,087 $ 10,482 25 % $ 6,293 17 % Provisions for credit losses 2,182 (1,419) 4,730 3,601 # (6,149) # Expenses 41,095 33,110 27,061 7,985 24 6,049 22 Pretax income 9,585 10,689 4,296 (1,104) (10) 6,3",
+      "metadata": {
+        "chunk_id": "9eca55ba-ee01-4d46-b212-17fa3b4adf58",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.41064556743628405,
+        "rerank_score": 44.02085004009623,
+        "matched_terms": [
+          "change"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "llamaindex_build_hybrid_index",
+      "target": "AMERICANEXPRESS_2022_10K",
+      "metadata": {
+        "page_count": 260,
+        "node_count": 302,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "chunk_size": 900,
+        "chunk_overlap": 160,
+        "vector_top_k": 120,
+        "bm25_top_k": 120,
+        "fusion_top_k": 120,
+        "rerank_top_k": 6,
+        "rrf_k": 60,
+        "finance_rerank": true,
+        "cross_encoder_model": null,
+        "cross_encoder_candidates": 60,
+        "answer_context_chunk_count": 6,
+        "answer_context_chars": 17690,
+        "answer_context_words": 2803
+      }
+    },
+    {
+      "step": 2,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "400dce21-eeef-45a7-a4f4-480721024e57",
+      "metadata": {
+        "page": 47,
+        "bm25_rank": 85,
+        "vector_rank": 8,
+        "fusion_rank": 12,
+        "bm25_score": 2.2538182735443115,
+        "vector_score": 0.4217135508071088,
+        "rrf_score": 0.021602434077079107,
+        "rerank_score": 46.53921568627451,
+        "finance_boost": 22.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "gross_margin_line_items"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "change"
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "52491dc5-b452-4656-9c7a-e2dd09d9dc74",
+      "metadata": {
+        "page": 147,
+        "bm25_rank": 6,
+        "vector_rank": 115,
+        "fusion_rank": 17,
+        "bm25_score": 5.7388596534729,
+        "vector_score": 0.2894768250336754,
+        "rrf_score": 0.020865800865800865,
+        "rerank_score": 44.64884684281236,
+        "finance_boost": 20.875,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "gross_margin_line_items"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "gross"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "9eca55ba-ee01-4d46-b212-17fa3b4adf58",
+      "metadata": {
+        "page": 44,
+        "bm25_rank": 112,
+        "vector_rank": 15,
+        "fusion_rank": 23,
+        "bm25_score": 1.7818398475646973,
+        "vector_score": 0.41064556743628405,
+        "rrf_score": 0.019147286821705425,
+        "rerank_score": 44.02085004009623,
+        "finance_boost": 22.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "gross_margin_line_items"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "change"
+        ]
+      }
+    },
+    {
+      "step": 5,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "9f6403a7-fbe3-4757-9df7-2e52b97141b1",
+      "metadata": {
+        "page": 135,
+        "bm25_rank": 1,
+        "vector_rank": 25,
+        "fusion_rank": 2,
+        "bm25_score": 7.688823699951172,
+        "vector_score": 0.39737668831627804,
+        "rrf_score": 0.02815814850530376,
+        "rerank_score": 39.027401378866976,
+        "finance_boost": 5.875,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "gross",
+          "margin"
+        ]
+      }
+    },
+    {
+      "step": 6,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "5831f5fc-91c3-4767-8460-b5b882acae99",
+      "metadata": {
+        "page": 54,
+        "bm25_rank": null,
+        "vector_rank": 14,
+        "fusion_rank": 72,
+        "bm25_score": null,
+        "vector_score": 0.4120982899447621,
+        "rrf_score": 0.013513513513513514,
+        "rerank_score": 38.10546753650202,
+        "finance_boost": 22.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "gross_margin_line_items"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "change"
+        ]
+      }
+    },
+    {
+      "step": 7,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "122d8cb8-6229-4936-bda1-92c72e6400ca",
+      "metadata": {
+        "page": 45,
+        "bm25_rank": 86,
+        "vector_rank": 2,
+        "fusion_rank": 8,
+        "bm25_score": 2.239445209503174,
+        "vector_score": 0.4562326917848345,
+        "rrf_score": 0.022978347326557666,
+        "rerank_score": 37.9381174415002,
+        "finance_boost": 14.0,
+        "finance_boost_reasons": [
+          "gross_margin_line_items"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": []
+      }
+    }
+  ],
+  "token_usage": {
+    "input": null,
+    "output": null,
+    "total": null
+  },
+  "latency_ms": 11842,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\AMERICANEXPRESS_2022_10K.pdf",
+    "adapter_mode": "llamaindex_bm25_vector_rrf_plus_rerank",
+    "llm_enabled": false,
+    "model": null,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "page_count": 260,
+    "node_count": 302,
+    "chunk_size": 900,
+    "chunk_overlap": 160,
+    "vector_top_k": 120,
+    "bm25_top_k": 120,
+    "fusion_top_k": 120,
+    "rerank_top_k": 6,
+    "rrf_k": 60,
+    "max_citations": 3,
+    "finance_rerank": true,
+    "cross_encoder_model": null,
+    "cross_encoder_candidates": 60,
+    "answer_context_chunk_count": 6,
+    "answer_context_chars": 17690,
+    "answer_context_words": 2803
+  }
+}

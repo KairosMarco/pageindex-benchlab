@@ -1,0 +1,326 @@
+{
+  "method": "llamaindex_vector_rag",
+  "question_id": "fb_exp_017",
+  "question": "Does Corning have positive working capital based on FY2022 data? If working capital is not a useful or relevant metric for this company, then please state that and explain why.",
+  "answer": "Retrieved 12 chunks with LlamaIndex vector retrieval and lightweight reranking.",
+  "citations": [
+    {
+      "document_id": "CORNING_2022_10K",
+      "page": 55,
+      "section": null,
+      "text": "ing Activities 91 15. Fair Value Measurements 93 16. Shareholders’ Equity 94 17. Earnings Per Common Share 98 18. Share-Based Compensation 99 19. Reportable Segments 101 55",
+      "metadata": {
+        "chunk_id": "b8458bd2-c8e3-47b0-b424-4436bd591a0c",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5737941327514993,
+        "rerank_score": 66.25441327514993,
+        "matched_terms": [
+          "based"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "CORNING_2022_10K",
+      "page": 60,
+      "section": null,
+      "text": "e $0.50 per share; Shares authorized 3.8 billion; Shares issued: 1.8 billion and 1.8 billion 910 907 Additional paid-in capital – common stock 16,682 16,475 Retained earnings 16,778 16,389 Treasury stock, at cost; Shares held: 977 million and 970 million (20,532) (20,263) Accumulated other comprehensive loss (1,830) (1,175) Total Corning Incorporated shareholders’ equity 12,008 12,333 Non-controlling interest 267 212 Total equity 12,275 12,545 Total Liabilities and Equity $ 29,499 $ 30,154 The a",
+      "metadata": {
+        "chunk_id": "cacc07f7-cbaf-4b17-9e53-ff466cf8630f",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5479538834607017,
+        "rerank_score": 65.77872167940352,
+        "matched_terms": [
+          "capital"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "CORNING_2022_10K",
+      "page": 58,
+      "section": null,
+      "text": "Table of Contents Consolidated Statements of Income Corning Incorporated and Subsidiary Companies Year ended December 31, (in millions, except per share amounts) 2022 2021 2020 Net sales $ 14,189 $ 14,082 $ 11,303 Cost of sales 9,683 9,019 7,772 Gross margin 4,506 5,063 3,531 Operating expenses: Selling, general and administrative expenses 1,898 1,827 1,747 Research, development and engineering expenses 1,047 995 1,154 Amortization of purchased intangibles 123 129 121 Operating income 1,438 2,11",
+      "metadata": {
+        "chunk_id": "cde435a6-019d-4c62-bc1f-bbeb8c80a6a3",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5422766737250414,
+        "rerank_score": 63.19433403917081,
+        "matched_terms": [],
+        "citation_source": "rerank_fallback"
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "llamaindex_build_vector_index",
+      "target": "CORNING_2022_10K",
+      "metadata": {
+        "page_count": 159,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "chunk_size": 900,
+        "chunk_overlap": 160,
+        "retrieve_top_k": 120,
+        "rerank_top_k": 12,
+        "finance_rerank": true,
+        "answer_context_chunk_count": 12,
+        "answer_context_chars": 31298,
+        "answer_context_words": 4229
+      }
+    },
+    {
+      "step": 2,
+      "action": "llamaindex_retrieve_node",
+      "target": "b8458bd2-c8e3-47b0-b424-4436bd591a0c",
+      "metadata": {
+        "page": 55,
+        "retrieval_rank": 1,
+        "initial_rank": 1,
+        "vector_score": 0.5737941327514993,
+        "rerank_score": 66.25441327514993,
+        "finance_boost": 5.875,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "matched_terms": [
+          "based"
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "action": "llamaindex_retrieve_node",
+      "target": "cacc07f7-cbaf-4b17-9e53-ff466cf8630f",
+      "metadata": {
+        "page": 60,
+        "retrieval_rank": 3,
+        "initial_rank": 3,
+        "vector_score": 0.5479538834607017,
+        "rerank_score": 65.77872167940352,
+        "finance_boost": 8.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "matched_terms": [
+          "capital"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "llamaindex_retrieve_node",
+      "target": "cde435a6-019d-4c62-bc1f-bbeb8c80a6a3",
+      "metadata": {
+        "page": 58,
+        "retrieval_rank": 5,
+        "initial_rank": 5,
+        "vector_score": 0.5422766737250414,
+        "rerank_score": 63.19433403917081,
+        "finance_boost": 8.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "matched_terms": []
+      }
+    },
+    {
+      "step": 5,
+      "action": "llamaindex_retrieve_node",
+      "target": "d6f3acd6-b8a4-4d96-a1b9-75d199f128a7",
+      "metadata": {
+        "page": 24,
+        "retrieval_rank": 2,
+        "initial_rank": 2,
+        "vector_score": 0.5549816870578546,
+        "rerank_score": 62.61483537245212,
+        "finance_boost": 6.125,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "matched_terms": []
+      }
+    },
+    {
+      "step": 6,
+      "action": "llamaindex_retrieve_node",
+      "target": "a2ce8ca6-45e1-43ab-bfa2-d48872d8ada7",
+      "metadata": {
+        "page": 102,
+        "retrieval_rank": 9,
+        "initial_rank": 9,
+        "vector_score": 0.5127370717692116,
+        "rerank_score": 62.20704051025449,
+        "finance_boost": 8.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "matched_terms": [
+          "capital"
+        ]
+      }
+    },
+    {
+      "step": 7,
+      "action": "llamaindex_retrieve_node",
+      "target": "1a3754bd-65ca-4448-bd98-9bbb0b431f46",
+      "metadata": {
+        "page": 61,
+        "retrieval_rank": 19,
+        "initial_rank": 19,
+        "vector_score": 0.48965136632197764,
+        "rerank_score": 61.81513663219776,
+        "finance_boost": 8.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "matched_terms": [
+          "based",
+          "capital"
+        ]
+      }
+    },
+    {
+      "step": 8,
+      "action": "llamaindex_retrieve_node",
+      "target": "0cf4ac16-1bec-4e23-b510-58a4780e16f5",
+      "metadata": {
+        "page": 62,
+        "retrieval_rank": 17,
+        "initial_rank": 17,
+        "vector_score": 0.4965360537583475,
+        "rerank_score": 60.52027204250142,
+        "finance_boost": 8.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "matched_terms": [
+          "capital"
+        ]
+      }
+    },
+    {
+      "step": 9,
+      "action": "llamaindex_retrieve_node",
+      "target": "c3b2d3c9-9a8f-4737-aef5-5295ff744aaf",
+      "metadata": {
+        "page": 32,
+        "retrieval_rank": 14,
+        "initial_rank": 14,
+        "vector_score": 0.5003890673360191,
+        "rerank_score": 60.05557340026857,
+        "finance_boost": 7.125,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "matched_terms": [
+          "based"
+        ]
+      }
+    },
+    {
+      "step": 10,
+      "action": "llamaindex_retrieve_node",
+      "target": "0eb7cefa-c29d-4fb6-8c2b-b644bdb8c2ba",
+      "metadata": {
+        "page": 56,
+        "retrieval_rank": 4,
+        "initial_rank": 4,
+        "vector_score": 0.5474500674440386,
+        "rerank_score": 59.72000674440386,
+        "finance_boost": 2.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "matched_terms": [
+          "based"
+        ]
+      }
+    },
+    {
+      "step": 11,
+      "action": "llamaindex_retrieve_node",
+      "target": "55b4703a-b1b4-4592-8ae3-ed4557750869",
+      "metadata": {
+        "page": 50,
+        "retrieval_rank": 21,
+        "initial_rank": 21,
+        "vector_score": 0.48777940384924423,
+        "rerank_score": 59.611273718257756,
+        "finance_boost": 8.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "matched_terms": [
+          "data"
+        ]
+      }
+    },
+    {
+      "step": 12,
+      "action": "llamaindex_retrieve_node",
+      "target": "41b267e8-2ce4-42ff-8f5c-6b0002794895",
+      "metadata": {
+        "page": 20,
+        "retrieval_rank": 16,
+        "initial_rank": 16,
+        "vector_score": 0.4978871052824034,
+        "rerank_score": 59.41371052824034,
+        "finance_boost": 4.75,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "matched_terms": [
+          "based",
+          "capital"
+        ]
+      }
+    },
+    {
+      "step": 13,
+      "action": "llamaindex_retrieve_node",
+      "target": "8066dc1b-4c38-4a47-bbc6-9a89d429c264",
+      "metadata": {
+        "page": 23,
+        "retrieval_rank": 11,
+        "initial_rank": 11,
+        "vector_score": 0.5033295246895365,
+        "rerank_score": 58.124619135620314,
+        "finance_boost": 2.875,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "matched_terms": [
+          "capital",
+          "data"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": null,
+    "output": null,
+    "total": null
+  },
+  "latency_ms": 10264,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\CORNING_2022_10K.pdf",
+    "adapter_mode": "llamaindex_vector_retrieval",
+    "llm_enabled": false,
+    "model": null,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "page_count": 159,
+    "chunk_size": 900,
+    "chunk_overlap": 160,
+    "retrieve_top_k": 120,
+    "rerank_top_k": 12,
+    "max_citations": 3,
+    "finance_rerank": true,
+    "answer_context_chunk_count": 12,
+    "answer_context_chars": 31298,
+    "answer_context_words": 4229
+  }
+}

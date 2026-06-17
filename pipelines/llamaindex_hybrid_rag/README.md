@@ -41,16 +41,23 @@ failures: 0
 evidence recall: 1.000
 answer accuracy: 1.000
 average total tokens: 2,520
+
+Expanded retrieval, concept_v2, no LLM, rerank_top_k=3:
+questions: 25
+failures: 0
+evidence recall: 1.000
+citation precision: 0.360
+average context words: 1,160
 ```
 
 Interpretation:
 
 The hybrid retriever can place the gold evidence page in the wider candidate set, but the generic reranker and tested generic cross-encoder did not reliably promote the table evidence into the top three citations. The label-free finance-aware reranker fixes this retrieval issue on the 12-question FinanceBench MVP subset by boosting chunks that match the requested financial statement, year, and line item.
 
-The `rerank_top_k=3` LLM validation preserved answer accuracy while reducing average total tokens by about 73% versus the original `rerank_top_k=12` diagnostic. This is the recommended MVP configuration for the next larger-subset test.
+The `rerank_top_k=3` LLM validation preserved answer accuracy while reducing average total tokens by about 73% versus the original `rerank_top_k=12` diagnostic. On the 25-question expanded retrieval set, the first finance-aware reranker failed several concept questions; the `concept_v2` label-free signals restored 1.000 page-level evidence recall in retrieval-only mode.
 
 Next work:
 
-- Run the `rerank_top_k=3` configuration on a larger FinanceBench subset.
-- Re-check whether the finance-aware reranker generalizes beyond the 12-question MVP subset.
+- Run expanded LLM answer generation only for the `concept_v2`, `rerank_top_k=3` candidate.
 - Compare answer accuracy, token usage, and latency against the existing PageIndex, Long-context, Vector RAG, and Hybrid RAG Stage 1 results.
+- Promote this baseline into the main comparison only after expanded answer evaluation passes validation.

@@ -1,0 +1,245 @@
+{
+  "method": "llamaindex_hybrid_rag",
+  "question_id": "fb_exp_015",
+  "question": "Were there any board member nominees who had substantially more votes against joining than the other nominees?",
+  "answer": "Retrieved 5 chunks with LlamaIndex BM25/vector hybrid fusion.",
+  "citations": [
+    {
+      "document_id": "FOOTLOCKER_2022_8K_dated-2022-05-20",
+      "page": 2,
+      "section": null,
+      "text": " of which are incorporated herein by reference. As of March 21, 2022, the Company’s record date for the Annual Meeting, there were a total of 96,089,997 shares of common stock, $0.01 par value per share (“Common Stock”), outstanding and entitled to vote at the Annual Meeting. At the Annual Meeting, 77,551,206 shares of Common Stock were represented in person or by proxy and, therefore, a quorum was present. Proposal 1. With respect to the proposal to elect ten nominees to the Board of Directors ",
+      "metadata": {
+        "chunk_id": "3db109c7-5664-4bb9-9549-3d278d7ae6ea",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.2744189372317988,
+        "rerank_score": 52.64747488101534,
+        "matched_terms": [
+          "against",
+          "board",
+          "nominees",
+          "there",
+          "votes",
+          "were"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "FOOTLOCKER_2022_8K_dated-2022-05-20",
+      "page": 3,
+      "section": null,
+      "text": "Item 8.01. Other Events. On May 18, 2022, in light of Matthew McKenna’s retirement, the Board designated Ms. Nicosia as the “audit committee financial expert.” In connection with this designation, the Board determined that Ms. Nicosia qualifies as an “audit committee financial expert,” as defined by the rules under the Securities Exchange Act of 1934, as amended (the “Exchange Act”), because of her relevant experience as president of an operating unit of a large multinational corporation. She ha",
+      "metadata": {
+        "chunk_id": "4b57516d-8111-4110-8c9b-e948e389e896",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.28926472682924376,
+        "rerank_score": 41.06645849596669,
+        "matched_terms": [
+          "board",
+          "other",
+          "there",
+          "who"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "FOOTLOCKER_2022_8K_dated-2022-05-20",
+      "page": 1,
+      "section": null,
+      "text": "ay 18, 2022) Foot Locker, Inc. (Exact name of registrant as specified in charter) New York 1-10299 13-3513936 (State or other jurisdiction of incorporation) (Commission File Number) (IRS Employer Identification No.) 330 West 34th Street, New York, New York 10001 (Address of principal executive offices) (Zip Code) Registrant's telephone number, including area code: (212) 720-3700 Check the appropriate box below if the Form 8-K filing is intended to simultaneously satisfy the filing obligation of ",
+      "metadata": {
+        "chunk_id": "6e41e37a-6379-47d3-9bc1-04b02b986af1",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.09080743675229264,
+        "rerank_score": 38.909615384615385,
+        "matched_terms": [
+          "other"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "llamaindex_build_hybrid_index",
+      "target": "FOOTLOCKER_2022_8K_dated-2022-05-20",
+      "metadata": {
+        "page_count": 4,
+        "node_count": 5,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "chunk_size": 900,
+        "chunk_overlap": 160,
+        "vector_top_k": 120,
+        "bm25_top_k": 120,
+        "fusion_top_k": 120,
+        "rerank_top_k": 12,
+        "rrf_k": 60,
+        "finance_rerank": true,
+        "cross_encoder_model": null,
+        "cross_encoder_candidates": 60,
+        "answer_context_chunk_count": 5,
+        "answer_context_chars": 7093,
+        "answer_context_words": 1053
+      }
+    },
+    {
+      "step": 2,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "3db109c7-5664-4bb9-9549-3d278d7ae6ea",
+      "metadata": {
+        "page": 2,
+        "bm25_rank": 1,
+        "vector_rank": 2,
+        "fusion_rank": 1,
+        "bm25_score": 3.896491527557373,
+        "vector_score": 0.2744189372317988,
+        "rrf_score": 0.03252247488101534,
+        "rerank_score": 52.64747488101534,
+        "finance_boost": 7.125,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "against",
+          "board",
+          "nominees",
+          "there",
+          "votes",
+          "were"
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "757a12cd-b757-4fbb-ac5b-26cc1c56e8db",
+      "metadata": {
+        "page": 2,
+        "bm25_rank": 2,
+        "vector_rank": 3,
+        "fusion_rank": 3,
+        "bm25_score": 1.8871989250183105,
+        "vector_score": 0.21954463161082538,
+        "rrf_score": 0.03200204813108039,
+        "rerank_score": 41.60204813108039,
+        "finance_boost": 3.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "against",
+          "votes",
+          "were"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "4b57516d-8111-4110-8c9b-e948e389e896",
+      "metadata": {
+        "page": 3,
+        "bm25_rank": 3,
+        "vector_rank": 1,
+        "fusion_rank": 2,
+        "bm25_score": 1.8510310649871826,
+        "vector_score": 0.28926472682924376,
+        "rrf_score": 0.032266458495966696,
+        "rerank_score": 41.06645849596669,
+        "finance_boost": 0.0,
+        "finance_boost_reasons": [],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "board",
+          "other",
+          "there",
+          "who"
+        ]
+      }
+    },
+    {
+      "step": 5,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "6e41e37a-6379-47d3-9bc1-04b02b986af1",
+      "metadata": {
+        "page": 1,
+        "bm25_rank": 4,
+        "vector_rank": 5,
+        "fusion_rank": 4,
+        "bm25_score": 1.0159157514572144,
+        "vector_score": 0.09080743675229264,
+        "rrf_score": 0.031009615384615385,
+        "rerank_score": 38.909615384615385,
+        "finance_boost": 5.5,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "other"
+        ]
+      }
+    },
+    {
+      "step": 6,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "c8808bef-434d-450c-81d0-7bbb0bd12790",
+      "metadata": {
+        "page": 4,
+        "bm25_rank": 5,
+        "vector_rank": 4,
+        "fusion_rank": 5,
+        "bm25_score": 0.0,
+        "vector_score": 0.12464020723805642,
+        "rrf_score": 0.031009615384615385,
+        "rerank_score": 31.209615384615386,
+        "finance_boost": 0.0,
+        "finance_boost_reasons": [],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": []
+      }
+    }
+  ],
+  "token_usage": {
+    "input": null,
+    "output": null,
+    "total": null
+  },
+  "latency_ms": 6926,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\FOOTLOCKER_2022_8K_dated-2022-05-20.pdf",
+    "adapter_mode": "llamaindex_bm25_vector_rrf_plus_rerank",
+    "llm_enabled": false,
+    "model": null,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "page_count": 4,
+    "node_count": 5,
+    "chunk_size": 900,
+    "chunk_overlap": 160,
+    "vector_top_k": 120,
+    "bm25_top_k": 120,
+    "fusion_top_k": 120,
+    "rerank_top_k": 12,
+    "rrf_k": 60,
+    "max_citations": 3,
+    "finance_rerank": true,
+    "cross_encoder_model": null,
+    "cross_encoder_candidates": 60,
+    "answer_context_chunk_count": 5,
+    "answer_context_chars": 7093,
+    "answer_context_words": 1053
+  }
+}

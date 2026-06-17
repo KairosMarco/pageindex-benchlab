@@ -1,0 +1,179 @@
+{
+  "method": "llamaindex_vector_rag",
+  "question_id": "fb_exp_022",
+  "question": "What is Coca Cola's FY2021 COGS % margin? Calculate what was asked by utilizing the line items clearly shown in the income statement.",
+  "answer": "Retrieved 3 chunks with LlamaIndex vector retrieval and lightweight reranking.",
+  "citations": [
+    {
+      "document_id": "COCACOLA_2021_10K",
+      "page": 62,
+      "section": null,
+      "text": "THE COCA-COLA COMPANY AND SUBSIDIARIES CONSOLIDATED STATEMENTS OF INCOME (In millions except per share data) Year Ended December 31, 2021 2020 2019 Net Operating Revenues $ 38,655 $ 33,014 $ 37,266 Cost of goods sold 15,357 13,433 14,619 Gross Profit 23,298 19,581 22,647 Selling, general and administrative expenses 12,144 9,731 12,103 Other operating charges 846 853 458 Operating Income 10,308 8,997 10,086 Interest income 276 370 563 Interest expense 1,597 1,437 946 Equity income (loss) — net 1,",
+      "metadata": {
+        "chunk_id": "e6904903-b94d-4b60-8bc5-e1ba6235928d",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.568841811702786,
+        "rerank_score": 93.8841811702786,
+        "matched_terms": [
+          "cost",
+          "goods",
+          "income"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "COCACOLA_2021_10K",
+      "page": 128,
+      "section": null,
+      "text": "ca-Cola Company and subsidiaries (the Company) as of December 31, 2021 and 2020, the related consolidated statements of income, comprehensive income, shareowners’ equity and cash flows for each of the three years in the period ended December 31, 2021, and the related notes (collectively referred to as the “consolidated financial statements”). In our opinion, the consolidated financial statements present fairly, in all material respects, the financial position of the Company as of December 31, 20",
+      "metadata": {
+        "chunk_id": "e464c6c1-e88c-47ed-88a2-8428ab1571e4",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5210939100996836,
+        "rerank_score": 82.05939100996837,
+        "matched_terms": [
+          "income",
+          "operations",
+          "revenue"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "COCACOLA_2021_10K",
+      "page": 68,
+      "section": null,
+      "text": "e ability to exercise significant influence over operating and financial policies of the investee. Our consolidated net income includes our Company’s proportionate share of the net income or loss of these companies. Our judgment regarding the level of influence over each equity method investee includes considering key factors such as our ownership interest, representation on the board of directors, participation in policy-making decisions, other commercial arrangements and material intercompany ",
+      "metadata": {
+        "chunk_id": "846b5d6c-b8aa-4b5d-ac9c-29c3a9948b96",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.48660310090778797,
+        "rerank_score": 82.01864342411213,
+        "matched_terms": [
+          "cost",
+          "goods",
+          "income",
+          "revenue",
+          "sales",
+          "statement"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "llamaindex_build_vector_index",
+      "target": "COCACOLA_2021_10K",
+      "metadata": {
+        "page_count": 183,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "chunk_size": 900,
+        "chunk_overlap": 160,
+        "retrieve_top_k": 120,
+        "rerank_top_k": 3,
+        "finance_rerank": true,
+        "answer_context_chunk_count": 3,
+        "answer_context_chars": 10145,
+        "answer_context_words": 1532
+      }
+    },
+    {
+      "step": 2,
+      "action": "llamaindex_retrieve_node",
+      "target": "e6904903-b94d-4b60-8bc5-e1ba6235928d",
+      "metadata": {
+        "page": 62,
+        "retrieval_rank": 1,
+        "initial_rank": 1,
+        "vector_score": 0.568841811702786,
+        "rerank_score": 93.8841811702786,
+        "finance_boost": 24.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "income_statement_title"
+        ],
+        "matched_terms": [
+          "cost",
+          "goods",
+          "income"
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "action": "llamaindex_retrieve_node",
+      "target": "e464c6c1-e88c-47ed-88a2-8428ab1571e4",
+      "metadata": {
+        "page": 128,
+        "retrieval_rank": 7,
+        "initial_rank": 7,
+        "vector_score": 0.5210939100996836,
+        "rerank_score": 82.05939100996837,
+        "finance_boost": 20.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "income_statement_title"
+        ],
+        "matched_terms": [
+          "income",
+          "operations",
+          "revenue"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "llamaindex_retrieve_node",
+      "target": "846b5d6c-b8aa-4b5d-ac9c-29c3a9948b96",
+      "metadata": {
+        "page": 68,
+        "retrieval_rank": 18,
+        "initial_rank": 18,
+        "vector_score": 0.48660310090778797,
+        "rerank_score": 82.01864342411213,
+        "finance_boost": 17.5,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "income_statement_title"
+        ],
+        "matched_terms": [
+          "cost",
+          "goods",
+          "income",
+          "revenue",
+          "sales",
+          "statement"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": null,
+    "output": null,
+    "total": null
+  },
+  "latency_ms": 11734,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\COCACOLA_2021_10K.pdf",
+    "adapter_mode": "llamaindex_vector_retrieval",
+    "llm_enabled": false,
+    "model": null,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "page_count": 183,
+    "chunk_size": 900,
+    "chunk_overlap": 160,
+    "retrieve_top_k": 120,
+    "rerank_top_k": 3,
+    "max_citations": 3,
+    "finance_rerank": true,
+    "answer_context_chunk_count": 3,
+    "answer_context_chars": 10145,
+    "answer_context_words": 1532
+  }
+}

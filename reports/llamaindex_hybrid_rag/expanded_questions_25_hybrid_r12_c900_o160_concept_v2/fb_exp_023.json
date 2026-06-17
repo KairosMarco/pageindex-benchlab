@@ -1,0 +1,393 @@
+{
+  "method": "llamaindex_hybrid_rag",
+  "question_id": "fb_exp_023",
+  "question": "Did Pfizer grow its PPNE between FY20 and FY21?",
+  "answer": "Retrieved 12 chunks with LlamaIndex BM25/vector hybrid fusion.",
+  "citations": [
+    {
+      "document_id": "PFIZER_2021_10K",
+      "page": 59,
+      "section": null,
+      "text": "Consolidated Balance Sheets Pfizer Inc. and Subsidiary Companies As of December 31, (MILLIONS, EXCEPT PER COMMON SHARE DATA) 2021 2020 Assets Cash and cash equivalents $ 1,944 $ 1,786 Short-term investments 29,125 10,437 Trade accounts receivable, less allowance for doubtful accounts: 2021—$492; 2020—$508 11,479 7,913 Inventories 9,059 8,020 Current tax assets 4,266 3,264 Other current assets 3,820 3,646 Total current assets 59,693 35,067 Equity-method investments 16,472 16,856 Long-term investm",
+      "metadata": {
+        "chunk_id": "df424dc5-9479-46c4-b3a2-eb4483434a9a",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.39864248300507826,
+        "rerank_score": 76.77449536515637,
+        "matched_terms": [],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "PFIZER_2021_10K",
+      "page": 88,
+      "section": null,
+      "text": "Included in Other noncurrent assets. There are no recoverability issues for these amounts. B. Other Current Liabilities Other current liabilities includes, among other things, amounts payable to BioNTech for the gross profit split for Comirnaty, which totaled $9.7 billion as of December 31, 2021 and $25 million as of December 31, 2020. Note 9. Property, Plant and Equipment (PP&E) The following summarizes the components of Property, plant and equipment: Useful Lives As of December 31, (MILLIONS) ",
+      "metadata": {
+        "chunk_id": "14e75e80-003f-4443-9473-cab45a4029d1",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.47128714232711183,
+        "rerank_score": 46.83708436184115,
+        "matched_terms": [],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "PFIZER_2021_10K",
+      "page": 61,
+      "section": null,
+      "text": "Consolidated Statements of Cash Flows Pfizer Inc. and Subsidiary Companies Year Ended December 31, (MILLIONS) 2021 2020 2019 Operating Activities Net income before allocation to noncontrolling interests $ 22,025 $ 9,195 $ 16,056 Discontinued operations—net of tax (434) 2,529 5,318 Net income from continuing operations before allocation to noncontrolling interests 22,459 6,666 10,738 Adjustments to reconcile net income before allocation to noncontrolling interests to net cash provided by operatin",
+      "metadata": {
+        "chunk_id": "c5d3d4b8-953e-42d0-a316-095d80d3c331",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.3667319787852116,
+        "rerank_score": 41.045191357152945,
+        "matched_terms": [],
+        "citation_source": "rerank_fallback"
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "llamaindex_build_hybrid_index",
+      "target": "PFIZER_2021_10K",
+      "metadata": {
+        "page_count": 143,
+        "node_count": 258,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "chunk_size": 900,
+        "chunk_overlap": 160,
+        "vector_top_k": 120,
+        "bm25_top_k": 120,
+        "fusion_top_k": 120,
+        "rerank_top_k": 12,
+        "rrf_k": 60,
+        "finance_rerank": true,
+        "cross_encoder_model": null,
+        "cross_encoder_candidates": 60,
+        "answer_context_chunk_count": 12,
+        "answer_context_chars": 34080,
+        "answer_context_words": 5151
+      }
+    },
+    {
+      "step": 2,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "df424dc5-9479-46c4-b3a2-eb4483434a9a",
+      "metadata": {
+        "page": 59,
+        "bm25_rank": null,
+        "vector_rank": 59,
+        "fusion_rank": 123,
+        "bm25_score": null,
+        "vector_score": 0.39864248300507826,
+        "rrf_score": 0.008403361344537815,
+        "rerank_score": 76.77449536515637,
+        "finance_boost": 68.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "balance_sheet_title",
+          "total_assets_line_item",
+          "ppne_line_item"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": []
+      }
+    },
+    {
+      "step": 3,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "14e75e80-003f-4443-9473-cab45a4029d1",
+      "metadata": {
+        "page": 88,
+        "bm25_rank": null,
+        "vector_rank": 11,
+        "fusion_rank": 49,
+        "bm25_score": null,
+        "vector_score": 0.47128714232711183,
+        "rrf_score": 0.014084507042253521,
+        "rerank_score": 46.83708436184115,
+        "finance_boost": 32.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "ppne_line_item"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": []
+      }
+    },
+    {
+      "step": 4,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "c5d3d4b8-953e-42d0-a316-095d80d3c331",
+      "metadata": {
+        "page": 61,
+        "bm25_rank": null,
+        "vector_rank": 86,
+        "fusion_rank": 157,
+        "bm25_score": null,
+        "vector_score": 0.3667319787852116,
+        "rrf_score": 0.00684931506849315,
+        "rerank_score": 41.045191357152945,
+        "finance_boost": 34.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "ppne_line_item"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": []
+      }
+    },
+    {
+      "step": 5,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "d314b69e-14d8-412e-894e-db2e546e8bce",
+      "metadata": {
+        "page": 83,
+        "bm25_rank": null,
+        "vector_rank": 19,
+        "fusion_rank": 63,
+        "bm25_score": null,
+        "vector_score": 0.45146608593202014,
+        "rrf_score": 0.012658227848101266,
+        "rerank_score": 39.33864021923528,
+        "finance_boost": 26.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "total_assets_line_item"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": []
+      }
+    },
+    {
+      "step": 6,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "7012bfc7-9ffb-491c-9aa1-facf65c29bd6",
+      "metadata": {
+        "page": 72,
+        "bm25_rank": 80,
+        "vector_rank": null,
+        "fusion_rank": 151,
+        "bm25_score": 0.6560262441635132,
+        "vector_score": null,
+        "rrf_score": 0.007142857142857143,
+        "rerank_score": 39.24466126656848,
+        "finance_boost": 29.875,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "ppne_line_item"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "its"
+        ]
+      }
+    },
+    {
+      "step": 7,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "875de3a8-940e-4112-a008-41ee4b719637",
+      "metadata": {
+        "page": 119,
+        "bm25_rank": 4,
+        "vector_rank": 71,
+        "fusion_rank": 3,
+        "bm25_score": 1.8228082656860352,
+        "vector_score": 0.38638590845595605,
+        "rrf_score": 0.02325858778625954,
+        "rerank_score": 36.24827850790902,
+        "finance_boost": 8.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "between",
+          "its"
+        ]
+      }
+    },
+    {
+      "step": 8,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "2a937619-dcf7-4c66-86b6-0adc6750c336",
+      "metadata": {
+        "page": 53,
+        "bm25_rank": null,
+        "vector_rank": 87,
+        "fusion_rank": 158,
+        "bm25_score": null,
+        "vector_score": 0.3665792219937261,
+        "rrf_score": 0.006802721088435374,
+        "rerank_score": 35.868442737919914,
+        "finance_boost": 28.875,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "ppne_line_item"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": []
+      }
+    },
+    {
+      "step": 9,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "2bd7c75f-8808-454a-a56c-7d2792e1ff97",
+      "metadata": {
+        "page": 68,
+        "bm25_rank": 77,
+        "vector_rank": null,
+        "fusion_rank": 146,
+        "bm25_score": 0.6895736455917358,
+        "vector_score": null,
+        "rrf_score": 0.0072992700729927005,
+        "rerank_score": 35.55184739258033,
+        "finance_boost": 26.0,
+        "finance_boost_reasons": [
+          "ppne_line_item"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "its"
+        ]
+      }
+    },
+    {
+      "step": 10,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "14357ed8-3da2-4633-8d70-7b1e63021dd0",
+      "metadata": {
+        "page": 41,
+        "bm25_rank": 30,
+        "vector_rank": 14,
+        "fusion_rank": 2,
+        "bm25_score": 1.1719858646392822,
+        "vector_score": 0.4610472112171026,
+        "rrf_score": 0.024624624624624628,
+        "rerank_score": 33.24446998544937,
+        "finance_boost": 7.625,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": []
+      }
+    },
+    {
+      "step": 11,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "cecd15b9-b841-4beb-b5bb-5e3d96799989",
+      "metadata": {
+        "page": 76,
+        "bm25_rank": 15,
+        "vector_rank": 66,
+        "fusion_rank": 11,
+        "bm25_score": 1.519775390625,
+        "vector_score": 0.3926817819794611,
+        "rrf_score": 0.021269841269841272,
+        "rerank_score": 31.718294878088695,
+        "finance_boost": 5.5,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "between",
+          "its"
+        ]
+      }
+    },
+    {
+      "step": 12,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "75968a50-c46d-4434-b5e8-260227782f74",
+      "metadata": {
+        "page": 39,
+        "bm25_rank": 57,
+        "vector_rank": 2,
+        "fusion_rank": 1,
+        "bm25_score": 0.8222687840461731,
+        "vector_score": 0.5166541257508447,
+        "rrf_score": 0.024676040805073064,
+        "rerank_score": 31.051040805073065,
+        "finance_boost": 3.375,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "its"
+        ]
+      }
+    },
+    {
+      "step": 13,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "56771a0c-7b2d-4e88-be5d-eb1040e4de93",
+      "metadata": {
+        "page": 117,
+        "bm25_rank": 10,
+        "vector_rank": 95,
+        "fusion_rank": 14,
+        "bm25_score": 1.627519130706787,
+        "vector_score": 0.3607571501570214,
+        "rrf_score": 0.020737327188940093,
+        "rerank_score": 31.04531687966174,
+        "finance_boost": 7.375,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "between"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": null,
+    "output": null,
+    "total": null
+  },
+  "latency_ms": 11066,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\PFIZER_2021_10K.pdf",
+    "adapter_mode": "llamaindex_bm25_vector_rrf_plus_rerank",
+    "llm_enabled": false,
+    "model": null,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "page_count": 143,
+    "node_count": 258,
+    "chunk_size": 900,
+    "chunk_overlap": 160,
+    "vector_top_k": 120,
+    "bm25_top_k": 120,
+    "fusion_top_k": 120,
+    "rerank_top_k": 12,
+    "rrf_k": 60,
+    "max_citations": 3,
+    "finance_rerank": true,
+    "cross_encoder_model": null,
+    "cross_encoder_candidates": 60,
+    "answer_context_chunk_count": 12,
+    "answer_context_chars": 34080,
+    "answer_context_words": 5151
+  }
+}

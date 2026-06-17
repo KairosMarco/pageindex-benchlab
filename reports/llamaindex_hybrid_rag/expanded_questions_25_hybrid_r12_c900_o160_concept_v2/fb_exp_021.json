@@ -1,0 +1,384 @@
+{
+  "method": "llamaindex_hybrid_rag",
+  "question_id": "fb_exp_021",
+  "question": "As of FY2023Q1, why did Pepsico raise full year guidance for FY2023?",
+  "answer": "Retrieved 12 chunks with LlamaIndex BM25/vector hybrid fusion.",
+  "citations": [
+    {
+      "document_id": "PEPSICO_2023Q1_EARNINGS",
+      "page": 1,
+      "section": null,
+      "text": "PepsiCo Reports First-Quarter 2023 Results; Raises Full-Year Guidance Reported (GAAP) First-Quarter 2023 Results First-Quarter Net revenue growth 10.2% Foreign exchange impact on net revenue (2.5)% Earnings per share (EPS) $1.40 EPS change (54)% Foreign exchange impact on EPS (2)% Organic/Core (non-GAAP)1 First-Quarter 2023 Results First-Quarter Organic revenue growth 14.3% Core EPS $1.50 Core constant currency EPS change 18% PURCHASE, N.Y. - April 25, 2023 - PepsiCo, Inc. (NASDAQ: PEP) today re",
+      "metadata": {
+        "chunk_id": "c12b4dc8-74ae-4977-a335-9f08c1e370b1",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.6312865754771898,
+        "rerank_score": 41.411885245901644,
+        "matched_terms": [
+          "full",
+          "guidance"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "PEPSICO_2023Q1_EARNINGS",
+      "page": 12,
+      "section": null,
+      "text": "PepsiCo, Inc. and Subsidiaries Reconciliation of GAAP and Non-GAAP Information (continued) Year over Year Growth Rates 12 Weeks Ended March 25, 2023 (unaudited) 12 Weeks Ended 3/25/2023 Impact of Items Affecting Comparability Impact of Year over Year % Change Reported % Change, GAAP Measure Mark-to- market net impact Restructuring and impairment charges Acquisition and divestiture- related charges Gain associated with the Juice Transaction Impairment and other charges/credits Core % Change, Non-",
+      "metadata": {
+        "chunk_id": "14facda1-e0e1-4b93-ab9d-5b7956d04a6d",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5392016458717058,
+        "rerank_score": 39.13636363636364,
+        "matched_terms": [],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "PEPSICO_2023Q1_EARNINGS",
+      "page": 3,
+      "section": null,
+      "text": "Guidance and Outlook The Company provides guidance on a non-GAAP basis as we cannot predict certain elements which are included in reported GAAP results, including the impact of foreign exchange translation and commodity mark-to-market net impacts. For fiscal year 2023, the Company now expects to deliver 8 percent organic revenue growth (previously 6 percent), and 9 percent core constant currency EPS growth (previously 8 percent). Consistent with its previous guidance for 2023, the Company conti",
+      "metadata": {
+        "chunk_id": "03bdaedb-db5f-47aa-bad3-07f8508c5765",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5930567029598908,
+        "rerank_score": 38.57149257552483,
+        "matched_terms": [
+          "guidance"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "llamaindex_build_hybrid_index",
+      "target": "PEPSICO_2023Q1_EARNINGS",
+      "metadata": {
+        "page_count": 16,
+        "node_count": 18,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "chunk_size": 900,
+        "chunk_overlap": 160,
+        "vector_top_k": 120,
+        "bm25_top_k": 120,
+        "fusion_top_k": 120,
+        "rerank_top_k": 12,
+        "rrf_k": 60,
+        "finance_rerank": true,
+        "cross_encoder_model": null,
+        "cross_encoder_candidates": 60,
+        "answer_context_chunk_count": 12,
+        "answer_context_chars": 24312,
+        "answer_context_words": 3653
+      }
+    },
+    {
+      "step": 2,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "c12b4dc8-74ae-4977-a335-9f08c1e370b1",
+      "metadata": {
+        "page": 1,
+        "bm25_rank": 1,
+        "vector_rank": 1,
+        "fusion_rank": 1,
+        "bm25_score": 3.813286542892456,
+        "vector_score": 0.6312865754771898,
+        "rrf_score": 0.03278688524590164,
+        "rerank_score": 41.411885245901644,
+        "finance_boost": 3.625,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "full",
+          "guidance"
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "14facda1-e0e1-4b93-ab9d-5b7956d04a6d",
+      "metadata": {
+        "page": 12,
+        "bm25_rank": 6,
+        "vector_rank": 6,
+        "fusion_rank": 4,
+        "bm25_score": 0.6364996433258057,
+        "vector_score": 0.5392016458717058,
+        "rrf_score": 0.030303030303030304,
+        "rerank_score": 39.13636363636364,
+        "finance_boost": 8.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": []
+      }
+    },
+    {
+      "step": 4,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "03bdaedb-db5f-47aa-bad3-07f8508c5765",
+      "metadata": {
+        "page": 3,
+        "bm25_rank": 3,
+        "vector_rank": 2,
+        "fusion_rank": 2,
+        "bm25_score": 1.3466606140136719,
+        "vector_score": 0.5930567029598908,
+        "rrf_score": 0.03200204813108039,
+        "rerank_score": 38.57149257552483,
+        "finance_boost": 3.625,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "guidance"
+        ]
+      }
+    },
+    {
+      "step": 5,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "e73a977c-fff8-459d-b9a0-488707a52d42",
+      "metadata": {
+        "page": 14,
+        "bm25_rank": 14,
+        "vector_rank": 4,
+        "fusion_rank": 6,
+        "bm25_score": 0.09557100385427475,
+        "vector_score": 0.553107205627254,
+        "rrf_score": 0.029138513513513514,
+        "rerank_score": 37.86073573573574,
+        "finance_boost": 8.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": []
+      }
+    },
+    {
+      "step": 6,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "4a7bd81d-92f8-4784-8c6c-d5f0e608cf4b",
+      "metadata": {
+        "page": 11,
+        "bm25_rank": 7,
+        "vector_rank": 8,
+        "fusion_rank": 5,
+        "bm25_score": 0.5164088010787964,
+        "vector_score": 0.5193457728472404,
+        "rrf_score": 0.029631255487269532,
+        "rerank_score": 37.034033265047306,
+        "finance_boost": 6.625,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": []
+      }
+    },
+    {
+      "step": 7,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "efce5249-0103-4d52-9546-aa3359e87db1",
+      "metadata": {
+        "page": 2,
+        "bm25_rank": 16,
+        "vector_rank": 5,
+        "fusion_rank": 11,
+        "bm25_score": 0.07847860455513,
+        "vector_score": 0.5487535734250957,
+        "rrf_score": 0.02854251012145749,
+        "rerank_score": 36.98695456590193,
+        "finance_boost": 8.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": []
+      }
+    },
+    {
+      "step": 8,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "8ca65879-8e75-4bc4-976d-ad910edbce5b",
+      "metadata": {
+        "page": 13,
+        "bm25_rank": 12,
+        "vector_rank": 9,
+        "fusion_rank": 13,
+        "bm25_score": 0.10703061521053314,
+        "vector_score": 0.4978390288176098,
+        "rrf_score": 0.028381642512077296,
+        "rerank_score": 36.71497584541063,
+        "finance_boost": 8.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": []
+      }
+    },
+    {
+      "step": 9,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "2ea88af6-3d52-44a4-9245-8e5e55799406",
+      "metadata": {
+        "page": 10,
+        "bm25_rank": 2,
+        "vector_rank": 18,
+        "fusion_rank": 8,
+        "bm25_score": 2.8178017139434814,
+        "vector_score": 0.33097167570748853,
+        "rrf_score": 0.028949545078577336,
+        "rerank_score": 36.18565618968845,
+        "finance_boost": 2.625,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "full",
+          "guidance"
+        ]
+      }
+    },
+    {
+      "step": 10,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "b8a67894-2a51-401e-93ff-e25c016de7f6",
+      "metadata": {
+        "page": 7,
+        "bm25_rank": 9,
+        "vector_rank": 3,
+        "fusion_rank": 3,
+        "bm25_score": 0.3982347249984741,
+        "vector_score": 0.5668153607202369,
+        "rrf_score": 0.03036576949620428,
+        "rerank_score": 36.004658385093165,
+        "finance_boost": 4.75,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": []
+      }
+    },
+    {
+      "step": 11,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "19bd3218-1502-4237-9d42-b5868e26df07",
+      "metadata": {
+        "page": 8,
+        "bm25_rank": 15,
+        "vector_rank": 12,
+        "fusion_rank": 16,
+        "bm25_score": 0.09181536734104156,
+        "vector_score": 0.4558738453153681,
+        "rrf_score": 0.027222222222222224,
+        "rerank_score": 35.38888888888889,
+        "finance_boost": 8.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": []
+      }
+    },
+    {
+      "step": 12,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "99ef4e19-a354-4d1e-8c35-9309a98c6c0d",
+      "metadata": {
+        "page": 6,
+        "bm25_rank": 17,
+        "vector_rank": 10,
+        "fusion_rank": 15,
+        "bm25_score": 0.05843711644411087,
+        "vector_score": 0.48381029677405074,
+        "rrf_score": 0.027272727272727275,
+        "rerank_score": 35.369949494949495,
+        "finance_boost": 7.875,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": []
+      }
+    },
+    {
+      "step": 13,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "d2cdee3b-a5c6-4627-9976-02be22cef63c",
+      "metadata": {
+        "page": 5,
+        "bm25_rank": 11,
+        "vector_rank": 7,
+        "fusion_rank": 7,
+        "bm25_score": 0.10735847800970078,
+        "vector_score": 0.5302020983724104,
+        "rrf_score": 0.02900988017658188,
+        "rerank_score": 34.926546843248545,
+        "finance_boost": 5.25,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": []
+      }
+    }
+  ],
+  "token_usage": {
+    "input": null,
+    "output": null,
+    "total": null
+  },
+  "latency_ms": 6917,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\PEPSICO_2023Q1_EARNINGS.pdf",
+    "adapter_mode": "llamaindex_bm25_vector_rrf_plus_rerank",
+    "llm_enabled": false,
+    "model": null,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "page_count": 16,
+    "node_count": 18,
+    "chunk_size": 900,
+    "chunk_overlap": 160,
+    "vector_top_k": 120,
+    "bm25_top_k": 120,
+    "fusion_top_k": 120,
+    "rerank_top_k": 12,
+    "rrf_k": 60,
+    "max_citations": 3,
+    "finance_rerank": true,
+    "cross_encoder_model": null,
+    "cross_encoder_candidates": 60,
+    "answer_context_chunk_count": 12,
+    "answer_context_chars": 24312,
+    "answer_context_words": 3653
+  }
+}

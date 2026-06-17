@@ -1,0 +1,402 @@
+{
+  "method": "llamaindex_hybrid_rag",
+  "question_id": "fb_exp_014",
+  "question": "What drove gross margin change as of the FY2022 for American Express? If gross margin is not a useful metric for a company like this, then please state that and explain why.",
+  "answer": "Retrieved 12 chunks with LlamaIndex BM25/vector hybrid fusion.",
+  "citations": [
+    {
+      "document_id": "AMERICANEXPRESS_2022_10K",
+      "page": 47,
+      "section": null,
+      "text": ", 2021, filed with the SEC on February 11, 2022. Beginning in the first quarter of 2022, we made reporting presentation changes to our Consolidated Statements of Income to separately present revenues earned from processed volumes, previously reported in Discount revenue, Other fees and commissions and Other revenue, as Processed revenue. The remaining balances from Other fees and commissions and Other revenue were combined as Service fees and other revenue. We also disaggregated Marketing and bu",
+      "metadata": {
+        "chunk_id": "954bd82d-2171-45b0-b934-7152df38b4cd",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.4217135508071088,
+        "rerank_score": 46.53921568627451,
+        "matched_terms": [
+          "change"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "AMERICANEXPRESS_2022_10K",
+      "page": 147,
+      "section": null,
+      "text": " 3,637 Employee compensation and benefits 353 359 Net operating loss and tax credit carryforwards 411 398 Other 776 809 Gross deferred tax assets 5,592 5,203 Valuation allowance (537) (472) Deferred tax assets after valuation allowance 5,055 4,731 Deferred tax liabilities: Intangibles and fixed assets 671 1,320 Deferred revenue 126 189 Deferred interest 118 133 Investment in joint ventures 17 183 Other 618 521 Gross deferred tax liabilities 1,550 2,346 Net deferred tax assets $ 3,505 $ 2,385 The",
+      "metadata": {
+        "chunk_id": "e6fa45f8-e626-44dd-97bb-7e8e587ba664",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.2894768250336754,
+        "rerank_score": 44.64884684281236,
+        "matched_terms": [
+          "gross"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "AMERICANEXPRESS_2022_10K",
+      "page": 44,
+      "section": null,
+      "text": "Table of Contents TABLE 1: SUMMARY OF FINANCIAL PERFORMANCE Years Ended December 31, Change Change (Millions, except percentages, per share amounts and where indicated) 2022 2021 2020 2022 vs. 2021 2021 vs. 2020 Selected Income Statement Data Total revenues net of interest expense $ 52,862 $ 42,380 $ 36,087 $ 10,482 25 % $ 6,293 17 % Provisions for credit losses 2,182 (1,419) 4,730 3,601 # (6,149) # Expenses 41,095 33,110 27,061 7,985 24 6,049 22 Pretax income 9,585 10,689 4,296 (1,104) (10) 6,3",
+      "metadata": {
+        "chunk_id": "bb9a207e-0cb5-4f30-b9be-b269af5b3f65",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.41064556743628405,
+        "rerank_score": 44.02085004009623,
+        "matched_terms": [
+          "change"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "llamaindex_build_hybrid_index",
+      "target": "AMERICANEXPRESS_2022_10K",
+      "metadata": {
+        "page_count": 260,
+        "node_count": 302,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "chunk_size": 900,
+        "chunk_overlap": 160,
+        "vector_top_k": 120,
+        "bm25_top_k": 120,
+        "fusion_top_k": 120,
+        "rerank_top_k": 12,
+        "rrf_k": 60,
+        "finance_rerank": true,
+        "cross_encoder_model": null,
+        "cross_encoder_candidates": 60,
+        "answer_context_chunk_count": 12,
+        "answer_context_chars": 36134,
+        "answer_context_words": 5632
+      }
+    },
+    {
+      "step": 2,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "954bd82d-2171-45b0-b934-7152df38b4cd",
+      "metadata": {
+        "page": 47,
+        "bm25_rank": 85,
+        "vector_rank": 8,
+        "fusion_rank": 12,
+        "bm25_score": 2.2538182735443115,
+        "vector_score": 0.4217135508071088,
+        "rrf_score": 0.021602434077079107,
+        "rerank_score": 46.53921568627451,
+        "finance_boost": 22.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "gross_margin_line_items"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "change"
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "e6fa45f8-e626-44dd-97bb-7e8e587ba664",
+      "metadata": {
+        "page": 147,
+        "bm25_rank": 6,
+        "vector_rank": 115,
+        "fusion_rank": 17,
+        "bm25_score": 5.7388596534729,
+        "vector_score": 0.2894768250336754,
+        "rrf_score": 0.020865800865800865,
+        "rerank_score": 44.64884684281236,
+        "finance_boost": 20.875,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "gross_margin_line_items"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "gross"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "bb9a207e-0cb5-4f30-b9be-b269af5b3f65",
+      "metadata": {
+        "page": 44,
+        "bm25_rank": 112,
+        "vector_rank": 15,
+        "fusion_rank": 23,
+        "bm25_score": 1.7818398475646973,
+        "vector_score": 0.41064556743628405,
+        "rrf_score": 0.019147286821705425,
+        "rerank_score": 44.02085004009623,
+        "finance_boost": 22.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "gross_margin_line_items"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "change"
+        ]
+      }
+    },
+    {
+      "step": 5,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "c51d531a-b638-46aa-bc12-de3e79078c2c",
+      "metadata": {
+        "page": 135,
+        "bm25_rank": 1,
+        "vector_rank": 25,
+        "fusion_rank": 2,
+        "bm25_score": 7.688823699951172,
+        "vector_score": 0.39737668831627804,
+        "rrf_score": 0.02815814850530376,
+        "rerank_score": 39.027401378866976,
+        "finance_boost": 5.875,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "gross",
+          "margin"
+        ]
+      }
+    },
+    {
+      "step": 6,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "4d58a10a-1b63-4937-843a-d090382498e1",
+      "metadata": {
+        "page": 54,
+        "bm25_rank": null,
+        "vector_rank": 14,
+        "fusion_rank": 72,
+        "bm25_score": null,
+        "vector_score": 0.4120982899447621,
+        "rrf_score": 0.013513513513513514,
+        "rerank_score": 38.10546753650202,
+        "finance_boost": 22.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "gross_margin_line_items"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "change"
+        ]
+      }
+    },
+    {
+      "step": 7,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "aaa4cfd6-5554-4d79-bc0d-8eec60efa3cf",
+      "metadata": {
+        "page": 45,
+        "bm25_rank": 86,
+        "vector_rank": 2,
+        "fusion_rank": 8,
+        "bm25_score": 2.239445209503174,
+        "vector_score": 0.4562326917848345,
+        "rrf_score": 0.022978347326557666,
+        "rerank_score": 37.9381174415002,
+        "finance_boost": 14.0,
+        "finance_boost_reasons": [
+          "gross_margin_line_items"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": []
+      }
+    },
+    {
+      "step": 8,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "74552ab4-4867-4936-aa66-6a0c27e896b3",
+      "metadata": {
+        "page": 87,
+        "bm25_rank": 84,
+        "vector_rank": 3,
+        "fusion_rank": 9,
+        "bm25_score": 2.3071200847625732,
+        "vector_score": 0.4549854019065675,
+        "rrf_score": 0.022817460317460316,
+        "rerank_score": 37.771483305966065,
+        "finance_boost": 14.0,
+        "finance_boost_reasons": [
+          "gross_margin_line_items"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": []
+      }
+    },
+    {
+      "step": 9,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "ffc349f5-675e-4100-a4e6-486a9c40be35",
+      "metadata": {
+        "page": 57,
+        "bm25_rank": null,
+        "vector_rank": 17,
+        "fusion_rank": 77,
+        "bm25_score": null,
+        "vector_score": 0.40965579112899697,
+        "rrf_score": 0.012987012987012988,
+        "rerank_score": 37.55023137781759,
+        "finance_boost": 22.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "gross_margin_line_items"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "change"
+        ]
+      }
+    },
+    {
+      "step": 10,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "3db152f2-c9c3-4914-9a8e-ccaf4493c931",
+      "metadata": {
+        "page": 30,
+        "bm25_rank": 11,
+        "vector_rank": 111,
+        "fusion_rank": 19,
+        "bm25_score": 4.549089431762695,
+        "vector_score": 0.29742838170364555,
+        "rrf_score": 0.019932460258627792,
+        "rerank_score": 36.82901198276572,
+        "finance_boost": 14.0,
+        "finance_boost_reasons": [
+          "gross_margin_line_items"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "like"
+        ]
+      }
+    },
+    {
+      "step": 11,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "b86bb3e4-f5be-4b93-b03f-1bb2ce05fb2c",
+      "metadata": {
+        "page": 119,
+        "bm25_rank": 4,
+        "vector_rank": 38,
+        "fusion_rank": 3,
+        "bm25_score": 6.050876617431641,
+        "vector_score": 0.38119094296166606,
+        "rrf_score": 0.02582908163265306,
+        "rerank_score": 36.817587379779496,
+        "finance_boost": 8.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "gross"
+        ]
+      }
+    },
+    {
+      "step": 12,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "8406e771-f6df-4425-abe9-73b988eb234d",
+      "metadata": {
+        "page": 145,
+        "bm25_rank": null,
+        "vector_rank": 10,
+        "fusion_rank": 66,
+        "bm25_score": null,
+        "vector_score": 0.42092461123815395,
+        "rrf_score": 0.014285714285714285,
+        "rerank_score": 36.66215106732348,
+        "finance_boost": 21.75,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "gross_margin_line_items"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": []
+      }
+    },
+    {
+      "step": 13,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "f8bfea25-9dfe-42f7-9753-2cd432c8c4a2",
+      "metadata": {
+        "page": 29,
+        "bm25_rank": 19,
+        "vector_rank": 104,
+        "fusion_rank": 25,
+        "bm25_score": 3.9599215984344482,
+        "vector_score": 0.30204287536246005,
+        "rrf_score": 0.018755788823711022,
+        "rerank_score": 35.61785778922826,
+        "finance_boost": 14.0,
+        "finance_boost_reasons": [
+          "gross_margin_line_items"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "change"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": null,
+    "output": null,
+    "total": null
+  },
+  "latency_ms": 11566,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\AMERICANEXPRESS_2022_10K.pdf",
+    "adapter_mode": "llamaindex_bm25_vector_rrf_plus_rerank",
+    "llm_enabled": false,
+    "model": null,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "page_count": 260,
+    "node_count": 302,
+    "chunk_size": 900,
+    "chunk_overlap": 160,
+    "vector_top_k": 120,
+    "bm25_top_k": 120,
+    "fusion_top_k": 120,
+    "rerank_top_k": 12,
+    "rrf_k": 60,
+    "max_citations": 3,
+    "finance_rerank": true,
+    "cross_encoder_model": null,
+    "cross_encoder_candidates": 60,
+    "answer_context_chunk_count": 12,
+    "answer_context_chars": 36134,
+    "answer_context_words": 5632
+  }
+}

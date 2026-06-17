@@ -1,0 +1,183 @@
+{
+  "method": "llamaindex_hybrid_rag",
+  "question_id": "fb_exp_021",
+  "question": "As of FY2023Q1, why did Pepsico raise full year guidance for FY2023?",
+  "answer": "Retrieved 3 chunks with LlamaIndex BM25/vector hybrid fusion.",
+  "citations": [
+    {
+      "document_id": "PEPSICO_2023Q1_EARNINGS",
+      "page": 1,
+      "section": null,
+      "text": "PepsiCo Reports First-Quarter 2023 Results; Raises Full-Year Guidance Reported (GAAP) First-Quarter 2023 Results First-Quarter Net revenue growth 10.2% Foreign exchange impact on net revenue (2.5)% Earnings per share (EPS) $1.40 EPS change (54)% Foreign exchange impact on EPS (2)% Organic/Core (non-GAAP)1 First-Quarter 2023 Results First-Quarter Organic revenue growth 14.3% Core EPS $1.50 Core constant currency EPS change 18% PURCHASE, N.Y. - April 25, 2023 - PepsiCo, Inc. (NASDAQ: PEP) today re",
+      "metadata": {
+        "chunk_id": "09296cef-6728-4a9b-9326-0ea921bee4c0",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.6312865754771898,
+        "rerank_score": 41.411885245901644,
+        "matched_terms": [
+          "full",
+          "guidance"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "PEPSICO_2023Q1_EARNINGS",
+      "page": 12,
+      "section": null,
+      "text": "PepsiCo, Inc. and Subsidiaries Reconciliation of GAAP and Non-GAAP Information (continued) Year over Year Growth Rates 12 Weeks Ended March 25, 2023 (unaudited) 12 Weeks Ended 3/25/2023 Impact of Items Affecting Comparability Impact of Year over Year % Change Reported % Change, GAAP Measure Mark-to- market net impact Restructuring and impairment charges Acquisition and divestiture- related charges Gain associated with the Juice Transaction Impairment and other charges/credits Core % Change, Non-",
+      "metadata": {
+        "chunk_id": "d8bde30b-4e50-4658-a5be-99068a4c5e58",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5392016458717058,
+        "rerank_score": 39.13636363636364,
+        "matched_terms": [],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "PEPSICO_2023Q1_EARNINGS",
+      "page": 3,
+      "section": null,
+      "text": "Guidance and Outlook The Company provides guidance on a non-GAAP basis as we cannot predict certain elements which are included in reported GAAP results, including the impact of foreign exchange translation and commodity mark-to-market net impacts. For fiscal year 2023, the Company now expects to deliver 8 percent organic revenue growth (previously 6 percent), and 9 percent core constant currency EPS growth (previously 8 percent). Consistent with its previous guidance for 2023, the Company conti",
+      "metadata": {
+        "chunk_id": "ccef3cb9-9447-41a3-9601-35897231814b",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5930567029598908,
+        "rerank_score": 38.57149257552483,
+        "matched_terms": [
+          "guidance"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "llamaindex_build_hybrid_index",
+      "target": "PEPSICO_2023Q1_EARNINGS",
+      "metadata": {
+        "page_count": 16,
+        "node_count": 18,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "chunk_size": 900,
+        "chunk_overlap": 160,
+        "vector_top_k": 120,
+        "bm25_top_k": 120,
+        "fusion_top_k": 120,
+        "rerank_top_k": 3,
+        "rrf_k": 60,
+        "finance_rerank": true,
+        "cross_encoder_model": null,
+        "cross_encoder_candidates": 60,
+        "answer_context_chunk_count": 3,
+        "answer_context_chars": 5594,
+        "answer_context_words": 872
+      }
+    },
+    {
+      "step": 2,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "09296cef-6728-4a9b-9326-0ea921bee4c0",
+      "metadata": {
+        "page": 1,
+        "bm25_rank": 1,
+        "vector_rank": 1,
+        "fusion_rank": 1,
+        "bm25_score": 3.813286542892456,
+        "vector_score": 0.6312865754771898,
+        "rrf_score": 0.03278688524590164,
+        "rerank_score": 41.411885245901644,
+        "finance_boost": 3.625,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "full",
+          "guidance"
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "d8bde30b-4e50-4658-a5be-99068a4c5e58",
+      "metadata": {
+        "page": 12,
+        "bm25_rank": 6,
+        "vector_rank": 6,
+        "fusion_rank": 4,
+        "bm25_score": 0.6364996433258057,
+        "vector_score": 0.5392016458717058,
+        "rrf_score": 0.030303030303030304,
+        "rerank_score": 39.13636363636364,
+        "finance_boost": 8.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": []
+      }
+    },
+    {
+      "step": 4,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "ccef3cb9-9447-41a3-9601-35897231814b",
+      "metadata": {
+        "page": 3,
+        "bm25_rank": 3,
+        "vector_rank": 2,
+        "fusion_rank": 2,
+        "bm25_score": 1.3466606140136719,
+        "vector_score": 0.5930567029598908,
+        "rrf_score": 0.03200204813108039,
+        "rerank_score": 38.57149257552483,
+        "finance_boost": 3.625,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "guidance"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": null,
+    "output": null,
+    "total": null
+  },
+  "latency_ms": 9048,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\PEPSICO_2023Q1_EARNINGS.pdf",
+    "adapter_mode": "llamaindex_bm25_vector_rrf_plus_rerank",
+    "llm_enabled": false,
+    "model": null,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "page_count": 16,
+    "node_count": 18,
+    "chunk_size": 900,
+    "chunk_overlap": 160,
+    "vector_top_k": 120,
+    "bm25_top_k": 120,
+    "fusion_top_k": 120,
+    "rerank_top_k": 3,
+    "rrf_k": 60,
+    "max_citations": 3,
+    "finance_rerank": true,
+    "cross_encoder_model": null,
+    "cross_encoder_candidates": 60,
+    "answer_context_chunk_count": 3,
+    "answer_context_chars": 5594,
+    "answer_context_words": 872
+  }
+}

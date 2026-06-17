@@ -1,0 +1,207 @@
+{
+  "method": "llamaindex_hybrid_rag",
+  "question_id": "fb_exp_022",
+  "question": "What is Coca Cola's FY2021 COGS % margin? Calculate what was asked by utilizing the line items clearly shown in the income statement.",
+  "answer": "Retrieved 3 chunks with LlamaIndex BM25/vector hybrid fusion.",
+  "citations": [
+    {
+      "document_id": "COCACOLA_2021_10K",
+      "page": 62,
+      "section": null,
+      "text": "THE COCA-COLA COMPANY AND SUBSIDIARIES CONSOLIDATED STATEMENTS OF INCOME (In millions except per share data) Year Ended December 31, 2021 2020 2019 Net Operating Revenues $ 38,655 $ 33,014 $ 37,266 Cost of goods sold 15,357 13,433 14,619 Gross Profit 23,298 19,581 22,647 Selling, general and administrative expenses 12,144 9,731 12,103 Other operating charges 846 853 458 Operating Income 10,308 8,997 10,086 Interest income 276 370 563 Interest expense 1,597 1,437 946 Equity income (loss) — net 1,",
+      "metadata": {
+        "chunk_id": "cd2e4ddf-8246-42f7-9904-775d373c6bd2",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5753438959101354,
+        "rerank_score": 51.47794966520434,
+        "matched_terms": [
+          "cost",
+          "goods",
+          "income"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "COCACOLA_2021_10K",
+      "page": 49,
+      "section": null,
+      "text": "ir value in conjunction with the fairlife acquisition and $16 million related to the restructuring of our manufacturing operations in the United States. Refer to Note 2 of Notes to Consolidated Financial Statements for additional information on the BodyArmor and fairlife acquisitions. Refer to Note 11 of Notes to Consolidated Financial Statements for additional information related to the tax litigation. Refer to Note 16 of Notes to Consolidated Financial Statements for additional information on ",
+      "metadata": {
+        "chunk_id": "485ba290-dcf3-47c3-a6de-b49e22b7bf03",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5154904059541748,
+        "rerank_score": 48.20954535660418,
+        "matched_terms": [
+          "cost",
+          "income",
+          "margin",
+          "operations",
+          "sales"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "COCACOLA_2021_10K",
+      "page": 68,
+      "section": null,
+      "text": "e ability to exercise significant influence over operating and financial policies of the investee. Our consolidated net income includes our Company’s proportionate share of the net income or loss of these companies. Our judgment regarding the level of influence over each equity method investee includes considering key factors such as our ownership interest, representation on the board of directors, participation in policy-making decisions, other commercial arrangements and material intercompany ",
+      "metadata": {
+        "chunk_id": "d12907b3-d7d3-4435-86f8-4f545c70a3b2",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.475463748471633,
+        "rerank_score": 43.45129221103734,
+        "matched_terms": [
+          "cost",
+          "goods",
+          "income",
+          "revenue",
+          "sales",
+          "statement"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "llamaindex_build_hybrid_index",
+      "target": "COCACOLA_2021_10K",
+      "metadata": {
+        "page_count": 183,
+        "node_count": 268,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "chunk_size": 900,
+        "chunk_overlap": 160,
+        "vector_top_k": 120,
+        "bm25_top_k": 120,
+        "fusion_top_k": 120,
+        "rerank_top_k": 3,
+        "rrf_k": 60,
+        "finance_rerank": true,
+        "cross_encoder_model": null,
+        "cross_encoder_candidates": 60,
+        "answer_context_chunk_count": 3,
+        "answer_context_chars": 9577,
+        "answer_context_words": 1432
+      }
+    },
+    {
+      "step": 2,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "cd2e4ddf-8246-42f7-9904-775d373c6bd2",
+      "metadata": {
+        "page": 62,
+        "bm25_rank": 11,
+        "vector_rank": 1,
+        "fusion_rank": 1,
+        "bm25_score": 4.114446640014648,
+        "vector_score": 0.5753438959101354,
+        "rrf_score": 0.03047794966520434,
+        "rerank_score": 51.47794966520434,
+        "finance_boost": 8.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "cost",
+          "goods",
+          "income"
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "485ba290-dcf3-47c3-a6de-b49e22b7bf03",
+      "metadata": {
+        "page": 49,
+        "bm25_rank": 5,
+        "vector_rank": 8,
+        "fusion_rank": 2,
+        "bm25_score": 4.881379127502441,
+        "vector_score": 0.5154904059541748,
+        "rrf_score": 0.030090497737556562,
+        "rerank_score": 48.20954535660418,
+        "finance_boost": 7.125,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "cost",
+          "income",
+          "margin",
+          "operations",
+          "sales"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "d12907b3-d7d3-4435-86f8-4f545c70a3b2",
+      "metadata": {
+        "page": 68,
+        "bm25_rank": 9,
+        "vector_rank": 27,
+        "fusion_rank": 7,
+        "bm25_score": 4.396292209625244,
+        "vector_score": 0.475463748471633,
+        "rrf_score": 0.025987006496751626,
+        "rerank_score": 43.45129221103734,
+        "finance_boost": 1.5,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "cost",
+          "goods",
+          "income",
+          "revenue",
+          "sales",
+          "statement"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": null,
+    "output": null,
+    "total": null
+  },
+  "latency_ms": 13701,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\COCACOLA_2021_10K.pdf",
+    "adapter_mode": "llamaindex_bm25_vector_rrf_plus_rerank",
+    "llm_enabled": false,
+    "model": null,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "page_count": 183,
+    "node_count": 268,
+    "chunk_size": 900,
+    "chunk_overlap": 160,
+    "vector_top_k": 120,
+    "bm25_top_k": 120,
+    "fusion_top_k": 120,
+    "rerank_top_k": 3,
+    "rrf_k": 60,
+    "max_citations": 3,
+    "finance_rerank": true,
+    "cross_encoder_model": null,
+    "cross_encoder_candidates": 60,
+    "answer_context_chunk_count": 3,
+    "answer_context_chars": 9577,
+    "answer_context_words": 1432
+  }
+}

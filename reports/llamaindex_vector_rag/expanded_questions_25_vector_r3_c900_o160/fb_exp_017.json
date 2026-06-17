@@ -1,0 +1,154 @@
+{
+  "method": "llamaindex_vector_rag",
+  "question_id": "fb_exp_017",
+  "question": "Does Corning have positive working capital based on FY2022 data? If working capital is not a useful or relevant metric for this company, then please state that and explain why.",
+  "answer": "Retrieved 3 chunks with LlamaIndex vector retrieval and lightweight reranking.",
+  "citations": [
+    {
+      "document_id": "CORNING_2022_10K",
+      "page": 55,
+      "section": null,
+      "text": "ing Activities 91 15. Fair Value Measurements 93 16. Shareholders’ Equity 94 17. Earnings Per Common Share 98 18. Share-Based Compensation 99 19. Reportable Segments 101 55",
+      "metadata": {
+        "chunk_id": "d2f596d2-7e25-486a-ae29-3fa2e40e9953",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5737941327514993,
+        "rerank_score": 66.25441327514993,
+        "matched_terms": [
+          "based"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "CORNING_2022_10K",
+      "page": 60,
+      "section": null,
+      "text": "e $0.50 per share; Shares authorized 3.8 billion; Shares issued: 1.8 billion and 1.8 billion 910 907 Additional paid-in capital – common stock 16,682 16,475 Retained earnings 16,778 16,389 Treasury stock, at cost; Shares held: 977 million and 970 million (20,532) (20,263) Accumulated other comprehensive loss (1,830) (1,175) Total Corning Incorporated shareholders’ equity 12,008 12,333 Non-controlling interest 267 212 Total equity 12,275 12,545 Total Liabilities and Equity $ 29,499 $ 30,154 The a",
+      "metadata": {
+        "chunk_id": "c6cebfd1-0d38-4619-ad15-221ad413588d",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5479538834607017,
+        "rerank_score": 65.77872167940352,
+        "matched_terms": [
+          "capital"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "CORNING_2022_10K",
+      "page": 58,
+      "section": null,
+      "text": "Table of Contents Consolidated Statements of Income Corning Incorporated and Subsidiary Companies Year ended December 31, (in millions, except per share amounts) 2022 2021 2020 Net sales $ 14,189 $ 14,082 $ 11,303 Cost of sales 9,683 9,019 7,772 Gross margin 4,506 5,063 3,531 Operating expenses: Selling, general and administrative expenses 1,898 1,827 1,747 Research, development and engineering expenses 1,047 995 1,154 Amortization of purchased intangibles 123 129 121 Operating income 1,438 2,11",
+      "metadata": {
+        "chunk_id": "ae686280-6bed-4852-87c7-6b2b18a0b5dd",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5422766737250414,
+        "rerank_score": 63.19433403917081,
+        "matched_terms": [],
+        "citation_source": "rerank_fallback"
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "llamaindex_build_vector_index",
+      "target": "CORNING_2022_10K",
+      "metadata": {
+        "page_count": 159,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "chunk_size": 900,
+        "chunk_overlap": 160,
+        "retrieve_top_k": 120,
+        "rerank_top_k": 3,
+        "finance_rerank": true,
+        "answer_context_chunk_count": 3,
+        "answer_context_chars": 5916,
+        "answer_context_words": 702
+      }
+    },
+    {
+      "step": 2,
+      "action": "llamaindex_retrieve_node",
+      "target": "d2f596d2-7e25-486a-ae29-3fa2e40e9953",
+      "metadata": {
+        "page": 55,
+        "retrieval_rank": 1,
+        "initial_rank": 1,
+        "vector_score": 0.5737941327514993,
+        "rerank_score": 66.25441327514993,
+        "finance_boost": 5.875,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "matched_terms": [
+          "based"
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "action": "llamaindex_retrieve_node",
+      "target": "c6cebfd1-0d38-4619-ad15-221ad413588d",
+      "metadata": {
+        "page": 60,
+        "retrieval_rank": 3,
+        "initial_rank": 3,
+        "vector_score": 0.5479538834607017,
+        "rerank_score": 65.77872167940352,
+        "finance_boost": 8.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "matched_terms": [
+          "capital"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "llamaindex_retrieve_node",
+      "target": "ae686280-6bed-4852-87c7-6b2b18a0b5dd",
+      "metadata": {
+        "page": 58,
+        "retrieval_rank": 5,
+        "initial_rank": 5,
+        "vector_score": 0.5422766737250414,
+        "rerank_score": 63.19433403917081,
+        "finance_boost": 8.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "matched_terms": []
+      }
+    }
+  ],
+  "token_usage": {
+    "input": null,
+    "output": null,
+    "total": null
+  },
+  "latency_ms": 11104,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\CORNING_2022_10K.pdf",
+    "adapter_mode": "llamaindex_vector_retrieval",
+    "llm_enabled": false,
+    "model": null,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "page_count": 159,
+    "chunk_size": 900,
+    "chunk_overlap": 160,
+    "retrieve_top_k": 120,
+    "rerank_top_k": 3,
+    "max_citations": 3,
+    "finance_rerank": true,
+    "answer_context_chunk_count": 3,
+    "answer_context_chars": 5916,
+    "answer_context_words": 702
+  }
+}

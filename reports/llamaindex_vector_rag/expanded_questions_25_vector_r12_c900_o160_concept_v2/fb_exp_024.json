@@ -1,0 +1,408 @@
+{
+  "method": "llamaindex_vector_rag",
+  "question_id": "fb_exp_024",
+  "question": "By drawing conclusions from the information stated only in the statement of financial position, what is General Mills's FY2020 working capital ratio? Define working capital ratio as total current assets divided by total current liabilities. Round your answer to two decimal places.",
+  "answer": "Retrieved 12 chunks with LlamaIndex vector retrieval and lightweight reranking.",
+  "citations": [
+    {
+      "document_id": "GENERALMILLS_2020_10K",
+      "page": 50,
+      "section": null,
+      "text": "50 Consolidated Balance Sheets GENERAL MILLS, INC. AND SUBSIDIARIES (In Millions, Except Par Value) May 31, 2020 May 26, 2019 ASSETS Current assets: Cash and cash equivalents $ 1,677.8 $ 450.0 Receivables 1,615.1 1,679.7 Inventories 1,426.3 1,559.3 Prepaid expenses and other current assets 402.1 497.5 Total current assets 5,121.3 4,186.5 Land, buildings, and equipment 3,580.6 3,787.2 Goodwill 13,923.2 13,995.8 Other intangible assets 7,095.8 7,166.8 Other assets 1,085.8 974.9 Total assets $ 30,8",
+      "metadata": {
+        "chunk_id": "58005764-94fd-4f7c-a402-735a727bf902",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5006405444977473,
+        "rerank_score": 143.03905444977474,
+        "matched_terms": [
+          "assets",
+          "balance",
+          "capital",
+          "current",
+          "financial",
+          "liabilities",
+          "sheets",
+          "total"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "GENERALMILLS_2020_10K",
+      "page": 17,
+      "section": null,
+      "text": "17 ITEM 6 - Selected Financial Data The following table sets forth selected financial data for each of the fiscal years in the five-year period ended May 31, 2020: Fiscal Year In Millions, Except Per Share Data, Percentages and Ratios 2020 (a) 2019 2018 2017 2016 Operating data: Net sales $ 17,626.6 $ 16,865.2 $ 15,740.4 $ 15,619.8 $ 16,563.1 Gross margin (b) (d) 6,129.9 5,756.8 5,435.6 5,567.8 5,843.3 Selling, general, and administrative expenses (d) 3,151.6 2,935.8 2,850.1 2,888.8 3,141.4 Oper",
+      "metadata": {
+        "chunk_id": "2d750cfb-c1c7-4c5e-ac18-71d14f6bf82e",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.4604648714333576,
+        "rerank_score": 87.97148714333575,
+        "matched_terms": [
+          "assets",
+          "balance",
+          "capital",
+          "current",
+          "financial",
+          "total"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "GENERALMILLS_2020_10K",
+      "page": 66,
+      "section": null,
+      "text": " amount of our equity swaps was $146.9 million. These swap contracts mature in fiscal 2021. FAIR VALUE MEASUREMENTS AND FINANCIAL STATEMENT PRESENTATION The fair values of our assets, liabilities, and derivative positions recorded at fair value and their respective levels in the fair value hierarchy as of May 31, 2020, and May 26, 2019, were as follows: May 31, 2020 May 31, 2020 Fair Values of Assets Fair Values of Liabilities In Millions Level 1 Level 2 Level 3 Total Level 1 Level 2 Level 3 Tot",
+      "metadata": {
+        "chunk_id": "964cb96f-77a2-4fb0-a78a-0099c892efbe",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.2723081578366449,
+        "rerank_score": 72.41414911699783,
+        "matched_terms": [
+          "assets",
+          "balance",
+          "current",
+          "financial",
+          "liabilities",
+          "position",
+          "statement",
+          "total"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "llamaindex_build_vector_index",
+      "target": "GENERALMILLS_2020_10K",
+      "metadata": {
+        "page_count": 127,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "chunk_size": 900,
+        "chunk_overlap": 160,
+        "retrieve_top_k": 120,
+        "rerank_top_k": 12,
+        "finance_rerank": true,
+        "answer_context_chunk_count": 12,
+        "answer_context_chars": 26393,
+        "answer_context_words": 4100
+      }
+    },
+    {
+      "step": 2,
+      "action": "llamaindex_retrieve_node",
+      "target": "58005764-94fd-4f7c-a402-735a727bf902",
+      "metadata": {
+        "page": 50,
+        "retrieval_rank": 4,
+        "initial_rank": 4,
+        "vector_score": 0.5006405444977473,
+        "rerank_score": 143.03905444977474,
+        "finance_boost": 70.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "balance_sheet_title",
+          "total_assets_line_item",
+          "working_capital_line_items"
+        ],
+        "matched_terms": [
+          "assets",
+          "balance",
+          "capital",
+          "current",
+          "financial",
+          "liabilities",
+          "sheets",
+          "total"
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "action": "llamaindex_retrieve_node",
+      "target": "2d750cfb-c1c7-4c5e-ac18-71d14f6bf82e",
+      "metadata": {
+        "page": 17,
+        "retrieval_rank": 10,
+        "initial_rank": 10,
+        "vector_score": 0.4604648714333576,
+        "rerank_score": 87.97148714333575,
+        "finance_boost": 26.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "total_assets_line_item"
+        ],
+        "matched_terms": [
+          "assets",
+          "balance",
+          "capital",
+          "current",
+          "financial",
+          "total"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "llamaindex_retrieve_node",
+      "target": "964cb96f-77a2-4fb0-a78a-0099c892efbe",
+      "metadata": {
+        "page": 66,
+        "retrieval_rank": 99,
+        "initial_rank": 99,
+        "vector_score": 0.2723081578366449,
+        "rerank_score": 72.41414911699783,
+        "finance_boost": 26.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "total_assets_line_item"
+        ],
+        "matched_terms": [
+          "assets",
+          "balance",
+          "current",
+          "financial",
+          "liabilities",
+          "position",
+          "statement",
+          "total"
+        ]
+      }
+    },
+    {
+      "step": 5,
+      "action": "llamaindex_retrieve_node",
+      "target": "be59b6e1-66e3-4fcd-9031-890d480ba1ba",
+      "metadata": {
+        "page": 46,
+        "retrieval_rank": 1,
+        "initial_rank": 1,
+        "vector_score": 0.5309716450660996,
+        "rerank_score": 72.22216450660997,
+        "finance_boost": 3.125,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "matched_terms": [
+          "balance",
+          "financial",
+          "position",
+          "sheets",
+          "statement",
+          "total"
+        ]
+      }
+    },
+    {
+      "step": 6,
+      "action": "llamaindex_retrieve_node",
+      "target": "72278881-f711-4415-bfa6-a03dad7b9c07",
+      "metadata": {
+        "page": 123,
+        "retrieval_rank": 3,
+        "initial_rank": 3,
+        "vector_score": 0.5027275773475436,
+        "rerank_score": 70.50609106808768,
+        "finance_boost": 6.25,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "matched_terms": [
+          "balance",
+          "financial",
+          "sheets",
+          "statement",
+          "total"
+        ]
+      }
+    },
+    {
+      "step": 7,
+      "action": "llamaindex_retrieve_node",
+      "target": "90232c55-2c95-49c9-9ebe-3e0c44f40735",
+      "metadata": {
+        "page": 67,
+        "retrieval_rank": 108,
+        "initial_rank": 108,
+        "vector_score": 0.2605586013175402,
+        "rerank_score": 67.16419346508735,
+        "finance_boost": 26.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "total_assets_line_item"
+        ],
+        "matched_terms": [
+          "assets",
+          "balance",
+          "current",
+          "liabilities",
+          "position",
+          "total"
+        ]
+      }
+    },
+    {
+      "step": 8,
+      "action": "llamaindex_retrieve_node",
+      "target": "da3b3b03-6b68-4c25-81fb-7d750526043a",
+      "metadata": {
+        "page": 60,
+        "retrieval_rank": 29,
+        "initial_rank": 29,
+        "vector_score": 0.4012569081903318,
+        "rerank_score": 62.89235748569984,
+        "finance_boost": 8.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "matched_terms": [
+          "assets",
+          "balance",
+          "current",
+          "financial",
+          "information",
+          "liabilities",
+          "total"
+        ]
+      }
+    },
+    {
+      "step": 9,
+      "action": "llamaindex_retrieve_node",
+      "target": "a166d3d1-fca6-40db-8527-ba1b1b8dbcaa",
+      "metadata": {
+        "page": 100,
+        "retrieval_rank": 16,
+        "initial_rank": 16,
+        "vector_score": 0.4339860127081124,
+        "rerank_score": 62.27360127081124,
+        "finance_boost": 5.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "matched_terms": [
+          "balance",
+          "financial",
+          "sheets",
+          "statement",
+          "total"
+        ]
+      }
+    },
+    {
+      "step": 10,
+      "action": "llamaindex_retrieve_node",
+      "target": "73d2bcad-3619-424a-92a9-a45018531a00",
+      "metadata": {
+        "page": 52,
+        "retrieval_rank": 7,
+        "initial_rank": 7,
+        "vector_score": 0.47085607060215184,
+        "rerank_score": 62.035607060215185,
+        "finance_boost": 8.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "matched_terms": [
+          "assets",
+          "current",
+          "liabilities"
+        ]
+      }
+    },
+    {
+      "step": 11,
+      "action": "llamaindex_retrieve_node",
+      "target": "09cc1604-69a9-4221-a366-1e193fc99804",
+      "metadata": {
+        "page": 105,
+        "retrieval_rank": 5,
+        "initial_rank": 5,
+        "vector_score": 0.49765522132978907,
+        "rerank_score": 61.23218879964558,
+        "finance_boost": 6.5,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "matched_terms": [
+          "assets",
+          "balance"
+        ]
+      }
+    },
+    {
+      "step": 12,
+      "action": "llamaindex_retrieve_node",
+      "target": "c2cbb993-52d6-4072-9a33-5eb5ebb3e80a",
+      "metadata": {
+        "page": 83,
+        "retrieval_rank": 89,
+        "initial_rank": 89,
+        "vector_score": 0.2844827606208051,
+        "rerank_score": 60.714942728747175,
+        "finance_boost": 26.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "total_assets_line_item"
+        ],
+        "matched_terms": [
+          "assets",
+          "financial",
+          "total"
+        ]
+      }
+    },
+    {
+      "step": 13,
+      "action": "llamaindex_retrieve_node",
+      "target": "7652f1be-14d4-4fc3-aaf6-ca9477bdbfb0",
+      "metadata": {
+        "page": 69,
+        "retrieval_rank": 42,
+        "initial_rank": 42,
+        "vector_score": 0.3671938616906466,
+        "rerank_score": 60.377719502397994,
+        "finance_boost": 8.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "matched_terms": [
+          "assets",
+          "balance",
+          "financial",
+          "liabilities",
+          "sheets",
+          "total"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": null,
+    "output": null,
+    "total": null
+  },
+  "latency_ms": 10571,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\GENERALMILLS_2020_10K.pdf",
+    "adapter_mode": "llamaindex_vector_retrieval",
+    "llm_enabled": false,
+    "model": null,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "page_count": 127,
+    "chunk_size": 900,
+    "chunk_overlap": 160,
+    "retrieve_top_k": 120,
+    "rerank_top_k": 12,
+    "max_citations": 3,
+    "finance_rerank": true,
+    "answer_context_chunk_count": 12,
+    "answer_context_chars": 26393,
+    "answer_context_words": 4100
+  }
+}

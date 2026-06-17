@@ -1,0 +1,247 @@
+{
+  "method": "llamaindex_vector_rag",
+  "question_id": "fb_exp_013",
+  "question": "What is Adobe's year-over-year change in unadjusted operating income from FY2015 to FY2016 (in units of percents and round to one decimal place)? Give a solution to the question by using the income statement.",
+  "answer": "Retrieved 6 chunks with LlamaIndex vector retrieval and lightweight reranking.",
+  "citations": [
+    {
+      "document_id": "ADOBE_2016_10K",
+      "page": 62,
+      "section": null,
+      "text": "Table of Contents 62 ADOBE SYSTEMS INCORPORATED CONSOLIDATED STATEMENTS OF INCOME (In thousands, except per share data) Years Ended December 2, 2016 November 27, 2015 November 28, 2014 Revenue: Subscription $ 4,584,833 $ 3,223,904 $ 2,076,584 Product 800,498 1,125,146 1,627,803 Services and support 469,099 446,461 442,678 Total revenue 5,854,430 4,795,511 4,147,065 Cost of revenue: Subscription 461,860 409,194 335,432 Product 68,917 90,035 97,099 Services and support 289,131 245,088 189,549 Tota",
+      "metadata": {
+        "chunk_id": "e6c57fd5-8800-4b24-b821-da03745ee864",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.539148052848527,
+        "rerank_score": 81.80647195151936,
+        "matched_terms": [
+          "cost",
+          "income",
+          "operating",
+          "revenue",
+          "sales"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "ADOBE_2016_10K",
+      "page": 49,
+      "section": null,
+      "text": "Table of Contents 49 Operating Expenses (dollars in millions) Fiscal 2016 Fiscal 2015 Fiscal 2014 % Change 2016-2015 % Change 2015-2014 Research and development $ 976.0 $ 862.7 $ 844.4 13% 2 % Percentage of total revenue 17% 18% 20% Sales and marketing 1,910.2 1,683.2 1,652.3 13% 2 % Percentage of total revenue 33% 35% 40% General and administrative 577.7 531.9 543.3 9% (2)% Percentage of total revenue 10% 11% 13% Restructuring and other charges (1.5) 1.6 19.9 * * Percentage of total revenue ** ",
+      "metadata": {
+        "chunk_id": "41a16f5c-bead-4a60-b4a5-3e5f7acae40e",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.6236461561832407,
+        "rerank_score": 79.35628228499074,
+        "matched_terms": [
+          "change",
+          "operating",
+          "revenue",
+          "sales"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "ADOBE_2016_10K",
+      "page": 65,
+      "section": null,
+      "text": "TATEMENTS OF CASH FLOWS (In thousands) Years Ended December 2, 2016 November 27, 2015 November 28, 2014 Cash flows from operating activities: Net income $ 1,168,782 $ 629,551 $ 268,395 Adjustments to reconcile net income to net cash provided by operating activities: Depreciation, amortization and accretion 331,535 339,473 313,590 Stock-based compensation 349,912 335,859 333,701 Deferred income taxes 24,222 (69,657) (26,089) Gain on the sale of property — (21,415) — Unrealized (gains) losses on i",
+      "metadata": {
+        "chunk_id": "3309ca83-0e4e-4330-8078-3538164bc18b",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5859736322210476,
+        "rerank_score": 77.54736322210476,
+        "matched_terms": [
+          "cost",
+          "income",
+          "operating",
+          "revenue",
+          "sales"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "llamaindex_build_vector_index",
+      "target": "ADOBE_2016_10K",
+      "metadata": {
+        "page_count": 112,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "chunk_size": 900,
+        "chunk_overlap": 160,
+        "retrieve_top_k": 120,
+        "rerank_top_k": 6,
+        "finance_rerank": true,
+        "answer_context_chunk_count": 6,
+        "answer_context_chars": 15115,
+        "answer_context_words": 2188
+      }
+    },
+    {
+      "step": 2,
+      "action": "llamaindex_retrieve_node",
+      "target": "e6c57fd5-8800-4b24-b821-da03745ee864",
+      "metadata": {
+        "page": 62,
+        "retrieval_rank": 14,
+        "initial_rank": 14,
+        "vector_score": 0.539148052848527,
+        "rerank_score": 81.80647195151936,
+        "finance_boost": 8.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "matched_terms": [
+          "cost",
+          "income",
+          "operating",
+          "revenue",
+          "sales"
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "action": "llamaindex_retrieve_node",
+      "target": "41a16f5c-bead-4a60-b4a5-3e5f7acae40e",
+      "metadata": {
+        "page": 49,
+        "retrieval_rank": 2,
+        "initial_rank": 2,
+        "vector_score": 0.6236461561832407,
+        "rerank_score": 79.35628228499074,
+        "finance_boost": 8.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "matched_terms": [
+          "change",
+          "operating",
+          "revenue",
+          "sales"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "llamaindex_retrieve_node",
+      "target": "3309ca83-0e4e-4330-8078-3538164bc18b",
+      "metadata": {
+        "page": 65,
+        "retrieval_rank": 7,
+        "initial_rank": 7,
+        "vector_score": 0.5859736322210476,
+        "rerank_score": 77.54736322210476,
+        "finance_boost": 8.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "matched_terms": [
+          "cost",
+          "income",
+          "operating",
+          "revenue",
+          "sales"
+        ]
+      }
+    },
+    {
+      "step": 5,
+      "action": "llamaindex_retrieve_node",
+      "target": "dfc94a58-f756-48b1-ac4e-f7e73f85bfc8",
+      "metadata": {
+        "page": 51,
+        "retrieval_rank": 1,
+        "initial_rank": 1,
+        "vector_score": 0.6265910919110318,
+        "rerank_score": 77.03410919110317,
+        "finance_boost": 5.375,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "matched_terms": [
+          "change",
+          "income",
+          "operating",
+          "revenue"
+        ]
+      }
+    },
+    {
+      "step": 6,
+      "action": "llamaindex_retrieve_node",
+      "target": "a5db31ed-bb32-4ace-a023-111b70f8c651",
+      "metadata": {
+        "page": 36,
+        "retrieval_rank": 5,
+        "initial_rank": 5,
+        "vector_score": 0.5926434036684264,
+        "rerank_score": 76.23100703350931,
+        "finance_boost": 8.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "matched_terms": [
+          "income",
+          "operating",
+          "operations",
+          "revenue"
+        ]
+      }
+    },
+    {
+      "step": 7,
+      "action": "llamaindex_retrieve_node",
+      "target": "fb87434a-e1ba-4cc0-bfa9-d53553a937cb",
+      "metadata": {
+        "page": 92,
+        "retrieval_rank": 18,
+        "initial_rank": 18,
+        "vector_score": 0.5272020916959711,
+        "rerank_score": 74.57854250293045,
+        "finance_boost": 8.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "matched_terms": [
+          "cost",
+          "income",
+          "revenue",
+          "sales",
+          "statement"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": null,
+    "output": null,
+    "total": null
+  },
+  "latency_ms": 13383,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\ADOBE_2016_10K.pdf",
+    "adapter_mode": "llamaindex_vector_retrieval",
+    "llm_enabled": false,
+    "model": null,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "page_count": 112,
+    "chunk_size": 900,
+    "chunk_overlap": 160,
+    "retrieve_top_k": 120,
+    "rerank_top_k": 6,
+    "max_citations": 3,
+    "finance_rerank": true,
+    "answer_context_chunk_count": 6,
+    "answer_context_chars": 15115,
+    "answer_context_words": 2188
+  }
+}

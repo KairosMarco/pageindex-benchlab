@@ -1,0 +1,197 @@
+{
+  "method": "llamaindex_vector_rag",
+  "question_id": "fb_exp_023",
+  "question": "Did Pfizer grow its PPNE between FY20 and FY21?",
+  "answer": "Retrieved 6 chunks with LlamaIndex vector retrieval and lightweight reranking.",
+  "citations": [
+    {
+      "document_id": "PFIZER_2021_10K",
+      "page": 42,
+      "section": null,
+      "text": "Revenue (MILLIONS) Year Ended Dec. 31, % Change Product Global Revenues Region 2021 2020 Total Oper. Operational Results Commentary Biosimilars $2,343 Up 51% (operationally) U.S. $ 1,561 $ 899 74 Growth primarily driven by recent oncology monoclonal antibody biosimilar launches and growth from Retacrit in the U.S. Int’l. 782 628 25 19 Worldwide $ 2,343 $ 1,527 53 51 Hospital $7,301 Up 5% (operationally) U.S. $ 2,688 $ 2,705 (1) Growth primarily driven by the anti-infectives portfolio in internat",
+      "metadata": {
+        "chunk_id": "e8d33b79-aba2-4c1c-ae02-b0b9ea8da114",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5078234839871109,
+        "rerank_score": 59.76568173204442,
+        "matched_terms": [],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "PFIZER_2021_10K",
+      "page": 64,
+      "section": null,
+      "text": "common shareholders $ 3.65 $ 0.28 $ 3.93 $ 1.25 $ (0.07) $ 1.18 $ 1.92 $ (0.03) $ 1.89 Discontinued operations––net of tax (0.08) — (0.08) 0.46 (0.01) 0.45 0.95 (0.01) 0.94 Net income attributable to Pfizer Inc. common shareholders 3.57 0.28 3.85 1.71 (0.08) 1.63 2.87 (0.04) 2.82 Year Ended December 31, 2021 2020 2019 (MILLIONS) Previous Accounting Principle Impact of Change As Reported Previous Accounting Principle Impact of Change As Adjusted Previous Accounting Principle Impact of Change As A",
+      "metadata": {
+        "chunk_id": "bce4e24f-6d47-4192-96dc-e527a24f2f24",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.4839849836436511,
+        "rerank_score": 57.34016503103178,
+        "matched_terms": [],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "PFIZER_2021_10K",
+      "page": 139,
+      "section": null,
+      "text": "EXHIBIT 23 Consent of Independent Registered Public Accounting Firm To the Board of Directors Pfizer Inc.: We consent to the incorporation by reference in the registration statements listed below of Pfizer Inc. and Subsidiary Companies (Pfizer Inc.) of our reports dated February 24, 2022, with respect to the consolidated balance sheets of Pfizer Inc. as of December 31, 2021 and 2020, the related consolidated statements of income, comprehensive income, equity, and cash flows for each of the years",
+      "metadata": {
+        "chunk_id": "8c7eabeb-56c8-4b14-a1da-860f0ad377ec",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.47871672956693845,
+        "rerank_score": 56.78833962336051,
+        "matched_terms": [],
+        "citation_source": "rerank_fallback"
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "llamaindex_build_vector_index",
+      "target": "PFIZER_2021_10K",
+      "metadata": {
+        "page_count": 143,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "chunk_size": 900,
+        "chunk_overlap": 160,
+        "retrieve_top_k": 120,
+        "rerank_top_k": 6,
+        "finance_rerank": true,
+        "answer_context_chunk_count": 6,
+        "answer_context_chars": 12208,
+        "answer_context_words": 1881
+      }
+    },
+    {
+      "step": 2,
+      "action": "llamaindex_retrieve_node",
+      "target": "e8d33b79-aba2-4c1c-ae02-b0b9ea8da114",
+      "metadata": {
+        "page": 42,
+        "retrieval_rank": 3,
+        "initial_rank": 3,
+        "vector_score": 0.5078234839871109,
+        "rerank_score": 59.76568173204442,
+        "finance_boost": 8.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "matched_terms": []
+      }
+    },
+    {
+      "step": 3,
+      "action": "llamaindex_retrieve_node",
+      "target": "bce4e24f-6d47-4192-96dc-e527a24f2f24",
+      "metadata": {
+        "page": 64,
+        "retrieval_rank": 8,
+        "initial_rank": 8,
+        "vector_score": 0.4839849836436511,
+        "rerank_score": 57.34016503103178,
+        "finance_boost": 8.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "matched_terms": []
+      }
+    },
+    {
+      "step": 4,
+      "action": "llamaindex_retrieve_node",
+      "target": "8c7eabeb-56c8-4b14-a1da-860f0ad377ec",
+      "metadata": {
+        "page": 139,
+        "retrieval_rank": 11,
+        "initial_rank": 11,
+        "vector_score": 0.47871672956693845,
+        "rerank_score": 56.78833962336051,
+        "finance_boost": 8.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "matched_terms": []
+      }
+    },
+    {
+      "step": 5,
+      "action": "llamaindex_retrieve_node",
+      "target": "75be7e8e-19a7-40a9-9e22-c215c09685dd",
+      "metadata": {
+        "page": 60,
+        "retrieval_rank": 1,
+        "initial_rank": 1,
+        "vector_score": 0.5509827553256379,
+        "rerank_score": 56.09827553256379,
+        "finance_boost": 0.0,
+        "finance_boost_reasons": [],
+        "matched_terms": []
+      }
+    },
+    {
+      "step": 6,
+      "action": "llamaindex_retrieve_node",
+      "target": "e0239572-dd11-4489-b912-1048d508b9d3",
+      "metadata": {
+        "page": 39,
+        "retrieval_rank": 4,
+        "initial_rank": 4,
+        "vector_score": 0.49697929279967784,
+        "rerank_score": 56.04792927996778,
+        "finance_boost": 3.375,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "matched_terms": [
+          "its"
+        ]
+      }
+    },
+    {
+      "step": 7,
+      "action": "llamaindex_retrieve_node",
+      "target": "09705250-eca6-4c2c-a18f-828d1fb7d2cd",
+      "metadata": {
+        "page": 99,
+        "retrieval_rank": 9,
+        "initial_rank": 9,
+        "vector_score": 0.48359751107296867,
+        "rerank_score": 55.793084440630196,
+        "finance_boost": 6.5,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "matched_terms": []
+      }
+    }
+  ],
+  "token_usage": {
+    "input": null,
+    "output": null,
+    "total": null
+  },
+  "latency_ms": 11385,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\PFIZER_2021_10K.pdf",
+    "adapter_mode": "llamaindex_vector_retrieval",
+    "llm_enabled": false,
+    "model": null,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "page_count": 143,
+    "chunk_size": 900,
+    "chunk_overlap": 160,
+    "retrieve_top_k": 120,
+    "rerank_top_k": 6,
+    "max_citations": 3,
+    "finance_rerank": true,
+    "answer_context_chunk_count": 6,
+    "answer_context_chars": 12208,
+    "answer_context_words": 1881
+  }
+}

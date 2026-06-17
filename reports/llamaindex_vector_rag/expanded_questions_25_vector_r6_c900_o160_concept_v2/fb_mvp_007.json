@@ -1,0 +1,260 @@
+{
+  "method": "llamaindex_vector_rag",
+  "question_id": "fb_mvp_007",
+  "question": "Using only the information within the balance sheet, how much total assets did Costco have at the end of FY2021? Answer in USD millions.",
+  "answer": "Retrieved 6 chunks with LlamaIndex vector retrieval and lightweight reranking.",
+  "citations": [
+    {
+      "document_id": "COSTCO_2021_10K",
+      "page": 38,
+      "section": null,
+      "text": "Table of Contents COSTCO WHOLESALE CORPORATION CONSOLIDATED BALANCE SHEETS (amounts in millions, except par value and share data) August 29, 2021 August 30, 2020 ASSETS CURRENT ASSETS Cash and cash equivalents $ 11,258 $ 12,277 Short-term investments 917 1,028 Receivables, net 1,803 1,550 Merchandise inventories 14,215 12,242 Other current assets 1,312 1,023 Total current assets 29,505 28,120 OTHER ASSETS Property and equipment, net 23,492 21,807 Operating lease right-of-use assets 2,890 2,788 O",
+      "metadata": {
+        "chunk_id": "025b56cd-c7b4-43da-958d-9ffe8c1a5025",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5902819541900245,
+        "rerank_score": 122.00350406097776,
+        "matched_terms": [
+          "assets",
+          "balance",
+          "equity",
+          "liabilities",
+          "millions",
+          "sheets",
+          "total"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "COSTCO_2021_10K",
+      "page": 51,
+      "section": null,
+      "text": "Table of Contents Note 4—Fair Value Measurement Assets and Liabilities Measured at Fair Value on a Recurring Basis The table below presents information regarding the Company’s financial assets and financial liabilities that are measured at fair value on a recurring basis and indicate the level within the hierarchy reflecting the valuation techniques utilized to determine such fair value. Level 2 2021 2020 Investment in government and agency securities $ 393 $ 508 Forward foreign-exchange contrac",
+      "metadata": {
+        "chunk_id": "102865e7-3900-472c-b627-c28d039c1c75",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.6204517483781504,
+        "rerank_score": 88.54517483781504,
+        "matched_terms": [
+          "assets",
+          "balance",
+          "did",
+          "end",
+          "information",
+          "liabilities",
+          "sheets",
+          "total"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "COSTCO_2021_10K",
+      "page": 64,
+      "section": null,
+      "text": "cies of the segments are as described in Note 1. Inter-segment net sales and expenses have been eliminated in computing total revenue and operating income. Certain operating expenses, predominantly stock-based compensation, incurred on behalf of the Company's Canadian and Other International operations, are included in the U.S. operations because those costs generally come under the responsibility of U.S. management. The following table provides information for the Company's reportable segments:",
+      "metadata": {
+        "chunk_id": "37d85049-43bc-449b-8609-f35f933cca8f",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.49220973309567934,
+        "rerank_score": 85.06047948240744,
+        "matched_terms": [
+          "assets",
+          "information",
+          "total"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "llamaindex_build_vector_index",
+      "target": "COSTCO_2021_10K",
+      "metadata": {
+        "page_count": 76,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "chunk_size": 900,
+        "chunk_overlap": 160,
+        "retrieve_top_k": 120,
+        "rerank_top_k": 6,
+        "finance_rerank": true,
+        "answer_context_chunk_count": 6,
+        "answer_context_chars": 13470,
+        "answer_context_words": 2024
+      }
+    },
+    {
+      "step": 2,
+      "action": "llamaindex_retrieve_node",
+      "target": "025b56cd-c7b4-43da-958d-9ffe8c1a5025",
+      "metadata": {
+        "page": 38,
+        "retrieval_rank": 3,
+        "initial_rank": 3,
+        "vector_score": 0.5902819541900245,
+        "rerank_score": 122.00350406097776,
+        "finance_boost": 42.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "balance_sheet_title",
+          "total_assets_line_item"
+        ],
+        "matched_terms": [
+          "assets",
+          "balance",
+          "equity",
+          "liabilities",
+          "millions",
+          "sheets",
+          "total"
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "action": "llamaindex_retrieve_node",
+      "target": "102865e7-3900-472c-b627-c28d039c1c75",
+      "metadata": {
+        "page": 51,
+        "retrieval_rank": 1,
+        "initial_rank": 1,
+        "vector_score": 0.6204517483781504,
+        "rerank_score": 88.54517483781504,
+        "finance_boost": 6.5,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "matched_terms": [
+          "assets",
+          "balance",
+          "did",
+          "end",
+          "information",
+          "liabilities",
+          "sheets",
+          "total"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "llamaindex_retrieve_node",
+      "target": "37d85049-43bc-449b-8609-f35f933cca8f",
+      "metadata": {
+        "page": 64,
+        "retrieval_rank": 14,
+        "initial_rank": 14,
+        "vector_score": 0.49220973309567934,
+        "rerank_score": 85.06047948240744,
+        "finance_boost": 26.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "total_assets_line_item"
+        ],
+        "matched_terms": [
+          "assets",
+          "information",
+          "total"
+        ]
+      }
+    },
+    {
+      "step": 5,
+      "action": "llamaindex_retrieve_node",
+      "target": "65011ccd-f5f2-4830-8185-9d86b78cc863",
+      "metadata": {
+        "page": 53,
+        "retrieval_rank": 4,
+        "initial_rank": 4,
+        "vector_score": 0.5830545743351793,
+        "rerank_score": 81.26842039648089,
+        "finance_boost": 7.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "matched_terms": [
+          "assets",
+          "balance",
+          "information",
+          "liabilities",
+          "sheets",
+          "total"
+        ]
+      }
+    },
+    {
+      "step": 6,
+      "action": "llamaindex_retrieve_node",
+      "target": "2a269274-1bca-405d-bbbb-872d9e415304",
+      "metadata": {
+        "page": 40,
+        "retrieval_rank": 5,
+        "initial_rank": 5,
+        "vector_score": 0.5562585550091557,
+        "rerank_score": 74.57647278486618,
+        "finance_boost": 8.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "matched_terms": [
+          "assets",
+          "end",
+          "information",
+          "liabilities",
+          "millions"
+        ]
+      }
+    },
+    {
+      "step": 7,
+      "action": "llamaindex_retrieve_node",
+      "target": "5251508f-13f9-4049-9170-0edddcab2e24",
+      "metadata": {
+        "page": 39,
+        "retrieval_rank": 7,
+        "initial_rank": 7,
+        "vector_score": 0.5388681707279269,
+        "rerank_score": 70.81274299871862,
+        "finance_boost": 8.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "matched_terms": [
+          "balance",
+          "equity",
+          "millions",
+          "total"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": null,
+    "output": null,
+    "total": null
+  },
+  "latency_ms": 6957,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\COSTCO_2021_10K.pdf",
+    "adapter_mode": "llamaindex_vector_retrieval",
+    "llm_enabled": false,
+    "model": null,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "page_count": 76,
+    "chunk_size": 900,
+    "chunk_overlap": 160,
+    "retrieve_top_k": 120,
+    "rerank_top_k": 6,
+    "max_citations": 3,
+    "finance_rerank": true,
+    "answer_context_chunk_count": 6,
+    "answer_context_chars": 13470,
+    "answer_context_words": 2024
+  }
+}

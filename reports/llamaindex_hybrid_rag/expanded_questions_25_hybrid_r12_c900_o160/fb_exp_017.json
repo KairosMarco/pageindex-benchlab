@@ -1,0 +1,413 @@
+{
+  "method": "llamaindex_hybrid_rag",
+  "question_id": "fb_exp_017",
+  "question": "Does Corning have positive working capital based on FY2022 data? If working capital is not a useful or relevant metric for this company, then please state that and explain why.",
+  "answer": "Retrieved 12 chunks with LlamaIndex BM25/vector hybrid fusion.",
+  "citations": [
+    {
+      "document_id": "CORNING_2022_10K",
+      "page": 34,
+      "section": null,
+      "text": "Table of Contents LIQUIDITY AND CAPITAL RESOURCES Our financial condition and liquidity are strong. We are not aware of any known trends, demands, commitments, events or uncertainties that will result in or that are reasonably likely to result in a material decrease in our liquidity. In addition, other than items discussed, there are no known material trends, favorable or unfavorable, in our capital resources and no expected material changes in the mix of such resources. Our major source of fund",
+      "metadata": {
+        "chunk_id": "6cbf68c7-4d76-41b6-9a8e-2263a64de284",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.4256792583054281,
+        "rerank_score": 37.24803986725395,
+        "matched_terms": [
+          "capital",
+          "data",
+          "working"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "CORNING_2022_10K",
+      "page": 61,
+      "section": null,
+      "text": "oss on disposal of assets 189 57 138 Severance charges (reversals) 70 (13) 148 Severance payments (11) (26) (147) Share-based compensation expense 175 190 207 Translation (gain) loss on Japanese yen-denominated debt (191) (180) 86 Deferred tax (benefit) provision (46) 16 (20) Pension plan contributions (24) (221) Translated earnings contract (gain) loss (351) (354) 38 Unrealized translation loss (gain) on transactions 68 77 (133) (Gain) loss on investment (8) 23 (107) Asbestos claim payments (13",
+      "metadata": {
+        "chunk_id": "975eef42-c713-40a3-ab2b-2b5ca0ddde9a",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5064829268401121,
+        "rerank_score": 36.35442682459338,
+        "matched_terms": [
+          "based",
+          "capital"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "CORNING_2022_10K",
+      "page": 23,
+      "section": null,
+      "text": "organized as follows: • Overview • Results of Operations • Segment Analysis • Core Performance Measures • Liquidity and Capital Resources • Environment • Critical Accounting Estimates • New Accounting Standards • Forward-Looking Statements OVERVIEW We introduced our 2020-to-2023 Strategy & Growth Framework with a focus on capturing opportunities to sell more Corning content through each of our Market- Access Platforms. Our goals included core sales growth at a compound annual growth rate of 6 to",
+      "metadata": {
+        "chunk_id": "172b1035-b948-4e3b-a2c5-e78e7f93d2ba",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5174556450669239,
+        "rerank_score": 35.869502430819566,
+        "matched_terms": [
+          "capital",
+          "data"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "llamaindex_build_hybrid_index",
+      "target": "CORNING_2022_10K",
+      "metadata": {
+        "page_count": 159,
+        "node_count": 201,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "chunk_size": 900,
+        "chunk_overlap": 160,
+        "vector_top_k": 120,
+        "bm25_top_k": 120,
+        "fusion_top_k": 120,
+        "rerank_top_k": 12,
+        "rrf_k": 60,
+        "finance_rerank": true,
+        "cross_encoder_model": null,
+        "cross_encoder_candidates": 60,
+        "answer_context_chunk_count": 12,
+        "answer_context_chars": 39340,
+        "answer_context_words": 5511
+      }
+    },
+    {
+      "step": 2,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "6cbf68c7-4d76-41b6-9a8e-2263a64de284",
+      "metadata": {
+        "page": 34,
+        "bm25_rank": 1,
+        "vector_rank": 51,
+        "fusion_rank": 6,
+        "bm25_score": 8.269255638122559,
+        "vector_score": 0.4256792583054281,
+        "rrf_score": 0.02540245163195983,
+        "rerank_score": 37.24803986725395,
+        "finance_boost": 4.875,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "capital",
+          "data",
+          "working"
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "975eef42-c713-40a3-ab2b-2b5ca0ddde9a",
+      "metadata": {
+        "page": 61,
+        "bm25_rank": 43,
+        "vector_rank": 13,
+        "fusion_rank": 10,
+        "bm25_score": 2.979053497314453,
+        "vector_score": 0.5064829268401121,
+        "rrf_score": 0.02340736800106397,
+        "rerank_score": 36.35442682459338,
+        "finance_boost": 8.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "based",
+          "capital"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "172b1035-b948-4e3b-a2c5-e78e7f93d2ba",
+      "metadata": {
+        "page": 23,
+        "bm25_rank": 14,
+        "vector_rank": 9,
+        "fusion_rank": 3,
+        "bm25_score": 4.433096885681152,
+        "vector_score": 0.5174556450669239,
+        "rrf_score": 0.028006267136701922,
+        "rerank_score": 35.869502430819566,
+        "finance_boost": 2.875,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "capital",
+          "data"
+        ]
+      }
+    },
+    {
+      "step": 5,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "c9c46262-f886-4794-99aa-5b352603635f",
+      "metadata": {
+        "page": 20,
+        "bm25_rank": 12,
+        "vector_rank": 25,
+        "fusion_rank": 5,
+        "bm25_score": 4.817504405975342,
+        "vector_score": 0.47663726449643,
+        "rrf_score": 0.02565359477124183,
+        "rerank_score": 35.38006535947712,
+        "finance_boost": 4.75,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "based",
+          "capital"
+        ]
+      }
+    },
+    {
+      "step": 6,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "b20dde87-5ebe-4783-acc5-12c34b3d3082",
+      "metadata": {
+        "page": 102,
+        "bm25_rank": 39,
+        "vector_rank": 11,
+        "fusion_rank": 7,
+        "bm25_score": 3.001065492630005,
+        "vector_score": 0.5069515218313808,
+        "rrf_score": 0.024185517143263623,
+        "rerank_score": 35.15022302561656,
+        "finance_boost": 8.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "capital"
+        ]
+      }
+    },
+    {
+      "step": 7,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "ea61beb1-a816-4afe-bee1-98a105f92477",
+      "metadata": {
+        "page": 50,
+        "bm25_rank": 42,
+        "vector_rank": 17,
+        "fusion_rank": 11,
+        "bm25_score": 2.99033522605896,
+        "vector_score": 0.4888006517138942,
+        "rrf_score": 0.02279093455564044,
+        "rerank_score": 33.73211102622867,
+        "finance_boost": 8.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "data"
+        ]
+      }
+    },
+    {
+      "step": 8,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "7116c7b9-b05e-4b39-a116-46b35d91fe77",
+      "metadata": {
+        "page": 60,
+        "bm25_rank": 73,
+        "vector_rank": 7,
+        "fusion_rank": 12,
+        "bm25_score": 2.1143321990966797,
+        "vector_score": 0.525225838062973,
+        "rrf_score": 0.022444170126809562,
+        "rerank_score": 33.37946424445663,
+        "finance_boost": 8.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "capital"
+        ]
+      }
+    },
+    {
+      "step": 9,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "898c7a55-afde-481d-9fa3-5bd6818ab71e",
+      "metadata": {
+        "page": 2,
+        "bm25_rank": 4,
+        "vector_rank": 19,
+        "fusion_rank": 2,
+        "bm25_score": 7.138564109802246,
+        "vector_score": 0.4870623189195761,
+        "rrf_score": 0.028283227848101264,
+        "rerank_score": 33.277345495160084,
+        "finance_boost": 0.0,
+        "finance_boost_reasons": [],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "based",
+          "data"
+        ]
+      }
+    },
+    {
+      "step": 10,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "03ca57a9-b1f7-4d73-b168-1c062707613d",
+      "metadata": {
+        "page": 56,
+        "bm25_rank": 23,
+        "vector_rank": 3,
+        "fusion_rank": 4,
+        "bm25_score": 3.576846122741699,
+        "vector_score": 0.5534680330828456,
+        "rrf_score": 0.02792120864410021,
+        "rerank_score": 32.903561585276684,
+        "finance_boost": 2.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "based"
+        ]
+      }
+    },
+    {
+      "step": 11,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "b7324895-3cbc-4acb-b8aa-5a702b78459d",
+      "metadata": {
+        "page": 66,
+        "bm25_rank": 7,
+        "vector_rank": 79,
+        "fusion_rank": 13,
+        "bm25_score": 6.3260369300842285,
+        "vector_score": 0.3800691712779875,
+        "rrf_score": 0.022119617738644903,
+        "rerank_score": 32.79902950335079,
+        "finance_boost": 3.75,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "based",
+          "capital",
+          "useful"
+        ]
+      }
+    },
+    {
+      "step": 12,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "33c4f651-dc1b-4227-b880-eda0e8d69324",
+      "metadata": {
+        "page": 62,
+        "bm25_rank": 62,
+        "vector_rank": 18,
+        "fusion_rank": 18,
+        "bm25_score": 2.5122010707855225,
+        "vector_score": 0.48759617145672224,
+        "rrf_score": 0.02101723413198823,
+        "rerank_score": 31.917234131988227,
+        "finance_boost": 8.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "capital"
+        ]
+      }
+    },
+    {
+      "step": 13,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "94f9759d-54e5-41c0-98f1-a2357cbaf97d",
+      "metadata": {
+        "page": 68,
+        "bm25_rank": 10,
+        "vector_rank": 76,
+        "fusion_rank": 15,
+        "bm25_score": 5.170709133148193,
+        "vector_score": 0.3918092451537021,
+        "rrf_score": 0.021638655462184873,
+        "rerank_score": 31.4313025210084,
+        "finance_boost": 2.875,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "based",
+          "capital",
+          "relevant"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": null,
+    "output": null,
+    "total": null
+  },
+  "latency_ms": 10185,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\CORNING_2022_10K.pdf",
+    "adapter_mode": "llamaindex_bm25_vector_rrf_plus_rerank",
+    "llm_enabled": false,
+    "model": null,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "page_count": 159,
+    "node_count": 201,
+    "chunk_size": 900,
+    "chunk_overlap": 160,
+    "vector_top_k": 120,
+    "bm25_top_k": 120,
+    "fusion_top_k": 120,
+    "rerank_top_k": 12,
+    "rrf_k": 60,
+    "max_citations": 3,
+    "finance_rerank": true,
+    "cross_encoder_model": null,
+    "cross_encoder_candidates": 60,
+    "answer_context_chunk_count": 12,
+    "answer_context_chars": 39340,
+    "answer_context_words": 5511
+  }
+}

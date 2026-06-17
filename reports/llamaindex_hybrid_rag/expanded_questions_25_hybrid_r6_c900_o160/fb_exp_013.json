@@ -1,0 +1,289 @@
+{
+  "method": "llamaindex_hybrid_rag",
+  "question_id": "fb_exp_013",
+  "question": "What is Adobe's year-over-year change in unadjusted operating income from FY2015 to FY2016 (in units of percents and round to one decimal place)? Give a solution to the question by using the income statement.",
+  "answer": "Retrieved 6 chunks with LlamaIndex BM25/vector hybrid fusion.",
+  "citations": [
+    {
+      "document_id": "ADOBE_2016_10K",
+      "page": 62,
+      "section": null,
+      "text": "Table of Contents 62 ADOBE SYSTEMS INCORPORATED CONSOLIDATED STATEMENTS OF INCOME (In thousands, except per share data) Years Ended December 2, 2016 November 27, 2015 November 28, 2014 Revenue: Subscription $ 4,584,833 $ 3,223,904 $ 2,076,584 Product 800,498 1,125,146 1,627,803 Services and support 469,099 446,461 442,678 Total revenue 5,854,430 4,795,511 4,147,065 Cost of revenue: Subscription 461,860 409,194 335,432 Product 68,917 90,035 97,099 Services and support 289,131 245,088 189,549 Tota",
+      "metadata": {
+        "chunk_id": "353f3fa0-ec4b-4642-8f2f-dfc3aa017d46",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5189783274622933,
+        "rerank_score": 52.10139056345953,
+        "matched_terms": [
+          "cost",
+          "income",
+          "operating",
+          "revenue",
+          "sales"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "ADOBE_2016_10K",
+      "page": 65,
+      "section": null,
+      "text": "TATEMENTS OF CASH FLOWS (In thousands) Years Ended December 2, 2016 November 27, 2015 November 28, 2014 Cash flows from operating activities: Net income $ 1,168,782 $ 629,551 $ 268,395 Adjustments to reconcile net income to net cash provided by operating activities: Depreciation, amortization and accretion 331,535 339,473 313,590 Stock-based compensation 349,912 335,859 333,701 Deferred income taxes 24,222 (69,657) (26,089) Gain on the sale of property — (21,415) — Unrealized (gains) losses on i",
+      "metadata": {
+        "chunk_id": "ba65671c-6696-47b2-9d32-c53bf261a602",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5943246099012911,
+        "rerank_score": 46.91431209237607,
+        "matched_terms": [
+          "cost",
+          "income",
+          "operating",
+          "revenue",
+          "sales"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "ADOBE_2016_10K",
+      "page": 92,
+      "section": null,
+      "text": "Table of Contents ADOBE SYSTEMS INCORPORATED NOTES TO CONSOLIDATED FINANCIAL STATEMENTS (Continued) 92 Total stock-based compensation costs that have been included in our Consolidated Statements of Income for fiscal 2016, 2015 and 2014 were as follows (in thousands): Income Statement Classifications Cost of Revenue– Subscription Cost of Revenue– Services and Support Research and Development Sales and Marketing General and Administrative Total(1) Option Grants and Stock Purchase Rights 2016 $ 1,4",
+      "metadata": {
+        "chunk_id": "fbf1f497-8e20-4d4d-a1a5-887c418b8763",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5231041109659705,
+        "rerank_score": 43.62686025408349,
+        "matched_terms": [
+          "cost",
+          "income",
+          "revenue",
+          "sales",
+          "statement"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "llamaindex_build_hybrid_index",
+      "target": "ADOBE_2016_10K",
+      "metadata": {
+        "page_count": 112,
+        "node_count": 150,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "chunk_size": 900,
+        "chunk_overlap": 160,
+        "vector_top_k": 120,
+        "bm25_top_k": 120,
+        "fusion_top_k": 120,
+        "rerank_top_k": 6,
+        "rrf_k": 60,
+        "finance_rerank": true,
+        "cross_encoder_model": null,
+        "cross_encoder_candidates": 60,
+        "answer_context_chunk_count": 6,
+        "answer_context_chars": 16601,
+        "answer_context_words": 2416
+      }
+    },
+    {
+      "step": 2,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "353f3fa0-ec4b-4642-8f2f-dfc3aa017d46",
+      "metadata": {
+        "page": 62,
+        "bm25_rank": 28,
+        "vector_rank": 18,
+        "fusion_rank": 13,
+        "bm25_score": 4.257489204406738,
+        "vector_score": 0.5189783274622933,
+        "rrf_score": 0.024184149184149184,
+        "rerank_score": 52.10139056345953,
+        "finance_boost": 8.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "cost",
+          "income",
+          "operating",
+          "revenue",
+          "sales"
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "ba65671c-6696-47b2-9d32-c53bf261a602",
+      "metadata": {
+        "page": 65,
+        "bm25_rank": 23,
+        "vector_rank": 3,
+        "fusion_rank": 2,
+        "bm25_score": 4.3571672439575195,
+        "vector_score": 0.5943246099012911,
+        "rrf_score": 0.02792120864410021,
+        "rerank_score": 46.91431209237607,
+        "finance_boost": 8.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "cost",
+          "income",
+          "operating",
+          "revenue",
+          "sales"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "fbf1f497-8e20-4d4d-a1a5-887c418b8763",
+      "metadata": {
+        "page": 92,
+        "bm25_rank": 56,
+        "vector_rank": 16,
+        "fusion_rank": 23,
+        "bm25_score": 3.1086010932922363,
+        "vector_score": 0.5231041109659705,
+        "rrf_score": 0.021778584392014518,
+        "rerank_score": 43.62686025408349,
+        "finance_boost": 8.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "cost",
+          "income",
+          "revenue",
+          "sales",
+          "statement"
+        ]
+      }
+    },
+    {
+      "step": 5,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "975d6881-f633-45f7-a48f-9260242b282d",
+      "metadata": {
+        "page": 36,
+        "bm25_rank": 35,
+        "vector_rank": 4,
+        "fusion_rank": 5,
+        "bm25_score": 3.851045608520508,
+        "vector_score": 0.5939720944904441,
+        "rrf_score": 0.026151315789473682,
+        "rerank_score": 43.123729582577134,
+        "finance_boost": 8.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "income",
+          "operating",
+          "operations",
+          "revenue"
+        ]
+      }
+    },
+    {
+      "step": 6,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "ed930737-036f-4e88-ae33-2a59ad153540",
+      "metadata": {
+        "page": 52,
+        "bm25_rank": 11,
+        "vector_rank": 7,
+        "fusion_rank": 1,
+        "bm25_score": 5.024847030639648,
+        "vector_score": 0.5795496701191466,
+        "rrf_score": 0.02900988017658188,
+        "rerank_score": 42.00988017658188,
+        "finance_boost": 6.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "change",
+          "income",
+          "revenue"
+        ]
+      }
+    },
+    {
+      "step": 7,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "ba3e1dcf-8e60-465a-ad44-8e0229254d6b",
+      "metadata": {
+        "page": 86,
+        "bm25_rank": 22,
+        "vector_rank": 22,
+        "fusion_rank": 12,
+        "bm25_score": 4.38228702545166,
+        "vector_score": 0.5007398233731271,
+        "rrf_score": 0.024390243902439025,
+        "rerank_score": 41.189381833473504,
+        "finance_boost": 7.875,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "change",
+          "income",
+          "operating",
+          "revenue"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": null,
+    "output": null,
+    "total": null
+  },
+  "latency_ms": 9525,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\ADOBE_2016_10K.pdf",
+    "adapter_mode": "llamaindex_bm25_vector_rrf_plus_rerank",
+    "llm_enabled": false,
+    "model": null,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "page_count": 112,
+    "node_count": 150,
+    "chunk_size": 900,
+    "chunk_overlap": 160,
+    "vector_top_k": 120,
+    "bm25_top_k": 120,
+    "fusion_top_k": 120,
+    "rerank_top_k": 6,
+    "rrf_k": 60,
+    "max_citations": 3,
+    "finance_rerank": true,
+    "cross_encoder_model": null,
+    "cross_encoder_candidates": 60,
+    "answer_context_chunk_count": 6,
+    "answer_context_chars": 16601,
+    "answer_context_words": 2416
+  }
+}

@@ -1,0 +1,195 @@
+{
+  "method": "llamaindex_hybrid_rag",
+  "question_id": "fb_exp_017",
+  "question": "Does Corning have positive working capital based on FY2022 data? If working capital is not a useful or relevant metric for this company, then please state that and explain why.",
+  "answer": "Retrieved 3 chunks with LlamaIndex BM25/vector hybrid fusion.",
+  "citations": [
+    {
+      "document_id": "CORNING_2022_10K",
+      "page": 60,
+      "section": null,
+      "text": "e $0.50 per share; Shares authorized 3.8 billion; Shares issued: 1.8 billion and 1.8 billion 910 907 Additional paid-in capital – common stock 16,682 16,475 Retained earnings 16,778 16,389 Treasury stock, at cost; Shares held: 977 million and 970 million (20,532) (20,263) Accumulated other comprehensive loss (1,830) (1,175) Total Corning Incorporated shareholders’ equity 12,008 12,333 Non-controlling interest 267 212 Total equity 12,275 12,545 Total Liabilities and Equity $ 29,499 $ 30,154 The a",
+      "metadata": {
+        "chunk_id": "40e76abc-2f8f-4399-b6ea-0b773cf6b8a7",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.525225838062973,
+        "rerank_score": 95.37946424445663,
+        "matched_terms": [
+          "capital"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "CORNING_2022_10K",
+      "page": 20,
+      "section": null,
+      "text": "nistrative 2.4 1.8 0.6 Research and development 3.9 1.9 2.0 Warehouse 3.8 3.0 0.8 Total 65.8 27.4 38.4 Total assets and capital expenditures by reportable segment are included in Note 19 (Reportable Segments) in the accompanying notes to the consolidated financial statements. Information concerning lease commitments is included in Note 6 (Leases) in the accompanying notes to the consolidated financial statements. Item 3. Legal Proceedings Corning is a defendant in various lawsuits and is subject",
+      "metadata": {
+        "chunk_id": "d28e0027-731c-4c1f-b832-0a392519c7d4",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.47663726449643,
+        "rerank_score": 53.38006535947712,
+        "matched_terms": [
+          "based",
+          "capital"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "CORNING_2022_10K",
+      "page": 34,
+      "section": null,
+      "text": "Table of Contents LIQUIDITY AND CAPITAL RESOURCES Our financial condition and liquidity are strong. We are not aware of any known trends, demands, commitments, events or uncertainties that will result in or that are reasonably likely to result in a material decrease in our liquidity. In addition, other than items discussed, there are no known material trends, favorable or unfavorable, in our capital resources and no expected material changes in the mix of such resources. Our major source of fund",
+      "metadata": {
+        "chunk_id": "b5f9b519-20a0-4f63-8f51-daede3d33faf",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.4256792583054281,
+        "rerank_score": 37.24803986725395,
+        "matched_terms": [
+          "capital",
+          "data",
+          "working"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "llamaindex_build_hybrid_index",
+      "target": "CORNING_2022_10K",
+      "metadata": {
+        "page_count": 159,
+        "node_count": 201,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "chunk_size": 900,
+        "chunk_overlap": 160,
+        "vector_top_k": 120,
+        "bm25_top_k": 120,
+        "fusion_top_k": 120,
+        "rerank_top_k": 3,
+        "rrf_k": 60,
+        "finance_rerank": true,
+        "cross_encoder_model": null,
+        "cross_encoder_candidates": 60,
+        "answer_context_chunk_count": 3,
+        "answer_context_chars": 8372,
+        "answer_context_words": 1146
+      }
+    },
+    {
+      "step": 2,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "40e76abc-2f8f-4399-b6ea-0b773cf6b8a7",
+      "metadata": {
+        "page": 60,
+        "bm25_rank": 73,
+        "vector_rank": 7,
+        "fusion_rank": 12,
+        "bm25_score": 2.1143321990966797,
+        "vector_score": 0.525225838062973,
+        "rrf_score": 0.022444170126809562,
+        "rerank_score": 95.37946424445663,
+        "finance_boost": 70.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "balance_sheet_title",
+          "total_assets_line_item",
+          "working_capital_line_items"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "capital"
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "d28e0027-731c-4c1f-b832-0a392519c7d4",
+      "metadata": {
+        "page": 20,
+        "bm25_rank": 12,
+        "vector_rank": 25,
+        "fusion_rank": 5,
+        "bm25_score": 4.817504405975342,
+        "vector_score": 0.47663726449643,
+        "rrf_score": 0.02565359477124183,
+        "rerank_score": 53.38006535947712,
+        "finance_boost": 22.75,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "total_assets_line_item"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "based",
+          "capital"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "b5f9b519-20a0-4f63-8f51-daede3d33faf",
+      "metadata": {
+        "page": 34,
+        "bm25_rank": 1,
+        "vector_rank": 51,
+        "fusion_rank": 6,
+        "bm25_score": 8.269255638122559,
+        "vector_score": 0.4256792583054281,
+        "rrf_score": 0.02540245163195983,
+        "rerank_score": 37.24803986725395,
+        "finance_boost": 4.875,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "capital",
+          "data",
+          "working"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": null,
+    "output": null,
+    "total": null
+  },
+  "latency_ms": 10816,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\CORNING_2022_10K.pdf",
+    "adapter_mode": "llamaindex_bm25_vector_rrf_plus_rerank",
+    "llm_enabled": false,
+    "model": null,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "page_count": 159,
+    "node_count": 201,
+    "chunk_size": 900,
+    "chunk_overlap": 160,
+    "vector_top_k": 120,
+    "bm25_top_k": 120,
+    "fusion_top_k": 120,
+    "rerank_top_k": 3,
+    "rrf_k": 60,
+    "max_citations": 3,
+    "finance_rerank": true,
+    "cross_encoder_model": null,
+    "cross_encoder_candidates": 60,
+    "answer_context_chunk_count": 3,
+    "answer_context_chars": 8372,
+    "answer_context_words": 1146
+  }
+}

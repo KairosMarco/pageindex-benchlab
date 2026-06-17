@@ -1,0 +1,267 @@
+{
+  "method": "llamaindex_hybrid_rag",
+  "question_id": "fb_exp_020",
+  "question": "Is CVS Health a capital-intensive business based on FY2022 data?",
+  "answer": "Retrieved 6 chunks with LlamaIndex BM25/vector hybrid fusion.",
+  "citations": [
+    {
+      "document_id": "CVSHEALTH_2022_10K",
+      "page": 70,
+      "section": null,
+      "text": "R, SYY, WBA, WMT). (3) Includes 63 companies. The year-ended values of each investment shown in the preceding graph are based on share price appreciation plus dividends, with the dividends reinvested as of the last business day of the month during which such dividends were ex-dividend. The calculations exclude trading commissions and taxes. Total shareholder returns from each investment can be calculated from the year-end investment values shown beneath the graph. Item 6. Reserved Not applicable",
+      "metadata": {
+        "chunk_id": "4929f85b-bf0f-4e2e-bc6a-a2d7d07e4d12",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.537597075114149,
+        "rerank_score": 39.15982909287757,
+        "matched_terms": [
+          "based",
+          "business"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "CVSHEALTH_2022_10K",
+      "page": 142,
+      "section": null,
+      "text": "Capital gains and losses recognized during the year ended December 31, 2022 related to investments in equity securities held as of December 31, 2022 were not material. Excluding amounts related to experience-rated products, proceeds from the sale of available-for-sale debt securities and the related gross realized capital gains and losses in the years ended December 31, 2022, 2021 and 2020 were as follows: In millions 2022 2021 2020 Proceeds from sales $ 4,243 $ 3,572 $ 3,913 Gross realized capi",
+      "metadata": {
+        "chunk_id": "712f2bf5-11b1-4d3f-99d3-775356062a0d",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.48031168308733413,
+        "rerank_score": 38.74671629228667,
+        "matched_terms": [
+          "based",
+          "capital",
+          "data"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "CVSHEALTH_2022_10K",
+      "page": 4,
+      "section": null,
+      "text": "Table of Contents PART I Item 1. Business. Overview CVS Health Corporation, together with its subsidiaries (collectively, “CVS Health,” the “Company,” “we,” “our” or “us”), is a leading diversified health solutions company reshaping health care to help make healthier happen for more Americans. In an increasingly connected and digital world, CVS Health is meeting people wherever they are and changing health care to meet their needs. The Company has more than 9,000 retail locations, more than 1,10",
+      "metadata": {
+        "chunk_id": "6b482a3f-e04c-45d9-ba84-60ac700e03cd",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5443768072300159,
+        "rerank_score": 38.47966713769823,
+        "matched_terms": [
+          "based",
+          "business"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "llamaindex_build_hybrid_index",
+      "target": "CVSHEALTH_2022_10K",
+      "metadata": {
+        "page_count": 213,
+        "node_count": 329,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "chunk_size": 900,
+        "chunk_overlap": 160,
+        "vector_top_k": 120,
+        "bm25_top_k": 120,
+        "fusion_top_k": 120,
+        "rerank_top_k": 6,
+        "rrf_k": 60,
+        "finance_rerank": true,
+        "cross_encoder_model": null,
+        "cross_encoder_candidates": 60,
+        "answer_context_chunk_count": 6,
+        "answer_context_chars": 17188,
+        "answer_context_words": 2619
+      }
+    },
+    {
+      "step": 2,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "4929f85b-bf0f-4e2e-bc6a-a2d7d07e4d12",
+      "metadata": {
+        "page": 70,
+        "bm25_rank": 20,
+        "vector_rank": 7,
+        "fusion_rank": 4,
+        "bm25_score": 2.256438970565796,
+        "vector_score": 0.537597075114149,
+        "rrf_score": 0.027425373134328357,
+        "rerank_score": 39.15982909287757,
+        "finance_boost": 6.75,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "based",
+          "business"
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "712f2bf5-11b1-4d3f-99d3-775356062a0d",
+      "metadata": {
+        "page": 142,
+        "bm25_rank": 1,
+        "vector_rank": 28,
+        "fusion_rank": 3,
+        "bm25_score": 3.2524359226226807,
+        "vector_score": 0.48031168308733413,
+        "rrf_score": 0.027757078986587184,
+        "rerank_score": 38.74671629228667,
+        "finance_boost": 4.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "based",
+          "capital",
+          "data"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "6b482a3f-e04c-45d9-ba84-60ac700e03cd",
+      "metadata": {
+        "page": 4,
+        "bm25_rank": 15,
+        "vector_rank": 6,
+        "fusion_rank": 2,
+        "bm25_score": 2.3597476482391357,
+        "vector_score": 0.5443768072300159,
+        "rrf_score": 0.028484848484848488,
+        "rerank_score": 38.47966713769823,
+        "finance_boost": 5.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "based",
+          "business"
+        ]
+      }
+    },
+    {
+      "step": 5,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "17e5a827-13bb-497b-9ee7-ed402a9b9ba4",
+      "metadata": {
+        "page": 66,
+        "bm25_rank": 16,
+        "vector_rank": 5,
+        "fusion_rank": 1,
+        "bm25_score": 2.3083558082580566,
+        "vector_score": 0.5481664249844329,
+        "rrf_score": 0.02854251012145749,
+        "rerank_score": 34.79251012145749,
+        "finance_boost": 3.25,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "data"
+        ]
+      }
+    },
+    {
+      "step": 6,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "329b5698-16fb-4585-8966-b1b4524e0ee4",
+      "metadata": {
+        "page": 163,
+        "bm25_rank": 13,
+        "vector_rank": 64,
+        "fusion_rank": 11,
+        "bm25_score": 2.4961812496185303,
+        "vector_score": 0.43427646951345605,
+        "rrf_score": 0.02176314626601856,
+        "rerank_score": 34.71133279451597,
+        "finance_boost": 8.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "based",
+          "capital"
+        ]
+      }
+    },
+    {
+      "step": 7,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "469335db-e757-4a07-be6f-c5308d54c75a",
+      "metadata": {
+        "page": 168,
+        "bm25_rank": 27,
+        "vector_rank": 37,
+        "fusion_rank": 10,
+        "bm25_score": 2.1771931648254395,
+        "vector_score": 0.4692379298192556,
+        "rrf_score": 0.02180353122407868,
+        "rerank_score": 31.631899099726347,
+        "finance_boost": 4.875,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "business",
+          "capital"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": null,
+    "output": null,
+    "total": null
+  },
+  "latency_ms": 13314,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\CVSHEALTH_2022_10K.pdf",
+    "adapter_mode": "llamaindex_bm25_vector_rrf_plus_rerank",
+    "llm_enabled": false,
+    "model": null,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "page_count": 213,
+    "node_count": 329,
+    "chunk_size": 900,
+    "chunk_overlap": 160,
+    "vector_top_k": 120,
+    "bm25_top_k": 120,
+    "fusion_top_k": 120,
+    "rerank_top_k": 6,
+    "rrf_k": 60,
+    "max_citations": 3,
+    "finance_rerank": true,
+    "cross_encoder_model": null,
+    "cross_encoder_candidates": 60,
+    "answer_context_chunk_count": 6,
+    "answer_context_chars": 17188,
+    "answer_context_words": 2619
+  }
+}

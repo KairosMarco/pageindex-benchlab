@@ -1,0 +1,341 @@
+{
+  "method": "llamaindex_vector_rag",
+  "question_id": "fb_exp_014",
+  "question": "What drove gross margin change as of the FY2022 for American Express? If gross margin is not a useful metric for a company like this, then please state that and explain why.",
+  "answer": "Retrieved 12 chunks with LlamaIndex vector retrieval and lightweight reranking.",
+  "citations": [
+    {
+      "document_id": "AMERICANEXPRESS_2022_10K",
+      "page": 47,
+      "section": null,
+      "text": ", 2021, filed with the SEC on February 11, 2022. Beginning in the first quarter of 2022, we made reporting presentation changes to our Consolidated Statements of Income to separately present revenues earned from processed volumes, previously reported in Discount revenue, Other fees and commissions and Other revenue, as Processed revenue. The remaining balances from Other fees and commissions and Other revenue were combined as Service fees and other revenue. We also disaggregated Marketing and bu",
+      "metadata": {
+        "chunk_id": "fa54e71b-5edb-4f3f-88b6-f5fbb2cf1079",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.43386194283533386,
+        "rerank_score": 96.32786095020005,
+        "matched_terms": [
+          "change"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "AMERICANEXPRESS_2022_10K",
+      "page": 96,
+      "section": null,
+      "text": "Table of Contents CONSOLIDATED STATEMENTS OF INCOME Year Ended December 31 (Millions, except per share amounts) 2022 2021 2020 Revenues Non-interest revenues Discount revenue $ 30,739 $ 24,563 $ 19,435 Net card fees 6,070 5,195 4,664 Service fees and other revenue 4,521 3,316 2,702 Processed revenue 1,637 1,556 1,301 Total non-interest revenues 42,967 34,630 28,102 Interest income Interest on loans 11,967 8,850 9,779 Interest and dividends on investment securities 96 83 127 Deposits with banks a",
+      "metadata": {
+        "chunk_id": "0aef916f-6aaa-4dd2-8a2a-934b10bfaca4",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.39637842487953073,
+        "rerank_score": 90.42950915461974,
+        "matched_terms": [],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "AMERICANEXPRESS_2022_10K",
+      "page": 136,
+      "section": null,
+      "text": "Table of Contents The following table presents the gains and losses recognized in Interest expense on the Consolidated Statements of Income associated with the fair value hedges of our fixed-rate long-term debt for the years ended December 31: Gains (losses) (Millions) 2022 2021 2020 Fixed-rate long-term debt $ 473 $ 385 $ (405) Derivatives designated as hedging instruments (476) (385) 409 Total $ (3) $ — $ 4 The carrying values of the hedged liabilities, recorded within Long-term debt on the Co",
+      "metadata": {
+        "chunk_id": "2d45287b-3a00-4b5e-8a2d-23de6f4e05ae",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.3338385018560141,
+        "rerank_score": 83.6088501856014,
+        "matched_terms": [],
+        "citation_source": "rerank_fallback"
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "llamaindex_build_vector_index",
+      "target": "AMERICANEXPRESS_2022_10K",
+      "metadata": {
+        "page_count": 260,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "chunk_size": 900,
+        "chunk_overlap": 160,
+        "retrieve_top_k": 120,
+        "rerank_top_k": 12,
+        "finance_rerank": true,
+        "answer_context_chunk_count": 12,
+        "answer_context_chars": 37596,
+        "answer_context_words": 5849
+      }
+    },
+    {
+      "step": 2,
+      "action": "llamaindex_retrieve_node",
+      "target": "fa54e71b-5edb-4f3f-88b6-f5fbb2cf1079",
+      "metadata": {
+        "page": 47,
+        "retrieval_rank": 8,
+        "initial_rank": 8,
+        "vector_score": 0.43386194283533386,
+        "rerank_score": 96.32786095020005,
+        "finance_boost": 50.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "income_statement_title",
+          "gross_margin_line_items",
+          "financial_services_income_lines"
+        ],
+        "matched_terms": [
+          "change"
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "action": "llamaindex_retrieve_node",
+      "target": "0aef916f-6aaa-4dd2-8a2a-934b10bfaca4",
+      "metadata": {
+        "page": 96,
+        "retrieval_rank": 26,
+        "initial_rank": 26,
+        "vector_score": 0.39637842487953073,
+        "rerank_score": 90.42950915461974,
+        "finance_boost": 50.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "income_statement_title",
+          "gross_margin_line_items",
+          "financial_services_income_lines"
+        ],
+        "matched_terms": []
+      }
+    },
+    {
+      "step": 4,
+      "action": "llamaindex_retrieve_node",
+      "target": "2d45287b-3a00-4b5e-8a2d-23de6f4e05ae",
+      "metadata": {
+        "page": 136,
+        "retrieval_rank": 79,
+        "initial_rank": 79,
+        "vector_score": 0.3338385018560141,
+        "rerank_score": 83.6088501856014,
+        "finance_boost": 49.875,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "income_statement_title",
+          "gross_margin_line_items",
+          "financial_services_income_lines"
+        ],
+        "matched_terms": []
+      }
+    },
+    {
+      "step": 5,
+      "action": "llamaindex_retrieve_node",
+      "target": "d3ad1cca-712b-4935-af34-dc4c7ad79c93",
+      "metadata": {
+        "page": 54,
+        "retrieval_rank": 17,
+        "initial_rank": 17,
+        "vector_score": 0.415261967086395,
+        "rerank_score": 78.39286337530616,
+        "finance_boost": 34.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "gross_margin_line_items",
+          "financial_services_income_lines"
+        ],
+        "matched_terms": [
+          "change"
+        ]
+      }
+    },
+    {
+      "step": 6,
+      "action": "llamaindex_retrieve_node",
+      "target": "1f318c61-35ca-4f5f-8045-e7e29410fc73",
+      "metadata": {
+        "page": 57,
+        "retrieval_rank": 18,
+        "initial_rank": 18,
+        "vector_score": 0.40982235520549154,
+        "rerank_score": 77.84056885388249,
+        "finance_boost": 34.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "gross_margin_line_items",
+          "financial_services_income_lines"
+        ],
+        "matched_terms": [
+          "change"
+        ]
+      }
+    },
+    {
+      "step": 7,
+      "action": "llamaindex_retrieve_node",
+      "target": "b5211c89-74de-4d10-813c-8b3ab610f8bd",
+      "metadata": {
+        "page": 63,
+        "retrieval_rank": 19,
+        "initial_rank": 19,
+        "vector_score": 0.403401215786038,
+        "rerank_score": 77.1901215786038,
+        "finance_boost": 34.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "gross_margin_line_items",
+          "financial_services_income_lines"
+        ],
+        "matched_terms": [
+          "change"
+        ]
+      }
+    },
+    {
+      "step": 8,
+      "action": "llamaindex_retrieve_node",
+      "target": "99f9b47c-29cf-470c-9e23-247661b45d5a",
+      "metadata": {
+        "page": 60,
+        "retrieval_rank": 20,
+        "initial_rank": 20,
+        "vector_score": 0.4031199939352417,
+        "rerank_score": 77.15366606019084,
+        "finance_boost": 34.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "gross_margin_line_items",
+          "financial_services_income_lines"
+        ],
+        "matched_terms": [
+          "change"
+        ]
+      }
+    },
+    {
+      "step": 9,
+      "action": "llamaindex_retrieve_node",
+      "target": "6c53181a-537d-4983-8787-c06b50d21a94",
+      "metadata": {
+        "page": 44,
+        "retrieval_rank": 31,
+        "initial_rank": 31,
+        "vector_score": 0.39019964951429925,
+        "rerank_score": 75.76996495142993,
+        "finance_boost": 34.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "gross_margin_line_items",
+          "financial_services_income_lines"
+        ],
+        "matched_terms": [
+          "change"
+        ]
+      }
+    },
+    {
+      "step": 10,
+      "action": "llamaindex_retrieve_node",
+      "target": "f2e764f2-0250-4f38-b2d8-099d34d7f1da",
+      "metadata": {
+        "page": 45,
+        "retrieval_rank": 4,
+        "initial_rank": 4,
+        "vector_score": 0.4481586517833568,
+        "rerank_score": 75.04086517833568,
+        "finance_boost": 29.25,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "gross_margin_line_items",
+          "financial_services_income_lines"
+        ],
+        "matched_terms": []
+      }
+    },
+    {
+      "step": 11,
+      "action": "llamaindex_retrieve_node",
+      "target": "d29bcc9d-4848-4fab-9c64-131589ba0525",
+      "metadata": {
+        "page": 154,
+        "retrieval_rank": 23,
+        "initial_rank": 23,
+        "vector_score": 0.39934517339680126,
+        "rerank_score": 74.75118400634679,
+        "finance_boost": 34.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "gross_margin_line_items",
+          "financial_services_income_lines"
+        ],
+        "matched_terms": []
+      }
+    },
+    {
+      "step": 12,
+      "action": "llamaindex_retrieve_node",
+      "target": "645d0aaf-22f3-464b-8aea-a586bab0f7d7",
+      "metadata": {
+        "page": 95,
+        "retrieval_rank": 49,
+        "initial_rank": 49,
+        "vector_score": 0.36044432718565966,
+        "rerank_score": 74.64443271856595,
+        "finance_boost": 38.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "income_statement_title",
+          "gross_margin_line_items"
+        ],
+        "matched_terms": []
+      }
+    },
+    {
+      "step": 13,
+      "action": "llamaindex_retrieve_node",
+      "target": "4719c5e9-d8be-4d58-b429-a5312e1ed273",
+      "metadata": {
+        "page": 92,
+        "retrieval_rank": 1,
+        "initial_rank": 1,
+        "vector_score": 0.5088312881490701,
+        "rerank_score": 72.25812881490701,
+        "finance_boost": 18.375,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "income_statement_title"
+        ],
+        "matched_terms": [
+          "change"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": null,
+    "output": null,
+    "total": null
+  },
+  "latency_ms": 12872,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\AMERICANEXPRESS_2022_10K.pdf",
+    "adapter_mode": "llamaindex_vector_retrieval",
+    "llm_enabled": false,
+    "model": null,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "page_count": 260,
+    "chunk_size": 900,
+    "chunk_overlap": 160,
+    "retrieve_top_k": 120,
+    "rerank_top_k": 12,
+    "max_citations": 3,
+    "finance_rerank": true,
+    "answer_context_chunk_count": 12,
+    "answer_context_chars": 37596,
+    "answer_context_words": 5849
+  }
+}

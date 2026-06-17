@@ -62,18 +62,67 @@ def financial_line_item_boost(question: BenchmarkQuestion, text: str) -> tuple[f
     if asks_income_statement:
         if _has_any(t, ("consolidated statements of operations", "consolidated statement of operations", "consolidated statements of earnings", "income statements")):
             score = _add(score, reasons, 16.0, "income_statement_title")
+        if "consolidated statements of income" in t:
+            score = _add(score, reasons, 16.0, "income_statement_title")
         if "total net sales" in t and "revenue" in q:
             score = _add(score, reasons, 18.0, "total_net_sales_line_item")
+        if "total revenues" in t and "revenue" in q:
+            score = _add(score, reasons, 14.0, "total_revenues_line_item")
         if _has_any(q, ("cogs", "cost of revenue")) and _has_any(t, ("total cost of revenue", "cost of revenue")):
             score = _add(score, reasons, 18.0, "cost_of_revenue_line_item")
         if _has_any(q, ("gross margin", "gross margins")) and _has_any(t, ("revenue", "cost of sales", "gross profit")):
             score = _add(score, reasons, 14.0, "gross_margin_line_items")
+        if _has_any(q, ("gross margin", "gross margins")) and _has_any(t, ("net interest income", "interest income", "interest expense")):
+            score = _add(score, reasons, 12.0, "financial_services_income_lines")
 
-    if _has_any(q, ("balance sheet", "total assets")):
-        if _has_any(t, ("consolidated balance sheets", "balance sheets")):
+    asks_balance_sheet = _has_any(
+        q,
+        (
+            "balance sheet",
+            "total assets",
+            "working capital",
+            "capital-intensive",
+            "capital intensive",
+            "ppne",
+            "property, plant and equipment",
+            "property plant and equipment",
+        ),
+    )
+    if asks_balance_sheet:
+        has_balance_title = _has_any(t, ("consolidated balance sheets", "balance sheets"))
+        has_balance_assets = _has_any(t, ("assets current assets", "current assets:", "total current assets", "total assets"))
+        has_balance_liabilities = _has_any(t, ("liabilities and equity", "current liabilities", "total liabilities"))
+        has_main_balance_sheet = has_balance_title and has_balance_assets and has_balance_liabilities
+        has_income_statement_title = _has_any(
+            t,
+            (
+                "consolidated statements of operations",
+                "consolidated statement of operations",
+                "consolidated statements of income",
+                "consolidated statement of income",
+                "consolidated statements of earnings",
+            ),
+        )
+        has_income_statement_lines = _has_any(t, ("total revenues", "operating income", "net income"))
+
+        if has_main_balance_sheet:
             score = _add(score, reasons, 16.0, "balance_sheet_title")
         if "total assets" in t:
             score = _add(score, reasons, 18.0, "total_assets_line_item")
+        if _has_any(q, ("working capital",)) and _has_any(t, ("total current assets", "total current liabilities")):
+            score = _add(score, reasons, 28.0, "working_capital_line_items")
+        if _has_any(q, ("capital-intensive", "capital intensive")) and has_main_balance_sheet and _has_any(
+            t,
+            ("property and equipment", "property, plant and equipment", "goodwill", "total assets"),
+        ):
+            score = _add(score, reasons, 22.0, "capital_intensity_balance_sheet_lines")
+        if _has_any(q, ("capital-intensive", "capital intensive")) and has_income_statement_title and has_income_statement_lines:
+            score = _add(score, reasons, 18.0, "capital_intensity_income_statement_lines")
+        if _has_any(q, ("ppne", "property, plant and equipment", "property plant and equipment")) and _has_any(
+            t,
+            ("property, plant and equipment", "property plant and equipment", "property and equipment"),
+        ):
+            score = _add(score, reasons, 26.0, "ppne_line_item")
 
     if _has_any(q, ("legal", "lawsuit", "lawsuits", "legal battles")):
         if _has_any(t, ("legal proceedings", "legal actions", "multiple legal actions have been filed")):

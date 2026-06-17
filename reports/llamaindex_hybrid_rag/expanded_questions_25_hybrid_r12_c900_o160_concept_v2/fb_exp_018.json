@@ -1,0 +1,406 @@
+{
+  "method": "llamaindex_hybrid_rag",
+  "question_id": "fb_exp_018",
+  "question": "Which region had the Highest EBITDAR Contribution for MGM during FY2022?",
+  "answer": "Retrieved 12 chunks with LlamaIndex BM25/vector hybrid fusion.",
+  "citations": [
+    {
+      "document_id": "MGMRESORTS_2022Q4_EARNINGS",
+      "page": 13,
+      "section": null,
+      "text": "6 $ 3,056,892 $ 13,127,485 $ 9,680,140 MGM RESORTS INTERNATIONAL AND SUBSIDIARIES SUPPLEMENTAL DATA – ADJUSTED PROPERTY EBITDAR AND ADJUSTED EBITDAR (In thousands) (Unaudited) Three months ended Twelve months ended December 31, 2022 December 31, 2021 December 31, 2022 December 31, 2021 Las Vegas Strip Resorts $ 877,052 $ 698,739 $ 3,142,308 $ 1,738,211 Regional Operations 319,517 309,250 1,294,630 1,217,814 MGM China (54,979) 5,015 (203,136) 25,367 Unconsolidated affiliates(1) (43,029) (49,698) ",
+      "metadata": {
+        "chunk_id": "6ad57078-2b19-4cba-9266-d2bf0a9dabb7",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5093068886447767,
+        "rerank_score": 44.70641321044546,
+        "matched_terms": [
+          "during",
+          "ebitdar"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "MGMRESORTS_2022Q4_EARNINGS",
+      "page": 4,
+      "section": null,
+      "text": "Page 4 of 15 • Same-Store Adjusted Property EBITDAR of $2.1 billion in the current year compared to $1.5 billion in the prior year, an increase of 42%; and • Adjusted Property EBITDAR margin of 37.4% in the current year compared to 36.7% in the prior year, an increase of 72 basis points. Regional Operations • Net revenues of $3.8 billion in the current year compared to $3.4 billion in the prior year, an increase of 12%; • Adjusted Property EBITDAR of $1.3 billion in the current year compared to ",
+      "metadata": {
+        "chunk_id": "1a9c4957-edbf-49b0-aff2-a5a0afdee51f",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5215809994116601,
+        "rerank_score": 43.27247488101534,
+        "matched_terms": [
+          "contribution",
+          "ebitdar"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "MGMRESORTS_2022Q4_EARNINGS",
+      "page": 15,
+      "section": null,
+      "text": "TABLE GAMES HOLD ADJUSTED LAS VEGAS STRIP RESORTS SAME-STORE NET REVENUES AND LAS VEGAS STRIP RESORTS ADJUSTED PROPERTY EBITDAR TO LAS VEGAS STRIP RESORTS SAME-STORE ADJUSTED PROPERTY EBITDAR AND TABLE GAMES HOLD ADJUSTED LAS VEGAS STRIP RESORTS SAME-STORE ADJUSTED PROPERTY EBITDAR (In thousands) (Unaudited) Three months ended Twelve months ended December 31, 2022 December 31, 2021 December 31, 2022 December 31, 2021 Las Vegas Strip Resorts net revenues $ 2,297,282 $ 1,806,686 $ 8,398,372 $ 4,73",
+      "metadata": {
+        "chunk_id": "b64416e8-cef1-45e0-8ff9-7e9487836fd8",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.42519485054183165,
+        "rerank_score": 41.865302642796244,
+        "matched_terms": [
+          "ebitdar",
+          "had"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "llamaindex_build_hybrid_index",
+      "target": "MGMRESORTS_2022Q4_EARNINGS",
+      "metadata": {
+        "page_count": 15,
+        "node_count": 21,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "chunk_size": 900,
+        "chunk_overlap": 160,
+        "vector_top_k": 120,
+        "bm25_top_k": 120,
+        "fusion_top_k": 120,
+        "rerank_top_k": 12,
+        "rrf_k": 60,
+        "finance_rerank": true,
+        "cross_encoder_model": null,
+        "cross_encoder_candidates": 60,
+        "answer_context_chunk_count": 12,
+        "answer_context_chars": 28707,
+        "answer_context_words": 4130
+      }
+    },
+    {
+      "step": 2,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "6ad57078-2b19-4cba-9266-d2bf0a9dabb7",
+      "metadata": {
+        "page": 13,
+        "bm25_rank": 4,
+        "vector_rank": 2,
+        "fusion_rank": 2,
+        "bm25_score": 2.110480308532715,
+        "vector_score": 0.5093068886447767,
+        "rrf_score": 0.031754032258064516,
+        "rerank_score": 44.70641321044546,
+        "finance_boost": 8.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "during",
+          "ebitdar"
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "1a9c4957-edbf-49b0-aff2-a5a0afdee51f",
+      "metadata": {
+        "page": 4,
+        "bm25_rank": 2,
+        "vector_rank": 1,
+        "fusion_rank": 1,
+        "bm25_score": 2.5764975547790527,
+        "vector_score": 0.5215809994116601,
+        "rrf_score": 0.03252247488101534,
+        "rerank_score": 43.27247488101534,
+        "finance_boost": 5.75,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "contribution",
+          "ebitdar"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "b64416e8-cef1-45e0-8ff9-7e9487836fd8",
+      "metadata": {
+        "page": 15,
+        "bm25_rank": 8,
+        "vector_rank": 9,
+        "fusion_rank": 8,
+        "bm25_score": 1.254119873046875,
+        "vector_score": 0.42519485054183165,
+        "rrf_score": 0.02919863597612958,
+        "rerank_score": 41.865302642796244,
+        "finance_boost": 8.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "ebitdar",
+          "had"
+        ]
+      }
+    },
+    {
+      "step": 5,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "9c3ff225-2728-4e44-afaf-b6e04ec53627",
+      "metadata": {
+        "page": 6,
+        "bm25_rank": 3,
+        "vector_rank": 10,
+        "fusion_rank": 4,
+        "bm25_score": 2.175407886505127,
+        "vector_score": 0.4127179970326341,
+        "rrf_score": 0.030158730158730156,
+        "rerank_score": 41.015873015873005,
+        "finance_boost": 6.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "during",
+          "had"
+        ]
+      }
+    },
+    {
+      "step": 6,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "c9f286fd-e2e0-4b1b-9afc-b7dbd8ec6e78",
+      "metadata": {
+        "page": 2,
+        "bm25_rank": 1,
+        "vector_rank": 14,
+        "fusion_rank": 5,
+        "bm25_score": 2.8451321125030518,
+        "vector_score": 0.39252706382201225,
+        "rrf_score": 0.029906956136464335,
+        "rerank_score": 40.71647994598814,
+        "finance_boost": 6.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "contribution",
+          "ebitdar"
+        ]
+      }
+    },
+    {
+      "step": 7,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "0aa70cf8-632c-452b-9b23-cc2fbd45d18b",
+      "metadata": {
+        "page": 14,
+        "bm25_rank": 14,
+        "vector_rank": 3,
+        "fusion_rank": 7,
+        "bm25_score": 0.6530324220657349,
+        "vector_score": 0.49842352043688315,
+        "rrf_score": 0.029386529386529386,
+        "rerank_score": 40.100815100815105,
+        "finance_boost": 8.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "ebitdar"
+        ]
+      }
+    },
+    {
+      "step": 8,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "a659d2ac-0938-4492-967f-9624c3a027aa",
+      "metadata": {
+        "page": 3,
+        "bm25_rank": 10,
+        "vector_rank": 6,
+        "fusion_rank": 6,
+        "bm25_score": 1.0268304347991943,
+        "vector_score": 0.46135006761228814,
+        "rrf_score": 0.029437229437229435,
+        "rerank_score": 39.07413419913419,
+        "finance_boost": 6.875,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "ebitdar"
+        ]
+      }
+    },
+    {
+      "step": 9,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "14539924-018a-4ae5-94cc-2a3a8631acf4",
+      "metadata": {
+        "page": 1,
+        "bm25_rank": 5,
+        "vector_rank": 4,
+        "fusion_rank": 3,
+        "bm25_score": 1.8035129308700562,
+        "vector_score": 0.49820144630527863,
+        "rrf_score": 0.031009615384615385,
+        "rerank_score": 38.16437728937729,
+        "finance_boost": 4.25,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "ebitdar"
+        ]
+      }
+    },
+    {
+      "step": 10,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "73571e1d-e0d2-4832-893a-be3882359a05",
+      "metadata": {
+        "page": 5,
+        "bm25_rank": 6,
+        "vector_rank": 21,
+        "fusion_rank": 14,
+        "bm25_score": 1.6422338485717773,
+        "vector_score": 0.22925810489500473,
+        "rrf_score": 0.02749719416386083,
+        "rerank_score": 37.878146544813205,
+        "finance_boost": 8.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "during"
+        ]
+      }
+    },
+    {
+      "step": 11,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "45254b51-7e7a-4db3-9a08-0e6e2bfaa408",
+      "metadata": {
+        "page": 12,
+        "bm25_rank": 18,
+        "vector_rank": 5,
+        "fusion_rank": 11,
+        "bm25_score": 0.23012447357177734,
+        "vector_score": 0.4732763914342201,
+        "rrf_score": 0.028205128205128206,
+        "rerank_score": 36.72893772893773,
+        "finance_boost": 8.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": []
+      }
+    },
+    {
+      "step": 12,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "15ae7156-51e3-467e-970b-9e1a1942c8db",
+      "metadata": {
+        "page": 14,
+        "bm25_rank": 7,
+        "vector_rank": 20,
+        "fusion_rank": 15,
+        "bm25_score": 1.2681010961532593,
+        "vector_score": 0.2909070121565954,
+        "rrf_score": 0.027425373134328357,
+        "rerank_score": 36.50870646766169,
+        "finance_boost": 4.75,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "ebitdar",
+          "had"
+        ]
+      }
+    },
+    {
+      "step": 13,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "5751e54f-4206-4325-b334-118bd93ad8b6",
+      "metadata": {
+        "page": 11,
+        "bm25_rank": 20,
+        "vector_rank": 8,
+        "fusion_rank": 16,
+        "bm25_score": 0.22330787777900696,
+        "vector_score": 0.442599185181173,
+        "rrf_score": 0.027205882352941177,
+        "rerank_score": 35.49159663865546,
+        "finance_boost": 8.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": []
+      }
+    }
+  ],
+  "token_usage": {
+    "input": null,
+    "output": null,
+    "total": null
+  },
+  "latency_ms": 7286,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\MGMRESORTS_2022Q4_EARNINGS.pdf",
+    "adapter_mode": "llamaindex_bm25_vector_rrf_plus_rerank",
+    "llm_enabled": false,
+    "model": null,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "page_count": 15,
+    "node_count": 21,
+    "chunk_size": 900,
+    "chunk_overlap": 160,
+    "vector_top_k": 120,
+    "bm25_top_k": 120,
+    "fusion_top_k": 120,
+    "rerank_top_k": 12,
+    "rrf_k": 60,
+    "max_citations": 3,
+    "finance_rerank": true,
+    "cross_encoder_model": null,
+    "cross_encoder_candidates": 60,
+    "answer_context_chunk_count": 12,
+    "answer_context_chars": 28707,
+    "answer_context_words": 4130
+  }
+}

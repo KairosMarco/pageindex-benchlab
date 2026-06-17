@@ -1,0 +1,401 @@
+{
+  "method": "llamaindex_hybrid_rag",
+  "question_id": "fb_exp_023",
+  "question": "Did Pfizer grow its PPNE between FY20 and FY21?",
+  "answer": "Retrieved 12 chunks with LlamaIndex BM25/vector hybrid fusion.",
+  "citations": [
+    {
+      "document_id": "PFIZER_2021_10K",
+      "page": 119,
+      "section": null,
+      "text": "4.22 Fourth Supplemental Indenture, dated as of May 28, 2020, between us and The Bank of New York Mellon, as trustee, is incorporated by reference from our Current Report on Form 8-K filed on May 28, 2020. 4.23 Fifth Supplemental Indenture, dated as of August 18, 2021 between us and The Bank of New York Mellon, as trustee, is incorporated by reference from our Current Report on Form 8-K filed on August 18, 2021. *4.24 Description of Pfizer’s Securities. 4.25 Except as set forth in Exhibits 4.1-2",
+      "metadata": {
+        "chunk_id": "ef574ac6-9876-4948-8f58-54bc9226e507",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.38638590845595605,
+        "rerank_score": 36.24827850790902,
+        "matched_terms": [
+          "between",
+          "its"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "PFIZER_2021_10K",
+      "page": 41,
+      "section": null,
+      "text": "Revenues—Selected Product Discussion Biopharma Revenue (MILLIONS) Year Ended Dec. 31, % Change Product Global Revenues Region 2021 2020 Total Oper. Operational Results Commentary Comirnaty $36,781 * U.S. $ 7,809 $ 154 * Driven by global uptake, following a growing number of regulatory approvals and temporary authorizations. Int’l. 28,972 — * * Worldwide $ 36,781 $ 154 * * Eliquis $5,970 Up 19% (operationally) U.S. $ 3,160 $ 2,688 18 Global growth driven primarily by continued increased adoption ",
+      "metadata": {
+        "chunk_id": "6d14c96d-a609-42b1-bbca-d19bd61a7b4e",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.4610472112171026,
+        "rerank_score": 33.24446998544937,
+        "matched_terms": [],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "PFIZER_2021_10K",
+      "page": 76,
+      "section": null,
+      "text": "Subsidiary Companies the development costs until commercialization of the vaccine. Thereafter, BioNTech was to repay us its 50 percent share of these development costs through reductions in gross profit sharing and milestone payments to BioNTech over time. On January 29, 2021, we and BioNTech signed an amended version of the April 2020 agreement. Under the January 2021 agreement, BioNTech paid us their 50 percent share of prior development costs in a lump sum payment during the first quarter of ",
+      "metadata": {
+        "chunk_id": "4ee3ce27-b62c-40fc-a5d1-0101304249c2",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.3926817819794611,
+        "rerank_score": 31.718294878088695,
+        "matched_terms": [
+          "between",
+          "its"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "llamaindex_build_hybrid_index",
+      "target": "PFIZER_2021_10K",
+      "metadata": {
+        "page_count": 143,
+        "node_count": 258,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "chunk_size": 900,
+        "chunk_overlap": 160,
+        "vector_top_k": 120,
+        "bm25_top_k": 120,
+        "fusion_top_k": 120,
+        "rerank_top_k": 12,
+        "rrf_k": 60,
+        "finance_rerank": true,
+        "cross_encoder_model": null,
+        "cross_encoder_candidates": 60,
+        "answer_context_chunk_count": 12,
+        "answer_context_chars": 37960,
+        "answer_context_words": 5812
+      }
+    },
+    {
+      "step": 2,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "ef574ac6-9876-4948-8f58-54bc9226e507",
+      "metadata": {
+        "page": 119,
+        "bm25_rank": 4,
+        "vector_rank": 71,
+        "fusion_rank": 3,
+        "bm25_score": 1.8228082656860352,
+        "vector_score": 0.38638590845595605,
+        "rrf_score": 0.02325858778625954,
+        "rerank_score": 36.24827850790902,
+        "finance_boost": 8.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "between",
+          "its"
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "6d14c96d-a609-42b1-bbca-d19bd61a7b4e",
+      "metadata": {
+        "page": 41,
+        "bm25_rank": 30,
+        "vector_rank": 14,
+        "fusion_rank": 2,
+        "bm25_score": 1.1719858646392822,
+        "vector_score": 0.4610472112171026,
+        "rrf_score": 0.024624624624624628,
+        "rerank_score": 33.24446998544937,
+        "finance_boost": 7.625,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": []
+      }
+    },
+    {
+      "step": 4,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "4ee3ce27-b62c-40fc-a5d1-0101304249c2",
+      "metadata": {
+        "page": 76,
+        "bm25_rank": 15,
+        "vector_rank": 66,
+        "fusion_rank": 11,
+        "bm25_score": 1.519775390625,
+        "vector_score": 0.3926817819794611,
+        "rrf_score": 0.021269841269841272,
+        "rerank_score": 31.718294878088695,
+        "finance_boost": 5.5,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "between",
+          "its"
+        ]
+      }
+    },
+    {
+      "step": 5,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "8f906c04-ac17-44f3-b8c4-88e59da5f698",
+      "metadata": {
+        "page": 39,
+        "bm25_rank": 57,
+        "vector_rank": 2,
+        "fusion_rank": 1,
+        "bm25_score": 0.8222687840461731,
+        "vector_score": 0.5166541257508447,
+        "rrf_score": 0.024676040805073064,
+        "rerank_score": 31.051040805073065,
+        "finance_boost": 3.375,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "its"
+        ]
+      }
+    },
+    {
+      "step": 6,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "726e6bf9-d254-40ca-9fe6-d7398cf2e52e",
+      "metadata": {
+        "page": 117,
+        "bm25_rank": 10,
+        "vector_rank": 95,
+        "fusion_rank": 14,
+        "bm25_score": 1.627519130706787,
+        "vector_score": 0.3607571501570214,
+        "rrf_score": 0.020737327188940093,
+        "rerank_score": 31.04531687966174,
+        "finance_boost": 7.375,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "between"
+        ]
+      }
+    },
+    {
+      "step": 7,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "7b2ac324-3be9-49c9-bc51-820188c6fe40",
+      "metadata": {
+        "page": 63,
+        "bm25_rank": 25,
+        "vector_rank": 36,
+        "fusion_rank": 7,
+        "bm25_score": 1.2205941677093506,
+        "vector_score": 0.42326852297803164,
+        "rrf_score": 0.022181372549019605,
+        "rerank_score": 30.65044471396806,
+        "finance_boost": 3.5,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "between",
+          "its"
+        ]
+      }
+    },
+    {
+      "step": 8,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "5e288406-e1ee-4339-814e-0b4500f37fcf",
+      "metadata": {
+        "page": 118,
+        "bm25_rank": 6,
+        "vector_rank": 103,
+        "fusion_rank": 9,
+        "bm25_score": 1.7404369115829468,
+        "vector_score": 0.3535936452540221,
+        "rrf_score": 0.021286484476668525,
+        "rerank_score": 30.370247363266465,
+        "finance_boost": 6.125,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "between"
+        ]
+      }
+    },
+    {
+      "step": 9,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "2ecfaa6d-1e6b-4214-b2c1-6bdb2205ef27",
+      "metadata": {
+        "page": 55,
+        "bm25_rank": 13,
+        "vector_rank": 56,
+        "fusion_rank": 4,
+        "bm25_score": 1.5451158285140991,
+        "vector_score": 0.3996954244852663,
+        "rrf_score": 0.022319319792158714,
+        "rerank_score": 29.678855874632944,
+        "finance_boost": 2.375,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "between",
+          "its"
+        ]
+      }
+    },
+    {
+      "step": 10,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "b6fa9fd7-0cd2-4206-8cc6-89fb4cd2c33c",
+      "metadata": {
+        "page": 112,
+        "bm25_rank": 87,
+        "vector_rank": 24,
+        "fusion_rank": 21,
+        "bm25_score": 0.6022306084632874,
+        "vector_score": 0.4438322130062674,
+        "rrf_score": 0.01870748299319728,
+        "rerank_score": 29.604390209692124,
+        "finance_boost": 8.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "its"
+        ]
+      }
+    },
+    {
+      "step": 11,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "9dba4adb-cb08-4873-9372-0ae19e90f935",
+      "metadata": {
+        "page": 44,
+        "bm25_rank": 54,
+        "vector_rank": 20,
+        "fusion_rank": 10,
+        "bm25_score": 0.8524715900421143,
+        "vector_score": 0.4510448162276718,
+        "rrf_score": 0.021271929824561404,
+        "rerank_score": 29.600538071984083,
+        "finance_boost": 5.375,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "between"
+        ]
+      }
+    },
+    {
+      "step": 12,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "de6f6f79-8877-4bcc-8d7c-73cce2a9e05d",
+      "metadata": {
+        "page": 71,
+        "bm25_rank": 14,
+        "vector_rank": 55,
+        "fusion_rank": 6,
+        "bm25_score": 1.529620885848999,
+        "vector_score": 0.40059658296014056,
+        "rrf_score": 0.022209165687426556,
+        "rerank_score": 29.558392491550265,
+        "finance_boost": 4.375,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "did"
+        ]
+      }
+    },
+    {
+      "step": 13,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "a6c4ae9a-6746-4b4f-bf8a-92fe58b6ec7f",
+      "metadata": {
+        "page": 99,
+        "bm25_rank": 118,
+        "vector_rank": 4,
+        "fusion_rank": 12,
+        "bm25_score": 0.12914714217185974,
+        "vector_score": 0.4916085819779461,
+        "rrf_score": 0.021242977528089887,
+        "rerank_score": 28.68627649716205,
+        "finance_boost": 6.5,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": []
+      }
+    }
+  ],
+  "token_usage": {
+    "input": null,
+    "output": null,
+    "total": null
+  },
+  "latency_ms": 11817,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\PFIZER_2021_10K.pdf",
+    "adapter_mode": "llamaindex_bm25_vector_rrf_plus_rerank",
+    "llm_enabled": false,
+    "model": null,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "page_count": 143,
+    "node_count": 258,
+    "chunk_size": 900,
+    "chunk_overlap": 160,
+    "vector_top_k": 120,
+    "bm25_top_k": 120,
+    "fusion_top_k": 120,
+    "rerank_top_k": 12,
+    "rrf_k": 60,
+    "max_citations": 3,
+    "finance_rerank": true,
+    "cross_encoder_model": null,
+    "cross_encoder_candidates": 60,
+    "answer_context_chunk_count": 12,
+    "answer_context_chars": 37960,
+    "answer_context_words": 5812
+  }
+}

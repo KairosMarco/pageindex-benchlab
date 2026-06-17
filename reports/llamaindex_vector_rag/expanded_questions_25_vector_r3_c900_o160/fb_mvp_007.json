@@ -1,0 +1,198 @@
+{
+  "method": "llamaindex_vector_rag",
+  "question_id": "fb_mvp_007",
+  "question": "Using only the information within the balance sheet, how much total assets did Costco have at the end of FY2021? Answer in USD millions.",
+  "answer": "Retrieved 3 chunks with LlamaIndex vector retrieval and lightweight reranking.",
+  "citations": [
+    {
+      "document_id": "COSTCO_2021_10K",
+      "page": 38,
+      "section": null,
+      "text": "Table of Contents COSTCO WHOLESALE CORPORATION CONSOLIDATED BALANCE SHEETS (amounts in millions, except par value and share data) August 29, 2021 August 30, 2020 ASSETS CURRENT ASSETS Cash and cash equivalents $ 11,258 $ 12,277 Short-term investments 917 1,028 Receivables, net 1,803 1,550 Merchandise inventories 14,215 12,242 Other current assets 1,312 1,023 Total current assets 29,505 28,120 OTHER ASSETS Property and equipment, net 23,492 21,807 Operating lease right-of-use assets 2,890 2,788 O",
+      "metadata": {
+        "chunk_id": "0efd3cef-12e4-4db2-92ff-4120944222ee",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5902819541900245,
+        "rerank_score": 122.00350406097776,
+        "matched_terms": [
+          "assets",
+          "balance",
+          "equity",
+          "liabilities",
+          "millions",
+          "sheets",
+          "total"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "COSTCO_2021_10K",
+      "page": 51,
+      "section": null,
+      "text": "Table of Contents Note 4—Fair Value Measurement Assets and Liabilities Measured at Fair Value on a Recurring Basis The table below presents information regarding the Company’s financial assets and financial liabilities that are measured at fair value on a recurring basis and indicate the level within the hierarchy reflecting the valuation techniques utilized to determine such fair value. Level 2 2021 2020 Investment in government and agency securities $ 393 $ 508 Forward foreign-exchange contrac",
+      "metadata": {
+        "chunk_id": "f4c5c8c2-75aa-4b80-9aa6-0236856ef3b9",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.6204517483781504,
+        "rerank_score": 104.54517483781504,
+        "matched_terms": [
+          "assets",
+          "balance",
+          "did",
+          "end",
+          "information",
+          "liabilities",
+          "sheets",
+          "total"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "COSTCO_2021_10K",
+      "page": 53,
+      "section": null,
+      "text": "Table of Contents Note 6—Leases The tables below present information regarding the Company's lease assets and liabilities. 2021 2020 Assets Operating lease right-of-use assets $ 2,890 $ 2,788 Finance lease assets 1,000 592 Total lease assets $ 3,890 $ 3,380 Liabilities Current Operating lease liabilities $ 222 $ 231 Finance lease liabilities 72 31 Long-term Operating lease liabilities 2,642 2,558 Finance lease liabilities 980 657 Total lease liabilities $ 3,916 $ 3,477 _______________ (1) Includ",
+      "metadata": {
+        "chunk_id": "fba834f9-653d-4b9f-86e8-9be1922dca2a",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5830545743351793,
+        "rerank_score": 97.26842039648089,
+        "matched_terms": [
+          "assets",
+          "balance",
+          "information",
+          "liabilities",
+          "sheets",
+          "total"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "llamaindex_build_vector_index",
+      "target": "COSTCO_2021_10K",
+      "metadata": {
+        "page_count": 76,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "chunk_size": 900,
+        "chunk_overlap": 160,
+        "retrieve_top_k": 120,
+        "rerank_top_k": 3,
+        "finance_rerank": true,
+        "answer_context_chunk_count": 3,
+        "answer_context_chars": 6549,
+        "answer_context_words": 977
+      }
+    },
+    {
+      "step": 2,
+      "action": "llamaindex_retrieve_node",
+      "target": "0efd3cef-12e4-4db2-92ff-4120944222ee",
+      "metadata": {
+        "page": 38,
+        "retrieval_rank": 3,
+        "initial_rank": 3,
+        "vector_score": 0.5902819541900245,
+        "rerank_score": 122.00350406097776,
+        "finance_boost": 42.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "balance_sheet_title",
+          "total_assets_line_item"
+        ],
+        "matched_terms": [
+          "assets",
+          "balance",
+          "equity",
+          "liabilities",
+          "millions",
+          "sheets",
+          "total"
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "action": "llamaindex_retrieve_node",
+      "target": "f4c5c8c2-75aa-4b80-9aa6-0236856ef3b9",
+      "metadata": {
+        "page": 51,
+        "retrieval_rank": 1,
+        "initial_rank": 1,
+        "vector_score": 0.6204517483781504,
+        "rerank_score": 104.54517483781504,
+        "finance_boost": 22.5,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "balance_sheet_title"
+        ],
+        "matched_terms": [
+          "assets",
+          "balance",
+          "did",
+          "end",
+          "information",
+          "liabilities",
+          "sheets",
+          "total"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "llamaindex_retrieve_node",
+      "target": "fba834f9-653d-4b9f-86e8-9be1922dca2a",
+      "metadata": {
+        "page": 53,
+        "retrieval_rank": 4,
+        "initial_rank": 4,
+        "vector_score": 0.5830545743351793,
+        "rerank_score": 97.26842039648089,
+        "finance_boost": 23.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "balance_sheet_title"
+        ],
+        "matched_terms": [
+          "assets",
+          "balance",
+          "information",
+          "liabilities",
+          "sheets",
+          "total"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": null,
+    "output": null,
+    "total": null
+  },
+  "latency_ms": 9879,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\COSTCO_2021_10K.pdf",
+    "adapter_mode": "llamaindex_vector_retrieval",
+    "llm_enabled": false,
+    "model": null,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "page_count": 76,
+    "chunk_size": 900,
+    "chunk_overlap": 160,
+    "retrieve_top_k": 120,
+    "rerank_top_k": 3,
+    "max_citations": 3,
+    "finance_rerank": true,
+    "answer_context_chunk_count": 3,
+    "answer_context_chars": 6549,
+    "answer_context_words": 977
+  }
+}

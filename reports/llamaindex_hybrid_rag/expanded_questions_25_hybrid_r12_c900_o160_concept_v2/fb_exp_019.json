@@ -1,0 +1,449 @@
+{
+  "method": "llamaindex_hybrid_rag",
+  "question_id": "fb_exp_019",
+  "question": "How much (in USD billions) did American Water Works pay out in cash dividends for FY2020? Compute or extract the answer by primarily using the details outlined in the statement of cash flows.",
+  "answer": "Retrieved 12 chunks with LlamaIndex BM25/vector hybrid fusion.",
+  "citations": [
+    {
+      "document_id": "AMERICANWATERWORKS_2020_10K",
+      "page": 86,
+      "section": null,
+      "text": "Table of Contents American Water Works Company, Inc. and Subsidiary Companies Consolidated Statements of Cash Flows (In millions) For the Years Ended December 31, 2020 2019 2018 CASH FLOWS FROM OPERATING ACTIVITIES Net income $ 709 $ 621 $ 565 Adjustments to reconcile to net cash flows provided by operating activities: Depreciation and amortization 604 582 545 Deferred income taxes and amortization of investment tax credits 207 208 195 Provision for losses on accounts receivable 34 28 33 Loss (g",
+      "metadata": {
+        "chunk_id": "eb04287a-9f3c-4601-b74d-a9735e0f9309",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.45715523201247377,
+        "rerank_score": 92.5489187372749,
+        "matched_terms": [
+          "cash",
+          "dividends",
+          "flows"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "AMERICANWATERWORKS_2020_10K",
+      "page": 66,
+      "section": null,
+      "text": "Table of Contents Cash flows provided by operating activities have been a reliable, steady source of funding, sufficient to meet operating requirements and fund the majority of the Company’s capital investments. The Company expects to seek access to debt and equity capital markets to meet the balance of its capital investment, if any, and fund its dividend payments, as needed. Operating cash flows can be negatively affected by changes in the Company’s rate regulated environments, changes in the ",
+      "metadata": {
+        "chunk_id": "bfee463c-51a1-4a8a-b44f-2253ab72ea4a",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.41346328212934463,
+        "rerank_score": 71.27096787547607,
+        "matched_terms": [
+          "cash",
+          "details",
+          "flows",
+          "pay",
+          "primarily"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "AMERICANWATERWORKS_2020_10K",
+      "page": 93,
+      "section": null,
+      "text": "The subsidiary agreed to pay $1 million annually commencing in 2010 with the final payment being made in 2021. Remediation costs accrued amounted to $1 million and $2 million as of December 31, 2020 and 2019, respectively. Derivative Financial Instruments The Company uses derivative financial instruments for purposes of hedging exposures to fluctuations in interest rates. These derivative contracts are entered into for periods consistent with the related underlying exposures and do not constitut",
+      "metadata": {
+        "chunk_id": "67886912-9b51-48bc-b01e-196f264f5e06",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.3929933898157184,
+        "rerank_score": 64.81373798040465,
+        "matched_terms": [
+          "cash",
+          "flows",
+          "pay"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "llamaindex_build_hybrid_index",
+      "target": "AMERICANWATERWORKS_2020_10K",
+      "metadata": {
+        "page_count": 152,
+        "node_count": 240,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "chunk_size": 900,
+        "chunk_overlap": 160,
+        "vector_top_k": 120,
+        "bm25_top_k": 120,
+        "fusion_top_k": 120,
+        "rerank_top_k": 12,
+        "rrf_k": 60,
+        "finance_rerank": true,
+        "cross_encoder_model": null,
+        "cross_encoder_candidates": 60,
+        "answer_context_chunk_count": 12,
+        "answer_context_chars": 38185,
+        "answer_context_words": 5824
+      }
+    },
+    {
+      "step": 2,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "eb04287a-9f3c-4601-b74d-a9735e0f9309",
+      "metadata": {
+        "page": 86,
+        "bm25_rank": 13,
+        "vector_rank": 3,
+        "fusion_rank": 5,
+        "bm25_score": 5.864196300506592,
+        "vector_score": 0.45715523201247377,
+        "rrf_score": 0.029571646010002173,
+        "rerank_score": 92.5489187372749,
+        "finance_boost": 50.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "cash_flow_statement_title",
+          "operating_cash_flow_section",
+          "investing_cash_flow_section",
+          "financing_cash_flow_section"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "cash",
+          "dividends",
+          "flows"
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "bfee463c-51a1-4a8a-b44f-2253ab72ea4a",
+      "metadata": {
+        "page": 66,
+        "bm25_rank": 1,
+        "vector_rank": 12,
+        "fusion_rank": 3,
+        "bm25_score": 8.461711883544922,
+        "vector_score": 0.41346328212934463,
+        "rrf_score": 0.03028233151183971,
+        "rerank_score": 71.27096787547607,
+        "finance_boost": 24.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "cash_flow_statement_title"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "cash",
+          "details",
+          "flows",
+          "pay",
+          "primarily"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "67886912-9b51-48bc-b01e-196f264f5e06",
+      "metadata": {
+        "page": 93,
+        "bm25_rank": 14,
+        "vector_rank": 21,
+        "fusion_rank": 9,
+        "bm25_score": 5.386002540588379,
+        "vector_score": 0.3929933898157184,
+        "rrf_score": 0.025859192525859193,
+        "rerank_score": 64.81373798040465,
+        "finance_boost": 26.0,
+        "finance_boost_reasons": [
+          "cash_flow_statement_title",
+          "operating_cash_flow_section"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "cash",
+          "flows",
+          "pay"
+        ]
+      }
+    },
+    {
+      "step": 5,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "240047ae-22f5-48e4-9f27-e4da34b54568",
+      "metadata": {
+        "page": 68,
+        "bm25_rank": 3,
+        "vector_rank": 1,
+        "fusion_rank": 1,
+        "bm25_score": 7.36683464050293,
+        "vector_score": 0.48870780170358996,
+        "rrf_score": 0.032266458495966696,
+        "rerank_score": 61.516458495966695,
+        "finance_boost": 15.25,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "financing_cash_flow_section"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "cash",
+          "dividends",
+          "flows",
+          "pay",
+          "primarily"
+        ]
+      }
+    },
+    {
+      "step": 6,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "dea1ec0f-a28b-42ea-9858-d88df6aec3a1",
+      "metadata": {
+        "page": 107,
+        "bm25_rank": 21,
+        "vector_rank": 20,
+        "fusion_rank": 12,
+        "bm25_score": 4.560288906097412,
+        "vector_score": 0.3944766913656224,
+        "rrf_score": 0.02484567901234568,
+        "rerank_score": 60.658179012345684,
+        "finance_boost": 24.875,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "cash_flow_statement_title"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "cash",
+          "flows"
+        ]
+      }
+    },
+    {
+      "step": 7,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "4a439d06-9bfd-4e5a-8db5-cf21c0eb2f8d",
+      "metadata": {
+        "page": 89,
+        "bm25_rank": 11,
+        "vector_rank": 116,
+        "fusion_rank": 22,
+        "bm25_score": 5.955767631530762,
+        "vector_score": 0.2934454703883393,
+        "rrf_score": 0.019766325224071703,
+        "rerank_score": 53.02200704225353,
+        "finance_boost": 20.375,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "cash_flow_statement_title"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "cash",
+          "flows",
+          "primarily"
+        ]
+      }
+    },
+    {
+      "step": 8,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "30570b33-5b91-4ee6-a588-15060fd70b41",
+      "metadata": {
+        "page": 65,
+        "bm25_rank": 2,
+        "vector_rank": 16,
+        "fusion_rank": 6,
+        "bm25_score": 7.493981838226318,
+        "vector_score": 0.40126022601796135,
+        "rrf_score": 0.02928692699490662,
+        "rerank_score": 53.00851790399753,
+        "finance_boost": 9.75,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "operating_cash_flow_section"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "cash",
+          "dividends",
+          "flows",
+          "pay",
+          "primarily"
+        ]
+      }
+    },
+    {
+      "step": 9,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "5ddd5943-abd9-4700-ac88-7afb6f373b85",
+      "metadata": {
+        "page": 79,
+        "bm25_rank": 70,
+        "vector_rank": 59,
+        "fusion_rank": 42,
+        "bm25_score": 3.2494277954101562,
+        "vector_score": 0.34322138630159343,
+        "rrf_score": 0.016095669036845506,
+        "rerank_score": 48.36271449139096,
+        "finance_boost": 21.5,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "cash_flow_statement_title"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "cash",
+          "flows"
+        ]
+      }
+    },
+    {
+      "step": 10,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "3a097a51-0982-4da2-9f5a-ac60d3521adf",
+      "metadata": {
+        "page": 67,
+        "bm25_rank": 7,
+        "vector_rank": 7,
+        "fusion_rank": 4,
+        "bm25_score": 6.28124475479126,
+        "vector_score": 0.4246922125995084,
+        "rrf_score": 0.029850746268656716,
+        "rerank_score": 47.83370081411127,
+        "finance_boost": 8.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "cash",
+          "flows",
+          "primarily"
+        ]
+      }
+    },
+    {
+      "step": 11,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "405d8e16-7986-4962-9041-0ce536d44b4d",
+      "metadata": {
+        "page": 106,
+        "bm25_rank": 5,
+        "vector_rank": 2,
+        "fusion_rank": 2,
+        "bm25_score": 7.11449670791626,
+        "vector_score": 0.45771826463019133,
+        "rrf_score": 0.0315136476426799,
+        "rerank_score": 47.25796582449808,
+        "finance_boost": 3.75,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "cash",
+          "dividends",
+          "flows",
+          "pay"
+        ]
+      }
+    },
+    {
+      "step": 12,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "b4b0b333-a1c4-4fb8-94dc-add74965d739",
+      "metadata": {
+        "page": 105,
+        "bm25_rank": 8,
+        "vector_rank": 24,
+        "fusion_rank": 7,
+        "bm25_score": 6.151843547821045,
+        "vector_score": 0.3904251212104952,
+        "rrf_score": 0.02661064425770308,
+        "rerank_score": 41.57655334861217,
+        "finance_boost": 8.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "cash",
+          "did",
+          "dividends"
+        ]
+      }
+    },
+    {
+      "step": 13,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "3287a051-a1bc-4aa8-baad-c1cff19bffc7",
+      "metadata": {
+        "page": 129,
+        "bm25_rank": 31,
+        "vector_rank": 8,
+        "fusion_rank": 10,
+        "bm25_score": 4.115570545196533,
+        "vector_score": 0.42244270807813084,
+        "rrf_score": 0.025694893341952164,
+        "rerank_score": 39.3937569783158,
+        "finance_boost": 3.75,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "cash",
+          "flows",
+          "primarily"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": null,
+    "output": null,
+    "total": null
+  },
+  "latency_ms": 10168,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\AMERICANWATERWORKS_2020_10K.pdf",
+    "adapter_mode": "llamaindex_bm25_vector_rrf_plus_rerank",
+    "llm_enabled": false,
+    "model": null,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "page_count": 152,
+    "node_count": 240,
+    "chunk_size": 900,
+    "chunk_overlap": 160,
+    "vector_top_k": 120,
+    "bm25_top_k": 120,
+    "fusion_top_k": 120,
+    "rerank_top_k": 12,
+    "rrf_k": 60,
+    "max_citations": 3,
+    "finance_rerank": true,
+    "cross_encoder_model": null,
+    "cross_encoder_candidates": 60,
+    "answer_context_chunk_count": 12,
+    "answer_context_chars": 38185,
+    "answer_context_words": 5824
+  }
+}

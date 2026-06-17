@@ -1,0 +1,207 @@
+{
+  "method": "llamaindex_vector_rag",
+  "question_id": "fb_exp_021",
+  "question": "As of FY2023Q1, why did Pepsico raise full year guidance for FY2023?",
+  "answer": "Retrieved 6 chunks with LlamaIndex vector retrieval and lightweight reranking.",
+  "citations": [
+    {
+      "document_id": "PEPSICO_2023Q1_EARNINGS",
+      "page": 1,
+      "section": null,
+      "text": "PepsiCo Reports First-Quarter 2023 Results; Raises Full-Year Guidance Reported (GAAP) First-Quarter 2023 Results First-Quarter Net revenue growth 10.2% Foreign exchange impact on net revenue (2.5)% Earnings per share (EPS) $1.40 EPS change (54)% Foreign exchange impact on EPS (2)% Organic/Core (non-GAAP)1 First-Quarter 2023 Results First-Quarter Organic revenue growth 14.3% Core EPS $1.50 Core constant currency EPS change 18% PURCHASE, N.Y. - April 25, 2023 - PepsiCo, Inc. (NASDAQ: PEP) today re",
+      "metadata": {
+        "chunk_id": "56ceee90-bbd1-4690-bbc8-bb92a0428867",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.6147137155759266,
+        "rerank_score": 70.09637155759266,
+        "matched_terms": [
+          "full",
+          "guidance"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "PEPSICO_2023Q1_EARNINGS",
+      "page": 3,
+      "section": null,
+      "text": "Guidance and Outlook The Company provides guidance on a non-GAAP basis as we cannot predict certain elements which are included in reported GAAP results, including the impact of foreign exchange translation and commodity mark-to-market net impacts. For fiscal year 2023, the Company now expects to deliver 8 percent organic revenue growth (previously 6 percent), and 9 percent core constant currency EPS growth (previously 8 percent). Consistent with its previous guidance for 2023, the Company conti",
+      "metadata": {
+        "chunk_id": "c8f1c4d9-f5ba-48b7-9241-6a426342f958",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5991197283219903,
+        "rerank_score": 66.48141727664348,
+        "matched_terms": [
+          "guidance"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "PEPSICO_2023Q1_EARNINGS",
+      "page": 2,
+      "section": null,
+      "text": "Summary First-Quarter 2023 Performance Revenue Volume(a) GAAP Reported % Change Percentage Point Impact Organic % Change % Change Foreign Exchange Translation Acquisitions and Divestitures Convenient Foods Beverages Frito-Lay North America 15 — — 16 — Quaker Foods North America 9 1 — 10 (5) PepsiCo Beverages North America 8 — 3 12 (2) Latin America 21 (6) 1 16 1 5 Europe 5 5 4 14 (5) (11) Africa, Middle East and South Asia 2 28 — 29 (8) 15 Asia Pacific, Australia and New Zealand and China Region",
+      "metadata": {
+        "chunk_id": "163ee135-196c-4bf1-9f59-7912fd032365",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5583748247576613,
+        "rerank_score": 64.67081580909947,
+        "matched_terms": [],
+        "citation_source": "rerank_fallback"
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "llamaindex_build_vector_index",
+      "target": "PEPSICO_2023Q1_EARNINGS",
+      "metadata": {
+        "page_count": 16,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "chunk_size": 900,
+        "chunk_overlap": 160,
+        "retrieve_top_k": 120,
+        "rerank_top_k": 6,
+        "finance_rerank": true,
+        "answer_context_chunk_count": 6,
+        "answer_context_chars": 11112,
+        "answer_context_words": 1737
+      }
+    },
+    {
+      "step": 2,
+      "action": "llamaindex_retrieve_node",
+      "target": "56ceee90-bbd1-4690-bbc8-bb92a0428867",
+      "metadata": {
+        "page": 1,
+        "retrieval_rank": 1,
+        "initial_rank": 1,
+        "vector_score": 0.6147137155759266,
+        "rerank_score": 70.09637155759266,
+        "finance_boost": 3.625,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "matched_terms": [
+          "full",
+          "guidance"
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "action": "llamaindex_retrieve_node",
+      "target": "c8f1c4d9-f5ba-48b7-9241-6a426342f958",
+      "metadata": {
+        "page": 3,
+        "retrieval_rank": 2,
+        "initial_rank": 2,
+        "vector_score": 0.5991197283219903,
+        "rerank_score": 66.48141727664348,
+        "finance_boost": 3.625,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "matched_terms": [
+          "guidance"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "llamaindex_retrieve_node",
+      "target": "163ee135-196c-4bf1-9f59-7912fd032365",
+      "metadata": {
+        "page": 2,
+        "retrieval_rank": 4,
+        "initial_rank": 4,
+        "vector_score": 0.5583748247576613,
+        "rerank_score": 64.67081580909947,
+        "finance_boost": 8.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "matched_terms": []
+      }
+    },
+    {
+      "step": 5,
+      "action": "llamaindex_retrieve_node",
+      "target": "35755845-b4fb-4eec-9922-a7c5858a4ea4",
+      "metadata": {
+        "page": 12,
+        "retrieval_rank": 5,
+        "initial_rank": 5,
+        "vector_score": 0.5457918261533666,
+        "rerank_score": 63.35696039311444,
+        "finance_boost": 8.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "matched_terms": []
+      }
+    },
+    {
+      "step": 6,
+      "action": "llamaindex_retrieve_node",
+      "target": "769a463b-c55c-49e3-92df-8cac099ba92b",
+      "metadata": {
+        "page": 14,
+        "retrieval_rank": 6,
+        "initial_rank": 6,
+        "vector_score": 0.5451124007937372,
+        "rerank_score": 63.23346230159594,
+        "finance_boost": 8.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "matched_terms": []
+      }
+    },
+    {
+      "step": 7,
+      "action": "llamaindex_retrieve_node",
+      "target": "e74aa4d8-6439-40a5-9d07-c30f03ef069e",
+      "metadata": {
+        "page": 7,
+        "retrieval_rank": 3,
+        "initial_rank": 3,
+        "vector_score": 0.5633504471670062,
+        "rerank_score": 61.97393360558951,
+        "finance_boost": 4.75,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "matched_terms": []
+      }
+    }
+  ],
+  "token_usage": {
+    "input": null,
+    "output": null,
+    "total": null
+  },
+  "latency_ms": 7858,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\PEPSICO_2023Q1_EARNINGS.pdf",
+    "adapter_mode": "llamaindex_vector_retrieval",
+    "llm_enabled": false,
+    "model": null,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "page_count": 16,
+    "chunk_size": 900,
+    "chunk_overlap": 160,
+    "retrieve_top_k": 120,
+    "rerank_top_k": 6,
+    "max_citations": 3,
+    "finance_rerank": true,
+    "answer_context_chunk_count": 6,
+    "answer_context_chars": 11112,
+    "answer_context_words": 1737
+  }
+}

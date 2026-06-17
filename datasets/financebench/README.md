@@ -1,19 +1,23 @@
-# FinanceBench MVP Subset
+# FinanceBench Subsets
 
 Source:
 
 - Dataset repository: https://github.com/patronus-ai/financebench
 - Paper: https://arxiv.org/abs/2311.11944
 
-This directory stores the first small question subset for the PageIndex BenchLab MVP.
+This directory stores normalized FinanceBench question subsets for PageIndex BenchLab.
 
 ## Files
 
 ```text
 mvp_questions.jsonl
+expanded_questions_25.jsonl
+expanded_questions_25_manifest.json
 ```
 
 The subset contains 12 FinanceBench questions selected for first-stage RAG pipeline testing.
+
+The expanded subset contains 25 questions. It preserves the original 12 MVP questions and adds 13 deterministic balanced selections from the open-source FinanceBench rows.
 
 Selection goals:
 
@@ -48,5 +52,7 @@ Then run:
 
 ```powershell
 python datasets\financebench\build_mvp_subset.py
+python datasets\financebench\build_expanded_subset.py --target-count 25
 ```
 
+The expanded builder balances `question_type`, reasoning labels, companies, and source documents without using gold evidence during retrieval.

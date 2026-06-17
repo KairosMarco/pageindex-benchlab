@@ -1,0 +1,440 @@
+{
+  "method": "llamaindex_hybrid_rag",
+  "question_id": "fb_exp_022",
+  "question": "What is Coca Cola's FY2021 COGS % margin? Calculate what was asked by utilizing the line items clearly shown in the income statement.",
+  "answer": "Retrieved 12 chunks with LlamaIndex BM25/vector hybrid fusion.",
+  "citations": [
+    {
+      "document_id": "COCACOLA_2021_10K",
+      "page": 62,
+      "section": null,
+      "text": "THE COCA-COLA COMPANY AND SUBSIDIARIES CONSOLIDATED STATEMENTS OF INCOME (In millions except per share data) Year Ended December 31, 2021 2020 2019 Net Operating Revenues $ 38,655 $ 33,014 $ 37,266 Cost of goods sold 15,357 13,433 14,619 Gross Profit 23,298 19,581 22,647 Selling, general and administrative expenses 12,144 9,731 12,103 Other operating charges 846 853 458 Operating Income 10,308 8,997 10,086 Interest income 276 370 563 Interest expense 1,597 1,437 946 Equity income (loss) — net 1,",
+      "metadata": {
+        "chunk_id": "8a70039c-c7c5-4ac9-8a96-c76818ab5660",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5753438959101354,
+        "rerank_score": 67.47794966520433,
+        "matched_terms": [
+          "cost",
+          "goods",
+          "income"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "COCACOLA_2021_10K",
+      "page": 68,
+      "section": null,
+      "text": "e ability to exercise significant influence over operating and financial policies of the investee. Our consolidated net income includes our Company’s proportionate share of the net income or loss of these companies. Our judgment regarding the level of influence over each equity method investee includes considering key factors such as our ownership interest, representation on the board of directors, participation in policy-making decisions, other commercial arrangements and material intercompany ",
+      "metadata": {
+        "chunk_id": "e59f4867-f8e1-410f-9e2b-9a69b1125b44",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.475463748471633,
+        "rerank_score": 59.45129221103734,
+        "matched_terms": [
+          "cost",
+          "goods",
+          "income",
+          "revenue",
+          "sales",
+          "statement"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "COCACOLA_2021_10K",
+      "page": 128,
+      "section": null,
+      "text": "ca-Cola Company and subsidiaries (the Company) as of December 31, 2021 and 2020, the related consolidated statements of income, comprehensive income, shareowners’ equity and cash flows for each of the three years in the period ended December 31, 2021, and the related notes (collectively referred to as the “consolidated financial statements”). In our opinion, the consolidated financial statements present fairly, in all material respects, the financial position of the Company as of December 31, 20",
+      "metadata": {
+        "chunk_id": "103b3280-255e-4dfe-bb18-001aa9627ff7",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5085623364536519,
+        "rerank_score": 53.64824797843666,
+        "matched_terms": [
+          "income",
+          "operations",
+          "revenue"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "llamaindex_build_hybrid_index",
+      "target": "COCACOLA_2021_10K",
+      "metadata": {
+        "page_count": 183,
+        "node_count": 268,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "chunk_size": 900,
+        "chunk_overlap": 160,
+        "vector_top_k": 120,
+        "bm25_top_k": 120,
+        "fusion_top_k": 120,
+        "rerank_top_k": 12,
+        "rrf_k": 60,
+        "finance_rerank": true,
+        "cross_encoder_model": null,
+        "cross_encoder_candidates": 60,
+        "answer_context_chunk_count": 12,
+        "answer_context_chars": 37245,
+        "answer_context_words": 5704
+      }
+    },
+    {
+      "step": 2,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "8a70039c-c7c5-4ac9-8a96-c76818ab5660",
+      "metadata": {
+        "page": 62,
+        "bm25_rank": 11,
+        "vector_rank": 1,
+        "fusion_rank": 1,
+        "bm25_score": 4.114446640014648,
+        "vector_score": 0.5753438959101354,
+        "rrf_score": 0.03047794966520434,
+        "rerank_score": 67.47794966520433,
+        "finance_boost": 24.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "income_statement_title"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "cost",
+          "goods",
+          "income"
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "e59f4867-f8e1-410f-9e2b-9a69b1125b44",
+      "metadata": {
+        "page": 68,
+        "bm25_rank": 9,
+        "vector_rank": 27,
+        "fusion_rank": 7,
+        "bm25_score": 4.396292209625244,
+        "vector_score": 0.475463748471633,
+        "rrf_score": 0.025987006496751626,
+        "rerank_score": 59.45129221103734,
+        "finance_boost": 17.5,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "income_statement_title"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "cost",
+          "goods",
+          "income",
+          "revenue",
+          "sales",
+          "statement"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "103b3280-255e-4dfe-bb18-001aa9627ff7",
+      "metadata": {
+        "page": 128,
+        "bm25_rank": 46,
+        "vector_rank": 10,
+        "fusion_rank": 13,
+        "bm25_score": 2.558000326156616,
+        "vector_score": 0.5085623364536519,
+        "rrf_score": 0.02371967654986523,
+        "rerank_score": 53.64824797843666,
+        "finance_boost": 20.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "income_statement_title"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "income",
+          "operations",
+          "revenue"
+        ]
+      }
+    },
+    {
+      "step": 5,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "8c305147-32a9-49f4-94ba-b3f5ef9d0e98",
+      "metadata": {
+        "page": 95,
+        "bm25_rank": 15,
+        "vector_rank": 51,
+        "fusion_rank": 24,
+        "bm25_score": 3.8371028900146484,
+        "vector_score": 0.42536674691401744,
+        "rrf_score": 0.022342342342342343,
+        "rerank_score": 53.45543758043758,
+        "finance_boost": 21.25,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "income_statement_title"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "cost",
+          "income",
+          "statement"
+        ]
+      }
+    },
+    {
+      "step": 6,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "c2dc4e22-e73d-4102-be0b-8788606e1867",
+      "metadata": {
+        "page": 140,
+        "bm25_rank": 18,
+        "vector_rank": 41,
+        "fusion_rank": 23,
+        "bm25_score": 3.522185802459717,
+        "vector_score": 0.4440957759738468,
+        "rrf_score": 0.02272150291952272,
+        "rerank_score": 52.59055053857034,
+        "finance_boost": 24.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "income_statement_title"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "income"
+        ]
+      }
+    },
+    {
+      "step": 7,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "1bae8aaf-a1d7-47ec-8cab-cdbdf6fbc7cd",
+      "metadata": {
+        "page": 49,
+        "bm25_rank": 5,
+        "vector_rank": 8,
+        "fusion_rank": 2,
+        "bm25_score": 4.881379127502441,
+        "vector_score": 0.5154904059541748,
+        "rrf_score": 0.030090497737556562,
+        "rerank_score": 48.20954535660418,
+        "finance_boost": 7.125,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "cost",
+          "income",
+          "margin",
+          "operations",
+          "sales"
+        ]
+      }
+    },
+    {
+      "step": 8,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "6f78b37e-c517-4057-b475-91a54dff325a",
+      "metadata": {
+        "page": 119,
+        "bm25_rank": 29,
+        "vector_rank": 64,
+        "fusion_rank": 38,
+        "bm25_score": 3.0415921211242676,
+        "vector_score": 0.4082774424835973,
+        "rrf_score": 0.019300471185212033,
+        "rerank_score": 47.45523308997394,
+        "finance_boost": 22.375,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "income_statement_title"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "income"
+        ]
+      }
+    },
+    {
+      "step": 9,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "52db2871-11fe-4e52-bc50-db65a2691a8a",
+      "metadata": {
+        "page": 130,
+        "bm25_rank": 49,
+        "vector_rank": 13,
+        "fusion_rank": 22,
+        "bm25_score": 2.482074737548828,
+        "vector_score": 0.4905727138782858,
+        "rrf_score": 0.022872942063591806,
+        "rerank_score": 46.99794206359181,
+        "finance_boost": 18.25,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "income_statement_title"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "income"
+        ]
+      }
+    },
+    {
+      "step": 10,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "9551b163-0d2e-4b46-8ea4-81a6711cd670",
+      "metadata": {
+        "page": 61,
+        "bm25_rank": 58,
+        "vector_rank": 7,
+        "fusion_rank": 17,
+        "bm25_score": 2.331075429916382,
+        "vector_score": 0.5242853049196995,
+        "rrf_score": 0.0233999494055148,
+        "rerank_score": 46.80471131027671,
+        "finance_boost": 17.5,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "income_statement_title"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "income"
+        ]
+      }
+    },
+    {
+      "step": 11,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "125da540-6a7b-437e-abf5-255156b357bb",
+      "metadata": {
+        "page": 86,
+        "bm25_rank": 19,
+        "vector_rank": 32,
+        "fusion_rank": 15,
+        "bm25_score": 3.4486474990844727,
+        "vector_score": 0.46423096673800734,
+        "rrf_score": 0.023527793065492568,
+        "rerank_score": 43.44445973215923,
+        "finance_boost": 8.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "cost",
+          "goods",
+          "income",
+          "statement"
+        ]
+      }
+    },
+    {
+      "step": 12,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "c4375699-fc49-49d4-84c4-31ce711baea6",
+      "metadata": {
+        "page": 132,
+        "bm25_rank": 3,
+        "vector_rank": null,
+        "fusion_rank": 51,
+        "bm25_score": 5.164887428283691,
+        "vector_score": null,
+        "rrf_score": 0.015873015873015872,
+        "rerank_score": 43.20039682539682,
+        "finance_boost": 19.625,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "income_statement_title"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "income",
+          "statement"
+        ]
+      }
+    },
+    {
+      "step": 13,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "bdaba988-ae0e-477f-9066-ff625d7c2d9f",
+      "metadata": {
+        "page": 101,
+        "bm25_rank": 64,
+        "vector_rank": null,
+        "fusion_rank": 112,
+        "bm25_score": 2.193419933319092,
+        "vector_score": null,
+        "rrf_score": 0.008064516129032258,
+        "rerank_score": 39.40380184331797,
+        "finance_boost": 24.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "income_statement_title"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "cost",
+          "income"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": null,
+    "output": null,
+    "total": null
+  },
+  "latency_ms": 11187,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\COCACOLA_2021_10K.pdf",
+    "adapter_mode": "llamaindex_bm25_vector_rrf_plus_rerank",
+    "llm_enabled": false,
+    "model": null,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "page_count": 183,
+    "node_count": 268,
+    "chunk_size": 900,
+    "chunk_overlap": 160,
+    "vector_top_k": 120,
+    "bm25_top_k": 120,
+    "fusion_top_k": 120,
+    "rerank_top_k": 12,
+    "rrf_k": 60,
+    "max_citations": 3,
+    "finance_rerank": true,
+    "cross_encoder_model": null,
+    "cross_encoder_candidates": 60,
+    "answer_context_chunk_count": 12,
+    "answer_context_chars": 37245,
+    "answer_context_words": 5704
+  }
+}

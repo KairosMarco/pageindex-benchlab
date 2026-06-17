@@ -1,0 +1,447 @@
+{
+  "method": "llamaindex_hybrid_rag",
+  "question_id": "fb_mvp_006",
+  "question": "Has Boeing reported any materially important ongoing legal battles from FY2022?",
+  "answer": "Retrieved 12 chunks with LlamaIndex BM25/vector hybrid fusion.",
+  "citations": [
+    {
+      "document_id": "BOEING_2022_10K",
+      "page": 113,
+      "section": null,
+      "text": "Table of Contents based upon current information, that the outcome of any such legal proceeding, claim, or government dispute and investigation will not have a material effect on our financial position, results of operations or cash flows. Where it is reasonably possible that we will incur losses in excess of recorded amounts in connection with any of the matters set forth below, we will disclose either the amount or range of reasonably possible losses in excess of such amounts or, where no such",
+      "metadata": {
+        "chunk_id": "5d8efbd8-9ccf-42f9-b004-6cccee1ff63b",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5818117578298388,
+        "rerank_score": 111.7980963026045,
+        "matched_terms": [
+          "accident",
+          "actions",
+          "filed",
+          "has",
+          "lawsuits",
+          "legal",
+          "proceeding"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "BOEING_2022_10K",
+      "page": 19,
+      "section": null,
+      "text": "otentially resulting in significant liabilities. See Note 21 of the Consolidated Financial Statements for discussion of legal proceedings resulting from the October 29, 2018 accident of Lion Air Flight 610 and the March 10, 2019 accident of Ethiopian Airlines Flight 302. The amount of insurance coverage we maintain may be inadequate to cover these or other claims or liabilities. A significant portion of our customer financing portfolio is concentrated among certain customers and in certain types",
+      "metadata": {
+        "chunk_id": "19d1cb7e-d7be-4821-a135-33fb472036b8",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.49753231223394156,
+        "rerank_score": 91.63314013053885,
+        "matched_terms": [
+          "accident",
+          "actions",
+          "claims",
+          "legal",
+          "materially",
+          "proceedings"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "BOEING_2022_10K",
+      "page": 2,
+      "section": null,
+      "text": "T I Page Item 1. Business 1 Item 1A. Risk Factors 6 Item 1B. Unresolved Staff Comments 17 Item 2. Properties 18 Item 3. Legal Proceedings 18 Item 4. Mine Safety Disclosures 18 PART II Item 5. Market for Registrant’s Common Equity, Related Stockholder Matters and Issuer Purchases of Equity Securities 19 Item 6. [Reserved] 19 Item 7. Management’s Discussion and Analysis of Financial Condition and Results of Operations 20 Item 7A. Quantitative and Qualitative Disclosures About Market Risk 51 Item 8",
+      "metadata": {
+        "chunk_id": "54eaea0b-eecb-4214-b029-003acdeee1a6",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5756387908001902,
+        "rerank_score": 60.343570497602755,
+        "matched_terms": [
+          "legal",
+          "proceedings"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "llamaindex_build_hybrid_index",
+      "target": "BOEING_2022_10K",
+      "metadata": {
+        "page_count": 190,
+        "node_count": 195,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "chunk_size": 900,
+        "chunk_overlap": 160,
+        "vector_top_k": 120,
+        "bm25_top_k": 120,
+        "fusion_top_k": 120,
+        "rerank_top_k": 12,
+        "rrf_k": 60,
+        "finance_rerank": true,
+        "cross_encoder_model": null,
+        "cross_encoder_candidates": 60,
+        "answer_context_chunk_count": 12,
+        "answer_context_chars": 35075,
+        "answer_context_words": 5262
+      }
+    },
+    {
+      "step": 2,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "5d8efbd8-9ccf-42f9-b004-6cccee1ff63b",
+      "metadata": {
+        "page": 113,
+        "bm25_rank": 10,
+        "vector_rank": 1,
+        "fusion_rank": 2,
+        "bm25_score": 3.3469839096069336,
+        "vector_score": 0.5818117578298388,
+        "rrf_score": 0.030679156908665108,
+        "rerank_score": 111.7980963026045,
+        "finance_boost": 39.125,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "legal_proceedings_line_item",
+          "boeing_737_max_accident_terms"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "accident",
+          "actions",
+          "filed",
+          "has",
+          "lawsuits",
+          "legal",
+          "proceeding"
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "19d1cb7e-d7be-4821-a135-33fb472036b8",
+      "metadata": {
+        "page": 19,
+        "bm25_rank": 34,
+        "vector_rank": 13,
+        "fusion_rank": 14,
+        "bm25_score": 2.1938087940216064,
+        "vector_score": 0.49753231223394156,
+        "rrf_score": 0.024336928009326728,
+        "rerank_score": 91.63314013053885,
+        "finance_boost": 38.375,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "legal_proceedings_line_item",
+          "boeing_737_max_accident_terms"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "accident",
+          "actions",
+          "claims",
+          "legal",
+          "materially",
+          "proceedings"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "54eaea0b-eecb-4214-b029-003acdeee1a6",
+      "metadata": {
+        "page": 2,
+        "bm25_rank": 66,
+        "vector_rank": 2,
+        "fusion_rank": 17,
+        "bm25_score": 1.5816959142684937,
+        "vector_score": 0.5756387908001902,
+        "rrf_score": 0.024065540194572452,
+        "rerank_score": 60.343570497602755,
+        "finance_boost": 25.375,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "legal_proceedings_line_item"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "legal",
+          "proceedings"
+        ]
+      }
+    },
+    {
+      "step": 5,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "dc2c669b-358d-4f1c-b5a7-a3dcc09f53d3",
+      "metadata": {
+        "page": 47,
+        "bm25_rank": 27,
+        "vector_rank": 96,
+        "fusion_rank": 43,
+        "bm25_score": 2.509195327758789,
+        "vector_score": 0.36467128195554016,
+        "rrf_score": 0.017904509283819627,
+        "rerank_score": 57.39996382927417,
+        "finance_boost": 24.75,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "legal_proceedings_line_item"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "claims",
+          "filed",
+          "legal",
+          "proceedings"
+        ]
+      }
+    },
+    {
+      "step": 6,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "cff99fe5-9f4c-48b7-a9ae-71a3eee087f4",
+      "metadata": {
+        "page": 20,
+        "bm25_rank": 65,
+        "vector_rank": 48,
+        "fusion_rank": 47,
+        "bm25_score": 1.5900099277496338,
+        "vector_score": 0.4302718315535954,
+        "rrf_score": 0.01725925925925926,
+        "rerank_score": 52.10547138047138,
+        "finance_boost": 24.125,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "legal_proceedings_line_item"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "legal",
+          "proceedings"
+        ]
+      }
+    },
+    {
+      "step": 7,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "dfe69f7f-36bc-4d9a-857f-e6dc090143d2",
+      "metadata": {
+        "page": 54,
+        "bm25_rank": 50,
+        "vector_rank": null,
+        "fusion_rank": 93,
+        "bm25_score": 1.870097041130066,
+        "vector_score": null,
+        "rrf_score": 0.00909090909090909,
+        "rerank_score": 46.15833333333334,
+        "finance_boost": 26.625,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "legal_proceedings_line_item"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "legal",
+          "proceedings"
+        ]
+      }
+    },
+    {
+      "step": 8,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "4e8cf37c-dd93-4e32-a5d9-72ea83af7d90",
+      "metadata": {
+        "page": 112,
+        "bm25_rank": 63,
+        "vector_rank": null,
+        "fusion_rank": 108,
+        "bm25_score": 1.612653136253357,
+        "vector_score": null,
+        "rrf_score": 0.008130081300813009,
+        "rerank_score": 44.60659645232816,
+        "finance_boost": 24.125,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "legal_proceedings_line_item"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "claims",
+          "legal",
+          "proceedings"
+        ]
+      }
+    },
+    {
+      "step": 9,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "8f60289f-5e2a-4d71-9bd0-9ddf8ad6eeac",
+      "metadata": {
+        "page": 4,
+        "bm25_rank": 2,
+        "vector_rank": 6,
+        "fusion_rank": 1,
+        "bm25_score": 4.591340065002441,
+        "vector_score": 0.5187678711697847,
+        "rrf_score": 0.03128054740957967,
+        "rerank_score": 41.65554740957967,
+        "finance_boost": 3.375,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "has",
+          "important",
+          "materially"
+        ]
+      }
+    },
+    {
+      "step": 10,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "7608b7ce-70aa-4ce7-b5aa-75118ab2b426",
+      "metadata": {
+        "page": 17,
+        "bm25_rank": 12,
+        "vector_rank": 3,
+        "fusion_rank": 5,
+        "bm25_score": 3.3319318294525146,
+        "vector_score": 0.5421272682492237,
+        "rrf_score": 0.02976190476190476,
+        "rerank_score": 38.737662337662336,
+        "finance_boost": 0.0,
+        "finance_boost_reasons": [],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "claims",
+          "legal",
+          "ongoing",
+          "proceedings"
+        ]
+      }
+    },
+    {
+      "step": 11,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "7374fea4-6266-4b21-9885-0760a4cc5ad0",
+      "metadata": {
+        "page": 29,
+        "bm25_rank": 1,
+        "vector_rank": 14,
+        "fusion_rank": 3,
+        "bm25_score": 4.787494659423828,
+        "vector_score": 0.4969801524870523,
+        "rrf_score": 0.029906956136464335,
+        "rerank_score": 38.644834924343115,
+        "finance_boost": 3.75,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "has",
+          "ongoing"
+        ]
+      }
+    },
+    {
+      "step": 12,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "dea0650a-6248-4269-891c-bdec1ad78a2e",
+      "metadata": {
+        "page": 188,
+        "bm25_rank": 7,
+        "vector_rank": 7,
+        "fusion_rank": 4,
+        "bm25_score": 3.884777784347534,
+        "vector_score": 0.5108494094128603,
+        "rrf_score": 0.029850746268656716,
+        "rerank_score": 36.957564450474905,
+        "finance_boost": 2.125,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "has",
+          "materially"
+        ]
+      }
+    },
+    {
+      "step": 13,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "880b004e-25b2-4c48-8aa3-237eadef96cc",
+      "metadata": {
+        "page": 187,
+        "bm25_rank": 6,
+        "vector_rank": 10,
+        "fusion_rank": 6,
+        "bm25_score": 3.8870959281921387,
+        "vector_score": 0.5067466394752077,
+        "rrf_score": 0.029437229437229435,
+        "rerank_score": 36.5319264069264,
+        "finance_boost": 2.125,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "has",
+          "materially"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": null,
+    "output": null,
+    "total": null
+  },
+  "latency_ms": 9232,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\BOEING_2022_10K.pdf",
+    "adapter_mode": "llamaindex_bm25_vector_rrf_plus_rerank",
+    "llm_enabled": false,
+    "model": null,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "page_count": 190,
+    "node_count": 195,
+    "chunk_size": 900,
+    "chunk_overlap": 160,
+    "vector_top_k": 120,
+    "bm25_top_k": 120,
+    "fusion_top_k": 120,
+    "rerank_top_k": 12,
+    "rrf_k": 60,
+    "max_citations": 3,
+    "finance_rerank": true,
+    "cross_encoder_model": null,
+    "cross_encoder_candidates": 60,
+    "answer_context_chunk_count": 12,
+    "answer_context_chars": 35075,
+    "answer_context_words": 5262
+  }
+}

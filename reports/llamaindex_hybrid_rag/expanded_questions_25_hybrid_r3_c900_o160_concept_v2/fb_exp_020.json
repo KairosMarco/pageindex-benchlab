@@ -1,0 +1,187 @@
+{
+  "method": "llamaindex_hybrid_rag",
+  "question_id": "fb_exp_020",
+  "question": "Is CVS Health a capital-intensive business based on FY2022 data?",
+  "answer": "Retrieved 3 chunks with LlamaIndex BM25/vector hybrid fusion.",
+  "citations": [
+    {
+      "document_id": "CVSHEALTH_2022_10K",
+      "page": 110,
+      "section": null,
+      "text": "0 shares outstanding at December 31, 2022 and 1,744 shares issued and 1,322 shares outstanding at December 31, 2021 and capital surplus 48,193 47,377 Treasury stock, at cost: 458 and 422 shares at December 31, 2022 and 2021 (31,858) (28,173) Retained earnings 56,145 54,906 Accumulated other comprehensive income (loss) (1,465) 965 Total CVS Health shareholders’ equity 71,015 75,075 Noncontrolling interests 300 306 Total shareholders’ equity 71,315 75,381 Total liabilities and shareholders’ equity",
+      "metadata": {
+        "chunk_id": "e8670d54-cf2a-4989-9fad-ae019830fe28",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.4175813788533797,
+        "rerank_score": 79.53876345238245,
+        "matched_terms": [
+          "capital"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "CVSHEALTH_2022_10K",
+      "page": 108,
+      "section": null,
+      "text": "Index to Consolidated Financial Statements Consolidated Statements of Operations For the Years Ended December 31, In millions, except per share amounts 2022 2021 2020 Revenues: Products $ 226,616 $ 203,738 $ 190,688 Premiums 85,330 76,132 69,364 Services 9,683 11,042 7,856 Net investment income 838 1,199 798 Total revenues 322,467 292,111 268,706 Operating costs: Cost of products sold 196,892 175,803 163,981 Benefit costs 71,281 64,260 55,679 Opioid litigation charges 5,803 — — Loss on assets he",
+      "metadata": {
+        "chunk_id": "a149c921-2149-40f6-929a-f73ac5d88c9c",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.469244258528397,
+        "rerank_score": 43.114360815683426,
+        "matched_terms": [],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "CVSHEALTH_2022_10K",
+      "page": 70,
+      "section": null,
+      "text": "R, SYY, WBA, WMT). (3) Includes 63 companies. The year-ended values of each investment shown in the preceding graph are based on share price appreciation plus dividends, with the dividends reinvested as of the last business day of the month during which such dividends were ex-dividend. The calculations exclude trading commissions and taxes. Total shareholder returns from each investment can be calculated from the year-end investment values shown beneath the graph. Item 6. Reserved Not applicable",
+      "metadata": {
+        "chunk_id": "2adb7242-94eb-46df-a1bf-6aeb5f178a6a",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.537597075114149,
+        "rerank_score": 39.15982909287757,
+        "matched_terms": [
+          "based",
+          "business"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "llamaindex_build_hybrid_index",
+      "target": "CVSHEALTH_2022_10K",
+      "metadata": {
+        "page_count": 213,
+        "node_count": 329,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "chunk_size": 900,
+        "chunk_overlap": 160,
+        "vector_top_k": 120,
+        "bm25_top_k": 120,
+        "fusion_top_k": 120,
+        "rerank_top_k": 3,
+        "rrf_k": 60,
+        "finance_rerank": true,
+        "cross_encoder_model": null,
+        "cross_encoder_candidates": 60,
+        "answer_context_chunk_count": 3,
+        "answer_context_chars": 5689,
+        "answer_context_words": 838
+      }
+    },
+    {
+      "step": 2,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "e8670d54-cf2a-4989-9fad-ae019830fe28",
+      "metadata": {
+        "page": 110,
+        "bm25_rank": 120,
+        "vector_rank": 77,
+        "fusion_rank": 62,
+        "bm25_score": 1.3558323383331299,
+        "vector_score": 0.4175813788533797,
+        "rrf_score": 0.012854825628548255,
+        "rerank_score": 79.53876345238245,
+        "finance_boost": 64.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "balance_sheet_title",
+          "total_assets_line_item",
+          "capital_intensity_balance_sheet_lines"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "capital"
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "a149c921-2149-40f6-929a-f73ac5d88c9c",
+      "metadata": {
+        "page": 108,
+        "bm25_rank": 111,
+        "vector_rank": 36,
+        "fusion_rank": 30,
+        "bm25_score": 1.4304580688476562,
+        "vector_score": 0.469244258528397,
+        "rrf_score": 0.016264619883040933,
+        "rerank_score": 43.114360815683426,
+        "finance_boost": 26.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "capital_intensity_income_statement_lines"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": []
+      }
+    },
+    {
+      "step": 4,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "2adb7242-94eb-46df-a1bf-6aeb5f178a6a",
+      "metadata": {
+        "page": 70,
+        "bm25_rank": 20,
+        "vector_rank": 7,
+        "fusion_rank": 4,
+        "bm25_score": 2.256438970565796,
+        "vector_score": 0.537597075114149,
+        "rrf_score": 0.027425373134328357,
+        "rerank_score": 39.15982909287757,
+        "finance_boost": 6.75,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "based",
+          "business"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": null,
+    "output": null,
+    "total": null
+  },
+  "latency_ms": 11448,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\CVSHEALTH_2022_10K.pdf",
+    "adapter_mode": "llamaindex_bm25_vector_rrf_plus_rerank",
+    "llm_enabled": false,
+    "model": null,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "page_count": 213,
+    "node_count": 329,
+    "chunk_size": 900,
+    "chunk_overlap": 160,
+    "vector_top_k": 120,
+    "bm25_top_k": 120,
+    "fusion_top_k": 120,
+    "rerank_top_k": 3,
+    "rrf_k": 60,
+    "max_citations": 3,
+    "finance_rerank": true,
+    "cross_encoder_model": null,
+    "cross_encoder_candidates": 60,
+    "answer_context_chunk_count": 3,
+    "answer_context_chars": 5689,
+    "answer_context_words": 838
+  }
+}

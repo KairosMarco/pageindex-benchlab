@@ -1,0 +1,172 @@
+{
+  "method": "llamaindex_vector_rag",
+  "question_id": "fb_exp_022",
+  "question": "What is Coca Cola's FY2021 COGS % margin? Calculate what was asked by utilizing the line items clearly shown in the income statement.",
+  "answer": "Retrieved 3 chunks with LlamaIndex vector retrieval and lightweight reranking.",
+  "citations": [
+    {
+      "document_id": "COCACOLA_2021_10K",
+      "page": 62,
+      "section": null,
+      "text": "THE COCA-COLA COMPANY AND SUBSIDIARIES CONSOLIDATED STATEMENTS OF INCOME (In millions except per share data) Year Ended December 31, 2021 2020 2019 Net Operating Revenues $ 38,655 $ 33,014 $ 37,266 Cost of goods sold 15,357 13,433 14,619 Gross Profit 23,298 19,581 22,647 Selling, general and administrative expenses 12,144 9,731 12,103 Other operating charges 846 853 458 Operating Income 10,308 8,997 10,086 Interest income 276 370 563 Interest expense 1,597 1,437 946 Equity income (loss) — net 1,",
+      "metadata": {
+        "chunk_id": "c626a33a-bf36-474d-9cc8-5a9a462c3404",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.568841811702786,
+        "rerank_score": 77.8841811702786,
+        "matched_terms": [
+          "cost",
+          "goods",
+          "income"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "COCACOLA_2021_10K",
+      "page": 49,
+      "section": null,
+      "text": "ir value in conjunction with the fairlife acquisition and $16 million related to the restructuring of our manufacturing operations in the United States. Refer to Note 2 of Notes to Consolidated Financial Statements for additional information on the BodyArmor and fairlife acquisitions. Refer to Note 11 of Notes to Consolidated Financial Statements for additional information related to the tax litigation. Refer to Note 16 of Notes to Consolidated Financial Statements for additional information on ",
+      "metadata": {
+        "chunk_id": "d12fa392-ffd4-4343-bb5d-e23317b71f17",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5045830679687198,
+        "rerank_score": 68.48330679687199,
+        "matched_terms": [
+          "cost",
+          "income",
+          "margin",
+          "operations",
+          "sales"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "COCACOLA_2021_10K",
+      "page": 122,
+      "section": null,
+      "text": "Information about our Company’s operations by operating segment and Corporate is as follows (in millions): Europe, Middle East & Africa Latin America North America Asia Pacific Global Ventures Bottling Investments Corporate Eliminations Consolidated As of and for the Year Ended December 31, 2021 Net operating revenues: Third party $ 6,564 $ 4,143 $ 13,184 $ 4,682 $ 2,805 $ 7,194 $ 83 $ — $ 38,655 Intersegment 629 — 6 609 — 9 2 (1,255) — Total net operating revenues 7,193 4,143 13,190 5,291 2,805",
+      "metadata": {
+        "chunk_id": "8aa896fd-373c-46aa-aebf-1bc36d6d139c",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5494395380334713,
+        "rerank_score": 67.91062047001381,
+        "matched_terms": [
+          "income",
+          "operations"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "llamaindex_build_vector_index",
+      "target": "COCACOLA_2021_10K",
+      "metadata": {
+        "page_count": 183,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "chunk_size": 900,
+        "chunk_overlap": 160,
+        "retrieve_top_k": 120,
+        "rerank_top_k": 3,
+        "finance_rerank": true,
+        "answer_context_chunk_count": 3,
+        "answer_context_chars": 7090,
+        "answer_context_words": 1094
+      }
+    },
+    {
+      "step": 2,
+      "action": "llamaindex_retrieve_node",
+      "target": "c626a33a-bf36-474d-9cc8-5a9a462c3404",
+      "metadata": {
+        "page": 62,
+        "retrieval_rank": 1,
+        "initial_rank": 1,
+        "vector_score": 0.568841811702786,
+        "rerank_score": 77.8841811702786,
+        "finance_boost": 8.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "matched_terms": [
+          "cost",
+          "goods",
+          "income"
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "action": "llamaindex_retrieve_node",
+      "target": "d12fa392-ffd4-4343-bb5d-e23317b71f17",
+      "metadata": {
+        "page": 49,
+        "retrieval_rank": 13,
+        "initial_rank": 13,
+        "vector_score": 0.5045830679687198,
+        "rerank_score": 68.48330679687199,
+        "finance_boost": 7.125,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "matched_terms": [
+          "cost",
+          "income",
+          "margin",
+          "operations",
+          "sales"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "llamaindex_retrieve_node",
+      "target": "8aa896fd-373c-46aa-aebf-1bc36d6d139c",
+      "metadata": {
+        "page": 122,
+        "retrieval_rank": 5,
+        "initial_rank": 5,
+        "vector_score": 0.5494395380334713,
+        "rerank_score": 67.91062047001381,
+        "finance_boost": 8.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "matched_terms": [
+          "income",
+          "operations"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": null,
+    "output": null,
+    "total": null
+  },
+  "latency_ms": 13143,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\COCACOLA_2021_10K.pdf",
+    "adapter_mode": "llamaindex_vector_retrieval",
+    "llm_enabled": false,
+    "model": null,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "page_count": 183,
+    "chunk_size": 900,
+    "chunk_overlap": 160,
+    "retrieve_top_k": 120,
+    "rerank_top_k": 3,
+    "max_citations": 3,
+    "finance_rerank": true,
+    "answer_context_chunk_count": 3,
+    "answer_context_chars": 7090,
+    "answer_context_words": 1094
+  }
+}

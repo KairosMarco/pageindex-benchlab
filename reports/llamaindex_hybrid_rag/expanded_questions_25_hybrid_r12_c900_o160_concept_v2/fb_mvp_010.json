@@ -1,0 +1,457 @@
+{
+  "method": "llamaindex_hybrid_rag",
+  "question_id": "fb_mvp_010",
+  "question": "What Was AMCOR's Adjusted Non GAAP EBITDA for FY 2023",
+  "answer": "Retrieved 12 chunks with LlamaIndex BM25/vector hybrid fusion.",
+  "citations": [
+    {
+      "document_id": "AMCOR_2023Q4_EARNINGS",
+      "page": 11,
+      "section": null,
+      "text": "Reconciliation of Non-GAAP Measures Reconciliation of adjusted Earnings before interest, tax, depreciation and amortization (EBITDA), Earnings before interest and tax (EBIT), Net income, Earnings per share (EPS) and Free Cash Flow Three Months Ended June 30, 2022 Three Months Ended June 30, 2023 ($ million) EBITDA EBIT Net Income EPS (Diluted US cents)(1) EBITDA EBIT Net Income EPS (Diluted US cents)(1) Net income attributable to Amcor 109 109 109 7.3 181 181 181 12.3 Net income attributable to ",
+      "metadata": {
+        "chunk_id": "879c9c43-0e7e-47c2-b8b2-79ca4e3d374a",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.6194245279165576,
+        "rerank_score": 92.49495777446599,
+        "matched_terms": [
+          "adjusted",
+          "ebitda",
+          "gaap",
+          "non",
+          "reconciliation"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "AMCOR_2023Q4_EARNINGS",
+      "page": 12,
+      "section": null,
+      "text": "Twelve Months Ended June 30, 2022 Twelve Months Ended June 30, 2023 ($ million) EBITDA EBIT Net Income EPS (Diluted US cents)(1) EBITDA EBIT Net Income EPS (Diluted US cents)(1) Net income attributable to Amcor 805 805 805 52.9 1,048 1,048 1,048 70.5 Net income attributable to non-controlling interests 10 10 10 10 Tax expense 300 300 193 193 Interest expense, net 135 135 259 259 Depreciation and amortization 579 569 EBITDA, EBIT, Net income and EPS 1,829 1,250 805 52.9 2,080 1,510 1,048 70.5 201",
+      "metadata": {
+        "chunk_id": "09f1d793-e0be-4170-a85d-c7c02dfd86ba",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5784879461412942,
+        "rerank_score": 86.32889822595705,
+        "matched_terms": [
+          "adjusted",
+          "ebitda",
+          "non",
+          "reconciliation"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "AMCOR_2023Q4_EARNINGS",
+      "page": 7,
+      "section": null,
+      "text": "-looking statements in this communication are qualified in their entirety by this cautionary statement. Presentation of non-GAAP information Included in this release are measures of financial performance that are not calculated in accordance with U.S. GAAP. These measures include adjusted EBITDA and EBITDA (calculated as earnings before interest and tax and depreciation and amortization), adjusted EBIT and EBIT (calculated as earnings before interest and tax), adjusted net income, adjusted earni",
+      "metadata": {
+        "chunk_id": "98723157-1a89-4c7e-836e-fa2d786b9dba",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.6647083787783921,
+        "rerank_score": 73.00204813108039,
+        "matched_terms": [
+          "adjusted",
+          "ebitda",
+          "gaap",
+          "non",
+          "reconciliation"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "llamaindex_build_hybrid_index",
+      "target": "AMCOR_2023Q4_EARNINGS",
+      "metadata": {
+        "page_count": 14,
+        "node_count": 20,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "chunk_size": 900,
+        "chunk_overlap": 160,
+        "vector_top_k": 120,
+        "bm25_top_k": 120,
+        "fusion_top_k": 120,
+        "rerank_top_k": 12,
+        "rrf_k": 60,
+        "finance_rerank": true,
+        "cross_encoder_model": null,
+        "cross_encoder_candidates": 60,
+        "answer_context_chunk_count": 12,
+        "answer_context_chars": 33011,
+        "answer_context_words": 5019
+      }
+    },
+    {
+      "step": 2,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "879c9c43-0e7e-47c2-b8b2-79ca4e3d374a",
+      "metadata": {
+        "page": 11,
+        "bm25_rank": 1,
+        "vector_rank": 6,
+        "fusion_rank": 2,
+        "bm25_score": 2.1284124851226807,
+        "vector_score": 0.6194245279165576,
+        "rrf_score": 0.031544957774465976,
+        "rerank_score": 92.49495777446599,
+        "finance_boost": 44.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "requested_year_present",
+          "adjusted_ebitda_line_item",
+          "ebitda_reconciliation_table"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "adjusted",
+          "ebitda",
+          "gaap",
+          "non",
+          "reconciliation"
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "09f1d793-e0be-4170-a85d-c7c02dfd86ba",
+      "metadata": {
+        "page": 12,
+        "bm25_rank": 3,
+        "vector_rank": 8,
+        "fusion_rank": 6,
+        "bm25_score": 1.9027063846588135,
+        "vector_score": 0.5784879461412942,
+        "rrf_score": 0.03057889822595705,
+        "rerank_score": 86.32889822595705,
+        "finance_boost": 44.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "requested_year_present",
+          "adjusted_ebitda_line_item",
+          "ebitda_reconciliation_table"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "adjusted",
+          "ebitda",
+          "non",
+          "reconciliation"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "98723157-1a89-4c7e-836e-fa2d786b9dba",
+      "metadata": {
+        "page": 7,
+        "bm25_rank": 2,
+        "vector_rank": 3,
+        "fusion_rank": 1,
+        "bm25_score": 2.0046346187591553,
+        "vector_score": 0.6647083787783921,
+        "rrf_score": 0.03200204813108039,
+        "rerank_score": 73.00204813108039,
+        "finance_boost": 24.0,
+        "finance_boost_reasons": [
+          "adjusted_ebitda_line_item"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "adjusted",
+          "ebitda",
+          "gaap",
+          "non",
+          "reconciliation"
+        ]
+      }
+    },
+    {
+      "step": 5,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "b805a1a0-1357-4beb-b4b5-ee0517a68c97",
+      "metadata": {
+        "page": 1,
+        "bm25_rank": 4,
+        "vector_rank": 5,
+        "fusion_rank": 4,
+        "bm25_score": 1.843706727027893,
+        "vector_score": 0.6324596994628237,
+        "rrf_score": 0.031009615384615385,
+        "rerank_score": 54.48461538461539,
+        "finance_boost": 11.625,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "requested_year_present"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "adjusted",
+          "ebitda",
+          "gaap",
+          "non"
+        ]
+      }
+    },
+    {
+      "step": 6,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "a3ee46cf-33bf-4305-831e-e13056feba05",
+      "metadata": {
+        "page": 13,
+        "bm25_rank": 13,
+        "vector_rank": 12,
+        "fusion_rank": 13,
+        "bm25_score": 0.8379567265510559,
+        "vector_score": 0.5131408993763439,
+        "rrf_score": 0.02758751902587519,
+        "rerank_score": 53.98751902587519,
+        "finance_boost": 20.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "requested_year_present",
+          "ebitda_reconciliation_table"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "adjusted",
+          "non",
+          "reconciliation"
+        ]
+      }
+    },
+    {
+      "step": 7,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "d1a6f3e1-a1c2-4702-8aa3-b3992df8cb23",
+      "metadata": {
+        "page": 14,
+        "bm25_rank": 11,
+        "vector_rank": 17,
+        "fusion_rank": 14,
+        "bm25_score": 0.8576205372810364,
+        "vector_score": 0.4157850710242542,
+        "rrf_score": 0.027071520029266508,
+        "rerank_score": 53.42152002926651,
+        "finance_boost": 20.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "requested_year_present",
+          "ebitda_reconciliation_table"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "adjusted",
+          "non",
+          "reconciliation"
+        ]
+      }
+    },
+    {
+      "step": 8,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "e728207d-b8b8-4265-931f-e72aa97d8d51",
+      "metadata": {
+        "page": 8,
+        "bm25_rank": 12,
+        "vector_rank": 13,
+        "fusion_rank": 12,
+        "bm25_score": 0.8567202091217041,
+        "vector_score": 0.49117850016699843,
+        "rrf_score": 0.02758751902587519,
+        "rerank_score": 52.03751902587519,
+        "finance_boost": 20.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "requested_year_present",
+          "ebitda_reconciliation_table"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "gaap",
+          "non"
+        ]
+      }
+    },
+    {
+      "step": 9,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "b431be5e-88bd-43e9-8c25-0ef5aeb766f0",
+      "metadata": {
+        "page": 2,
+        "bm25_rank": 7,
+        "vector_rank": 11,
+        "fusion_rank": 10,
+        "bm25_score": 1.1400998830795288,
+        "vector_score": 0.5185279037876218,
+        "rrf_score": 0.02900988017658188,
+        "rerank_score": 50.55988017658188,
+        "finance_boost": 12.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "requested_year_present"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "adjusted",
+          "gaap",
+          "non"
+        ]
+      }
+    },
+    {
+      "step": 10,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "0f7d941e-e67f-46d2-9b90-a4ccad79b07a",
+      "metadata": {
+        "page": 4,
+        "bm25_rank": 10,
+        "vector_rank": 9,
+        "fusion_rank": 11,
+        "bm25_score": 0.8818301558494568,
+        "vector_score": 0.5359241137385164,
+        "rrf_score": 0.02877846790890269,
+        "rerank_score": 48.40346790890269,
+        "finance_boost": 10.125,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "requested_year_present"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "adjusted",
+          "gaap",
+          "non"
+        ]
+      }
+    },
+    {
+      "step": 11,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "c06e29ad-02ad-4ab5-96a7-389c856d9caa",
+      "metadata": {
+        "page": 5,
+        "bm25_rank": 5,
+        "vector_rank": 10,
+        "fusion_rank": 7,
+        "bm25_score": 1.2491639852523804,
+        "vector_score": 0.5283403826717238,
+        "rrf_score": 0.02967032967032967,
+        "rerank_score": 46.37032967032967,
+        "finance_boost": 12.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "requested_year_present"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "adjusted",
+          "ebitda"
+        ]
+      }
+    },
+    {
+      "step": 12,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "7d3e1d16-dc27-4770-8e97-fdfc1d6fd606",
+      "metadata": {
+        "page": 7,
+        "bm25_rank": 6,
+        "vector_rank": 2,
+        "fusion_rank": 3,
+        "bm25_score": 1.1619011163711548,
+        "vector_score": 0.6758666734668057,
+        "rrf_score": 0.03128054740957967,
+        "rerank_score": 45.18054740957967,
+        "finance_boost": 4.0,
+        "finance_boost_reasons": [
+          "requested_year_present"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "gaap",
+          "non",
+          "reconciliation"
+        ]
+      }
+    },
+    {
+      "step": 13,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "ea9d5347-3835-48e3-8e96-84555fb7e1ba",
+      "metadata": {
+        "page": 4,
+        "bm25_rank": 8,
+        "vector_rank": 7,
+        "fusion_rank": 8,
+        "bm25_score": 1.1239900588989258,
+        "vector_score": 0.6182807074246373,
+        "rrf_score": 0.029631255487269532,
+        "rerank_score": 44.906255487269526,
+        "finance_boost": 5.625,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "requested_year_present"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "adjusted",
+          "gaap",
+          "non"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": null,
+    "output": null,
+    "total": null
+  },
+  "latency_ms": 7686,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\AMCOR_2023Q4_EARNINGS.pdf",
+    "adapter_mode": "llamaindex_bm25_vector_rrf_plus_rerank",
+    "llm_enabled": false,
+    "model": null,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "page_count": 14,
+    "node_count": 20,
+    "chunk_size": 900,
+    "chunk_overlap": 160,
+    "vector_top_k": 120,
+    "bm25_top_k": 120,
+    "fusion_top_k": 120,
+    "rerank_top_k": 12,
+    "rrf_k": 60,
+    "max_citations": 3,
+    "finance_rerank": true,
+    "cross_encoder_model": null,
+    "cross_encoder_candidates": 60,
+    "answer_context_chunk_count": 12,
+    "answer_context_chars": 33011,
+    "answer_context_words": 5019
+  }
+}

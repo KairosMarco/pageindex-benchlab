@@ -1,0 +1,219 @@
+{
+  "method": "llamaindex_vector_rag",
+  "question_id": "fb_exp_020",
+  "question": "Is CVS Health a capital-intensive business based on FY2022 data?",
+  "answer": "Retrieved 6 chunks with LlamaIndex vector retrieval and lightweight reranking.",
+  "citations": [
+    {
+      "document_id": "CVSHEALTH_2022_10K",
+      "page": 110,
+      "section": null,
+      "text": "0 shares outstanding at December 31, 2022 and 1,744 shares issued and 1,322 shares outstanding at December 31, 2021 and capital surplus 48,193 47,377 Treasury stock, at cost: 458 and 422 shares at December 31, 2022 and 2021 (31,858) (28,173) Retained earnings 56,145 54,906 Accumulated other comprehensive income (loss) (1,465) 965 Total CVS Health shareholders’ equity 71,015 75,075 Noncontrolling interests 300 306 Total shareholders’ equity 71,315 75,381 Total liabilities and shareholders’ equity",
+      "metadata": {
+        "chunk_id": "5ff2d43e-a911-4a62-ac75-f1e7438a8fc0",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.42447766330382863,
+        "rerank_score": 108.82276633038286,
+        "matched_terms": [
+          "capital"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "CVSHEALTH_2022_10K",
+      "page": 108,
+      "section": null,
+      "text": "Index to Consolidated Financial Statements Consolidated Statements of Operations For the Years Ended December 31, In millions, except per share amounts 2022 2021 2020 Revenues: Products $ 226,616 $ 203,738 $ 190,688 Premiums 85,330 76,132 69,364 Services 9,683 11,042 7,856 Net investment income 838 1,199 798 Total revenues 322,467 292,111 268,706 Operating costs: Cost of products sold 196,892 175,803 163,981 Benefit costs 71,281 64,260 55,679 Opioid litigation charges 5,803 — — Loss on assets he",
+      "metadata": {
+        "chunk_id": "a81f55e5-66c1-4285-8169-87ede2d16d81",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.48872130048488693,
+        "rerank_score": 75.68046338182202,
+        "matched_terms": [],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "CVSHEALTH_2022_10K",
+      "page": 133,
+      "section": null,
+      "text": "/Other segment for the years ended December 31, 2022, 2021 and 2020. Discontinued Operations In connection with certain business dispositions completed between 1995 and 1997, the Company retained guarantees on store lease obligations for a number of former subsidiaries, including Linens ‘n Things and Bob’s Stores, each of which subsequently filed for bankruptcy. The Company’s loss from discontinued operations includes lease-related costs that the Company believes it will likely be required to sa",
+      "metadata": {
+        "chunk_id": "5262f61b-af2e-4626-8a71-a0d1defb4482",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.44563907558835825,
+        "rerank_score": 72.87224089216916,
+        "matched_terms": [
+          "based",
+          "business"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "llamaindex_build_vector_index",
+      "target": "CVSHEALTH_2022_10K",
+      "metadata": {
+        "page_count": 213,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "chunk_size": 900,
+        "chunk_overlap": 160,
+        "retrieve_top_k": 120,
+        "rerank_top_k": 6,
+        "finance_rerank": true,
+        "answer_context_chunk_count": 6,
+        "answer_context_chars": 18830,
+        "answer_context_words": 2772
+      }
+    },
+    {
+      "step": 2,
+      "action": "llamaindex_retrieve_node",
+      "target": "5ff2d43e-a911-4a62-ac75-f1e7438a8fc0",
+      "metadata": {
+        "page": 110,
+        "retrieval_rank": 76,
+        "initial_rank": 76,
+        "vector_score": 0.42447766330382863,
+        "rerank_score": 108.82276633038286,
+        "finance_boost": 64.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "balance_sheet_title",
+          "total_assets_line_item",
+          "capital_intensity_balance_sheet_lines"
+        ],
+        "matched_terms": [
+          "capital"
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "action": "llamaindex_retrieve_node",
+      "target": "a81f55e5-66c1-4285-8169-87ede2d16d81",
+      "metadata": {
+        "page": 108,
+        "retrieval_rank": 24,
+        "initial_rank": 24,
+        "vector_score": 0.48872130048488693,
+        "rerank_score": 75.68046338182202,
+        "finance_boost": 26.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "capital_intensity_income_statement_lines"
+        ],
+        "matched_terms": []
+      }
+    },
+    {
+      "step": 4,
+      "action": "llamaindex_retrieve_node",
+      "target": "5262f61b-af2e-4626-8a71-a0d1defb4482",
+      "metadata": {
+        "page": 133,
+        "retrieval_rank": 54,
+        "initial_rank": 54,
+        "vector_score": 0.44563907558835825,
+        "rerank_score": 72.87224089216916,
+        "finance_boost": 23.75,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "capital_intensity_income_statement_lines"
+        ],
+        "matched_terms": [
+          "based",
+          "business"
+        ]
+      }
+    },
+    {
+      "step": 5,
+      "action": "llamaindex_retrieve_node",
+      "target": "fe11fd89-3570-4a41-8b4f-d156ecbf0e0c",
+      "metadata": {
+        "page": 79,
+        "retrieval_rank": 78,
+        "initial_rank": 78,
+        "vector_score": 0.42415622256791513,
+        "rerank_score": 70.77395559012486,
+        "finance_boost": 26.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "capital_intensity_income_statement_lines"
+        ],
+        "matched_terms": [
+          "business"
+        ]
+      }
+    },
+    {
+      "step": 6,
+      "action": "llamaindex_retrieve_node",
+      "target": "f3736662-4555-4c20-b548-349d9128a2c8",
+      "metadata": {
+        "page": 81,
+        "retrieval_rank": 3,
+        "initial_rank": 3,
+        "vector_score": 0.5796884266703429,
+        "rerank_score": 68.95217600036763,
+        "finance_boost": 8.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "matched_terms": [
+          "business"
+        ]
+      }
+    },
+    {
+      "step": 7,
+      "action": "llamaindex_retrieve_node",
+      "target": "3d539493-ce3a-46d5-acfc-a7e5517856f9",
+      "metadata": {
+        "page": 114,
+        "retrieval_rank": 1,
+        "initial_rank": 1,
+        "vector_score": 0.589461367082764,
+        "rerank_score": 64.1961367082764,
+        "finance_boost": 2.25,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "matched_terms": [
+          "business"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": null,
+    "output": null,
+    "total": null
+  },
+  "latency_ms": 12613,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\CVSHEALTH_2022_10K.pdf",
+    "adapter_mode": "llamaindex_vector_retrieval",
+    "llm_enabled": false,
+    "model": null,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "page_count": 213,
+    "chunk_size": 900,
+    "chunk_overlap": 160,
+    "retrieve_top_k": 120,
+    "rerank_top_k": 6,
+    "max_citations": 3,
+    "finance_rerank": true,
+    "answer_context_chunk_count": 6,
+    "answer_context_chars": 18830,
+    "answer_context_words": 2772
+  }
+}

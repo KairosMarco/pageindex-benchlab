@@ -1,0 +1,474 @@
+{
+  "method": "llamaindex_hybrid_rag",
+  "question_id": "fb_mvp_007",
+  "question": "Using only the information within the balance sheet, how much total assets did Costco have at the end of FY2021? Answer in USD millions.",
+  "answer": "Retrieved 12 chunks with LlamaIndex BM25/vector hybrid fusion.",
+  "citations": [
+    {
+      "document_id": "COSTCO_2021_10K",
+      "page": 38,
+      "section": null,
+      "text": "Table of Contents COSTCO WHOLESALE CORPORATION CONSOLIDATED BALANCE SHEETS (amounts in millions, except par value and share data) August 29, 2021 August 30, 2020 ASSETS CURRENT ASSETS Cash and cash equivalents $ 11,258 $ 12,277 Short-term investments 917 1,028 Receivables, net 1,803 1,550 Merchandise inventories 14,215 12,242 Other current assets 1,312 1,023 Total current assets 29,505 28,120 OTHER ASSETS Property and equipment, net 23,492 21,807 Operating lease right-of-use assets 2,890 2,788 O",
+      "metadata": {
+        "chunk_id": "74f4737e-7c10-43aa-9ac3-066523700c9c",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5824721735790355,
+        "rerank_score": 94.24528557861892,
+        "matched_terms": [
+          "assets",
+          "balance",
+          "equity",
+          "liabilities",
+          "millions",
+          "sheets",
+          "total"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "COSTCO_2021_10K",
+      "page": 64,
+      "section": null,
+      "text": "cies of the segments are as described in Note 1. Inter-segment net sales and expenses have been eliminated in computing total revenue and operating income. Certain operating expenses, predominantly stock-based compensation, incurred on behalf of the Company's Canadian and Other International operations, are included in the U.S. operations because those costs generally come under the responsibility of U.S. management. The following table provides information for the Company's reportable segments:",
+      "metadata": {
+        "chunk_id": "c97958c2-7f62-43d9-b4be-b32127c01d0f",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5128160141480946,
+        "rerank_score": 61.36117551473356,
+        "matched_terms": [
+          "assets",
+          "information",
+          "total"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "COSTCO_2021_10K",
+      "page": 51,
+      "section": null,
+      "text": "Table of Contents Note 4—Fair Value Measurement Assets and Liabilities Measured at Fair Value on a Recurring Basis The table below presents information regarding the Company’s financial assets and financial liabilities that are measured at fair value on a recurring basis and indicate the level within the hierarchy reflecting the valuation techniques utilized to determine such fair value. Level 2 2021 2020 Investment in government and agency securities $ 393 $ 508 Forward foreign-exchange contrac",
+      "metadata": {
+        "chunk_id": "a27e8022-27dc-4efb-8be5-b4828cfa9e7f",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.6318883392816401,
+        "rerank_score": 59.286885245901644,
+        "matched_terms": [
+          "assets",
+          "balance",
+          "did",
+          "end",
+          "information",
+          "liabilities",
+          "sheets",
+          "total"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "llamaindex_build_hybrid_index",
+      "target": "COSTCO_2021_10K",
+      "metadata": {
+        "page_count": 76,
+        "node_count": 81,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "chunk_size": 900,
+        "chunk_overlap": 160,
+        "vector_top_k": 120,
+        "bm25_top_k": 120,
+        "fusion_top_k": 120,
+        "rerank_top_k": 12,
+        "rrf_k": 60,
+        "finance_rerank": true,
+        "cross_encoder_model": null,
+        "cross_encoder_candidates": 60,
+        "answer_context_chunk_count": 12,
+        "answer_context_chars": 36584,
+        "answer_context_words": 5430
+      }
+    },
+    {
+      "step": 2,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "74f4737e-7c10-43aa-9ac3-066523700c9c",
+      "metadata": {
+        "page": 38,
+        "bm25_rank": 5,
+        "vector_rank": 3,
+        "fusion_rank": 2,
+        "bm25_score": 5.100605010986328,
+        "vector_score": 0.5824721735790355,
+        "rrf_score": 0.03125763125763126,
+        "rerank_score": 94.24528557861892,
+        "finance_boost": 42.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "balance_sheet_title",
+          "total_assets_line_item"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "assets",
+          "balance",
+          "equity",
+          "liabilities",
+          "millions",
+          "sheets",
+          "total"
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "c97958c2-7f62-43d9-b4be-b32127c01d0f",
+      "metadata": {
+        "page": 64,
+        "bm25_rank": 29,
+        "vector_rank": 10,
+        "fusion_rank": 14,
+        "bm25_score": 2.579587936401367,
+        "vector_score": 0.5128160141480946,
+        "rrf_score": 0.02552166934189406,
+        "rerank_score": 61.36117551473356,
+        "finance_boost": 26.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "total_assets_line_item"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "assets",
+          "information",
+          "total"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "a27e8022-27dc-4efb-8be5-b4828cfa9e7f",
+      "metadata": {
+        "page": 51,
+        "bm25_rank": 1,
+        "vector_rank": 1,
+        "fusion_rank": 1,
+        "bm25_score": 6.601044178009033,
+        "vector_score": 0.6318883392816401,
+        "rrf_score": 0.03278688524590164,
+        "rerank_score": 59.286885245901644,
+        "finance_boost": 6.5,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "assets",
+          "balance",
+          "did",
+          "end",
+          "information",
+          "liabilities",
+          "sheets",
+          "total"
+        ]
+      }
+    },
+    {
+      "step": 5,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "0bb1ec52-d0d2-4348-b44e-a15af92bab1a",
+      "metadata": {
+        "page": 53,
+        "bm25_rank": 4,
+        "vector_rank": 4,
+        "fusion_rank": 3,
+        "bm25_score": 5.2886786460876465,
+        "vector_score": 0.5768217409344725,
+        "rrf_score": 0.03125,
+        "rerank_score": 54.22530864197531,
+        "finance_boost": 7.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "assets",
+          "balance",
+          "information",
+          "liabilities",
+          "sheets",
+          "total"
+        ]
+      }
+    },
+    {
+      "step": 6,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "02ec7c1b-bc0d-46c2-887f-b06026e046b8",
+      "metadata": {
+        "page": 47,
+        "bm25_rank": 7,
+        "vector_rank": 11,
+        "fusion_rank": 5,
+        "bm25_score": 4.5703935623168945,
+        "vector_score": 0.5040419090346295,
+        "rrf_score": 0.02900988017658188,
+        "rerank_score": 47.2104974605325,
+        "finance_boost": 2.25,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "assets",
+          "balance",
+          "end",
+          "liabilities",
+          "sheet",
+          "sheets"
+        ]
+      }
+    },
+    {
+      "step": 7,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "6f9ab8a9-8144-4ad3-8005-9cc393afdbd6",
+      "metadata": {
+        "page": 30,
+        "bm25_rank": 3,
+        "vector_rank": 15,
+        "fusion_rank": 4,
+        "bm25_score": 5.626759052276611,
+        "vector_score": 0.47525554133278525,
+        "rrf_score": 0.029206349206349208,
+        "rerank_score": 47.04431216931217,
+        "finance_boost": 2.875,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "assets",
+          "balance",
+          "end",
+          "information",
+          "liabilities",
+          "sheet",
+          "total"
+        ]
+      }
+    },
+    {
+      "step": 8,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "e19d9b4f-a346-47f4-a473-e32dcca464a9",
+      "metadata": {
+        "page": 40,
+        "bm25_rank": 21,
+        "vector_rank": 5,
+        "fusion_rank": 6,
+        "bm25_score": 3.056426525115967,
+        "vector_score": 0.5544360131837683,
+        "rrf_score": 0.027730294396961064,
+        "rerank_score": 46.668566001899336,
+        "finance_boost": 8.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "assets",
+          "end",
+          "information",
+          "liabilities",
+          "millions"
+        ]
+      }
+    },
+    {
+      "step": 9,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "712d5c75-11ce-4790-85a5-f1bf741dd59d",
+      "metadata": {
+        "page": 45,
+        "bm25_rank": 8,
+        "vector_rank": 66,
+        "fusion_rank": 28,
+        "bm25_score": 4.426725387573242,
+        "vector_score": 0.28553907031263254,
+        "rrf_score": 0.022642390289449112,
+        "rerank_score": 44.059056956115775,
+        "finance_boost": 3.75,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "assets",
+          "balance",
+          "end",
+          "liabilities",
+          "sheet",
+          "sheets",
+          "total"
+        ]
+      }
+    },
+    {
+      "step": 10,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "040c08dc-ffbe-4e57-8c5d-5f8b89770a9f",
+      "metadata": {
+        "page": 39,
+        "bm25_rank": 22,
+        "vector_rank": 8,
+        "fusion_rank": 8,
+        "bm25_score": 3.020385265350342,
+        "vector_score": 0.5335595147638967,
+        "rrf_score": 0.02690100430416069,
+        "rerank_score": 43.814584551074276,
+        "finance_boost": 8.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "balance",
+          "equity",
+          "millions",
+          "total"
+        ]
+      }
+    },
+    {
+      "step": 11,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "983a8075-502f-4c48-926f-6ae218b8428a",
+      "metadata": {
+        "page": 35,
+        "bm25_rank": 13,
+        "vector_rank": 12,
+        "fusion_rank": 7,
+        "bm25_score": 3.8105013370513916,
+        "vector_score": 0.4956953569646377,
+        "rrf_score": 0.02758751902587519,
+        "rerank_score": 42.63844495180111,
+        "finance_boost": 3.125,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "assets",
+          "balance",
+          "equity",
+          "sheets"
+        ]
+      }
+    },
+    {
+      "step": 12,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "07e7f69d-4d32-4580-9aeb-e8a896a166a1",
+      "metadata": {
+        "page": 50,
+        "bm25_rank": 16,
+        "vector_rank": 14,
+        "fusion_rank": 9,
+        "bm25_score": 3.331151008605957,
+        "vector_score": 0.4862623715974944,
+        "rrf_score": 0.02667140825035562,
+        "rerank_score": 41.32264281825685,
+        "finance_boost": 5.75,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "assets",
+          "end",
+          "liabilities",
+          "total"
+        ]
+      }
+    },
+    {
+      "step": 13,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "d8ad86c8-70f3-43c4-9281-8c181582a923",
+      "metadata": {
+        "page": 46,
+        "bm25_rank": 11,
+        "vector_rank": 53,
+        "fusion_rank": 25,
+        "bm25_score": 4.158968448638916,
+        "vector_score": 0.3515964274721884,
+        "rrf_score": 0.022934064564377417,
+        "rerank_score": 40.76276826808112,
+        "finance_boost": 2.125,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "assets",
+          "balance",
+          "end",
+          "information",
+          "liabilities",
+          "sheets"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": null,
+    "output": null,
+    "total": null
+  },
+  "latency_ms": 7661,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\COSTCO_2021_10K.pdf",
+    "adapter_mode": "llamaindex_bm25_vector_rrf_plus_rerank",
+    "llm_enabled": false,
+    "model": null,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "page_count": 76,
+    "node_count": 81,
+    "chunk_size": 900,
+    "chunk_overlap": 160,
+    "vector_top_k": 120,
+    "bm25_top_k": 120,
+    "fusion_top_k": 120,
+    "rerank_top_k": 12,
+    "rrf_k": 60,
+    "max_citations": 3,
+    "finance_rerank": true,
+    "cross_encoder_model": null,
+    "cross_encoder_candidates": 60,
+    "answer_context_chunk_count": 12,
+    "answer_context_chars": 36584,
+    "answer_context_words": 5430
+  }
+}

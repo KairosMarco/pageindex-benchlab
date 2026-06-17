@@ -1,0 +1,425 @@
+{
+  "method": "llamaindex_vector_rag",
+  "question_id": "fb_exp_016",
+  "question": "Considering the data in the balance sheet, what is Block's (formerly known as Square) FY2016 working capital ratio? Define working capital ratio as total current assets divided by total current liabilities. Round your answer to two decimal places.",
+  "answer": "Retrieved 12 chunks with LlamaIndex vector retrieval and lightweight reranking.",
+  "citations": [
+    {
+      "document_id": "BLOCK_2016_10K",
+      "page": 68,
+      "section": null,
+      "text": "SQUARE, INC. CONSOLIDATED BALANCE SHEETS (In thousands, except share and per share data) December 31, 2016 2015 Assets Current assets: Cash and cash equivalents $ 452,030 $ 461,329 Short-term investments 59,901 — Restricted cash 22,131 13,537 Settlements receivable 321,102 142,727 Customer funds held 43,574 9,446 Loans held for sale 42,144 604 Merchant cash advance receivable, net 4,212 36,473 Other current assets 56,331 41,447 Total current assets 1,001,425 705,563 Property and equipment, net 8",
+      "metadata": {
+        "chunk_id": "6eeec658-aba2-4d58-ba68-0daa6ed59186",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.41135820296448006,
+        "rerank_score": 106.96915362978133,
+        "matched_terms": [
+          "assets",
+          "balance",
+          "capital",
+          "current",
+          "data",
+          "equity",
+          "liabilities",
+          "sheets",
+          "square",
+          "total"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "BLOCK_2016_10K",
+      "page": 76,
+      "section": null,
+      "text": "lity, (SAB 99) and concluded that such amounts were not material with respect to the operating loss or net loss for the current fiscal year or any previously reported consolidated financial statements. The correction of this error had no impact on the net cash flows from operations in any of the periods. Immaterial Correction to Cash and Cash Equivalents During the fourth quarter of 2016, the Company identified an error that impacted the consolidated balance sheet as of December 31, 2015, the co",
+      "metadata": {
+        "chunk_id": "0f910cb8-ff5c-4ab3-bcd2-eb038a0e2d69",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.46493054299441555,
+        "rerank_score": 98.08472096610822,
+        "matched_terms": [
+          "assets",
+          "balance",
+          "current",
+          "sheet",
+          "sheets",
+          "square",
+          "total"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "BLOCK_2016_10K",
+      "page": 41,
+      "section": null,
+      "text": "820 $ 3,984 Sales and marketing 14,122 7,360 3,738 1,235 668 General and administrative 33,260 20,194 7,604 4,603 3,462 Total share-based compensation $ 138,786 $ 82,292 $ 36,100 $ 14,658 $ 8,114 December 31, 2016 2015 2014 2013 (in thousands) Consolidated Balance Sheet Data: Cash and cash equivalents $ 452,030 $ 461,329 $ 222,315 $ 166,176 Settlements receivable 321,102 142,727 115,481 64,968 Working capital 423,961 371,361 218,761 124,061 Total assets 1,211,362 894,772 541,888 318,341 Customer",
+      "metadata": {
+        "chunk_id": "6a89856d-cd90-4a3b-807c-b54215ac3de8",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.49920114814689026,
+        "rerank_score": 92.03678148135569,
+        "matched_terms": [
+          "assets",
+          "balance",
+          "capital",
+          "data",
+          "equity",
+          "sheet",
+          "total",
+          "working"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "llamaindex_build_vector_index",
+      "target": "BLOCK_2016_10K",
+      "metadata": {
+        "page_count": 121,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "chunk_size": 900,
+        "chunk_overlap": 160,
+        "retrieve_top_k": 120,
+        "rerank_top_k": 12,
+        "finance_rerank": true,
+        "answer_context_chunk_count": 12,
+        "answer_context_chars": 19962,
+        "answer_context_words": 2994
+      }
+    },
+    {
+      "step": 2,
+      "action": "llamaindex_retrieve_node",
+      "target": "6eeec658-aba2-4d58-ba68-0daa6ed59186",
+      "metadata": {
+        "page": 68,
+        "retrieval_rank": 21,
+        "initial_rank": 21,
+        "vector_score": 0.41135820296448006,
+        "rerank_score": 106.96915362978133,
+        "finance_boost": 42.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "balance_sheet_title",
+          "total_assets_line_item"
+        ],
+        "matched_terms": [
+          "assets",
+          "balance",
+          "capital",
+          "current",
+          "data",
+          "equity",
+          "liabilities",
+          "sheets",
+          "square",
+          "total"
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "action": "llamaindex_retrieve_node",
+      "target": "0f910cb8-ff5c-4ab3-bcd2-eb038a0e2d69",
+      "metadata": {
+        "page": 76,
+        "retrieval_rank": 5,
+        "initial_rank": 5,
+        "vector_score": 0.46493054299441555,
+        "rerank_score": 98.08472096610822,
+        "finance_boost": 36.625,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "balance_sheet_title",
+          "total_assets_line_item"
+        ],
+        "matched_terms": [
+          "assets",
+          "balance",
+          "current",
+          "sheet",
+          "sheets",
+          "square",
+          "total"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "llamaindex_retrieve_node",
+      "target": "6a89856d-cd90-4a3b-807c-b54215ac3de8",
+      "metadata": {
+        "page": 41,
+        "retrieval_rank": 2,
+        "initial_rank": 2,
+        "vector_score": 0.49920114814689026,
+        "rerank_score": 92.03678148135569,
+        "finance_boost": 25.125,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "total_assets_line_item"
+        ],
+        "matched_terms": [
+          "assets",
+          "balance",
+          "capital",
+          "data",
+          "equity",
+          "sheet",
+          "total",
+          "working"
+        ]
+      }
+    },
+    {
+      "step": 5,
+      "action": "llamaindex_retrieve_node",
+      "target": "62508739-5a4c-4cf8-b046-c7875832c79a",
+      "metadata": {
+        "page": 65,
+        "retrieval_rank": 1,
+        "initial_rank": 1,
+        "vector_score": 0.5128790160526682,
+        "rerank_score": 78.28790160526682,
+        "finance_boost": 16.0,
+        "finance_boost_reasons": [
+          "balance_sheet_title"
+        ],
+        "matched_terms": [
+          "balance",
+          "data",
+          "equity",
+          "sheets",
+          "square"
+        ]
+      }
+    },
+    {
+      "step": 6,
+      "action": "llamaindex_retrieve_node",
+      "target": "40e10dd2-54d6-48ca-88a2-b6dbb671aabb",
+      "metadata": {
+        "page": 118,
+        "retrieval_rank": 3,
+        "initial_rank": 3,
+        "vector_score": 0.4817864539520859,
+        "rerank_score": 75.66197872854192,
+        "finance_boost": 18.5,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "balance_sheet_title"
+        ],
+        "matched_terms": [
+          "balance",
+          "equity",
+          "sheets",
+          "square"
+        ]
+      }
+    },
+    {
+      "step": 7,
+      "action": "llamaindex_retrieve_node",
+      "target": "43c7dcd2-5285-4871-b96e-44a5d065de30",
+      "metadata": {
+        "page": 80,
+        "retrieval_rank": 35,
+        "initial_rank": 35,
+        "vector_score": 0.37498826901985677,
+        "rerank_score": 71.59049356865235,
+        "finance_boost": 19.375,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "balance_sheet_title"
+        ],
+        "matched_terms": [
+          "assets",
+          "balance",
+          "current",
+          "liabilities",
+          "sheets",
+          "total",
+          "two"
+        ]
+      }
+    },
+    {
+      "step": 8,
+      "action": "llamaindex_retrieve_node",
+      "target": "61d93b1d-6596-432c-9254-689a3d0c9e4b",
+      "metadata": {
+        "page": 84,
+        "retrieval_rank": 24,
+        "initial_rank": 24,
+        "vector_score": 0.3982967955123729,
+        "rerank_score": 70.51301288457063,
+        "finance_boost": 17.875,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "balance_sheet_title"
+        ],
+        "matched_terms": [
+          "assets",
+          "balance",
+          "current",
+          "liabilities",
+          "sheet",
+          "sheets"
+        ]
+      }
+    },
+    {
+      "step": 9,
+      "action": "llamaindex_retrieve_node",
+      "target": "71a6dd8e-dee1-4d66-ad11-38601ddb2714",
+      "metadata": {
+        "page": 83,
+        "retrieval_rank": 33,
+        "initial_rank": 33,
+        "vector_score": 0.37673970159980985,
+        "rerank_score": 68.40730349331432,
+        "finance_boost": 16.0,
+        "finance_boost_reasons": [
+          "balance_sheet_title"
+        ],
+        "matched_terms": [
+          "assets",
+          "balance",
+          "current",
+          "liabilities",
+          "sheet",
+          "sheets",
+          "two"
+        ]
+      }
+    },
+    {
+      "step": 10,
+      "action": "llamaindex_retrieve_node",
+      "target": "29bfd141-ab00-49fd-b525-58e1cb6f3ac4",
+      "metadata": {
+        "page": 81,
+        "retrieval_rank": 36,
+        "initial_rank": 36,
+        "vector_score": 0.37323695791908507,
+        "rerank_score": 68.03202912524183,
+        "finance_boost": 16.0,
+        "finance_boost_reasons": [
+          "balance_sheet_title"
+        ],
+        "matched_terms": [
+          "assets",
+          "balance",
+          "current",
+          "data",
+          "sheet",
+          "sheets",
+          "square"
+        ]
+      }
+    },
+    {
+      "step": 11,
+      "action": "llamaindex_retrieve_node",
+      "target": "18ff8fca-c32c-4412-94b6-f44b8874305f",
+      "metadata": {
+        "page": 61,
+        "retrieval_rank": 41,
+        "initial_rank": 41,
+        "vector_score": 0.36314081762777367,
+        "rerank_score": 64.98074842944403,
+        "finance_boost": 16.0,
+        "finance_boost_reasons": [
+          "balance_sheet_title"
+        ],
+        "matched_terms": [
+          "balance",
+          "capital",
+          "current",
+          "liabilities",
+          "sheets",
+          "working"
+        ]
+      }
+    },
+    {
+      "step": 12,
+      "action": "llamaindex_retrieve_node",
+      "target": "2ea07345-8f31-408d-ba59-47b6a34fa2b8",
+      "metadata": {
+        "page": 92,
+        "retrieval_rank": 11,
+        "initial_rank": 11,
+        "vector_score": 0.4497417131463984,
+        "rerank_score": 64.1408379813065,
+        "finance_boost": 6.25,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "matched_terms": [
+          "assets",
+          "balance",
+          "current",
+          "liabilities",
+          "sheet",
+          "total"
+        ]
+      }
+    },
+    {
+      "step": 13,
+      "action": "llamaindex_retrieve_node",
+      "target": "da6a536e-6f33-4b99-8cca-db31318f2afd",
+      "metadata": {
+        "page": 91,
+        "retrieval_rank": 6,
+        "initial_rank": 6,
+        "vector_score": 0.46212372121608253,
+        "rerank_score": 61.92070545494159,
+        "finance_boost": 4.75,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "matched_terms": [
+          "assets",
+          "balance",
+          "current",
+          "sheet",
+          "total"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": null,
+    "output": null,
+    "total": null
+  },
+  "latency_ms": 12013,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\BLOCK_2016_10K.pdf",
+    "adapter_mode": "llamaindex_vector_retrieval",
+    "llm_enabled": false,
+    "model": null,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "page_count": 121,
+    "chunk_size": 900,
+    "chunk_overlap": 160,
+    "retrieve_top_k": 120,
+    "rerank_top_k": 12,
+    "max_citations": 3,
+    "finance_rerank": true,
+    "answer_context_chunk_count": 12,
+    "answer_context_chars": 19962,
+    "answer_context_words": 2994
+  }
+}

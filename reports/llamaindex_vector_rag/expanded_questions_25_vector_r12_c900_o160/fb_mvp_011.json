@@ -1,0 +1,409 @@
+{
+  "method": "llamaindex_vector_rag",
+  "question_id": "fb_mvp_011",
+  "question": "Looking at VaR, did the risk that JPM faced in the second fiscal quarter of 2023 decrease compared to the same period in the prior year?",
+  "answer": "Retrieved 12 chunks with LlamaIndex vector retrieval and lightweight reranking.",
+  "citations": [
+    {
+      "document_id": "JPMORGAN_2023Q2_10Q",
+      "page": 85,
+      "section": null,
+      "text": "This VaR does not include the retained loan portfolio, which is not reported at fair value. In the first quarter of 2022, in line with the Firm's internal model governance, the credit risk component of CVA related to certain counterparties was removed from Credit Portfolio VaR due to the widening of the credit spreads for those counterparties to elevated levels. The related hedges were also removed to maintain consistency. This exposure is now reflected in other sensitivity-based measures. (c) C",
+      "metadata": {
+        "chunk_id": "1363331c-a26a-447c-9671-5d5cc5c332c1",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.6440553494830491,
+        "rerank_score": 117.9055349483049,
+        "matched_terms": [
+          "average",
+          "compared",
+          "market",
+          "period",
+          "prior",
+          "quarter",
+          "risk",
+          "same",
+          "second",
+          "var"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "JPMORGAN_2023Q2_10Q",
+      "page": 84,
+      "section": null,
+      "text": "MARKET RISK MANAGEMENT Market risk is the risk associated with the effect of changes in market factors such as interest and foreign exchange rates, equity and commodity prices, credit spreads or implied volatilities, on the value of assets and liabilities held for both the short and long term. Refer to Market Risk Management on pages 131-138 of JPMorgan Chase’s 2022 Form 10-K for a discussion of the Firm’s Market Risk Management organization, market risk measurement, risk monitoring and control,",
+      "metadata": {
+        "chunk_id": "820cca8e-c3b0-4c2b-b948-1c50438cc69f",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.44138022080752654,
+        "rerank_score": 75.52968874741931,
+        "matched_terms": [
+          "market",
+          "period",
+          "risk",
+          "var"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "JPMORGAN_2023Q2_10Q",
+      "page": 86,
+      "section": null,
+      "text": "VaR backtesting The Firm performs daily VaR model backtesting, which compares the daily Risk Management VaR results with the daily gains and losses that are utilized for VaR backtesting purposes. The gains and losses depicted in the chart below do not reflect the Firm’s reported revenue as they exclude certain components of total net revenue, such as those associated with the execution of new transactions (i.e., intraday client-driven trading and intraday risk management activities), fees, commi",
+      "metadata": {
+        "chunk_id": "1356d6c0-b413-48f9-95e4-b351280b55e3",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5818215971025155,
+        "rerank_score": 75.2988263769182,
+        "matched_terms": [
+          "average",
+          "market",
+          "prior",
+          "risk",
+          "var"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "llamaindex_build_vector_index",
+      "target": "JPMORGAN_2023Q2_10Q",
+      "metadata": {
+        "page_count": 217,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "chunk_size": 900,
+        "chunk_overlap": 160,
+        "retrieve_top_k": 120,
+        "rerank_top_k": 12,
+        "finance_rerank": true,
+        "answer_context_chunk_count": 12,
+        "answer_context_chars": 32603,
+        "answer_context_words": 5067
+      }
+    },
+    {
+      "step": 2,
+      "action": "llamaindex_retrieve_node",
+      "target": "1363331c-a26a-447c-9671-5d5cc5c332c1",
+      "metadata": {
+        "page": 85,
+        "retrieval_rank": 1,
+        "initial_rank": 1,
+        "vector_score": 0.6440553494830491,
+        "rerank_score": 117.9055349483049,
+        "finance_boost": 32.5,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "requested_year_present",
+          "var_line_item",
+          "risk_direction_term"
+        ],
+        "matched_terms": [
+          "average",
+          "compared",
+          "market",
+          "period",
+          "prior",
+          "quarter",
+          "risk",
+          "same",
+          "second",
+          "var"
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "action": "llamaindex_retrieve_node",
+      "target": "820cca8e-c3b0-4c2b-b948-1c50438cc69f",
+      "metadata": {
+        "page": 84,
+        "retrieval_rank": 14,
+        "initial_rank": 14,
+        "vector_score": 0.44138022080752654,
+        "rerank_score": 75.52968874741931,
+        "finance_boost": 22.5,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "var_line_item"
+        ],
+        "matched_terms": [
+          "market",
+          "period",
+          "risk",
+          "var"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "llamaindex_retrieve_node",
+      "target": "1356d6c0-b413-48f9-95e4-b351280b55e3",
+      "metadata": {
+        "page": 86,
+        "retrieval_rank": 2,
+        "initial_rank": 2,
+        "vector_score": 0.5818215971025155,
+        "rerank_score": 75.2988263769182,
+        "finance_boost": 6.125,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "requested_year_present"
+        ],
+        "matched_terms": [
+          "average",
+          "market",
+          "prior",
+          "risk",
+          "var"
+        ]
+      }
+    },
+    {
+      "step": 5,
+      "action": "llamaindex_retrieve_node",
+      "target": "00810456-345e-4c16-93d4-53880a8fee92",
+      "metadata": {
+        "page": 87,
+        "retrieval_rank": 4,
+        "initial_rank": 4,
+        "vector_score": 0.5062845605153082,
+        "rerank_score": 72.35345605153083,
+        "finance_boost": 8.75,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "requested_year_present"
+        ],
+        "matched_terms": [
+          "compared",
+          "market",
+          "prior",
+          "quarter",
+          "risk",
+          "second"
+        ]
+      }
+    },
+    {
+      "step": 6,
+      "action": "llamaindex_retrieve_node",
+      "target": "ab273d32-1610-40d3-86be-902ffb941e4d",
+      "metadata": {
+        "page": 42,
+        "retrieval_rank": 11,
+        "initial_rank": 11,
+        "vector_score": 0.46015672643160893,
+        "rerank_score": 70.93233930982755,
+        "finance_boost": 12.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "requested_year_present"
+        ],
+        "matched_terms": [
+          "average",
+          "jpm",
+          "period",
+          "prior",
+          "quarter",
+          "second"
+        ]
+      }
+    },
+    {
+      "step": 7,
+      "action": "llamaindex_retrieve_node",
+      "target": "dbf9a1d7-d20f-4b18-985d-d6e3866faa5e",
+      "metadata": {
+        "page": 205,
+        "retrieval_rank": 81,
+        "initial_rank": 81,
+        "vector_score": 0.37181896713871837,
+        "rerank_score": 69.51523004720516,
+        "finance_boost": 24.0,
+        "finance_boost_reasons": [
+          "requested_year_present",
+          "var_line_item"
+        ],
+        "matched_terms": [
+          "market",
+          "prior",
+          "risk",
+          "var"
+        ]
+      }
+    },
+    {
+      "step": 8,
+      "action": "llamaindex_retrieve_node",
+      "target": "dda754aa-ef02-4b6d-a786-f6f8a06f16a1",
+      "metadata": {
+        "page": 164,
+        "retrieval_rank": 7,
+        "initial_rank": 7,
+        "vector_score": 0.49127114914774805,
+        "rerank_score": 68.32711491477481,
+        "finance_boost": 10.25,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "requested_year_present"
+        ],
+        "matched_terms": [
+          "average",
+          "prior",
+          "quarter",
+          "second"
+        ]
+      }
+    },
+    {
+      "step": 9,
+      "action": "llamaindex_retrieve_node",
+      "target": "67c99998-794e-4ea9-9e44-563a2eef6f2e",
+      "metadata": {
+        "page": 89,
+        "retrieval_rank": 5,
+        "initial_rank": 5,
+        "vector_score": 0.49713805777660336,
+        "rerank_score": 67.180472444327,
+        "finance_boost": 8.5,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "requested_year_present"
+        ],
+        "matched_terms": [
+          "market",
+          "quarter",
+          "risk",
+          "var"
+        ]
+      }
+    },
+    {
+      "step": 10,
+      "action": "llamaindex_retrieve_node",
+      "target": "20479491-be1d-4449-aed8-28777329305a",
+      "metadata": {
+        "page": 54,
+        "retrieval_rank": 83,
+        "initial_rank": 83,
+        "vector_score": 0.37144156302269515,
+        "rerank_score": 66.96082296893618,
+        "finance_boost": 13.5,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "requested_year_present",
+          "risk_direction_term"
+        ],
+        "matched_terms": [
+          "average",
+          "compared",
+          "decrease",
+          "market",
+          "period",
+          "prior",
+          "risk",
+          "same"
+        ]
+      }
+    },
+    {
+      "step": 11,
+      "action": "llamaindex_retrieve_node",
+      "target": "ae3119a9-5671-410e-8982-304b91e537cf",
+      "metadata": {
+        "page": 85,
+        "retrieval_rank": 10,
+        "initial_rank": 10,
+        "vector_score": 0.46019091763413744,
+        "rerank_score": 66.94409176341374,
+        "finance_boost": 12.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "requested_year_present"
+        ],
+        "matched_terms": [
+          "market",
+          "quarter",
+          "risk",
+          "var"
+        ]
+      }
+    },
+    {
+      "step": 12,
+      "action": "llamaindex_retrieve_node",
+      "target": "e40934a1-91de-4c65-b6e2-0ae92980ef79",
+      "metadata": {
+        "page": 25,
+        "retrieval_rank": 8,
+        "initial_rank": 8,
+        "vector_score": 0.4878392908218087,
+        "rerank_score": 66.35059574884752,
+        "finance_boost": 8.625,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "requested_year_present"
+        ],
+        "matched_terms": [
+          "period",
+          "prior",
+          "quarter",
+          "risk"
+        ]
+      }
+    },
+    {
+      "step": 13,
+      "action": "llamaindex_retrieve_node",
+      "target": "1ec392c4-fe38-4bbe-9cd2-31380d5adf3c",
+      "metadata": {
+        "page": 114,
+        "retrieval_rank": 3,
+        "initial_rank": 3,
+        "vector_score": 0.5121845526161874,
+        "rerank_score": 65.20178859495208,
+        "finance_boost": 9.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "requested_year_present"
+        ],
+        "matched_terms": [
+          "market",
+          "risk"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": null,
+    "output": null,
+    "total": null
+  },
+  "latency_ms": 12670,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\JPMORGAN_2023Q2_10Q.pdf",
+    "adapter_mode": "llamaindex_vector_retrieval",
+    "llm_enabled": false,
+    "model": null,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "page_count": 217,
+    "chunk_size": 900,
+    "chunk_overlap": 160,
+    "retrieve_top_k": 120,
+    "rerank_top_k": 12,
+    "max_citations": 3,
+    "finance_rerank": true,
+    "answer_context_chunk_count": 12,
+    "answer_context_chars": 32603,
+    "answer_context_words": 5067
+  }
+}

@@ -1,0 +1,161 @@
+{
+  "method": "llamaindex_vector_rag",
+  "question_id": "fb_exp_014",
+  "question": "What drove gross margin change as of the FY2022 for American Express? If gross margin is not a useful metric for a company like this, then please state that and explain why.",
+  "answer": "Retrieved 3 chunks with LlamaIndex vector retrieval and lightweight reranking.",
+  "citations": [
+    {
+      "document_id": "AMERICANEXPRESS_2022_10K",
+      "page": 47,
+      "section": null,
+      "text": ", 2021, filed with the SEC on February 11, 2022. Beginning in the first quarter of 2022, we made reporting presentation changes to our Consolidated Statements of Income to separately present revenues earned from processed volumes, previously reported in Discount revenue, Other fees and commissions and Other revenue, as Processed revenue. The remaining balances from Other fees and commissions and Other revenue were combined as Service fees and other revenue. We also disaggregated Marketing and bu",
+      "metadata": {
+        "chunk_id": "5875a644-3faa-4dc0-8fae-29cf032f796b",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.43386194283533386,
+        "rerank_score": 68.32786095020005,
+        "matched_terms": [
+          "change"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "AMERICANEXPRESS_2022_10K",
+      "page": 54,
+      "section": null,
+      "text": "Table of Contents U.S. CONSUMER SERVICES TABLE 9: USCS SELECTED INCOME STATEMENT DATA Years Ended December 31, Change Change (Millions, except percentages) 2022 2021 2020 2022 vs. 2021 2021 vs. 2020 Revenues Non-interest revenues $ 16,440 $ 12,989 $ 10,125 $ 3,451 27 % $ 2,864 28 % Interest income 8,457 6,328 7,009 2,129 34 (681) (10) Interest expense 983 395 787 588 # (392) (50) Net interest income 7,474 5,933 6,222 1,541 26 (289) (5) Total revenues net of interest expense 23,914 18,922 16,347 ",
+      "metadata": {
+        "chunk_id": "fa53a63a-1877-4f50-9a07-959d2c336041",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.415261967086395,
+        "rerank_score": 66.39286337530616,
+        "matched_terms": [
+          "change"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "AMERICANEXPRESS_2022_10K",
+      "page": 57,
+      "section": null,
+      "text": "Table of Contents COMMERCIAL SERVICES TABLE 11: CS SELECTED INCOME STATEMENT DATA Years Ended December 31, Change Change (Millions, except percentages) 2022 2021 2020 2022 vs. 2021 2021 vs. 2020 Revenues Non-interest revenues $ 12,196 $ 9,833 $ 8,210 $ 2,363 24 % $ 1,623 20 % Interest income 2,070 1,408 1,532 662 47 (124) (8) Interest expense 697 330 508 367 # (178) (35) Net interest income 1,373 1,078 1,024 295 27 54 5 Total revenues net of interest expense 13,569 10,911 9,234 2,658 24 1,677 18",
+      "metadata": {
+        "chunk_id": "e3241a23-938c-4641-b53b-6f55af535b3c",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.40982235520549154,
+        "rerank_score": 65.84056885388249,
+        "matched_terms": [
+          "change"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "llamaindex_build_vector_index",
+      "target": "AMERICANEXPRESS_2022_10K",
+      "metadata": {
+        "page_count": 260,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "chunk_size": 900,
+        "chunk_overlap": 160,
+        "retrieve_top_k": 120,
+        "rerank_top_k": 3,
+        "finance_rerank": true,
+        "answer_context_chunk_count": 3,
+        "answer_context_chars": 9685,
+        "answer_context_words": 1490
+      }
+    },
+    {
+      "step": 2,
+      "action": "llamaindex_retrieve_node",
+      "target": "5875a644-3faa-4dc0-8fae-29cf032f796b",
+      "metadata": {
+        "page": 47,
+        "retrieval_rank": 8,
+        "initial_rank": 8,
+        "vector_score": 0.43386194283533386,
+        "rerank_score": 68.32786095020005,
+        "finance_boost": 22.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "gross_margin_line_items"
+        ],
+        "matched_terms": [
+          "change"
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "action": "llamaindex_retrieve_node",
+      "target": "fa53a63a-1877-4f50-9a07-959d2c336041",
+      "metadata": {
+        "page": 54,
+        "retrieval_rank": 17,
+        "initial_rank": 17,
+        "vector_score": 0.415261967086395,
+        "rerank_score": 66.39286337530616,
+        "finance_boost": 22.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "gross_margin_line_items"
+        ],
+        "matched_terms": [
+          "change"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "llamaindex_retrieve_node",
+      "target": "e3241a23-938c-4641-b53b-6f55af535b3c",
+      "metadata": {
+        "page": 57,
+        "retrieval_rank": 18,
+        "initial_rank": 18,
+        "vector_score": 0.40982235520549154,
+        "rerank_score": 65.84056885388249,
+        "finance_boost": 22.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "gross_margin_line_items"
+        ],
+        "matched_terms": [
+          "change"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": null,
+    "output": null,
+    "total": null
+  },
+  "latency_ms": 12098,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\AMERICANEXPRESS_2022_10K.pdf",
+    "adapter_mode": "llamaindex_vector_retrieval",
+    "llm_enabled": false,
+    "model": null,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "page_count": 260,
+    "chunk_size": 900,
+    "chunk_overlap": 160,
+    "retrieve_top_k": 120,
+    "rerank_top_k": 3,
+    "max_citations": 3,
+    "finance_rerank": true,
+    "answer_context_chunk_count": 3,
+    "answer_context_chars": 9685,
+    "answer_context_words": 1490
+  }
+}

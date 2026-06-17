@@ -1,0 +1,301 @@
+{
+  "summary": {
+    "status": "pass",
+    "check_count": 22,
+    "failed_check_count": 0,
+    "question_file": "datasets\\financebench\\expanded_questions_25.jsonl",
+    "pdf_manifest": "reports\\expanded_25_pdf_manifest.json",
+    "baseline_report": "reports\\llamaindex_expanded_retrieval.json",
+    "concept_report": "reports\\llamaindex_expanded_retrieval_concept_v2.json"
+  },
+  "checks": [
+    {
+      "name": "expanded question count is 25",
+      "status": "pass",
+      "details": {
+        "actual": 25
+      }
+    },
+    {
+      "name": "expanded question ids are unique",
+      "status": "pass",
+      "details": {}
+    },
+    {
+      "name": "expanded source ids are unique",
+      "status": "pass",
+      "details": {}
+    },
+    {
+      "name": "expanded question set includes original MVP ids",
+      "status": "pass",
+      "details": {}
+    },
+    {
+      "name": "expanded question set has 24 unique docs",
+      "status": "pass",
+      "details": {
+        "actual": 24
+      }
+    },
+    {
+      "name": "pdf manifest covers all expanded docs",
+      "status": "pass",
+      "details": {
+        "missing": [],
+        "extra": []
+      }
+    },
+    {
+      "name": "pdf manifest has no failed downloads",
+      "status": "pass",
+      "details": {
+        "failed": []
+      }
+    },
+    {
+      "name": "pdf manifest records hashes",
+      "status": "pass",
+      "details": {
+        "missing_hash": []
+      }
+    },
+    {
+      "name": "baseline expanded retrieval: has all method/rerank rows",
+      "status": "pass",
+      "details": {
+        "missing": [],
+        "extra": []
+      }
+    },
+    {
+      "name": "baseline expanded retrieval: variant suffix matches",
+      "status": "pass",
+      "details": {
+        "actual": null
+      }
+    },
+    {
+      "name": "baseline expanded retrieval: every row covers 25 questions",
+      "status": "pass",
+      "details": {}
+    },
+    {
+      "name": "baseline expanded retrieval: no manifest failures",
+      "status": "pass",
+      "details": {}
+    },
+    {
+      "name": "baseline expanded retrieval records recall failures",
+      "status": "pass",
+      "details": {
+        "low_recall_rows": [
+          {
+            "method": "vector",
+            "method_key": "llamaindex_vector_rag",
+            "label": "LlamaIndex Vector RAG + finance rerank",
+            "question_file": "datasets\\financebench\\expanded_questions_25.jsonl",
+            "question_count": 25,
+            "result_count": 25,
+            "coverage": 1.0,
+            "failure_count": 0,
+            "manifest_failure_count": 0,
+            "average_evidence_recall": 0.88,
+            "average_citation_precision": 0.30666666666666664,
+            "average_context_chunks": 3.0,
+            "average_context_words": 1126.56,
+            "average_latency_ms": 10079.96,
+            "rerank_top_k": 3,
+            "chunk_size": 900,
+            "chunk_overlap": 160,
+            "results_dir": "reports\\llamaindex_vector_rag\\expanded_questions_25_vector_r3_c900_o160",
+            "manifest": "reports\\llamaindex_vector_rag\\expanded_questions_25_vector_r3_c900_o160_manifest.json",
+            "evidence_eval": "reports\\llamaindex_vector_rag\\evidence_eval_expanded_questions_25_vector_r3_c900_o160.json",
+            "manifest_failures": []
+          },
+          {
+            "method": "vector",
+            "method_key": "llamaindex_vector_rag",
+            "label": "LlamaIndex Vector RAG + finance rerank",
+            "question_file": "datasets\\financebench\\expanded_questions_25.jsonl",
+            "question_count": 25,
+            "result_count": 25,
+            "coverage": 1.0,
+            "failure_count": 0,
+            "manifest_failure_count": 0,
+            "average_evidence_recall": 0.88,
+            "average_citation_precision": 0.29333333333333333,
+            "average_context_chunks": 5.96,
+            "average_context_words": 2314.64,
+            "average_latency_ms": 12585.16,
+            "rerank_top_k": 6,
+            "chunk_size": 900,
+            "chunk_overlap": 160,
+            "results_dir": "reports\\llamaindex_vector_rag\\expanded_questions_25_vector_r6_c900_o160",
+            "manifest": "reports\\llamaindex_vector_rag\\expanded_questions_25_vector_r6_c900_o160_manifest.json",
+            "evidence_eval": "reports\\llamaindex_vector_rag\\evidence_eval_expanded_questions_25_vector_r6_c900_o160.json",
+            "manifest_failures": []
+          },
+          {
+            "method": "vector",
+            "method_key": "llamaindex_vector_rag",
+            "label": "LlamaIndex Vector RAG + finance rerank",
+            "question_file": "datasets\\financebench\\expanded_questions_25.jsonl",
+            "question_count": 25,
+            "result_count": 25,
+            "coverage": 1.0,
+            "failure_count": 0,
+            "manifest_failure_count": 0,
+            "average_evidence_recall": 0.88,
+            "average_citation_precision": 0.29333333333333333,
+            "average_context_chunks": 11.64,
+            "average_context_words": 4565.6,
+            "average_latency_ms": 10648.76,
+            "rerank_top_k": 12,
+            "chunk_size": 900,
+            "chunk_overlap": 160,
+            "results_dir": "reports\\llamaindex_vector_rag\\expanded_questions_25_vector_r12_c900_o160",
+            "manifest": "reports\\llamaindex_vector_rag\\expanded_questions_25_vector_r12_c900_o160_manifest.json",
+            "evidence_eval": "reports\\llamaindex_vector_rag\\evidence_eval_expanded_questions_25_vector_r12_c900_o160.json",
+            "manifest_failures": []
+          },
+          {
+            "method": "hybrid",
+            "method_key": "llamaindex_hybrid_rag",
+            "label": "LlamaIndex Hybrid RAG + finance rerank",
+            "question_file": "datasets\\financebench\\expanded_questions_25.jsonl",
+            "question_count": 25,
+            "result_count": 25,
+            "coverage": 1.0,
+            "failure_count": 0,
+            "manifest_failure_count": 0,
+            "average_evidence_recall": 0.84,
+            "average_citation_precision": 0.29333333333333333,
+            "average_context_chunks": 3.0,
+            "average_context_words": 1220.92,
+            "average_latency_ms": 13538.24,
+            "rerank_top_k": 3,
+            "chunk_size": 900,
+            "chunk_overlap": 160,
+            "results_dir": "reports\\llamaindex_hybrid_rag\\expanded_questions_25_hybrid_r3_c900_o160",
+            "manifest": "reports\\llamaindex_hybrid_rag\\expanded_questions_25_hybrid_r3_c900_o160_manifest.json",
+            "evidence_eval": "reports\\llamaindex_hybrid_rag\\evidence_eval_expanded_questions_25_hybrid_r3_c900_o160.json",
+            "manifest_failures": []
+          },
+          {
+            "method": "hybrid",
+            "method_key": "llamaindex_hybrid_rag",
+            "label": "LlamaIndex Hybrid RAG + finance rerank",
+            "question_file": "datasets\\financebench\\expanded_questions_25.jsonl",
+            "question_count": 25,
+            "result_count": 25,
+            "coverage": 1.0,
+            "failure_count": 0,
+            "manifest_failure_count": 0,
+            "average_evidence_recall": 0.84,
+            "average_citation_precision": 0.28,
+            "average_context_chunks": 5.96,
+            "average_context_words": 2515.36,
+            "average_latency_ms": 9809.4,
+            "rerank_top_k": 6,
+            "chunk_size": 900,
+            "chunk_overlap": 160,
+            "results_dir": "reports\\llamaindex_hybrid_rag\\expanded_questions_25_hybrid_r6_c900_o160",
+            "manifest": "reports\\llamaindex_hybrid_rag\\expanded_questions_25_hybrid_r6_c900_o160_manifest.json",
+            "evidence_eval": "reports\\llamaindex_hybrid_rag\\evidence_eval_expanded_questions_25_hybrid_r6_c900_o160.json",
+            "manifest_failures": []
+          },
+          {
+            "method": "hybrid",
+            "method_key": "llamaindex_hybrid_rag",
+            "label": "LlamaIndex Hybrid RAG + finance rerank",
+            "question_file": "datasets\\financebench\\expanded_questions_25.jsonl",
+            "question_count": 25,
+            "result_count": 25,
+            "coverage": 1.0,
+            "failure_count": 0,
+            "manifest_failure_count": 0,
+            "average_evidence_recall": 0.84,
+            "average_citation_precision": 0.28,
+            "average_context_chunks": 11.64,
+            "average_context_words": 5060.68,
+            "average_latency_ms": 9911.88,
+            "rerank_top_k": 12,
+            "chunk_size": 900,
+            "chunk_overlap": 160,
+            "results_dir": "reports\\llamaindex_hybrid_rag\\expanded_questions_25_hybrid_r12_c900_o160",
+            "manifest": "reports\\llamaindex_hybrid_rag\\expanded_questions_25_hybrid_r12_c900_o160_manifest.json",
+            "evidence_eval": "reports\\llamaindex_hybrid_rag\\evidence_eval_expanded_questions_25_hybrid_r12_c900_o160.json",
+            "manifest_failures": []
+          }
+        ]
+      }
+    },
+    {
+      "name": "baseline expanded retrieval records per-question failures",
+      "status": "pass",
+      "details": {
+        "failure_count": 21
+      }
+    },
+    {
+      "name": "concept_v2 expanded retrieval: has all method/rerank rows",
+      "status": "pass",
+      "details": {
+        "missing": [],
+        "extra": []
+      }
+    },
+    {
+      "name": "concept_v2 expanded retrieval: variant suffix matches",
+      "status": "pass",
+      "details": {
+        "actual": "concept_v2"
+      }
+    },
+    {
+      "name": "concept_v2 expanded retrieval: every row covers 25 questions",
+      "status": "pass",
+      "details": {}
+    },
+    {
+      "name": "concept_v2 expanded retrieval: no manifest failures",
+      "status": "pass",
+      "details": {}
+    },
+    {
+      "name": "concept_v2 reaches full evidence recall",
+      "status": "pass",
+      "details": {}
+    },
+    {
+      "name": "concept_v2 has no per-question failures",
+      "status": "pass",
+      "details": {
+        "failure_count": 0
+      }
+    },
+    {
+      "name": "concept_v2 vector: r3 has smallest context",
+      "status": "pass",
+      "details": {
+        "r3": 1138.2,
+        "larger": {
+          "6": 2338.28,
+          "12": 4570.52
+        }
+      }
+    },
+    {
+      "name": "concept_v2 hybrid: r3 has smallest context",
+      "status": "pass",
+      "details": {
+        "r3": 1160.44,
+        "larger": {
+          "6": 2500.72,
+          "12": 5003.0
+        }
+      }
+    }
+  ]
+}

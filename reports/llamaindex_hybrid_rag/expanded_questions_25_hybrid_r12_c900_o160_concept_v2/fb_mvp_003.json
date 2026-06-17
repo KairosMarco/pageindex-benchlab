@@ -1,0 +1,447 @@
+{
+  "method": "llamaindex_hybrid_rag",
+  "question_id": "fb_mvp_003",
+  "question": "What are the major products and services that AMD sells as of FY22?",
+  "answer": "Retrieved 12 chunks with LlamaIndex BM25/vector hybrid fusion.",
+  "citations": [
+    {
+      "document_id": "AMD_2022_10K",
+      "page": 4,
+      "section": null,
+      "text": "g other things: possible impact of future accounting rules on AMD’s consolidated financial statements; demand for AMD’s products; the growth, change and competitive landscape of the markets in which AMD participates; international sales will continue to be a significant portion of total sales in the foreseeable future; that AMD’s cash, cash equivalents and short-term investment balances together with the availability under that certain revolving credit facility (the Revolving Credit Agreement) m",
+      "metadata": {
+        "chunk_id": "1dd0b769-ad0f-4c38-9a6c-6b5c904b6529",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.2892535417530766,
+        "rerank_score": 73.87560637560638,
+        "matched_terms": [
+          "cpus",
+          "gpus",
+          "graphics",
+          "overview",
+          "products",
+          "services"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "AMD_2022_10K",
+      "page": 60,
+      "section": null,
+      "text": "any. References herein to AMD or the Company mean Advanced Micro Devices, Inc. and its consolidated subsidiaries. AMD’s products include x86 microprocessors (CPUs) and graphics processing units (GPUs), as standalone devices or as incorporated into accelerated processing units (APUs), chipsets, data center and professional GPUs, embedded processors, semi-custom System-on-Chip (SoC) products, microprocessor and SoC development services and technology, data processing units (DPUs), Field Programmab",
+      "metadata": {
+        "chunk_id": "c61f3dce-2331-4b60-9f48-d6c9a445efe4",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5793811795375514,
+        "rerank_score": 65.77247488101534,
+        "matched_terms": [
+          "cpus",
+          "gpus",
+          "graphics",
+          "processors",
+          "products",
+          "sells",
+          "services"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "AMD_2022_10K",
+      "page": 43,
+      "section": null,
+      "text": "esults of Operations” in Part II, Item 7 of our Annual Report on Form 10-K for the fiscal year ended December 25, 2021. Overview 2022 was a transformative year for AMD as we took several major steps that scaled and reshaped our business. In February 2022, we completed our strategic acquisition of Xilinx, Inc. (Xilinx) which expanded our technology and product portfolio to include adaptable hardware platforms that enable hardware acceleration and rapid innovation across a variety of technologies ",
+      "metadata": {
+        "chunk_id": "eaedcd09-c5ac-4799-9904-4c48d60dc6d4",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5093807637679063,
+        "rerank_score": 53.38461538461539,
+        "matched_terms": [
+          "major",
+          "overview",
+          "processors",
+          "products"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "llamaindex_build_hybrid_index",
+      "target": "AMD_2022_10K",
+      "metadata": {
+        "page_count": 121,
+        "node_count": 157,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "chunk_size": 900,
+        "chunk_overlap": 160,
+        "vector_top_k": 120,
+        "bm25_top_k": 120,
+        "fusion_top_k": 120,
+        "rerank_top_k": 12,
+        "rrf_k": 60,
+        "finance_rerank": true,
+        "cross_encoder_model": null,
+        "cross_encoder_candidates": 60,
+        "answer_context_chunk_count": 12,
+        "answer_context_chars": 42029,
+        "answer_context_words": 6228
+      }
+    },
+    {
+      "step": 2,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "1dd0b769-ad0f-4c38-9a6c-6b5c904b6529",
+      "metadata": {
+        "page": 4,
+        "bm25_rank": 5,
+        "vector_rank": 90,
+        "fusion_rank": 27,
+        "bm25_score": 2.7116916179656982,
+        "vector_score": 0.2892535417530766,
+        "rrf_score": 0.022051282051282053,
+        "rerank_score": 73.87560637560638,
+        "finance_boost": 39.0,
+        "finance_boost_reasons": [
+          "business_overview_intro",
+          "amd_product_terms"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "cpus",
+          "gpus",
+          "graphics",
+          "overview",
+          "products",
+          "services"
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "c61f3dce-2331-4b60-9f48-d6c9a445efe4",
+      "metadata": {
+        "page": 60,
+        "bm25_rank": 2,
+        "vector_rank": 1,
+        "fusion_rank": 1,
+        "bm25_score": 3.8204939365386963,
+        "vector_score": 0.5793811795375514,
+        "rrf_score": 0.03252247488101534,
+        "rerank_score": 65.77247488101534,
+        "finance_boost": 18.25,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "amd_product_terms"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "cpus",
+          "gpus",
+          "graphics",
+          "processors",
+          "products",
+          "sells",
+          "services"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "eaedcd09-c5ac-4799-9904-4c48d60dc6d4",
+      "metadata": {
+        "page": 43,
+        "bm25_rank": 14,
+        "vector_rank": 5,
+        "fusion_rank": 3,
+        "bm25_score": 2.1838364601135254,
+        "vector_score": 0.5093807637679063,
+        "rrf_score": 0.0288981288981289,
+        "rerank_score": 53.38461538461539,
+        "finance_boost": 15.5,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "amd_product_terms"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "major",
+          "overview",
+          "processors",
+          "products"
+        ]
+      }
+    },
+    {
+      "step": 5,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "7188e0f5-0dc3-418a-b955-d3d95fa0a2d7",
+      "metadata": {
+        "page": 11,
+        "bm25_rank": 3,
+        "vector_rank": 2,
+        "fusion_rank": 2,
+        "bm25_score": 3.8008456230163574,
+        "vector_score": 0.5448101328060947,
+        "rrf_score": 0.03200204813108039,
+        "rerank_score": 45.99529137432363,
+        "finance_boost": 5.0,
+        "finance_boost_reasons": [
+          "amd_product_terms"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "graphics",
+          "processors",
+          "products",
+          "services"
+        ]
+      }
+    },
+    {
+      "step": 6,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "1e929678-0c26-446d-ba57-7ac1a34a613b",
+      "metadata": {
+        "page": 5,
+        "bm25_rank": 36,
+        "vector_rank": 12,
+        "fusion_rank": 14,
+        "bm25_score": 1.5560927391052246,
+        "vector_score": 0.4889272640679517,
+        "rrf_score": 0.024305555555555552,
+        "rerank_score": 43.46771771771772,
+        "finance_boost": 16.25,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "business_overview_intro"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "products"
+        ]
+      }
+    },
+    {
+      "step": 7,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "5a9942ca-e8ac-4122-ad8e-78b9e27da59f",
+      "metadata": {
+        "page": 19,
+        "bm25_rank": 46,
+        "vector_rank": 10,
+        "fusion_rank": 20,
+        "bm25_score": 1.2983078956604004,
+        "vector_score": 0.49280098399411393,
+        "rrf_score": 0.02371967654986523,
+        "rerank_score": 40.59129817148685,
+        "finance_boost": 10.0,
+        "finance_boost_reasons": [
+          "amd_product_terms"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "gpus",
+          "graphics",
+          "products"
+        ]
+      }
+    },
+    {
+      "step": 8,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "b027b1a7-e260-40ab-bee5-4ac1a1127be2",
+      "metadata": {
+        "page": 7,
+        "bm25_rank": 1,
+        "vector_rank": 35,
+        "fusion_rank": 8,
+        "bm25_score": 3.9492099285125732,
+        "vector_score": 0.387819778899871,
+        "rrf_score": 0.026919758412424506,
+        "rerank_score": 39.87246111512721,
+        "finance_boost": 0.0,
+        "finance_boost_reasons": [],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "cpus",
+          "gpus",
+          "major",
+          "processors",
+          "products",
+          "services"
+        ]
+      }
+    },
+    {
+      "step": 9,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "21136260-f939-45a2-975a-6313c9b1b45f",
+      "metadata": {
+        "page": 12,
+        "bm25_rank": 9,
+        "vector_rank": 14,
+        "fusion_rank": 6,
+        "bm25_score": 2.3998265266418457,
+        "vector_score": 0.4836938731893932,
+        "rrf_score": 0.028006267136701922,
+        "rerank_score": 36.97248335291814,
+        "finance_boost": 0.0,
+        "finance_boost_reasons": [],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "cpus",
+          "graphics",
+          "products",
+          "services"
+        ]
+      }
+    },
+    {
+      "step": 10,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "e0ea1b7e-eb5a-4aab-82f9-93a7c36f0b13",
+      "metadata": {
+        "page": 9,
+        "bm25_rank": 23,
+        "vector_rank": 25,
+        "fusion_rank": 18,
+        "bm25_score": 1.8274550437927246,
+        "vector_score": 0.4151729816958719,
+        "rrf_score": 0.02381289865343728,
+        "rerank_score": 36.19803378857242,
+        "finance_boost": 1.5,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "cpus",
+          "gpus",
+          "graphics",
+          "processors",
+          "products"
+        ]
+      }
+    },
+    {
+      "step": 11,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "5a916338-f716-4ee3-afd8-642da904026e",
+      "metadata": {
+        "page": 112,
+        "bm25_rank": 16,
+        "vector_rank": 4,
+        "fusion_rank": 4,
+        "bm25_score": 2.0120911598205566,
+        "vector_score": 0.5138103416143632,
+        "rrf_score": 0.028782894736842105,
+        "rerank_score": 35.762624466571836,
+        "finance_boost": 6.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": []
+      }
+    },
+    {
+      "step": 12,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "8dfa78fb-075c-44ef-b555-d1e510985dcc",
+      "metadata": {
+        "page": 7,
+        "bm25_rank": 32,
+        "vector_rank": 3,
+        "fusion_rank": 9,
+        "bm25_score": 1.6139081716537476,
+        "vector_score": 0.5196240081798772,
+        "rrf_score": 0.026742581090407176,
+        "rerank_score": 35.688527036353115,
+        "finance_boost": 0.0,
+        "finance_boost_reasons": [],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "cpus",
+          "gpus",
+          "processors",
+          "products"
+        ]
+      }
+    },
+    {
+      "step": 13,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "269e2f63-44b6-4b60-ab3b-333a6a419c15",
+      "metadata": {
+        "page": 69,
+        "bm25_rank": 7,
+        "vector_rank": 47,
+        "fusion_rank": 16,
+        "bm25_score": 2.531057357788086,
+        "vector_score": 0.35311559751107774,
+        "rrf_score": 0.02427116752685172,
+        "rerank_score": 35.66981617550037,
+        "finance_boost": 4.5,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "major",
+          "products",
+          "services"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": null,
+    "output": null,
+    "total": null
+  },
+  "latency_ms": 9607,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\AMD_2022_10K.pdf",
+    "adapter_mode": "llamaindex_bm25_vector_rrf_plus_rerank",
+    "llm_enabled": false,
+    "model": null,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "page_count": 121,
+    "node_count": 157,
+    "chunk_size": 900,
+    "chunk_overlap": 160,
+    "vector_top_k": 120,
+    "bm25_top_k": 120,
+    "fusion_top_k": 120,
+    "rerank_top_k": 12,
+    "rrf_k": 60,
+    "max_citations": 3,
+    "finance_rerank": true,
+    "cross_encoder_model": null,
+    "cross_encoder_candidates": 60,
+    "answer_context_chunk_count": 12,
+    "answer_context_chars": 42029,
+    "answer_context_words": 6228
+  }
+}

@@ -1,0 +1,251 @@
+{
+  "method": "llamaindex_vector_rag",
+  "question_id": "fb_mvp_010",
+  "question": "What Was AMCOR's Adjusted Non GAAP EBITDA for FY 2023",
+  "answer": "Retrieved 6 chunks with LlamaIndex vector retrieval and lightweight reranking.",
+  "citations": [
+    {
+      "document_id": "AMCOR_2023Q4_EARNINGS",
+      "page": 11,
+      "section": null,
+      "text": "Reconciliation of Non-GAAP Measures Reconciliation of adjusted Earnings before interest, tax, depreciation and amortization (EBITDA), Earnings before interest and tax (EBIT), Net income, Earnings per share (EPS) and Free Cash Flow Three Months Ended June 30, 2022 Three Months Ended June 30, 2023 ($ million) EBITDA EBIT Net Income EPS (Diluted US cents)(1) EBITDA EBIT Net Income EPS (Diluted US cents)(1) Net income attributable to Amcor 109 109 109 7.3 181 181 181 12.3 Net income attributable to ",
+      "metadata": {
+        "chunk_id": "f7da09b4-2c01-4fc0-bb89-ee983c32ddfb",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.62716392303768,
+        "rerank_score": 123.466392303768,
+        "matched_terms": [
+          "adjusted",
+          "ebitda",
+          "gaap",
+          "non",
+          "reconciliation"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "AMCOR_2023Q4_EARNINGS",
+      "page": 12,
+      "section": null,
+      "text": "Twelve Months Ended June 30, 2022 Twelve Months Ended June 30, 2023 ($ million) EBITDA EBIT Net Income EPS (Diluted US cents)(1) EBITDA EBIT Net Income EPS (Diluted US cents)(1) Net income attributable to Amcor 805 805 805 52.9 1,048 1,048 1,048 70.5 Net income attributable to non-controlling interests 10 10 10 10 Tax expense 300 300 193 193 Interest expense, net 135 135 259 259 Depreciation and amortization 579 569 EBITDA, EBIT, Net income and EPS 1,829 1,250 805 52.9 2,080 1,510 1,048 70.5 201",
+      "metadata": {
+        "chunk_id": "a3ab6b77-cac0-413a-8db8-6bd35e402b38",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5992676222017209,
+        "rerank_score": 115.5767622201721,
+        "matched_terms": [
+          "adjusted",
+          "ebitda",
+          "non",
+          "reconciliation"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "AMCOR_2023Q4_EARNINGS",
+      "page": 7,
+      "section": null,
+      "text": "-looking statements in this communication are qualified in their entirety by this cautionary statement. Presentation of non-GAAP information Included in this release are measures of financial performance that are not calculated in accordance with U.S. GAAP. These measures include adjusted EBITDA and EBITDA (calculated as earnings before interest and tax and depreciation and amortization), adjusted EBIT and EBIT (calculated as earnings before interest and tax), adjusted net income, adjusted earni",
+      "metadata": {
+        "chunk_id": "1c066c37-ca0e-424b-a1e4-4aa1e11e5c95",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.6630297786177274,
+        "rerank_score": 107.15297786177273,
+        "matched_terms": [
+          "adjusted",
+          "ebitda",
+          "gaap",
+          "non",
+          "reconciliation"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "llamaindex_build_vector_index",
+      "target": "AMCOR_2023Q4_EARNINGS",
+      "metadata": {
+        "page_count": 14,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "chunk_size": 900,
+        "chunk_overlap": 160,
+        "retrieve_top_k": 120,
+        "rerank_top_k": 6,
+        "finance_rerank": true,
+        "answer_context_chunk_count": 6,
+        "answer_context_chars": 19004,
+        "answer_context_words": 2858
+      }
+    },
+    {
+      "step": 2,
+      "action": "llamaindex_retrieve_node",
+      "target": "f7da09b4-2c01-4fc0-bb89-ee983c32ddfb",
+      "metadata": {
+        "page": 11,
+        "retrieval_rank": 6,
+        "initial_rank": 6,
+        "vector_score": 0.62716392303768,
+        "rerank_score": 123.466392303768,
+        "finance_boost": 44.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "requested_year_present",
+          "adjusted_ebitda_line_item",
+          "ebitda_reconciliation_table"
+        ],
+        "matched_terms": [
+          "adjusted",
+          "ebitda",
+          "gaap",
+          "non",
+          "reconciliation"
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "action": "llamaindex_retrieve_node",
+      "target": "a3ab6b77-cac0-413a-8db8-6bd35e402b38",
+      "metadata": {
+        "page": 12,
+        "retrieval_rank": 8,
+        "initial_rank": 8,
+        "vector_score": 0.5992676222017209,
+        "rerank_score": 115.5767622201721,
+        "finance_boost": 44.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "requested_year_present",
+          "adjusted_ebitda_line_item",
+          "ebitda_reconciliation_table"
+        ],
+        "matched_terms": [
+          "adjusted",
+          "ebitda",
+          "non",
+          "reconciliation"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "llamaindex_retrieve_node",
+      "target": "1c066c37-ca0e-424b-a1e4-4aa1e11e5c95",
+      "metadata": {
+        "page": 7,
+        "retrieval_rank": 4,
+        "initial_rank": 4,
+        "vector_score": 0.6630297786177274,
+        "rerank_score": 107.15297786177273,
+        "finance_boost": 24.0,
+        "finance_boost_reasons": [
+          "adjusted_ebitda_line_item"
+        ],
+        "matched_terms": [
+          "adjusted",
+          "ebitda",
+          "gaap",
+          "non",
+          "reconciliation"
+        ]
+      }
+    },
+    {
+      "step": 5,
+      "action": "llamaindex_retrieve_node",
+      "target": "8a0f1927-f854-4723-a0c3-defcc873ac75",
+      "metadata": {
+        "page": 1,
+        "retrieval_rank": 5,
+        "initial_rank": 5,
+        "vector_score": 0.6516953992631711,
+        "rerank_score": 88.59453992631711,
+        "finance_boost": 11.625,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "requested_year_present"
+        ],
+        "matched_terms": [
+          "adjusted",
+          "ebitda",
+          "gaap",
+          "non"
+        ]
+      }
+    },
+    {
+      "step": 6,
+      "action": "llamaindex_retrieve_node",
+      "target": "dbfc09a8-2783-47ff-8c1d-97141ee60d87",
+      "metadata": {
+        "page": 3,
+        "retrieval_rank": 1,
+        "initial_rank": 1,
+        "vector_score": 0.6927972235991081,
+        "rerank_score": 84.5297223599108,
+        "finance_boost": 10.25,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "requested_year_present"
+        ],
+        "matched_terms": [
+          "adjusted",
+          "gaap"
+        ]
+      }
+    },
+    {
+      "step": 7,
+      "action": "llamaindex_retrieve_node",
+      "target": "f74950cd-f561-420f-b969-953abb064ca5",
+      "metadata": {
+        "page": 7,
+        "retrieval_rank": 2,
+        "initial_rank": 2,
+        "vector_score": 0.6761516528886993,
+        "rerank_score": 81.56516528886993,
+        "finance_boost": 4.0,
+        "finance_boost_reasons": [
+          "requested_year_present"
+        ],
+        "matched_terms": [
+          "gaap",
+          "non",
+          "reconciliation"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": null,
+    "output": null,
+    "total": null
+  },
+  "latency_ms": 8021,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\AMCOR_2023Q4_EARNINGS.pdf",
+    "adapter_mode": "llamaindex_vector_retrieval",
+    "llm_enabled": false,
+    "model": null,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "page_count": 14,
+    "chunk_size": 900,
+    "chunk_overlap": 160,
+    "retrieve_top_k": 120,
+    "rerank_top_k": 6,
+    "max_citations": 3,
+    "finance_rerank": true,
+    "answer_context_chunk_count": 6,
+    "answer_context_chars": 19004,
+    "answer_context_words": 2858
+  }
+}

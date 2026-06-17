@@ -1,0 +1,413 @@
+{
+  "method": "llamaindex_hybrid_rag",
+  "question_id": "fb_exp_017",
+  "question": "Does Corning have positive working capital based on FY2022 data? If working capital is not a useful or relevant metric for this company, then please state that and explain why.",
+  "answer": "Retrieved 12 chunks with LlamaIndex BM25/vector hybrid fusion.",
+  "citations": [
+    {
+      "document_id": "CORNING_2022_10K",
+      "page": 60,
+      "section": null,
+      "text": "e $0.50 per share; Shares authorized 3.8 billion; Shares issued: 1.8 billion and 1.8 billion 910 907 Additional paid-in capital – common stock 16,682 16,475 Retained earnings 16,778 16,389 Treasury stock, at cost; Shares held: 977 million and 970 million (20,532) (20,263) Accumulated other comprehensive loss (1,830) (1,175) Total Corning Incorporated shareholders’ equity 12,008 12,333 Non-controlling interest 267 212 Total equity 12,275 12,545 Total Liabilities and Equity $ 29,499 $ 30,154 The a",
+      "metadata": {
+        "chunk_id": "3e4f52eb-c0ca-4d42-8fc8-6f1442371df0",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.525225838062973,
+        "rerank_score": 95.37946424445663,
+        "matched_terms": [
+          "capital"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "CORNING_2022_10K",
+      "page": 20,
+      "section": null,
+      "text": "nistrative 2.4 1.8 0.6 Research and development 3.9 1.9 2.0 Warehouse 3.8 3.0 0.8 Total 65.8 27.4 38.4 Total assets and capital expenditures by reportable segment are included in Note 19 (Reportable Segments) in the accompanying notes to the consolidated financial statements. Information concerning lease commitments is included in Note 6 (Leases) in the accompanying notes to the consolidated financial statements. Item 3. Legal Proceedings Corning is a defendant in various lawsuits and is subject",
+      "metadata": {
+        "chunk_id": "8031a09a-69ad-4ec6-bae2-19b1767dcbc9",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.47663726449643,
+        "rerank_score": 53.38006535947712,
+        "matched_terms": [
+          "based",
+          "capital"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "CORNING_2022_10K",
+      "page": 34,
+      "section": null,
+      "text": "Table of Contents LIQUIDITY AND CAPITAL RESOURCES Our financial condition and liquidity are strong. We are not aware of any known trends, demands, commitments, events or uncertainties that will result in or that are reasonably likely to result in a material decrease in our liquidity. In addition, other than items discussed, there are no known material trends, favorable or unfavorable, in our capital resources and no expected material changes in the mix of such resources. Our major source of fund",
+      "metadata": {
+        "chunk_id": "01cc72f2-872c-480c-b7af-433d0d239e8b",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.4256792583054281,
+        "rerank_score": 37.24803986725395,
+        "matched_terms": [
+          "capital",
+          "data",
+          "working"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "llamaindex_build_hybrid_index",
+      "target": "CORNING_2022_10K",
+      "metadata": {
+        "page_count": 159,
+        "node_count": 201,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "chunk_size": 900,
+        "chunk_overlap": 160,
+        "vector_top_k": 120,
+        "bm25_top_k": 120,
+        "fusion_top_k": 120,
+        "rerank_top_k": 12,
+        "rrf_k": 60,
+        "finance_rerank": true,
+        "cross_encoder_model": null,
+        "cross_encoder_candidates": 60,
+        "answer_context_chunk_count": 12,
+        "answer_context_chars": 35868,
+        "answer_context_words": 4968
+      }
+    },
+    {
+      "step": 2,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "3e4f52eb-c0ca-4d42-8fc8-6f1442371df0",
+      "metadata": {
+        "page": 60,
+        "bm25_rank": 73,
+        "vector_rank": 7,
+        "fusion_rank": 12,
+        "bm25_score": 2.1143321990966797,
+        "vector_score": 0.525225838062973,
+        "rrf_score": 0.022444170126809562,
+        "rerank_score": 95.37946424445663,
+        "finance_boost": 70.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "balance_sheet_title",
+          "total_assets_line_item",
+          "working_capital_line_items"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "capital"
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "8031a09a-69ad-4ec6-bae2-19b1767dcbc9",
+      "metadata": {
+        "page": 20,
+        "bm25_rank": 12,
+        "vector_rank": 25,
+        "fusion_rank": 5,
+        "bm25_score": 4.817504405975342,
+        "vector_score": 0.47663726449643,
+        "rrf_score": 0.02565359477124183,
+        "rerank_score": 53.38006535947712,
+        "finance_boost": 22.75,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "total_assets_line_item"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "based",
+          "capital"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "01cc72f2-872c-480c-b7af-433d0d239e8b",
+      "metadata": {
+        "page": 34,
+        "bm25_rank": 1,
+        "vector_rank": 51,
+        "fusion_rank": 6,
+        "bm25_score": 8.269255638122559,
+        "vector_score": 0.4256792583054281,
+        "rrf_score": 0.02540245163195983,
+        "rerank_score": 37.24803986725395,
+        "finance_boost": 4.875,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "capital",
+          "data",
+          "working"
+        ]
+      }
+    },
+    {
+      "step": 5,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "0fbc5430-2c4a-41e0-ae04-98420f3f44d2",
+      "metadata": {
+        "page": 104,
+        "bm25_rank": null,
+        "vector_rank": 14,
+        "fusion_rank": 74,
+        "bm25_score": null,
+        "vector_score": 0.5046333151731919,
+        "rrf_score": 0.013513513513513514,
+        "rerank_score": 36.70910174880763,
+        "finance_boost": 22.625,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "total_assets_line_item"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": []
+      }
+    },
+    {
+      "step": 6,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "a42e4d2f-e6df-43bc-9c17-53693ce50559",
+      "metadata": {
+        "page": 61,
+        "bm25_rank": 43,
+        "vector_rank": 13,
+        "fusion_rank": 10,
+        "bm25_score": 2.979053497314453,
+        "vector_score": 0.5064829268401121,
+        "rrf_score": 0.02340736800106397,
+        "rerank_score": 36.35442682459338,
+        "finance_boost": 8.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "based",
+          "capital"
+        ]
+      }
+    },
+    {
+      "step": 7,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "6359cc31-deb1-4154-bc41-2af1bf6e934c",
+      "metadata": {
+        "page": 23,
+        "bm25_rank": 14,
+        "vector_rank": 9,
+        "fusion_rank": 3,
+        "bm25_score": 4.433096885681152,
+        "vector_score": 0.5174556450669239,
+        "rrf_score": 0.028006267136701922,
+        "rerank_score": 35.869502430819566,
+        "finance_boost": 2.875,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "capital",
+          "data"
+        ]
+      }
+    },
+    {
+      "step": 8,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "b5fb4994-d59c-433c-87fd-f227012422b9",
+      "metadata": {
+        "page": 102,
+        "bm25_rank": 39,
+        "vector_rank": 11,
+        "fusion_rank": 7,
+        "bm25_score": 3.001065492630005,
+        "vector_score": 0.5069515218313808,
+        "rrf_score": 0.024185517143263623,
+        "rerank_score": 35.15022302561656,
+        "finance_boost": 8.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "capital"
+        ]
+      }
+    },
+    {
+      "step": 9,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "14d4b4c8-1d42-499c-8934-ec3ba778822e",
+      "metadata": {
+        "page": 50,
+        "bm25_rank": 42,
+        "vector_rank": 17,
+        "fusion_rank": 11,
+        "bm25_score": 2.99033522605896,
+        "vector_score": 0.4888006517138942,
+        "rrf_score": 0.02279093455564044,
+        "rerank_score": 33.73211102622867,
+        "finance_boost": 8.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "data"
+        ]
+      }
+    },
+    {
+      "step": 10,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "0832f4b9-5af0-418a-85e2-a75c3cd6be7f",
+      "metadata": {
+        "page": 2,
+        "bm25_rank": 4,
+        "vector_rank": 19,
+        "fusion_rank": 2,
+        "bm25_score": 7.138564109802246,
+        "vector_score": 0.4870623189195761,
+        "rrf_score": 0.028283227848101264,
+        "rerank_score": 33.277345495160084,
+        "finance_boost": 0.0,
+        "finance_boost_reasons": [],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "based",
+          "data"
+        ]
+      }
+    },
+    {
+      "step": 11,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "1d18fbe7-a389-46d9-8667-b06098dd1ded",
+      "metadata": {
+        "page": 56,
+        "bm25_rank": 23,
+        "vector_rank": 3,
+        "fusion_rank": 4,
+        "bm25_score": 3.576846122741699,
+        "vector_score": 0.5534680330828456,
+        "rrf_score": 0.02792120864410021,
+        "rerank_score": 32.903561585276684,
+        "finance_boost": 2.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "based"
+        ]
+      }
+    },
+    {
+      "step": 12,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "ed1a7583-b322-4dd2-903f-4b4132ecbf7d",
+      "metadata": {
+        "page": 66,
+        "bm25_rank": 7,
+        "vector_rank": 79,
+        "fusion_rank": 13,
+        "bm25_score": 6.3260369300842285,
+        "vector_score": 0.3800691712779875,
+        "rrf_score": 0.022119617738644903,
+        "rerank_score": 32.79902950335079,
+        "finance_boost": 3.75,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "based",
+          "capital",
+          "useful"
+        ]
+      }
+    },
+    {
+      "step": 13,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "67a6f729-5b14-4408-9096-25e4b741204a",
+      "metadata": {
+        "page": 62,
+        "bm25_rank": 62,
+        "vector_rank": 18,
+        "fusion_rank": 18,
+        "bm25_score": 2.5122010707855225,
+        "vector_score": 0.48759617145672224,
+        "rrf_score": 0.02101723413198823,
+        "rerank_score": 31.917234131988227,
+        "finance_boost": 8.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "capital"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": null,
+    "output": null,
+    "total": null
+  },
+  "latency_ms": 9698,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\CORNING_2022_10K.pdf",
+    "adapter_mode": "llamaindex_bm25_vector_rrf_plus_rerank",
+    "llm_enabled": false,
+    "model": null,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "page_count": 159,
+    "node_count": 201,
+    "chunk_size": 900,
+    "chunk_overlap": 160,
+    "vector_top_k": 120,
+    "bm25_top_k": 120,
+    "fusion_top_k": 120,
+    "rerank_top_k": 12,
+    "rrf_k": 60,
+    "max_citations": 3,
+    "finance_rerank": true,
+    "cross_encoder_model": null,
+    "cross_encoder_candidates": 60,
+    "answer_context_chunk_count": 12,
+    "answer_context_chars": 35868,
+    "answer_context_words": 4968
+  }
+}

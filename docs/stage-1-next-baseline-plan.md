@@ -125,7 +125,8 @@ These stronger claims require a larger dataset, stronger baselines, and cost ass
 6. Run LLM answer generation on the same 12 questions only after retrieval quality is acceptable. Completed for finance-aware LlamaIndex Vector and Hybrid diagnostics.
 7. Evaluate evidence and answers. Completed for finance-aware LlamaIndex Vector and Hybrid diagnostics.
 8. Regenerate detailed evidence reports and validation reports. Completed in `reports/llamaindex_finance_llm_diagnostics.md` and `.json`.
-9. Only then update benchmark conclusions.
+9. Expand retrieval validation to 25 FinanceBench questions. Completed for retrieval-only mode.
+10. Run expanded LLM answer generation only after retrieval quality is acceptable.
 
 ## LlamaIndex Vector Diagnostic Result
 
@@ -174,7 +175,7 @@ token reduction vs rerank_top_k=12: 73.0%
 
 Interpretation:
 
-The finance-aware LlamaIndex Vector candidate now passes the mechanical promotion gate on the 12-question MVP subset. The `rerank_top_k=3` variant preserved answer accuracy while substantially reducing token use, so it should be the next larger-subset candidate.
+The finance-aware LlamaIndex Vector candidate passes the mechanical promotion gate on the 12-question MVP subset. The first expanded 25-question retrieval run exposed failures on concept-heavy finance questions. The `concept_v2` label-free reranker signals restored 1.000 evidence recall on the 25-question retrieval-only run, so the next answer-generation candidate is `concept_v2` with `rerank_top_k=3`.
 
 ## LlamaIndex Hybrid Diagnostic Result
 
@@ -224,4 +225,36 @@ token reduction vs rerank_top_k=12: 72.7%
 
 Interpretation:
 
-The finance-aware LlamaIndex Hybrid candidate now passes the mechanical promotion gate on the 12-question MVP subset. The `rerank_top_k=3` variant preserved answer accuracy while substantially reducing token use, so the next technical work is larger-subset validation rather than more MVP-only tuning.
+The finance-aware LlamaIndex Hybrid candidate passes the mechanical promotion gate on the 12-question MVP subset. The first expanded 25-question retrieval run exposed failures on concept-heavy finance questions. The `concept_v2` label-free reranker signals restored 1.000 evidence recall on the 25-question retrieval-only run, so the next answer-generation candidate is `concept_v2` with `rerank_top_k=3`.
+
+## Expanded Retrieval Result
+
+Default 25-question retrieval-only run:
+
+```text
+Vector r3/r6/r12: evidence recall 0.880
+Hybrid r3/r6/r12: evidence recall 0.840
+```
+
+The failed questions are listed in `reports/llamaindex_expanded_retrieval.md`.
+
+`concept_v2` 25-question retrieval-only run:
+
+```text
+Vector r3: evidence recall 1.000, citation precision 0.360, average context words 1,138
+Hybrid r3: evidence recall 1.000, citation precision 0.360, average context words 1,160
+```
+
+Validation:
+
+```powershell
+python scripts\validate_expanded_retrieval_artifacts.py
+```
+
+Current validation status:
+
+```text
+status=pass
+checks=22
+failed=0
+```

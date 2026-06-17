@@ -1,0 +1,180 @@
+{
+  "method": "llamaindex_vector_rag",
+  "question_id": "fb_exp_019",
+  "question": "How much (in USD billions) did American Water Works pay out in cash dividends for FY2020? Compute or extract the answer by primarily using the details outlined in the statement of cash flows.",
+  "answer": "Retrieved 3 chunks with LlamaIndex vector retrieval and lightweight reranking.",
+  "citations": [
+    {
+      "document_id": "AMERICANWATERWORKS_2020_10K",
+      "page": 86,
+      "section": null,
+      "text": "Table of Contents American Water Works Company, Inc. and Subsidiary Companies Consolidated Statements of Cash Flows (In millions) For the Years Ended December 31, 2020 2019 2018 CASH FLOWS FROM OPERATING ACTIVITIES Net income $ 709 $ 621 $ 565 Adjustments to reconcile to net cash flows provided by operating activities: Depreciation and amortization 604 582 545 Deferred income taxes and amortization of investment tax credits 207 208 195 Provision for losses on accounts receivable 34 28 33 Loss (g",
+      "metadata": {
+        "chunk_id": "9f1d5928-e167-47e3-bc23-9264934e3a0a",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.46140645247286405,
+        "rerank_score": 109.12397858061975,
+        "matched_terms": [
+          "cash",
+          "dividends",
+          "flows"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "AMERICANWATERWORKS_2020_10K",
+      "page": 66,
+      "section": null,
+      "text": "Table of Contents Cash flows provided by operating activities have been a reliable, steady source of funding, sufficient to meet operating requirements and fund the majority of the Company’s capital investments. The Company expects to seek access to debt and equity capital markets to meet the balance of its capital investment, if any, and fund its dividend payments, as needed. Operating cash flows can be negatively affected by changes in the Company’s rate regulated environments, changes in the ",
+      "metadata": {
+        "chunk_id": "67cd2659-1a71-42dd-ac6e-54557885d17d",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.4113670624379963,
+        "rerank_score": 82.03670624379964,
+        "matched_terms": [
+          "cash",
+          "details",
+          "flows",
+          "pay",
+          "primarily"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "AMERICANWATERWORKS_2020_10K",
+      "page": 93,
+      "section": null,
+      "text": "The subsidiary agreed to pay $1 million annually commencing in 2010 with the final payment being made in 2021. Remediation costs accrued amounted to $1 million and $2 million as of December 31, 2020 and 2019, respectively. Derivative Financial Instruments The Company uses derivative financial instruments for purposes of hedging exposures to fluctuations in interest rates. These derivative contracts are entered into for periods consistent with the related underlying exposures and do not constitut",
+      "metadata": {
+        "chunk_id": "e576c26b-6224-41fa-b769-6739f967cbba",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.39485605988456124,
+        "rerank_score": 78.30227265512278,
+        "matched_terms": [
+          "cash",
+          "flows",
+          "pay"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "llamaindex_build_vector_index",
+      "target": "AMERICANWATERWORKS_2020_10K",
+      "metadata": {
+        "page_count": 152,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "chunk_size": 900,
+        "chunk_overlap": 160,
+        "retrieve_top_k": 120,
+        "rerank_top_k": 3,
+        "finance_rerank": true,
+        "answer_context_chunk_count": 3,
+        "answer_context_chars": 8537,
+        "answer_context_words": 1324
+      }
+    },
+    {
+      "step": 2,
+      "action": "llamaindex_retrieve_node",
+      "target": "9f1d5928-e167-47e3-bc23-9264934e3a0a",
+      "metadata": {
+        "page": 86,
+        "retrieval_rank": 3,
+        "initial_rank": 3,
+        "vector_score": 0.46140645247286405,
+        "rerank_score": 109.12397858061975,
+        "finance_boost": 50.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "cash_flow_statement_title",
+          "operating_cash_flow_section",
+          "investing_cash_flow_section",
+          "financing_cash_flow_section"
+        ],
+        "matched_terms": [
+          "cash",
+          "dividends",
+          "flows"
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "action": "llamaindex_retrieve_node",
+      "target": "67cd2659-1a71-42dd-ac6e-54557885d17d",
+      "metadata": {
+        "page": 66,
+        "retrieval_rank": 13,
+        "initial_rank": 13,
+        "vector_score": 0.4113670624379963,
+        "rerank_score": 82.03670624379964,
+        "finance_boost": 24.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "cash_flow_statement_title"
+        ],
+        "matched_terms": [
+          "cash",
+          "details",
+          "flows",
+          "pay",
+          "primarily"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "llamaindex_retrieve_node",
+      "target": "e576c26b-6224-41fa-b769-6739f967cbba",
+      "metadata": {
+        "page": 93,
+        "retrieval_rank": 23,
+        "initial_rank": 23,
+        "vector_score": 0.39485605988456124,
+        "rerank_score": 78.30227265512278,
+        "finance_boost": 26.0,
+        "finance_boost_reasons": [
+          "cash_flow_statement_title",
+          "operating_cash_flow_section"
+        ],
+        "matched_terms": [
+          "cash",
+          "flows",
+          "pay"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": null,
+    "output": null,
+    "total": null
+  },
+  "latency_ms": 10661,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\AMERICANWATERWORKS_2020_10K.pdf",
+    "adapter_mode": "llamaindex_vector_retrieval",
+    "llm_enabled": false,
+    "model": null,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "page_count": 152,
+    "chunk_size": 900,
+    "chunk_overlap": 160,
+    "retrieve_top_k": 120,
+    "rerank_top_k": 3,
+    "max_citations": 3,
+    "finance_rerank": true,
+    "answer_context_chunk_count": 3,
+    "answer_context_chars": 8537,
+    "answer_context_words": 1324
+  }
+}

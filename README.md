@@ -103,7 +103,12 @@ Completed:
 - Current low-context LlamaIndex tuning result:
   - LlamaIndex Vector RAG with `rerank_top_k=3`: answer accuracy `1.000`, average total tokens `2,424`, about `73%` fewer tokens than the original `rerank_top_k=12` diagnostic.
   - LlamaIndex Hybrid RAG with `rerank_top_k=3`: answer accuracy `1.000`, average total tokens `2,520`, about `73%` fewer tokens than the original `rerank_top_k=12` diagnostic.
-- These candidates pass the mechanical promotion gate, but they remain documented as stronger-baseline diagnostics until the larger FinanceBench subset is ready.
+- A 25-question expanded FinanceBench subset now exists in `datasets/financebench/expanded_questions_25.jsonl`.
+- Expanded retrieval diagnostics show why larger-subset validation matters:
+  - The first finance-aware LlamaIndex reranker dropped to evidence recall `0.880` for Vector and `0.840` for Hybrid.
+  - The `concept_v2` label-free reranker signals restored evidence recall `1.000` for both Vector and Hybrid at `rerank_top_k=3`.
+  - The `concept_v2` `rerank_top_k=3` runs use the smallest answer context among passing expanded retrieval variants.
+- These candidates still need expanded LLM answer generation and answer judging before benchmark conclusions are updated.
 
 Current owner: project owner. PH is on standby for later task assignment.
 
@@ -270,8 +275,8 @@ A GPU may become useful later for local LLMs, large embedding jobs, or large rer
 
 ## Next Actions
 
-1. Expand the FinanceBench subset beyond 12 questions.
-2. Run the low-context LlamaIndex `rerank_top_k=3` configuration on the larger subset.
+1. Run expanded LLM answer generation for the 25-question `concept_v2`, `rerank_top_k=3` LlamaIndex candidates.
+2. Evaluate expanded answers with the same LLM judge and evidence evaluator.
 3. Add per-method failure-case notes and cost estimates.
 4. Prepare a PageIndex upstream issue or PR using the benchmark findings.
-5. Add GraphRAG and HyperGraphRAG after the larger subset is stable.
+5. Add GraphRAG and HyperGraphRAG after the expanded baseline is stable.

@@ -27,6 +27,11 @@ def sha256_file(path: Path) -> str:
     return digest.hexdigest()
 
 
+def write_manifest(path: Path, manifest: list[dict]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(manifest, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+
+
 def download(url: str, output: Path, *, retries: int = 3) -> None:
     request = Request(url, headers={"User-Agent": "pageindex-benchlab"})
     part = output.with_suffix(output.suffix + ".part")
@@ -50,11 +55,12 @@ def download(url: str, output: Path, *, retries: int = 3) -> None:
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Download PDFs for FinanceBench MVP questions.")
+    parser = argparse.ArgumentParser(description="Download PDFs for a normalized FinanceBench question file.")
     parser.add_argument("--questions", type=Path, default=DEFAULT_QUESTIONS)
     parser.add_argument("--output-dir", type=Path, default=DEFAULT_OUTPUT_DIR)
     parser.add_argument("--manifest", type=Path, default=DEFAULT_MANIFEST)
     parser.add_argument("--force", action="store_true", help="Re-download existing PDFs.")
+    parser.add_argument("--continue-on-error", action="store_true")
     args = parser.parse_args()
 
     questions = load_jsonl(args.questions)
@@ -72,23 +78,38 @@ def main() -> None:
     manifest = []
     for doc_name, doc in sorted(docs.items()):
         output = args.output_dir / f"{doc_name}.pdf"
-        status = "exists"
-        if args.force or not output.exists():
-            status = "downloaded"
-            download(doc["pdf_url"], output)
+        try:
+            status = "exists"
+            if args.force or not output.exists():
+                status = "downloaded"
+                download(doc["pdf_url"], output)
 
-        manifest.append(
-            {
-                **doc,
-                "local_path": str(output.relative_to(ROOT)),
-                "size_bytes": output.stat().st_size,
-                "sha256": sha256_file(output),
-                "status": status,
-            }
-        )
-        print(f"{status}: {output}")
+            manifest.append(
+                {
+                    **doc,
+                    "local_path": str(output.relative_to(ROOT)),
+                    "size_bytes": output.stat().st_size,
+                    "sha256": sha256_file(output),
+                    "status": status,
+                }
+            )
+            print(f"{status}: {output}")
+        except Exception as exc:
+            manifest.append(
+                {
+                    **doc,
+                    "local_path": str(output.relative_to(ROOT)),
+                    "status": "failed",
+                    "error": str(exc),
+                }
+            )
+            print(f"failed: {output} ({exc})")
+            if not args.continue_on_error:
+                write_manifest(args.manifest, manifest)
+                raise
+        write_manifest(args.manifest, manifest)
 
-    args.manifest.write_text(json.dumps(manifest, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    write_manifest(args.manifest, manifest)
     print(f"Wrote manifest: {args.manifest}")
 
 

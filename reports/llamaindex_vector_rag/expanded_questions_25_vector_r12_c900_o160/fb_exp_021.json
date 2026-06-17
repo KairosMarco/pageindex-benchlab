@@ -1,0 +1,309 @@
+{
+  "method": "llamaindex_vector_rag",
+  "question_id": "fb_exp_021",
+  "question": "As of FY2023Q1, why did Pepsico raise full year guidance for FY2023?",
+  "answer": "Retrieved 12 chunks with LlamaIndex vector retrieval and lightweight reranking.",
+  "citations": [
+    {
+      "document_id": "PEPSICO_2023Q1_EARNINGS",
+      "page": 1,
+      "section": null,
+      "text": "PepsiCo Reports First-Quarter 2023 Results; Raises Full-Year Guidance Reported (GAAP) First-Quarter 2023 Results First-Quarter Net revenue growth 10.2% Foreign exchange impact on net revenue (2.5)% Earnings per share (EPS) $1.40 EPS change (54)% Foreign exchange impact on EPS (2)% Organic/Core (non-GAAP)1 First-Quarter 2023 Results First-Quarter Organic revenue growth 14.3% Core EPS $1.50 Core constant currency EPS change 18% PURCHASE, N.Y. - April 25, 2023 - PepsiCo, Inc. (NASDAQ: PEP) today re",
+      "metadata": {
+        "chunk_id": "d52416cc-cf15-4a30-972c-ea198ddff2ce",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.6147137155759266,
+        "rerank_score": 70.09637155759266,
+        "matched_terms": [
+          "full",
+          "guidance"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "PEPSICO_2023Q1_EARNINGS",
+      "page": 3,
+      "section": null,
+      "text": "Guidance and Outlook The Company provides guidance on a non-GAAP basis as we cannot predict certain elements which are included in reported GAAP results, including the impact of foreign exchange translation and commodity mark-to-market net impacts. For fiscal year 2023, the Company now expects to deliver 8 percent organic revenue growth (previously 6 percent), and 9 percent core constant currency EPS growth (previously 8 percent). Consistent with its previous guidance for 2023, the Company conti",
+      "metadata": {
+        "chunk_id": "b3de108b-94a7-4ca4-8f8a-a8219158051f",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5991197283219903,
+        "rerank_score": 66.48141727664348,
+        "matched_terms": [
+          "guidance"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "PEPSICO_2023Q1_EARNINGS",
+      "page": 2,
+      "section": null,
+      "text": "Summary First-Quarter 2023 Performance Revenue Volume(a) GAAP Reported % Change Percentage Point Impact Organic % Change % Change Foreign Exchange Translation Acquisitions and Divestitures Convenient Foods Beverages Frito-Lay North America 15 — — 16 — Quaker Foods North America 9 1 — 10 (5) PepsiCo Beverages North America 8 — 3 12 (2) Latin America 21 (6) 1 16 1 5 Europe 5 5 4 14 (5) (11) Africa, Middle East and South Asia 2 28 — 29 (8) 15 Asia Pacific, Australia and New Zealand and China Region",
+      "metadata": {
+        "chunk_id": "627c31b0-137f-4306-9c13-9ddd8a2c370a",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5583748247576613,
+        "rerank_score": 64.67081580909947,
+        "matched_terms": [],
+        "citation_source": "rerank_fallback"
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "llamaindex_build_vector_index",
+      "target": "PEPSICO_2023Q1_EARNINGS",
+      "metadata": {
+        "page_count": 16,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "chunk_size": 900,
+        "chunk_overlap": 160,
+        "retrieve_top_k": 120,
+        "rerank_top_k": 12,
+        "finance_rerank": true,
+        "answer_context_chunk_count": 12,
+        "answer_context_chars": 21616,
+        "answer_context_words": 3231
+      }
+    },
+    {
+      "step": 2,
+      "action": "llamaindex_retrieve_node",
+      "target": "d52416cc-cf15-4a30-972c-ea198ddff2ce",
+      "metadata": {
+        "page": 1,
+        "retrieval_rank": 1,
+        "initial_rank": 1,
+        "vector_score": 0.6147137155759266,
+        "rerank_score": 70.09637155759266,
+        "finance_boost": 3.625,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "matched_terms": [
+          "full",
+          "guidance"
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "action": "llamaindex_retrieve_node",
+      "target": "b3de108b-94a7-4ca4-8f8a-a8219158051f",
+      "metadata": {
+        "page": 3,
+        "retrieval_rank": 2,
+        "initial_rank": 2,
+        "vector_score": 0.5991197283219903,
+        "rerank_score": 66.48141727664348,
+        "finance_boost": 3.625,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "matched_terms": [
+          "guidance"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "llamaindex_retrieve_node",
+      "target": "627c31b0-137f-4306-9c13-9ddd8a2c370a",
+      "metadata": {
+        "page": 2,
+        "retrieval_rank": 4,
+        "initial_rank": 4,
+        "vector_score": 0.5583748247576613,
+        "rerank_score": 64.67081580909947,
+        "finance_boost": 8.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "matched_terms": []
+      }
+    },
+    {
+      "step": 5,
+      "action": "llamaindex_retrieve_node",
+      "target": "be626c3e-4c8a-4a73-95c8-6d4bcf45476e",
+      "metadata": {
+        "page": 12,
+        "retrieval_rank": 5,
+        "initial_rank": 5,
+        "vector_score": 0.5457918261533666,
+        "rerank_score": 63.35696039311444,
+        "finance_boost": 8.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "matched_terms": []
+      }
+    },
+    {
+      "step": 6,
+      "action": "llamaindex_retrieve_node",
+      "target": "101bcc2a-1205-4141-a1e5-84ce55293065",
+      "metadata": {
+        "page": 14,
+        "retrieval_rank": 6,
+        "initial_rank": 6,
+        "vector_score": 0.5451124007937372,
+        "rerank_score": 63.23346230159594,
+        "finance_boost": 8.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "matched_terms": []
+      }
+    },
+    {
+      "step": 7,
+      "action": "llamaindex_retrieve_node",
+      "target": "487386d9-67c7-4476-a426-a27c9a4d28b7",
+      "metadata": {
+        "page": 7,
+        "retrieval_rank": 3,
+        "initial_rank": 3,
+        "vector_score": 0.5633504471670062,
+        "rerank_score": 61.97393360558951,
+        "finance_boost": 4.75,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "matched_terms": []
+      }
+    },
+    {
+      "step": 8,
+      "action": "llamaindex_retrieve_node",
+      "target": "a4141e21-4fbc-4309-850c-ec13ec397351",
+      "metadata": {
+        "page": 11,
+        "retrieval_rank": 7,
+        "initial_rank": 7,
+        "vector_score": 0.5373346975968213,
+        "rerank_score": 61.025136426348794,
+        "finance_boost": 6.625,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "matched_terms": []
+      }
+    },
+    {
+      "step": 9,
+      "action": "llamaindex_retrieve_node",
+      "target": "57a407f5-bee1-45c2-8012-f91c6ee34a83",
+      "metadata": {
+        "page": 5,
+        "retrieval_rank": 8,
+        "initial_rank": 8,
+        "vector_score": 0.5331114278996292,
+        "rerank_score": 59.17225390107403,
+        "finance_boost": 5.25,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "matched_terms": []
+      }
+    },
+    {
+      "step": 10,
+      "action": "llamaindex_retrieve_node",
+      "target": "333b5354-1442-49f5-9eae-a0fb0966fe34",
+      "metadata": {
+        "page": 6,
+        "retrieval_rank": 9,
+        "initial_rank": 9,
+        "vector_score": 0.48655468431699134,
+        "rerank_score": 57.08602398725469,
+        "finance_boost": 7.875,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "matched_terms": []
+      }
+    },
+    {
+      "step": 11,
+      "action": "llamaindex_retrieve_node",
+      "target": "86ba0cfd-edbd-4e04-9d4c-7dca87110dca",
+      "metadata": {
+        "page": 13,
+        "retrieval_rank": 10,
+        "initial_rank": 10,
+        "vector_score": 0.4847040392213166,
+        "rerank_score": 56.97040392213166,
+        "finance_boost": 8.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "matched_terms": []
+      }
+    },
+    {
+      "step": 12,
+      "action": "llamaindex_retrieve_node",
+      "target": "996dc8f3-6797-4784-963f-d099b1df1dd8",
+      "metadata": {
+        "page": 8,
+        "retrieval_rank": 12,
+        "initial_rank": 12,
+        "vector_score": 0.45228427499539414,
+        "rerank_score": 53.6173163884283,
+        "finance_boost": 8.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "matched_terms": []
+      }
+    },
+    {
+      "step": 13,
+      "action": "llamaindex_retrieve_node",
+      "target": "d57d18e7-4042-4070-bb1d-31d253871b50",
+      "metadata": {
+        "page": 15,
+        "retrieval_rank": 11,
+        "initial_rank": 11,
+        "vector_score": 0.4705529225508661,
+        "rerank_score": 51.999736699531056,
+        "finance_boost": 4.5,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "matched_terms": []
+      }
+    }
+  ],
+  "token_usage": {
+    "input": null,
+    "output": null,
+    "total": null
+  },
+  "latency_ms": 8001,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\PEPSICO_2023Q1_EARNINGS.pdf",
+    "adapter_mode": "llamaindex_vector_retrieval",
+    "llm_enabled": false,
+    "model": null,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "page_count": 16,
+    "chunk_size": 900,
+    "chunk_overlap": 160,
+    "retrieve_top_k": 120,
+    "rerank_top_k": 12,
+    "max_citations": 3,
+    "finance_rerank": true,
+    "answer_context_chunk_count": 12,
+    "answer_context_chars": 21616,
+    "answer_context_words": 3231
+  }
+}
