@@ -1,0 +1,154 @@
+{
+  "method": "long_context_llm",
+  "question_id": "fb_exp_024",
+  "question": "By drawing conclusions from the information stated only in the statement of financial position, what is General Mills's FY2020 working capital ratio? Define working capital ratio as total current assets divided by total current liabilities. Round your answer to two decimal places.",
+  "answer": "General Mills's FY2020 working capital ratio, calculated as total current assets divided by total current liabilities from the statement of financial position, is 0.68 [PAGE 50].",
+  "citations": [
+    {
+      "document_id": "GENERALMILLS_2020_10K",
+      "page": 50,
+      "section": null,
+      "text": "50 Consolidated Balance Sheets GENERAL MILLS, INC. AND SUBSIDIARIES (In Millions, Except Par Value) May 31, 2020 May 26, 2019 ASSETS Current assets: Cash and cash equivalents $ 1,677.8 $ 450.0 Receivables 1,615.1 1,679.7 Inventories 1,426.3 1,559.3 Prepaid expenses and other current assets 402.1 497.5 Total current assets 5,121.3 4,186.5 Land, buildings, and equipment 3,580.6 3,787.2 Goodwill 13,923.2 13,995.8 Other intangible assets 7,095.8 7,166.8 Other assets 1,085.8 974.9 Total assets $ 30,8",
+      "metadata": {
+        "score": 30,
+        "matched_terms": [
+          "assets",
+          "balance",
+          "capital",
+          "current",
+          "financial",
+          "liabilities",
+          "sheets",
+          "total"
+        ],
+        "citation_source": "llm_answer"
+      }
+    },
+    {
+      "document_id": "GENERALMILLS_2020_10K",
+      "page": 30,
+      "section": null,
+      "text": "ed distributions from available net income based on the application of a floating preferred return rate to the holder’s capital account balance established in the most recent mark-to-market valuation (currently $252 million). On June 1, 2018, the floating preferred return rate on GMC’s Class A Interests was reset to the sum of three-month LIBOR plus 142.5 basis points. The preferred return rate is adjusted every three years through a negotiated agreement with the Class A Interest holder or throu",
+      "metadata": {
+        "score": 30,
+        "matched_terms": [
+          "balance",
+          "capital",
+          "current",
+          "financial",
+          "information",
+          "liabilities",
+          "position",
+          "sheets",
+          "total"
+        ],
+        "citation_source": "lexical_fallback"
+      }
+    },
+    {
+      "document_id": "GENERALMILLS_2020_10K",
+      "page": 57,
+      "section": null,
+      "text": "ddition, the new standard requires that only the service cost component of net periodic benefit expense is eligible for capitalization. The new standard requires retrospective adoption of the presentation of net periodic benefit expense and prospective application of the capitalization of the service cost component. The impact of the adoption of this standard on our results of operations was a decrease to our operating profit of $87.9 million and $89.4 million and a corresponding increase to ben",
+      "metadata": {
+        "score": 27,
+        "matched_terms": [
+          "balance",
+          "capital",
+          "current",
+          "financial",
+          "information",
+          "liabilities",
+          "position",
+          "sheets"
+        ],
+        "citation_source": "lexical_fallback"
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "load_full_document_context",
+      "target": "GENERALMILLS_2020_10K",
+      "metadata": {
+        "page_count": 127,
+        "original_page_count": 127,
+        "context_chars": 436722,
+        "max_document_chars": null
+      }
+    },
+    {
+      "step": 2,
+      "action": "score_page_for_citation",
+      "target": "page 30",
+      "metadata": {
+        "score": 30,
+        "matched_terms": [
+          "balance",
+          "capital",
+          "current",
+          "financial",
+          "information",
+          "liabilities",
+          "position",
+          "sheets",
+          "total"
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "action": "score_page_for_citation",
+      "target": "page 50",
+      "metadata": {
+        "score": 30,
+        "matched_terms": [
+          "assets",
+          "balance",
+          "capital",
+          "current",
+          "financial",
+          "liabilities",
+          "sheets",
+          "total"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "score_page_for_citation",
+      "target": "page 57",
+      "metadata": {
+        "score": 27,
+        "matched_terms": [
+          "balance",
+          "capital",
+          "current",
+          "financial",
+          "information",
+          "liabilities",
+          "position",
+          "sheets"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": 102893,
+    "output": 344,
+    "total": 103237
+  },
+  "latency_ms": 14395,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\GENERALMILLS_2020_10K.pdf",
+    "adapter_mode": "full_document_context",
+    "llm_enabled": true,
+    "model": "deepseek/deepseek-v4-pro",
+    "context_page_count": 127,
+    "original_page_count": 127,
+    "context_chars": 436722,
+    "max_document_chars": null,
+    "max_citations": 3
+  }
+}

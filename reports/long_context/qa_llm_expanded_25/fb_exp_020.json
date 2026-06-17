@@ -1,0 +1,119 @@
+{
+  "method": "long_context_llm",
+  "question_id": "fb_exp_020",
+  "question": "Is CVS Health a capital-intensive business based on FY2022 data?",
+  "answer": "CVS Health is not a capital-intensive business based on FY2022 data. Capital expenditures were approximately $2.7 billion, which represents less than 1% of total revenues of $322.5 billion [PAGE 75] [PAGE 87]. Additionally, the Company leases most of its retail stores and other facilities, further limiting its need for significant capital investment in owned property [PAGE 147].",
+  "citations": [
+    {
+      "document_id": "CVSHEALTH_2022_10K",
+      "page": 75,
+      "section": null,
+      "text": " to 2021. The increase in operating expenses was primarily due to increased operating expenses to support growth in the business, incremental investments in business operations and decreased gains from legal settlements in 2022 compared to 2021. These increases were partially offset by a decrease in amortization of intangible assets compared to the prior year, as well as pre-tax gains of $250 million on the sale 73",
+      "metadata": {
+        "score": 3,
+        "matched_terms": [
+          "business"
+        ],
+        "citation_source": "llm_answer"
+      }
+    },
+    {
+      "document_id": "CVSHEALTH_2022_10K",
+      "page": 87,
+      "section": null,
+      "text": "rescriptions filled by its total prescriptions filled. Management uses this metric to evaluate the effectiveness of the business at encouraging the use of generic drugs when they are available and clinically appropriate, which aids in decreasing costs for client members and retail customers. This metric provides management and investors with information useful in understanding trends in segment total revenues and operating results. • The Retail/LTC segment’s generic dispensing rate increased to ",
+      "metadata": {
+        "score": 3,
+        "matched_terms": [
+          "business"
+        ],
+        "citation_source": "llm_answer"
+      }
+    },
+    {
+      "document_id": "CVSHEALTH_2022_10K",
+      "page": 147,
+      "section": null,
+      "text": "ecrease in the carrying amount of goodwill was primarily driven by the divestitures of bswift, PayFlex and the Thailand business. See Note 2 ‘‘Acquisitions, Divestitures and Asset Sales’’ for additional information. During the year ended December 31, 2021, the decrease in the carrying amount of goodwill was primarily driven by the impairment of the remaining goodwill of the LTC reporting unit within the Retail/LTC segment. During the third quarter of 2022, the Company performed its required annu",
+      "metadata": {
+        "score": 3,
+        "matched_terms": [
+          "business"
+        ],
+        "citation_source": "llm_answer"
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "load_full_document_context",
+      "target": "CVSHEALTH_2022_10K",
+      "metadata": {
+        "page_count": 213,
+        "original_page_count": 213,
+        "context_chars": 856198,
+        "max_document_chars": null
+      }
+    },
+    {
+      "step": 2,
+      "action": "score_page_for_citation",
+      "target": "page 30",
+      "metadata": {
+        "score": 12,
+        "matched_terms": [
+          "based",
+          "business",
+          "capital",
+          "data"
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "action": "score_page_for_citation",
+      "target": "page 32",
+      "metadata": {
+        "score": 12,
+        "matched_terms": [
+          "based",
+          "business",
+          "capital",
+          "data"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "score_page_for_citation",
+      "target": "page 63",
+      "metadata": {
+        "score": 12,
+        "matched_terms": [
+          "based",
+          "business",
+          "capital",
+          "data"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": 180496,
+    "output": 1661,
+    "total": 182157
+  },
+  "latency_ms": 51233,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\CVSHEALTH_2022_10K.pdf",
+    "adapter_mode": "full_document_context",
+    "llm_enabled": true,
+    "model": "deepseek/deepseek-v4-pro",
+    "context_page_count": 213,
+    "original_page_count": 213,
+    "context_chars": 856198,
+    "max_document_chars": null,
+    "max_citations": 3
+  }
+}

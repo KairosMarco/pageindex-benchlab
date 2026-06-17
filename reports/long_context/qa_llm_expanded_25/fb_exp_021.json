@@ -1,0 +1,114 @@
+{
+  "method": "long_context_llm",
+  "question_id": "fb_exp_021",
+  "question": "As of FY2023Q1, why did Pepsico raise full year guidance for FY2023?",
+  "answer": "PepsiCo raised its full-year 2023 guidance due to a strong start to the year. As stated by the CEO, \"Given our strong start to the year, we now expect our full-year 2023 organic revenue to increase 8 percent (previously 6 percent) and core constant currency EPS to increase 9 percent (previously 8 percent)\" [PAGE 1].",
+  "citations": [
+    {
+      "document_id": "PEPSICO_2023Q1_EARNINGS",
+      "page": 1,
+      "section": null,
+      "text": "PepsiCo Reports First-Quarter 2023 Results; Raises Full-Year Guidance Reported (GAAP) First-Quarter 2023 Results First-Quarter Net revenue growth 10.2% Foreign exchange impact on net revenue (2.5)% Earnings per share (EPS) $1.40 EPS change (54)% Foreign exchange impact on EPS (2)% Organic/Core (non-GAAP)1 First-Quarter 2023 Results First-Quarter Organic revenue growth 14.3% Core EPS $1.50 Core constant currency EPS change 18% PURCHASE, N.Y. - April 25, 2023 - PepsiCo, Inc. (NASDAQ: PEP) today re",
+      "metadata": {
+        "score": 6,
+        "matched_terms": [
+          "full",
+          "guidance"
+        ],
+        "citation_source": "llm_answer"
+      }
+    },
+    {
+      "document_id": "PEPSICO_2023Q1_EARNINGS",
+      "page": 10,
+      "section": null,
+      "text": " we believe are not indicative of ongoing performance or that we believe impact comparability with the prior year. 2023 guidance Our 2023 organic revenue growth guidance excludes the impact of acquisitions and divestitures, foreign exchange translation and the impact of a 53rd reporting week in 2022. Our 2023 core effective tax rate guidance and 2023 core constant currency EPS growth guidance exclude the mark-to-market net impact included in corporate unallocated expenses, restructuring and impa",
+      "metadata": {
+        "score": 6,
+        "matched_terms": [
+          "full",
+          "guidance"
+        ],
+        "citation_source": "lexical_fallback"
+      }
+    },
+    {
+      "document_id": "PEPSICO_2023Q1_EARNINGS",
+      "page": 3,
+      "section": null,
+      "text": "Guidance and Outlook The Company provides guidance on a non-GAAP basis as we cannot predict certain elements which are included in reported GAAP results, including the impact of foreign exchange translation and commodity mark-to-market net impacts. For fiscal year 2023, the Company now expects to deliver 8 percent organic revenue growth (previously 6 percent), and 9 percent core constant currency EPS growth (previously 8 percent). Consistent with its previous guidance for 2023, the Company conti",
+      "metadata": {
+        "score": 3,
+        "matched_terms": [
+          "guidance"
+        ],
+        "citation_source": "lexical_fallback"
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "load_full_document_context",
+      "target": "PEPSICO_2023Q1_EARNINGS",
+      "metadata": {
+        "page_count": 16,
+        "original_page_count": 16,
+        "context_chars": 36970,
+        "max_document_chars": null
+      }
+    },
+    {
+      "step": 2,
+      "action": "score_page_for_citation",
+      "target": "page 1",
+      "metadata": {
+        "score": 6,
+        "matched_terms": [
+          "full",
+          "guidance"
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "action": "score_page_for_citation",
+      "target": "page 10",
+      "metadata": {
+        "score": 6,
+        "matched_terms": [
+          "full",
+          "guidance"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "score_page_for_citation",
+      "target": "page 3",
+      "metadata": {
+        "score": 3,
+        "matched_terms": [
+          "guidance"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": 9710,
+    "output": 347,
+    "total": 10057
+  },
+  "latency_ms": 6785,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\PEPSICO_2023Q1_EARNINGS.pdf",
+    "adapter_mode": "full_document_context",
+    "llm_enabled": true,
+    "model": "deepseek/deepseek-v4-pro",
+    "context_page_count": 16,
+    "original_page_count": 16,
+    "context_chars": 36970,
+    "max_document_chars": null,
+    "max_citations": 3
+  }
+}

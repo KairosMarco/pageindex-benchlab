@@ -27,6 +27,9 @@ reports/expanded_retrieval_validation_report.json
 reports/llamaindex_expanded_llm_diagnostics.md
 reports/llamaindex_expanded_llm_diagnostics.json
 reports/expanded_llm_validation_report.json
+reports/long_context_expanded_llm_diagnostics.md
+reports/long_context_expanded_llm_diagnostics.json
+reports/expanded_long_context_validation_report.json
 reports/expanded_25_pdf_manifest.json
 reports/pageindex/pageindex_qa_mvp_report.md
 reports/pageindex/evidence_eval.json
@@ -46,6 +49,10 @@ reports/long_context/answer_eval_heuristic.json
 reports/long_context/answer_eval_llm.json
 reports/long_context/qa_llm_manifest.json
 reports/long_context/qa_llm/
+reports/long_context/evidence_eval_qa_llm_expanded_25.json
+reports/long_context/answer_eval_qa_llm_expanded_25.json
+reports/long_context/qa_llm_expanded_25_manifest.json
+reports/long_context/qa_llm_expanded_25/
 reports/vector_rag/evidence_eval_smoke.json
 reports/vector_rag/qa_smoke_manifest.json
 reports/vector_rag/qa_smoke/

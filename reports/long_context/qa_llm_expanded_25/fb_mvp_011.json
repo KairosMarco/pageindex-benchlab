@@ -1,0 +1,158 @@
+{
+  "method": "long_context_llm",
+  "question_id": "fb_mvp_011",
+  "question": "Looking at VaR, did the risk that JPM faced in the second fiscal quarter of 2023 decrease compared to the same period in the prior year?",
+  "answer": "Yes, based on Value-at-Risk (VaR), the risk that JPMorgan Chase faced decreased in the second fiscal quarter of 2023 compared to the same period in the prior year.\n\nThe Firm’s average Total VaR was $47 million for the three months ended June 30, 2023, down from $54 million for the three months ended June 30, 2022. As stated in the Market Risk Management section, “Average total VaR decreased by $7 million for the three months ended June 30, 2023, compared with the same period in the prior year.” [PAGE 85]",
+  "citations": [
+    {
+      "document_id": "JPMORGAN_2023Q2_10Q",
+      "page": 85,
+      "section": null,
+      "text": "The table below shows the results of the Firm’s Risk Management VaR measure using a 95% confidence level. VaR can vary significantly as positions change, market volatility fluctuates, and diversification benefits change. Total VaR Three months ended June 30, 2023 March 31, 2023 June 30, 2022 (in millions) Avg. Min Max Avg. Min Max Avg. Min Max CIB trading VaR by risk type Fixed income $ 57 $ 50 $ 66 $ 56 $ 45 $ 71 $ 60 $ 48 $ 79 Foreign exchange 12 7 24 10 6 17 8 4 13 Equities 8 5 11 7 5 10 11 7",
+      "metadata": {
+        "score": 30,
+        "matched_terms": [
+          "average",
+          "compared",
+          "market",
+          "period",
+          "prior",
+          "quarter",
+          "risk",
+          "same",
+          "second",
+          "var"
+        ],
+        "citation_source": "llm_answer"
+      }
+    },
+    {
+      "document_id": "JPMORGAN_2023Q2_10Q",
+      "page": 54,
+      "section": null,
+      "text": "LIQUIDITY RISK MANAGEMENT Liquidity risk is the risk that the Firm will be unable to meet its contractual and contingent financial obligations as they arise or that it does not have the appropriate amount, composition and tenor of funding and liquidity to support its assets and liabilities. Refer to pages 97-104 of JPMorgan Chase’s 2022 Form 10-K and the Firm’s U.S. LCR Disclosure reports, which are available on the Firm’s website, for a further discussion of the Firm’s liquidity risk. LCR and H",
+      "metadata": {
+        "score": 27,
+        "matched_terms": [
+          "average",
+          "compared",
+          "decrease",
+          "market",
+          "period",
+          "prior",
+          "risk",
+          "same",
+          "that"
+        ],
+        "citation_source": "lexical_fallback"
+      }
+    },
+    {
+      "document_id": "JPMORGAN_2023Q2_10Q",
+      "page": 8,
+      "section": null,
+      "text": "he Federal Reserve, the Office of the Comptroller of the Currency (\"OCC\") and the FDIC released a proposal to amend the risk-based capital framework, entitled \"Regulatory capital rule: Amendments applicable to large banking organizations and to banking organizations with significant trading activity\". Under the proposal, changes would include replacement of the advanced approach with an expanded risk-based approach, which would not permit the use of internal models for the calculation of risk-we",
+      "metadata": {
+        "score": 24,
+        "matched_terms": [
+          "average",
+          "looking",
+          "market",
+          "period",
+          "quarter",
+          "risk",
+          "second",
+          "that"
+        ],
+        "citation_source": "lexical_fallback"
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "load_full_document_context",
+      "target": "JPMORGAN_2023Q2_10Q",
+      "metadata": {
+        "page_count": 217,
+        "original_page_count": 217,
+        "context_chars": 745545,
+        "max_document_chars": null
+      }
+    },
+    {
+      "step": 2,
+      "action": "score_page_for_citation",
+      "target": "page 85",
+      "metadata": {
+        "score": 30,
+        "matched_terms": [
+          "average",
+          "compared",
+          "market",
+          "period",
+          "prior",
+          "quarter",
+          "risk",
+          "same",
+          "second",
+          "var"
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "action": "score_page_for_citation",
+      "target": "page 54",
+      "metadata": {
+        "score": 27,
+        "matched_terms": [
+          "average",
+          "compared",
+          "decrease",
+          "market",
+          "period",
+          "prior",
+          "risk",
+          "same",
+          "that"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "score_page_for_citation",
+      "target": "page 8",
+      "metadata": {
+        "score": 24,
+        "matched_terms": [
+          "average",
+          "looking",
+          "market",
+          "period",
+          "quarter",
+          "risk",
+          "second",
+          "that"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": 199177,
+    "output": 558,
+    "total": 199735
+  },
+  "latency_ms": 12630,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\JPMORGAN_2023Q2_10Q.pdf",
+    "adapter_mode": "full_document_context",
+    "llm_enabled": true,
+    "model": "deepseek/deepseek-v4-pro",
+    "context_page_count": 217,
+    "original_page_count": 217,
+    "context_chars": 745545,
+    "max_document_chars": null,
+    "max_citations": 3
+  }
+}

@@ -1,0 +1,132 @@
+{
+  "method": "long_context_llm",
+  "question_id": "fb_exp_019",
+  "question": "How much (in USD billions) did American Water Works pay out in cash dividends for FY2020? Compute or extract the answer by primarily using the details outlined in the statement of cash flows.",
+  "answer": "American Water Works paid out **$0.389 billion** (i.e., $389 million) in cash dividends for FY2020, as shown in the Consolidated Statements of Cash Flows. [PAGE 86]",
+  "citations": [
+    {
+      "document_id": "AMERICANWATERWORKS_2020_10K",
+      "page": 86,
+      "section": null,
+      "text": "Table of Contents American Water Works Company, Inc. and Subsidiary Companies Consolidated Statements of Cash Flows (In millions) For the Years Ended December 31, 2020 2019 2018 CASH FLOWS FROM OPERATING ACTIVITIES Net income $ 709 $ 621 $ 565 Adjustments to reconcile to net cash flows provided by operating activities: Depreciation and amortization 604 582 545 Deferred income taxes and amortization of investment tax credits 207 208 195 Provision for losses on accounts receivable 34 28 33 Loss (g",
+      "metadata": {
+        "score": 12,
+        "matched_terms": [
+          "cash",
+          "dividends",
+          "flows"
+        ],
+        "citation_source": "llm_answer"
+      }
+    },
+    {
+      "document_id": "AMERICANWATERWORKS_2020_10K",
+      "page": 39,
+      "section": null,
+      "text": "in the capital, debt or credit markets, or financial institution failures could require us to take measures to conserve cash until the market stabilizes or until alternative financing can be arranged. Such measures could include delaying or deferring capital expenditures, reducing or suspending dividend payments, and reducing other discretionary expenditures. Finally, there is no assurance that we will be able to access the equity markets to obtain capital or financing when necessary or desirabl",
+      "metadata": {
+        "score": 18,
+        "matched_terms": [
+          "cash",
+          "dividends",
+          "flows",
+          "pay",
+          "primarily"
+        ],
+        "citation_source": "lexical_fallback"
+      }
+    },
+    {
+      "document_id": "AMERICANWATERWORKS_2020_10K",
+      "page": 65,
+      "section": null,
+      "text": "Table of Contents Liquidity and Capital Resources The Company regularly evaluates and monitors its cash requirements for capital investments, acquisitions, operations, commitments, debt maturities, interest and dividends. The Company’s business is capital intensive, with a majority of this capital funded by cash flows from operations. When necessary, the Company also obtains funds from external sources, primarily in the debt markets and through short-term commercial paper borrowings. The Company",
+      "metadata": {
+        "score": 18,
+        "matched_terms": [
+          "cash",
+          "dividends",
+          "flows",
+          "pay",
+          "primarily"
+        ],
+        "citation_source": "lexical_fallback"
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "load_full_document_context",
+      "target": "AMERICANWATERWORKS_2020_10K",
+      "metadata": {
+        "page_count": 152,
+        "original_page_count": 152,
+        "context_chars": 623348,
+        "max_document_chars": null
+      }
+    },
+    {
+      "step": 2,
+      "action": "score_page_for_citation",
+      "target": "page 39",
+      "metadata": {
+        "score": 18,
+        "matched_terms": [
+          "cash",
+          "dividends",
+          "flows",
+          "pay",
+          "primarily"
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "action": "score_page_for_citation",
+      "target": "page 65",
+      "metadata": {
+        "score": 18,
+        "matched_terms": [
+          "cash",
+          "dividends",
+          "flows",
+          "pay",
+          "primarily"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "score_page_for_citation",
+      "target": "page 66",
+      "metadata": {
+        "score": 18,
+        "matched_terms": [
+          "cash",
+          "details",
+          "flows",
+          "pay",
+          "primarily"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": 139761,
+    "output": 497,
+    "total": 140258
+  },
+  "latency_ms": 24565,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\AMERICANWATERWORKS_2020_10K.pdf",
+    "adapter_mode": "full_document_context",
+    "llm_enabled": true,
+    "model": "deepseek/deepseek-v4-pro",
+    "context_page_count": 152,
+    "original_page_count": 152,
+    "context_chars": 623348,
+    "max_document_chars": null,
+    "max_citations": 3
+  }
+}

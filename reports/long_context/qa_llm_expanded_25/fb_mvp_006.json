@@ -1,0 +1,130 @@
+{
+  "method": "long_context_llm",
+  "question_id": "fb_mvp_006",
+  "question": "Has Boeing reported any materially important ongoing legal battles from FY2022?",
+  "answer": "Yes, Boeing reported materially important ongoing legal battles in FY2022. Note 21 of the financial statements describes pending legal proceedings, including multiple lawsuits related to the 737 MAX accidents and an arbitration with Embraer S.A. regarding its terminated joint venture agreements. Boeing states that while the outcomes are uncertain, they could have a material effect, and it cannot reasonably estimate a range of loss for these matters. [PAGE 112] [PAGE 113]",
+  "citations": [
+    {
+      "document_id": "BOEING_2022_10K",
+      "page": 112,
+      "section": null,
+      "text": "rying value approximates fair value is determined using Level 2 inputs, with the exception of cash (Level 1). Note 21 – Legal Proceedings Various legal proceedings, claims and investigations related to products, contracts, employment and other matters are pending against us. In addition, we are subject to various U.S. government inquiries and investigations from which civil, criminal or administrative proceedings could result or have resulted in the past. Such proceedings involve or could involv",
+      "metadata": {
+        "score": 9,
+        "matched_terms": [
+          "legal",
+          "proceedings"
+        ],
+        "citation_source": "llm_answer"
+      }
+    },
+    {
+      "document_id": "BOEING_2022_10K",
+      "page": 113,
+      "section": null,
+      "text": "Table of Contents based upon current information, that the outcome of any such legal proceeding, claim, or government dispute and investigation will not have a material effect on our financial position, results of operations or cash flows. Where it is reasonably possible that we will incur losses in excess of recorded amounts in connection with any of the matters set forth below, we will disclose either the amount or range of reasonably possible losses in excess of such amounts or, where no such",
+      "metadata": {
+        "score": 15,
+        "matched_terms": [
+          "accident",
+          "any",
+          "has",
+          "lawsuits",
+          "legal"
+        ],
+        "citation_source": "llm_answer"
+      }
+    },
+    {
+      "document_id": "BOEING_2022_10K",
+      "page": 16,
+      "section": null,
+      "text": "d negatively impact our business. We rely extensively on information technology systems and networks to operate our company and meet our business objectives. As cyber threats increase in volume and sophistication, the risk to the security of these systems and networks – and to the confidentiality, integrity, and availability of the data they house – continues to evolve, requiring constant vigilance and concerted, company-wide risk management efforts. A cyberattack or security breach, whether exp",
+      "metadata": {
+        "score": 15,
+        "matched_terms": [
+          "any",
+          "has",
+          "lawsuits",
+          "legal",
+          "litigation"
+        ],
+        "citation_source": "lexical_fallback"
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "load_full_document_context",
+      "target": "BOEING_2022_10K",
+      "metadata": {
+        "page_count": 190,
+        "original_page_count": 190,
+        "context_chars": 510162,
+        "max_document_chars": null
+      }
+    },
+    {
+      "step": 2,
+      "action": "score_page_for_citation",
+      "target": "page 16",
+      "metadata": {
+        "score": 15,
+        "matched_terms": [
+          "any",
+          "has",
+          "lawsuits",
+          "legal",
+          "litigation"
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "action": "score_page_for_citation",
+      "target": "page 19",
+      "metadata": {
+        "score": 15,
+        "matched_terms": [
+          "accident",
+          "legal",
+          "materially",
+          "proceedings"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "score_page_for_citation",
+      "target": "page 113",
+      "metadata": {
+        "score": 15,
+        "matched_terms": [
+          "accident",
+          "any",
+          "has",
+          "lawsuits",
+          "legal"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": 114042,
+    "output": 1094,
+    "total": 115136
+  },
+  "latency_ms": 18361,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\BOEING_2022_10K.pdf",
+    "adapter_mode": "full_document_context",
+    "llm_enabled": true,
+    "model": "deepseek/deepseek-v4-pro",
+    "context_page_count": 190,
+    "original_page_count": 190,
+    "context_chars": 510162,
+    "max_document_chars": null,
+    "max_citations": 3
+  }
+}

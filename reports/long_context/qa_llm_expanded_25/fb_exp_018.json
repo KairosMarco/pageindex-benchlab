@@ -1,0 +1,115 @@
+{
+  "method": "long_context_llm",
+  "question_id": "fb_exp_018",
+  "question": "Which region had the Highest EBITDAR Contribution for MGM during FY2022?",
+  "answer": "Las Vegas Strip Resorts had the highest Adjusted Property EBITDAR contribution for MGM during FY2022 [PAGE 13]. The full year 2022 Adjusted Property EBITDAR was $3.1 billion for Las Vegas Strip Resorts, compared to $1.3 billion for Regional Operations, while MGM China reported a loss of $203 million [PAGE 3][PAGE 4][PAGE 13].",
+  "citations": [
+    {
+      "document_id": "MGMRESORTS_2022Q4_EARNINGS",
+      "page": 13,
+      "section": null,
+      "text": "6 $ 3,056,892 $ 13,127,485 $ 9,680,140 MGM RESORTS INTERNATIONAL AND SUBSIDIARIES SUPPLEMENTAL DATA – ADJUSTED PROPERTY EBITDAR AND ADJUSTED EBITDAR (In thousands) (Unaudited) Three months ended Twelve months ended December 31, 2022 December 31, 2021 December 31, 2022 December 31, 2021 Las Vegas Strip Resorts $ 877,052 $ 698,739 $ 3,142,308 $ 1,738,211 Regional Operations 319,517 309,250 1,294,630 1,217,814 MGM China (54,979) 5,015 (203,136) 25,367 Unconsolidated affiliates(1) (43,029) (49,698) ",
+      "metadata": {
+        "score": 6,
+        "matched_terms": [
+          "during",
+          "ebitdar"
+        ],
+        "citation_source": "llm_answer"
+      }
+    },
+    {
+      "document_id": "MGMRESORTS_2022Q4_EARNINGS",
+      "page": 3,
+      "section": null,
+      "text": "2021; • Adjusted EPS loss of $2.74 in 2022, compared to Adjusted EPS loss of $0.67 in 2021; and • Consolidated Adjusted EBITDAR of $3.5 billion in 2022. Las Vegas Strip Resorts • Net revenues of $8.4 billion in the current year compared to $4.7 billion in the prior year, an increase of 77%; • Same-store net revenues (adjusted for acquisitions and dispositions) of $5.6 billion in the current year compared to $4.0 billion in the prior year, an increase of 42%; • Adjusted Property EBITDAR of $3.1 b",
+      "metadata": {
+        "score": 3,
+        "matched_terms": [
+          "ebitdar"
+        ],
+        "citation_source": "llm_answer"
+      }
+    },
+    {
+      "document_id": "MGMRESORTS_2022Q4_EARNINGS",
+      "page": 4,
+      "section": null,
+      "text": "Page 4 of 15 • Same-Store Adjusted Property EBITDAR of $2.1 billion in the current year compared to $1.5 billion in the prior year, an increase of 42%; and • Adjusted Property EBITDAR margin of 37.4% in the current year compared to 36.7% in the prior year, an increase of 72 basis points. Regional Operations • Net revenues of $3.8 billion in the current year compared to $3.4 billion in the prior year, an increase of 12%; • Adjusted Property EBITDAR of $1.3 billion in the current year compared to ",
+      "metadata": {
+        "score": 6,
+        "matched_terms": [
+          "contribution",
+          "ebitdar"
+        ],
+        "citation_source": "llm_answer"
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "load_full_document_context",
+      "target": "MGMRESORTS_2022Q4_EARNINGS",
+      "metadata": {
+        "page_count": 15,
+        "original_page_count": 15,
+        "context_chars": 48964,
+        "max_document_chars": null
+      }
+    },
+    {
+      "step": 2,
+      "action": "score_page_for_citation",
+      "target": "page 2",
+      "metadata": {
+        "score": 6,
+        "matched_terms": [
+          "contribution",
+          "ebitdar"
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "action": "score_page_for_citation",
+      "target": "page 4",
+      "metadata": {
+        "score": 6,
+        "matched_terms": [
+          "contribution",
+          "ebitdar"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "score_page_for_citation",
+      "target": "page 6",
+      "metadata": {
+        "score": 6,
+        "matched_terms": [
+          "during",
+          "had"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": 12644,
+    "output": 412,
+    "total": 13056
+  },
+  "latency_ms": 7970,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\MGMRESORTS_2022Q4_EARNINGS.pdf",
+    "adapter_mode": "full_document_context",
+    "llm_enabled": true,
+    "model": "deepseek/deepseek-v4-pro",
+    "context_page_count": 15,
+    "original_page_count": 15,
+    "context_chars": 48964,
+    "max_document_chars": null,
+    "max_citations": 3
+  }
+}

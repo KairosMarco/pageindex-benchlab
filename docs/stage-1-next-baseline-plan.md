@@ -127,7 +127,8 @@ These stronger claims require a larger dataset, stronger baselines, and cost ass
 8. Regenerate detailed evidence reports and validation reports. Completed in `reports/llamaindex_finance_llm_diagnostics.md` and `.json`.
 9. Expand retrieval validation to 25 FinanceBench questions. Completed for retrieval-only mode.
 10. Run expanded LLM answer generation only after retrieval quality is acceptable. Completed for LlamaIndex Vector and Hybrid `concept_v2`, `rerank_top_k=3`.
-11. Run expanded Long-context LLM baseline on the same 25-question set.
+11. Run expanded Long-context LLM baseline on the same 25-question set. Completed.
+12. Add expanded cost estimates and decide whether to test stricter finance reasoning prompts.
 
 ## LlamaIndex Vector Diagnostic Result
 
@@ -310,4 +311,48 @@ fb_exp_020: capital-intensity interpretation failure after retrieving the right 
 
 Interpretation:
 
-The expanded LLM run shows that the current LlamaIndex candidates are no longer failing primarily at retrieval on this 25-question subset. The remaining gap is answer reasoning and judging strictness on concept-heavy financial questions. The next baseline should be expanded Long-context LLM so token cost and answer quality can be compared against a full-document context method on the same 25 questions.
+The expanded LLM run shows that the current LlamaIndex candidates are no longer failing primarily at retrieval on this 25-question subset. The remaining gap is answer reasoning and judging strictness on concept-heavy financial questions.
+
+## Expanded Long-context Result
+
+The 25-question Long-context answer-generation run used the same answer model and judge:
+
+```powershell
+python scripts\run_long_context_expanded_llm_diagnostics.py --force --continue-on-error
+python scripts\validate_expanded_long_context_artifacts.py
+```
+
+Results:
+
+```text
+Long-context LLM:
+questions: 25
+evidence recall: 0.800
+citation precision: 0.267
+answer accuracy: 0.920
+verdicts: 23 correct, 1 partial, 1 incorrect
+average total tokens: 92,500
+average context chars: 397,913
+average context pages: 113
+average latency: 12,772 ms
+```
+
+Validation:
+
+```text
+reports/expanded_long_context_validation_report.json
+status=pass
+checks=21
+failed=0
+```
+
+Observed issue cases:
+
+```text
+Evidence citation misses: fb_exp_014, fb_exp_017, fb_exp_020, fb_exp_023, fb_mvp_005.
+Answer issues: fb_exp_020 incorrect, fb_mvp_003 partial.
+```
+
+Interpretation:
+
+Long-context matched LlamaIndex Vector's `0.920` answer accuracy on this 25-question subset, but with about `36x` higher average token use and lower citation evidence recall (`0.800` vs `1.000`). The result is useful because it shows that larger context alone does not guarantee better citation grounding. The shared hard case is `fb_exp_020`, where both Long-context and LlamaIndex candidates retrieved or had access to relevant evidence but misinterpreted capital intensity.

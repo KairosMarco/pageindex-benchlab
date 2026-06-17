@@ -1,0 +1,117 @@
+{
+  "method": "long_context_llm",
+  "question_id": "fb_exp_023",
+  "question": "Did Pfizer grow its PPNE between FY20 and FY21?",
+  "answer": "Yes, Pfizer's Property, Plant and Equipment, net (PPNE) grew from $13,745 million in FY20 to $14,882 million in FY21 [PAGE 53].",
+  "citations": [
+    {
+      "document_id": "PFIZER_2021_10K",
+      "page": 53,
+      "section": null,
+      "text": "may arise in connection with the transaction or that are related to events and activities. For more information on guarantees and indemnifications, see Note 16B. Additionally, certain of our co-promotion or license agreements give our licensors or partners the rights to negotiate for, or in some cases to obtain under certain financial conditions, co-promotion or other rights in specified countries with respect to certain of our products. Furthermore, collaboration, licensing or other R&D arrange",
+      "metadata": {
+        "score": null,
+        "matched_terms": [],
+        "citation_source": "llm_answer"
+      }
+    },
+    {
+      "document_id": "PFIZER_2021_10K",
+      "page": 63,
+      "section": null,
+      "text": "we completed the sale of our Meridian subsidiary, the manufacturer of EpiPen and other auto-injector products. Prior to its sale, Meridian was managed within the Hospital therapeutic area. Beginning in the fourth quarter of 2021, the financial results of Meridian are reflected as discontinued operations for all periods presented. On December 21, 2020, Pfizer and Viatris completed the termination of a pre- existing strategic collaboration between Pfizer and Mylan for generic drugs in Japan (the M",
+      "metadata": {
+        "score": 9,
+        "matched_terms": [
+          "between",
+          "did",
+          "its"
+        ],
+        "citation_source": "lexical_fallback"
+      }
+    },
+    {
+      "document_id": "PFIZER_2021_10K",
+      "page": 76,
+      "section": null,
+      "text": "Subsidiary Companies the development costs until commercialization of the vaccine. Thereafter, BioNTech was to repay us its 50 percent share of these development costs through reductions in gross profit sharing and milestone payments to BioNTech over time. On January 29, 2021, we and BioNTech signed an amended version of the April 2020 agreement. Under the January 2021 agreement, BioNTech paid us their 50 percent share of prior development costs in a lump sum payment during the first quarter of ",
+      "metadata": {
+        "score": 9,
+        "matched_terms": [
+          "between",
+          "did",
+          "its"
+        ],
+        "citation_source": "lexical_fallback"
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "load_full_document_context",
+      "target": "PFIZER_2021_10K",
+      "metadata": {
+        "page_count": 143,
+        "original_page_count": 143,
+        "context_chars": 695505,
+        "max_document_chars": null
+      }
+    },
+    {
+      "step": 2,
+      "action": "score_page_for_citation",
+      "target": "page 63",
+      "metadata": {
+        "score": 9,
+        "matched_terms": [
+          "between",
+          "did",
+          "its"
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "action": "score_page_for_citation",
+      "target": "page 76",
+      "metadata": {
+        "score": 9,
+        "matched_terms": [
+          "between",
+          "did",
+          "its"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "score_page_for_citation",
+      "target": "page 10",
+      "metadata": {
+        "score": 6,
+        "matched_terms": [
+          "between",
+          "its"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": 153970,
+    "output": 280,
+    "total": 154250
+  },
+  "latency_ms": 20934,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\PFIZER_2021_10K.pdf",
+    "adapter_mode": "full_document_context",
+    "llm_enabled": true,
+    "model": "deepseek/deepseek-v4-pro",
+    "context_page_count": 143,
+    "original_page_count": 143,
+    "context_chars": 695505,
+    "max_document_chars": null,
+    "max_citations": 3
+  }
+}

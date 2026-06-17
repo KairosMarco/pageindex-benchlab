@@ -1,0 +1,128 @@
+{
+  "method": "long_context_llm",
+  "question_id": "fb_exp_014",
+  "question": "What drove gross margin change as of the FY2022 for American Express? If gross margin is not a useful metric for a company like this, then please state that and explain why.",
+  "answer": "Gross margin is not a useful metric for American Express. As a global payments and financial services company, its business model does not involve traditional costs of goods sold. Instead, the company generates revenues through discount revenue, interest income, card fees, and other service fees [PAGE 40][PAGE 44]. Its expenses primarily consist of card member rewards, marketing, and operational costs, which are not categorized as cost of sales. Therefore, a gross margin metric is not applicable or disclosed.",
+  "citations": [
+    {
+      "document_id": "AMERICANEXPRESS_2022_10K",
+      "page": 40,
+      "section": null,
+      "text": "Table of Contents ITEM 1B. UNRESOLVED STAFF COMMENTS Not applicable. ITEM 2. PROPERTIES Our principal executive offices are in a 2.2 million square foot building located in lower Manhattan on land leased from the Battery Park City Authority for a term expiring in 2069. We have an approximately 49 percent ownership interest in the building and an affiliate of Brookfield Financial Properties owns the remaining approximately 51 percent interest in the building. We also lease space in the building f",
+      "metadata": {
+        "score": 3,
+        "matched_terms": [
+          "not"
+        ],
+        "citation_source": "llm_answer"
+      }
+    },
+    {
+      "document_id": "AMERICANEXPRESS_2022_10K",
+      "page": 44,
+      "section": null,
+      "text": "Table of Contents TABLE 1: SUMMARY OF FINANCIAL PERFORMANCE Years Ended December 31, Change Change (Millions, except percentages, per share amounts and where indicated) 2022 2021 2020 2022 vs. 2021 2021 vs. 2020 Selected Income Statement Data Total revenues net of interest expense $ 52,862 $ 42,380 $ 36,087 $ 10,482 25 % $ 6,293 17 % Provisions for credit losses 2,182 (1,419) 4,730 3,601 # (6,149) # Expenses 41,095 33,110 27,061 7,985 24 6,049 22 Pretax income 9,585 10,689 4,296 (1,104) (10) 6,3",
+      "metadata": {
+        "score": 3,
+        "matched_terms": [
+          "change"
+        ],
+        "citation_source": "llm_answer"
+      }
+    },
+    {
+      "document_id": "AMERICANEXPRESS_2022_10K",
+      "page": 104,
+      "section": null,
+      "text": "porting units for the purpose of impairment testing. A reporting unit is defined as an operating segment, or a business that is one level below an operating segment, for which discrete financial information is regularly reviewed by the operating segment manager. We evaluate goodwill for impairment annually as of June 30, or more frequently if events occur or circumstances change that would more likely than not reduce the fair value of one or more of our reporting units below its carrying value. ",
+      "metadata": {
+        "score": 18,
+        "matched_terms": [
+          "change",
+          "not",
+          "that",
+          "then",
+          "this",
+          "useful"
+        ],
+        "citation_source": "lexical_fallback"
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "load_full_document_context",
+      "target": "AMERICANEXPRESS_2022_10K",
+      "metadata": {
+        "page_count": 260,
+        "original_page_count": 260,
+        "context_chars": 824956,
+        "max_document_chars": null
+      }
+    },
+    {
+      "step": 2,
+      "action": "score_page_for_citation",
+      "target": "page 104",
+      "metadata": {
+        "score": 18,
+        "matched_terms": [
+          "change",
+          "not",
+          "that",
+          "then",
+          "this",
+          "useful"
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "action": "score_page_for_citation",
+      "target": "page 34",
+      "metadata": {
+        "score": 15,
+        "matched_terms": [
+          "change",
+          "like",
+          "not",
+          "that",
+          "this"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "score_page_for_citation",
+      "target": "page 78",
+      "metadata": {
+        "score": 15,
+        "matched_terms": [
+          "change",
+          "not",
+          "that",
+          "then",
+          "this"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": 179429,
+    "output": 481,
+    "total": 179910
+  },
+  "latency_ms": 15791,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\AMERICANEXPRESS_2022_10K.pdf",
+    "adapter_mode": "full_document_context",
+    "llm_enabled": true,
+    "model": "deepseek/deepseek-v4-pro",
+    "context_page_count": 260,
+    "original_page_count": 260,
+    "context_chars": 824956,
+    "max_document_chars": null,
+    "max_citations": 3
+  }
+}

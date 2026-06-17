@@ -1,0 +1,141 @@
+{
+  "method": "long_context_llm",
+  "question_id": "fb_exp_022",
+  "question": "What is Coca Cola's FY2021 COGS % margin? Calculate what was asked by utilizing the line items clearly shown in the income statement.",
+  "answer": "Coca-Cola's FY2021 COGS % margin is 39.7%. This is calculated as Cost of Goods Sold ($15,357 million) divided by Net Operating Revenues ($38,655 million) [PAGE 62].",
+  "citations": [
+    {
+      "document_id": "COCACOLA_2021_10K",
+      "page": 62,
+      "section": null,
+      "text": "THE COCA-COLA COMPANY AND SUBSIDIARIES CONSOLIDATED STATEMENTS OF INCOME (In millions except per share data) Year Ended December 31, 2021 2020 2019 Net Operating Revenues $ 38,655 $ 33,014 $ 37,266 Cost of goods sold 15,357 13,433 14,619 Gross Profit 23,298 19,581 22,647 Selling, general and administrative expenses 12,144 9,731 12,103 Other operating charges 846 853 458 Operating Income 10,308 8,997 10,086 Interest income 276 370 563 Interest expense 1,597 1,437 946 Equity income (loss) — net 1,",
+      "metadata": {
+        "score": 12,
+        "matched_terms": [
+          "cost",
+          "goods",
+          "income"
+        ],
+        "citation_source": "llm_answer"
+      }
+    },
+    {
+      "document_id": "COCACOLA_2021_10K",
+      "page": 68,
+      "section": null,
+      "text": "e ability to exercise significant influence over operating and financial policies of the investee. Our consolidated net income includes our Company’s proportionate share of the net income or loss of these companies. Our judgment regarding the level of influence over each equity method investee includes considering key factors such as our ownership interest, representation on the board of directors, participation in policy-making decisions, other commercial arrangements and material intercompany ",
+      "metadata": {
+        "score": 24,
+        "matched_terms": [
+          "cost",
+          "goods",
+          "income",
+          "revenue",
+          "sales",
+          "statement",
+          "was"
+        ],
+        "citation_source": "lexical_fallback"
+      }
+    },
+    {
+      "document_id": "COCACOLA_2021_10K",
+      "page": 77,
+      "section": null,
+      "text": "Revenue is recognized when performance obligations under the terms of the contracts with our customers are satisfied. Our performance obligation generally consists of the promise to sell concentrates, syrups or finished products to our bottling partners, wholesalers, distributors or retailers. Control of the concentrates, syrups or finished products is transferred upon shipment to, or receipt at, our customers’ locations, as determined by the specific terms of the contract. Upon transfer of cont",
+      "metadata": {
+        "score": 21,
+        "matched_terms": [
+          "cost",
+          "income",
+          "operations",
+          "revenue",
+          "sales",
+          "statement",
+          "was"
+        ],
+        "citation_source": "lexical_fallback"
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "load_full_document_context",
+      "target": "COCACOLA_2021_10K",
+      "metadata": {
+        "page_count": 183,
+        "original_page_count": 183,
+        "context_chars": 695166,
+        "max_document_chars": null
+      }
+    },
+    {
+      "step": 2,
+      "action": "score_page_for_citation",
+      "target": "page 68",
+      "metadata": {
+        "score": 24,
+        "matched_terms": [
+          "cost",
+          "goods",
+          "income",
+          "revenue",
+          "sales",
+          "statement",
+          "was"
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "action": "score_page_for_citation",
+      "target": "page 77",
+      "metadata": {
+        "score": 21,
+        "matched_terms": [
+          "cost",
+          "income",
+          "operations",
+          "revenue",
+          "sales",
+          "statement",
+          "was"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "score_page_for_citation",
+      "target": "page 85",
+      "metadata": {
+        "score": 21,
+        "matched_terms": [
+          "cost",
+          "goods",
+          "income",
+          "operations",
+          "statement",
+          "was"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": 151453,
+    "output": 270,
+    "total": 151723
+  },
+  "latency_ms": 20901,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\COCACOLA_2021_10K.pdf",
+    "adapter_mode": "full_document_context",
+    "llm_enabled": true,
+    "model": "deepseek/deepseek-v4-pro",
+    "context_page_count": 183,
+    "original_page_count": 183,
+    "context_chars": 695166,
+    "max_document_chars": null,
+    "max_citations": 3
+  }
+}

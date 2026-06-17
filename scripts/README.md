@@ -122,6 +122,26 @@ python scripts\run_long_context_mvp.py --model deepseek/deepseek-v4-pro --output
 python scripts\evaluate_evidence_mvp.py --results-dir reports\long_context\qa_llm --output reports\long_context\evidence_eval_llm.json --continue-on-error
 ```
 
+Expanded 25-question LLM diagnostics:
+
+```powershell
+$env:DEEPSEEK_API_KEY="YOUR_KEY"
+python scripts\run_long_context_expanded_llm_diagnostics.py --force --continue-on-error
+python scripts\validate_expanded_long_context_artifacts.py
+```
+
+This writes:
+
+```text
+reports/long_context_expanded_llm_diagnostics.md
+reports/long_context_expanded_llm_diagnostics.json
+reports/expanded_long_context_validation_report.json
+reports/long_context/qa_llm_expanded_25/
+reports/long_context/qa_llm_expanded_25_manifest.json
+reports/long_context/evidence_eval_qa_llm_expanded_25.json
+reports/long_context/answer_eval_qa_llm_expanded_25.json
+```
+
 ## Run Vector RAG MVP Baseline
 
 Smoke test without LLM answer generation:

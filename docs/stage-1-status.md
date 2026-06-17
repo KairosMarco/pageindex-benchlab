@@ -805,14 +805,77 @@ Interpretation:
   - `fb_exp_020`: CVS capital intensity. Both methods retrieved the gold pages but concluded `No` by focusing on fixed assets / total assets, while the gold answer says `Yes` based on low ROA and the broader asset base including goodwill.
 - This strengthens the LlamaIndex baseline relative to the 12-question MVP, but it does not support broad PageIndex superiority claims.
 
+### Expanded Long-context LLM Diagnostics
+
+The Long-context baseline has now been run on the same 25-question expanded set:
+
+```text
+datasets/financebench/expanded_questions_25.jsonl
+```
+
+Model:
+
+```text
+deepseek/deepseek-v4-pro
+```
+
+Aggregate report:
+
+```text
+reports/long_context_expanded_llm_diagnostics.md
+reports/long_context_expanded_llm_diagnostics.json
+```
+
+Validation:
+
+```text
+reports/expanded_long_context_validation_report.json
+status: pass
+checks: 21
+failed: 0
+```
+
+Expanded Long-context result:
+
+```text
+Long-context LLM:
+questions: 25
+generation failures: 0
+evaluation failures: 0
+evidence recall: 0.800
+citation precision: 0.267
+LLM-judge answer accuracy: 0.920
+verdicts: 23 correct, 1 partial, 1 incorrect
+average total tokens: 92,500
+average context chars: 397,913
+average context pages: 113
+average latency: 12,772 ms
+```
+
+Generated artifacts:
+
+```text
+reports/long_context/qa_llm_expanded_25/
+reports/long_context/qa_llm_expanded_25_manifest.json
+reports/long_context/evidence_eval_qa_llm_expanded_25.json
+reports/long_context/answer_eval_qa_llm_expanded_25.json
+```
+
+Interpretation:
+
+- Long-context matched LlamaIndex Vector's expanded answer accuracy (`0.920`) but used about `36x` more average total tokens.
+- Long-context evidence recall was materially lower (`0.800`) because answer generation and citation selection did not consistently cite the FinanceBench gold pages.
+- Long-context correctly answered several questions even when cited pages did not match gold evidence, which separates answer quality from citation quality.
+- The shared hard failure remains `fb_exp_020`: CVS capital intensity. Long-context also concluded `No` by focusing on capex/revenue and leased stores, while the gold answer says `Yes` based on low ROA and the broader asset base including goodwill.
+
 ## Next Stage 1 Work
 
 The next work should strengthen the benchmark beyond the dependency-light MVP baselines:
 
-1. Run the expanded Long-context LLM baseline on the same 25-question set.
-2. Add per-method failure-case notes and cost estimates.
-3. Decide whether to improve answer prompting for concept/reasoning questions or preserve the current failures as benchmark evidence.
-4. Prepare a PageIndex upstream issue or PR using the benchmark findings.
+1. Add cost estimates across expanded LlamaIndex and Long-context runs.
+2. Decide whether to improve answer prompting for concept/reasoning questions or preserve the current failures as benchmark evidence.
+3. Prepare a PageIndex upstream issue or PR using the benchmark findings.
+4. Start PageIndex expanded QA once indexing costs and provider reliability are acceptable.
 5. Add GraphRAG and HyperGraphRAG after the expanded baselines are stable.
 
 ## Stage 1 Exit Criteria
@@ -835,4 +898,4 @@ The first 11 structures are now available. The JSON parsing patch made PageIndex
 Handled empty responses and noisy JSON output
 ```
 
-Next, run the expanded Long-context LLM baseline and compare answer quality, token cost, and failure cases against the expanded LlamaIndex candidates.
+Next, add expanded cost estimates and decide whether to keep the current reasoning failures as benchmark evidence or test a stricter finance-reasoning answer prompt.

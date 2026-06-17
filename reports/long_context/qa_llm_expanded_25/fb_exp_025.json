@@ -1,0 +1,120 @@
+{
+  "method": "long_context_llm",
+  "question_id": "fb_exp_025",
+  "question": "What drove the reduction in SG&A expense as a percent of net sales in FY2023?",
+  "answer": "Lower marketing expenses and leverage of incentive compensation due to higher sales drove the reduction, partially offset by deleverage of corporate overhead (strategic investments) and store payroll/benefits (wage investments) [PAGE 2].",
+  "citations": [
+    {
+      "document_id": "ULTABEAUTY_2023Q4_EARNINGS",
+      "page": 2,
+      "section": null,
+      "text": "Comparable sales (sales for stores open at least 14 months and e-commerce sales) increased 15.6% compared to an increase of 21.4% in the fourth quarter of fiscal 2021, driven by a 13.6% increase in transactions and a 1.8% increase in average ticket. Gross profit increased 18.0% to $1.2 billion compared to $1.0 billion in the fourth quarter of fiscal 2021. As a percentage of net sales, gross profit of 37.6% was flat compared to the fourth quarter of fiscal 2021, primarily due to leverage of fixed",
+      "metadata": {
+        "score": 6,
+        "matched_terms": [
+          "net",
+          "sales"
+        ],
+        "citation_source": "llm_answer"
+      }
+    },
+    {
+      "document_id": "ULTABEAUTY_2023Q4_EARNINGS",
+      "page": 6,
+      "section": null,
+      "text": "f Income (In thousands, except per share data) 13 Weeks Ended January 28, January 29, 2023 2022 (Unaudited) (Unaudited) Net sales $ 3,226,773 100.0% $ 2,729,388 100.0% Cost of sales 2,014,270 62.4% 1,702,059 62.4% Gross profit 1,212,503 37.6% 1,027,329 37.6% Selling, general and administrative expenses 762,706 23.6% 649,968 23.8% Pre-opening expenses 2,179 0.1% 1,739 0.1% Operating income 447,618 13.9% 375,622 13.8% Interest (income) expense, net (4,378) (0.1%) 467 0.1% Income before income taxe",
+      "metadata": {
+        "score": 12,
+        "matched_terms": [
+          "expense",
+          "net",
+          "sales"
+        ],
+        "citation_source": "lexical_fallback"
+      }
+    },
+    {
+      "document_id": "ULTABEAUTY_2023Q4_EARNINGS",
+      "page": 3,
+      "section": null,
+      "text": "Cash and cash equivalents at the end of the fourth quarter of fiscal 2022 were $737.9 million. Merchandise inventories, net at the end of the fourth quarter of fiscal 2022 totaled $1.6 billion compared to $1.5 billion at the end of the fourth quarter of fiscal 2021. The $104.2 million increase was primarily due to the opening of 47 new stores since January 29, 2022, inventory to support new brand launches and brand expansions, and inventory cost increases. Share Repurchase Program During the fou",
+      "metadata": {
+        "score": 9,
+        "matched_terms": [
+          "expense",
+          "net",
+          "sales"
+        ],
+        "citation_source": "lexical_fallback"
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "load_full_document_context",
+      "target": "ULTABEAUTY_2023Q4_EARNINGS",
+      "metadata": {
+        "page_count": 9,
+        "original_page_count": 9,
+        "context_chars": 20570,
+        "max_document_chars": null
+      }
+    },
+    {
+      "step": 2,
+      "action": "score_page_for_citation",
+      "target": "page 6",
+      "metadata": {
+        "score": 12,
+        "matched_terms": [
+          "expense",
+          "net",
+          "sales"
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "action": "score_page_for_citation",
+      "target": "page 3",
+      "metadata": {
+        "score": 9,
+        "matched_terms": [
+          "expense",
+          "net",
+          "sales"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "score_page_for_citation",
+      "target": "page 1",
+      "metadata": {
+        "score": 6,
+        "matched_terms": [
+          "net",
+          "sales"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": 5742,
+    "output": 624,
+    "total": 6366
+  },
+  "latency_ms": 11782,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\ULTABEAUTY_2023Q4_EARNINGS.pdf",
+    "adapter_mode": "full_document_context",
+    "llm_enabled": true,
+    "model": "deepseek/deepseek-v4-pro",
+    "context_page_count": 9,
+    "original_page_count": 9,
+    "context_chars": 20570,
+    "max_document_chars": null,
+    "max_citations": 3
+  }
+}

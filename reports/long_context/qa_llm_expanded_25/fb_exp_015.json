@@ -1,0 +1,130 @@
+{
+  "method": "long_context_llm",
+  "question_id": "fb_exp_015",
+  "question": "Were there any board member nominees who had substantially more votes against joining than the other nominees?",
+  "answer": "Yes, Richard A. Johnson received 16,105,005 votes against, which is substantially higher than the other nominees (the next highest being Dona D. Young with 6,074,467 votes against) [PAGE 2].",
+  "citations": [
+    {
+      "document_id": "FOOTLOCKER_2022_8K_dated-2022-05-20",
+      "page": 2,
+      "section": null,
+      "text": "shareholders held on May 18, 2022 (the “Annual Meeting”), shareholders voted on the four proposals set forth below. For more information on the proposals, please see the 2022 Proxy Statement, the relevant portions of which are incorporated herein by reference. As of March 21, 2022, the Company’s record date for the Annual Meeting, there were a total of 96,089,997 shares of common stock, $0.01 par value per share (“Common Stock”), outstanding and entitled to vote at the Annual Meeting. At the Ann",
+      "metadata": {
+        "score": 21,
+        "matched_terms": [
+          "against",
+          "board",
+          "more",
+          "nominees",
+          "there",
+          "votes",
+          "were"
+        ],
+        "citation_source": "llm_answer"
+      }
+    },
+    {
+      "document_id": "FOOTLOCKER_2022_8K_dated-2022-05-20",
+      "page": 3,
+      "section": null,
+      "text": "Item 8.01. Other Events. On May 18, 2022, in light of Matthew McKenna’s retirement, the Board designated Ms. Nicosia as the “audit committee financial expert.” In connection with this designation, the Board determined that Ms. Nicosia qualifies as an “audit committee financial expert,” as defined by the rules under the Securities Exchange Act of 1934, as amended (the “Exchange Act”), because of her relevant experience as president of an operating unit of a large multinational corporation. She ha",
+      "metadata": {
+        "score": 12,
+        "matched_terms": [
+          "board",
+          "other",
+          "there",
+          "who"
+        ],
+        "citation_source": "lexical_fallback"
+      }
+    },
+    {
+      "document_id": "FOOTLOCKER_2022_8K_dated-2022-05-20",
+      "page": 1,
+      "section": null,
+      "text": "ay 18, 2022) Foot Locker, Inc. (Exact name of registrant as specified in charter) New York 1-10299 13-3513936 (State or other jurisdiction of incorporation) (Commission File Number) (IRS Employer Identification No.) 330 West 34th Street, New York, New York 10001 (Address of principal executive offices) (Zip Code) Registrant's telephone number, including area code: (212) 720-3700 Check the appropriate box below if the Form 8-K filing is intended to simultaneously satisfy the filing obligation of ",
+      "metadata": {
+        "score": 6,
+        "matched_terms": [
+          "any",
+          "other"
+        ],
+        "citation_source": "lexical_fallback"
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "load_full_document_context",
+      "target": "FOOTLOCKER_2022_8K_dated-2022-05-20",
+      "metadata": {
+        "page_count": 4,
+        "original_page_count": 4,
+        "context_chars": 6757,
+        "max_document_chars": null
+      }
+    },
+    {
+      "step": 2,
+      "action": "score_page_for_citation",
+      "target": "page 2",
+      "metadata": {
+        "score": 21,
+        "matched_terms": [
+          "against",
+          "board",
+          "more",
+          "nominees",
+          "there",
+          "votes",
+          "were"
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "action": "score_page_for_citation",
+      "target": "page 3",
+      "metadata": {
+        "score": 12,
+        "matched_terms": [
+          "board",
+          "other",
+          "there",
+          "who"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "score_page_for_citation",
+      "target": "page 1",
+      "metadata": {
+        "score": 6,
+        "matched_terms": [
+          "any",
+          "other"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": 2112,
+    "output": 400,
+    "total": 2512
+  },
+  "latency_ms": 7018,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\FOOTLOCKER_2022_8K_dated-2022-05-20.pdf",
+    "adapter_mode": "full_document_context",
+    "llm_enabled": true,
+    "model": "deepseek/deepseek-v4-pro",
+    "context_page_count": 4,
+    "original_page_count": 4,
+    "context_chars": 6757,
+    "max_document_chars": null,
+    "max_citations": 3
+  }
+}
