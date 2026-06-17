@@ -973,14 +973,69 @@ Interpretation:
 - `finance_reasoning_v3` fixed both targeted probe questions, but the full run still had two partial answers: `fb_exp_017` working-capital definition and `fb_mvp_006` extra legal-scope detail.
 - Stronger prompts can trade one answer failure mode for another. This should be reported as a prompt ablation, not as a replacement for the default cross-method comparison.
 
+## PageIndex Expanded Readiness
+
+The expanded PageIndex run is now explicitly tracked before spending more indexing or answer-generation calls.
+
+Readiness artifacts:
+
+```text
+reports/pageindex/expanded_readiness.md
+reports/pageindex/expanded_readiness.json
+```
+
+Current coverage:
+
+```text
+Questions: 25
+Unique source documents: 24
+Documents with PageIndex structures and PDFs: 11
+Runnable questions with current structures: 12
+Missing PageIndex structures: 13
+Missing PDFs: 0
+Full expanded PageIndex QA ready: false
+```
+
+The missing structures are:
+
+```text
+ADOBE_2016_10K
+AMERICANEXPRESS_2022_10K
+AMERICANWATERWORKS_2020_10K
+BLOCK_2016_10K
+COCACOLA_2021_10K
+CORNING_2022_10K
+CVSHEALTH_2022_10K
+FOOTLOCKER_2022_8K_dated-2022-05-20
+GENERALMILLS_2020_10K
+MGMRESORTS_2022Q4_EARNINGS
+PEPSICO_2023Q1_EARNINGS
+PFIZER_2021_10K
+ULTABEAUTY_2023Q4_EARNINGS
+```
+
+The next PageIndex experiment should index these 13 documents, rerun `scripts/summarize_pageindex_expanded_readiness.py`, then run expanded retrieval-only QA before any expanded PageIndex LLM answer generation.
+
+## Upstream Contribution Drafts
+
+Two PageIndex contribution drafts are ready for review and community use:
+
+```text
+docs/upstream-pageindex-benchmark-issue.md
+docs/upstream-patches/pageindex-json-resilience-pr.md
+```
+
+The issue draft presents the benchmark plan conservatively: PageIndex has strong MVP evidence recall, but the expanded PageIndex run is not complete yet. The PR draft focuses on robust JSON extraction and conservative fallbacks for noisy model responses.
+
 ## Next Stage 1 Work
 
 The next work should strengthen the benchmark beyond the dependency-light MVP baselines:
 
-1. Prepare a PageIndex upstream issue or PR using the benchmark findings and prompt-ablation evidence.
-2. Start PageIndex expanded QA once indexing costs and provider reliability are acceptable.
-3. Add GraphRAG and HyperGraphRAG after the expanded baselines are stable.
-4. Consider evaluator refinements for rounding tolerance and extra-but-supported legal details before further prompt tuning.
+1. Use the PageIndex upstream issue and PR drafts as the first contribution candidates.
+2. Index the 13 missing PageIndex structures for the expanded 25-question set.
+3. Run expanded PageIndex retrieval-only QA and evidence evaluation after all structures exist.
+4. Add GraphRAG and HyperGraphRAG after the expanded baselines are stable.
+5. Consider evaluator refinements for rounding tolerance and extra-but-supported legal details before further prompt tuning.
 
 ## Stage 1 Exit Criteria
 
@@ -996,10 +1051,22 @@ Stage 1 is complete when:
 
 Model-backed PageIndex indexing and QA require a provider API key in the current shell, usable provider quota, and reliable JSON output.
 
-The first 11 structures are now available. The JSON parsing patch made PageIndex resilient to model noise:
+The first 11 PageIndex structures are available, but full expanded PageIndex QA is still blocked by 13 missing structures:
 
 ```text
-Handled empty responses and noisy JSON output
+ADOBE_2016_10K
+AMERICANEXPRESS_2022_10K
+AMERICANWATERWORKS_2020_10K
+BLOCK_2016_10K
+COCACOLA_2021_10K
+CORNING_2022_10K
+CVSHEALTH_2022_10K
+FOOTLOCKER_2022_8K_dated-2022-05-20
+GENERALMILLS_2020_10K
+MGMRESORTS_2022Q4_EARNINGS
+PEPSICO_2023Q1_EARNINGS
+PFIZER_2021_10K
+ULTABEAUTY_2023Q4_EARNINGS
 ```
 
-Next, decide whether to keep the current reasoning failures as benchmark evidence or test a stricter finance-reasoning answer prompt.
+Next, index these structures with the current PageIndex MVP script, regenerate the readiness report, then run expanded PageIndex retrieval-only QA.

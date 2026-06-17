@@ -95,6 +95,32 @@ Average evidence recall: 1.000
 Average citation precision: 0.333
 ```
 
+## Expanded Readiness
+
+Current expanded 25-question coverage is tracked in:
+
+```text
+reports/pageindex/expanded_readiness.md
+reports/pageindex/expanded_readiness.json
+```
+
+Summary:
+
+```text
+Questions: 25
+Unique source documents: 24
+Documents with PageIndex structures and PDFs: 11
+Runnable questions with current structures: 12
+Missing PageIndex structures: 13
+Missing PDFs: 0
+```
+
+Full expanded PageIndex QA should wait until the 13 missing structures are indexed. Use the readiness script to regenerate the report after indexing:
+
+```powershell
+python scripts\summarize_pageindex_expanded_readiness.py
+```
+
 LLM mode requires a LiteLLM model string and provider API key:
 
 ```powershell

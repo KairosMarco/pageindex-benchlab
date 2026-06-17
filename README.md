@@ -128,6 +128,13 @@ Completed:
 - Finance prompt variant summary now exists:
   - `reports/finance_prompt_variant_summary.md`
   - `reports/finance_prompt_variant_summary.json`
+- PageIndex expanded-readiness tracking now exists:
+  - `reports/pageindex/expanded_readiness.md`
+  - `reports/pageindex/expanded_readiness.json`
+  - Current expanded PageIndex coverage is `12 / 25` runnable questions because `13` PageIndex structure files still need indexing.
+- PageIndex upstream contribution drafts now exist:
+  - `docs/upstream-pageindex-benchmark-issue.md`
+  - `docs/upstream-patches/pageindex-json-resilience-pr.md`
 
 Current owner: project owner. PH is on standby for later task assignment.
 
@@ -135,6 +142,8 @@ See:
 
 - [Stage 1 status](docs/stage-1-status.md)
 - [Benchmark schema](docs/schema.md)
+- [PageIndex expanded readiness](reports/pageindex/expanded_readiness.md)
+- [PageIndex upstream benchmark issue draft](docs/upstream-pageindex-benchmark-issue.md)
 
 ## Project Structure
 
@@ -294,7 +303,7 @@ A GPU may become useful later for local LLMs, large embedding jobs, or large rer
 
 ## Next Actions
 
-1. Decide whether to improve answer prompting for concept/reasoning questions or keep the failures as benchmark findings.
-2. Prepare a PageIndex upstream issue or PR using the benchmark findings.
-3. Start PageIndex expanded QA once indexing costs and provider reliability are acceptable.
+1. Use the PageIndex upstream issue and PR drafts as the first contribution candidates.
+2. Index the 13 missing PageIndex structures listed in `reports/pageindex/expanded_readiness.md`.
+3. Start PageIndex expanded retrieval-only QA after all expanded structures exist.
 4. Add GraphRAG and HyperGraphRAG after the expanded baselines are stable.

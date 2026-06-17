@@ -1,0 +1,268 @@
+{
+  "summary": {
+    "date": "2026-06-17",
+    "question_file": "datasets\\financebench\\expanded_questions_25.jsonl",
+    "question_count": 25,
+    "unique_doc_count": 24,
+    "ready_doc_count": 11,
+    "missing_structure_count": 13,
+    "missing_pdf_count": 0,
+    "runnable_question_count": 12,
+    "full_expanded_ready": false,
+    "structure_dir": "reports\\pageindex\\structures",
+    "pdf_dir": "datasets\\raw\\financebench\\pdfs",
+    "model_for_indexing_command": "deepseek/deepseek-v4-pro"
+  },
+  "docs": [
+    {
+      "doc_name": "3M_2018_10K",
+      "question_count": 1,
+      "has_structure": true,
+      "has_pdf": true,
+      "structure_path": "reports\\pageindex\\structures\\3M_2018_10K_structure.json",
+      "pdf_path": "datasets\\raw\\financebench\\pdfs\\3M_2018_10K.pdf",
+      "structure_size_bytes": 12566
+    },
+    {
+      "doc_name": "ADOBE_2016_10K",
+      "question_count": 1,
+      "has_structure": false,
+      "has_pdf": true,
+      "structure_path": "reports\\pageindex\\structures\\ADOBE_2016_10K_structure.json",
+      "pdf_path": "datasets\\raw\\financebench\\pdfs\\ADOBE_2016_10K.pdf",
+      "structure_size_bytes": null
+    },
+    {
+      "doc_name": "AMAZON_2017_10K",
+      "question_count": 1,
+      "has_structure": true,
+      "has_pdf": true,
+      "structure_path": "reports\\pageindex\\structures\\AMAZON_2017_10K_structure.json",
+      "pdf_path": "datasets\\raw\\financebench\\pdfs\\AMAZON_2017_10K.pdf",
+      "structure_size_bytes": 23412
+    },
+    {
+      "doc_name": "AMCOR_2023Q4_EARNINGS",
+      "question_count": 1,
+      "has_structure": true,
+      "has_pdf": true,
+      "structure_path": "reports\\pageindex\\structures\\AMCOR_2023Q4_EARNINGS_structure.json",
+      "pdf_path": "datasets\\raw\\financebench\\pdfs\\AMCOR_2023Q4_EARNINGS.pdf",
+      "structure_size_bytes": 3653
+    },
+    {
+      "doc_name": "AMD_2022_10K",
+      "question_count": 2,
+      "has_structure": true,
+      "has_pdf": true,
+      "structure_path": "reports\\pageindex\\structures\\AMD_2022_10K_structure.json",
+      "pdf_path": "datasets\\raw\\financebench\\pdfs\\AMD_2022_10K.pdf",
+      "structure_size_bytes": 13908
+    },
+    {
+      "doc_name": "AMERICANEXPRESS_2022_10K",
+      "question_count": 1,
+      "has_structure": false,
+      "has_pdf": true,
+      "structure_path": "reports\\pageindex\\structures\\AMERICANEXPRESS_2022_10K_structure.json",
+      "pdf_path": "datasets\\raw\\financebench\\pdfs\\AMERICANEXPRESS_2022_10K.pdf",
+      "structure_size_bytes": null
+    },
+    {
+      "doc_name": "AMERICANWATERWORKS_2020_10K",
+      "question_count": 1,
+      "has_structure": false,
+      "has_pdf": true,
+      "structure_path": "reports\\pageindex\\structures\\AMERICANWATERWORKS_2020_10K_structure.json",
+      "pdf_path": "datasets\\raw\\financebench\\pdfs\\AMERICANWATERWORKS_2020_10K.pdf",
+      "structure_size_bytes": null
+    },
+    {
+      "doc_name": "BESTBUY_2023_10K",
+      "question_count": 1,
+      "has_structure": true,
+      "has_pdf": true,
+      "structure_path": "reports\\pageindex\\structures\\BESTBUY_2023_10K_structure.json",
+      "pdf_path": "datasets\\raw\\financebench\\pdfs\\BESTBUY_2023_10K.pdf",
+      "structure_size_bytes": 10116
+    },
+    {
+      "doc_name": "BLOCK_2016_10K",
+      "question_count": 1,
+      "has_structure": false,
+      "has_pdf": true,
+      "structure_path": "reports\\pageindex\\structures\\BLOCK_2016_10K_structure.json",
+      "pdf_path": "datasets\\raw\\financebench\\pdfs\\BLOCK_2016_10K.pdf",
+      "structure_size_bytes": null
+    },
+    {
+      "doc_name": "BOEING_2022_10K",
+      "question_count": 1,
+      "has_structure": true,
+      "has_pdf": true,
+      "structure_path": "reports\\pageindex\\structures\\BOEING_2022_10K_structure.json",
+      "pdf_path": "datasets\\raw\\financebench\\pdfs\\BOEING_2022_10K.pdf",
+      "structure_size_bytes": 45702
+    },
+    {
+      "doc_name": "COCACOLA_2021_10K",
+      "question_count": 1,
+      "has_structure": false,
+      "has_pdf": true,
+      "structure_path": "reports\\pageindex\\structures\\COCACOLA_2021_10K_structure.json",
+      "pdf_path": "datasets\\raw\\financebench\\pdfs\\COCACOLA_2021_10K.pdf",
+      "structure_size_bytes": null
+    },
+    {
+      "doc_name": "CORNING_2022_10K",
+      "question_count": 1,
+      "has_structure": false,
+      "has_pdf": true,
+      "structure_path": "reports\\pageindex\\structures\\CORNING_2022_10K_structure.json",
+      "pdf_path": "datasets\\raw\\financebench\\pdfs\\CORNING_2022_10K.pdf",
+      "structure_size_bytes": null
+    },
+    {
+      "doc_name": "COSTCO_2021_10K",
+      "question_count": 1,
+      "has_structure": true,
+      "has_pdf": true,
+      "structure_path": "reports\\pageindex\\structures\\COSTCO_2021_10K_structure.json",
+      "pdf_path": "datasets\\raw\\financebench\\pdfs\\COSTCO_2021_10K.pdf",
+      "structure_size_bytes": 23149
+    },
+    {
+      "doc_name": "CVSHEALTH_2022_10K",
+      "question_count": 1,
+      "has_structure": false,
+      "has_pdf": true,
+      "structure_path": "reports\\pageindex\\structures\\CVSHEALTH_2022_10K_structure.json",
+      "pdf_path": "datasets\\raw\\financebench\\pdfs\\CVSHEALTH_2022_10K.pdf",
+      "structure_size_bytes": null
+    },
+    {
+      "doc_name": "FOOTLOCKER_2022_8K_dated-2022-05-20",
+      "question_count": 1,
+      "has_structure": false,
+      "has_pdf": true,
+      "structure_path": "reports\\pageindex\\structures\\FOOTLOCKER_2022_8K_dated-2022-05-20_structure.json",
+      "pdf_path": "datasets\\raw\\financebench\\pdfs\\FOOTLOCKER_2022_8K_dated-2022-05-20.pdf",
+      "structure_size_bytes": null
+    },
+    {
+      "doc_name": "GENERALMILLS_2020_10K",
+      "question_count": 1,
+      "has_structure": false,
+      "has_pdf": true,
+      "structure_path": "reports\\pageindex\\structures\\GENERALMILLS_2020_10K_structure.json",
+      "pdf_path": "datasets\\raw\\financebench\\pdfs\\GENERALMILLS_2020_10K.pdf",
+      "structure_size_bytes": null
+    },
+    {
+      "doc_name": "JOHNSON_JOHNSON_2023_8K_dated-2023-08-30",
+      "question_count": 1,
+      "has_structure": true,
+      "has_pdf": true,
+      "structure_path": "reports\\pageindex\\structures\\JOHNSON_JOHNSON_2023_8K_dated-2023-08-30_structure.json",
+      "pdf_path": "datasets\\raw\\financebench\\pdfs\\JOHNSON_JOHNSON_2023_8K_dated-2023-08-30.pdf",
+      "structure_size_bytes": 3660
+    },
+    {
+      "doc_name": "JPMORGAN_2023Q2_10Q",
+      "question_count": 1,
+      "has_structure": true,
+      "has_pdf": true,
+      "structure_path": "reports\\pageindex\\structures\\JPMORGAN_2023Q2_10Q_structure.json",
+      "pdf_path": "datasets\\raw\\financebench\\pdfs\\JPMORGAN_2023Q2_10Q.pdf",
+      "structure_size_bytes": 93132
+    },
+    {
+      "doc_name": "MGMRESORTS_2022Q4_EARNINGS",
+      "question_count": 1,
+      "has_structure": false,
+      "has_pdf": true,
+      "structure_path": "reports\\pageindex\\structures\\MGMRESORTS_2022Q4_EARNINGS_structure.json",
+      "pdf_path": "datasets\\raw\\financebench\\pdfs\\MGMRESORTS_2022Q4_EARNINGS.pdf",
+      "structure_size_bytes": null
+    },
+    {
+      "doc_name": "MICROSOFT_2016_10K",
+      "question_count": 1,
+      "has_structure": true,
+      "has_pdf": true,
+      "structure_path": "reports\\pageindex\\structures\\MICROSOFT_2016_10K_structure.json",
+      "pdf_path": "datasets\\raw\\financebench\\pdfs\\MICROSOFT_2016_10K.pdf",
+      "structure_size_bytes": 39753
+    },
+    {
+      "doc_name": "NIKE_2023_10K",
+      "question_count": 1,
+      "has_structure": true,
+      "has_pdf": true,
+      "structure_path": "reports\\pageindex\\structures\\NIKE_2023_10K_structure.json",
+      "pdf_path": "datasets\\raw\\financebench\\pdfs\\NIKE_2023_10K.pdf",
+      "structure_size_bytes": 29574
+    },
+    {
+      "doc_name": "PEPSICO_2023Q1_EARNINGS",
+      "question_count": 1,
+      "has_structure": false,
+      "has_pdf": true,
+      "structure_path": "reports\\pageindex\\structures\\PEPSICO_2023Q1_EARNINGS_structure.json",
+      "pdf_path": "datasets\\raw\\financebench\\pdfs\\PEPSICO_2023Q1_EARNINGS.pdf",
+      "structure_size_bytes": null
+    },
+    {
+      "doc_name": "PFIZER_2021_10K",
+      "question_count": 1,
+      "has_structure": false,
+      "has_pdf": true,
+      "structure_path": "reports\\pageindex\\structures\\PFIZER_2021_10K_structure.json",
+      "pdf_path": "datasets\\raw\\financebench\\pdfs\\PFIZER_2021_10K.pdf",
+      "structure_size_bytes": null
+    },
+    {
+      "doc_name": "ULTABEAUTY_2023Q4_EARNINGS",
+      "question_count": 1,
+      "has_structure": false,
+      "has_pdf": true,
+      "structure_path": "reports\\pageindex\\structures\\ULTABEAUTY_2023Q4_EARNINGS_structure.json",
+      "pdf_path": "datasets\\raw\\financebench\\pdfs\\ULTABEAUTY_2023Q4_EARNINGS.pdf",
+      "structure_size_bytes": null
+    }
+  ],
+  "ready_docs": [
+    "3M_2018_10K",
+    "AMAZON_2017_10K",
+    "AMCOR_2023Q4_EARNINGS",
+    "AMD_2022_10K",
+    "BESTBUY_2023_10K",
+    "BOEING_2022_10K",
+    "COSTCO_2021_10K",
+    "JOHNSON_JOHNSON_2023_8K_dated-2023-08-30",
+    "JPMORGAN_2023Q2_10Q",
+    "MICROSOFT_2016_10K",
+    "NIKE_2023_10K"
+  ],
+  "missing_structures": [
+    "ADOBE_2016_10K",
+    "AMERICANEXPRESS_2022_10K",
+    "AMERICANWATERWORKS_2020_10K",
+    "BLOCK_2016_10K",
+    "COCACOLA_2021_10K",
+    "CORNING_2022_10K",
+    "CVSHEALTH_2022_10K",
+    "FOOTLOCKER_2022_8K_dated-2022-05-20",
+    "GENERALMILLS_2020_10K",
+    "MGMRESORTS_2022Q4_EARNINGS",
+    "PEPSICO_2023Q1_EARNINGS",
+    "PFIZER_2021_10K",
+    "ULTABEAUTY_2023Q4_EARNINGS"
+  ],
+  "missing_pdfs": [],
+  "commands": {
+    "index_missing_structures": "python scripts\\run_pageindex_mvp.py --questions datasets\\financebench\\expanded_questions_25.jsonl --pdf-dir datasets\\raw\\financebench\\pdfs --output-dir reports\\pageindex\\structures --model deepseek/deepseek-v4-pro --continue-on-error --doc-name ADOBE_2016_10K --doc-name AMERICANEXPRESS_2022_10K --doc-name AMERICANWATERWORKS_2020_10K --doc-name BLOCK_2016_10K --doc-name COCACOLA_2021_10K --doc-name CORNING_2022_10K --doc-name CVSHEALTH_2022_10K --doc-name FOOTLOCKER_2022_8K_dated-2022-05-20 --doc-name GENERALMILLS_2020_10K --doc-name MGMRESORTS_2022Q4_EARNINGS --doc-name PEPSICO_2023Q1_EARNINGS --doc-name PFIZER_2021_10K --doc-name ULTABEAUTY_2023Q4_EARNINGS",
+    "run_expanded_pageindex_no_llm": "python scripts\\run_pageindex_qa_mvp.py --questions datasets\\financebench\\expanded_questions_25.jsonl --structure-dir reports\\pageindex\\structures --output-dir reports\\pageindex\\qa_expanded_25 --manifest reports\\pageindex\\qa_expanded_25_manifest.json --no-llm --force --continue-on-error",
+    "evaluate_expanded_pageindex_evidence": "python scripts\\evaluate_evidence_mvp.py --questions datasets\\financebench\\expanded_questions_25.jsonl --results-dir reports\\pageindex\\qa_expanded_25 --output reports\\pageindex\\evidence_eval_qa_expanded_25.json --continue-on-error"
+  }
+}

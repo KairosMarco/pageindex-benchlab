@@ -41,6 +41,8 @@ reports/llamaindex_expanded_llm_diagnostics_finance_reasoning_v3.json
 reports/expanded_llm_validation_report_finance_reasoning_v2.json
 reports/expanded_llm_validation_report_finance_reasoning_v3.json
 reports/expanded_25_pdf_manifest.json
+reports/pageindex/expanded_readiness.md
+reports/pageindex/expanded_readiness.json
 reports/pageindex/pageindex_qa_mvp_report.md
 reports/pageindex/evidence_eval.json
 reports/pageindex/qa_manifest.json
