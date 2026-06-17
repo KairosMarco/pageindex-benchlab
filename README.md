@@ -117,6 +117,9 @@ Completed:
   - Long-context LLM: evidence recall `0.800`, citation precision `0.267`, answer accuracy `0.920`, average total tokens `92,500`, average latency `12,772 ms`.
   - Mechanical artifact validation passed with `21 / 21` checks.
   - This matched LlamaIndex Vector answer accuracy, but used about `36x` more average tokens and produced weaker citation-page recall.
+- Expanded cross-method cost/quality summary now exists:
+  - `reports/expanded_cost_quality_summary.md`
+  - Shared answer failure across LlamaIndex Vector, LlamaIndex Hybrid, and Long-context: `fb_exp_020`.
 
 Current owner: project owner. PH is on standby for later task assignment.
 
@@ -283,8 +286,7 @@ A GPU may become useful later for local LLMs, large embedding jobs, or large rer
 
 ## Next Actions
 
-1. Add cost estimates across expanded LlamaIndex and Long-context runs.
-2. Decide whether to improve answer prompting for concept/reasoning questions or keep the failures as benchmark findings.
-3. Prepare a PageIndex upstream issue or PR using the benchmark findings.
-4. Start PageIndex expanded QA once indexing costs and provider reliability are acceptable.
-5. Add GraphRAG and HyperGraphRAG after the expanded baselines are stable.
+1. Decide whether to improve answer prompting for concept/reasoning questions or keep the failures as benchmark findings.
+2. Prepare a PageIndex upstream issue or PR using the benchmark findings.
+3. Start PageIndex expanded QA once indexing costs and provider reliability are acceptable.
+4. Add GraphRAG and HyperGraphRAG after the expanded baselines are stable.

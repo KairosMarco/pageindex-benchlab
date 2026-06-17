@@ -261,6 +261,19 @@ reports/llamaindex_hybrid_rag/qa_llm_expanded_25_concept_v2_r3/
 
 The aggregate report is stable by default: rerunning one method still summarizes all known expanded LLM methods if their artifacts already exist. Use `--summary-selected-only` only when a deliberately single-method report is needed.
 
+Summarize expanded cost and quality across committed LlamaIndex and Long-context artifacts:
+
+```powershell
+python scripts\summarize_expanded_cost_quality.py
+```
+
+Outputs:
+
+```text
+reports/expanded_cost_quality_summary.md
+reports/expanded_cost_quality_summary.json
+```
+
 Validate the lowest-context passing LLM candidates:
 
 ```powershell

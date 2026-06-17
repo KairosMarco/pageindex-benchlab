@@ -1,0 +1,155 @@
+{
+  "summary": {
+    "date": "2026-06-17",
+    "method_count": 3,
+    "question_count": 25
+  },
+  "methods": [
+    {
+      "key": "vector",
+      "label": "LlamaIndex Vector RAG + finance concept_v2 rerank",
+      "source_report": "reports\\llamaindex_expanded_llm_diagnostics.json",
+      "question_count": 25,
+      "mechanical_gate_passed": true,
+      "generation_failure_count": 0,
+      "evaluation_failure_count": 0,
+      "average_evidence_recall": 1.0,
+      "average_citation_precision": 0.36,
+      "answer_accuracy": 0.92,
+      "average_answer_score": 0.94,
+      "answer_verdict_counts": {
+        "correct": 23,
+        "partial": 1,
+        "incorrect": 1
+      },
+      "average_total_tokens": 2543.2,
+      "median_total_tokens": 2516.0,
+      "total_tokens": 63580,
+      "average_latency_ms": 16497.16,
+      "median_latency_ms": 16794.0,
+      "average_context_words": 1138.2,
+      "answer_issue_ids": [
+        "fb_exp_017",
+        "fb_exp_020"
+      ],
+      "evidence_issue_ids": [],
+      "token_multiplier_vs_lowest": 1.0,
+      "latency_multiplier_vs_lowest": 1.292
+    },
+    {
+      "key": "hybrid",
+      "label": "LlamaIndex Hybrid RAG + finance concept_v2 rerank",
+      "source_report": "reports\\llamaindex_expanded_llm_diagnostics.json",
+      "question_count": 25,
+      "mechanical_gate_passed": true,
+      "generation_failure_count": 0,
+      "evaluation_failure_count": 0,
+      "average_evidence_recall": 1.0,
+      "average_citation_precision": 0.36,
+      "answer_accuracy": 0.88,
+      "average_answer_score": 0.92,
+      "answer_verdict_counts": {
+        "correct": 22,
+        "partial": 2,
+        "incorrect": 1
+      },
+      "average_total_tokens": 2553.44,
+      "median_total_tokens": 2505.0,
+      "total_tokens": 63836,
+      "average_latency_ms": 16846.44,
+      "median_latency_ms": 17092.0,
+      "average_context_words": 1160.44,
+      "answer_issue_ids": [
+        "fb_exp_017",
+        "fb_exp_019",
+        "fb_exp_020"
+      ],
+      "evidence_issue_ids": [],
+      "token_multiplier_vs_lowest": 1.004,
+      "latency_multiplier_vs_lowest": 1.319
+    },
+    {
+      "key": "long_context",
+      "label": "Long-context LLM",
+      "source_report": "reports\\long_context_expanded_llm_diagnostics.json",
+      "question_count": 25,
+      "mechanical_gate_passed": true,
+      "generation_failure_count": 0,
+      "evaluation_failure_count": 0,
+      "average_evidence_recall": 0.8,
+      "average_citation_precision": 0.26666666666666666,
+      "answer_accuracy": 0.92,
+      "average_answer_score": 0.94,
+      "answer_verdict_counts": {
+        "correct": 23,
+        "partial": 1,
+        "incorrect": 1
+      },
+      "average_total_tokens": 92499.56,
+      "median_total_tokens": 90297.0,
+      "total_tokens": 2312489,
+      "average_latency_ms": 12772.16,
+      "median_latency_ms": 9314.0,
+      "average_context_chars": 397912.52,
+      "average_context_pages": 113.08,
+      "answer_issue_ids": [
+        "fb_exp_020",
+        "fb_mvp_003"
+      ],
+      "evidence_issue_ids": [
+        "fb_exp_014",
+        "fb_exp_017",
+        "fb_exp_020",
+        "fb_exp_023",
+        "fb_mvp_005"
+      ],
+      "token_multiplier_vs_lowest": 36.371,
+      "latency_multiplier_vs_lowest": 1.0
+    }
+  ],
+  "issue_summary": {
+    "all_answer_issue_ids": [
+      "fb_exp_017",
+      "fb_exp_019",
+      "fb_exp_020",
+      "fb_mvp_003"
+    ],
+    "all_evidence_issue_ids": [
+      "fb_exp_014",
+      "fb_exp_017",
+      "fb_exp_020",
+      "fb_exp_023",
+      "fb_mvp_005"
+    ],
+    "common_answer_issue_ids": [
+      "fb_exp_020"
+    ],
+    "common_evidence_issue_ids": [],
+    "per_method_answer_issue_ids": {
+      "vector": [
+        "fb_exp_017",
+        "fb_exp_020"
+      ],
+      "hybrid": [
+        "fb_exp_017",
+        "fb_exp_019",
+        "fb_exp_020"
+      ],
+      "long_context": [
+        "fb_exp_020",
+        "fb_mvp_003"
+      ]
+    },
+    "per_method_evidence_issue_ids": {
+      "vector": [],
+      "hybrid": [],
+      "long_context": [
+        "fb_exp_014",
+        "fb_exp_017",
+        "fb_exp_020",
+        "fb_exp_023",
+        "fb_mvp_005"
+      ]
+    }
+  }
+}

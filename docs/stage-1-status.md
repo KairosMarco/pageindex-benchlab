@@ -868,15 +868,57 @@ Interpretation:
 - Long-context correctly answered several questions even when cited pages did not match gold evidence, which separates answer quality from citation quality.
 - The shared hard failure remains `fb_exp_020`: CVS capital intensity. Long-context also concluded `No` by focusing on capex/revenue and leased stores, while the gold answer says `Yes` based on low ROA and the broader asset base including goodwill.
 
+### Expanded Cost And Quality Summary
+
+Cross-method expanded summary:
+
+```text
+reports/expanded_cost_quality_summary.md
+reports/expanded_cost_quality_summary.json
+```
+
+Summary:
+
+```text
+LlamaIndex Vector concept_v2 r3:
+answer accuracy: 0.920
+evidence recall: 1.000
+average total tokens: 2,543
+token multiplier: 1.000x
+
+LlamaIndex Hybrid concept_v2 r3:
+answer accuracy: 0.880
+evidence recall: 1.000
+average total tokens: 2,553
+token multiplier: 1.004x
+
+Long-context LLM:
+answer accuracy: 0.920
+evidence recall: 0.800
+average total tokens: 92,500
+token multiplier: 36.371x
+```
+
+Shared answer issue:
+
+```text
+fb_exp_020
+```
+
+Interpretation:
+
+- On this expanded 25-question subset, Long-context did not improve answer accuracy over LlamaIndex Vector.
+- Long-context was far more token-expensive and had weaker citation grounding.
+- The shared `fb_exp_020` failure should be used as a targeted reasoning-prompt or benchmark-analysis case before making claims about method superiority.
+
 ## Next Stage 1 Work
 
 The next work should strengthen the benchmark beyond the dependency-light MVP baselines:
 
-1. Add cost estimates across expanded LlamaIndex and Long-context runs.
-2. Decide whether to improve answer prompting for concept/reasoning questions or preserve the current failures as benchmark evidence.
-3. Prepare a PageIndex upstream issue or PR using the benchmark findings.
-4. Start PageIndex expanded QA once indexing costs and provider reliability are acceptable.
-5. Add GraphRAG and HyperGraphRAG after the expanded baselines are stable.
+1. Decide whether to improve answer prompting for concept/reasoning questions or preserve the current failures as benchmark evidence.
+2. Prepare a PageIndex upstream issue or PR using the benchmark findings.
+3. Start PageIndex expanded QA once indexing costs and provider reliability are acceptable.
+4. Add GraphRAG and HyperGraphRAG after the expanded baselines are stable.
 
 ## Stage 1 Exit Criteria
 
@@ -898,4 +940,4 @@ The first 11 structures are now available. The JSON parsing patch made PageIndex
 Handled empty responses and noisy JSON output
 ```
 
-Next, add expanded cost estimates and decide whether to keep the current reasoning failures as benchmark evidence or test a stricter finance-reasoning answer prompt.
+Next, decide whether to keep the current reasoning failures as benchmark evidence or test a stricter finance-reasoning answer prompt.

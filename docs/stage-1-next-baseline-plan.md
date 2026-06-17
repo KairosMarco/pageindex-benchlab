@@ -128,7 +128,8 @@ These stronger claims require a larger dataset, stronger baselines, and cost ass
 9. Expand retrieval validation to 25 FinanceBench questions. Completed for retrieval-only mode.
 10. Run expanded LLM answer generation only after retrieval quality is acceptable. Completed for LlamaIndex Vector and Hybrid `concept_v2`, `rerank_top_k=3`.
 11. Run expanded Long-context LLM baseline on the same 25-question set. Completed.
-12. Add expanded cost estimates and decide whether to test stricter finance reasoning prompts.
+12. Add expanded cost estimates and decide whether to test stricter finance reasoning prompts. Completed.
+13. Decide whether to preserve the current reasoning failures as benchmark findings or run a stricter answer-prompt variant.
 
 ## LlamaIndex Vector Diagnostic Result
 
@@ -356,3 +357,27 @@ Answer issues: fb_exp_020 incorrect, fb_mvp_003 partial.
 Interpretation:
 
 Long-context matched LlamaIndex Vector's `0.920` answer accuracy on this 25-question subset, but with about `36x` higher average token use and lower citation evidence recall (`0.800` vs `1.000`). The result is useful because it shows that larger context alone does not guarantee better citation grounding. The shared hard case is `fb_exp_020`, where both Long-context and LlamaIndex candidates retrieved or had access to relevant evidence but misinterpreted capital intensity.
+
+## Expanded Cost And Quality Summary
+
+The cross-method expanded summary is:
+
+```text
+reports/expanded_cost_quality_summary.md
+reports/expanded_cost_quality_summary.json
+```
+
+Key rows:
+
+```text
+LlamaIndex Vector: answer accuracy 0.920, evidence recall 1.000, avg tokens 2,543, token x 1.000
+LlamaIndex Hybrid: answer accuracy 0.880, evidence recall 1.000, avg tokens 2,553, token x 1.004
+Long-context: answer accuracy 0.920, evidence recall 0.800, avg tokens 92,500, token x 36.371
+```
+
+Current decision point:
+
+```text
+Option A: preserve current failures as benchmark evidence.
+Option B: run a stricter finance-reasoning answer prompt variant and compare whether fb_exp_020 improves without hurting simpler extraction questions.
+```

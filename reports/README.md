@@ -30,6 +30,8 @@ reports/expanded_llm_validation_report.json
 reports/long_context_expanded_llm_diagnostics.md
 reports/long_context_expanded_llm_diagnostics.json
 reports/expanded_long_context_validation_report.json
+reports/expanded_cost_quality_summary.md
+reports/expanded_cost_quality_summary.json
 reports/expanded_25_pdf_manifest.json
 reports/pageindex/pageindex_qa_mvp_report.md
 reports/pageindex/evidence_eval.json
