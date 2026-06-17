@@ -1,0 +1,298 @@
+{
+  "status": "pass",
+  "diagnostics": "reports\\llamaindex_expanded_llm_diagnostics.json",
+  "expected_question_count": 25,
+  "check_count": 37,
+  "failed_check_count": 0,
+  "checks": [
+    {
+      "name": "diagnostics file exists",
+      "passed": true,
+      "details": {
+        "path": "reports\\llamaindex_expanded_llm_diagnostics.json"
+      }
+    },
+    {
+      "name": "summary question count",
+      "passed": true,
+      "details": {
+        "expected": 25,
+        "actual": 25
+      }
+    },
+    {
+      "name": "method count",
+      "passed": true,
+      "details": {
+        "actual": 2
+      }
+    },
+    {
+      "name": "summary mechanical gate",
+      "passed": true,
+      "details": {
+        "actual": true
+      }
+    },
+    {
+      "name": "required methods present",
+      "passed": true,
+      "details": {
+        "required": [
+          "hybrid",
+          "vector"
+        ],
+        "actual": [
+          "hybrid",
+          "vector"
+        ]
+      }
+    },
+    {
+      "name": "LlamaIndex Vector RAG + finance concept_v2 rerank: result count",
+      "passed": true,
+      "details": {
+        "expected": 25,
+        "actual": 25
+      }
+    },
+    {
+      "name": "LlamaIndex Vector RAG + finance concept_v2 rerank: manifest count",
+      "passed": true,
+      "details": {
+        "expected": 25,
+        "actual": 25
+      }
+    },
+    {
+      "name": "LlamaIndex Vector RAG + finance concept_v2 rerank: generation failures",
+      "passed": true,
+      "details": {
+        "actual": 0
+      }
+    },
+    {
+      "name": "LlamaIndex Vector RAG + finance concept_v2 rerank: evaluation failures",
+      "passed": true,
+      "details": {
+        "actual": 0
+      }
+    },
+    {
+      "name": "LlamaIndex Vector RAG + finance concept_v2 rerank: evidence recall",
+      "passed": true,
+      "details": {
+        "actual": 1.0
+      }
+    },
+    {
+      "name": "LlamaIndex Vector RAG + finance concept_v2 rerank: citation precision present",
+      "passed": true,
+      "details": {
+        "actual": 0.36
+      }
+    },
+    {
+      "name": "LlamaIndex Vector RAG + finance concept_v2 rerank: answer accuracy present",
+      "passed": true,
+      "details": {
+        "actual": 0.92
+      }
+    },
+    {
+      "name": "LlamaIndex Vector RAG + finance concept_v2 rerank: answer verdict count",
+      "passed": true,
+      "details": {
+        "expected": 25,
+        "actual": 25,
+        "verdict_counts": {
+          "correct": 23,
+          "partial": 1,
+          "incorrect": 1
+        }
+      }
+    },
+    {
+      "name": "LlamaIndex Vector RAG + finance concept_v2 rerank: token usage complete",
+      "passed": true,
+      "details": {
+        "token_usage_count": 25,
+        "expected": 25
+      }
+    },
+    {
+      "name": "LlamaIndex Vector RAG + finance concept_v2 rerank: latency complete",
+      "passed": true,
+      "details": {
+        "latency_count": 25,
+        "expected": 25
+      }
+    },
+    {
+      "name": "LlamaIndex Vector RAG + finance concept_v2 rerank: mechanical gate",
+      "passed": true,
+      "details": {
+        "status": "complete"
+      }
+    },
+    {
+      "name": "LlamaIndex Vector RAG + finance concept_v2 rerank: per-question rows",
+      "passed": true,
+      "details": {
+        "expected": 25,
+        "actual": 25
+      }
+    },
+    {
+      "name": "LlamaIndex Vector RAG + finance concept_v2 rerank: artifact exists results_dir",
+      "passed": true,
+      "details": {
+        "path": "reports\\llamaindex_vector_rag\\qa_llm_expanded_25_concept_v2_r3"
+      }
+    },
+    {
+      "name": "LlamaIndex Vector RAG + finance concept_v2 rerank: artifact exists manifest",
+      "passed": true,
+      "details": {
+        "path": "reports\\llamaindex_vector_rag\\qa_llm_expanded_25_concept_v2_r3_manifest.json"
+      }
+    },
+    {
+      "name": "LlamaIndex Vector RAG + finance concept_v2 rerank: artifact exists evidence_eval",
+      "passed": true,
+      "details": {
+        "path": "reports\\llamaindex_vector_rag\\evidence_eval_qa_llm_expanded_25_concept_v2_r3.json"
+      }
+    },
+    {
+      "name": "LlamaIndex Vector RAG + finance concept_v2 rerank: artifact exists answer_eval",
+      "passed": true,
+      "details": {
+        "path": "reports\\llamaindex_vector_rag\\answer_eval_qa_llm_expanded_25_concept_v2_r3.json"
+      }
+    },
+    {
+      "name": "LlamaIndex Hybrid RAG + finance concept_v2 rerank: result count",
+      "passed": true,
+      "details": {
+        "expected": 25,
+        "actual": 25
+      }
+    },
+    {
+      "name": "LlamaIndex Hybrid RAG + finance concept_v2 rerank: manifest count",
+      "passed": true,
+      "details": {
+        "expected": 25,
+        "actual": 25
+      }
+    },
+    {
+      "name": "LlamaIndex Hybrid RAG + finance concept_v2 rerank: generation failures",
+      "passed": true,
+      "details": {
+        "actual": 0
+      }
+    },
+    {
+      "name": "LlamaIndex Hybrid RAG + finance concept_v2 rerank: evaluation failures",
+      "passed": true,
+      "details": {
+        "actual": 0
+      }
+    },
+    {
+      "name": "LlamaIndex Hybrid RAG + finance concept_v2 rerank: evidence recall",
+      "passed": true,
+      "details": {
+        "actual": 1.0
+      }
+    },
+    {
+      "name": "LlamaIndex Hybrid RAG + finance concept_v2 rerank: citation precision present",
+      "passed": true,
+      "details": {
+        "actual": 0.36
+      }
+    },
+    {
+      "name": "LlamaIndex Hybrid RAG + finance concept_v2 rerank: answer accuracy present",
+      "passed": true,
+      "details": {
+        "actual": 0.88
+      }
+    },
+    {
+      "name": "LlamaIndex Hybrid RAG + finance concept_v2 rerank: answer verdict count",
+      "passed": true,
+      "details": {
+        "expected": 25,
+        "actual": 25,
+        "verdict_counts": {
+          "correct": 22,
+          "partial": 2,
+          "incorrect": 1
+        }
+      }
+    },
+    {
+      "name": "LlamaIndex Hybrid RAG + finance concept_v2 rerank: token usage complete",
+      "passed": true,
+      "details": {
+        "token_usage_count": 25,
+        "expected": 25
+      }
+    },
+    {
+      "name": "LlamaIndex Hybrid RAG + finance concept_v2 rerank: latency complete",
+      "passed": true,
+      "details": {
+        "latency_count": 25,
+        "expected": 25
+      }
+    },
+    {
+      "name": "LlamaIndex Hybrid RAG + finance concept_v2 rerank: mechanical gate",
+      "passed": true,
+      "details": {
+        "status": "complete"
+      }
+    },
+    {
+      "name": "LlamaIndex Hybrid RAG + finance concept_v2 rerank: per-question rows",
+      "passed": true,
+      "details": {
+        "expected": 25,
+        "actual": 25
+      }
+    },
+    {
+      "name": "LlamaIndex Hybrid RAG + finance concept_v2 rerank: artifact exists results_dir",
+      "passed": true,
+      "details": {
+        "path": "reports\\llamaindex_hybrid_rag\\qa_llm_expanded_25_concept_v2_r3"
+      }
+    },
+    {
+      "name": "LlamaIndex Hybrid RAG + finance concept_v2 rerank: artifact exists manifest",
+      "passed": true,
+      "details": {
+        "path": "reports\\llamaindex_hybrid_rag\\qa_llm_expanded_25_concept_v2_r3_manifest.json"
+      }
+    },
+    {
+      "name": "LlamaIndex Hybrid RAG + finance concept_v2 rerank: artifact exists evidence_eval",
+      "passed": true,
+      "details": {
+        "path": "reports\\llamaindex_hybrid_rag\\evidence_eval_qa_llm_expanded_25_concept_v2_r3.json"
+      }
+    },
+    {
+      "name": "LlamaIndex Hybrid RAG + finance concept_v2 rerank: artifact exists answer_eval",
+      "passed": true,
+      "details": {
+        "path": "reports\\llamaindex_hybrid_rag\\answer_eval_qa_llm_expanded_25_concept_v2_r3.json"
+      }
+    }
+  ]
+}

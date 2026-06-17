@@ -1,0 +1,184 @@
+{
+  "method": "llamaindex_hybrid_rag",
+  "question_id": "fb_exp_015",
+  "question": "Were there any board member nominees who had substantially more votes against joining than the other nominees?",
+  "answer": "Yes, Richard A. Johnson had substantially more votes against (16,105,005) than any other board nominee, with the next highest \"Votes Against\" being 6,074,467 for Dona D. Young [PAGE 2].",
+  "citations": [
+    {
+      "document_id": "FOOTLOCKER_2022_8K_dated-2022-05-20",
+      "page": 2,
+      "section": null,
+      "text": " of which are incorporated herein by reference. As of March 21, 2022, the Company’s record date for the Annual Meeting, there were a total of 96,089,997 shares of common stock, $0.01 par value per share (“Common Stock”), outstanding and entitled to vote at the Annual Meeting. At the Annual Meeting, 77,551,206 shares of Common Stock were represented in person or by proxy and, therefore, a quorum was present. Proposal 1. With respect to the proposal to elect ten nominees to the Board of Directors ",
+      "metadata": {
+        "chunk_id": "a9e3dc74-5f5a-40a9-9354-1ae040d8569e",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.2744189372317988,
+        "rerank_score": 52.64747488101534,
+        "matched_terms": [
+          "against",
+          "board",
+          "nominees",
+          "there",
+          "votes",
+          "were"
+        ],
+        "citation_source": "llm_answer"
+      }
+    },
+    {
+      "document_id": "FOOTLOCKER_2022_8K_dated-2022-05-20",
+      "page": 3,
+      "section": null,
+      "text": "Item 8.01. Other Events. On May 18, 2022, in light of Matthew McKenna’s retirement, the Board designated Ms. Nicosia as the “audit committee financial expert.” In connection with this designation, the Board determined that Ms. Nicosia qualifies as an “audit committee financial expert,” as defined by the rules under the Securities Exchange Act of 1934, as amended (the “Exchange Act”), because of her relevant experience as president of an operating unit of a large multinational corporation. She ha",
+      "metadata": {
+        "chunk_id": "8c14a050-7c3f-4c22-ba45-ca0c9fc05562",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.28926472682924376,
+        "rerank_score": 41.06645849596669,
+        "matched_terms": [
+          "board",
+          "other",
+          "there",
+          "who"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "llamaindex_build_hybrid_index",
+      "target": "FOOTLOCKER_2022_8K_dated-2022-05-20",
+      "metadata": {
+        "page_count": 4,
+        "node_count": 5,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "chunk_size": 900,
+        "chunk_overlap": 160,
+        "vector_top_k": 120,
+        "bm25_top_k": 120,
+        "fusion_top_k": 120,
+        "rerank_top_k": 3,
+        "rrf_k": 60,
+        "finance_rerank": true,
+        "cross_encoder_model": null,
+        "cross_encoder_candidates": 60,
+        "answer_context_chunk_count": 3,
+        "answer_context_chars": 4773,
+        "answer_context_words": 706
+      }
+    },
+    {
+      "step": 2,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "a9e3dc74-5f5a-40a9-9354-1ae040d8569e",
+      "metadata": {
+        "page": 2,
+        "bm25_rank": 1,
+        "vector_rank": 2,
+        "fusion_rank": 1,
+        "bm25_score": 3.896491527557373,
+        "vector_score": 0.2744189372317988,
+        "rrf_score": 0.03252247488101534,
+        "rerank_score": 52.64747488101534,
+        "finance_boost": 7.125,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "against",
+          "board",
+          "nominees",
+          "there",
+          "votes",
+          "were"
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "3cd94792-f1ed-4c51-a801-2c7490ea1c91",
+      "metadata": {
+        "page": 2,
+        "bm25_rank": 2,
+        "vector_rank": 3,
+        "fusion_rank": 3,
+        "bm25_score": 1.8871989250183105,
+        "vector_score": 0.21954463161082538,
+        "rrf_score": 0.03200204813108039,
+        "rerank_score": 41.60204813108039,
+        "finance_boost": 3.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "against",
+          "votes",
+          "were"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "8c14a050-7c3f-4c22-ba45-ca0c9fc05562",
+      "metadata": {
+        "page": 3,
+        "bm25_rank": 3,
+        "vector_rank": 1,
+        "fusion_rank": 2,
+        "bm25_score": 1.8510310649871826,
+        "vector_score": 0.28926472682924376,
+        "rrf_score": 0.032266458495966696,
+        "rerank_score": 41.06645849596669,
+        "finance_boost": 0.0,
+        "finance_boost_reasons": [],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "board",
+          "other",
+          "there",
+          "who"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": 1592,
+    "output": 288,
+    "total": 1880
+  },
+  "latency_ms": 12927,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\FOOTLOCKER_2022_8K_dated-2022-05-20.pdf",
+    "adapter_mode": "llamaindex_bm25_vector_rrf_plus_rerank",
+    "llm_enabled": true,
+    "model": "deepseek/deepseek-v4-pro",
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "page_count": 4,
+    "node_count": 5,
+    "chunk_size": 900,
+    "chunk_overlap": 160,
+    "vector_top_k": 120,
+    "bm25_top_k": 120,
+    "fusion_top_k": 120,
+    "rerank_top_k": 3,
+    "rrf_k": 60,
+    "max_citations": 3,
+    "finance_rerank": true,
+    "cross_encoder_model": null,
+    "cross_encoder_candidates": 60,
+    "answer_context_chunk_count": 3,
+    "answer_context_chars": 4773,
+    "answer_context_words": 706
+  }
+}

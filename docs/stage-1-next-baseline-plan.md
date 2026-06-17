@@ -126,7 +126,8 @@ These stronger claims require a larger dataset, stronger baselines, and cost ass
 7. Evaluate evidence and answers. Completed for finance-aware LlamaIndex Vector and Hybrid diagnostics.
 8. Regenerate detailed evidence reports and validation reports. Completed in `reports/llamaindex_finance_llm_diagnostics.md` and `.json`.
 9. Expand retrieval validation to 25 FinanceBench questions. Completed for retrieval-only mode.
-10. Run expanded LLM answer generation only after retrieval quality is acceptable.
+10. Run expanded LLM answer generation only after retrieval quality is acceptable. Completed for LlamaIndex Vector and Hybrid `concept_v2`, `rerank_top_k=3`.
+11. Run expanded Long-context LLM baseline on the same 25-question set.
 
 ## LlamaIndex Vector Diagnostic Result
 
@@ -175,7 +176,7 @@ token reduction vs rerank_top_k=12: 73.0%
 
 Interpretation:
 
-The finance-aware LlamaIndex Vector candidate passes the mechanical promotion gate on the 12-question MVP subset. The first expanded 25-question retrieval run exposed failures on concept-heavy finance questions. The `concept_v2` label-free reranker signals restored 1.000 evidence recall on the 25-question retrieval-only run, so the next answer-generation candidate is `concept_v2` with `rerank_top_k=3`.
+The finance-aware LlamaIndex Vector candidate passes the mechanical promotion gate on the 12-question MVP subset. The first expanded 25-question retrieval run exposed failures on concept-heavy finance questions. The `concept_v2` label-free reranker signals restored 1.000 evidence recall on the 25-question retrieval-only run. The expanded LLM run with `concept_v2`, `rerank_top_k=3` preserved 1.000 evidence recall and reached 0.920 LLM-judge answer accuracy.
 
 ## LlamaIndex Hybrid Diagnostic Result
 
@@ -225,7 +226,7 @@ token reduction vs rerank_top_k=12: 72.7%
 
 Interpretation:
 
-The finance-aware LlamaIndex Hybrid candidate passes the mechanical promotion gate on the 12-question MVP subset. The first expanded 25-question retrieval run exposed failures on concept-heavy finance questions. The `concept_v2` label-free reranker signals restored 1.000 evidence recall on the 25-question retrieval-only run, so the next answer-generation candidate is `concept_v2` with `rerank_top_k=3`.
+The finance-aware LlamaIndex Hybrid candidate passes the mechanical promotion gate on the 12-question MVP subset. The first expanded 25-question retrieval run exposed failures on concept-heavy finance questions. The `concept_v2` label-free reranker signals restored 1.000 evidence recall on the 25-question retrieval-only run. The expanded LLM run with `concept_v2`, `rerank_top_k=3` preserved 1.000 evidence recall and reached 0.880 LLM-judge answer accuracy.
 
 ## Expanded Retrieval Result
 
@@ -258,3 +259,55 @@ status=pass
 checks=22
 failed=0
 ```
+
+## Expanded LLM Result
+
+The 25-question expanded answer-generation run used the validated `concept_v2`, `rerank_top_k=3` configuration:
+
+```powershell
+python scripts\run_llamaindex_expanded_llm_diagnostics.py --force --continue-on-error
+python scripts\validate_expanded_llm_artifacts.py
+```
+
+Results:
+
+```text
+Vector concept_v2 r3:
+questions: 25
+evidence recall: 1.000
+citation precision: 0.360
+answer accuracy: 0.920
+verdicts: 23 correct, 1 partial, 1 incorrect
+average total tokens: 2,543
+average context words: 1,138
+
+Hybrid concept_v2 r3:
+questions: 25
+evidence recall: 1.000
+citation precision: 0.360
+answer accuracy: 0.880
+verdicts: 22 correct, 2 partial, 1 incorrect
+average total tokens: 2,553
+average context words: 1,160
+```
+
+Validation:
+
+```text
+reports/expanded_llm_validation_report.json
+status=pass
+checks=37
+failed=0
+```
+
+Observed issue cases:
+
+```text
+fb_exp_017: working-capital definition mismatch after retrieving the right page.
+fb_exp_019: Hybrid answer used $0.389 billion; judge marked it partial against rounded gold $0.40.
+fb_exp_020: capital-intensity interpretation failure after retrieving the right pages.
+```
+
+Interpretation:
+
+The expanded LLM run shows that the current LlamaIndex candidates are no longer failing primarily at retrieval on this 25-question subset. The remaining gap is answer reasoning and judging strictness on concept-heavy financial questions. The next baseline should be expanded Long-context LLM so token cost and answer quality can be compared against a full-document context method on the same 25 questions.

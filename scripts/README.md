@@ -221,6 +221,26 @@ python scripts\validate_expanded_retrieval_artifacts.py
 
 The default expanded retrieval run preserves the failure case evidence for the first finance-aware reranker. The `concept_v2` run validates the improved label-free concept signals before any expanded LLM answer-generation spend.
 
+Run expanded 25-question LlamaIndex LLM diagnostics after `concept_v2` retrieval passes:
+
+```powershell
+$env:DEEPSEEK_API_KEY="YOUR_KEY"
+python scripts\run_llamaindex_expanded_llm_diagnostics.py --force --continue-on-error
+python scripts\validate_expanded_llm_artifacts.py
+```
+
+This writes:
+
+```text
+reports/llamaindex_expanded_llm_diagnostics.md
+reports/llamaindex_expanded_llm_diagnostics.json
+reports/expanded_llm_validation_report.json
+reports/llamaindex_vector_rag/qa_llm_expanded_25_concept_v2_r3/
+reports/llamaindex_hybrid_rag/qa_llm_expanded_25_concept_v2_r3/
+```
+
+The aggregate report is stable by default: rerunning one method still summarizes all known expanded LLM methods if their artifacts already exist. Use `--summary-selected-only` only when a deliberately single-method report is needed.
+
 Validate the lowest-context passing LLM candidates:
 
 ```powershell

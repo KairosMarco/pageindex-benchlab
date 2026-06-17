@@ -1,0 +1,207 @@
+{
+  "method": "llamaindex_hybrid_rag",
+  "question_id": "fb_exp_019",
+  "question": "How much (in USD billions) did American Water Works pay out in cash dividends for FY2020? Compute or extract the answer by primarily using the details outlined in the statement of cash flows.",
+  "answer": "According to the Consolidated Statements of Cash Flows, American Water Works paid out $389 million in cash dividends for FY2020 [PAGE 86]. This equates to $0.389 billion.",
+  "citations": [
+    {
+      "document_id": "AMERICANWATERWORKS_2020_10K",
+      "page": 86,
+      "section": null,
+      "text": "Table of Contents American Water Works Company, Inc. and Subsidiary Companies Consolidated Statements of Cash Flows (In millions) For the Years Ended December 31, 2020 2019 2018 CASH FLOWS FROM OPERATING ACTIVITIES Net income $ 709 $ 621 $ 565 Adjustments to reconcile to net cash flows provided by operating activities: Depreciation and amortization 604 582 545 Deferred income taxes and amortization of investment tax credits 207 208 195 Provision for losses on accounts receivable 34 28 33 Loss (g",
+      "metadata": {
+        "chunk_id": "cc95d02f-7a44-441e-8aab-54254df56d58",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.45715523201247377,
+        "rerank_score": 92.5489187372749,
+        "matched_terms": [
+          "cash",
+          "dividends",
+          "flows"
+        ],
+        "citation_source": "llm_answer"
+      }
+    },
+    {
+      "document_id": "AMERICANWATERWORKS_2020_10K",
+      "page": 66,
+      "section": null,
+      "text": "Table of Contents Cash flows provided by operating activities have been a reliable, steady source of funding, sufficient to meet operating requirements and fund the majority of the Company’s capital investments. The Company expects to seek access to debt and equity capital markets to meet the balance of its capital investment, if any, and fund its dividend payments, as needed. Operating cash flows can be negatively affected by changes in the Company’s rate regulated environments, changes in the ",
+      "metadata": {
+        "chunk_id": "c54cd87e-1fdb-4bc5-aab9-c1bc16d47d28",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.41346328212934463,
+        "rerank_score": 71.27096787547607,
+        "matched_terms": [
+          "cash",
+          "details",
+          "flows",
+          "pay",
+          "primarily"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "AMERICANWATERWORKS_2020_10K",
+      "page": 93,
+      "section": null,
+      "text": "The subsidiary agreed to pay $1 million annually commencing in 2010 with the final payment being made in 2021. Remediation costs accrued amounted to $1 million and $2 million as of December 31, 2020 and 2019, respectively. Derivative Financial Instruments The Company uses derivative financial instruments for purposes of hedging exposures to fluctuations in interest rates. These derivative contracts are entered into for periods consistent with the related underlying exposures and do not constitut",
+      "metadata": {
+        "chunk_id": "63fd3122-41ca-42ad-b2cb-f0277c8762ec",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.3929933898157184,
+        "rerank_score": 64.81373798040465,
+        "matched_terms": [
+          "cash",
+          "flows",
+          "pay"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "llamaindex_build_hybrid_index",
+      "target": "AMERICANWATERWORKS_2020_10K",
+      "metadata": {
+        "page_count": 152,
+        "node_count": 240,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "chunk_size": 900,
+        "chunk_overlap": 160,
+        "vector_top_k": 120,
+        "bm25_top_k": 120,
+        "fusion_top_k": 120,
+        "rerank_top_k": 3,
+        "rrf_k": 60,
+        "finance_rerank": true,
+        "cross_encoder_model": null,
+        "cross_encoder_candidates": 60,
+        "answer_context_chunk_count": 3,
+        "answer_context_chars": 8537,
+        "answer_context_words": 1324
+      }
+    },
+    {
+      "step": 2,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "cc95d02f-7a44-441e-8aab-54254df56d58",
+      "metadata": {
+        "page": 86,
+        "bm25_rank": 13,
+        "vector_rank": 3,
+        "fusion_rank": 5,
+        "bm25_score": 5.864196300506592,
+        "vector_score": 0.45715523201247377,
+        "rrf_score": 0.029571646010002173,
+        "rerank_score": 92.5489187372749,
+        "finance_boost": 50.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "cash_flow_statement_title",
+          "operating_cash_flow_section",
+          "investing_cash_flow_section",
+          "financing_cash_flow_section"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "cash",
+          "dividends",
+          "flows"
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "c54cd87e-1fdb-4bc5-aab9-c1bc16d47d28",
+      "metadata": {
+        "page": 66,
+        "bm25_rank": 1,
+        "vector_rank": 12,
+        "fusion_rank": 3,
+        "bm25_score": 8.461711883544922,
+        "vector_score": 0.41346328212934463,
+        "rrf_score": 0.03028233151183971,
+        "rerank_score": 71.27096787547607,
+        "finance_boost": 24.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "cash_flow_statement_title"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "cash",
+          "details",
+          "flows",
+          "pay",
+          "primarily"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "63fd3122-41ca-42ad-b2cb-f0277c8762ec",
+      "metadata": {
+        "page": 93,
+        "bm25_rank": 14,
+        "vector_rank": 21,
+        "fusion_rank": 9,
+        "bm25_score": 5.386002540588379,
+        "vector_score": 0.3929933898157184,
+        "rrf_score": 0.025859192525859193,
+        "rerank_score": 64.81373798040465,
+        "finance_boost": 26.0,
+        "finance_boost_reasons": [
+          "cash_flow_statement_title",
+          "operating_cash_flow_section"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "cash",
+          "flows",
+          "pay"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": 2242,
+    "output": 268,
+    "total": 2510
+  },
+  "latency_ms": 18797,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\AMERICANWATERWORKS_2020_10K.pdf",
+    "adapter_mode": "llamaindex_bm25_vector_rrf_plus_rerank",
+    "llm_enabled": true,
+    "model": "deepseek/deepseek-v4-pro",
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "page_count": 152,
+    "node_count": 240,
+    "chunk_size": 900,
+    "chunk_overlap": 160,
+    "vector_top_k": 120,
+    "bm25_top_k": 120,
+    "fusion_top_k": 120,
+    "rerank_top_k": 3,
+    "rrf_k": 60,
+    "max_citations": 3,
+    "finance_rerank": true,
+    "cross_encoder_model": null,
+    "cross_encoder_candidates": 60,
+    "answer_context_chunk_count": 3,
+    "answer_context_chars": 8537,
+    "answer_context_words": 1324
+  }
+}

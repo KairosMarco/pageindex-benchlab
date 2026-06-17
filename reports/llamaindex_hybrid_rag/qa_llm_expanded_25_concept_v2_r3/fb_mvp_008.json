@@ -1,0 +1,221 @@
+{
+  "method": "llamaindex_hybrid_rag",
+  "question_id": "fb_mvp_008",
+  "question": "What is the FY2016 COGS for Microsoft? Please state answer in USD millions. Provide a response to the question by primarily using the statement of income.",
+  "answer": "The FY2016 total cost of revenue (COGS) for Microsoft is $32,780 million [PAGE 52].",
+  "citations": [
+    {
+      "document_id": "MICROSOFT_2016_10K",
+      "page": 52,
+      "section": null,
+      "text": "Table of Contents PART II Item 8 ITEM 8. FINANCIAL STATEMENTS AND SUPPLEMENTARY DATA INCOME STATEMENTS (In millions, except per share amounts) Year Ended June 30, 2016 2015 2014 Revenue: Product $ 61,502 $ 75,956 $ 72,948 Service and other 23,818 17,624 13,885 Total revenue 85,320 93,580 86,833 Cost of revenue: Product 17,880 21,410 16,681 Service and other 14,900 11,628 10,397 Total cost of revenue 32,780 33,038 27,078 Gross margin 52,540 60,542 59,755 Research and development 11,988 12,046 11,",
+      "metadata": {
+        "chunk_id": "dd5b8146-b625-4925-bc01-459f83e705cd",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5193633195293035,
+        "rerank_score": 80.9943969650035,
+        "matched_terms": [
+          "cost",
+          "income",
+          "millions",
+          "revenue",
+          "sales"
+        ],
+        "citation_source": "llm_answer"
+      }
+    },
+    {
+      "document_id": "MICROSOFT_2016_10K",
+      "page": 32,
+      "section": null,
+      "text": "mation and Geographic Data of the Notes to Financial Statements (Part II, Item 8 of this Form 10-K). SUMMARY RESULTS OF OPERATIONS (In millions, except percentages and per share amounts) 2016 2015 2014 Percentage Change 2016 Versus 2015 Percentage Change 2015 Versus 2014 Revenue $ 85,320 $ 93,580 $ 86,833 (9)% 8% Gross margin $ 52,540 $ 60,542 $ 59,755 (13)% 1% Operating income $ 20,182 $ 18,161 $ 27,759 11% (35)% Diluted earnings per share $ 2.10 $ 1.48 $ 2.63 42% (44)% Fiscal year 2016 compare",
+      "metadata": {
+        "chunk_id": "24a64de5-3beb-449a-9586-08402e1e50c8",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5454832834816717,
+        "rerank_score": 67.96637426900584,
+        "matched_terms": [
+          "cost",
+          "income",
+          "millions",
+          "operations",
+          "primarily",
+          "revenue",
+          "sales"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "MICROSOFT_2016_10K",
+      "page": 33,
+      "section": null,
+      "text": "Table of Contents PART II Item 7 Fiscal year 2015 compared with fiscal year 2014 Revenue increased $6.7 billion or 8%, primarily due to higher revenue from More Personal Computing and Intelligent Cloud. More Personal Computing revenue increased, primarily due to higher revenue from Devices, search advertising and Gaming, offset in part by a decline in Windows revenue. Intelligent Cloud revenue increased, primarily due to higher revenue from server products and cloud services. Revenue included an",
+      "metadata": {
+        "chunk_id": "935e55c6-03d1-4284-8c0b-ced43a6c328f",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5071988666996475,
+        "rerank_score": 66.1672502334267,
+        "matched_terms": [
+          "cost",
+          "income",
+          "millions",
+          "operations",
+          "primarily",
+          "revenue",
+          "sales"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "llamaindex_build_hybrid_index",
+      "target": "MICROSOFT_2016_10K",
+      "metadata": {
+        "page_count": 121,
+        "node_count": 155,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "chunk_size": 900,
+        "chunk_overlap": 160,
+        "vector_top_k": 120,
+        "bm25_top_k": 120,
+        "fusion_top_k": 120,
+        "rerank_top_k": 3,
+        "rrf_k": 60,
+        "finance_rerank": true,
+        "cross_encoder_model": null,
+        "cross_encoder_candidates": 60,
+        "answer_context_chunk_count": 3,
+        "answer_context_chars": 8192,
+        "answer_context_words": 1113
+      }
+    },
+    {
+      "step": 2,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "dd5b8146-b625-4925-bc01-459f83e705cd",
+      "metadata": {
+        "page": 52,
+        "bm25_rank": 71,
+        "vector_rank": 9,
+        "fusion_rank": 20,
+        "bm25_score": 1.8819457292556763,
+        "vector_score": 0.5193633195293035,
+        "rrf_score": 0.02212634140944795,
+        "rerank_score": 80.9943969650035,
+        "finance_boost": 42.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "income_statement_title",
+          "cost_of_revenue_line_item"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "cost",
+          "income",
+          "millions",
+          "revenue",
+          "sales"
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "24a64de5-3beb-449a-9586-08402e1e50c8",
+      "metadata": {
+        "page": 32,
+        "bm25_rank": 54,
+        "vector_rank": 4,
+        "fusion_rank": 9,
+        "bm25_score": 2.1176114082336426,
+        "vector_score": 0.5454832834816717,
+        "rrf_score": 0.024396929824561403,
+        "rerank_score": 67.96637426900584,
+        "finance_boost": 25.625,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "cost_of_revenue_line_item"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "cost",
+          "income",
+          "millions",
+          "operations",
+          "primarily",
+          "revenue",
+          "sales"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "935e55c6-03d1-4284-8c0b-ced43a6c328f",
+      "metadata": {
+        "page": 33,
+        "bm25_rank": 59,
+        "vector_rank": 12,
+        "fusion_rank": 19,
+        "bm25_score": 2.064194440841675,
+        "vector_score": 0.5071988666996475,
+        "rrf_score": 0.0222922502334267,
+        "rerank_score": 66.1672502334267,
+        "finance_boost": 26.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "cost_of_revenue_line_item"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "cost",
+          "income",
+          "millions",
+          "operations",
+          "primarily",
+          "revenue",
+          "sales"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": 2295,
+    "output": 210,
+    "total": 2505
+  },
+  "latency_ms": 14995,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\MICROSOFT_2016_10K.pdf",
+    "adapter_mode": "llamaindex_bm25_vector_rrf_plus_rerank",
+    "llm_enabled": true,
+    "model": "deepseek/deepseek-v4-pro",
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "page_count": 121,
+    "node_count": 155,
+    "chunk_size": 900,
+    "chunk_overlap": 160,
+    "vector_top_k": 120,
+    "bm25_top_k": 120,
+    "fusion_top_k": 120,
+    "rerank_top_k": 3,
+    "rrf_k": 60,
+    "max_citations": 3,
+    "finance_rerank": true,
+    "cross_encoder_model": null,
+    "cross_encoder_candidates": 60,
+    "answer_context_chunk_count": 3,
+    "answer_context_chars": 8192,
+    "answer_context_words": 1113
+  }
+}

@@ -108,7 +108,11 @@ Completed:
   - The first finance-aware LlamaIndex reranker dropped to evidence recall `0.880` for Vector and `0.840` for Hybrid.
   - The `concept_v2` label-free reranker signals restored evidence recall `1.000` for both Vector and Hybrid at `rerank_top_k=3`.
   - The `concept_v2` `rerank_top_k=3` runs use the smallest answer context among passing expanded retrieval variants.
-- These candidates still need expanded LLM answer generation and answer judging before benchmark conclusions are updated.
+- Expanded LLM answer generation and judging have now been run for the 25-question `concept_v2`, `rerank_top_k=3` LlamaIndex candidates:
+  - LlamaIndex Vector RAG: evidence recall `1.000`, citation precision `0.360`, answer accuracy `0.920`, average total tokens `2,543`, average latency `16,497 ms`.
+  - LlamaIndex Hybrid RAG: evidence recall `1.000`, citation precision `0.360`, answer accuracy `0.880`, average total tokens `2,553`, average latency `16,846 ms`.
+  - Mechanical artifact validation passed with `37 / 37` checks.
+  - The remaining answer issues are reasoning failures after successful evidence retrieval, especially `fb_exp_017` working-capital definition, `fb_exp_019` rounding strictness for Hybrid, and `fb_exp_020` capital-intensity interpretation.
 
 Current owner: project owner. PH is on standby for later task assignment.
 
@@ -275,8 +279,8 @@ A GPU may become useful later for local LLMs, large embedding jobs, or large rer
 
 ## Next Actions
 
-1. Run expanded LLM answer generation for the 25-question `concept_v2`, `rerank_top_k=3` LlamaIndex candidates.
-2. Evaluate expanded answers with the same LLM judge and evidence evaluator.
-3. Add per-method failure-case notes and cost estimates.
+1. Run the expanded Long-context LLM baseline on the same 25-question set.
+2. Add per-method failure-case notes and cost estimates.
+3. Decide whether to improve answer prompting for concept/reasoning questions or keep the failures as benchmark findings.
 4. Prepare a PageIndex upstream issue or PR using the benchmark findings.
-5. Add GraphRAG and HyperGraphRAG after the expanded baseline is stable.
+5. Add GraphRAG and HyperGraphRAG after the expanded baselines are stable.

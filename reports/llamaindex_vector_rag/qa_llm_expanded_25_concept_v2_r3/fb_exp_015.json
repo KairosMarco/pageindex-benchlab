@@ -1,0 +1,157 @@
+{
+  "method": "llamaindex_vector_rag",
+  "question_id": "fb_exp_015",
+  "question": "Were there any board member nominees who had substantially more votes against joining than the other nominees?",
+  "answer": "Yes, Richard A. Johnson had substantially more votes against (16,105,005) than any other nominee, whose votes against ranged from 294,935 to 6,074,467 [PAGE 2].",
+  "citations": [
+    {
+      "document_id": "FOOTLOCKER_2022_8K_dated-2022-05-20",
+      "page": 2,
+      "section": null,
+      "text": " of which are incorporated herein by reference. As of March 21, 2022, the Company’s record date for the Annual Meeting, there were a total of 96,089,997 shares of common stock, $0.01 par value per share (“Common Stock”), outstanding and entitled to vote at the Annual Meeting. At the Annual Meeting, 77,551,206 shares of Common Stock were represented in person or by proxy and, therefore, a quorum was present. Proposal 1. With respect to the proposal to elect ten nominees to the Board of Directors ",
+      "metadata": {
+        "chunk_id": "b84a202a-854d-4128-a545-7e834ce6d548",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.3080361186728037,
+        "rerank_score": 50.928611867280374,
+        "matched_terms": [
+          "against",
+          "board",
+          "nominees",
+          "there",
+          "votes",
+          "were"
+        ],
+        "citation_source": "llm_answer"
+      }
+    },
+    {
+      "document_id": "FOOTLOCKER_2022_8K_dated-2022-05-20",
+      "page": 3,
+      "section": null,
+      "text": "Item 8.01. Other Events. On May 18, 2022, in light of Matthew McKenna’s retirement, the Board designated Ms. Nicosia as the “audit committee financial expert.” In connection with this designation, the Board determined that Ms. Nicosia qualifies as an “audit committee financial expert,” as defined by the rules under the Securities Exchange Act of 1934, as amended (the “Exchange Act”), because of her relevant experience as president of an operating unit of a large multinational corporation. She ha",
+      "metadata": {
+        "chunk_id": "b9cb9e85-8425-44fd-b90c-1f3d454a08b6",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.27125005777673206,
+        "rerank_score": 35.925005777673206,
+        "matched_terms": [
+          "board",
+          "other",
+          "there",
+          "who"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "llamaindex_build_vector_index",
+      "target": "FOOTLOCKER_2022_8K_dated-2022-05-20",
+      "metadata": {
+        "page_count": 4,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "chunk_size": 900,
+        "chunk_overlap": 160,
+        "retrieve_top_k": 120,
+        "rerank_top_k": 3,
+        "finance_rerank": true,
+        "answer_context_chunk_count": 3,
+        "answer_context_chars": 4773,
+        "answer_context_words": 706
+      }
+    },
+    {
+      "step": 2,
+      "action": "llamaindex_retrieve_node",
+      "target": "b84a202a-854d-4128-a545-7e834ce6d548",
+      "metadata": {
+        "page": 2,
+        "retrieval_rank": 1,
+        "initial_rank": 1,
+        "vector_score": 0.3080361186728037,
+        "rerank_score": 50.928611867280374,
+        "finance_boost": 7.125,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "matched_terms": [
+          "against",
+          "board",
+          "nominees",
+          "there",
+          "votes",
+          "were"
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "action": "llamaindex_retrieve_node",
+      "target": "b9cb9e85-8425-44fd-b90c-1f3d454a08b6",
+      "metadata": {
+        "page": 3,
+        "retrieval_rank": 2,
+        "initial_rank": 2,
+        "vector_score": 0.27125005777673206,
+        "rerank_score": 35.925005777673206,
+        "finance_boost": 0.0,
+        "finance_boost_reasons": [],
+        "matched_terms": [
+          "board",
+          "other",
+          "there",
+          "who"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "llamaindex_retrieve_node",
+      "target": "9a099e66-598b-42e1-a83d-11a9875f8aec",
+      "metadata": {
+        "page": 2,
+        "retrieval_rank": 3,
+        "initial_rank": 3,
+        "vector_score": 0.21257146212072267,
+        "rerank_score": 30.85714621207227,
+        "finance_boost": 3.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "matched_terms": [
+          "against",
+          "votes",
+          "were"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": 1588,
+    "output": 360,
+    "total": 1948
+  },
+  "latency_ms": 12599,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\FOOTLOCKER_2022_8K_dated-2022-05-20.pdf",
+    "adapter_mode": "llamaindex_vector_retrieval",
+    "llm_enabled": true,
+    "model": "deepseek/deepseek-v4-pro",
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "page_count": 4,
+    "chunk_size": 900,
+    "chunk_overlap": 160,
+    "retrieve_top_k": 120,
+    "rerank_top_k": 3,
+    "max_citations": 3,
+    "finance_rerank": true,
+    "answer_context_chunk_count": 3,
+    "answer_context_chars": 4773,
+    "answer_context_words": 706
+  }
+}

@@ -724,15 +724,96 @@ Interpretation:
 - The improved reranker still uses only question text and candidate chunk text. It does not inspect FinanceBench gold evidence pages during retrieval.
 - Expanded LLM answer generation should use `concept_v2` with `rerank_top_k=3`, because it preserved retrieval recall with the smallest context.
 
+### Expanded LlamaIndex LLM Diagnostics
+
+Expanded answer generation has now been run for the validated `concept_v2`, `rerank_top_k=3` LlamaIndex candidates on:
+
+```text
+datasets/financebench/expanded_questions_25.jsonl
+```
+
+Model:
+
+```text
+deepseek/deepseek-v4-pro
+```
+
+Aggregate report:
+
+```text
+reports/llamaindex_expanded_llm_diagnostics.md
+reports/llamaindex_expanded_llm_diagnostics.json
+```
+
+Validation:
+
+```text
+reports/expanded_llm_validation_report.json
+status: pass
+checks: 37
+failed: 0
+```
+
+Expanded LLM results:
+
+```text
+LlamaIndex Vector RAG + finance concept_v2 rerank:
+questions: 25
+generation failures: 0
+evaluation failures: 0
+evidence recall: 1.000
+citation precision: 0.360
+LLM-judge answer accuracy: 0.920
+verdicts: 23 correct, 1 partial, 1 incorrect
+average total tokens: 2,543
+average context words: 1,138
+average latency: 16,497 ms
+
+LlamaIndex Hybrid RAG + finance concept_v2 rerank:
+questions: 25
+generation failures: 0
+evaluation failures: 0
+evidence recall: 1.000
+citation precision: 0.360
+LLM-judge answer accuracy: 0.880
+verdicts: 22 correct, 2 partial, 1 incorrect
+average total tokens: 2,553
+average context words: 1,160
+average latency: 16,846 ms
+```
+
+Generated artifacts:
+
+```text
+reports/llamaindex_vector_rag/qa_llm_expanded_25_concept_v2_r3/
+reports/llamaindex_vector_rag/qa_llm_expanded_25_concept_v2_r3_manifest.json
+reports/llamaindex_vector_rag/evidence_eval_qa_llm_expanded_25_concept_v2_r3.json
+reports/llamaindex_vector_rag/answer_eval_qa_llm_expanded_25_concept_v2_r3.json
+reports/llamaindex_hybrid_rag/qa_llm_expanded_25_concept_v2_r3/
+reports/llamaindex_hybrid_rag/qa_llm_expanded_25_concept_v2_r3_manifest.json
+reports/llamaindex_hybrid_rag/evidence_eval_qa_llm_expanded_25_concept_v2_r3.json
+reports/llamaindex_hybrid_rag/answer_eval_qa_llm_expanded_25_concept_v2_r3.json
+```
+
+Interpretation:
+
+- The expanded LLM run passed the mechanical artifact gate for both candidates.
+- Retrieval was not the limiting factor in the observed answer failures: both methods kept `1.000` page-level evidence recall.
+- The remaining failures are answer-generation or judge-strictness issues after successful evidence retrieval:
+  - `fb_exp_017`: Corning working capital. Both methods answered the direction correctly but used total current assets minus total current liabilities instead of the gold answer's operating-current-assets/liabilities definition.
+  - `fb_exp_019`: American Water Works dividends. Hybrid answered `$0.389 billion`; the judge marked this partial against the rounded gold answer `$0.40`.
+  - `fb_exp_020`: CVS capital intensity. Both methods retrieved the gold pages but concluded `No` by focusing on fixed assets / total assets, while the gold answer says `Yes` based on low ROA and the broader asset base including goodwill.
+- This strengthens the LlamaIndex baseline relative to the 12-question MVP, but it does not support broad PageIndex superiority claims.
+
 ## Next Stage 1 Work
 
 The next work should strengthen the benchmark beyond the dependency-light MVP baselines:
 
-1. Run expanded LLM answer generation for `concept_v2`, `rerank_top_k=3`.
-2. Evaluate expanded evidence and answers with the same Stage 1 evaluators.
-3. Add per-method failure-case notes and cost estimates.
+1. Run the expanded Long-context LLM baseline on the same 25-question set.
+2. Add per-method failure-case notes and cost estimates.
+3. Decide whether to improve answer prompting for concept/reasoning questions or preserve the current failures as benchmark evidence.
 4. Prepare a PageIndex upstream issue or PR using the benchmark findings.
-5. Add GraphRAG and HyperGraphRAG after the expanded baseline is stable.
+5. Add GraphRAG and HyperGraphRAG after the expanded baselines are stable.
 
 ## Stage 1 Exit Criteria
 
@@ -754,4 +835,4 @@ The first 11 structures are now available. The JSON parsing patch made PageIndex
 Handled empty responses and noisy JSON output
 ```
 
-Next, run expanded LLM answer generation for the validated `concept_v2` LlamaIndex candidates.
+Next, run the expanded Long-context LLM baseline and compare answer quality, token cost, and failure cases against the expanded LlamaIndex candidates.
