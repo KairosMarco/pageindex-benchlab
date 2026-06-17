@@ -1,0 +1,215 @@
+{
+  "method": "pageindex_tree_qa",
+  "question_id": "fb_mvp_007",
+  "question": "Using only the information within the balance sheet, how much total assets did Costco have at the end of FY2021? Answer in USD millions.",
+  "answer": "Selected 5 PageIndex nodes and 3 scored pages for answering.",
+  "citations": [
+    {
+      "document_id": "COSTCO_2021_10K",
+      "page": 38,
+      "section": "COSTCO WHOLESALE CORPORATION CONSOLIDATED BALANCE SHEETS",
+      "text": "Table of Contents COSTCO WHOLESALE CORPORATION CONSOLIDATED BALANCE SHEETS (amounts in millions, except par value and share data) August 29, 2021 August 30, 2020 ASSETS CURRENT ASSETS Cash and cash equivalents $ 11,258 $ 12,277 Short-term investments 917 1,028 Receivables, net 1,803 1,550 Merchandise inventories 14,215 12,242 Other current assets 1,312 1,023 Total current assets 29,505 28,120 OTHER ASSETS Property and equipment, net 23,492 21,807 Operating lease right-of-use assets 2,890 2,788 O",
+      "metadata": {
+        "score": 41,
+        "matched_page_terms": [
+          "assets",
+          "balance",
+          "equity",
+          "liabilities",
+          "millions",
+          "sheets",
+          "total"
+        ],
+        "matched_section_terms": [
+          "balance",
+          "sheets"
+        ],
+        "node_id": "0027",
+        "start_index": 38,
+        "end_index": 39
+      }
+    },
+    {
+      "document_id": "COSTCO_2021_10K",
+      "page": 51,
+      "section": "Assets and Liabilities Measured at Fair Value on a Recurring Basis",
+      "text": "Table of Contents Note 4—Fair Value Measurement Assets and Liabilities Measured at Fair Value on a Recurring Basis The table below presents information regarding the Company’s financial assets and financial liabilities that are measured at fair value on a recurring basis and indicate the level within the hierarchy reflecting the valuation techniques utilized to determine such fair value. Level 2 2021 2020 Investment in government and agency securities $ 393 $ 508 Forward foreign-exchange contrac",
+      "metadata": {
+        "score": 38,
+        "matched_page_terms": [
+          "assets",
+          "balance",
+          "did",
+          "information",
+          "liabilities",
+          "sheets",
+          "total"
+        ],
+        "matched_section_terms": [
+          "assets",
+          "liabilities"
+        ],
+        "node_id": "0060",
+        "start_index": 51,
+        "end_index": 51
+      }
+    },
+    {
+      "document_id": "COSTCO_2021_10K",
+      "page": 45,
+      "section": "Goodwill and Acquired Intangible Assets",
+      "text": "any determines at inception whether a contract is or contains a lease. The Company initially records right-of-use (ROU) assets and lease obligations for its finance and operating leases based on the discounted future minimum lease payments over the term. The lease term is defined as the noncancelable period of the lease plus any options to extend when it is reasonably certain that the Company will exercise the option. As the rate implicit in the Company's leases is not easily determinable, the p",
+      "metadata": {
+        "score": 33,
+        "matched_page_terms": [
+          "assets",
+          "balance",
+          "liabilities",
+          "sheet",
+          "sheets",
+          "total"
+        ],
+        "matched_section_terms": [
+          "assets"
+        ],
+        "node_id": "0043",
+        "start_index": 45,
+        "end_index": 46
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "select_tree_node",
+      "target": "COSTCO WHOLESALE CORPORATION CONSOLIDATED BALANCE SHEETS",
+      "metadata": {
+        "node_id": "0027",
+        "start_index": 38,
+        "end_index": 39
+      }
+    },
+    {
+      "step": 2,
+      "action": "select_tree_node",
+      "target": "Assets and Liabilities Measured at Fair Value on a Recurring Basis",
+      "metadata": {
+        "node_id": "0060",
+        "start_index": 51,
+        "end_index": 51
+      }
+    },
+    {
+      "step": 3,
+      "action": "select_tree_node",
+      "target": "Assets and Liabilities Measured at Fair Value on a Nonrecurring Basis",
+      "metadata": {
+        "node_id": "0061",
+        "start_index": 51,
+        "end_index": 51
+      }
+    },
+    {
+      "step": 4,
+      "action": "select_tree_node",
+      "target": "Item 5. Market for Registrant’s Common Equity, Related Stockholder Matters and Issuer Purchases of Equity Securities",
+      "metadata": {
+        "node_id": "0009",
+        "start_index": 20,
+        "end_index": 21
+      }
+    },
+    {
+      "step": 5,
+      "action": "select_tree_node",
+      "target": "Evaluation of workers' compensation self-insurance liabilities",
+      "metadata": {
+        "node_id": "0020",
+        "start_index": 34,
+        "end_index": 35
+      }
+    },
+    {
+      "step": 6,
+      "action": "score_page",
+      "target": "page 38",
+      "metadata": {
+        "score": 41,
+        "section": "COSTCO WHOLESALE CORPORATION CONSOLIDATED BALANCE SHEETS",
+        "matched_page_terms": [
+          "assets",
+          "balance",
+          "equity",
+          "liabilities",
+          "millions",
+          "sheets",
+          "total"
+        ],
+        "matched_section_terms": [
+          "balance",
+          "sheets"
+        ]
+      }
+    },
+    {
+      "step": 7,
+      "action": "score_page",
+      "target": "page 51",
+      "metadata": {
+        "score": 38,
+        "section": "Assets and Liabilities Measured at Fair Value on a Recurring Basis",
+        "matched_page_terms": [
+          "assets",
+          "balance",
+          "did",
+          "information",
+          "liabilities",
+          "sheets",
+          "total"
+        ],
+        "matched_section_terms": [
+          "assets",
+          "liabilities"
+        ]
+      }
+    },
+    {
+      "step": 8,
+      "action": "score_page",
+      "target": "page 45",
+      "metadata": {
+        "score": 33,
+        "section": "Goodwill and Acquired Intangible Assets",
+        "matched_page_terms": [
+          "assets",
+          "balance",
+          "liabilities",
+          "sheet",
+          "sheets",
+          "total"
+        ],
+        "matched_section_terms": [
+          "assets"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": null,
+    "output": null,
+    "total": null
+  },
+  "latency_ms": 113,
+  "metadata": {
+    "structure_path": "reports\\pageindex\\structures\\COSTCO_2021_10K_structure.json",
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\COSTCO_2021_10K.pdf",
+    "selected_pages_one_indexed": [
+      38,
+      51,
+      45
+    ],
+    "max_pages": 3,
+    "adapter_mode": "tree_page_scoring",
+    "llm_enabled": false
+  }
+}

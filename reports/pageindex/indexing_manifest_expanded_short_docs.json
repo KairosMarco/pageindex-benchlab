@@ -1,0 +1,54 @@
+[
+  {
+    "doc_name": "FOOTLOCKER_2022_8K_dated-2022-05-20",
+    "status": "generated",
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\FOOTLOCKER_2022_8K_dated-2022-05-20.pdf",
+    "structure_path": "reports\\pageindex\\structures\\FOOTLOCKER_2022_8K_dated-2022-05-20_structure.json",
+    "size_bytes": 1544,
+    "latency_ms": 107004,
+    "command": [
+      "D:\\pageindex-demo\\PageIndex\\.venv\\Scripts\\python.exe",
+      "run_pageindex.py",
+      "--pdf_path",
+      "D:\\pageindex-benchlab\\datasets\\raw\\financebench\\pdfs\\FOOTLOCKER_2022_8K_dated-2022-05-20.pdf",
+      "--if-add-node-summary",
+      "no",
+      "--if-add-doc-description",
+      "no",
+      "--if-add-node-text",
+      "no",
+      "--toc-check-pages",
+      "5",
+      "--max-pages-per-node",
+      "8",
+      "--model",
+      "deepseek/deepseek-v4-pro"
+    ]
+  },
+  {
+    "doc_name": "ULTABEAUTY_2023Q4_EARNINGS",
+    "status": "generated",
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\ULTABEAUTY_2023Q4_EARNINGS.pdf",
+    "structure_path": "reports\\pageindex\\structures\\ULTABEAUTY_2023Q4_EARNINGS_structure.json",
+    "size_bytes": 2800,
+    "latency_ms": 178841,
+    "command": [
+      "D:\\pageindex-demo\\PageIndex\\.venv\\Scripts\\python.exe",
+      "run_pageindex.py",
+      "--pdf_path",
+      "D:\\pageindex-benchlab\\datasets\\raw\\financebench\\pdfs\\ULTABEAUTY_2023Q4_EARNINGS.pdf",
+      "--if-add-node-summary",
+      "no",
+      "--if-add-doc-description",
+      "no",
+      "--if-add-node-text",
+      "no",
+      "--toc-check-pages",
+      "5",
+      "--max-pages-per-node",
+      "8",
+      "--model",
+      "deepseek/deepseek-v4-pro"
+    ]
+  }
+]

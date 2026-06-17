@@ -212,8 +212,8 @@ def render_markdown(payload: dict[str, Any]) -> str:
             "## Interpretation",
             "",
             "- PageIndex expanded 25-question QA is not ready for a full run until the missing structures are indexed.",
-            "- The current 11 covered documents come from the 12-question MVP run. They are useful for smoke tests but do not cover the full expanded set.",
-            "- The next PageIndex benchmark step is indexing the 13 missing expanded documents, then running retrieval-only QA and evidence evaluation before LLM answer generation.",
+            f"- The current `{summary['ready_doc_count']}` covered documents support `{summary['runnable_question_count']}` runnable questions, but do not cover the full expanded set.",
+            f"- The next PageIndex benchmark step is indexing the `{summary['missing_structure_count']}` missing expanded documents, then rerunning retrieval-only QA and evidence evaluation before LLM answer generation.",
         ]
     )
     return "\n".join(lines).rstrip() + "\n"

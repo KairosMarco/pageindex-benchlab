@@ -17,6 +17,21 @@ DEFAULT_OUTPUT_DIR = ROOT / "reports" / "pageindex" / "structures"
 DEFAULT_MANIFEST = ROOT / "reports" / "pageindex" / "indexing_manifest.json"
 
 
+def resolve_from_root(path: Path) -> Path:
+    """Resolve relative CLI paths from the benchmark repository root."""
+
+    return path if path.is_absolute() else ROOT / path
+
+
+def rel(path: Path) -> str:
+    """Return a repository-relative path for logs when possible."""
+
+    try:
+        return str(path.resolve().relative_to(ROOT))
+    except ValueError:
+        return str(path)
+
+
 def load_jsonl(path: Path) -> list[dict]:
     with path.open(encoding="utf-8") as f:
         return [json.loads(line) for line in f if line.strip()]
@@ -66,6 +81,10 @@ def main() -> None:
     parser.add_argument("--manifest", type=Path, default=DEFAULT_MANIFEST)
     parser.add_argument("--dry-run", action="store_true")
     args = parser.parse_args()
+    args.questions = resolve_from_root(args.questions)
+    args.pdf_dir = resolve_from_root(args.pdf_dir)
+    args.output_dir = resolve_from_root(args.output_dir)
+    args.manifest = resolve_from_root(args.manifest)
 
     if not args.pageindex_repo.exists():
         raise SystemExit(f"PageIndex repo not found: {args.pageindex_repo}")
@@ -95,7 +114,7 @@ def main() -> None:
                 {
                     "doc_name": doc_name,
                     "status": "exists",
-                    "structure_path": str(final_output.relative_to(ROOT)),
+                    "structure_path": rel(final_output),
                     "size_bytes": final_output.stat().st_size,
                 }
             )
@@ -138,7 +157,7 @@ def main() -> None:
                 {
                     "doc_name": doc_name,
                     "status": "dry_run",
-                    "pdf_path": str(pdf_path.relative_to(ROOT)),
+                    "pdf_path": rel(pdf_path),
                     "command": command,
                 }
             )
@@ -155,8 +174,8 @@ def main() -> None:
                 {
                     "doc_name": doc_name,
                     "status": "generated",
-                    "pdf_path": str(pdf_path.relative_to(ROOT)),
-                    "structure_path": str(final_output.relative_to(ROOT)),
+                    "pdf_path": rel(pdf_path),
+                    "structure_path": rel(final_output),
                     "size_bytes": final_output.stat().st_size,
                     "latency_ms": int((time.perf_counter() - started) * 1000),
                     "command": command,
@@ -167,7 +186,7 @@ def main() -> None:
                 {
                     "doc_name": doc_name,
                     "status": "failed",
-                    "pdf_path": str(pdf_path.relative_to(ROOT)),
+                    "pdf_path": rel(pdf_path),
                     "latency_ms": int((time.perf_counter() - started) * 1000),
                     "error": str(exc),
                     "command": command,

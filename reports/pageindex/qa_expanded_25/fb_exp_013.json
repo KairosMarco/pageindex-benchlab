@@ -1,0 +1,203 @@
+{
+  "method": "pageindex_tree_qa",
+  "question_id": "fb_exp_013",
+  "question": "What is Adobe's year-over-year change in unadjusted operating income from FY2015 to FY2016 (in units of percents and round to one decimal place)? Give a solution to the question by using the income statement.",
+  "answer": "Selected 5 PageIndex nodes and 3 scored pages for answering.",
+  "citations": [
+    {
+      "document_id": "ADOBE_2016_10K",
+      "page": 62,
+      "section": "ADOBE SYSTEMS INCORPORATED CONSOLIDATED STATEMENTS OF INCOME",
+      "text": "Table of Contents 62 ADOBE SYSTEMS INCORPORATED CONSOLIDATED STATEMENTS OF INCOME (In thousands, except per share data) Years Ended December 2, 2016 November 27, 2015 November 28, 2014 Revenue: Subscription $ 4,584,833 $ 3,223,904 $ 2,076,584 Product 800,498 1,125,146 1,627,803 Services and support 469,099 446,461 442,678 Total revenue 5,854,430 4,795,511 4,147,065 Cost of revenue: Subscription 461,860 409,194 335,432 Product 68,917 90,035 97,099 Services and support 289,131 245,088 189,549 Tota",
+      "metadata": {
+        "score": 31,
+        "matched_page_terms": [
+          "cost",
+          "income",
+          "operating",
+          "revenue",
+          "sales"
+        ],
+        "matched_section_terms": [
+          "income"
+        ],
+        "node_id": "0016",
+        "start_index": 62,
+        "end_index": 63
+      }
+    },
+    {
+      "document_id": "ADOBE_2016_10K",
+      "page": 47,
+      "section": "Item 7. Management's Discussion and Analysis of Financial Condition and Results of Operations",
+      "text": "Table of Contents 47 Cost of Revenue (dollars in millions) Fiscal 2016 Fiscal 2015 Fiscal 2014 % Change 2016-2015 % Change 2015-2014 Subscription $ 461.9 $ 409.2 $ 335.5 13 % 22 % Percentage of total revenue 8% 9% 8% Product 68.9 90.0 97.1 (23)% (7)% Percentage of total revenue 1% 2% 2% Services and support 289.1 245.1 189.5 18 % 29 % Percentage of total revenue 5% 5% 5% Total cost of revenue $ 819.9 $ 744.3 $ 622.1 10 % 20 % Subscription Cost of subscription revenue consists of third-party roya",
+      "metadata": {
+        "score": 28,
+        "matched_page_terms": [
+          "change",
+          "cost",
+          "operating",
+          "operations",
+          "revenue"
+        ],
+        "matched_section_terms": [
+          "operations"
+        ],
+        "node_id": "0011",
+        "start_index": 37,
+        "end_index": 57
+      }
+    },
+    {
+      "document_id": "ADOBE_2016_10K",
+      "page": 42,
+      "section": "Item 7. Management's Discussion and Analysis of Financial Condition and Results of Operations",
+      "text": "r recent financial results reflect the success of these investments. In fiscal 2016, we achieved record Marketing Cloud revenue of $1.63 billion, which represents 20% year-over-year revenue growth. In December 2016, we acquired TubeMogul and we will integrate TubeMogul in our Digital Marketing business in the first quarter of fiscal 2017. We expect that the addition of TubeMogul and sustained demand across our portfolio of Marketing Cloud solutions will drive revenue growth in future years. Fina",
+      "metadata": {
+        "score": 23,
+        "matched_page_terms": [
+          "change",
+          "cost",
+          "income",
+          "operating",
+          "operations",
+          "revenue"
+        ],
+        "matched_section_terms": [
+          "operations"
+        ],
+        "node_id": "0011",
+        "start_index": 37,
+        "end_index": 57
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "select_tree_node",
+      "target": "NOTE 16. NON-OPERATING INCOME (EXPENSE)",
+      "metadata": {
+        "node_id": "0036",
+        "start_index": 98,
+        "end_index": 99
+      }
+    },
+    {
+      "step": 2,
+      "action": "select_tree_node",
+      "target": "Item 7. Management's Discussion and Analysis of Financial Condition and Results of Operations",
+      "metadata": {
+        "node_id": "0011",
+        "start_index": 37,
+        "end_index": 57
+      }
+    },
+    {
+      "step": 3,
+      "action": "select_tree_node",
+      "target": "ADOBE SYSTEMS INCORPORATED CONSOLIDATED STATEMENTS OF INCOME",
+      "metadata": {
+        "node_id": "0016",
+        "start_index": 62,
+        "end_index": 63
+      }
+    },
+    {
+      "step": 4,
+      "action": "select_tree_node",
+      "target": "ADOBE SYSTEMS INCORPORATED CONSOLIDATED STATEMENTS OF COMPREHENSIVE INCOME",
+      "metadata": {
+        "node_id": "0017",
+        "start_index": 63,
+        "end_index": 64
+      }
+    },
+    {
+      "step": 5,
+      "action": "select_tree_node",
+      "target": "NOTE 9. INCOME TAXES",
+      "metadata": {
+        "node_id": "0029",
+        "start_index": 85,
+        "end_index": 87
+      }
+    },
+    {
+      "step": 6,
+      "action": "score_page",
+      "target": "page 62",
+      "metadata": {
+        "score": 31,
+        "section": "ADOBE SYSTEMS INCORPORATED CONSOLIDATED STATEMENTS OF INCOME",
+        "matched_page_terms": [
+          "cost",
+          "income",
+          "operating",
+          "revenue",
+          "sales"
+        ],
+        "matched_section_terms": [
+          "income"
+        ]
+      }
+    },
+    {
+      "step": 7,
+      "action": "score_page",
+      "target": "page 47",
+      "metadata": {
+        "score": 28,
+        "section": "Item 7. Management's Discussion and Analysis of Financial Condition and Results of Operations",
+        "matched_page_terms": [
+          "change",
+          "cost",
+          "operating",
+          "operations",
+          "revenue"
+        ],
+        "matched_section_terms": [
+          "operations"
+        ]
+      }
+    },
+    {
+      "step": 8,
+      "action": "score_page",
+      "target": "page 42",
+      "metadata": {
+        "score": 23,
+        "section": "Item 7. Management's Discussion and Analysis of Financial Condition and Results of Operations",
+        "matched_page_terms": [
+          "change",
+          "cost",
+          "income",
+          "operating",
+          "operations",
+          "revenue"
+        ],
+        "matched_section_terms": [
+          "operations"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": null,
+    "output": null,
+    "total": null
+  },
+  "latency_ms": 179,
+  "metadata": {
+    "structure_path": "reports\\pageindex\\structures\\ADOBE_2016_10K_structure.json",
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\ADOBE_2016_10K.pdf",
+    "selected_pages_one_indexed": [
+      62,
+      47,
+      42
+    ],
+    "max_pages": 3,
+    "adapter_mode": "tree_page_scoring",
+    "llm_enabled": false
+  }
+}

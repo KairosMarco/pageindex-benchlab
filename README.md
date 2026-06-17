@@ -131,7 +131,11 @@ Completed:
 - PageIndex expanded-readiness tracking now exists:
   - `reports/pageindex/expanded_readiness.md`
   - `reports/pageindex/expanded_readiness.json`
-  - Current expanded PageIndex coverage is `12 / 25` runnable questions because `13` PageIndex structure files still need indexing.
+  - Current expanded PageIndex coverage is `20 / 25` runnable questions because `5` PageIndex structure files still need indexing.
+- PageIndex partial expanded retrieval-only QA now exists:
+  - `reports/pageindex/expanded_partial_summary.md`
+  - `reports/pageindex/evidence_eval_qa_expanded_25.json`
+  - Current partial PageIndex expanded result: `20` generated QA outputs, average evidence recall `0.850`, average citation precision `0.283`.
 - PageIndex upstream contribution drafts now exist:
   - `docs/upstream-pageindex-benchmark-issue.md`
   - `docs/upstream-patches/pageindex-json-resilience-pr.md`
@@ -143,6 +147,7 @@ See:
 - [Stage 1 status](docs/stage-1-status.md)
 - [Benchmark schema](docs/schema.md)
 - [PageIndex expanded readiness](reports/pageindex/expanded_readiness.md)
+- [PageIndex expanded partial summary](reports/pageindex/expanded_partial_summary.md)
 - [PageIndex upstream benchmark issue draft](docs/upstream-pageindex-benchmark-issue.md)
 
 ## Project Structure
@@ -304,6 +309,6 @@ A GPU may become useful later for local LLMs, large embedding jobs, or large rer
 ## Next Actions
 
 1. Use the PageIndex upstream issue and PR drafts as the first contribution candidates.
-2. Index the 13 missing PageIndex structures listed in `reports/pageindex/expanded_readiness.md`.
-3. Start PageIndex expanded retrieval-only QA after all expanded structures exist.
+2. Index the 5 missing PageIndex structures listed in `reports/pageindex/expanded_readiness.md`.
+3. Rerun PageIndex expanded retrieval-only QA and evidence evaluation after all expanded structures exist.
 4. Add GraphRAG and HyperGraphRAG after the expanded baselines are stable.

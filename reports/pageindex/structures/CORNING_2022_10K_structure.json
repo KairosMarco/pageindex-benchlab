@@ -1,0 +1,1089 @@
+{
+  "doc_name": "CORNING_2022_10K.pdf",
+  "structure": [
+    {
+      "title": "Preface",
+      "node_id": "0000",
+      "start_index": 1,
+      "end_index": 2
+    },
+    {
+      "title": "PART I",
+      "node_id": "0001",
+      "start_index": 2,
+      "end_index": 2,
+      "nodes": [
+        {
+          "title": "Item 1. Business",
+          "node_id": "0002",
+          "start_index": 2,
+          "end_index": 2,
+          "nodes": [
+            {
+              "title": "General",
+              "node_id": "0003",
+              "start_index": 2,
+              "end_index": 2
+            },
+            {
+              "title": "Optical Communications Segment",
+              "node_id": "0004",
+              "start_index": 2,
+              "end_index": 3
+            },
+            {
+              "title": "Display Technologies Segment",
+              "node_id": "0005",
+              "start_index": 3,
+              "end_index": 4
+            },
+            {
+              "title": "Specialty Materials Segment",
+              "node_id": "0006",
+              "start_index": 4,
+              "end_index": 5
+            },
+            {
+              "title": "Environmental Technologies Segment",
+              "node_id": "0007",
+              "start_index": 5,
+              "end_index": 5
+            },
+            {
+              "title": "Life Sciences Segment",
+              "node_id": "0008",
+              "start_index": 5,
+              "end_index": 5
+            },
+            {
+              "title": "Hemlock and Emerging Growth Businesses",
+              "node_id": "0009",
+              "start_index": 5,
+              "end_index": 6
+            },
+            {
+              "title": "Competition",
+              "node_id": "0010",
+              "start_index": 6,
+              "end_index": 6,
+              "nodes": [
+                {
+                  "title": "Optical Communications Segment",
+                  "node_id": "0011",
+                  "start_index": 6,
+                  "end_index": 6
+                },
+                {
+                  "title": "Display Technologies Segment",
+                  "node_id": "0012",
+                  "start_index": 6,
+                  "end_index": 6
+                },
+                {
+                  "title": "Specialty Materials Segment",
+                  "node_id": "0013",
+                  "start_index": 6,
+                  "end_index": 6
+                },
+                {
+                  "title": "Environmental Technologies Segment",
+                  "node_id": "0014",
+                  "start_index": 6,
+                  "end_index": 6
+                },
+                {
+                  "title": "Life Sciences Segment",
+                  "node_id": "0015",
+                  "start_index": 6,
+                  "end_index": 7
+                }
+              ]
+            },
+            {
+              "title": "Raw Materials",
+              "node_id": "0016",
+              "start_index": 7,
+              "end_index": 7
+            },
+            {
+              "title": "Patents and Trademarks",
+              "node_id": "0017",
+              "start_index": 7,
+              "end_index": 8
+            },
+            {
+              "title": "Protection of the Environment",
+              "node_id": "0018",
+              "start_index": 8,
+              "end_index": 8
+            },
+            {
+              "title": "Human Capital Management Overview",
+              "node_id": "0019",
+              "start_index": 8,
+              "end_index": 8,
+              "nodes": [
+                {
+                  "title": "Values",
+                  "node_id": "0020",
+                  "start_index": 8,
+                  "end_index": 8
+                },
+                {
+                  "title": "Diversity, Equity and Inclusion",
+                  "node_id": "0021",
+                  "start_index": 8,
+                  "end_index": 9
+                },
+                {
+                  "title": "Talent Management",
+                  "node_id": "0022",
+                  "start_index": 9,
+                  "end_index": 10
+                }
+              ]
+            },
+            {
+              "title": "Executive Officers of the Registrant",
+              "node_id": "0023",
+              "start_index": 10,
+              "end_index": 12
+            },
+            {
+              "title": "Document Availability",
+              "node_id": "0024",
+              "start_index": 12,
+              "end_index": 12
+            },
+            {
+              "title": "Other",
+              "node_id": "0025",
+              "start_index": 12,
+              "end_index": 13
+            }
+          ]
+        },
+        {
+          "title": "Item 1A. Risk Factors",
+          "node_id": "0026",
+          "start_index": 13,
+          "end_index": 13,
+          "nodes": [
+            {
+              "title": "Risks Related to Our Business",
+              "node_id": "0027",
+              "start_index": 13,
+              "end_index": 17
+            },
+            {
+              "title": "General Risk Factors",
+              "node_id": "0028",
+              "start_index": 17,
+              "end_index": 20
+            }
+          ]
+        },
+        {
+          "title": "Item 1B. Unresolved Staff Comments",
+          "node_id": "0029",
+          "start_index": 20,
+          "end_index": 20
+        },
+        {
+          "title": "Item 2. Properties",
+          "node_id": "0030",
+          "start_index": 20,
+          "end_index": 20
+        },
+        {
+          "title": "Item 3. Legal Proceedings",
+          "node_id": "0031",
+          "start_index": 20,
+          "end_index": 20,
+          "nodes": [
+            {
+              "title": "Environmental Litigation",
+              "node_id": "0032",
+              "start_index": 20,
+              "end_index": 20
+            }
+          ]
+        },
+        {
+          "title": "Item 4. Mine Safety Disclosure",
+          "node_id": "0033",
+          "start_index": 20,
+          "end_index": 21
+        }
+      ]
+    },
+    {
+      "title": "PART II",
+      "node_id": "0034",
+      "start_index": 21,
+      "end_index": 21,
+      "nodes": [
+        {
+          "title": "Item 5. Market for Registrant\u2019s Common Equity, Related Shareholder Matters and Issuer Purchases of Equity Securities",
+          "node_id": "0035",
+          "start_index": 21,
+          "end_index": 21,
+          "nodes": [
+            {
+              "title": "Performance Graph",
+              "node_id": "0036",
+              "start_index": 21,
+              "end_index": 22
+            }
+          ]
+        },
+        {
+          "title": "Item 6. [Reserved]",
+          "node_id": "0037",
+          "start_index": 22,
+          "end_index": 23
+        },
+        {
+          "title": "Item 7. Management\u2019s Discussion and Analysis of Financial Condition and Results of Operations",
+          "node_id": "0038",
+          "start_index": 23,
+          "end_index": 23,
+          "nodes": [
+            {
+              "title": "OVERVIEW",
+              "node_id": "0039",
+              "start_index": 23,
+              "end_index": 24,
+              "nodes": [
+                {
+                  "title": "2022 Results",
+                  "node_id": "0040",
+                  "start_index": 24,
+                  "end_index": 24
+                },
+                {
+                  "title": "2023 Corporate Outlook",
+                  "node_id": "0041",
+                  "start_index": 24,
+                  "end_index": 24
+                }
+              ]
+            },
+            {
+              "title": "RESULTS OF OPERATIONS",
+              "node_id": "0042",
+              "start_index": 24,
+              "end_index": 25,
+              "nodes": [
+                {
+                  "title": "Net Sales",
+                  "node_id": "0043",
+                  "start_index": 25,
+                  "end_index": 25
+                },
+                {
+                  "title": "Cost of Sales / Gross Margin",
+                  "node_id": "0044",
+                  "start_index": 25,
+                  "end_index": 25
+                },
+                {
+                  "title": "Selling, General and Administrative Expenses",
+                  "node_id": "0045",
+                  "start_index": 25,
+                  "end_index": 25
+                },
+                {
+                  "title": "Research, Development and Engineering Expenses",
+                  "node_id": "0046",
+                  "start_index": 25,
+                  "end_index": 26
+                },
+                {
+                  "title": "Translated earnings contract gain, net",
+                  "node_id": "0047",
+                  "start_index": 26,
+                  "end_index": 26
+                },
+                {
+                  "title": "Income Before Income Taxes",
+                  "node_id": "0048",
+                  "start_index": 26,
+                  "end_index": 26
+                },
+                {
+                  "title": "Provision for Income Taxes",
+                  "node_id": "0049",
+                  "start_index": 26,
+                  "end_index": 27
+                },
+                {
+                  "title": "Net Income Attributable to Corning Incorporated",
+                  "node_id": "0050",
+                  "start_index": 27,
+                  "end_index": 27
+                },
+                {
+                  "title": "Comprehensive Income attributable to Corning Incorporated",
+                  "node_id": "0051",
+                  "start_index": 27,
+                  "end_index": 28
+                }
+              ]
+            },
+            {
+              "title": "SEGMENT ANALYSIS",
+              "node_id": "0052",
+              "start_index": 28,
+              "end_index": 28,
+              "nodes": [
+                {
+                  "title": "Optical Communications",
+                  "node_id": "0053",
+                  "start_index": 28,
+                  "end_index": 28
+                },
+                {
+                  "title": "Display Technologies",
+                  "node_id": "0054",
+                  "start_index": 28,
+                  "end_index": 28
+                },
+                {
+                  "title": "Specialty Materials",
+                  "node_id": "0055",
+                  "start_index": 28,
+                  "end_index": 28
+                },
+                {
+                  "title": "Environmental Technologies",
+                  "node_id": "0056",
+                  "start_index": 28,
+                  "end_index": 28
+                },
+                {
+                  "title": "Life Sciences",
+                  "node_id": "0057",
+                  "start_index": 28,
+                  "end_index": 28
+                },
+                {
+                  "title": "Hemlock and Emerging Growth Businesses",
+                  "node_id": "0058",
+                  "start_index": 28,
+                  "end_index": 30
+                }
+              ]
+            },
+            {
+              "title": "CORE PERFORMANCE MEASURES",
+              "node_id": "0059",
+              "start_index": 30,
+              "end_index": 30,
+              "nodes": [
+                {
+                  "title": "RESULTS OF OPERATIONS \u2013 CORE PERFORMANCE MEASURES",
+                  "node_id": "0060",
+                  "start_index": 30,
+                  "end_index": 30,
+                  "nodes": [
+                    {
+                      "title": "Core Net Sales",
+                      "node_id": "0061",
+                      "start_index": 30,
+                      "end_index": 30
+                    },
+                    {
+                      "title": "Core Net Income",
+                      "node_id": "0062",
+                      "start_index": 30,
+                      "end_index": 31
+                    },
+                    {
+                      "title": "Core Earnings per Common Share",
+                      "node_id": "0063",
+                      "start_index": 31,
+                      "end_index": 31
+                    }
+                  ]
+                },
+                {
+                  "title": "RECONCILIATION OF NON-GAAP MEASURES",
+                  "node_id": "0064",
+                  "start_index": 31,
+                  "end_index": 33,
+                  "nodes": [
+                    {
+                      "title": "Items Excluded from GAAP Measures",
+                      "node_id": "0065",
+                      "start_index": 33,
+                      "end_index": 34
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "title": "LIQUIDITY AND CAPITAL RESOURCES",
+              "node_id": "0066",
+              "start_index": 34,
+              "end_index": 34,
+              "nodes": [
+                {
+                  "title": "Key Balance Sheet Data",
+                  "node_id": "0067",
+                  "start_index": 34,
+                  "end_index": 35
+                },
+                {
+                  "title": "Cash Flows",
+                  "node_id": "0068",
+                  "start_index": 35,
+                  "end_index": 35
+                },
+                {
+                  "title": "Sources of Liquidity",
+                  "node_id": "0069",
+                  "start_index": 35,
+                  "end_index": 35
+                },
+                {
+                  "title": "Cash and Cash Equivalents",
+                  "node_id": "0070",
+                  "start_index": 35,
+                  "end_index": 36
+                },
+                {
+                  "title": "Debt Facilities and Other Sources of Liquidity",
+                  "node_id": "0071",
+                  "start_index": 36,
+                  "end_index": 36
+                },
+                {
+                  "title": "Customer Deposits, Deferred Revenue and Government Incentives",
+                  "node_id": "0072",
+                  "start_index": 36,
+                  "end_index": 36
+                },
+                {
+                  "title": "Uses of Cash",
+                  "node_id": "0073",
+                  "start_index": 36,
+                  "end_index": 36,
+                  "nodes": [
+                    {
+                      "title": "Fixed Rate Cumulative Convertible Preferred Stock, Series A",
+                      "node_id": "0074",
+                      "start_index": 36,
+                      "end_index": 37
+                    },
+                    {
+                      "title": "Stock Repurchases",
+                      "node_id": "0075",
+                      "start_index": 37,
+                      "end_index": 37
+                    },
+                    {
+                      "title": "Common Stock Dividends",
+                      "node_id": "0076",
+                      "start_index": 37,
+                      "end_index": 37
+                    },
+                    {
+                      "title": "Capital Expenditures",
+                      "node_id": "0077",
+                      "start_index": 37,
+                      "end_index": 37
+                    },
+                    {
+                      "title": "Current Maturities of Short and Long-Term Debt",
+                      "node_id": "0078",
+                      "start_index": 37,
+                      "end_index": 37
+                    },
+                    {
+                      "title": "Defined Benefit Pension Plans",
+                      "node_id": "0079",
+                      "start_index": 37,
+                      "end_index": 37
+                    },
+                    {
+                      "title": "Commitments, Contingencies and Guarantees",
+                      "node_id": "0080",
+                      "start_index": 37,
+                      "end_index": 38
+                    },
+                    {
+                      "title": "Translated Earnings Contracts",
+                      "node_id": "0081",
+                      "start_index": 38,
+                      "end_index": 38
+                    },
+                    {
+                      "title": "Off Balance Sheet Arrangements",
+                      "node_id": "0082",
+                      "start_index": 38,
+                      "end_index": 38
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "title": "ENVIRONMENT",
+              "node_id": "0083",
+              "start_index": 38,
+              "end_index": 39
+            },
+            {
+              "title": "CRITICAL ACCOUNTING ESTIMATES",
+              "node_id": "0084",
+              "start_index": 39,
+              "end_index": 39,
+              "nodes": [
+                {
+                  "title": "Valuation of the Previously Held Equity Interest from the Consolidation of HSG",
+                  "node_id": "0085",
+                  "start_index": 39,
+                  "end_index": 39
+                },
+                {
+                  "title": "Impairment of assets held for use",
+                  "node_id": "0086",
+                  "start_index": 39,
+                  "end_index": 40
+                },
+                {
+                  "title": "Income taxes",
+                  "node_id": "0087",
+                  "start_index": 40,
+                  "end_index": 41
+                },
+                {
+                  "title": "Fair value measures",
+                  "node_id": "0088",
+                  "start_index": 41,
+                  "end_index": 41
+                },
+                {
+                  "title": "Probability of litigation outcomes",
+                  "node_id": "0089",
+                  "start_index": 41,
+                  "end_index": 41
+                },
+                {
+                  "title": "Pension and other postretirement employee benefits (\u201cOPEB\u201d)",
+                  "node_id": "0090",
+                  "start_index": 41,
+                  "end_index": 42
+                }
+              ]
+            },
+            {
+              "title": "NEW ACCOUNTING STANDARDS",
+              "node_id": "0091",
+              "start_index": 42,
+              "end_index": 43
+            },
+            {
+              "title": "FORWARD-LOOKING STATEMENTS",
+              "node_id": "0092",
+              "start_index": 43,
+              "end_index": 44
+            }
+          ]
+        },
+        {
+          "title": "Item 7A. Quantitative and Qualitative Disclosures About Market Risks",
+          "node_id": "0093",
+          "start_index": 44,
+          "end_index": 44
+        },
+        {
+          "title": "Item 8. Financial Statements and Supplementary Data",
+          "node_id": "0094",
+          "start_index": 44,
+          "end_index": 44,
+          "nodes": [
+            {
+              "title": "Index to Financial Statements",
+              "node_id": "0095",
+              "start_index": 55,
+              "end_index": 56
+            },
+            {
+              "title": "Report of Independent Registered Public Accounting Firm",
+              "node_id": "0096",
+              "start_index": 56,
+              "end_index": 58
+            },
+            {
+              "title": "Consolidated Statements of Income",
+              "node_id": "0097",
+              "start_index": 58,
+              "end_index": 59
+            },
+            {
+              "title": "Consolidated Statements of Comprehensive Income",
+              "node_id": "0098",
+              "start_index": 59,
+              "end_index": 60
+            },
+            {
+              "title": "Consolidated Balance Sheets",
+              "node_id": "0099",
+              "start_index": 60,
+              "end_index": 61
+            },
+            {
+              "title": "Consolidated Statements of Cash Flows",
+              "node_id": "0100",
+              "start_index": 61,
+              "end_index": 62
+            },
+            {
+              "title": "Consolidated Statements of Changes in Shareholders\u2019 Equity",
+              "node_id": "0101",
+              "start_index": 62,
+              "end_index": 63
+            },
+            {
+              "title": "Notes to Consolidated Financial Statements",
+              "node_id": "0102",
+              "start_index": 63,
+              "end_index": 63,
+              "nodes": [
+                {
+                  "title": "1. Summary of Significant Accounting Policies",
+                  "node_id": "0103",
+                  "start_index": 63,
+                  "end_index": 71,
+                  "nodes": [
+                    {
+                      "title": "Goodwill",
+                      "node_id": "0104",
+                      "start_index": 68,
+                      "end_index": 68
+                    },
+                    {
+                      "title": "Government Assistance",
+                      "node_id": "0105",
+                      "start_index": 68,
+                      "end_index": 68
+                    },
+                    {
+                      "title": "Environmental Liabilities",
+                      "node_id": "0106",
+                      "start_index": 68,
+                      "end_index": 68
+                    },
+                    {
+                      "title": "Equity Method Investments",
+                      "node_id": "0107",
+                      "start_index": 68,
+                      "end_index": 69
+                    },
+                    {
+                      "title": "Employee Retirement Plans",
+                      "node_id": "0108",
+                      "start_index": 69,
+                      "end_index": 69
+                    },
+                    {
+                      "title": "Income Taxes",
+                      "node_id": "0109",
+                      "start_index": 69,
+                      "end_index": 70
+                    },
+                    {
+                      "title": "Fair Value Measurements",
+                      "node_id": "0110",
+                      "start_index": 70,
+                      "end_index": 70
+                    },
+                    {
+                      "title": "Derivative Instruments",
+                      "node_id": "0111",
+                      "start_index": 70,
+                      "end_index": 70
+                    },
+                    {
+                      "title": "New Accounting Standards",
+                      "node_id": "0112",
+                      "start_index": 70,
+                      "end_index": 93
+                    }
+                  ]
+                },
+                {
+                  "title": "2. Restructuring, Impairment and Other Charges and Credits",
+                  "node_id": "0113",
+                  "start_index": 71,
+                  "end_index": 73
+                },
+                {
+                  "title": "3. HSG Transactions and Acquisitions",
+                  "node_id": "0114",
+                  "start_index": 73,
+                  "end_index": 74
+                },
+                {
+                  "title": "4. Revenue",
+                  "node_id": "0115",
+                  "start_index": 74,
+                  "end_index": 75
+                },
+                {
+                  "title": "5. Inventories",
+                  "node_id": "0116",
+                  "start_index": 75,
+                  "end_index": 75
+                },
+                {
+                  "title": "6. Leases",
+                  "node_id": "0117",
+                  "start_index": 75,
+                  "end_index": 76
+                },
+                {
+                  "title": "7. Income Taxes",
+                  "node_id": "0118",
+                  "start_index": 76,
+                  "end_index": 80
+                },
+                {
+                  "title": "8. Property, Plant and Equipment, Net of Accumulated Depreciation",
+                  "node_id": "0119",
+                  "start_index": 80,
+                  "end_index": 80
+                },
+                {
+                  "title": "9. Goodwill and Other Intangible Assets",
+                  "node_id": "0120",
+                  "start_index": 80,
+                  "end_index": 81
+                },
+                {
+                  "title": "10. Other Assets and Other Liabilities",
+                  "node_id": "0121",
+                  "start_index": 81,
+                  "end_index": 83
+                },
+                {
+                  "title": "11. Debt",
+                  "node_id": "0122",
+                  "start_index": 83,
+                  "end_index": 84
+                },
+                {
+                  "title": "12. Employee Retirement Plans",
+                  "node_id": "0123",
+                  "start_index": 84,
+                  "end_index": 90
+                },
+                {
+                  "title": "13. Commitments, Contingencies and Guarantees",
+                  "node_id": "0124",
+                  "start_index": 90,
+                  "end_index": 91
+                },
+                {
+                  "title": "14. Hedging Activities",
+                  "node_id": "0125",
+                  "start_index": 91,
+                  "end_index": 93
+                },
+                {
+                  "title": "15. Fair Value Measurements",
+                  "node_id": "0126",
+                  "start_index": 93,
+                  "end_index": 94,
+                  "nodes": [
+                    {
+                      "title": "Assets and Liabilities Measured on a Non-Recurring Basis",
+                      "node_id": "0127",
+                      "start_index": 93,
+                      "end_index": 94
+                    }
+                  ]
+                },
+                {
+                  "title": "16. Shareholders\u2019 Equity",
+                  "node_id": "0128",
+                  "start_index": 94,
+                  "end_index": 98,
+                  "nodes": [
+                    {
+                      "title": "Common Stock Dividends",
+                      "node_id": "0129",
+                      "start_index": 94,
+                      "end_index": 94
+                    },
+                    {
+                      "title": "Fixed Rate Cumulative Convertible Preferred Stock, Series A",
+                      "node_id": "0130",
+                      "start_index": 94,
+                      "end_index": 94
+                    },
+                    {
+                      "title": "Share Repurchase Program",
+                      "node_id": "0131",
+                      "start_index": 94,
+                      "end_index": 96
+                    },
+                    {
+                      "title": "Accumulated Other Comprehensive Loss",
+                      "node_id": "0132",
+                      "start_index": 96,
+                      "end_index": 99
+                    }
+                  ]
+                },
+                {
+                  "title": "17. Earnings Per Common Share",
+                  "node_id": "0133",
+                  "start_index": 98,
+                  "end_index": 99
+                },
+                {
+                  "title": "18. Share-Based Compensation",
+                  "node_id": "0134",
+                  "start_index": 99,
+                  "end_index": 101,
+                  "nodes": [
+                    {
+                      "title": "Incentive Stock Plans",
+                      "node_id": "0135",
+                      "start_index": 99,
+                      "end_index": 99
+                    },
+                    {
+                      "title": "Time-Based Restricted Stock and Restricted Stock Units",
+                      "node_id": "0136",
+                      "start_index": 99,
+                      "end_index": 100
+                    },
+                    {
+                      "title": "Performance-Based Restricted Stock Units",
+                      "node_id": "0137",
+                      "start_index": 100,
+                      "end_index": 100
+                    },
+                    {
+                      "title": "Stock Options",
+                      "node_id": "0138",
+                      "start_index": 100,
+                      "end_index": 122
+                    }
+                  ]
+                },
+                {
+                  "title": "19. Reportable Segments",
+                  "node_id": "0139",
+                  "start_index": 101,
+                  "end_index": 68
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Item 9. Changes in and Disagreements with Accountants on Accounting and Financial Disclosure",
+          "node_id": "0140",
+          "start_index": 44,
+          "end_index": 45
+        },
+        {
+          "title": "Item 9A. Controls and Procedures",
+          "node_id": "0141",
+          "start_index": 45,
+          "end_index": 45,
+          "nodes": [
+            {
+              "title": "Disclosure Controls and Procedures",
+              "node_id": "0142",
+              "start_index": 45,
+              "end_index": 45
+            },
+            {
+              "title": "Internal Control Over Financial Reporting",
+              "node_id": "0143",
+              "start_index": 45,
+              "end_index": 45,
+              "nodes": [
+                {
+                  "title": "(a) Management\u2019s Annual Report on Internal Control Over Financial Reporting",
+                  "node_id": "0144",
+                  "start_index": 45,
+                  "end_index": 45
+                },
+                {
+                  "title": "(b) Changes in Internal Control Over Financial Reporting",
+                  "node_id": "0145",
+                  "start_index": 45,
+                  "end_index": 45
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Item 9B. Other Information",
+          "node_id": "0146",
+          "start_index": 45,
+          "end_index": 45
+        },
+        {
+          "title": "Item 9C. Disclosure Regarding Foreign Jurisdictions that Prevent Inspections",
+          "node_id": "0147",
+          "start_index": 45,
+          "end_index": 46
+        }
+      ]
+    },
+    {
+      "title": "PART III",
+      "node_id": "0148",
+      "start_index": 46,
+      "end_index": 46,
+      "nodes": [
+        {
+          "title": "Item 10. Directors, Executive Officers and Corporate Governance",
+          "node_id": "0149",
+          "start_index": 46,
+          "end_index": 46,
+          "nodes": [
+            {
+              "title": "Executive Officers of the Registrant",
+              "node_id": "0150",
+              "start_index": 46,
+              "end_index": 46
+            },
+            {
+              "title": "Corning\u2019s Board of Directors",
+              "node_id": "0151",
+              "start_index": 46,
+              "end_index": 48
+            },
+            {
+              "title": "Code of Ethics",
+              "node_id": "0152",
+              "start_index": 48,
+              "end_index": 48
+            }
+          ]
+        },
+        {
+          "title": "Item 11. Executive Compensation",
+          "node_id": "0153",
+          "start_index": 48,
+          "end_index": 48
+        },
+        {
+          "title": "Item 12. Security Ownership of Certain Beneficial Owners and Management and Related Stockholder Matters",
+          "node_id": "0154",
+          "start_index": 48,
+          "end_index": 48,
+          "nodes": [
+            {
+              "title": "Equity Compensation Plan Information",
+              "node_id": "0155",
+              "start_index": 48,
+              "end_index": 49
+            }
+          ]
+        },
+        {
+          "title": "Item 13. Certain Relationships and Related Transactions and Director Independence",
+          "node_id": "0156",
+          "start_index": 49,
+          "end_index": 49
+        },
+        {
+          "title": "Item 14. Principal Accounting Fees and Services",
+          "node_id": "0157",
+          "start_index": 49,
+          "end_index": 50
+        }
+      ]
+    },
+    {
+      "title": "PART IV",
+      "node_id": "0158",
+      "start_index": 50,
+      "end_index": 50,
+      "nodes": [
+        {
+          "title": "Item 15. Exhibits",
+          "node_id": "0159",
+          "start_index": 50,
+          "end_index": 50,
+          "nodes": [
+            {
+              "title": "(a) Documents filed as part of this report",
+              "node_id": "0160",
+              "start_index": 50,
+              "end_index": 50
+            },
+            {
+              "title": "(b) Exhibits filed as part of this report",
+              "node_id": "0161",
+              "start_index": 50,
+              "end_index": 52,
+              "nodes": [
+                {
+                  "title": "Exhibit 10.41: Corning Incorporated Executive Supplemental Pension Plan",
+                  "node_id": "0162",
+                  "start_index": 122,
+                  "end_index": 140
+                },
+                {
+                  "title": "Exhibit 10.42: Corning Incorporated Supplemental Pension Plan",
+                  "node_id": "0163",
+                  "start_index": 140,
+                  "end_index": 153
+                },
+                {
+                  "title": "Exhibit 21: Subsidiaries of the Registrant",
+                  "node_id": "0164",
+                  "start_index": 154,
+                  "end_index": 155
+                },
+                {
+                  "title": "Exhibit 23: Consent of Independent Registered Public Accounting Firm",
+                  "node_id": "0165",
+                  "start_index": 156,
+                  "end_index": 156
+                },
+                {
+                  "title": "Exhibit 31.1: CERTIFICATION OF CHIEF EXECUTIVE OFFICER PURSUANT TO SECTION 302(a) OF THE SARBANES-OXLEY ACT OF 2002",
+                  "node_id": "0166",
+                  "start_index": 157,
+                  "end_index": 157
+                },
+                {
+                  "title": "Exhibit 31.2: CERTIFICATION OF CHIEF FINANCIAL OFFICER PURSUANT TO SECTION 302(a) OF THE SARBANES-OXLEY ACT OF 2002",
+                  "node_id": "0167",
+                  "start_index": 158,
+                  "end_index": 158
+                },
+                {
+                  "title": "Exhibit 32: CERTIFICATION OF CHIEF EXECUTIVE OFFICER AND CHIEF FINANCIAL OFFICER PURSUANT TO 18 U.S.C. SECTION 1350, AS ADOPTED PURSUANT TO SECTION 906 OF THE SARBANES-OXLEY ACT OF 2002",
+                  "node_id": "0168",
+                  "start_index": 159,
+                  "end_index": 159
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Item 16. Form 10-K Summary.",
+          "node_id": "0169",
+          "start_index": 52,
+          "end_index": 55
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,229 @@
+{
+  "method": "pageindex_tree_qa",
+  "question_id": "fb_exp_016",
+  "question": "Considering the data in the balance sheet, what is Block's (formerly known as Square) FY2016 working capital ratio? Define working capital ratio as total current assets divided by total current liabilities. Round your answer to two decimal places.",
+  "answer": "Selected 5 PageIndex nodes and 3 scored pages for answering.",
+  "citations": [
+    {
+      "document_id": "BLOCK_2016_10K",
+      "page": 68,
+      "section": "CONSOLIDATED BALANCE SHEETS",
+      "text": "SQUARE, INC. CONSOLIDATED BALANCE SHEETS (In thousands, except share and per share data) December 31, 2016 2015 Assets Current assets: Cash and cash equivalents $ 452,030 $ 461,329 Short-term investments 59,901 — Restricted cash 22,131 13,537 Settlements receivable 321,102 142,727 Customer funds held 43,574 9,446 Loans held for sale 42,144 604 Merchant cash advance receivable, net 4,212 36,473 Other current assets 56,331 41,447 Total current assets 1,001,425 705,563 Property and equipment, net 8",
+      "metadata": {
+        "score": 47,
+        "matched_page_terms": [
+          "assets",
+          "balance",
+          "capital",
+          "current",
+          "data",
+          "equity",
+          "liabilities",
+          "sheets",
+          "square",
+          "total"
+        ],
+        "matched_section_terms": [
+          "balance",
+          "sheets"
+        ],
+        "node_id": "0116",
+        "start_index": 68,
+        "end_index": 69
+      }
+    },
+    {
+      "document_id": "BLOCK_2016_10K",
+      "page": 41,
+      "section": "Selected Financial Data",
+      "text": "820 $ 3,984 Sales and marketing 14,122 7,360 3,738 1,235 668 General and administrative 33,260 20,194 7,604 4,603 3,462 Total share-based compensation $ 138,786 $ 82,292 $ 36,100 $ 14,658 $ 8,114 December 31, 2016 2015 2014 2013 (in thousands) Consolidated Balance Sheet Data: Cash and cash equivalents $ 452,030 $ 461,329 $ 222,315 $ 166,176 Settlements receivable 321,102 142,727 115,481 64,968 Working capital 423,961 371,361 218,761 124,061 Total assets 1,211,362 894,772 541,888 318,341 Customer",
+      "metadata": {
+        "score": 32,
+        "matched_page_terms": [
+          "assets",
+          "balance",
+          "capital",
+          "data",
+          "define",
+          "equity",
+          "sheet",
+          "square",
+          "total",
+          "working"
+        ],
+        "matched_section_terms": [
+          "data"
+        ],
+        "node_id": "0055",
+        "start_index": 39,
+        "end_index": 45
+      }
+    },
+    {
+      "document_id": "BLOCK_2016_10K",
+      "page": 80,
+      "section": "Cash and Cash Equivalents and Restricted Cash",
+      "text": " to multi-year lease agreements entered into in 2012 and 2014 (Note 16 ). The Company has recorded this amount as a non-current asset on the consolidated balance sheets as the terms of the related leases extend beyond one year. Concentration of Credit Risk For the year ended December 31, 2016 , the Company had no customer who accounted for greater than 10% of total net revenue. For the years ended December 31, 2015 and 2014 , the Company had no customer other than Starbucks who accounted for gre",
+      "metadata": {
+        "score": 30,
+        "matched_page_terms": [
+          "assets",
+          "balance",
+          "considering",
+          "current",
+          "data",
+          "liabilities",
+          "sheets",
+          "square",
+          "total",
+          "two"
+        ],
+        "matched_section_terms": [],
+        "node_id": "0141",
+        "start_index": 79,
+        "end_index": 80
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "select_tree_node",
+      "target": "NOTE 9 - OTHER CONSOLIDATED BALANCE SHEET COMPONENTS (CURRENT)",
+      "metadata": {
+        "node_id": "0168",
+        "start_index": 91,
+        "end_index": 91
+      }
+    },
+    {
+      "step": 2,
+      "action": "select_tree_node",
+      "target": "NOTE 10 - OTHER CONSOLIDATED BALANCE SHEET COMPONENTS (NON-CURRENT)",
+      "metadata": {
+        "node_id": "0172",
+        "start_index": 92,
+        "end_index": 92
+      }
+    },
+    {
+      "step": 3,
+      "action": "select_tree_node",
+      "target": "Square Capital is subject to additional risks relating to the availability of capital, seller receivables payments, availability and structure of its bank partnership and general macroeconomic conditions.",
+      "metadata": {
+        "node_id": "0029",
+        "start_index": 25,
+        "end_index": 26
+      }
+    },
+    {
+      "step": 4,
+      "action": "select_tree_node",
+      "target": "Off-balance Sheet Arrangements",
+      "metadata": {
+        "node_id": "0106",
+        "start_index": 63,
+        "end_index": 63
+      }
+    },
+    {
+      "step": 5,
+      "action": "select_tree_node",
+      "target": "CONSOLIDATED BALANCE SHEETS",
+      "metadata": {
+        "node_id": "0116",
+        "start_index": 68,
+        "end_index": 69
+      }
+    },
+    {
+      "step": 6,
+      "action": "score_page",
+      "target": "page 68",
+      "metadata": {
+        "score": 47,
+        "section": "CONSOLIDATED BALANCE SHEETS",
+        "matched_page_terms": [
+          "assets",
+          "balance",
+          "capital",
+          "current",
+          "data",
+          "equity",
+          "liabilities",
+          "sheets",
+          "square",
+          "total"
+        ],
+        "matched_section_terms": [
+          "balance",
+          "sheets"
+        ]
+      }
+    },
+    {
+      "step": 7,
+      "action": "score_page",
+      "target": "page 41",
+      "metadata": {
+        "score": 32,
+        "section": "Selected Financial Data",
+        "matched_page_terms": [
+          "assets",
+          "balance",
+          "capital",
+          "data",
+          "define",
+          "equity",
+          "sheet",
+          "square",
+          "total",
+          "working"
+        ],
+        "matched_section_terms": [
+          "data"
+        ]
+      }
+    },
+    {
+      "step": 8,
+      "action": "score_page",
+      "target": "page 80",
+      "metadata": {
+        "score": 30,
+        "section": "Cash and Cash Equivalents and Restricted Cash",
+        "matched_page_terms": [
+          "assets",
+          "balance",
+          "considering",
+          "current",
+          "data",
+          "liabilities",
+          "sheets",
+          "square",
+          "total",
+          "two"
+        ],
+        "matched_section_terms": []
+      }
+    }
+  ],
+  "token_usage": {
+    "input": null,
+    "output": null,
+    "total": null
+  },
+  "latency_ms": 170,
+  "metadata": {
+    "structure_path": "reports\\pageindex\\structures\\BLOCK_2016_10K_structure.json",
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\BLOCK_2016_10K.pdf",
+    "selected_pages_one_indexed": [
+      68,
+      41,
+      80
+    ],
+    "max_pages": 3,
+    "adapter_mode": "tree_page_scoring",
+    "llm_enabled": false
+  }
+}

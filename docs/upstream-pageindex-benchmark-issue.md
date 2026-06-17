@@ -134,41 +134,41 @@ reports/finance_prompt_variant_summary.json
 
 ## Current PageIndex Expanded Readiness
 
-PageIndex expanded QA is not ready for a full 25-question run yet because the PageIndex structure files are incomplete.
+PageIndex expanded QA is not ready for a full 25-question run yet because five PageIndex structure files are still incomplete. A partial retrieval-only run is available.
 
 ```text
 Expanded questions: 25
 Unique documents: 24
-Documents with PageIndex structures and PDFs: 11
-Missing PageIndex structures: 13
+Documents with PageIndex structures and PDFs: 19
+Missing PageIndex structures: 5
 Missing PDFs: 0
-Runnable questions with current structures: 12
+Runnable questions with current structures: 20
+Retrieval-only QA generated: 20
+Average evidence recall on generated outputs: 0.850
+Average citation precision on generated outputs: 0.283
 ```
 
 Missing structures:
 
 ```text
-ADOBE_2016_10K
-AMERICANEXPRESS_2022_10K
 AMERICANWATERWORKS_2020_10K
-BLOCK_2016_10K
 COCACOLA_2021_10K
-CORNING_2022_10K
 CVSHEALTH_2022_10K
-FOOTLOCKER_2022_8K_dated-2022-05-20
 GENERALMILLS_2020_10K
-MGMRESORTS_2022Q4_EARNINGS
-PEPSICO_2023Q1_EARNINGS
 PFIZER_2021_10K
-ULTABEAUTY_2023Q4_EARNINGS
 ```
 
-Readiness artifact:
+Artifacts:
 
 ```text
 reports/pageindex/expanded_readiness.md
 reports/pageindex/expanded_readiness.json
+reports/pageindex/expanded_indexing_notes.md
+reports/pageindex/expanded_partial_summary.md
+reports/pageindex/evidence_eval_qa_expanded_25.json
 ```
+
+The partial expanded run surfaced three retrieval misses among generated outputs: `fb_exp_014`, `fb_exp_017`, and `fb_exp_025`. It also surfaced indexing robustness issues on long SEC filings, including model-produced TOC JSON with unexpected object/list shapes, missing page-offset values, and long-running indexing jobs that do not produce a structure.
 
 ## Proposed Next Work
 
@@ -178,6 +178,7 @@ Possible PageIndex contributions:
 
 - Document a Windows quickstart and provider-key setup path.
 - Add or document robust JSON parsing for LLM responses that include fenced JSON, explanatory text, or missing fields.
+- Add defensive handling when TOC extraction returns objects instead of lists, or when page-offset detection returns null.
 - Add benchmark reproduction notes for FinanceBench-style page-evidence QA.
 - Add a minimal script or documentation example showing how to run PageIndex over a local PDF and inspect the produced structure.
 

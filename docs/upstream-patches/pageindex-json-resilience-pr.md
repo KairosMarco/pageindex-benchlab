@@ -21,6 +21,8 @@ The local benchmark run found that provider responses can occasionally produce:
 ```text
 KeyError: 'toc_detected'
 KeyError: 'page_index_given_in_toc'
+AttributeError: 'dict' object has no attribute 'extend'
+TypeError: unsupported operand type(s) for +: 'int' and 'NoneType'
 ```
 
 or noisy JSON such as a fenced response containing `{"toc_detected": "yes"}`.
@@ -41,6 +43,7 @@ PageIndex relies on model-generated JSON in several TOC and page-indexing helper
 - wrap JSON in fenced Markdown blocks,
 - add explanatory text before or after JSON,
 - return arrays instead of objects,
+- return objects where TOC continuation code expects arrays,
 - use Python-style `None`, `True`, or `False`,
 - omit expected keys.
 
@@ -61,6 +64,10 @@ Result after the patch:
 
 ```text
 PageIndex structures generated: 11 / 11 unique MVP PDFs
+Partial expanded structures generated: 19 / 24 unique expanded PDFs
+Partial expanded retrieval-only QA: 20 / 25 questions generated
+Partial expanded evidence recall: 0.850
+Partial expanded citation precision: 0.283
 ```
 
 Local benchmark notes:
@@ -80,6 +87,8 @@ Recommended implementation scope:
   - trailing text after the decoded JSON object,
   - Python-style `None`, `True`, and `False`.
 - Make TOC helper functions use conservative defaults when expected fields are missing.
+- Normalize model-produced TOC JSON to `list[dict]` before using list operations such as `.extend()`.
+- Avoid adding page offsets when the detected offset is missing.
 - Avoid crashing `single_toc_item_index_fixer()` when `physical_index` is missing or null.
 
 Examples of safe fallbacks:
@@ -115,6 +124,8 @@ extract_json handles Python-style None, True, and False.
 extract_json tolerates trailing text after a valid object.
 TOC helpers return safe defaults instead of raising KeyError on missing fields.
 single_toc_item_index_fixer handles missing physical_index safely.
+TOC continuation helpers normalize dict/object responses before list extension.
+TOC page-offset helpers tolerate missing offsets without raising TypeError.
 ```
 
 ## Expected Impact

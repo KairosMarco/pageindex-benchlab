@@ -9,6 +9,8 @@ DeepSeek V4 Pro can run PageIndex indexing, but it sometimes returns empty outpu
 ```text
 KeyError: 'toc_detected'
 KeyError: 'page_index_given_in_toc'
+AttributeError: 'dict' object has no attribute 'extend'
+TypeError: unsupported operand type(s) for +: 'int' and 'NoneType'
 ```
 
 This blocked indexing for several FinanceBench MVP PDFs.
@@ -33,6 +35,8 @@ Changes:
 - Improved `extract_json()` to parse fenced JSON, JSON embedded in explanatory text, JSON arrays, Python-style `None` / `True` / `False`, and trailing text after the decoded object.
 - Added conservative fallbacks for table-of-contents detector helpers when expected keys are missing.
 - Avoided crashes in `single_toc_item_index_fixer()` when a model does not return `physical_index`.
+- Normalized model-produced TOC JSON to lists before using list operations such as `.extend()`.
+- Identified a remaining page-offset failure when PageIndex tries to add an integer page number to a missing offset.
 
 ## Result
 
@@ -42,6 +46,10 @@ After the patch, the remaining PageIndex MVP indexing jobs completed with:
 Model: deepseek/deepseek-v4-pro
 Generated: COSTCO_2021_10K, JPMORGAN_2023Q2_10Q, NIKE_2023_10K
 Final status: 11 / 11 unique MVP PDFs indexed
+Expanded partial status: 19 / 24 unique expanded PDFs indexed
+Expanded partial retrieval-only QA: 20 / 25 questions generated
+Expanded partial evidence recall: 0.850
+Expanded partial citation precision: 0.283
 ```
 
 ## Upstream Contribution Candidate

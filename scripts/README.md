@@ -121,13 +121,22 @@ reports/pageindex/expanded_readiness.md
 reports/pageindex/expanded_readiness.json
 ```
 
-As of the committed readiness report, the expanded set has `25` questions across `24` unique source documents. PageIndex structures exist for `11` documents, covering `12` runnable questions. The remaining `13` structures must be indexed before running full expanded PageIndex QA.
+As of the committed readiness report, the expanded set has `25` questions across `24` unique source documents. PageIndex structures exist for `19` documents, covering `20` runnable questions. The remaining `5` structures must be indexed before running full expanded PageIndex QA.
 
 After the missing structures exist, run retrieval-only expanded PageIndex QA:
 
 ```powershell
 python scripts\run_pageindex_qa_mvp.py --questions datasets\financebench\expanded_questions_25.jsonl --structure-dir reports\pageindex\structures --output-dir reports\pageindex\qa_expanded_25 --manifest reports\pageindex\qa_expanded_25_manifest.json --no-llm --force --continue-on-error
 python scripts\evaluate_evidence_mvp.py --questions datasets\financebench\expanded_questions_25.jsonl --results-dir reports\pageindex\qa_expanded_25 --output reports\pageindex\evidence_eval_qa_expanded_25.json --continue-on-error
+python scripts\summarize_pageindex_expanded_partial.py
+```
+
+Current partial expanded PageIndex retrieval-only result:
+
+```text
+Generated QA outputs: 20 / 25
+Average evidence recall: 0.850
+Average citation precision: 0.283
 ```
 
 ## Run Long-context MVP Baseline

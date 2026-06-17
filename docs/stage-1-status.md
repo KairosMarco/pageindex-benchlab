@@ -989,9 +989,9 @@ Current coverage:
 ```text
 Questions: 25
 Unique source documents: 24
-Documents with PageIndex structures and PDFs: 11
-Runnable questions with current structures: 12
-Missing PageIndex structures: 13
+Documents with PageIndex structures and PDFs: 19
+Runnable questions with current structures: 20
+Missing PageIndex structures: 5
 Missing PDFs: 0
 Full expanded PageIndex QA ready: false
 ```
@@ -999,22 +999,39 @@ Full expanded PageIndex QA ready: false
 The missing structures are:
 
 ```text
-ADOBE_2016_10K
-AMERICANEXPRESS_2022_10K
 AMERICANWATERWORKS_2020_10K
-BLOCK_2016_10K
 COCACOLA_2021_10K
-CORNING_2022_10K
 CVSHEALTH_2022_10K
-FOOTLOCKER_2022_8K_dated-2022-05-20
 GENERALMILLS_2020_10K
-MGMRESORTS_2022Q4_EARNINGS
-PEPSICO_2023Q1_EARNINGS
 PFIZER_2021_10K
-ULTABEAUTY_2023Q4_EARNINGS
 ```
 
-The next PageIndex experiment should index these 13 documents, rerun `scripts/summarize_pageindex_expanded_readiness.py`, then run expanded retrieval-only QA before any expanded PageIndex LLM answer generation.
+Partial expanded PageIndex retrieval-only QA has been run for the currently runnable questions:
+
+```text
+Generated QA outputs: 20
+Failed QA outputs due to missing structures: 5
+Average evidence recall on generated outputs: 0.850
+Average citation precision on generated outputs: 0.283
+```
+
+Artifacts:
+
+```text
+reports/pageindex/expanded_indexing_notes.md
+reports/pageindex/expanded_partial_summary.md
+reports/pageindex/expanded_partial_summary.json
+reports/pageindex/qa_expanded_25_manifest.json
+reports/pageindex/evidence_eval_qa_expanded_25.json
+```
+
+Observed indexing blockers:
+
+- `PFIZER_2021_10K` failed because PageIndex attempted to add an integer page number to a missing page-offset value.
+- `AMERICANWATERWORKS_2020_10K` stayed active for an unusually long indexing run without producing a structure or manifest and was stopped to unblock partial QA.
+- `CVSHEALTH_2022_10K`, `GENERALMILLS_2020_10K`, and `COCACOLA_2021_10K` remain unindexed.
+
+The next PageIndex experiment should index the 5 remaining documents, rerun `scripts/summarize_pageindex_expanded_readiness.py`, rerun expanded retrieval-only QA, and only then start expanded PageIndex LLM answer generation.
 
 ## Upstream Contribution Drafts
 
@@ -1032,7 +1049,7 @@ The issue draft presents the benchmark plan conservatively: PageIndex has strong
 The next work should strengthen the benchmark beyond the dependency-light MVP baselines:
 
 1. Use the PageIndex upstream issue and PR drafts as the first contribution candidates.
-2. Index the 13 missing PageIndex structures for the expanded 25-question set.
+2. Index the 5 missing PageIndex structures for the expanded 25-question set.
 3. Run expanded PageIndex retrieval-only QA and evidence evaluation after all structures exist.
 4. Add GraphRAG and HyperGraphRAG after the expanded baselines are stable.
 5. Consider evaluator refinements for rounding tolerance and extra-but-supported legal details before further prompt tuning.
@@ -1051,22 +1068,14 @@ Stage 1 is complete when:
 
 Model-backed PageIndex indexing and QA require a provider API key in the current shell, usable provider quota, and reliable JSON output.
 
-The first 11 PageIndex structures are available, but full expanded PageIndex QA is still blocked by 13 missing structures:
+The first 19 PageIndex structures are available, but full expanded PageIndex QA is still blocked by 5 missing structures:
 
 ```text
-ADOBE_2016_10K
-AMERICANEXPRESS_2022_10K
 AMERICANWATERWORKS_2020_10K
-BLOCK_2016_10K
 COCACOLA_2021_10K
-CORNING_2022_10K
 CVSHEALTH_2022_10K
-FOOTLOCKER_2022_8K_dated-2022-05-20
 GENERALMILLS_2020_10K
-MGMRESORTS_2022Q4_EARNINGS
-PEPSICO_2023Q1_EARNINGS
 PFIZER_2021_10K
-ULTABEAUTY_2023Q4_EARNINGS
 ```
 
 Next, index these structures with the current PageIndex MVP script, regenerate the readiness report, then run expanded PageIndex retrieval-only QA.

@@ -109,16 +109,25 @@ Summary:
 ```text
 Questions: 25
 Unique source documents: 24
-Documents with PageIndex structures and PDFs: 11
-Runnable questions with current structures: 12
-Missing PageIndex structures: 13
+Documents with PageIndex structures and PDFs: 19
+Runnable questions with current structures: 20
+Missing PageIndex structures: 5
 Missing PDFs: 0
 ```
 
-Full expanded PageIndex QA should wait until the 13 missing structures are indexed. Use the readiness script to regenerate the report after indexing:
+Current partial retrieval-only result:
+
+```text
+Generated QA outputs: 20 / 25
+Average evidence recall: 0.850
+Average citation precision: 0.283
+```
+
+Full expanded PageIndex QA should wait until the 5 missing structures are indexed. Use the readiness script to regenerate the report after indexing:
 
 ```powershell
 python scripts\summarize_pageindex_expanded_readiness.py
+python scripts\summarize_pageindex_expanded_partial.py
 ```
 
 LLM mode requires a LiteLLM model string and provider API key:

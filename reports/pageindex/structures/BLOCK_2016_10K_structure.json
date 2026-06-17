@@ -1,0 +1,1309 @@
+{
+  "doc_name": "BLOCK_2016_10K.pdf",
+  "structure": [
+    {
+      "title": "Preface",
+      "node_id": "0000",
+      "start_index": 1,
+      "end_index": 3
+    },
+    {
+      "title": "PART I",
+      "node_id": "0001",
+      "start_index": 4,
+      "end_index": 4,
+      "nodes": [
+        {
+          "title": "Business",
+          "node_id": "0002",
+          "start_index": 4,
+          "end_index": 15
+        },
+        {
+          "title": "Risk Factors",
+          "node_id": "0003",
+          "start_index": 15,
+          "end_index": 15,
+          "nodes": [
+            {
+              "title": "Item 1A. RISK FACTORS",
+              "node_id": "0004",
+              "start_index": 15,
+              "end_index": 15,
+              "nodes": [
+                {
+                  "title": "Risks Related to Our Business and Our Industry",
+                  "node_id": "0005",
+                  "start_index": 15,
+                  "end_index": 15,
+                  "nodes": [
+                    {
+                      "title": "Our business depends on a strong and trusted brand, and any failure to maintain, protect, and enhance our brand would hurt our business.",
+                      "node_id": "0006",
+                      "start_index": 15,
+                      "end_index": 15
+                    },
+                    {
+                      "title": "Our growth may not be sustainable and depends on our ability to retain existing sellers, attract new sellers, and increase sales to both new and existing sellers.",
+                      "node_id": "0007",
+                      "start_index": 15,
+                      "end_index": 15
+                    },
+                    {
+                      "title": "Our business has generated net losses, and we intend to continue to invest substantially in our business. Thus, we may not be able to achieve or maintain profitability.",
+                      "node_id": "0008",
+                      "start_index": 15,
+                      "end_index": 16
+                    },
+                    {
+                      "title": "We frequently make decisions that may reduce our short-term operating results if we believe those decisions will improve the experiences of our sellers, their customers, and other users of our products and services, which we believe will improve our operating results over the long term. These decisions may not be consistent with the expectations of investors and may not produce the long-term benefits that we expect, in which case our business may be materially and adversely affected.",
+                      "node_id": "0009",
+                      "start_index": 16,
+                      "end_index": 16
+                    },
+                    {
+                      "title": "We, our sellers, our partners, and others who use our services obtain and process a large amount of sensitive data. Any real or perceived improper use of, disclosure of, or access to such data could harm our reputation as a trusted brand, as well as have a material and adverse effect on our business.",
+                      "node_id": "0010",
+                      "start_index": 16,
+                      "end_index": 16
+                    },
+                    {
+                      "title": "Our risk management efforts may not be effective, which could expose us to losses and liability and otherwise harm our business.",
+                      "node_id": "0011",
+                      "start_index": 16,
+                      "end_index": 17
+                    },
+                    {
+                      "title": "We are currently, and will continue to be, exposed to risks associated with chargebacks and refunds in connection with payment card fraud or relating to the goods or services provided by our sellers.",
+                      "node_id": "0012",
+                      "start_index": 17,
+                      "end_index": 17
+                    },
+                    {
+                      "title": "We derive substantially all of our revenue from managed payments services. Our efforts to expand our product portfolio and market reach may not succeed and may reduce our revenue growth.",
+                      "node_id": "0013",
+                      "start_index": 17,
+                      "end_index": 17
+                    },
+                    {
+                      "title": "Our success depends on our ability to develop products and services to address the rapidly evolving market for payments and point-of-sale, financial, and marketing services, and, if we are not able to implement successful enhancements and new features for our products and services, our business could be materially and adversely affected.",
+                      "node_id": "0014",
+                      "start_index": 17,
+                      "end_index": 18
+                    },
+                    {
+                      "title": "Substantial and increasingly intense competition in our industry may harm our business.",
+                      "node_id": "0015",
+                      "start_index": 18,
+                      "end_index": 18
+                    },
+                    {
+                      "title": "We are dependent on payment card networks and acquiring processors, and any changes to their rules or practices could harm our business.",
+                      "node_id": "0016",
+                      "start_index": 18,
+                      "end_index": 19
+                    },
+                    {
+                      "title": "Our quarterly results of operations and operating metrics fluctuate significantly and are unpredictable and subject to seasonality, which could result in the trading price of our Class A common stock being unpredictable or declining.",
+                      "node_id": "0017",
+                      "start_index": 19,
+                      "end_index": 19
+                    },
+                    {
+                      "title": "We depend on key management, as well as our experienced and capable employees, and any failure to attract, motivate, and retain our employees could harm our ability to maintain and grow our business.",
+                      "node_id": "0018",
+                      "start_index": 19,
+                      "end_index": 20
+                    },
+                    {
+                      "title": "If we do not continue to improve our operational, financial and other internal controls and systems to manage growth effectively, our business could be harmed.",
+                      "node_id": "0019",
+                      "start_index": 20,
+                      "end_index": 20
+                    },
+                    {
+                      "title": "A deterioration of general macroeconomic conditions could materially and adversely affect our business and financial results.",
+                      "node_id": "0020",
+                      "start_index": 20,
+                      "end_index": 21
+                    },
+                    {
+                      "title": "If we are unable to maintain, promote, and grow our brand through effective marketing and communications strategies, our brand and business may be harmed.",
+                      "node_id": "0021",
+                      "start_index": 21,
+                      "end_index": 21
+                    },
+                    {
+                      "title": "Expanding our business globally could subject us to new challenges and risks.",
+                      "node_id": "0022",
+                      "start_index": 21,
+                      "end_index": 22
+                    },
+                    {
+                      "title": "We rely on third parties and their systems for a variety of services, including the processing of transaction data and settlement of funds to us and our sellers, and these third parties\u2019 failure to perform these services adequately could materially and adversely affect our business.",
+                      "node_id": "0023",
+                      "start_index": 22,
+                      "end_index": 22
+                    },
+                    {
+                      "title": "Our services must integrate with a variety of operating systems, and the hardware that enables merchants to accept payment cards must interoperate with third-party mobile devices utilizing those operating systems. If we are unable to ensure that our services or hardware interoperate with such operating systems and devices, our business may be materially and adversely affected.",
+                      "node_id": "0024",
+                      "start_index": 22,
+                      "end_index": 23
+                    },
+                    {
+                      "title": "Many of our key components are procured from a single or limited number of suppliers. Thus, we are at risk of shortage, price increases, changes, delay, or discontinuation of key components, which could disrupt and materially and adversely affect our business.",
+                      "node_id": "0025",
+                      "start_index": 23,
+                      "end_index": 24
+                    },
+                    {
+                      "title": "Our business could be harmed if we are unable to accurately forecast demand for our products and to adequately manage our product inventory.",
+                      "node_id": "0026",
+                      "start_index": 24,
+                      "end_index": 24
+                    },
+                    {
+                      "title": "Our products and services may not function as intended due to errors in our software, hardware, and systems, product defects, or due to security breaches or human error in administering these systems, which could materially and adversely affect our business.",
+                      "node_id": "0027",
+                      "start_index": 24,
+                      "end_index": 24
+                    },
+                    {
+                      "title": "Systems failures, interruptions, delays in service, catastrophic events, and resulting interruptions in the availability of our products or services, or those of our sellers, could harm our business and our brand, and subject us to substantial liability.",
+                      "node_id": "0028",
+                      "start_index": 24,
+                      "end_index": 25
+                    },
+                    {
+                      "title": "Square Capital is subject to additional risks relating to the availability of capital, seller receivables payments, availability and structure of its bank partnership and general macroeconomic conditions.",
+                      "node_id": "0029",
+                      "start_index": 25,
+                      "end_index": 26
+                    },
+                    {
+                      "title": "Our business is subject to extensive regulation and oversight in a variety of areas, all of which are subject to change and uncertain interpretation.",
+                      "node_id": "0030",
+                      "start_index": 26,
+                      "end_index": 26
+                    },
+                    {
+                      "title": "Our business is subject to complex and evolving regulations and oversight related to our provision of payments services and other financial services.",
+                      "node_id": "0031",
+                      "start_index": 26,
+                      "end_index": 27
+                    },
+                    {
+                      "title": "We are subject to risks related to litigation, including intellectual property claims and regulatory disputes.",
+                      "node_id": "0032",
+                      "start_index": 27,
+                      "end_index": 28
+                    },
+                    {
+                      "title": "Our intellectual property rights are valuable, and any inability to protect them could reduce the value of our products, services, and brand.",
+                      "node_id": "0033",
+                      "start_index": 28,
+                      "end_index": 28
+                    },
+                    {
+                      "title": "We may not be able to secure financing on favorable terms, or at all, to meet our future capital needs.",
+                      "node_id": "0034",
+                      "start_index": 28,
+                      "end_index": 29
+                    },
+                    {
+                      "title": "Any acquisitions, strategic investments, entries into new businesses, divestitures, and other transactions could fail to achieve strategic objectives, disrupt our ongoing operations, and harm our business.",
+                      "node_id": "0035",
+                      "start_index": 29,
+                      "end_index": 30
+                    },
+                    {
+                      "title": "Our reported financial results may be materially and adversely affected by changes in accounting principles generally accepted in the United States.",
+                      "node_id": "0036",
+                      "start_index": 30,
+                      "end_index": 30
+                    },
+                    {
+                      "title": "We may have exposure to greater-than-anticipated tax liabilities, which may materially and adversely affect our business.",
+                      "node_id": "0037",
+                      "start_index": 30,
+                      "end_index": 30
+                    }
+                  ]
+                },
+                {
+                  "title": "Risks Related to Ownership of Our Common Stock",
+                  "node_id": "0038",
+                  "start_index": 30,
+                  "end_index": 30,
+                  "nodes": [
+                    {
+                      "title": "The dual class structure of our common stock has the effect of concentrating voting control within our stockholders who held our stock prior to our initial public offering, including many of our employees and directors and their affiliates; this will limit or preclude your ability to influence corporate matters.",
+                      "node_id": "0039",
+                      "start_index": 30,
+                      "end_index": 31
+                    },
+                    {
+                      "title": "We will continue to incur significantly increased costs and devote substantial management time as a result of operating as a public company.",
+                      "node_id": "0040",
+                      "start_index": 31,
+                      "end_index": 31
+                    },
+                    {
+                      "title": "If we are unable to maintain effective disclosure controls and internal controls over financial reporting, investors may lose confidence in the accuracy and completeness of our financial reports, and the market price of our Class A common stock may be materially and adversely affected.",
+                      "node_id": "0041",
+                      "start_index": 31,
+                      "end_index": 31
+                    },
+                    {
+                      "title": "The market price of our Class A common stock has been and will likely continue to be volatile, and you could lose all or part of your investment.",
+                      "node_id": "0042",
+                      "start_index": 31,
+                      "end_index": 32
+                    },
+                    {
+                      "title": "Anti-takeover provisions contained in our amended and restated certificate of incorporation, our amended and restated bylaws, and provisions of Delaware law, could impair a takeover attempt.",
+                      "node_id": "0043",
+                      "start_index": 32,
+                      "end_index": 33
+                    },
+                    {
+                      "title": "Our amended and restated bylaws provide that the Court of Chancery of the State of Delaware will be the sole and exclusive forum for substantially all disputes between us and our stockholders, which could limit our stockholders\u2019 ability to obtain a favorable judicial forum for disputes with us or our directors, officers, or employees.",
+                      "node_id": "0044",
+                      "start_index": 33,
+                      "end_index": 33
+                    },
+                    {
+                      "title": "If securities or industry analysts publish reports that are interpreted negatively by the investment community, publish negative research reports about our business, or cease coverage of our company or fail to regularly publish reports on us, our share price and trading volume could decline.",
+                      "node_id": "0045",
+                      "start_index": 33,
+                      "end_index": 33
+                    },
+                    {
+                      "title": "We do not intend to pay dividends for the foreseeable future.",
+                      "node_id": "0046",
+                      "start_index": 33,
+                      "end_index": 33
+                    },
+                    {
+                      "title": "Additional stock issuances could result in significant dilution to our stockholders.",
+                      "node_id": "0047",
+                      "start_index": 33,
+                      "end_index": 33
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "title": "Item 1B. UNRESOLVED STAFF COMMENTS",
+              "node_id": "0048",
+              "start_index": 33,
+              "end_index": 33
+            }
+          ]
+        },
+        {
+          "title": "Unresolved Staff Comments",
+          "node_id": "0049",
+          "start_index": 33,
+          "end_index": 34
+        },
+        {
+          "title": "Properties",
+          "node_id": "0050",
+          "start_index": 34,
+          "end_index": 34
+        },
+        {
+          "title": "Legal Proceedings",
+          "node_id": "0051",
+          "start_index": 35,
+          "end_index": 36
+        },
+        {
+          "title": "Mine Safety Disclosures",
+          "node_id": "0052",
+          "start_index": 36,
+          "end_index": 36
+        }
+      ]
+    },
+    {
+      "title": "PART II",
+      "node_id": "0053",
+      "start_index": 37,
+      "end_index": 37,
+      "nodes": [
+        {
+          "title": "Market for Registrant\u2019s Common Equity, Related Stockholder Matters and Issuer Purchases of Equity Securities",
+          "node_id": "0054",
+          "start_index": 37,
+          "end_index": 39
+        },
+        {
+          "title": "Selected Financial Data",
+          "node_id": "0055",
+          "start_index": 39,
+          "end_index": 45
+        },
+        {
+          "title": "Management\u2019s Discussion and Analysis of Financial Condition and Results of Operations",
+          "node_id": "0056",
+          "start_index": 45,
+          "end_index": 45,
+          "nodes": [
+            {
+              "title": "Item 7. MANAGEMENT'S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND RESULTS OF OPERATIONS",
+              "node_id": "0057",
+              "start_index": 45,
+              "end_index": 45,
+              "nodes": [
+                {
+                  "title": "Overview",
+                  "node_id": "0058",
+                  "start_index": 45,
+                  "end_index": 46
+                },
+                {
+                  "title": "Operating Metric Overview",
+                  "node_id": "0059",
+                  "start_index": 46,
+                  "end_index": 46
+                },
+                {
+                  "title": "Components of Results of Operations",
+                  "node_id": "0060",
+                  "start_index": 46,
+                  "end_index": 46,
+                  "nodes": [
+                    {
+                      "title": "Changes to the Description of Revenue and Cost of Revenue Line Items",
+                      "node_id": "0061",
+                      "start_index": 46,
+                      "end_index": 46
+                    },
+                    {
+                      "title": "Revenue",
+                      "node_id": "0062",
+                      "start_index": 46,
+                      "end_index": 46,
+                      "nodes": [
+                        {
+                          "title": "Transaction-based revenue.",
+                          "node_id": "0063",
+                          "start_index": 46,
+                          "end_index": 46
+                        },
+                        {
+                          "title": "Starbucks transaction-based revenue.",
+                          "node_id": "0064",
+                          "start_index": 46,
+                          "end_index": 46
+                        },
+                        {
+                          "title": "Subscription and services-based revenue.",
+                          "node_id": "0065",
+                          "start_index": 46,
+                          "end_index": 47
+                        },
+                        {
+                          "title": "Hardware revenue.",
+                          "node_id": "0066",
+                          "start_index": 47,
+                          "end_index": 47
+                        }
+                      ]
+                    },
+                    {
+                      "title": "Cost of Revenue and Gross Margin",
+                      "node_id": "0067",
+                      "start_index": 47,
+                      "end_index": 47,
+                      "nodes": [
+                        {
+                          "title": "Transaction-based costs.",
+                          "node_id": "0068",
+                          "start_index": 47,
+                          "end_index": 47
+                        },
+                        {
+                          "title": "Starbucks transaction-based costs.",
+                          "node_id": "0069",
+                          "start_index": 47,
+                          "end_index": 47
+                        },
+                        {
+                          "title": "Subscription and services-based costs.",
+                          "node_id": "0070",
+                          "start_index": 47,
+                          "end_index": 47
+                        },
+                        {
+                          "title": "Hardware costs.",
+                          "node_id": "0071",
+                          "start_index": 47,
+                          "end_index": 47
+                        },
+                        {
+                          "title": "Amortization of acquired technology",
+                          "node_id": "0072",
+                          "start_index": 47,
+                          "end_index": 47
+                        }
+                      ]
+                    },
+                    {
+                      "title": "Operating Expenses",
+                      "node_id": "0073",
+                      "start_index": 47,
+                      "end_index": 47,
+                      "nodes": [
+                        {
+                          "title": "Product development.",
+                          "node_id": "0074",
+                          "start_index": 47,
+                          "end_index": 48
+                        },
+                        {
+                          "title": "Sales and marketing.",
+                          "node_id": "0075",
+                          "start_index": 48,
+                          "end_index": 48
+                        },
+                        {
+                          "title": "General and administrative.",
+                          "node_id": "0076",
+                          "start_index": 48,
+                          "end_index": 48
+                        },
+                        {
+                          "title": "Transaction, loan and advance losses.",
+                          "node_id": "0077",
+                          "start_index": 48,
+                          "end_index": 48
+                        },
+                        {
+                          "title": "Amortization of acquired customer assets.",
+                          "node_id": "0078",
+                          "start_index": 48,
+                          "end_index": 48
+                        }
+                      ]
+                    },
+                    {
+                      "title": "Interest and Other Income and Expense",
+                      "node_id": "0079",
+                      "start_index": 48,
+                      "end_index": 49
+                    },
+                    {
+                      "title": "Provision for Income Taxes",
+                      "node_id": "0080",
+                      "start_index": 49,
+                      "end_index": 49
+                    },
+                    {
+                      "title": "Deemed Dividend on Series E Preferred Stock",
+                      "node_id": "0081",
+                      "start_index": 49,
+                      "end_index": 49
+                    }
+                  ]
+                },
+                {
+                  "title": "Results of Operations",
+                  "node_id": "0082",
+                  "start_index": 50,
+                  "end_index": 50,
+                  "nodes": [
+                    {
+                      "title": "Revenue",
+                      "node_id": "0083",
+                      "start_index": 50,
+                      "end_index": 50,
+                      "nodes": [
+                        {
+                          "title": "Comparison of Years Ended December 31, 2016 and 2015",
+                          "node_id": "0084",
+                          "start_index": 50,
+                          "end_index": 50
+                        },
+                        {
+                          "title": "Comparison of Years Ended December 31, 2015 and 2014",
+                          "node_id": "0085",
+                          "start_index": 50,
+                          "end_index": 51
+                        }
+                      ]
+                    },
+                    {
+                      "title": "Total Cost of Revenue",
+                      "node_id": "0086",
+                      "start_index": 51,
+                      "end_index": 51,
+                      "nodes": [
+                        {
+                          "title": "Comparison of Years Ended December 31, 2016 and 2015",
+                          "node_id": "0087",
+                          "start_index": 51,
+                          "end_index": 51
+                        },
+                        {
+                          "title": "Comparison of Years Ended December 31, 2015 and 2014",
+                          "node_id": "0088",
+                          "start_index": 51,
+                          "end_index": 52
+                        }
+                      ]
+                    },
+                    {
+                      "title": "Product Development",
+                      "node_id": "0089",
+                      "start_index": 52,
+                      "end_index": 52
+                    },
+                    {
+                      "title": "Sales and Marketing",
+                      "node_id": "0090",
+                      "start_index": 52,
+                      "end_index": 53
+                    },
+                    {
+                      "title": "General and Administrative",
+                      "node_id": "0091",
+                      "start_index": 53,
+                      "end_index": 53
+                    },
+                    {
+                      "title": "Transaction. Loan and Advance Losses",
+                      "node_id": "0092",
+                      "start_index": 53,
+                      "end_index": 54
+                    },
+                    {
+                      "title": "Amortization of Acquired Customer Assets",
+                      "node_id": "0093",
+                      "start_index": 54,
+                      "end_index": 54
+                    },
+                    {
+                      "title": "Interest and Other Income and Expense, net",
+                      "node_id": "0094",
+                      "start_index": 54,
+                      "end_index": 54
+                    },
+                    {
+                      "title": "Provision for Income Taxes",
+                      "node_id": "0095",
+                      "start_index": 54,
+                      "end_index": 55
+                    },
+                    {
+                      "title": "Deemed Dividend on Series E Preferred Stock",
+                      "node_id": "0096",
+                      "start_index": 55,
+                      "end_index": 55
+                    }
+                  ]
+                },
+                {
+                  "title": "Quarterly Results of Operations",
+                  "node_id": "0097",
+                  "start_index": 56,
+                  "end_index": 58,
+                  "nodes": [
+                    {
+                      "title": "Quarterly Trends",
+                      "node_id": "0098",
+                      "start_index": 58,
+                      "end_index": 59
+                    }
+                  ]
+                },
+                {
+                  "title": "Liquidity and Capital Resources",
+                  "node_id": "0099",
+                  "start_index": 60,
+                  "end_index": 61,
+                  "nodes": [
+                    {
+                      "title": "Cash Flows from Operating Activities",
+                      "node_id": "0100",
+                      "start_index": 61,
+                      "end_index": 62
+                    },
+                    {
+                      "title": "Cash Flows from Investing Activities",
+                      "node_id": "0101",
+                      "start_index": 62,
+                      "end_index": 62
+                    },
+                    {
+                      "title": "Cash Flows from Financing Activities",
+                      "node_id": "0102",
+                      "start_index": 62,
+                      "end_index": 62
+                    },
+                    {
+                      "title": "Contractual Obligations and Commitments",
+                      "node_id": "0103",
+                      "start_index": 62,
+                      "end_index": 62,
+                      "nodes": [
+                        {
+                          "title": "Lease Commitments",
+                          "node_id": "0104",
+                          "start_index": 63,
+                          "end_index": 63
+                        },
+                        {
+                          "title": "Purchase commitments",
+                          "node_id": "0105",
+                          "start_index": 63,
+                          "end_index": 63
+                        }
+                      ]
+                    },
+                    {
+                      "title": "Off-balance Sheet Arrangements",
+                      "node_id": "0106",
+                      "start_index": 63,
+                      "end_index": 63
+                    },
+                    {
+                      "title": "Critical Accounting Policies and Estimates",
+                      "node_id": "0107",
+                      "start_index": 63,
+                      "end_index": 63
+                    },
+                    {
+                      "title": "Recent Accounting Pronouncements",
+                      "node_id": "0108",
+                      "start_index": 63,
+                      "end_index": 63
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "title": "ITEM 7A. QUANTITATIVE AND QUALITATIVE DISCLOSURES ABOUT MARKET RISK",
+              "node_id": "0109",
+              "start_index": 63,
+              "end_index": 63,
+              "nodes": [
+                {
+                  "title": "Interest Rate Sensitivity",
+                  "node_id": "0110",
+                  "start_index": 63,
+                  "end_index": 63
+                },
+                {
+                  "title": "Foreign Currency Risk",
+                  "node_id": "0111",
+                  "start_index": 63,
+                  "end_index": 63
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Quantitative and Qualitative Disclosures About Market Risk",
+          "node_id": "0112",
+          "start_index": 63,
+          "end_index": 65
+        },
+        {
+          "title": "Financial Statements and Supplementary Data",
+          "node_id": "0113",
+          "start_index": 65,
+          "end_index": 65,
+          "nodes": [
+            {
+              "title": "Item 8. FINANCIAL STATEMENTS AND SUPPLEMENTARY DATA",
+              "node_id": "0114",
+              "start_index": 65,
+              "end_index": 65,
+              "nodes": [
+                {
+                  "title": "REPORT OF INDEPENDENT REGISTERED PUBLIC ACCOUNTING FIRM",
+                  "node_id": "0115",
+                  "start_index": 66,
+                  "end_index": 68
+                },
+                {
+                  "title": "CONSOLIDATED BALANCE SHEETS",
+                  "node_id": "0116",
+                  "start_index": 68,
+                  "end_index": 69
+                },
+                {
+                  "title": "CONSOLIDATED STATEMENTS OF OPERATIONS",
+                  "node_id": "0117",
+                  "start_index": 69,
+                  "end_index": 70
+                },
+                {
+                  "title": "CONSOLIDATED STATEMENTS OF COMPREHENSIVE LOSS",
+                  "node_id": "0118",
+                  "start_index": 70,
+                  "end_index": 71
+                },
+                {
+                  "title": "CONSOLIDATED STATEMENTS OF STOCKHOLDERS' EQUITY",
+                  "node_id": "0119",
+                  "start_index": 71,
+                  "end_index": 72
+                },
+                {
+                  "title": "CONSOLIDATED STATEMENTS OF CASH FLOWS",
+                  "node_id": "0120",
+                  "start_index": 73,
+                  "end_index": 76
+                },
+                {
+                  "title": "NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS",
+                  "node_id": "0121",
+                  "start_index": 76,
+                  "end_index": 76,
+                  "nodes": [
+                    {
+                      "title": "NOTE 1 - DESCRIPTION OF BUSINESS AND SUMMARY OF SIGNIFICANT ACCOUNTING POLICIES",
+                      "node_id": "0122",
+                      "start_index": 76,
+                      "end_index": 76,
+                      "nodes": [
+                        {
+                          "title": "Business",
+                          "node_id": "0123",
+                          "start_index": 76,
+                          "end_index": 76
+                        },
+                        {
+                          "title": "Out of Period Adjustments to Reserve for Transaction Losses",
+                          "node_id": "0124",
+                          "start_index": 76,
+                          "end_index": 76
+                        },
+                        {
+                          "title": "Immaterial Correction to Cash and Cash Equivalents",
+                          "node_id": "0125",
+                          "start_index": 76,
+                          "end_index": 76
+                        },
+                        {
+                          "title": "Changes to the Description of Revenue and Cost of Revenue Line Items",
+                          "node_id": "0126",
+                          "start_index": 76,
+                          "end_index": 76
+                        },
+                        {
+                          "title": "Litigation Settlement",
+                          "node_id": "0127",
+                          "start_index": 77,
+                          "end_index": 77
+                        },
+                        {
+                          "title": "Basis of Presentation",
+                          "node_id": "0128",
+                          "start_index": 77,
+                          "end_index": 77
+                        },
+                        {
+                          "title": "Use of Estimates",
+                          "node_id": "0129",
+                          "start_index": 77,
+                          "end_index": 77
+                        },
+                        {
+                          "title": "Revenue Recognition",
+                          "node_id": "0130",
+                          "start_index": 77,
+                          "end_index": 77,
+                          "nodes": [
+                            {
+                              "title": "Transaction-based revenue and Starbucks transaction-based revenue",
+                              "node_id": "0131",
+                              "start_index": 77,
+                              "end_index": 78
+                            },
+                            {
+                              "title": "Subscription and services-based revenue",
+                              "node_id": "0132",
+                              "start_index": 78,
+                              "end_index": 78
+                            },
+                            {
+                              "title": "Hardware revenue",
+                              "node_id": "0133",
+                              "start_index": 78,
+                              "end_index": 78
+                            }
+                          ]
+                        },
+                        {
+                          "title": "Cost of Revenue",
+                          "node_id": "0134",
+                          "start_index": 78,
+                          "end_index": 78,
+                          "nodes": [
+                            {
+                              "title": "Transaction-based costs and Starbucks transaction-based costs",
+                              "node_id": "0135",
+                              "start_index": 78,
+                              "end_index": 78
+                            },
+                            {
+                              "title": "Subscription and services-based costs",
+                              "node_id": "0136",
+                              "start_index": 78,
+                              "end_index": 78
+                            },
+                            {
+                              "title": "Hardware costs",
+                              "node_id": "0137",
+                              "start_index": 78,
+                              "end_index": 78
+                            }
+                          ]
+                        },
+                        {
+                          "title": "Advertising Costs",
+                          "node_id": "0138",
+                          "start_index": 79,
+                          "end_index": 79
+                        },
+                        {
+                          "title": "Share-based Compensation",
+                          "node_id": "0139",
+                          "start_index": 79,
+                          "end_index": 79
+                        },
+                        {
+                          "title": "Income Taxes",
+                          "node_id": "0140",
+                          "start_index": 79,
+                          "end_index": 79
+                        },
+                        {
+                          "title": "Cash and Cash Equivalents and Restricted Cash",
+                          "node_id": "0141",
+                          "start_index": 79,
+                          "end_index": 80
+                        },
+                        {
+                          "title": "Concentration of Credit Risk",
+                          "node_id": "0142",
+                          "start_index": 80,
+                          "end_index": 80
+                        },
+                        {
+                          "title": "Fair Value of Financial Instruments",
+                          "node_id": "0143",
+                          "start_index": 80,
+                          "end_index": 80
+                        },
+                        {
+                          "title": "Loans Held for Sale",
+                          "node_id": "0144",
+                          "start_index": 80,
+                          "end_index": 81
+                        },
+                        {
+                          "title": "Settlements Receivable",
+                          "node_id": "0145",
+                          "start_index": 81,
+                          "end_index": 81
+                        },
+                        {
+                          "title": "Provision for Uncollectible Receivables Related to MCAs",
+                          "node_id": "0146",
+                          "start_index": 81,
+                          "end_index": 81
+                        },
+                        {
+                          "title": "Customer Funds",
+                          "node_id": "0147",
+                          "start_index": 81,
+                          "end_index": 81
+                        },
+                        {
+                          "title": "Inventory",
+                          "node_id": "0148",
+                          "start_index": 81,
+                          "end_index": 81
+                        },
+                        {
+                          "title": "Deferred Magstripe Reader Costs",
+                          "node_id": "0149",
+                          "start_index": 81,
+                          "end_index": 81
+                        },
+                        {
+                          "title": "Property and Equipment",
+                          "node_id": "0150",
+                          "start_index": 81,
+                          "end_index": 82
+                        },
+                        {
+                          "title": "Capitalized Software",
+                          "node_id": "0151",
+                          "start_index": 82,
+                          "end_index": 82
+                        },
+                        {
+                          "title": "Leases",
+                          "node_id": "0152",
+                          "start_index": 82,
+                          "end_index": 82
+                        },
+                        {
+                          "title": "Business Combinations",
+                          "node_id": "0153",
+                          "start_index": 82,
+                          "end_index": 82
+                        },
+                        {
+                          "title": "Long-Lived Assets, including Goodwill and Acquired Intangibles",
+                          "node_id": "0154",
+                          "start_index": 82,
+                          "end_index": 83
+                        },
+                        {
+                          "title": "Customers Payable",
+                          "node_id": "0155",
+                          "start_index": 83,
+                          "end_index": 83
+                        },
+                        {
+                          "title": "Accrued Transaction Losses",
+                          "node_id": "0156",
+                          "start_index": 83,
+                          "end_index": 83
+                        },
+                        {
+                          "title": "Recent Accounting Pronouncements",
+                          "node_id": "0157",
+                          "start_index": 83,
+                          "end_index": 85
+                        }
+                      ]
+                    },
+                    {
+                      "title": "NOTE 2 - FAIR VALUE OF FINANCIAL INSTRUMENTS",
+                      "node_id": "0158",
+                      "start_index": 86,
+                      "end_index": 86
+                    },
+                    {
+                      "title": "NOTE 3 - INVESTMENTS",
+                      "node_id": "0159",
+                      "start_index": 86,
+                      "end_index": 87
+                    },
+                    {
+                      "title": "NOTE 4 - MERCHANT CASH ADVANCE RECEIVABLE, NET",
+                      "node_id": "0160",
+                      "start_index": 87,
+                      "end_index": 88
+                    },
+                    {
+                      "title": "NOTE 5 - PROPERTY AND EQUIPMENT, NET",
+                      "node_id": "0161",
+                      "start_index": 88,
+                      "end_index": 88
+                    },
+                    {
+                      "title": "NOTE 6 - ACQUISITIONS",
+                      "node_id": "0162",
+                      "start_index": 88,
+                      "end_index": 88,
+                      "nodes": [
+                        {
+                          "title": "Fiscal 2016",
+                          "node_id": "0163",
+                          "start_index": 88,
+                          "end_index": 88
+                        },
+                        {
+                          "title": "Fiscal 2015",
+                          "node_id": "0164",
+                          "start_index": 88,
+                          "end_index": 88
+                        },
+                        {
+                          "title": "Fiscal 2014",
+                          "node_id": "0165",
+                          "start_index": 89,
+                          "end_index": 89
+                        }
+                      ]
+                    },
+                    {
+                      "title": "NOTE 7 - GOODWILL",
+                      "node_id": "0166",
+                      "start_index": 90,
+                      "end_index": 90
+                    },
+                    {
+                      "title": "NOTE 8 - ACQUIRED INTANGIBLE ASSETS",
+                      "node_id": "0167",
+                      "start_index": 90,
+                      "end_index": 91
+                    },
+                    {
+                      "title": "NOTE 9 - OTHER CONSOLIDATED BALANCE SHEET COMPONENTS (CURRENT)",
+                      "node_id": "0168",
+                      "start_index": 91,
+                      "end_index": 91,
+                      "nodes": [
+                        {
+                          "title": "Other Current Assets",
+                          "node_id": "0169",
+                          "start_index": 91,
+                          "end_index": 91
+                        },
+                        {
+                          "title": "Accrued Expenses",
+                          "node_id": "0170",
+                          "start_index": 92,
+                          "end_index": 92
+                        },
+                        {
+                          "title": "Other Current Liabilities",
+                          "node_id": "0171",
+                          "start_index": 92,
+                          "end_index": 92
+                        }
+                      ]
+                    },
+                    {
+                      "title": "NOTE 10 - OTHER CONSOLIDATED BALANCE SHEET COMPONENTS (NON-CURRENT)",
+                      "node_id": "0172",
+                      "start_index": 92,
+                      "end_index": 92,
+                      "nodes": [
+                        {
+                          "title": "Other Non-Current Assets",
+                          "node_id": "0173",
+                          "start_index": 92,
+                          "end_index": 92
+                        },
+                        {
+                          "title": "Other Non-Current Liabilities",
+                          "node_id": "0174",
+                          "start_index": 93,
+                          "end_index": 93
+                        }
+                      ]
+                    },
+                    {
+                      "title": "NOTE 11 - DEBT",
+                      "node_id": "0175",
+                      "start_index": 93,
+                      "end_index": 93
+                    },
+                    {
+                      "title": "NOTE 12 - ACCRUED TRANSACTION LOSSES",
+                      "node_id": "0176",
+                      "start_index": 93,
+                      "end_index": 93
+                    },
+                    {
+                      "title": "NOTE 13 - INCOME TAXES",
+                      "node_id": "0177",
+                      "start_index": 94,
+                      "end_index": 96
+                    },
+                    {
+                      "title": "NOTE 14 - STOCKHOLDERS' EQUITY",
+                      "node_id": "0178",
+                      "start_index": 96,
+                      "end_index": 101
+                    },
+                    {
+                      "title": "NOTE 15 - NET LOSS PER SHARE",
+                      "node_id": "0179",
+                      "start_index": 101,
+                      "end_index": 101
+                    },
+                    {
+                      "title": "NOTE 16 - COMMITMENTS AND CONTINGENCIES",
+                      "node_id": "0180",
+                      "start_index": 102,
+                      "end_index": 103
+                    },
+                    {
+                      "title": "NOTE 17 - SEGMENT AND GEOGRAPHICAL INFORMATION",
+                      "node_id": "0181",
+                      "start_index": 103,
+                      "end_index": 103
+                    },
+                    {
+                      "title": "NOTE 18 - SUPPLEMENTAL CASH FLOW INFORMATION",
+                      "node_id": "0182",
+                      "start_index": 104,
+                      "end_index": 104
+                    },
+                    {
+                      "title": "NOTE 19 - SUBSEQUENT EVENTS",
+                      "node_id": "0183",
+                      "start_index": 104,
+                      "end_index": 104
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "title": "Item 9. CHANGES IN AND DISAGREEMENTS WITH ACCOUNTANTS ON ACCOUNTING AND FINANCIAL DISCLOSURE",
+              "node_id": "0184",
+              "start_index": 104,
+              "end_index": 104
+            },
+            {
+              "title": "Item 9A. CONTROLS AND PROCEDURES",
+              "node_id": "0185",
+              "start_index": 104,
+              "end_index": 104,
+              "nodes": [
+                {
+                  "title": "Evaluation of Disclosure Controls and Procedures",
+                  "node_id": "0186",
+                  "start_index": 104,
+                  "end_index": 104
+                },
+                {
+                  "title": "Changes in Internal Control over Financial Reporting",
+                  "node_id": "0187",
+                  "start_index": 104,
+                  "end_index": 104
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Changes in and Disagreements With Accountants on Accounting and Financial Disclosure",
+          "node_id": "0188",
+          "start_index": 104,
+          "end_index": 104
+        },
+        {
+          "title": "Controls and Procedures",
+          "node_id": "0189",
+          "start_index": 104,
+          "end_index": 105
+        },
+        {
+          "title": "Other Information",
+          "node_id": "0190",
+          "start_index": 105,
+          "end_index": 105
+        }
+      ]
+    },
+    {
+      "title": "PART III",
+      "node_id": "0191",
+      "start_index": 106,
+      "end_index": 106,
+      "nodes": [
+        {
+          "title": "Directors, Executive Officers and Corporate Governance",
+          "node_id": "0192",
+          "start_index": 106,
+          "end_index": 106
+        },
+        {
+          "title": "Executive Compensation",
+          "node_id": "0193",
+          "start_index": 106,
+          "end_index": 106
+        },
+        {
+          "title": "Security Ownership of Certain Beneficial Owners and Management and Related Stockholder Matters",
+          "node_id": "0194",
+          "start_index": 106,
+          "end_index": 106
+        },
+        {
+          "title": "Certain Relationships and Related Transactions, and Director Independence",
+          "node_id": "0195",
+          "start_index": 106,
+          "end_index": 106
+        },
+        {
+          "title": "Principal Accounting Fees and Services",
+          "node_id": "0196",
+          "start_index": 106,
+          "end_index": 106
+        }
+      ]
+    },
+    {
+      "title": "PART IV",
+      "node_id": "0197",
+      "start_index": 107,
+      "end_index": 107,
+      "nodes": [
+        {
+          "title": "Exhibits, Financial Statement Schedules",
+          "node_id": "0198",
+          "start_index": 107,
+          "end_index": 107
+        }
+      ]
+    },
+    {
+      "title": "Signatures",
+      "node_id": "0199",
+      "start_index": 108,
+      "end_index": 110
+    },
+    {
+      "title": "Exhibit 10.6 Square, Inc. Outside Director Compensation Policy",
+      "node_id": "0200",
+      "start_index": 111,
+      "end_index": 114
+    },
+    {
+      "title": "Exhibit 10.13 Offer Letter to Hillary Smith",
+      "node_id": "0201",
+      "start_index": 114,
+      "end_index": 116
+    },
+    {
+      "title": "Exhibit 21.1 Subsidiaries of Square, Inc.",
+      "node_id": "0202",
+      "start_index": 117,
+      "end_index": 117
+    },
+    {
+      "title": "Exhibit 23.1 Consent of Independent Registered Public Accounting Firm",
+      "node_id": "0203",
+      "start_index": 118,
+      "end_index": 118
+    },
+    {
+      "title": "Exhibit 31.1 Certification of Chief Executive Officer Pursuant to Securities Exchange Act of 1934 Rules 13a-14(a) and 15d-14(a), as Adopted Pursuant to Section 302 of the Sarbanes-Oxley Act of 2002",
+      "node_id": "0204",
+      "start_index": 119,
+      "end_index": 119
+    },
+    {
+      "title": "Exhibit 31.2 Certification of Chief Financial Officer Pursuant to Securities Exchange Act of 1934 Rules 13a-14(a) and 15d-14(a), as Adopted Pursuant to Section 302 of the Sarbanes-Oxley Act of 2002",
+      "node_id": "0205",
+      "start_index": 120,
+      "end_index": 120
+    },
+    {
+      "title": "Exhibit 32.1 Certifications of Chief Executive Officer and Chief Financial Officer Pursuant to 18 U.S.C. Section 1350, as Adopted Pursuant to Section 906 of the Sarbanes-Oxley Act of 2002",
+      "node_id": "0206",
+      "start_index": 121,
+      "end_index": 121
+    }
+  ]
+}
