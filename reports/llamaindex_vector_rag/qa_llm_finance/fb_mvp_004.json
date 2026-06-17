@@ -1,0 +1,383 @@
+{
+  "method": "llamaindex_vector_rag",
+  "question_id": "fb_mvp_004",
+  "question": "Among operations, investing, and financing activities, which brought in the most (or lost the least) cash flow for AMD in FY22?",
+  "answer": "Operating activities brought in the most cash flow, providing $3,565 million [PAGE 58 | PAGE 51].",
+  "citations": [
+    {
+      "document_id": "AMD_2022_10K",
+      "page": 58,
+      "section": null,
+      "text": "Table of Contents Advanced Micro Devices, Inc. Consolidated Statements of Cash Flows Year Ended December 31, 2022 December 25, 2021 December 26, 2020 (In millions) Cash flows from operating activities: Net income $ 1,320 $ 3,162 $ 2,490 Adjustments to reconcile net income to net cash provided by operating activities: Depreciation and amortization 4,174 407 312 Stock-based compensation 1,081 379 274 Amortization of debt discount and issuance costs — 5 14 Amortization of operating lease right-of-u",
+      "metadata": {
+        "chunk_id": "84a6f5a3-11d1-4ccf-b7d8-d0dfdb8b4de0",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.6062079982257947,
+        "rerank_score": 129.62079982257947,
+        "matched_terms": [
+          "activities",
+          "cash",
+          "financing",
+          "flows",
+          "investing",
+          "operating"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "AMD_2022_10K",
+      "page": 59,
+      "section": null,
+      "text": "Table of Contents Advanced Micro Devices, Inc. Consolidated Statements of Cash Flows Year Ended December 31, 2022 December 25, 2021 December 26, 2020 (In millions) Supplemental cash flow information: Cash paid during the year for: Interest $ 85 $ 25 $ 31 Income taxes, net of refund $ 685 $ 35 $ 8 Non-cash investing and financing activities: Purchases of property and equipment, accrued but not paid $ 157 $ 72 $ 31 Issuance of common stock to settle convertible debt $ — $ 25 $ 217 Issuance of comm",
+      "metadata": {
+        "chunk_id": "403f4c55-ef8e-4a31-b28e-35b3129ce53a",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5352644454760531,
+        "rerank_score": 95.71811121427197,
+        "matched_terms": [
+          "activities",
+          "cash",
+          "financing",
+          "flow",
+          "flows",
+          "investing",
+          "operating"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "AMD_2022_10K",
+      "page": 51,
+      "section": null,
+      "text": "Table of Contents FINANCIAL CONDITION Liquidity and Capital Resources As of December 31, 2022, our cash, cash equivalents and short-term investments were $5.9 billion compared to $3.6 billion as of December 25, 2021. The increase in cash, cash equivalents and short-term investments was primarily driven by the $2.4 billion of cash and $1.6 billion of short-term investments acquired from the Xilinx acquisition, $1.0 billion from the debt issuance of our 3.924% Notes and 4.393% Notes, and cash flow",
+      "metadata": {
+        "chunk_id": "33c2e098-d6e7-4315-acaf-460529086e5b",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5897054743928077,
+        "rerank_score": 86.71221410594744,
+        "matched_terms": [
+          "activities",
+          "cash",
+          "financing",
+          "flow",
+          "flows",
+          "investing",
+          "operating",
+          "operations"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "llamaindex_build_vector_index",
+      "target": "AMD_2022_10K",
+      "metadata": {
+        "page_count": 121,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "chunk_size": 900,
+        "chunk_overlap": 160,
+        "retrieve_top_k": 120,
+        "rerank_top_k": 12,
+        "finance_rerank": true
+      }
+    },
+    {
+      "step": 2,
+      "action": "llamaindex_retrieve_node",
+      "target": "84a6f5a3-11d1-4ccf-b7d8-d0dfdb8b4de0",
+      "metadata": {
+        "page": 58,
+        "retrieval_rank": 1,
+        "initial_rank": 1,
+        "vector_score": 0.6062079982257947,
+        "rerank_score": 129.62079982257947,
+        "finance_boost": 50.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "cash_flow_statement_title",
+          "operating_cash_flow_section",
+          "investing_cash_flow_section",
+          "financing_cash_flow_section"
+        ],
+        "matched_terms": [
+          "activities",
+          "cash",
+          "financing",
+          "flows",
+          "investing",
+          "operating"
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "action": "llamaindex_retrieve_node",
+      "target": "403f4c55-ef8e-4a31-b28e-35b3129ce53a",
+      "metadata": {
+        "page": 59,
+        "retrieval_rank": 8,
+        "initial_rank": 8,
+        "vector_score": 0.5352644454760531,
+        "rerank_score": 95.71811121427197,
+        "finance_boost": 21.25,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "cash_flow_statement_title"
+        ],
+        "matched_terms": [
+          "activities",
+          "cash",
+          "financing",
+          "flow",
+          "flows",
+          "investing",
+          "operating"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "llamaindex_retrieve_node",
+      "target": "33c2e098-d6e7-4315-acaf-460529086e5b",
+      "metadata": {
+        "page": 51,
+        "retrieval_rank": 2,
+        "initial_rank": 2,
+        "vector_score": 0.5897054743928077,
+        "rerank_score": 86.71221410594744,
+        "finance_boost": 7.75,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "matched_terms": [
+          "activities",
+          "cash",
+          "financing",
+          "flow",
+          "flows",
+          "investing",
+          "operating",
+          "operations"
+        ]
+      }
+    },
+    {
+      "step": 5,
+      "action": "llamaindex_retrieve_node",
+      "target": "154596e6-739c-42dc-aa0b-df40162a5061",
+      "metadata": {
+        "page": 101,
+        "retrieval_rank": 51,
+        "initial_rank": 51,
+        "vector_score": 0.4013092680881234,
+        "rerank_score": 83.33926014214568,
+        "finance_boost": 25.625,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "cash_flow_statement_title"
+        ],
+        "matched_terms": [
+          "among",
+          "cash",
+          "flows",
+          "operations"
+        ]
+      }
+    },
+    {
+      "step": 6,
+      "action": "llamaindex_retrieve_node",
+      "target": "ae1722c7-1c3b-4e3e-ab69-b74d60d479dd",
+      "metadata": {
+        "page": 52,
+        "retrieval_rank": 3,
+        "initial_rank": 3,
+        "vector_score": 0.5608353966826987,
+        "rerank_score": 82.0668730016032,
+        "finance_boost": 15.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "operating_cash_flow_section"
+        ],
+        "matched_terms": [
+          "activities",
+          "cash",
+          "financing",
+          "investing",
+          "operating"
+        ]
+      }
+    },
+    {
+      "step": 7,
+      "action": "llamaindex_retrieve_node",
+      "target": "224a4973-c933-478b-8f2e-991b406b73c0",
+      "metadata": {
+        "page": 79,
+        "retrieval_rank": 25,
+        "initial_rank": 25,
+        "vector_score": 0.4592323247098526,
+        "rerank_score": 81.22323247098525,
+        "finance_boost": 25.5,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "cash_flow_statement_title"
+        ],
+        "matched_terms": [
+          "cash",
+          "flow",
+          "flows"
+        ]
+      }
+    },
+    {
+      "step": 8,
+      "action": "llamaindex_retrieve_node",
+      "target": "2c4c2c22-07a4-4ce8-8e2a-dcc6fb74de88",
+      "metadata": {
+        "page": 89,
+        "retrieval_rank": 13,
+        "initial_rank": 13,
+        "vector_score": 0.5110767052632509,
+        "rerank_score": 67.63267052632509,
+        "finance_boost": 6.625,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "matched_terms": [
+          "cash",
+          "flows",
+          "operating"
+        ]
+      }
+    },
+    {
+      "step": 9,
+      "action": "llamaindex_retrieve_node",
+      "target": "4baa75b3-ea34-48d0-8b99-76e42c08f618",
+      "metadata": {
+        "page": 56,
+        "retrieval_rank": 10,
+        "initial_rank": 10,
+        "vector_score": 0.5344161525031729,
+        "rerank_score": 66.36661525031728,
+        "finance_boost": 8.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "matched_terms": [
+          "cash",
+          "operating"
+        ]
+      }
+    },
+    {
+      "step": 10,
+      "action": "llamaindex_retrieve_node",
+      "target": "92be3ecb-22b8-433c-88f9-b719b7fd87ad",
+      "metadata": {
+        "page": 48,
+        "retrieval_rank": 5,
+        "initial_rank": 5,
+        "vector_score": 0.5408617617401907,
+        "rerank_score": 65.80284284068574,
+        "finance_boost": 6.75,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "matched_terms": [
+          "operating",
+          "operations"
+        ]
+      }
+    },
+    {
+      "step": 11,
+      "action": "llamaindex_retrieve_node",
+      "target": "5434cb6d-df7a-4980-a96e-1b9dae293678",
+      "metadata": {
+        "page": 54,
+        "retrieval_rank": 14,
+        "initial_rank": 14,
+        "vector_score": 0.4904137610682496,
+        "rerank_score": 64.80804277349162,
+        "finance_boost": 7.875,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "matched_terms": [
+          "operating",
+          "operations"
+        ]
+      }
+    },
+    {
+      "step": 12,
+      "action": "llamaindex_retrieve_node",
+      "target": "7a8a8cb7-c0af-4d43-bb97-70c10acddcd3",
+      "metadata": {
+        "page": 43,
+        "retrieval_rank": 4,
+        "initial_rank": 4,
+        "vector_score": 0.5424768579364375,
+        "rerank_score": 64.72268579364375,
+        "finance_boost": 5.5,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "matched_terms": [
+          "cash",
+          "operating"
+        ]
+      }
+    },
+    {
+      "step": 13,
+      "action": "llamaindex_retrieve_node",
+      "target": "979d92b8-43df-40be-bb7a-c4dc85077da1",
+      "metadata": {
+        "page": 49,
+        "retrieval_rank": 12,
+        "initial_rank": 12,
+        "vector_score": 0.5200510153640341,
+        "rerank_score": 64.53843486973675,
+        "finance_boost": 7.625,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "matched_terms": [
+          "operating",
+          "operations"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": 7713,
+    "output": 311,
+    "total": 8024
+  },
+  "latency_ms": 20402,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\AMD_2022_10K.pdf",
+    "adapter_mode": "llamaindex_vector_retrieval",
+    "llm_enabled": true,
+    "model": "deepseek/deepseek-v4-pro",
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "page_count": 121,
+    "chunk_size": 900,
+    "chunk_overlap": 160,
+    "retrieve_top_k": 120,
+    "rerank_top_k": 12,
+    "max_citations": 3,
+    "finance_rerank": true
+  }
+}

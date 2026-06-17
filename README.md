@@ -96,7 +96,11 @@ Completed:
 - Current finance-aware LlamaIndex retrieval-only diagnostics:
   - LlamaIndex Vector RAG: average evidence recall `1.000`, average citation precision `0.333`.
   - LlamaIndex Hybrid RAG: average evidence recall `1.000`, average citation precision `0.333`.
-- LlamaIndex finance-aware LLM diagnostics can be run with `scripts/run_llamaindex_finance_llm_diagnostics.py`, but these candidates are not yet promoted into the main answer-level table.
+- LlamaIndex finance-aware LLM diagnostics have been run with `deepseek/deepseek-v4-pro`.
+- Current finance-aware LlamaIndex LLM diagnostics:
+  - LlamaIndex Vector RAG: evidence recall `1.000`, citation precision `0.333`, answer accuracy `1.000`, average total tokens `8,964`, average latency `16,723 ms`.
+  - LlamaIndex Hybrid RAG: evidence recall `1.000`, citation precision `0.333`, answer accuracy `1.000`, average total tokens `9,216`, average latency `18,596 ms`.
+- These candidates pass the mechanical promotion gate, but they remain documented as stronger-baseline diagnostics until the larger FinanceBench subset is ready.
 
 Current owner: project owner. PH is on standby for later task assignment.
 
@@ -263,8 +267,8 @@ A GPU may become useful later for local LLMs, large embedding jobs, or large rer
 
 ## Next Actions
 
-1. Run LlamaIndex finance-aware LLM answer generation and answer judging.
-2. Expand the FinanceBench subset beyond 12 questions.
+1. Expand the FinanceBench subset beyond 12 questions.
+2. Reduce LlamaIndex candidate token usage by tuning retrieved chunk count and chunk size.
 3. Add per-method failure-case notes and cost estimates.
 4. Prepare a PageIndex upstream issue or PR using the benchmark findings.
 5. Add GraphRAG and HyperGraphRAG after the larger subset is stable.

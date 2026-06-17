@@ -181,7 +181,7 @@ python scripts\run_llamaindex_vector_rag_mvp.py --no-llm --disable-finance-reran
 python scripts\evaluate_evidence_mvp.py --results-dir reports\llamaindex_vector_rag\qa_smoke_cite12 --output reports\llamaindex_vector_rag\evidence_eval_smoke_cite12.json --continue-on-error
 ```
 
-This is currently a diagnostic baseline. The finance-aware reranker reaches 1.000 evidence recall on the 12-question no-LLM MVP run, but it still needs LLM answer generation and answer judging before it can be added to the main answer-level comparison table.
+This is currently a diagnostic baseline. The finance-aware reranker reaches 1.000 evidence recall on the 12-question no-LLM MVP run, and the LLM diagnostic workflow below records answer generation, evidence evaluation, answer judging, token usage, and latency.
 
 Run finance-aware LLM diagnostics for Vector and Hybrid candidates:
 
@@ -226,7 +226,7 @@ python scripts\run_llamaindex_hybrid_rag_mvp.py --no-llm --disable-finance-reran
 python scripts\evaluate_evidence_mvp.py --results-dir reports\llamaindex_hybrid_rag\qa_smoke_cross --output reports\llamaindex_hybrid_rag\evidence_eval_smoke_cross.json --continue-on-error
 ```
 
-This is currently a diagnostic baseline. The finance-aware reranker reaches 1.000 evidence recall on the 12-question no-LLM MVP run, but it still needs LLM answer generation and answer judging before it can be added to the main answer-level comparison table.
+This is currently a diagnostic baseline. The finance-aware reranker reaches 1.000 evidence recall on the 12-question no-LLM MVP run, and the LLM diagnostic workflow records answer generation, evidence evaluation, answer judging, token usage, and latency.
 
 ## Evaluate Answer Accuracy
 

@@ -55,6 +55,8 @@ reports/llamaindex_vector_rag/evidence_eval_smoke.json
 reports/llamaindex_vector_rag/evidence_eval_smoke_cite6.json
 reports/llamaindex_vector_rag/evidence_eval_smoke_cite12.json
 reports/llamaindex_vector_rag/evidence_eval_smoke_finance.json
+reports/llamaindex_vector_rag/evidence_eval_llm_finance.json
+reports/llamaindex_vector_rag/answer_eval_llm_finance.json
 reports/llamaindex_vector_rag/qa_smoke_manifest.json
 reports/llamaindex_vector_rag/qa_smoke/
 reports/llamaindex_vector_rag/qa_smoke_cite6_manifest.json
@@ -63,11 +65,15 @@ reports/llamaindex_vector_rag/qa_smoke_cite12_manifest.json
 reports/llamaindex_vector_rag/qa_smoke_cite12/
 reports/llamaindex_vector_rag/qa_smoke_finance_manifest.json
 reports/llamaindex_vector_rag/qa_smoke_finance/
+reports/llamaindex_vector_rag/qa_llm_finance_manifest.json
+reports/llamaindex_vector_rag/qa_llm_finance/
 reports/llamaindex_hybrid_rag/evidence_eval_smoke.json
 reports/llamaindex_hybrid_rag/evidence_eval_smoke_cite6.json
 reports/llamaindex_hybrid_rag/evidence_eval_smoke_cite12.json
 reports/llamaindex_hybrid_rag/evidence_eval_smoke_cross.json
 reports/llamaindex_hybrid_rag/evidence_eval_smoke_finance.json
+reports/llamaindex_hybrid_rag/evidence_eval_llm_finance.json
+reports/llamaindex_hybrid_rag/answer_eval_llm_finance.json
 reports/llamaindex_hybrid_rag/qa_smoke_manifest.json
 reports/llamaindex_hybrid_rag/qa_smoke/
 reports/llamaindex_hybrid_rag/qa_smoke_cite6_manifest.json
@@ -78,17 +84,6 @@ reports/llamaindex_hybrid_rag/qa_smoke_cross_manifest.json
 reports/llamaindex_hybrid_rag/qa_smoke_cross/
 reports/llamaindex_hybrid_rag/qa_smoke_finance_manifest.json
 reports/llamaindex_hybrid_rag/qa_smoke_finance/
-```
-
-The following artifacts are generated only after running the finance-aware LlamaIndex LLM diagnostics:
-
-```text
-reports/llamaindex_vector_rag/evidence_eval_llm_finance.json
-reports/llamaindex_vector_rag/answer_eval_llm_finance.json
-reports/llamaindex_vector_rag/qa_llm_finance_manifest.json
-reports/llamaindex_vector_rag/qa_llm_finance/
-reports/llamaindex_hybrid_rag/evidence_eval_llm_finance.json
-reports/llamaindex_hybrid_rag/answer_eval_llm_finance.json
 reports/llamaindex_hybrid_rag/qa_llm_finance_manifest.json
 reports/llamaindex_hybrid_rag/qa_llm_finance/
 ```

@@ -25,6 +25,7 @@ from benchlab.schemas import BenchmarkResult  # noqa: E402
 DEFAULT_MODEL = "deepseek/deepseek-v4-pro"
 DEFAULT_OUTPUT_JSON = ROOT / "reports" / "llamaindex_finance_llm_diagnostics.json"
 DEFAULT_OUTPUT_MD = ROOT / "reports" / "llamaindex_finance_llm_diagnostics.md"
+DEFAULT_STAGE1_METRICS = ROOT / "reports" / "stage1_metrics_summary.json"
 
 
 @dataclass(frozen=True)
@@ -182,13 +183,29 @@ def summarize_candidate(config: CandidateConfig) -> dict[str, Any]:
     if answer:
         failures.extend({"source": "answer", **item} for item in answer.get("failures", []))
 
+    complete = bool(evidence and answer and len(results) > 0)
+    expected_count = 12
+    token_complete = len(total_tokens) == len(results) == expected_count
+    latency_complete = len(latencies) == len(results) == expected_count
+    evaluation_complete = (
+        complete
+        and len(results) == expected_count
+        and len(manifest or []) == expected_count
+        and len(failures) == 0
+        and (evidence or {}).get("summary", {}).get("failure_count") == 0
+        and (answer or {}).get("summary", {}).get("failure_count") == 0
+        and token_complete
+        and latency_complete
+    )
+
     return {
         "key": config.key,
         "label": config.label,
-        "status": "complete" if evidence and answer and len(results) > 0 else "missing_artifacts",
+        "status": "complete" if complete else "missing_artifacts",
         "result_count": len(results),
         "manifest_count": len(manifest or []),
         "failure_count": len(failures),
+        "promotion_gate_passed": evaluation_complete,
         "average_evidence_recall": (evidence or {}).get("summary", {}).get("average_evidence_recall"),
         "average_citation_precision": (evidence or {}).get("summary", {}).get("average_citation_precision"),
         "answer_accuracy": (answer or {}).get("summary", {}).get("accuracy"),
@@ -207,12 +224,53 @@ def summarize_candidate(config: CandidateConfig) -> dict[str, Any]:
     }
 
 
+def load_stage1_baselines(path: Path) -> list[dict[str, Any]]:
+    payload = load_json_if_exists(path)
+    if not payload:
+        return []
+    baselines = []
+    for method in payload.get("methods", []):
+        baselines.append(
+            {
+                "key": method.get("key"),
+                "label": method.get("label"),
+                "group": "main_stage1",
+                "result_count": method.get("result_count"),
+                "average_evidence_recall": method.get("average_evidence_recall"),
+                "average_citation_precision": method.get("average_citation_precision"),
+                "answer_accuracy": method.get("answer_accuracy"),
+                "average_total_tokens": method.get("average_total_tokens"),
+                "average_latency_ms": method.get("average_latency_ms"),
+            }
+        )
+    return baselines
+
+
 def format_value(value: Any, digits: int = 3) -> str:
     if value is None:
         return "n/a"
     if isinstance(value, float):
         return f"{value:.{digits}f}"
     return str(value)
+
+
+def comparison_rows(payload: dict[str, Any]) -> list[dict[str, Any]]:
+    rows = list(payload.get("baselines", []))
+    for method in payload["methods"]:
+        rows.append(
+            {
+                "key": method["key"],
+                "label": method["label"],
+                "group": "candidate",
+                "result_count": method["result_count"],
+                "average_evidence_recall": method["average_evidence_recall"],
+                "average_citation_precision": method["average_citation_precision"],
+                "answer_accuracy": method["answer_accuracy"],
+                "average_total_tokens": method["average_total_tokens"],
+                "average_latency_ms": method["average_latency_ms"],
+            }
+        )
+    return rows
 
 
 def render_markdown(payload: dict[str, Any]) -> str:
@@ -246,17 +304,55 @@ def render_markdown(payload: dict[str, Any]) -> str:
             )
         )
 
+    if payload.get("baselines"):
+        lines.extend(
+            [
+                "",
+                "## Comparison Context",
+                "",
+                "The candidate rows below are compared against the existing committed Stage 1 answer-level rows. All rows use the same 12-question MVP subset and the same DeepSeek V4 Pro answer/judge protocol, but the LlamaIndex candidates use embedding retrieval plus the finance-aware reranker.",
+                "",
+                "| Method | Group | Questions | Evidence recall | Citation precision | Answer accuracy | Avg total tokens | Avg latency ms |",
+                "|---|---|---:|---:|---:|---:|---:|---:|",
+            ]
+        )
+        for row in comparison_rows(payload):
+            lines.append(
+                "| {label} | {group} | {questions} | {recall} | {precision} | {accuracy} | {tokens} | {latency} |".format(
+                    label=row["label"],
+                    group=row["group"],
+                    questions=row["result_count"],
+                    recall=format_value(row["average_evidence_recall"]),
+                    precision=format_value(row["average_citation_precision"]),
+                    accuracy=format_value(row["answer_accuracy"]),
+                    tokens=format_value(row["average_total_tokens"]),
+                    latency=format_value(row["average_latency_ms"]),
+                )
+            )
+
+    passed = payload["summary"]["promotion_gate_passed"]
     lines.extend(
         [
             "",
             "## Promotion Gate",
             "",
-            "Do not promote these rows into the main Stage 1 table until both candidate methods have:",
+            f"Status: {'passed' if passed else 'not passed'}",
+            "",
+            "Candidate rows should not be promoted into the main Stage 1 table until both methods have:",
             "",
             "- 12 generated answer files.",
             "- evidence eval and answer eval with zero evaluation failures.",
             "- token usage and latency recorded for every question.",
             "- reviewed failure cases if answer accuracy is below the existing Hybrid RAG baseline.",
+            "",
+            "For this run, both candidate methods passed the mechanical promotion gate. The next decision is editorial: whether to add them to the main Stage 1 table now or keep them as stronger-baseline diagnostics until the larger FinanceBench subset is ready.",
+            "",
+            "## Interpretation",
+            "",
+            "- On this 12-question MVP subset, both finance-aware LlamaIndex candidates reached 1.000 evidence recall, 0.333 citation precision, and 1.000 LLM-judge answer accuracy.",
+            "- These results make the candidates materially stronger than the earlier generic LlamaIndex diagnostics.",
+            "- The candidates used substantially more average tokens than the current PageIndex, dependency-light Vector RAG, and dependency-light Hybrid RAG rows because the LlamaIndex runs pass more retrieved chunk text into answer generation.",
+            "- This still does not prove broad method superiority; the next larger subset must test whether the finance-aware reranker generalizes beyond the 12 MVP questions.",
             "",
             "## Artifacts",
             "",
@@ -277,14 +373,17 @@ def render_markdown(payload: dict[str, Any]) -> str:
     return "\n".join(lines).rstrip() + "\n"
 
 
-def write_summary(configs: list[CandidateConfig], output_json: Path, output_md: Path) -> None:
+def write_summary(configs: list[CandidateConfig], output_json: Path, output_md: Path, stage1_metrics: Path) -> None:
     methods = [summarize_candidate(config) for config in configs]
+    baselines = load_stage1_baselines(stage1_metrics)
     payload = {
         "summary": {
             "date": date.today().isoformat(),
             "candidate_count": len(methods),
             "complete_count": sum(1 for method in methods if method["status"] == "complete"),
+            "promotion_gate_passed": bool(methods) and all(method["promotion_gate_passed"] for method in methods),
         },
+        "baselines": baselines,
         "methods": methods,
     }
     output_json.parent.mkdir(parents=True, exist_ok=True)
@@ -311,6 +410,7 @@ def main() -> None:
     parser.add_argument("--summary-only", action="store_true", help="Only regenerate the diagnostics summary from existing artifacts.")
     parser.add_argument("--output-json", type=Path, default=DEFAULT_OUTPUT_JSON)
     parser.add_argument("--output-md", type=Path, default=DEFAULT_OUTPUT_MD)
+    parser.add_argument("--stage1-metrics", type=Path, default=DEFAULT_STAGE1_METRICS)
     args = parser.parse_args()
 
     configs = selected_configs(args.method)
@@ -331,7 +431,7 @@ def main() -> None:
             )
 
     if not args.dry_run:
-        write_summary(configs, args.output_json, args.output_md)
+        write_summary(configs, args.output_json, args.output_md, args.stage1_metrics)
 
 
 if __name__ == "__main__":

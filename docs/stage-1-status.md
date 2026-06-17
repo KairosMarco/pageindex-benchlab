@@ -566,6 +566,45 @@ reports/llamaindex_hybrid_rag/qa_smoke_finance_manifest.json
 reports/llamaindex_hybrid_rag/evidence_eval_smoke_finance.json
 ```
 
+Current finance-aware LLM diagnostic status:
+
+```text
+Model: deepseek/deepseek-v4-pro
+
+LlamaIndex Vector RAG + finance rerank:
+12 / 12 MVP questions generated LLM answers.
+0 generation or evaluation failures.
+Average evidence recall: 1.000
+Average citation precision: 0.333
+LLM-judge answer accuracy: 1.000
+Average total tokens: 8,964
+Average latency: 16,723 ms
+
+LlamaIndex Hybrid RAG + finance rerank:
+12 / 12 MVP questions generated LLM answers.
+0 generation or evaluation failures.
+Average evidence recall: 1.000
+Average citation precision: 0.333
+LLM-judge answer accuracy: 1.000
+Average total tokens: 9,216
+Average latency: 18,596 ms
+```
+
+Generated LLM diagnostic artifacts:
+
+```text
+reports/llamaindex_finance_llm_diagnostics.md
+reports/llamaindex_finance_llm_diagnostics.json
+reports/llamaindex_vector_rag/qa_llm_finance/
+reports/llamaindex_vector_rag/qa_llm_finance_manifest.json
+reports/llamaindex_vector_rag/evidence_eval_llm_finance.json
+reports/llamaindex_vector_rag/answer_eval_llm_finance.json
+reports/llamaindex_hybrid_rag/qa_llm_finance/
+reports/llamaindex_hybrid_rag/qa_llm_finance_manifest.json
+reports/llamaindex_hybrid_rag/evidence_eval_llm_finance.json
+reports/llamaindex_hybrid_rag/answer_eval_llm_finance.json
+```
+
 LLM diagnostic command, after setting a provider key:
 
 ```powershell
@@ -573,14 +612,14 @@ $env:DEEPSEEK_API_KEY="YOUR_KEY"
 D:\pageindex-demo\PageIndex\.venv\Scripts\python.exe scripts\run_llamaindex_finance_llm_diagnostics.py --force --continue-on-error
 ```
 
-These LlamaIndex finance-aware rows are not yet promoted into the main answer-level comparison table. Promotion requires generated answers, evidence evaluation, answer judging, complete token/latency data, and reviewed failure cases.
+These LlamaIndex finance-aware rows pass the mechanical promotion gate on the 12-question MVP subset. They remain documented as stronger-baseline diagnostics until the larger FinanceBench subset is ready.
 
 ## Next Stage 1 Work
 
 The next work should strengthen the benchmark beyond the dependency-light MVP baselines:
 
-1. Run LlamaIndex finance-aware LLM answer generation and answer judging.
-2. Expand the FinanceBench subset beyond 12 questions.
+1. Expand the FinanceBench subset beyond 12 questions.
+2. Tune LlamaIndex candidate chunk size and retrieved context count to reduce token usage.
 3. Add per-method failure-case notes and cost estimates.
 4. Prepare a PageIndex upstream issue or PR using the benchmark findings.
 5. Add GraphRAG and HyperGraphRAG after the larger subset is stable.
@@ -605,4 +644,4 @@ The first 11 structures are now available. The JSON parsing patch made PageIndex
 Handled empty responses and noisy JSON output
 ```
 
-Next, replace the dependency-light Vector/Hybrid implementations with stronger LlamaIndex baselines and expand the question set.
+Next, expand the question set and tune the stronger LlamaIndex baselines for lower answer-generation context size.

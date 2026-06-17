@@ -1,0 +1,383 @@
+{
+  "method": "llamaindex_vector_rag",
+  "question_id": "fb_mvp_002",
+  "question": "What is Amazon's year-over-year change in revenue from FY2016 to FY2017 (in units of percents and round to one decimal place)? Calculate what was asked by utilizing the line items clearly shown in the statement of income.",
+  "answer": "Amazon's total net sales (revenue) grew from $135,987 million in FY2016 to $177,866 million in FY2017, a year-over-year increase of **30.8%**[PAGE 38].",
+  "citations": [
+    {
+      "document_id": "AMAZON_2017_10K",
+      "page": 38,
+      "section": null,
+      "text": "Table of Contents AMAZON.COM, INC. CONSOLIDATED STATEMENTS OF OPERATIONS (in millions, except per share data) Year Ended December 31, 2015 2016 2017 Net product sales $ 79,268 $ 94,665 $ 118,573 Net service sales 27,738 41,322 59,293 Total net sales 107,006 135,987 177,866 Operating expenses: Cost of sales 71,651 88,265 111,934 Fulfillment 13,410 17,619 25,249 Marketing 5,254 7,233 10,069 Technology and content 12,540 16,085 22,620 General and administrative 1,747 2,432 3,674 Other operating exp",
+      "metadata": {
+        "chunk_id": "c808f7ec-b8dd-4a35-b7ec-ca5336c7d44d",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.6016922154026073,
+        "rerank_score": 125.13413382096249,
+        "matched_terms": [
+          "cost",
+          "income",
+          "net",
+          "operations",
+          "sales"
+        ],
+        "citation_source": "llm_answer"
+      }
+    },
+    {
+      "document_id": "AMAZON_2017_10K",
+      "page": 43,
+      "section": null,
+      "text": "Amazon’s electronic devices sold through retailers are recognized at the point of sale to consumers. Service sales represent third-party seller fees earned (including commissions) and related shipping fees, AWS sales, certain digital content subscriptions, certain advertising services, and our co-branded credit card agreements. Service sales, net of promotional discounts and return allowances, are recognized when service has been rendered. Return allowances, which reduce revenue and cost of sale",
+      "metadata": {
+        "chunk_id": "12fb3a2b-a4f8-4142-9e87-394ef6df6299",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5716401101691831,
+        "rerank_score": 92.21006364849727,
+        "matched_terms": [
+          "cost",
+          "net",
+          "revenue",
+          "sales"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "AMAZON_2017_10K",
+      "page": 49,
+      "section": null,
+      "text": "ing prior periods. The cumulative adjustment will primarily relate to unredeemed gift cards. We will begin to recognize revenue from estimated unredeemed gift cards over the expected customer redemption period, which is substantially within nine months, rather than waiting until gift cards expire or when the likelihood of redemption becomes remote, generally two years from the date of issuance. Other changes relate to Amazon-branded electronic devices sold through retailers, which will be recogn",
+      "metadata": {
+        "chunk_id": "45be88ef-85e6-495f-852c-b906a8dd4425",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5120647670166668,
+        "rerank_score": 91.039810035,
+        "matched_terms": [
+          "change",
+          "cost",
+          "income",
+          "net",
+          "operations",
+          "revenue",
+          "sales"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "llamaindex_build_vector_index",
+      "target": "AMAZON_2017_10K",
+      "metadata": {
+        "page_count": 85,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "chunk_size": 900,
+        "chunk_overlap": 160,
+        "retrieve_top_k": 120,
+        "rerank_top_k": 12,
+        "finance_rerank": true
+      }
+    },
+    {
+      "step": 2,
+      "action": "llamaindex_retrieve_node",
+      "target": "c808f7ec-b8dd-4a35-b7ec-ca5336c7d44d",
+      "metadata": {
+        "page": 38,
+        "retrieval_rank": 5,
+        "initial_rank": 5,
+        "vector_score": 0.6016922154026073,
+        "rerank_score": 125.13413382096249,
+        "finance_boost": 42.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "income_statement_title",
+          "total_net_sales_line_item"
+        ],
+        "matched_terms": [
+          "cost",
+          "income",
+          "net",
+          "operations",
+          "sales"
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "action": "llamaindex_retrieve_node",
+      "target": "12fb3a2b-a4f8-4142-9e87-394ef6df6299",
+      "metadata": {
+        "page": 43,
+        "retrieval_rank": 10,
+        "initial_rank": 10,
+        "vector_score": 0.5716401101691831,
+        "rerank_score": 92.21006364849727,
+        "finance_boost": 20.125,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "total_net_sales_line_item"
+        ],
+        "matched_terms": [
+          "cost",
+          "net",
+          "revenue",
+          "sales"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "llamaindex_retrieve_node",
+      "target": "45be88ef-85e6-495f-852c-b906a8dd4425",
+      "metadata": {
+        "page": 49,
+        "retrieval_rank": 20,
+        "initial_rank": 20,
+        "vector_score": 0.5120647670166668,
+        "rerank_score": 91.039810035,
+        "finance_boost": 16.0,
+        "finance_boost_reasons": [
+          "income_statement_title"
+        ],
+        "matched_terms": [
+          "change",
+          "cost",
+          "income",
+          "net",
+          "operations",
+          "revenue",
+          "sales"
+        ]
+      }
+    },
+    {
+      "step": 5,
+      "action": "llamaindex_retrieve_node",
+      "target": "6e0d6a87-7fd5-4080-b1e1-50153fa840a1",
+      "metadata": {
+        "page": 49,
+        "retrieval_rank": 30,
+        "initial_rank": 30,
+        "vector_score": 0.4837225154023399,
+        "rerank_score": 88.49286557532172,
+        "finance_boost": 19.375,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "income_statement_title"
+        ],
+        "matched_terms": [
+          "cost",
+          "income",
+          "net",
+          "operations",
+          "revenue",
+          "sales",
+          "statement"
+        ]
+      }
+    },
+    {
+      "step": 6,
+      "action": "llamaindex_retrieve_node",
+      "target": "7d7c721e-0751-4777-bae4-ab58c1b2bbf8",
+      "metadata": {
+        "page": 72,
+        "retrieval_rank": 1,
+        "initial_rank": 1,
+        "vector_score": 0.6415761208118425,
+        "rerank_score": 83.15761208118424,
+        "finance_boost": 8.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "matched_terms": [
+          "income",
+          "net",
+          "operations",
+          "sales",
+          "statement"
+        ]
+      }
+    },
+    {
+      "step": 7,
+      "action": "llamaindex_retrieve_node",
+      "target": "69fd8f35-3eb4-4daa-bdb4-b01a8679cb5f",
+      "metadata": {
+        "page": 18,
+        "retrieval_rank": 6,
+        "initial_rank": 6,
+        "vector_score": 0.5929421563206254,
+        "rerank_score": 79.25035598293972,
+        "finance_boost": 8.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "matched_terms": [
+          "income",
+          "net",
+          "operations",
+          "sales"
+        ]
+      }
+    },
+    {
+      "step": 8,
+      "action": "llamaindex_retrieve_node",
+      "target": "c61798ba-6049-44b0-8725-dfde1aae9bc1",
+      "metadata": {
+        "page": 76,
+        "retrieval_rank": 54,
+        "initial_rank": 54,
+        "vector_score": 0.42347629731284075,
+        "rerank_score": 78.88271745058232,
+        "finance_boost": 24.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "income_statement_title"
+        ],
+        "matched_terms": [
+          "income",
+          "operations",
+          "statement"
+        ]
+      }
+    },
+    {
+      "step": 9,
+      "action": "llamaindex_retrieve_node",
+      "target": "ead539fb-0276-4160-a30c-c89d1c4146c9",
+      "metadata": {
+        "page": 27,
+        "retrieval_rank": 7,
+        "initial_rank": 7,
+        "vector_score": 0.5870812902664908,
+        "rerank_score": 78.65549744770172,
+        "finance_boost": 8.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "matched_terms": [
+          "cost",
+          "net",
+          "revenue",
+          "sales"
+        ]
+      }
+    },
+    {
+      "step": 10,
+      "action": "llamaindex_retrieve_node",
+      "target": "185211cb-0383-4b30-81c3-af3236c263ec",
+      "metadata": {
+        "page": 44,
+        "retrieval_rank": 45,
+        "initial_rank": 45,
+        "vector_score": 0.4484113063761784,
+        "rerank_score": 78.45516572533714,
+        "finance_boost": 16.0,
+        "finance_boost_reasons": [
+          "income_statement_title"
+        ],
+        "matched_terms": [
+          "cost",
+          "operations",
+          "revenue",
+          "sales"
+        ]
+      }
+    },
+    {
+      "step": 11,
+      "action": "llamaindex_retrieve_node",
+      "target": "85002973-f9ba-432f-af0a-3227baacb9c8",
+      "metadata": {
+        "page": 37,
+        "retrieval_rank": 4,
+        "initial_rank": 4,
+        "vector_score": 0.6086476793043951,
+        "rerank_score": 77.83845214096583,
+        "finance_boost": 8.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "matched_terms": [
+          "income",
+          "net",
+          "revenue",
+          "sales"
+        ]
+      }
+    },
+    {
+      "step": 12,
+      "action": "llamaindex_retrieve_node",
+      "target": "38106d22-c922-4de2-b401-6d82a65df71a",
+      "metadata": {
+        "page": 30,
+        "retrieval_rank": 55,
+        "initial_rank": 55,
+        "vector_score": 0.4220496121962587,
+        "rerank_score": 76.48127700909956,
+        "finance_boost": 21.75,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "income_statement_title"
+        ],
+        "matched_terms": [
+          "income",
+          "net",
+          "operations"
+        ]
+      }
+    },
+    {
+      "step": 13,
+      "action": "llamaindex_retrieve_node",
+      "target": "6aa49c9a-ba54-4440-a65a-3310430cefa6",
+      "metadata": {
+        "page": 36,
+        "retrieval_rank": 24,
+        "initial_rank": 24,
+        "vector_score": 0.49900554437669653,
+        "rerank_score": 76.07380005170474,
+        "finance_boost": 18.375,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "income_statement_title"
+        ],
+        "matched_terms": [
+          "income",
+          "operations"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": 8166,
+    "output": 272,
+    "total": 8438
+  },
+  "latency_ms": 15192,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\AMAZON_2017_10K.pdf",
+    "adapter_mode": "llamaindex_vector_retrieval",
+    "llm_enabled": true,
+    "model": "deepseek/deepseek-v4-pro",
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "page_count": 85,
+    "chunk_size": 900,
+    "chunk_overlap": 160,
+    "retrieve_top_k": 120,
+    "rerank_top_k": 12,
+    "max_citations": 3,
+    "finance_rerank": true
+  }
+}

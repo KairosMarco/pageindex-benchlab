@@ -122,9 +122,9 @@ These stronger claims require a larger dataset, stronger baselines, and cost ass
 3. Add `scripts/run_llamaindex_vector_rag_mvp.py`. Completed.
 4. Run no-LLM smoke tests. Completed as diagnostic runs.
 5. Improve reranking or add Hybrid fusion before LLM answer generation. Completed for retrieval-only diagnostics with label-free finance-aware reranking.
-6. Run LLM answer generation on the same 12 questions only after retrieval quality is acceptable. Next.
-7. Evaluate evidence and answers. Pending for the finance-aware LlamaIndex baselines.
-8. Regenerate detailed evidence reports and validation reports. Pending for the finance-aware LlamaIndex baselines.
+6. Run LLM answer generation on the same 12 questions only after retrieval quality is acceptable. Completed for finance-aware LlamaIndex Vector and Hybrid diagnostics.
+7. Evaluate evidence and answers. Completed for finance-aware LlamaIndex Vector and Hybrid diagnostics.
+8. Regenerate detailed evidence reports and validation reports. Completed in `reports/llamaindex_finance_llm_diagnostics.md` and `.json`.
 9. Only then update benchmark conclusions.
 
 ## LlamaIndex Vector Diagnostic Result
@@ -147,7 +147,21 @@ Interpretation:
 
 The generic LlamaIndex vector retriever with `sentence-transformers/all-MiniLM-L6-v2` often places gold pages in the wider candidate set, but it does not reliably rank them into the top citations. The label-free finance-aware reranker fixes top-three evidence retrieval on the 12-question MVP subset by using only the question text and candidate chunk text.
 
-This result is retrieval-only. It is strong enough to start LLM answer generation, but not enough to promote the method into the main Stage 1 answer-level table.
+LLM diagnostic result:
+
+```text
+questions: 12
+failures: 0
+evidence recall: 1.000
+citation precision: 0.333
+LLM-judge answer accuracy: 1.000
+average total tokens: 8,964
+average latency: 16,723 ms
+```
+
+Interpretation:
+
+The finance-aware LlamaIndex Vector candidate now passes the mechanical promotion gate on the 12-question MVP subset. It should still be treated as a stronger-baseline diagnostic until the larger subset confirms that the finance-aware reranker generalizes.
 
 ## LlamaIndex Hybrid Diagnostic Result
 
@@ -170,4 +184,18 @@ Interpretation:
 
 BM25/vector fusion finds the relevant evidence in a wider candidate set, but the generic reranker still fails to promote the financial statement page into the top three citations. The tested generic cross-encoder did not improve the first diagnostic case. The label-free finance-aware reranker fixes top-three evidence retrieval on the 12-question MVP subset.
 
-This result is retrieval-only. The next required step is LLM answer generation and answer judging under the same Stage 1 protocol.
+LLM diagnostic result:
+
+```text
+questions: 12
+failures: 0
+evidence recall: 1.000
+citation precision: 0.333
+LLM-judge answer accuracy: 1.000
+average total tokens: 9,216
+average latency: 18,596 ms
+```
+
+Interpretation:
+
+The finance-aware LlamaIndex Hybrid candidate now passes the mechanical promotion gate on the 12-question MVP subset. Its average token usage and latency are higher than the current PageIndex and dependency-light Hybrid rows in this run, so the next technical work is retrieval-context size tuning rather than claiming broad superiority.

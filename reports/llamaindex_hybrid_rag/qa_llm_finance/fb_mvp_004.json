@@ -1,0 +1,459 @@
+{
+  "method": "llamaindex_hybrid_rag",
+  "question_id": "fb_mvp_004",
+  "question": "Among operations, investing, and financing activities, which brought in the most (or lost the least) cash flow for AMD in FY22?",
+  "answer": "Among operating, investing, and financing activities, operating activities brought in the most cash flow for AMD in FY22, providing $3,565 million [PAGE 58 | CHUNK 2f75ed9a] [PAGE 51 | CHUNK c41c8345].",
+  "citations": [
+    {
+      "document_id": "AMD_2022_10K",
+      "page": 58,
+      "section": null,
+      "text": "Table of Contents Advanced Micro Devices, Inc. Consolidated Statements of Cash Flows Year Ended December 31, 2022 December 25, 2021 December 26, 2020 (In millions) Cash flows from operating activities: Net income $ 1,320 $ 3,162 $ 2,490 Adjustments to reconcile net income to net cash provided by operating activities: Depreciation and amortization 4,174 407 312 Stock-based compensation 1,081 379 274 Amortization of debt discount and issuance costs — 5 14 Amortization of operating lease right-of-u",
+      "metadata": {
+        "chunk_id": "2f75ed9a-f20d-424f-b621-3f7cf8f7ea97",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.6028884678990996,
+        "rerank_score": 101.78688524590164,
+        "matched_terms": [
+          "activities",
+          "cash",
+          "financing",
+          "flows",
+          "investing",
+          "operating"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "AMD_2022_10K",
+      "page": 59,
+      "section": null,
+      "text": "Table of Contents Advanced Micro Devices, Inc. Consolidated Statements of Cash Flows Year Ended December 31, 2022 December 25, 2021 December 26, 2020 (In millions) Supplemental cash flow information: Cash paid during the year for: Interest $ 85 $ 25 $ 31 Income taxes, net of refund $ 685 $ 35 $ 8 Non-cash investing and financing activities: Purchases of property and equipment, accrued but not paid $ 157 $ 72 $ 31 Issuance of common stock to settle convertible debt $ — $ 25 $ 217 Issuance of comm",
+      "metadata": {
+        "chunk_id": "c02ef4ec-bfb0-4d3d-9605-caaad2597b11",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5518644956057976,
+        "rerank_score": 73.72718253968254,
+        "matched_terms": [
+          "activities",
+          "cash",
+          "financing",
+          "flow",
+          "flows",
+          "investing",
+          "operating"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "AMD_2022_10K",
+      "page": 101,
+      "section": null,
+      "text": "his Annual Report on Form 10-K, as indexed below. Index to Consolidated Financial Statements Consolidated Statements of Operations 51 Consolidated Statements of Comprehensive Income 52 Consolidated Balance Sheets 53 Consolidated Statements of Stockholders’ Equity 54 Consolidated Statements of Cash Flows 55 Notes to Consolidated Financial Statements 57 Reports of Independent Registered Public Accounting Firm (PCAOB ID: 42) 90 All schedules have been omitted because the information is not required",
+      "metadata": {
+        "chunk_id": "05a8057d-0ccf-48a0-9e48-1c789c52118b",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.41657803423915796,
+        "rerank_score": 67.52462121212122,
+        "matched_terms": [
+          "among",
+          "cash",
+          "flows",
+          "operations"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "llamaindex_build_hybrid_index",
+      "target": "AMD_2022_10K",
+      "metadata": {
+        "page_count": 121,
+        "node_count": 157,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "chunk_size": 900,
+        "chunk_overlap": 160,
+        "vector_top_k": 120,
+        "bm25_top_k": 120,
+        "fusion_top_k": 120,
+        "rerank_top_k": 12,
+        "rrf_k": 60,
+        "finance_rerank": true,
+        "cross_encoder_model": null,
+        "cross_encoder_candidates": 60
+      }
+    },
+    {
+      "step": 2,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "2f75ed9a-f20d-424f-b621-3f7cf8f7ea97",
+      "metadata": {
+        "page": 58,
+        "bm25_rank": 1,
+        "vector_rank": 1,
+        "fusion_rank": 1,
+        "bm25_score": 6.556124687194824,
+        "vector_score": 0.6028884678990996,
+        "rrf_score": 0.03278688524590164,
+        "rerank_score": 101.78688524590164,
+        "finance_boost": 50.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "cash_flow_statement_title",
+          "operating_cash_flow_section",
+          "investing_cash_flow_section",
+          "financing_cash_flow_section"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "activities",
+          "cash",
+          "financing",
+          "flows",
+          "investing",
+          "operating"
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "c02ef4ec-bfb0-4d3d-9605-caaad2597b11",
+      "metadata": {
+        "page": 59,
+        "bm25_rank": 4,
+        "vector_rank": 3,
+        "fusion_rank": 4,
+        "bm25_score": 5.719232559204102,
+        "vector_score": 0.5518644956057976,
+        "rrf_score": 0.03149801587301587,
+        "rerank_score": 73.72718253968254,
+        "finance_boost": 21.25,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "cash_flow_statement_title"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "activities",
+          "cash",
+          "financing",
+          "flow",
+          "flows",
+          "investing",
+          "operating"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "05a8057d-0ccf-48a0-9e48-1c789c52118b",
+      "metadata": {
+        "page": 101,
+        "bm25_rank": 12,
+        "vector_rank": 39,
+        "fusion_rank": 14,
+        "bm25_score": 3.8536221981048584,
+        "vector_score": 0.41657803423915796,
+        "rrf_score": 0.02398989898989899,
+        "rerank_score": 67.52462121212122,
+        "finance_boost": 25.625,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "cash_flow_statement_title"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "among",
+          "cash",
+          "flows",
+          "operations"
+        ]
+      }
+    },
+    {
+      "step": 5,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "c41c8345-5083-44a6-b44b-a09834b15839",
+      "metadata": {
+        "page": 51,
+        "bm25_rank": 2,
+        "vector_rank": 2,
+        "fusion_rank": 2,
+        "bm25_score": 6.381078720092773,
+        "vector_score": 0.557192708700732,
+        "rrf_score": 0.03225806451612903,
+        "rerank_score": 60.00112007168459,
+        "finance_boost": 7.75,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "activities",
+          "cash",
+          "financing",
+          "flow",
+          "flows",
+          "investing",
+          "operating",
+          "operations"
+        ]
+      }
+    },
+    {
+      "step": 6,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "cba48d12-4580-48dc-86da-869328ee0f9f",
+      "metadata": {
+        "page": 79,
+        "bm25_rank": 26,
+        "vector_rank": 27,
+        "fusion_rank": 18,
+        "bm25_score": 2.7576704025268555,
+        "vector_score": 0.44233911799256875,
+        "rrf_score": 0.023122159850307404,
+        "rerank_score": 58.50410429475185,
+        "finance_boost": 25.5,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "cash_flow_statement_title"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "cash",
+          "flow",
+          "flows"
+        ]
+      }
+    },
+    {
+      "step": 7,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "0fec75b9-f131-4b3e-ab73-2deecc064358",
+      "metadata": {
+        "page": 52,
+        "bm25_rank": 3,
+        "vector_rank": 4,
+        "fusion_rank": 3,
+        "bm25_score": 5.7976975440979,
+        "vector_score": 0.5415138151480783,
+        "rrf_score": 0.03149801587301587,
+        "rerank_score": 57.48412698412699,
+        "finance_boost": 15.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "operating_cash_flow_section"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "activities",
+          "cash",
+          "financing",
+          "investing",
+          "operating"
+        ]
+      }
+    },
+    {
+      "step": 8,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "b36158f5-56cf-47f9-a77e-78af5c664ea2",
+      "metadata": {
+        "page": 47,
+        "bm25_rank": 9,
+        "vector_rank": 35,
+        "fusion_rank": 9,
+        "bm25_score": 4.989563941955566,
+        "vector_score": 0.4187457108783694,
+        "rrf_score": 0.02501906941266209,
+        "rerank_score": 42.963513857106534,
+        "finance_boost": 0.0,
+        "finance_boost_reasons": [],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "among",
+          "cash",
+          "flows",
+          "least",
+          "most",
+          "operating",
+          "operations"
+        ]
+      }
+    },
+    {
+      "step": 9,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "c2f7596f-9167-41dc-a428-c21d2c64079f",
+      "metadata": {
+        "page": 89,
+        "bm25_rank": 21,
+        "vector_rank": 13,
+        "fusion_rank": 6,
+        "bm25_score": 3.0054068565368652,
+        "vector_score": 0.4878033624385708,
+        "rrf_score": 0.02604430914933198,
+        "rerank_score": 42.63458692710976,
+        "finance_boost": 6.625,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "cash",
+          "flows",
+          "operating"
+        ]
+      }
+    },
+    {
+      "step": 10,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "719a6255-4951-4e3a-a0e2-3f3d529ab813",
+      "metadata": {
+        "page": 53,
+        "bm25_rank": 6,
+        "vector_rank": 36,
+        "fusion_rank": 7,
+        "bm25_score": 5.401588439941406,
+        "vector_score": 0.41872433102188666,
+        "rrf_score": 0.025568181818181816,
+        "rerank_score": 41.40151515151515,
+        "finance_boost": 1.875,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "cash",
+          "flows",
+          "investing",
+          "least",
+          "operations"
+        ]
+      }
+    },
+    {
+      "step": 11,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "b75ebbd2-d05c-42a9-ae5e-053c6f3b9f62",
+      "metadata": {
+        "page": 105,
+        "bm25_rank": 13,
+        "vector_rank": 12,
+        "fusion_rank": 5,
+        "bm25_score": 3.790255069732666,
+        "vector_score": 0.49157710516548764,
+        "rrf_score": 0.02758751902587519,
+        "rerank_score": 38.55974124809741,
+        "finance_boost": 8.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "among"
+        ]
+      }
+    },
+    {
+      "step": 12,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "b0038a79-acac-48d7-89db-f193c9dd7c5e",
+      "metadata": {
+        "page": 36,
+        "bm25_rank": 10,
+        "vector_rank": 66,
+        "fusion_rank": 24,
+        "bm25_score": 4.193594932556152,
+        "vector_score": 0.37620388828430124,
+        "rrf_score": 0.02222222222222222,
+        "rerank_score": 38.06249999999999,
+        "finance_boost": 0.0,
+        "finance_boost_reasons": [],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "among",
+          "cash",
+          "flows",
+          "least",
+          "operating",
+          "operations"
+        ]
+      }
+    },
+    {
+      "step": 13,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "913b43f7-0d20-4bbc-aa8e-02384e5f739b",
+      "metadata": {
+        "page": 62,
+        "bm25_rank": 8,
+        "vector_rank": 54,
+        "fusion_rank": 17,
+        "bm25_score": 5.234508991241455,
+        "vector_score": 0.39358824196952713,
+        "rrf_score": 0.02347781217750258,
+        "rerank_score": 37.366701066391464,
+        "finance_boost": 0.0,
+        "finance_boost_reasons": [],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "among",
+          "cash",
+          "flows",
+          "least",
+          "operations"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": 8414,
+    "output": 359,
+    "total": 8773
+  },
+  "latency_ms": 18494,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\AMD_2022_10K.pdf",
+    "adapter_mode": "llamaindex_bm25_vector_rrf_plus_rerank",
+    "llm_enabled": true,
+    "model": "deepseek/deepseek-v4-pro",
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "page_count": 121,
+    "node_count": 157,
+    "chunk_size": 900,
+    "chunk_overlap": 160,
+    "vector_top_k": 120,
+    "bm25_top_k": 120,
+    "fusion_top_k": 120,
+    "rerank_top_k": 12,
+    "rrf_k": 60,
+    "max_citations": 3,
+    "finance_rerank": true,
+    "cross_encoder_model": null,
+    "cross_encoder_candidates": 60
+  }
+}
