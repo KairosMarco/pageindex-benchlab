@@ -1,0 +1,472 @@
+{
+  "method": "llamaindex_hybrid_rag",
+  "question_id": "fb_mvp_005",
+  "question": "Are Best Buy's gross margins historically consistent (not fluctuating more than roughly 2% each year)? If gross margins are not a relevant metric for a company like this, then please state that and explain why.",
+  "answer": "Retrieved 12 chunks with LlamaIndex BM25/vector hybrid fusion.",
+  "citations": [
+    {
+      "document_id": "BESTBUY_2023_10K",
+      "page": 40,
+      "section": null,
+      "text": "Consolidated Statements of Earnings $ and shares in millions, except per share amounts Fiscal Years Ended January 28, 2023 January 29, 2022 January 30, 2021 Revenue $ 46,298 $ 51,761 $ 47,262 Cost of sales 36,386 40,121 36,689 Gross profit 9,912 11,640 10,573 Selling, general and administrative expenses 7,970 8,635 7,928 Restructuring charges 147 (34) 254 Operating income 1,795 3,039 2,391 Other income (expense): Investment income and other 28 10 38 Interest expense (35) (25) (52) Earnings befor",
+      "metadata": {
+        "chunk_id": "d4379d7e-b3d4-4634-8aac-0e37c1a087b4",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.3579185302374727,
+        "rerank_score": 80.47859254566572,
+        "matched_terms": [
+          "cost",
+          "earnings",
+          "gross",
+          "profit",
+          "revenue",
+          "sales"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "BESTBUY_2023_10K",
+      "page": 36,
+      "section": null,
+      "text": "c. and subsidiaries (the \"Company\") as of January 28, 2023 and January 29, 2022, the related consolidated statements of earnings, comprehensive income, cash flows and changes in shareholders’ equity for each of the three years in the period ended January 28, 2023, and the related notes (collectively referred to as the \"financial statements\"). In our opinion, the financial statements present fairly, in all material respects, the financial position of the Company as of January 28, 2023 and January",
+      "metadata": {
+        "chunk_id": "7e29979f-9408-4ca9-b7ec-f5129aa9e4c8",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5394643571893849,
+        "rerank_score": 75.91724515013271,
+        "matched_terms": [
+          "cost",
+          "each",
+          "earnings",
+          "sales"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "BESTBUY_2023_10K",
+      "page": 51,
+      "section": null,
+      "text": "rom our merchandise vendors through a variety of programs and arrangements, primarily in the form of purchases-based or sales-based volumes and for product advertising and placement. We recognize allowances based on purchases and sales as a reduction of cost of sales when the associated inventory is sold. Allowances for advertising and placement are recognized as a reduction of cost of sales ratably over the corresponding performance period. Funds that are determined to be a reimbursement of spe",
+      "metadata": {
+        "chunk_id": "3959bd9a-3107-4b09-bb86-ad25fbff3121",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.24221136932506268,
+        "rerank_score": 69.89718452635654,
+        "matched_terms": [
+          "cost",
+          "earnings",
+          "like",
+          "revenue",
+          "sales"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "llamaindex_build_hybrid_index",
+      "target": "BESTBUY_2023_10K",
+      "metadata": {
+        "page_count": 75,
+        "node_count": 124,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "chunk_size": 900,
+        "chunk_overlap": 160,
+        "vector_top_k": 120,
+        "bm25_top_k": 120,
+        "fusion_top_k": 120,
+        "rerank_top_k": 12,
+        "rrf_k": 60,
+        "finance_rerank": true,
+        "cross_encoder_model": null,
+        "cross_encoder_candidates": 60
+      }
+    },
+    {
+      "step": 2,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "d4379d7e-b3d4-4634-8aac-0e37c1a087b4",
+      "metadata": {
+        "page": 40,
+        "bm25_rank": 52,
+        "vector_rank": 17,
+        "fusion_rank": 24,
+        "bm25_score": 2.6134893894195557,
+        "vector_score": 0.3579185302374727,
+        "rrf_score": 0.021915584415584416,
+        "rerank_score": 80.47859254566572,
+        "finance_boost": 36.75,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "income_statement_title",
+          "gross_margin_line_items"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "cost",
+          "earnings",
+          "gross",
+          "profit",
+          "revenue",
+          "sales"
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "7e29979f-9408-4ca9-b7ec-f5129aa9e4c8",
+      "metadata": {
+        "page": 36,
+        "bm25_rank": 23,
+        "vector_rank": 1,
+        "fusion_rank": 4,
+        "bm25_score": 3.8716039657592773,
+        "vector_score": 0.5394643571893849,
+        "rrf_score": 0.02844163539403516,
+        "rerank_score": 75.91724515013271,
+        "finance_boost": 32.5,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "income_statement_title",
+          "gross_margin_line_items"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "cost",
+          "each",
+          "earnings",
+          "sales"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "3959bd9a-3107-4b09-bb86-ad25fbff3121",
+      "metadata": {
+        "page": 51,
+        "bm25_rank": 30,
+        "vector_rank": 73,
+        "fusion_rank": 45,
+        "bm25_score": 3.4525129795074463,
+        "vector_score": 0.24221136932506268,
+        "rrf_score": 0.018629908103592316,
+        "rerank_score": 69.89718452635654,
+        "finance_boost": 34.625,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "income_statement_title",
+          "gross_margin_line_items"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "cost",
+          "earnings",
+          "like",
+          "revenue",
+          "sales"
+        ]
+      }
+    },
+    {
+      "step": 5,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "89ff2c35-1918-4a7d-86c5-b9837a6d9c13",
+      "metadata": {
+        "page": 25,
+        "bm25_rank": 24,
+        "vector_rank": 6,
+        "fusion_rank": 7,
+        "bm25_score": 3.8414759635925293,
+        "vector_score": 0.4106687388948238,
+        "rrf_score": 0.027056277056277056,
+        "rerank_score": 68.75749656847218,
+        "finance_boost": 20.75,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "gross_margin_line_items"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "cost",
+          "each",
+          "earnings",
+          "gross",
+          "profit",
+          "revenue",
+          "sales"
+        ]
+      }
+    },
+    {
+      "step": 6,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "4455a976-8481-45e8-bd34-07b72d850336",
+      "metadata": {
+        "page": 26,
+        "bm25_rank": 3,
+        "vector_rank": 20,
+        "fusion_rank": 5,
+        "bm25_score": 6.365011215209961,
+        "vector_score": 0.35453097367519476,
+        "rrf_score": 0.028373015873015873,
+        "rerank_score": 66.34049554781262,
+        "finance_boost": 22.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "gross_margin_line_items"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "each",
+          "gross",
+          "margin",
+          "profit",
+          "revenue",
+          "sales"
+        ]
+      }
+    },
+    {
+      "step": 7,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "7d590307-3f2f-4214-b162-92b25156a873",
+      "metadata": {
+        "page": 48,
+        "bm25_rank": 16,
+        "vector_rank": 120,
+        "fusion_rank": 43,
+        "bm25_score": 4.338689804077148,
+        "vector_score": 0.0705854320908822,
+        "rrf_score": 0.01871345029239766,
+        "rerank_score": 65.3719868777635,
+        "finance_boost": 30.0,
+        "finance_boost_reasons": [
+          "income_statement_title",
+          "gross_margin_line_items"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "cost",
+          "earnings",
+          "relevant",
+          "revenue",
+          "sales"
+        ]
+      }
+    },
+    {
+      "step": 8,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "16d0feea-2593-4211-b461-08240a35c8cd",
+      "metadata": {
+        "page": 27,
+        "bm25_rank": 10,
+        "vector_rank": 19,
+        "fusion_rank": 8,
+        "bm25_score": 5.012552261352539,
+        "vector_score": 0.3546133246956357,
+        "rrf_score": 0.02694394213381555,
+        "rerank_score": 62.887031564709865,
+        "finance_boost": 22.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "gross_margin_line_items"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "each",
+          "gross",
+          "profit",
+          "revenue",
+          "sales"
+        ]
+      }
+    },
+    {
+      "step": 9,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "58db5fff-065d-4c1c-a6f8-29df0fb6eee5",
+      "metadata": {
+        "page": 45,
+        "bm25_rank": 40,
+        "vector_rank": 62,
+        "fusion_rank": 49,
+        "bm25_score": 3.1371116638183594,
+        "vector_score": 0.2644173879280779,
+        "rrf_score": 0.01819672131147541,
+        "rerank_score": 62.80647740903639,
+        "finance_boost": 32.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "income_statement_title",
+          "gross_margin_line_items"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "cost",
+          "earnings",
+          "sales"
+        ]
+      }
+    },
+    {
+      "step": 10,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "383067c0-b86f-41a4-8e8f-690af205f644",
+      "metadata": {
+        "page": 26,
+        "bm25_rank": 1,
+        "vector_rank": 5,
+        "fusion_rank": 1,
+        "bm25_score": 8.110209465026855,
+        "vector_score": 0.4204419474055833,
+        "rrf_score": 0.03177805800756621,
+        "rerank_score": 61.77805800756621,
+        "finance_boost": 14.0,
+        "finance_boost_reasons": [
+          "gross_margin_line_items"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "cost",
+          "gross",
+          "margin",
+          "profit",
+          "revenue",
+          "sales"
+        ]
+      }
+    },
+    {
+      "step": 11,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "eee2648c-b291-4232-a518-7b5aad5005e2",
+      "metadata": {
+        "page": 25,
+        "bm25_rank": 29,
+        "vector_rank": 8,
+        "fusion_rank": 10,
+        "bm25_score": 3.584890365600586,
+        "vector_score": 0.40695000567500866,
+        "rrf_score": 0.02594183740912095,
+        "rerank_score": 60.868666677413636,
+        "finance_boost": 21.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "gross_margin_line_items"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "each",
+          "gross",
+          "profit",
+          "revenue",
+          "sales"
+        ]
+      }
+    },
+    {
+      "step": 12,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "8f6029e3-d36f-47ed-9b9b-64e6fd79d7f6",
+      "metadata": {
+        "page": 32,
+        "bm25_rank": 2,
+        "vector_rank": 15,
+        "fusion_rank": 2,
+        "bm25_score": 6.56992244720459,
+        "vector_score": 0.3663369339603782,
+        "rrf_score": 0.02946236559139785,
+        "rerank_score": 58.95423551009704,
+        "finance_boost": 16.5,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "gross_margin_line_items"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "cost",
+          "each",
+          "earnings",
+          "margin",
+          "revenue",
+          "sales"
+        ]
+      }
+    },
+    {
+      "step": 13,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "028ee595-26fc-4797-b94c-c0991a6a513c",
+      "metadata": {
+        "page": 51,
+        "bm25_rank": 112,
+        "vector_rank": 67,
+        "fusion_rank": 98,
+        "bm25_score": 0.0,
+        "vector_score": 0.2538802733313059,
+        "rrf_score": 0.013687969236403589,
+        "rerank_score": 57.77435135022473,
+        "finance_boost": 31.875,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "income_statement_title",
+          "gross_margin_line_items"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "cost",
+          "earnings",
+          "sales"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": null,
+    "output": null,
+    "total": null
+  },
+  "latency_ms": 8662,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\BESTBUY_2023_10K.pdf",
+    "adapter_mode": "llamaindex_bm25_vector_rrf_plus_rerank",
+    "llm_enabled": false,
+    "model": null,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "page_count": 75,
+    "node_count": 124,
+    "chunk_size": 900,
+    "chunk_overlap": 160,
+    "vector_top_k": 120,
+    "bm25_top_k": 120,
+    "fusion_top_k": 120,
+    "rerank_top_k": 12,
+    "rrf_k": 60,
+    "max_citations": 3,
+    "finance_rerank": true,
+    "cross_encoder_model": null,
+    "cross_encoder_candidates": 60
+  }
+}

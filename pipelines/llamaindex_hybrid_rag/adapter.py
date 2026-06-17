@@ -15,6 +15,7 @@ from llama_index.embeddings.huggingface import HuggingFaceEmbedding
 from llama_index.retrievers.bm25 import BM25Retriever
 
 from benchlab.schemas import BenchmarkQuestion, BenchmarkResult, RetrievalTraceStep, TokenUsage
+from pipelines.finance_rerank import financial_line_item_boost
 from pipelines.llamaindex_vector_rag.adapter import DEFAULT_EMBED_MODEL
 from pipelines.vector_rag.adapter import (
     DEFAULT_MAX_CITATIONS as VECTOR_DEFAULT_MAX_CITATIONS,
@@ -129,6 +130,7 @@ def rerank_fused_chunks(
     chunks: list[dict[str, Any]],
     *,
     rerank_top_k: int,
+    finance_rerank: bool = True,
     cross_encoder_model: str | None = None,
     cross_encoder_candidates: int = DEFAULT_CROSS_ENCODER_CANDIDATES,
 ) -> list[dict[str, Any]]:
@@ -137,16 +139,23 @@ def rerank_fused_chunks(
     for rank, chunk in enumerate(chunks, start=1):
         text_terms = keywords(chunk.get("text") or "")
         matched_terms = sorted(terms & text_terms)
+        if finance_rerank:
+            finance_boost, finance_reasons = financial_line_item_boost(question, chunk.get("text") or "")
+        else:
+            finance_boost, finance_reasons = 0.0, []
         rerank_score = (
             chunk.get("rrf_score", 0.0) * 1000.0
             + len(matched_terms) * 2.0
             + phrase_boost(chunk.get("text") or "", terms)
+            + finance_boost
             + max(0.0, (len(chunks) - rank + 1) / max(len(chunks), 1))
         )
         reranked.append(
             {
                 **chunk,
                 "matched_terms": matched_terms,
+                "finance_boost": finance_boost,
+                "finance_boost_reasons": finance_reasons,
                 "rerank_score": rerank_score,
                 "fusion_rank": rank,
             }
@@ -186,6 +195,7 @@ def retrieve_fuse_and_rerank(
     fusion_top_k: int,
     rerank_top_k: int,
     rrf_k: int,
+    finance_rerank: bool = True,
     cross_encoder_model: str | None = None,
     cross_encoder_candidates: int = DEFAULT_CROSS_ENCODER_CANDIDATES,
 ) -> tuple[list[dict[str, Any]], int]:
@@ -214,6 +224,7 @@ def retrieve_fuse_and_rerank(
         question,
         fused,
         rerank_top_k=rerank_top_k,
+        finance_rerank=finance_rerank,
         cross_encoder_model=cross_encoder_model,
         cross_encoder_candidates=cross_encoder_candidates,
     ), len(nodes)
@@ -234,6 +245,7 @@ def run_llamaindex_hybrid_rag_qa(
     rerank_top_k: int = DEFAULT_RERANK_TOP_K,
     rrf_k: int = DEFAULT_RRF_K,
     max_citations: int = DEFAULT_MAX_CITATIONS,
+    finance_rerank: bool = True,
     cross_encoder_model: str | None = None,
     cross_encoder_candidates: int = DEFAULT_CROSS_ENCODER_CANDIDATES,
 ) -> BenchmarkResult:
@@ -250,6 +262,7 @@ def run_llamaindex_hybrid_rag_qa(
         fusion_top_k=fusion_top_k,
         rerank_top_k=rerank_top_k,
         rrf_k=rrf_k,
+        finance_rerank=finance_rerank,
         cross_encoder_model=cross_encoder_model,
         cross_encoder_candidates=cross_encoder_candidates,
     )
@@ -281,6 +294,7 @@ def run_llamaindex_hybrid_rag_qa(
                 "fusion_top_k": fusion_top_k,
                 "rerank_top_k": rerank_top_k,
                 "rrf_k": rrf_k,
+                "finance_rerank": finance_rerank,
                 "cross_encoder_model": cross_encoder_model,
                 "cross_encoder_candidates": cross_encoder_candidates,
             },
@@ -300,6 +314,8 @@ def run_llamaindex_hybrid_rag_qa(
                 "vector_score": chunk.get("vector_score"),
                 "rrf_score": chunk.get("rrf_score"),
                 "rerank_score": chunk.get("rerank_score"),
+                "finance_boost": chunk.get("finance_boost"),
+                "finance_boost_reasons": chunk.get("finance_boost_reasons", []),
                 "cross_encoder_score": chunk.get("cross_encoder_score"),
                 "pre_cross_encoder_rank": chunk.get("pre_cross_encoder_rank"),
                 "matched_terms": chunk.get("matched_terms", []),
@@ -333,6 +349,7 @@ def run_llamaindex_hybrid_rag_qa(
             "rerank_top_k": rerank_top_k,
             "rrf_k": rrf_k,
             "max_citations": max_citations,
+            "finance_rerank": finance_rerank,
             "cross_encoder_model": cross_encoder_model,
             "cross_encoder_candidates": cross_encoder_candidates,
         },
@@ -355,6 +372,7 @@ def main() -> None:
     parser.add_argument("--rerank-top-k", type=int, default=DEFAULT_RERANK_TOP_K)
     parser.add_argument("--rrf-k", type=int, default=DEFAULT_RRF_K)
     parser.add_argument("--max-citations", type=int, default=DEFAULT_MAX_CITATIONS)
+    parser.add_argument("--disable-finance-rerank", action="store_true")
     parser.add_argument("--cross-encoder-model", default=None)
     parser.add_argument("--cross-encoder-candidates", type=int, default=DEFAULT_CROSS_ENCODER_CANDIDATES)
     parser.add_argument("--output", type=Path, required=True)
@@ -375,6 +393,7 @@ def main() -> None:
         rerank_top_k=args.rerank_top_k,
         rrf_k=args.rrf_k,
         max_citations=args.max_citations,
+        finance_rerank=not args.disable_finance_rerank,
         cross_encoder_model=args.cross_encoder_model,
         cross_encoder_candidates=args.cross_encoder_candidates,
     )

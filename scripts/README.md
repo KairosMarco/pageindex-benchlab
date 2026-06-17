@@ -157,42 +157,56 @@ python scripts\evaluate_answers_mvp.py --results-dir reports\hybrid_rag\qa_llm -
 
 ## Run LlamaIndex Vector RAG Diagnostic Baseline
 
-Smoke test without LLM answer generation:
+Current finance-aware smoke test without LLM answer generation:
 
 ```powershell
-python scripts\run_llamaindex_vector_rag_mvp.py --no-llm --output-dir reports\llamaindex_vector_rag\qa_smoke --manifest reports\llamaindex_vector_rag\qa_smoke_manifest.json --force --continue-on-error
+python scripts\run_llamaindex_vector_rag_mvp.py --no-llm --output-dir reports\llamaindex_vector_rag\qa_smoke_finance --manifest reports\llamaindex_vector_rag\qa_smoke_finance_manifest.json --force --continue-on-error
+python scripts\evaluate_evidence_mvp.py --results-dir reports\llamaindex_vector_rag\qa_smoke_finance --output reports\llamaindex_vector_rag\evidence_eval_smoke_finance.json --continue-on-error
+```
+
+Generic reranker comparison without the finance line-item boost:
+
+```powershell
+python scripts\run_llamaindex_vector_rag_mvp.py --no-llm --disable-finance-rerank --output-dir reports\llamaindex_vector_rag\qa_smoke --manifest reports\llamaindex_vector_rag\qa_smoke_manifest.json --force --continue-on-error
 python scripts\evaluate_evidence_mvp.py --results-dir reports\llamaindex_vector_rag\qa_smoke --output reports\llamaindex_vector_rag\evidence_eval_smoke.json --continue-on-error
 ```
 
 Citation-depth diagnostics:
 
 ```powershell
-python scripts\run_llamaindex_vector_rag_mvp.py --no-llm --max-citations 6 --output-dir reports\llamaindex_vector_rag\qa_smoke_cite6 --manifest reports\llamaindex_vector_rag\qa_smoke_cite6_manifest.json --force --continue-on-error
+python scripts\run_llamaindex_vector_rag_mvp.py --no-llm --disable-finance-rerank --max-citations 6 --output-dir reports\llamaindex_vector_rag\qa_smoke_cite6 --manifest reports\llamaindex_vector_rag\qa_smoke_cite6_manifest.json --force --continue-on-error
 python scripts\evaluate_evidence_mvp.py --results-dir reports\llamaindex_vector_rag\qa_smoke_cite6 --output reports\llamaindex_vector_rag\evidence_eval_smoke_cite6.json --continue-on-error
 
-python scripts\run_llamaindex_vector_rag_mvp.py --no-llm --max-citations 12 --output-dir reports\llamaindex_vector_rag\qa_smoke_cite12 --manifest reports\llamaindex_vector_rag\qa_smoke_cite12_manifest.json --force --continue-on-error
+python scripts\run_llamaindex_vector_rag_mvp.py --no-llm --disable-finance-rerank --max-citations 12 --output-dir reports\llamaindex_vector_rag\qa_smoke_cite12 --manifest reports\llamaindex_vector_rag\qa_smoke_cite12_manifest.json --force --continue-on-error
 python scripts\evaluate_evidence_mvp.py --results-dir reports\llamaindex_vector_rag\qa_smoke_cite12 --output reports\llamaindex_vector_rag\evidence_eval_smoke_cite12.json --continue-on-error
 ```
 
-This is currently a diagnostic baseline. Do not add it to the main comparison table until retrieval quality improves or the report explicitly frames it as a weaker baseline.
+This is currently a diagnostic baseline. The finance-aware reranker reaches 1.000 evidence recall on the 12-question no-LLM MVP run, but it still needs LLM answer generation and answer judging before it can be added to the main answer-level comparison table.
 
 ## Run LlamaIndex Hybrid RAG Diagnostic Baseline
 
-Single-question smoke test:
+Current finance-aware smoke test without LLM answer generation:
 
 ```powershell
-python scripts\run_llamaindex_hybrid_rag_mvp.py --no-llm --question-id fb_mvp_001 --output-dir reports\llamaindex_hybrid_rag\qa_smoke --manifest reports\llamaindex_hybrid_rag\qa_smoke_manifest.json --force --continue-on-error
+python scripts\run_llamaindex_hybrid_rag_mvp.py --no-llm --output-dir reports\llamaindex_hybrid_rag\qa_smoke_finance --manifest reports\llamaindex_hybrid_rag\qa_smoke_finance_manifest.json --force --continue-on-error
+python scripts\evaluate_evidence_mvp.py --results-dir reports\llamaindex_hybrid_rag\qa_smoke_finance --output reports\llamaindex_hybrid_rag\evidence_eval_smoke_finance.json --continue-on-error
+```
+
+Generic reranker single-question smoke test:
+
+```powershell
+python scripts\run_llamaindex_hybrid_rag_mvp.py --no-llm --disable-finance-rerank --question-id fb_mvp_001 --output-dir reports\llamaindex_hybrid_rag\qa_smoke --manifest reports\llamaindex_hybrid_rag\qa_smoke_manifest.json --force --continue-on-error
 python scripts\evaluate_evidence_mvp.py --results-dir reports\llamaindex_hybrid_rag\qa_smoke --output reports\llamaindex_hybrid_rag\evidence_eval_smoke.json --continue-on-error
 ```
 
 Optional cross-encoder diagnostic:
 
 ```powershell
-python scripts\run_llamaindex_hybrid_rag_mvp.py --no-llm --question-id fb_mvp_001 --cross-encoder-model cross-encoder/ms-marco-MiniLM-L-6-v2 --output-dir reports\llamaindex_hybrid_rag\qa_smoke_cross --manifest reports\llamaindex_hybrid_rag\qa_smoke_cross_manifest.json --force --continue-on-error
+python scripts\run_llamaindex_hybrid_rag_mvp.py --no-llm --disable-finance-rerank --question-id fb_mvp_001 --cross-encoder-model cross-encoder/ms-marco-MiniLM-L-6-v2 --output-dir reports\llamaindex_hybrid_rag\qa_smoke_cross --manifest reports\llamaindex_hybrid_rag\qa_smoke_cross_manifest.json --force --continue-on-error
 python scripts\evaluate_evidence_mvp.py --results-dir reports\llamaindex_hybrid_rag\qa_smoke_cross --output reports\llamaindex_hybrid_rag\evidence_eval_smoke_cross.json --continue-on-error
 ```
 
-This diagnostic currently shows that the gold page can appear in a wider candidate set, but the top-three citation ranking still needs improvement.
+This is currently a diagnostic baseline. The finance-aware reranker reaches 1.000 evidence recall on the 12-question no-LLM MVP run, but it still needs LLM answer generation and answer judging before it can be added to the main answer-level comparison table.
 
 ## Evaluate Answer Accuracy
 

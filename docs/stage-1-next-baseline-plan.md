@@ -121,10 +121,10 @@ These stronger claims require a larger dataset, stronger baselines, and cost ass
 2. Add `pipelines/llamaindex_vector_rag/adapter.py`. Completed.
 3. Add `scripts/run_llamaindex_vector_rag_mvp.py`. Completed.
 4. Run no-LLM smoke tests. Completed as diagnostic runs.
-5. Improve reranking or add Hybrid fusion before LLM answer generation.
-6. Run LLM answer generation on the same 12 questions only after retrieval quality is acceptable.
-7. Evaluate evidence and answers.
-8. Regenerate detailed evidence reports and validation reports.
+5. Improve reranking or add Hybrid fusion before LLM answer generation. Completed for retrieval-only diagnostics with label-free finance-aware reranking.
+6. Run LLM answer generation on the same 12 questions only after retrieval quality is acceptable. Next.
+7. Evaluate evidence and answers. Pending for the finance-aware LlamaIndex baselines.
+8. Regenerate detailed evidence reports and validation reports. Pending for the finance-aware LlamaIndex baselines.
 9. Only then update benchmark conclusions.
 
 ## LlamaIndex Vector Diagnostic Result
@@ -132,26 +132,42 @@ These stronger claims require a larger dataset, stronger baselines, and cost ass
 Current no-LLM retrieval diagnostics:
 
 ```text
+Generic reranker:
 max_citations=3:  evidence recall 0.667, citation precision 0.222
 max_citations=6:  evidence recall 0.833, citation precision 0.139
 max_citations=12: evidence recall 0.917, citation precision 0.083
+
+Finance-aware reranker:
+questions: 12
+failures: 0
+max_citations=3: evidence recall 1.000, citation precision 0.333
 ```
 
 Interpretation:
 
-The current LlamaIndex vector retriever with `sentence-transformers/all-MiniLM-L6-v2` often places gold pages in the wider candidate set, but it does not reliably rank them into the top citations. This is not yet a strong replacement for the dependency-light Vector RAG MVP.
+The generic LlamaIndex vector retriever with `sentence-transformers/all-MiniLM-L6-v2` often places gold pages in the wider candidate set, but it does not reliably rank them into the top citations. The label-free finance-aware reranker fixes top-three evidence retrieval on the 12-question MVP subset by using only the question text and candidate chunk text.
+
+This result is retrieval-only. It is strong enough to start LLM answer generation, but not enough to promote the method into the main Stage 1 answer-level table.
 
 ## LlamaIndex Hybrid Diagnostic Result
 
 Current single-question diagnostic on `fb_mvp_001`:
 
 ```text
+Generic reranker:
 top-3 citations: evidence recall 0.000
 top-6 citations: evidence recall 1.000, citation precision 0.167
 top-12 citations: evidence recall 1.000, citation precision 0.091
 cross-encoder rerank top-3: evidence recall 0.000
+
+Finance-aware reranker:
+questions: 12
+failures: 0
+max_citations=3: evidence recall 1.000, citation precision 0.333
 ```
 
 Interpretation:
 
-BM25/vector fusion finds the relevant evidence in a wider candidate set, but the current reranker still fails to promote the financial statement page into the top three citations. The next stronger baseline should use table-aware and financial-line-item-aware reranking before LLM answer generation.
+BM25/vector fusion finds the relevant evidence in a wider candidate set, but the generic reranker still fails to promote the financial statement page into the top three citations. The tested generic cross-encoder did not improve the first diagnostic case. The label-free finance-aware reranker fixes top-three evidence retrieval on the 12-question MVP subset.
+
+This result is retrieval-only. The next required step is LLM answer generation and answer judging under the same Stage 1 protocol.

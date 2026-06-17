@@ -10,6 +10,7 @@ from llama_index.core.node_parser import SentenceSplitter
 from llama_index.embeddings.huggingface import HuggingFaceEmbedding
 
 from benchlab.schemas import BenchmarkQuestion, BenchmarkResult, RetrievalTraceStep, TokenUsage
+from pipelines.finance_rerank import financial_line_item_boost
 from pipelines.vector_rag.adapter import (
     DEFAULT_MAX_CITATIONS as VECTOR_DEFAULT_MAX_CITATIONS,
     answer_with_llm,
@@ -93,6 +94,7 @@ def rerank_nodes(
     retrieved_chunks: list[dict[str, Any]],
     *,
     rerank_top_k: int,
+    finance_rerank: bool = True,
 ) -> list[dict[str, Any]]:
     terms = expanded_question_terms(question)
     reranked = []
@@ -100,16 +102,23 @@ def rerank_nodes(
         text_terms = keywords(chunk.get("text") or "")
         matched_terms = sorted(terms & text_terms)
         vector_score = chunk.get("vector_score") or 0.0
+        if finance_rerank:
+            finance_boost, finance_reasons = financial_line_item_boost(question, chunk.get("text") or "")
+        else:
+            finance_boost, finance_reasons = 0.0, []
         rerank_score = (
             vector_score * 100.0
             + len(matched_terms) * 2.0
             + phrase_boost(chunk.get("text") or "", terms)
+            + finance_boost
             + max(0.0, (len(retrieved_chunks) - rank + 1) / max(len(retrieved_chunks), 1))
         )
         reranked.append(
             {
                 **chunk,
                 "matched_terms": matched_terms,
+                "finance_boost": finance_boost,
+                "finance_boost_reasons": finance_reasons,
                 "rerank_score": rerank_score,
                 "initial_rank": rank,
             }
@@ -130,6 +139,7 @@ def run_llamaindex_vector_rag_qa(
     retrieve_top_k: int = DEFAULT_RETRIEVE_TOP_K,
     rerank_top_k: int = DEFAULT_RERANK_TOP_K,
     max_citations: int = DEFAULT_MAX_CITATIONS,
+    finance_rerank: bool = True,
 ) -> BenchmarkResult:
     started = time.perf_counter()
     pages = extract_pages(pdf_path)
@@ -141,7 +151,12 @@ def run_llamaindex_vector_rag_qa(
         chunk_overlap=chunk_overlap,
         retrieve_top_k=retrieve_top_k,
     )
-    reranked_chunks = rerank_nodes(question, retrieved_chunks, rerank_top_k=rerank_top_k)
+    reranked_chunks = rerank_nodes(
+        question,
+        retrieved_chunks,
+        rerank_top_k=rerank_top_k,
+        finance_rerank=finance_rerank,
+    )
 
     if no_llm:
         answer = f"Retrieved {len(reranked_chunks)} chunks with LlamaIndex vector retrieval and lightweight reranking."
@@ -166,6 +181,7 @@ def run_llamaindex_vector_rag_qa(
                 "chunk_overlap": chunk_overlap,
                 "retrieve_top_k": retrieve_top_k,
                 "rerank_top_k": rerank_top_k,
+                "finance_rerank": finance_rerank,
             },
         )
     ]
@@ -180,6 +196,8 @@ def run_llamaindex_vector_rag_qa(
                 "initial_rank": chunk.get("initial_rank"),
                 "vector_score": chunk.get("vector_score"),
                 "rerank_score": chunk.get("rerank_score"),
+                "finance_boost": chunk.get("finance_boost"),
+                "finance_boost_reasons": chunk.get("finance_boost_reasons", []),
                 "matched_terms": chunk.get("matched_terms", []),
             },
         )
@@ -207,6 +225,7 @@ def run_llamaindex_vector_rag_qa(
             "retrieve_top_k": retrieve_top_k,
             "rerank_top_k": rerank_top_k,
             "max_citations": max_citations,
+            "finance_rerank": finance_rerank,
         },
     )
 
@@ -224,6 +243,7 @@ def main() -> None:
     parser.add_argument("--retrieve-top-k", type=int, default=DEFAULT_RETRIEVE_TOP_K)
     parser.add_argument("--rerank-top-k", type=int, default=DEFAULT_RERANK_TOP_K)
     parser.add_argument("--max-citations", type=int, default=DEFAULT_MAX_CITATIONS)
+    parser.add_argument("--disable-finance-rerank", action="store_true")
     parser.add_argument("--output", type=Path, required=True)
     args = parser.parse_args()
 
@@ -239,6 +259,7 @@ def main() -> None:
         retrieve_top_k=args.retrieve_top_k,
         rerank_top_k=args.rerank_top_k,
         max_citations=args.max_citations,
+        finance_rerank=not args.disable_finance_rerank,
     )
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(result.model_dump_json(indent=2) + "\n", encoding="utf-8")

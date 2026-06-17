@@ -1,0 +1,398 @@
+{
+  "method": "llamaindex_vector_rag",
+  "question_id": "fb_mvp_008",
+  "question": "What is the FY2016 COGS for Microsoft? Please state answer in USD millions. Provide a response to the question by primarily using the statement of income.",
+  "answer": "Retrieved 12 chunks with LlamaIndex vector retrieval and lightweight reranking.",
+  "citations": [
+    {
+      "document_id": "MICROSOFT_2016_10K",
+      "page": 52,
+      "section": null,
+      "text": "Table of Contents PART II Item 8 ITEM 8. FINANCIAL STATEMENTS AND SUPPLEMENTARY DATA INCOME STATEMENTS (In millions, except per share amounts) Year Ended June 30, 2016 2015 2014 Revenue: Product $ 61,502 $ 75,956 $ 72,948 Service and other 23,818 17,624 13,885 Total revenue 85,320 93,580 86,833 Cost of revenue: Product 17,880 21,410 16,681 Service and other 14,900 11,628 10,397 Total cost of revenue 32,780 33,038 27,078 Gross margin 52,540 60,542 59,755 Research and development 11,988 12,046 11,",
+      "metadata": {
+        "chunk_id": "45b0839f-b964-43a3-8214-920e3735ab85",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5242263223398392,
+        "rerank_score": 111.35596556731727,
+        "matched_terms": [
+          "cost",
+          "income",
+          "millions",
+          "revenue",
+          "sales"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "MICROSOFT_2016_10K",
+      "page": 32,
+      "section": null,
+      "text": "mation and Geographic Data of the Notes to Financial Statements (Part II, Item 8 of this Form 10-K). SUMMARY RESULTS OF OPERATIONS (In millions, except percentages and per share amounts) 2016 2015 2014 Percentage Change 2016 Versus 2015 Percentage Change 2015 Versus 2014 Revenue $ 85,320 $ 93,580 $ 86,833 (9)% 8% Gross margin $ 52,540 $ 60,542 $ 59,755 (13)% 1% Operating income $ 20,182 $ 18,161 $ 27,759 11% (35)% Diluted earnings per share $ 2.10 $ 1.48 $ 2.63 42% (44)% Fiscal year 2016 compare",
+      "metadata": {
+        "chunk_id": "5fb3d074-d7a0-443d-b4d5-ec8351c5af9b",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5543523200699967,
+        "rerank_score": 99.05189867366633,
+        "matched_terms": [
+          "cost",
+          "income",
+          "millions",
+          "operations",
+          "primarily",
+          "revenue",
+          "sales"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "MICROSOFT_2016_10K",
+      "page": 34,
+      "section": null,
+      "text": "Fiscal year 2016 compared with fiscal year 2015 Productivity and Business Processes Productivity and Business Processes revenue increased slightly, primarily due to an increase in Office and Dynamics revenue. Revenue included an unfavorable foreign currency impact of approximately 6%. • Office Commercial revenue increased $135 million or 1%, driven by higher revenue from Office 365 commercial, mainly due to growth in subscribers, offset by lower transactional license volume, reflecting a continu",
+      "metadata": {
+        "chunk_id": "0b40ea62-0e60-4a51-b7cf-24b8869ecead",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5637753611688342,
+        "rerank_score": 95.25253611688342,
+        "matched_terms": [
+          "cost",
+          "income",
+          "primarily",
+          "revenue",
+          "sales"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "llamaindex_build_vector_index",
+      "target": "MICROSOFT_2016_10K",
+      "metadata": {
+        "page_count": 121,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "chunk_size": 900,
+        "chunk_overlap": 160,
+        "retrieve_top_k": 120,
+        "rerank_top_k": 12,
+        "finance_rerank": true
+      }
+    },
+    {
+      "step": 2,
+      "action": "llamaindex_retrieve_node",
+      "target": "45b0839f-b964-43a3-8214-920e3735ab85",
+      "metadata": {
+        "page": 52,
+        "retrieval_rank": 9,
+        "initial_rank": 9,
+        "vector_score": 0.5242263223398392,
+        "rerank_score": 111.35596556731727,
+        "finance_boost": 42.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "income_statement_title",
+          "cost_of_revenue_line_item"
+        ],
+        "matched_terms": [
+          "cost",
+          "income",
+          "millions",
+          "revenue",
+          "sales"
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "action": "llamaindex_retrieve_node",
+      "target": "5fb3d074-d7a0-443d-b4d5-ec8351c5af9b",
+      "metadata": {
+        "page": 32,
+        "retrieval_rank": 2,
+        "initial_rank": 2,
+        "vector_score": 0.5543523200699967,
+        "rerank_score": 99.05189867366633,
+        "finance_boost": 25.625,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "cost_of_revenue_line_item"
+        ],
+        "matched_terms": [
+          "cost",
+          "income",
+          "millions",
+          "operations",
+          "primarily",
+          "revenue",
+          "sales"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "llamaindex_retrieve_node",
+      "target": "0b40ea62-0e60-4a51-b7cf-24b8869ecead",
+      "metadata": {
+        "page": 34,
+        "retrieval_rank": 1,
+        "initial_rank": 1,
+        "vector_score": 0.5637753611688342,
+        "rerank_score": 95.25253611688342,
+        "finance_boost": 24.875,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "cost_of_revenue_line_item"
+        ],
+        "matched_terms": [
+          "cost",
+          "income",
+          "primarily",
+          "revenue",
+          "sales"
+        ]
+      }
+    },
+    {
+      "step": 5,
+      "action": "llamaindex_retrieve_node",
+      "target": "01a59501-2a6c-44e4-8c46-4fea27f14fcc",
+      "metadata": {
+        "page": 33,
+        "retrieval_rank": 17,
+        "initial_rank": 17,
+        "vector_score": 0.5097368742046249,
+        "rerank_score": 94.84035408712914,
+        "finance_boost": 26.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "cost_of_revenue_line_item"
+        ],
+        "matched_terms": [
+          "cost",
+          "income",
+          "millions",
+          "operations",
+          "primarily",
+          "revenue",
+          "sales"
+        ]
+      }
+    },
+    {
+      "step": 6,
+      "action": "llamaindex_retrieve_node",
+      "target": "907f3254-4875-499f-b8a7-5cf6ed1b16dd",
+      "metadata": {
+        "page": 36,
+        "retrieval_rank": 31,
+        "initial_rank": 31,
+        "vector_score": 0.47765346049642665,
+        "rerank_score": 87.51534604964266,
+        "finance_boost": 26.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "cost_of_revenue_line_item"
+        ],
+        "matched_terms": [
+          "cost",
+          "income",
+          "primarily",
+          "revenue",
+          "sales"
+        ]
+      }
+    },
+    {
+      "step": 7,
+      "action": "llamaindex_retrieve_node",
+      "target": "bac0495e-dd54-43ac-b744-22491338de0b",
+      "metadata": {
+        "page": 37,
+        "retrieval_rank": 43,
+        "initial_rank": 43,
+        "vector_score": 0.4639155223455645,
+        "rerank_score": 86.79155223455646,
+        "finance_boost": 24.75,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "cost_of_revenue_line_item"
+        ],
+        "matched_terms": [
+          "cost",
+          "income",
+          "millions",
+          "primarily",
+          "revenue",
+          "sales"
+        ]
+      }
+    },
+    {
+      "step": 8,
+      "action": "llamaindex_retrieve_node",
+      "target": "942a8ae4-a64b-402d-96c8-2ab602f9b183",
+      "metadata": {
+        "page": 35,
+        "retrieval_rank": 48,
+        "initial_rank": 48,
+        "vector_score": 0.4536354158318932,
+        "rerank_score": 84.59687491652265,
+        "finance_boost": 25.625,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "cost_of_revenue_line_item"
+        ],
+        "matched_terms": [
+          "cost",
+          "income",
+          "primarily",
+          "revenue",
+          "sales"
+        ]
+      }
+    },
+    {
+      "step": 9,
+      "action": "llamaindex_retrieve_node",
+      "target": "b0a1870e-45d1-4448-aa2c-389af38448a7",
+      "metadata": {
+        "page": 31,
+        "retrieval_rank": 13,
+        "initial_rank": 13,
+        "vector_score": 0.5215827303321164,
+        "rerank_score": 82.93327303321165,
+        "finance_boost": 17.875,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "income_statement_title"
+        ],
+        "matched_terms": [
+          "income",
+          "operations",
+          "primarily",
+          "provide",
+          "revenue",
+          "sales"
+        ]
+      }
+    },
+    {
+      "step": 10,
+      "action": "llamaindex_retrieve_node",
+      "target": "49fa8353-8a8b-4aa9-8e84-d6c0bbd49cca",
+      "metadata": {
+        "page": 93,
+        "retrieval_rank": 45,
+        "initial_rank": 45,
+        "vector_score": 0.4559407795502214,
+        "rerank_score": 79.85241128835547,
+        "finance_boost": 20.625,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "cost_of_revenue_line_item"
+        ],
+        "matched_terms": [
+          "cost",
+          "income",
+          "millions",
+          "primarily",
+          "revenue"
+        ]
+      }
+    },
+    {
+      "step": 11,
+      "action": "llamaindex_retrieve_node",
+      "target": "e6000e58-ad00-4eac-b660-e19c76d56b56",
+      "metadata": {
+        "page": 35,
+        "retrieval_rank": 33,
+        "initial_rank": 33,
+        "vector_score": 0.47564032383672744,
+        "rerank_score": 79.42236571700609,
+        "finance_boost": 20.125,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "cost_of_revenue_line_item"
+        ],
+        "matched_terms": [
+          "cost",
+          "primarily",
+          "revenue",
+          "sales"
+        ]
+      }
+    },
+    {
+      "step": 12,
+      "action": "llamaindex_retrieve_node",
+      "target": "d028237d-bc33-40f9-8b69-5dea7efa59b9",
+      "metadata": {
+        "page": 58,
+        "retrieval_rank": 5,
+        "initial_rank": 5,
+        "vector_score": 0.5404627179498921,
+        "rerank_score": 79.01293846165588,
+        "finance_boost": 16.0,
+        "finance_boost_reasons": [
+          "income_statement_title"
+        ],
+        "matched_terms": [
+          "income",
+          "provide",
+          "revenue",
+          "sales"
+        ]
+      }
+    },
+    {
+      "step": 13,
+      "action": "llamaindex_retrieve_node",
+      "target": "5100f0f5-ddc5-4662-a715-67b349309d50",
+      "metadata": {
+        "page": 53,
+        "retrieval_rank": 14,
+        "initial_rank": 14,
+        "vector_score": 0.5161140431931213,
+        "rerank_score": 76.6280709859788,
+        "finance_boost": 20.125,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "income_statement_title"
+        ],
+        "matched_terms": [
+          "income",
+          "millions"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": null,
+    "output": null,
+    "total": null
+  },
+  "latency_ms": 8807,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\MICROSOFT_2016_10K.pdf",
+    "adapter_mode": "llamaindex_vector_retrieval",
+    "llm_enabled": false,
+    "model": null,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "page_count": 121,
+    "chunk_size": 900,
+    "chunk_overlap": 160,
+    "retrieve_top_k": 120,
+    "rerank_top_k": 12,
+    "max_citations": 3,
+    "finance_rerank": true
+  }
+}

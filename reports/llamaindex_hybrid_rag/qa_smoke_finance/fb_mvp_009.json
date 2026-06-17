@@ -1,0 +1,471 @@
+{
+  "method": "llamaindex_hybrid_rag",
+  "question_id": "fb_mvp_009",
+  "question": "Among operations, investing, and financing activities, which brought in the most (or lost the least) cash flow for Nike in FY2023?",
+  "answer": "Retrieved 12 chunks with LlamaIndex BM25/vector hybrid fusion.",
+  "citations": [
+    {
+      "document_id": "NIKE_2023_10K",
+      "page": 62,
+      "section": null,
+      "text": "NIKE, INC. CONSOLIDATED STATEMENTS OF CASH FLOWS YEAR ENDED MAY 31, (Dollars in millions) 2023 2022 2021 Cash provided (used) by operations: Net income $ 5,070 $ 6,046 $ 5,727 Adjustments to reconcile net income to net cash provided (used) by operations: Depreciation 703 717 744 Deferred income taxes (117) (650) (385) Stock-based compensation 755 638 611 Amortization, impairment and other 156 123 53 Net foreign currency adjustments (213) (26) (138) Changes in certain working capital components a",
+      "metadata": {
+        "chunk_id": "b680da86-8258-47cc-b3cd-c1422129bf2f",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.6995743305050794,
+        "rerank_score": 105.52247488101534,
+        "matched_terms": [
+          "activities",
+          "cash",
+          "financing",
+          "flow",
+          "flows",
+          "investing",
+          "operating",
+          "operations"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "NIKE_2023_10K",
+      "page": 93,
+      "section": null,
+      "text": "The following table includes supplemental information used to calculate the present value of Operating lease liabilities: AS OF MAY 31, 2023 2022 Weighted-average remaining lease term (in years) 7.5 7.8 Weighted-average discount rate 2.5 % 2.3 % The following table includes supplemental cash and non-cash information related to operating leases: YEAR ENDED MAY 31, (Dollars in millions) 2023 2022 2021 Cash paid for amounts included in the measurement of lease liabilities: Operating cash flows from",
+      "metadata": {
+        "chunk_id": "011cd77f-66c4-4b70-9bf8-dbd6467cdfca",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5845979692937614,
+        "rerank_score": 66.57577025697213,
+        "matched_terms": [
+          "activities",
+          "cash",
+          "flows",
+          "investing",
+          "operating",
+          "operations"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "NIKE_2023_10K",
+      "page": 48,
+      "section": null,
+      "text": "n accordance with U.S. GAAP. There were no outstanding net investment hedges as of May 31, 2023 and 2022. There were no cash flows from net investment hedge settlements for the years ended May 31, 2023, 2022 and 2021. LIQUIDITY AND CAPITAL RESOURCES CASH FLOW ACTIVITY Cash provided (used) by operations was an inflow of $5,841 million for fiscal 2023, compared to $5,188 million for fiscal 2022. Net income, adjusted for non-cash items, generated $6,354 million of operating cash inflow for fiscal 2",
+      "metadata": {
+        "chunk_id": "53e5972b-16e3-47b1-9629-d6db25bd2f22",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5908357928721039,
+        "rerank_score": 63.518992884510126,
+        "matched_terms": [
+          "activities",
+          "cash",
+          "flow",
+          "flows",
+          "investing",
+          "operating",
+          "operations"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "llamaindex_build_hybrid_index",
+      "target": "NIKE_2023_10K",
+      "metadata": {
+        "page_count": 106,
+        "node_count": 153,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "chunk_size": 900,
+        "chunk_overlap": 160,
+        "vector_top_k": 120,
+        "bm25_top_k": 120,
+        "fusion_top_k": 120,
+        "rerank_top_k": 12,
+        "rrf_k": 60,
+        "finance_rerank": true,
+        "cross_encoder_model": null,
+        "cross_encoder_candidates": 60
+      }
+    },
+    {
+      "step": 2,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "b680da86-8258-47cc-b3cd-c1422129bf2f",
+      "metadata": {
+        "page": 62,
+        "bm25_rank": 1,
+        "vector_rank": 2,
+        "fusion_rank": 1,
+        "bm25_score": 6.053605079650879,
+        "vector_score": 0.6995743305050794,
+        "rrf_score": 0.03252247488101534,
+        "rerank_score": 105.52247488101534,
+        "finance_boost": 50.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "cash_flow_statement_title",
+          "operating_cash_flow_section",
+          "investing_cash_flow_section",
+          "financing_cash_flow_section"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "activities",
+          "cash",
+          "financing",
+          "flow",
+          "flows",
+          "investing",
+          "operating",
+          "operations"
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "011cd77f-66c4-4b70-9bf8-dbd6467cdfca",
+      "metadata": {
+        "page": 93,
+        "bm25_rank": 6,
+        "vector_rank": 43,
+        "fusion_rank": 6,
+        "bm25_score": 3.940107583999634,
+        "vector_score": 0.5845979692937614,
+        "rrf_score": 0.02486025301559282,
+        "rerank_score": 66.57577025697213,
+        "finance_boost": 22.75,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "cash_flow_statement_title"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "activities",
+          "cash",
+          "flows",
+          "investing",
+          "operating",
+          "operations"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "53e5972b-16e3-47b1-9629-d6db25bd2f22",
+      "metadata": {
+        "page": 48,
+        "bm25_rank": 3,
+        "vector_rank": 36,
+        "fusion_rank": 4,
+        "bm25_score": 4.847631931304932,
+        "vector_score": 0.5908357928721039,
+        "rrf_score": 0.026289682539682536,
+        "rerank_score": 63.518992884510126,
+        "finance_boost": 19.25,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "operating_cash_flow_section",
+          "investing_cash_flow_section"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "activities",
+          "cash",
+          "flow",
+          "flows",
+          "investing",
+          "operating",
+          "operations"
+        ]
+      }
+    },
+    {
+      "step": 5,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "f3d8c059-15ea-44bf-80e7-0af91988c4f0",
+      "metadata": {
+        "page": 72,
+        "bm25_rank": 18,
+        "vector_rank": 26,
+        "fusion_rank": 8,
+        "bm25_score": 3.2833967208862305,
+        "vector_score": 0.6053566419532778,
+        "rrf_score": 0.024448419797257006,
+        "rerank_score": 63.40014393518804,
+        "finance_boost": 26.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "cash_flow_statement_title"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "cash",
+          "flows",
+          "operations"
+        ]
+      }
+    },
+    {
+      "step": 6,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "e101133f-6df5-45af-97a8-c6cac9490264",
+      "metadata": {
+        "page": 49,
+        "bm25_rank": 5,
+        "vector_rank": 1,
+        "fusion_rank": 2,
+        "bm25_score": 3.9917104244232178,
+        "vector_score": 0.7013669404406472,
+        "rrf_score": 0.03177805800756621,
+        "rerank_score": 61.77116145584207,
+        "finance_boost": 16.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "financing_cash_flow_section"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "activities",
+          "cash",
+          "financing",
+          "flows",
+          "operating"
+        ]
+      }
+    },
+    {
+      "step": 7,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "bb45c892-bf08-4ea3-bdca-46ea16289071",
+      "metadata": {
+        "page": 69,
+        "bm25_rank": 2,
+        "vector_rank": null,
+        "fusion_rank": 62,
+        "bm25_score": 5.524840354919434,
+        "vector_score": null,
+        "rrf_score": 0.016129032258064516,
+        "rerank_score": 56.708342602892095,
+        "finance_boost": 18.0,
+        "finance_boost_reasons": [
+          "cash_flow_statement_title"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "activities",
+          "cash",
+          "flow",
+          "flows",
+          "investing",
+          "most",
+          "operating",
+          "operations"
+        ]
+      }
+    },
+    {
+      "step": 8,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "88ba2ab4-7a82-4dd0-9ae4-cc53008f8994",
+      "metadata": {
+        "page": 97,
+        "bm25_rank": 77,
+        "vector_rank": 87,
+        "fusion_rank": 82,
+        "bm25_score": 1.3296153545379639,
+        "vector_score": 0.48962152176336043,
+        "rrf_score": 0.014101991161428074,
+        "rerank_score": 50.5433704717729,
+        "finance_boost": 26.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "cash_flow_statement_title"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "cash",
+          "flows"
+        ]
+      }
+    },
+    {
+      "step": 9,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "a1dea495-fefd-4ba4-97fb-dad4049b43bf",
+      "metadata": {
+        "page": 14,
+        "bm25_rank": 4,
+        "vector_rank": 69,
+        "fusion_rank": 11,
+        "bm25_score": 4.249436855316162,
+        "vector_score": 0.5169978140902513,
+        "rrf_score": 0.023376937984496124,
+        "rerank_score": 41.30797246725474,
+        "finance_boost": 0.0,
+        "finance_boost_reasons": [],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "activities",
+          "among",
+          "cash",
+          "financing",
+          "flows",
+          "operating",
+          "operations"
+        ]
+      }
+    },
+    {
+      "step": 10,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "9b0f30a0-135d-42b7-969b-eaa24b4e4f03",
+      "metadata": {
+        "page": 50,
+        "bm25_rank": 12,
+        "vector_rank": 10,
+        "fusion_rank": 3,
+        "bm25_score": 3.560770273208618,
+        "vector_score": 0.6342741953982299,
+        "rrf_score": 0.02817460317460317,
+        "rerank_score": 40.53581007115489,
+        "finance_boost": 3.375,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "cash",
+          "least",
+          "operating",
+          "operations"
+        ]
+      }
+    },
+    {
+      "step": 11,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "cc9b01fd-b9df-4363-b38a-4b204d69f7b9",
+      "metadata": {
+        "page": 83,
+        "bm25_rank": 31,
+        "vector_rank": 40,
+        "fusion_rank": 22,
+        "bm25_score": 2.7798831462860107,
+        "vector_score": 0.5892350412024805,
+        "rrf_score": 0.02098901098901099,
+        "rerank_score": 40.4691834028041,
+        "finance_boost": 7.625,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "cash",
+          "flow",
+          "flows",
+          "operations"
+        ]
+      }
+    },
+    {
+      "step": 12,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "bf2c27e1-79e1-4420-83dc-0f13ded6a1f2",
+      "metadata": {
+        "page": 92,
+        "bm25_rank": 8,
+        "vector_rank": 38,
+        "fusion_rank": 5,
+        "bm25_score": 3.81119441986084,
+        "vector_score": 0.5902241480925465,
+        "rrf_score": 0.02490996398559424,
+        "rerank_score": 39.88237777869769,
+        "finance_boost": 5.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "cash",
+          "flows",
+          "operating"
+        ]
+      }
+    },
+    {
+      "step": 13,
+      "action": "llamaindex_hybrid_fuse_and_rerank_node",
+      "target": "ab843ce0-64aa-4557-8cc1-32a173e272ed",
+      "metadata": {
+        "page": 46,
+        "bm25_rank": 35,
+        "vector_rank": 23,
+        "fusion_rank": 14,
+        "bm25_score": 2.546466827392578,
+        "vector_score": 0.611499113658124,
+        "rrf_score": 0.022574508560558024,
+        "rerank_score": 38.98485338814423,
+        "finance_boost": 2.5,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "cross_encoder_score": null,
+        "pre_cross_encoder_rank": null,
+        "matched_terms": [
+          "activities",
+          "cash",
+          "flows",
+          "operating",
+          "operations"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": null,
+    "output": null,
+    "total": null
+  },
+  "latency_ms": 10279,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\NIKE_2023_10K.pdf",
+    "adapter_mode": "llamaindex_bm25_vector_rrf_plus_rerank",
+    "llm_enabled": false,
+    "model": null,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "page_count": 106,
+    "node_count": 153,
+    "chunk_size": 900,
+    "chunk_overlap": 160,
+    "vector_top_k": 120,
+    "bm25_top_k": 120,
+    "fusion_top_k": 120,
+    "rerank_top_k": 12,
+    "rrf_k": 60,
+    "max_citations": 3,
+    "finance_rerank": true,
+    "cross_encoder_model": null,
+    "cross_encoder_candidates": 60
+  }
+}

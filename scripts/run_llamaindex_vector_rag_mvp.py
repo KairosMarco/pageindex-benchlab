@@ -79,6 +79,11 @@ def main() -> None:
     parser.add_argument("--retrieve-top-k", type=int, default=DEFAULT_RETRIEVE_TOP_K)
     parser.add_argument("--rerank-top-k", type=int, default=DEFAULT_RERANK_TOP_K)
     parser.add_argument("--max-citations", type=int, default=DEFAULT_MAX_CITATIONS)
+    parser.add_argument(
+        "--disable-finance-rerank",
+        action="store_true",
+        help="Disable the label-free finance line-item boost and run the generic reranker only.",
+    )
     parser.add_argument("--force", action="store_true", help="Re-run questions even if the output JSON already exists.")
     parser.add_argument("--continue-on-error", action="store_true")
     args = parser.parse_args()
@@ -131,6 +136,7 @@ def main() -> None:
                 retrieve_top_k=args.retrieve_top_k,
                 rerank_top_k=args.rerank_top_k,
                 max_citations=args.max_citations,
+                finance_rerank=not args.disable_finance_rerank,
             )
             result.metadata = compact_result_metadata(result.metadata)
             output_path.write_text(result.model_dump_json(indent=2) + "\n", encoding="utf-8")
@@ -149,6 +155,7 @@ def main() -> None:
                     "retrieve_top_k": args.retrieve_top_k,
                     "rerank_top_k": args.rerank_top_k,
                     "max_citations": args.max_citations,
+                    "finance_rerank": not args.disable_finance_rerank,
                     "latency_ms": int((time.perf_counter() - started) * 1000),
                     "llm_enabled": not args.no_llm,
                     "model": args.model,

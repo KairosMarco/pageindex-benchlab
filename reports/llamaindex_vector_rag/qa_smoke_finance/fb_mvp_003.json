@@ -1,0 +1,359 @@
+{
+  "method": "llamaindex_vector_rag",
+  "question_id": "fb_mvp_003",
+  "question": "What are the major products and services that AMD sells as of FY22?",
+  "answer": "Retrieved 12 chunks with LlamaIndex vector retrieval and lightweight reranking.",
+  "citations": [
+    {
+      "document_id": "AMD_2022_10K",
+      "page": 60,
+      "section": null,
+      "text": "any. References herein to AMD or the Company mean Advanced Micro Devices, Inc. and its consolidated subsidiaries. AMD’s products include x86 microprocessors (CPUs) and graphics processing units (GPUs), as standalone devices or as incorporated into accelerated processing units (APUs), chipsets, data center and professional GPUs, embedded processors, semi-custom System-on-Chip (SoC) products, microprocessor and SoC development services and technology, data processing units (DPUs), Field Programmab",
+      "metadata": {
+        "chunk_id": "1dd8a76a-5d0b-4067-b54a-40971b2cc606",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5728885046086405,
+        "rerank_score": 90.53885046086404,
+        "matched_terms": [
+          "cpus",
+          "gpus",
+          "graphics",
+          "processors",
+          "products",
+          "sells",
+          "services"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "AMD_2022_10K",
+      "page": 4,
+      "section": null,
+      "text": "g other things: possible impact of future accounting rules on AMD’s consolidated financial statements; demand for AMD’s products; the growth, change and competitive landscape of the markets in which AMD participates; international sales will continue to be a significant portion of total sales in the foreseeable future; that AMD’s cash, cash equivalents and short-term investment balances together with the availability under that certain revolving credit facility (the Revolving Credit Agreement) m",
+      "metadata": {
+        "chunk_id": "50f667ca-8982-49ca-b4fd-18fdf67c83dc",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.277972651468817,
+        "rerank_score": 78.98893181354836,
+        "matched_terms": [
+          "cpus",
+          "gpus",
+          "graphics",
+          "overview",
+          "products",
+          "services"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    },
+    {
+      "document_id": "AMD_2022_10K",
+      "page": 43,
+      "section": null,
+      "text": "esults of Operations” in Part II, Item 7 of our Annual Report on Form 10-K for the fiscal year ended December 25, 2021. Overview 2022 was a transformative year for AMD as we took several major steps that scaled and reshaped our business. In February 2022, we completed our strategic acquisition of Xilinx, Inc. (Xilinx) which expanded our technology and product portfolio to include adaptable hardware platforms that enable hardware acceleration and rapid innovation across a variety of technologies ",
+      "metadata": {
+        "chunk_id": "1c8e1446-82ce-411f-9bbe-6f2fc35e9ef9",
+        "word_start": null,
+        "word_end": null,
+        "vector_score": 0.5156517585475686,
+        "rerank_score": 76.02350918809019,
+        "matched_terms": [
+          "major",
+          "overview",
+          "processors",
+          "products"
+        ],
+        "citation_source": "rerank_fallback"
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "llamaindex_build_vector_index",
+      "target": "AMD_2022_10K",
+      "metadata": {
+        "page_count": 121,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "chunk_size": 900,
+        "chunk_overlap": 160,
+        "retrieve_top_k": 120,
+        "rerank_top_k": 12,
+        "finance_rerank": true
+      }
+    },
+    {
+      "step": 2,
+      "action": "llamaindex_retrieve_node",
+      "target": "1dd8a76a-5d0b-4067-b54a-40971b2cc606",
+      "metadata": {
+        "page": 60,
+        "retrieval_rank": 1,
+        "initial_rank": 1,
+        "vector_score": 0.5728885046086405,
+        "rerank_score": 90.53885046086404,
+        "finance_boost": 18.25,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "amd_product_terms"
+        ],
+        "matched_terms": [
+          "cpus",
+          "gpus",
+          "graphics",
+          "processors",
+          "products",
+          "sells",
+          "services"
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "action": "llamaindex_retrieve_node",
+      "target": "50f667ca-8982-49ca-b4fd-18fdf67c83dc",
+      "metadata": {
+        "page": 4,
+        "retrieval_rank": 98,
+        "initial_rank": 98,
+        "vector_score": 0.277972651468817,
+        "rerank_score": 78.98893181354836,
+        "finance_boost": 39.0,
+        "finance_boost_reasons": [
+          "business_overview_intro",
+          "amd_product_terms"
+        ],
+        "matched_terms": [
+          "cpus",
+          "gpus",
+          "graphics",
+          "overview",
+          "products",
+          "services"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "llamaindex_retrieve_node",
+      "target": "1c8e1446-82ce-411f-9bbe-6f2fc35e9ef9",
+      "metadata": {
+        "page": 43,
+        "retrieval_rank": 6,
+        "initial_rank": 6,
+        "vector_score": 0.5156517585475686,
+        "rerank_score": 76.02350918809019,
+        "finance_boost": 15.5,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "amd_product_terms"
+        ],
+        "matched_terms": [
+          "major",
+          "overview",
+          "processors",
+          "products"
+        ]
+      }
+    },
+    {
+      "step": 5,
+      "action": "llamaindex_retrieve_node",
+      "target": "5c5a8863-f91e-4339-91f1-433e3aae3450",
+      "metadata": {
+        "page": 5,
+        "retrieval_rank": 9,
+        "initial_rank": 9,
+        "vector_score": 0.49841734630007795,
+        "rerank_score": 69.02506796334113,
+        "finance_boost": 16.25,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "business_overview_intro"
+        ],
+        "matched_terms": [
+          "products"
+        ]
+      }
+    },
+    {
+      "step": 6,
+      "action": "llamaindex_retrieve_node",
+      "target": "3d2bdd75-65df-4aba-bd4a-c5ced43e05ad",
+      "metadata": {
+        "page": 19,
+        "retrieval_rank": 7,
+        "initial_rank": 7,
+        "vector_score": 0.5151290192806558,
+        "rerank_score": 68.46290192806559,
+        "finance_boost": 10.0,
+        "finance_boost_reasons": [
+          "amd_product_terms"
+        ],
+        "matched_terms": [
+          "gpus",
+          "graphics",
+          "products"
+        ]
+      }
+    },
+    {
+      "step": 7,
+      "action": "llamaindex_retrieve_node",
+      "target": "d4505ae2-5e6f-4c86-9624-508fc51dd972",
+      "metadata": {
+        "page": 11,
+        "retrieval_rank": 2,
+        "initial_rank": 2,
+        "vector_score": 0.544483657001364,
+        "rerank_score": 68.44003236680307,
+        "finance_boost": 5.0,
+        "finance_boost_reasons": [
+          "amd_product_terms"
+        ],
+        "matched_terms": [
+          "graphics",
+          "processors",
+          "products",
+          "services"
+        ]
+      }
+    },
+    {
+      "step": 8,
+      "action": "llamaindex_retrieve_node",
+      "target": "6577e56f-adbf-4fc9-840b-8815d8a419ea",
+      "metadata": {
+        "page": 7,
+        "retrieval_rank": 5,
+        "initial_rank": 5,
+        "vector_score": 0.5182057655389946,
+        "rerank_score": 60.787243220566126,
+        "finance_boost": 0.0,
+        "finance_boost_reasons": [],
+        "matched_terms": [
+          "cpus",
+          "gpus",
+          "processors",
+          "products"
+        ]
+      }
+    },
+    {
+      "step": 9,
+      "action": "llamaindex_retrieve_node",
+      "target": "87922c49-bf22-4426-a74e-c1fcc57c96e2",
+      "metadata": {
+        "page": 13,
+        "retrieval_rank": 10,
+        "initial_rank": 10,
+        "vector_score": 0.49409762080446507,
+        "rerank_score": 60.3347620804465,
+        "finance_boost": 0.0,
+        "finance_boost_reasons": [],
+        "matched_terms": [
+          "gpus",
+          "graphics",
+          "processors",
+          "products",
+          "sells"
+        ]
+      }
+    },
+    {
+      "step": 10,
+      "action": "llamaindex_retrieve_node",
+      "target": "c9cfcce1-19d6-4dd2-86a5-223db5486b90",
+      "metadata": {
+        "page": 49,
+        "retrieval_rank": 12,
+        "initial_rank": 12,
+        "vector_score": 0.4902421338410362,
+        "rerank_score": 59.55754671743695,
+        "finance_boost": 7.625,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "matched_terms": [
+          "graphics"
+        ]
+      }
+    },
+    {
+      "step": 11,
+      "action": "llamaindex_retrieve_node",
+      "target": "48c5d8a2-1f79-4a09-9c6f-e4b55eb69d01",
+      "metadata": {
+        "page": 112,
+        "retrieval_rank": 4,
+        "initial_rank": 4,
+        "vector_score": 0.5196590333672162,
+        "rerank_score": 58.94090333672162,
+        "finance_boost": 6.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "matched_terms": []
+      }
+    },
+    {
+      "step": 12,
+      "action": "llamaindex_retrieve_node",
+      "target": "4e1bab37-a6d9-4067-a359-950adef27264",
+      "metadata": {
+        "page": 105,
+        "retrieval_rank": 13,
+        "initial_rank": 13,
+        "vector_score": 0.4895433699981833,
+        "rerank_score": 57.85433699981833,
+        "finance_boost": 8.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "matched_terms": []
+      }
+    },
+    {
+      "step": 13,
+      "action": "llamaindex_retrieve_node",
+      "target": "5570373f-e3d0-4b60-90a2-25be5245675d",
+      "metadata": {
+        "page": 110,
+        "retrieval_rank": 8,
+        "initial_rank": 8,
+        "vector_score": 0.4996688591041718,
+        "rerank_score": 57.03355257708385,
+        "finance_boost": 4.125,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "matched_terms": [
+          "products"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": null,
+    "output": null,
+    "total": null
+  },
+  "latency_ms": 9458,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\AMD_2022_10K.pdf",
+    "adapter_mode": "llamaindex_vector_retrieval",
+    "llm_enabled": false,
+    "model": null,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "page_count": 121,
+    "chunk_size": 900,
+    "chunk_overlap": 160,
+    "retrieve_top_k": 120,
+    "rerank_top_k": 12,
+    "max_citations": 3,
+    "finance_rerank": true
+  }
+}

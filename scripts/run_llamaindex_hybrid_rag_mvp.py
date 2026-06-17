@@ -86,6 +86,11 @@ def main() -> None:
     parser.add_argument("--rerank-top-k", type=int, default=DEFAULT_RERANK_TOP_K)
     parser.add_argument("--rrf-k", type=int, default=DEFAULT_RRF_K)
     parser.add_argument("--max-citations", type=int, default=DEFAULT_MAX_CITATIONS)
+    parser.add_argument(
+        "--disable-finance-rerank",
+        action="store_true",
+        help="Disable the label-free finance line-item boost and run the generic reranker only.",
+    )
     parser.add_argument("--cross-encoder-model", default=None)
     parser.add_argument("--cross-encoder-candidates", type=int, default=DEFAULT_CROSS_ENCODER_CANDIDATES)
     parser.add_argument("--force", action="store_true", help="Re-run questions even if the output JSON already exists.")
@@ -143,6 +148,7 @@ def main() -> None:
                 rerank_top_k=args.rerank_top_k,
                 rrf_k=args.rrf_k,
                 max_citations=args.max_citations,
+                finance_rerank=not args.disable_finance_rerank,
                 cross_encoder_model=args.cross_encoder_model,
                 cross_encoder_candidates=args.cross_encoder_candidates,
             )
@@ -166,6 +172,7 @@ def main() -> None:
                     "rerank_top_k": args.rerank_top_k,
                     "rrf_k": args.rrf_k,
                     "max_citations": args.max_citations,
+                    "finance_rerank": not args.disable_finance_rerank,
                     "cross_encoder_model": args.cross_encoder_model,
                     "cross_encoder_candidates": args.cross_encoder_candidates,
                     "latency_ms": int((time.perf_counter() - started) * 1000),
