@@ -1,0 +1,729 @@
+{
+  "doc_name": "GENERALMILLS_2020_10K.pdf",
+  "structure": [
+    {
+      "title": "Preface",
+      "node_id": "0000",
+      "start_index": 1,
+      "end_index": 4
+    },
+    {
+      "title": "Part I",
+      "node_id": "0001",
+      "start_index": 4,
+      "end_index": 4,
+      "nodes": [
+        {
+          "title": "Business",
+          "node_id": "0002",
+          "start_index": 4,
+          "end_index": 9
+        },
+        {
+          "title": "Risk Factors",
+          "node_id": "0003",
+          "start_index": 9,
+          "end_index": 15
+        },
+        {
+          "title": "Unresolved Staff Comments",
+          "node_id": "0004",
+          "start_index": 15,
+          "end_index": 15
+        },
+        {
+          "title": "Properties",
+          "node_id": "0005",
+          "start_index": 15,
+          "end_index": 16
+        },
+        {
+          "title": "Legal Proceedings",
+          "node_id": "0006",
+          "start_index": 16,
+          "end_index": 16
+        },
+        {
+          "title": "Mine Safety Disclosures",
+          "node_id": "0007",
+          "start_index": 16,
+          "end_index": 16
+        }
+      ]
+    },
+    {
+      "title": "Part II",
+      "node_id": "0008",
+      "start_index": 16,
+      "end_index": 16,
+      "nodes": [
+        {
+          "title": "Market for Registrant\u2019s Common Equity, Related Stockholder Matters and Issuer Purchases of Equity Securities",
+          "node_id": "0009",
+          "start_index": 16,
+          "end_index": 17
+        },
+        {
+          "title": "Selected Financial Data",
+          "node_id": "0010",
+          "start_index": 17,
+          "end_index": 18
+        },
+        {
+          "title": "Management\u2019s Discussion and Analysis of Financial Condition and Results of Operations",
+          "node_id": "0011",
+          "start_index": 18,
+          "end_index": 18,
+          "nodes": [
+            {
+              "title": "ITEM 7 - Management\u2019s Discussion and Analysis of Financial Condition and Results of Operations",
+              "node_id": "0012",
+              "start_index": 18,
+              "end_index": 18,
+              "nodes": [
+                {
+                  "title": "EXECUTIVE OVERVIEW",
+                  "node_id": "0013",
+                  "start_index": 18,
+                  "end_index": 20
+                },
+                {
+                  "title": "FISCAL 2020 CONSOLIDATED RESULTS OF OPERATIONS",
+                  "node_id": "0014",
+                  "start_index": 20,
+                  "end_index": 22
+                },
+                {
+                  "title": "RESULTS OF SEGMENT OPERATIONS",
+                  "node_id": "0015",
+                  "start_index": 22,
+                  "end_index": 22,
+                  "nodes": [
+                    {
+                      "title": "NORTH AMERICA RETAIL SEGMENT",
+                      "node_id": "0016",
+                      "start_index": 22,
+                      "end_index": 23
+                    },
+                    {
+                      "title": "EUROPE & AUSTRALIA SEGMENT",
+                      "node_id": "0017",
+                      "start_index": 23,
+                      "end_index": 24
+                    },
+                    {
+                      "title": "CONVENIENCE STORES & FOODSERVICE SEGMENT",
+                      "node_id": "0018",
+                      "start_index": 24,
+                      "end_index": 25
+                    },
+                    {
+                      "title": "PET SEGMENT",
+                      "node_id": "0019",
+                      "start_index": 25,
+                      "end_index": 25
+                    },
+                    {
+                      "title": "ASIA & LATIN AMERICA SEGMENT",
+                      "node_id": "0020",
+                      "start_index": 25,
+                      "end_index": 26
+                    }
+                  ]
+                },
+                {
+                  "title": "UNALLOCATED CORPORATE ITEMS",
+                  "node_id": "0021",
+                  "start_index": 26,
+                  "end_index": 27
+                },
+                {
+                  "title": "IMPACT OF INFLATION",
+                  "node_id": "0022",
+                  "start_index": 27,
+                  "end_index": 27
+                },
+                {
+                  "title": "LIQUIDITY",
+                  "node_id": "0023",
+                  "start_index": 27,
+                  "end_index": 27,
+                  "nodes": [
+                    {
+                      "title": "Cash Flows from Operations",
+                      "node_id": "0024",
+                      "start_index": 27,
+                      "end_index": 28
+                    },
+                    {
+                      "title": "Cash Flows from Investing Activities",
+                      "node_id": "0025",
+                      "start_index": 28,
+                      "end_index": 28
+                    },
+                    {
+                      "title": "Cash Flows from Financing Activities",
+                      "node_id": "0026",
+                      "start_index": 28,
+                      "end_index": 28
+                    },
+                    {
+                      "title": "Selected Cash Flows from Joint Ventures",
+                      "node_id": "0027",
+                      "start_index": 28,
+                      "end_index": 28
+                    }
+                  ]
+                },
+                {
+                  "title": "CAPITAL RESOURCES",
+                  "node_id": "0028",
+                  "start_index": 29,
+                  "end_index": 30
+                },
+                {
+                  "title": "OFF-BALANCE SHEET ARRANGEMENTS AND CONTRACTUAL OBLIGATIONS",
+                  "node_id": "0029",
+                  "start_index": 30,
+                  "end_index": 30
+                },
+                {
+                  "title": "SIGNIFICANT ACCOUNTING ESTIMATES",
+                  "node_id": "0030",
+                  "start_index": 31,
+                  "end_index": 31,
+                  "nodes": [
+                    {
+                      "title": "Considerations related to the COVID-19 pandemic",
+                      "node_id": "0031",
+                      "start_index": 31,
+                      "end_index": 31
+                    },
+                    {
+                      "title": "Revenue Recognition",
+                      "node_id": "0032",
+                      "start_index": 31,
+                      "end_index": 31
+                    },
+                    {
+                      "title": "Valuation of Long-Lived Assets",
+                      "node_id": "0033",
+                      "start_index": 31,
+                      "end_index": 31
+                    },
+                    {
+                      "title": "Intangible Assets",
+                      "node_id": "0034",
+                      "start_index": 31,
+                      "end_index": 32
+                    },
+                    {
+                      "title": "Redeemable Interest",
+                      "node_id": "0035",
+                      "start_index": 32,
+                      "end_index": 32
+                    },
+                    {
+                      "title": "Stock-based Compensation",
+                      "node_id": "0036",
+                      "start_index": 32,
+                      "end_index": 32
+                    },
+                    {
+                      "title": "Income Taxes",
+                      "node_id": "0037",
+                      "start_index": 32,
+                      "end_index": 33
+                    },
+                    {
+                      "title": "Defined Benefit Pension, Other Postretirement Benefit, and Postemployment Benefit Plans",
+                      "node_id": "0038",
+                      "start_index": 33,
+                      "end_index": 33,
+                      "nodes": [
+                        {
+                          "title": "Expected Rate of Return on Plan Assets",
+                          "node_id": "0039",
+                          "start_index": 33,
+                          "end_index": 33
+                        },
+                        {
+                          "title": "Discount Rates",
+                          "node_id": "0040",
+                          "start_index": 33,
+                          "end_index": 34
+                        },
+                        {
+                          "title": "Health Care Cost Trend Rates",
+                          "node_id": "0041",
+                          "start_index": 34,
+                          "end_index": 34
+                        },
+                        {
+                          "title": "Financial Statement Impact",
+                          "node_id": "0042",
+                          "start_index": 34,
+                          "end_index": 34
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "title": "RECENTLY ISSUED ACCOUNTING PRONOUNCEMENTS",
+                  "node_id": "0043",
+                  "start_index": 35,
+                  "end_index": 35
+                },
+                {
+                  "title": "NON-GAAP MEASURES",
+                  "node_id": "0044",
+                  "start_index": 35,
+                  "end_index": 35,
+                  "nodes": [
+                    {
+                      "title": "Organic Net Sales Growth Rates",
+                      "node_id": "0045",
+                      "start_index": 35,
+                      "end_index": 35
+                    },
+                    {
+                      "title": "Adjusted Diluted EPS and Related Constant-currency Growth Rate",
+                      "node_id": "0046",
+                      "start_index": 35,
+                      "end_index": 37
+                    },
+                    {
+                      "title": "Free Cash Flow Conversion Rate",
+                      "node_id": "0047",
+                      "start_index": 37,
+                      "end_index": 37
+                    },
+                    {
+                      "title": "Constant-currency After-Tax Earnings from Joint Ventures Growth Rate",
+                      "node_id": "0048",
+                      "start_index": 37,
+                      "end_index": 37
+                    },
+                    {
+                      "title": "Net Sales Growth Rate for Canada Operating Unit on a Constant-currency Basis",
+                      "node_id": "0049",
+                      "start_index": 37,
+                      "end_index": 38
+                    },
+                    {
+                      "title": "Constant-currency Segment Operating Profit Growth Rates",
+                      "node_id": "0050",
+                      "start_index": 38,
+                      "end_index": 38
+                    },
+                    {
+                      "title": "Adjusted Effective Income Tax Rates",
+                      "node_id": "0051",
+                      "start_index": 38,
+                      "end_index": 40
+                    },
+                    {
+                      "title": "Adjusted Operating Profit as a Percent of Net Sales (Adjusted Operating Profit Margin)",
+                      "node_id": "0052",
+                      "start_index": 40,
+                      "end_index": 40
+                    },
+                    {
+                      "title": "Adjusted Operating Profit Growth on a Constant-currency Basis",
+                      "node_id": "0053",
+                      "start_index": 40,
+                      "end_index": 41
+                    },
+                    {
+                      "title": "Net Debt-to-Adjusted Earnings before Net Interest, Income Taxes, Depreciation and Amortization (EBITDA) Ratio",
+                      "node_id": "0054",
+                      "start_index": 41,
+                      "end_index": 42
+                    }
+                  ]
+                },
+                {
+                  "title": "CAUTIONARY STATEMENT RELEVANT TO FORWARD-LOOKING INFORMATION FOR THE PURPOSE OF \u201cSAFE HARBOR\u201d PROVISIONS OF THE PRIVATE SECURITIES LITIGATION REFORM ACT OF 1995",
+                  "node_id": "0055",
+                  "start_index": 42,
+                  "end_index": 43
+                }
+              ]
+            },
+            {
+              "title": "ITEM 7A - Quantitative and Qualitative Disclosures About Market Risk",
+              "node_id": "0056",
+              "start_index": 43,
+              "end_index": 43,
+              "nodes": [
+                {
+                  "title": "VALUE AT RISK",
+                  "node_id": "0057",
+                  "start_index": 43,
+                  "end_index": 43
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Quantitative and Qualitative Disclosures About Market Risk",
+          "node_id": "0058",
+          "start_index": 43,
+          "end_index": 45
+        },
+        {
+          "title": "Financial Statements and Supplementary Data",
+          "node_id": "0059",
+          "start_index": 45,
+          "end_index": 45,
+          "nodes": [
+            {
+              "title": "ITEM 8 - Financial Statements and Supplementary Data",
+              "node_id": "0060",
+              "start_index": 45,
+              "end_index": 45,
+              "nodes": [
+                {
+                  "title": "REPORT OF MANAGEMENT RESPONSIBILITIES",
+                  "node_id": "0061",
+                  "start_index": 45,
+                  "end_index": 46
+                },
+                {
+                  "title": "Report of Independent Registered Public Accounting Firm",
+                  "node_id": "0062",
+                  "start_index": 46,
+                  "end_index": 48
+                },
+                {
+                  "title": "Consolidated Statements of Earnings",
+                  "node_id": "0063",
+                  "start_index": 48,
+                  "end_index": 49
+                },
+                {
+                  "title": "Consolidated Statements of Comprehensive Income",
+                  "node_id": "0064",
+                  "start_index": 49,
+                  "end_index": 50
+                },
+                {
+                  "title": "Consolidated Balance Sheets",
+                  "node_id": "0065",
+                  "start_index": 50,
+                  "end_index": 51
+                },
+                {
+                  "title": "Consolidated Statements of Total Equity and Redeemable Interest",
+                  "node_id": "0066",
+                  "start_index": 51,
+                  "end_index": 52
+                },
+                {
+                  "title": "Consolidated Statements of Cash Flows",
+                  "node_id": "0067",
+                  "start_index": 52,
+                  "end_index": 53
+                },
+                {
+                  "title": "Notes to Consolidated Financial Statements",
+                  "node_id": "0068",
+                  "start_index": 53,
+                  "end_index": 53,
+                  "nodes": [
+                    {
+                      "title": "NOTE 1. BASIS OF PRESENTATION AND RECLASSIFICATIONS",
+                      "node_id": "0069",
+                      "start_index": 53,
+                      "end_index": 53
+                    },
+                    {
+                      "title": "NOTE 2. SUMMARY OF SIGNIFICANT ACCOUNTING POLICIES",
+                      "node_id": "0070",
+                      "start_index": 53,
+                      "end_index": 58
+                    },
+                    {
+                      "title": "NOTE 4. RESTRUCTURING, IMPAIRMENT, AND OTHER EXIT COSTS",
+                      "node_id": "0071",
+                      "start_index": 58,
+                      "end_index": 59
+                    },
+                    {
+                      "title": "NOTE 5. INVESTMENTS IN UNCONSOLIDATED JOINT VENTURES",
+                      "node_id": "0072",
+                      "start_index": 59,
+                      "end_index": 60
+                    },
+                    {
+                      "title": "NOTE 6. GOODWILL AND OTHER INTANGIBLE ASSETS",
+                      "node_id": "0073",
+                      "start_index": 60,
+                      "end_index": 62
+                    },
+                    {
+                      "title": "NOTE 7. LEASES",
+                      "node_id": "0074",
+                      "start_index": 62,
+                      "end_index": 63
+                    },
+                    {
+                      "title": "NOTE 8. FINANCIAL INSTRUMENTS, RISK MANAGEMENT ACTIVITIES, AND FAIR VALUES",
+                      "node_id": "0075",
+                      "start_index": 63,
+                      "end_index": 64,
+                      "nodes": [
+                        {
+                          "title": "COMMODITY PRICE RISK",
+                          "node_id": "0076",
+                          "start_index": 64,
+                          "end_index": 64
+                        },
+                        {
+                          "title": "INTEREST RATE RISK",
+                          "node_id": "0077",
+                          "start_index": 64,
+                          "end_index": 65
+                        },
+                        {
+                          "title": "FOREIGN EXCHANGE RISK",
+                          "node_id": "0078",
+                          "start_index": 65,
+                          "end_index": 66
+                        },
+                        {
+                          "title": "EQUITY INSTRUMENTS",
+                          "node_id": "0079",
+                          "start_index": 66,
+                          "end_index": 66
+                        },
+                        {
+                          "title": "FAIR VALUE MEASUREMENTS AND FINANCIAL STATEMENT PRESENTATION",
+                          "node_id": "0080",
+                          "start_index": 66,
+                          "end_index": 70
+                        },
+                        {
+                          "title": "AMOUNTS RECORDED IN ACCUMULATED OTHER COMPREHENSIVE LOSS",
+                          "node_id": "0081",
+                          "start_index": 70,
+                          "end_index": 70
+                        },
+                        {
+                          "title": "CREDIT-RISK-RELATED CONTINGENT FEATURES",
+                          "node_id": "0082",
+                          "start_index": 70,
+                          "end_index": 70
+                        },
+                        {
+                          "title": "CONCENTRATIONS OF CREDIT AND COUNTERPARTY CREDIT RISK",
+                          "node_id": "0083",
+                          "start_index": 70,
+                          "end_index": 70
+                        }
+                      ]
+                    },
+                    {
+                      "title": "NOTE 9. DEBT",
+                      "node_id": "0084",
+                      "start_index": 71,
+                      "end_index": 72
+                    },
+                    {
+                      "title": "NOTE 10. REDEEMABLE AND NONCONTROLLING INTERESTS",
+                      "node_id": "0085",
+                      "start_index": 72,
+                      "end_index": 73
+                    },
+                    {
+                      "title": "NOTE 11. STOCKHOLDERS' EQUITY",
+                      "node_id": "0086",
+                      "start_index": 73,
+                      "end_index": 75
+                    },
+                    {
+                      "title": "NOTE 12. STOCK PLANS",
+                      "node_id": "0087",
+                      "start_index": 75,
+                      "end_index": 78
+                    },
+                    {
+                      "title": "NOTE 13. EARNINGS PER SHARE",
+                      "node_id": "0088",
+                      "start_index": 78,
+                      "end_index": 78
+                    },
+                    {
+                      "title": "NOTE 14. RETIREMENT BENEFITS AND POSTEMPLOYMENT BENEFITS",
+                      "node_id": "0089",
+                      "start_index": 78,
+                      "end_index": 82,
+                      "nodes": [
+                        {
+                          "title": "Fair Value of Plan Assets",
+                          "node_id": "0090",
+                          "start_index": 83,
+                          "end_index": 83
+                        },
+                        {
+                          "title": "Expected Rate of Return on Plan Assets",
+                          "node_id": "0091",
+                          "start_index": 83,
+                          "end_index": 84
+                        },
+                        {
+                          "title": "Contributions and Future Benefit Payments",
+                          "node_id": "0092",
+                          "start_index": 84,
+                          "end_index": 84
+                        },
+                        {
+                          "title": "Defined Contribution Plans",
+                          "node_id": "0093",
+                          "start_index": 84,
+                          "end_index": 85
+                        }
+                      ]
+                    },
+                    {
+                      "title": "NOTE 15. INCOME TAXES",
+                      "node_id": "0094",
+                      "start_index": 85,
+                      "end_index": 88
+                    },
+                    {
+                      "title": "NOTE 16. COMMITMENTS AND CONTINGENCIES",
+                      "node_id": "0095",
+                      "start_index": 88,
+                      "end_index": 88
+                    },
+                    {
+                      "title": "NOTE 17. BUSINESS SEGMENT AND GEOGRAPHIC INFORMATION",
+                      "node_id": "0096",
+                      "start_index": 88,
+                      "end_index": 91
+                    },
+                    {
+                      "title": "NOTE 18. SUPPLEMENTAL INFORMATION",
+                      "node_id": "0097",
+                      "start_index": 91,
+                      "end_index": 93
+                    },
+                    {
+                      "title": "NOTE 19. QUARTERLY DATA (UNAUDITED)",
+                      "node_id": "0098",
+                      "start_index": 93,
+                      "end_index": 95
+                    }
+                  ]
+                },
+                {
+                  "title": "Glossary",
+                  "node_id": "0099",
+                  "start_index": 95,
+                  "end_index": 97
+                }
+              ]
+            },
+            {
+              "title": "ITEM 9 - Changes in and Disagreements With Accountants on Accounting and Financial Disclosure",
+              "node_id": "0100",
+              "start_index": 97,
+              "end_index": 97
+            },
+            {
+              "title": "ITEM 9A Controls and Procedures",
+              "node_id": "0101",
+              "start_index": 97,
+              "end_index": 97
+            }
+          ]
+        },
+        {
+          "title": "Changes in and Disagreements With Accountants on Accounting and Financial Disclosure",
+          "node_id": "0102",
+          "start_index": 97,
+          "end_index": 97
+        },
+        {
+          "title": "Controls and Procedures",
+          "node_id": "0103",
+          "start_index": 97,
+          "end_index": 98
+        },
+        {
+          "title": "Other Information",
+          "node_id": "0104",
+          "start_index": 98,
+          "end_index": 98
+        }
+      ]
+    },
+    {
+      "title": "Part III",
+      "node_id": "0105",
+      "start_index": 98,
+      "end_index": 98,
+      "nodes": [
+        {
+          "title": "Directors, Executive Officers and Corporate Governance",
+          "node_id": "0106",
+          "start_index": 98,
+          "end_index": 98
+        },
+        {
+          "title": "Executive Compensation",
+          "node_id": "0107",
+          "start_index": 98,
+          "end_index": 98
+        },
+        {
+          "title": "Security Ownership of Certain Beneficial Owners and Management and Related Stockholder Matters",
+          "node_id": "0108",
+          "start_index": 98,
+          "end_index": 99
+        },
+        {
+          "title": "Certain Relationships and Related Transactions, and Director Independence",
+          "node_id": "0109",
+          "start_index": 99,
+          "end_index": 99
+        },
+        {
+          "title": "Principal Accounting Fees and Services",
+          "node_id": "0110",
+          "start_index": 99,
+          "end_index": 100
+        }
+      ]
+    },
+    {
+      "title": "Part IV",
+      "node_id": "0111",
+      "start_index": 100,
+      "end_index": 100,
+      "nodes": [
+        {
+          "title": "Exhibits and Financial Statement Schedules",
+          "node_id": "0112",
+          "start_index": 100,
+          "end_index": 103
+        },
+        {
+          "title": "Form 10-K Summary",
+          "node_id": "0113",
+          "start_index": 103,
+          "end_index": 104
+        }
+      ]
+    },
+    {
+      "title": "Signatures",
+      "node_id": "0114",
+      "start_index": 104,
+      "end_index": 127
+    }
+  ]
+}

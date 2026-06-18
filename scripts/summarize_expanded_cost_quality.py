@@ -98,6 +98,33 @@ def load_long_context_row(path: Path) -> dict[str, Any]:
     }
 
 
+def load_pageindex_row(path: Path) -> dict[str, Any]:
+    payload = load_json(path)
+    summary = payload["summary"]
+    return {
+        "key": "pageindex",
+        "label": summary["label"],
+        "source_report": rel(path),
+        "question_count": summary["result_count"],
+        "mechanical_gate_passed": summary["mechanical_gate_passed"],
+        "generation_failure_count": summary["generation_failure_count"],
+        "evaluation_failure_count": summary["evaluation_failure_count"],
+        "average_evidence_recall": summary["average_evidence_recall"],
+        "average_citation_precision": summary["average_citation_precision"],
+        "answer_accuracy": summary["answer_accuracy"],
+        "average_answer_score": summary["average_answer_score"],
+        "answer_verdict_counts": summary["answer_verdict_counts"],
+        "average_total_tokens": summary["average_total_tokens"],
+        "median_total_tokens": summary["median_total_tokens"],
+        "total_tokens": summary["total_tokens"],
+        "average_latency_ms": summary["average_latency_ms"],
+        "median_latency_ms": summary["median_latency_ms"],
+        "average_selected_page_count": summary["average_selected_page_count"],
+        "answer_issue_ids": issue_ids(payload.get("answer_issue_rows", [])),
+        "evidence_issue_ids": issue_ids(payload.get("evidence_issue_rows", [])),
+    }
+
+
 def add_relative_costs(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
     token_values = [row.get("average_total_tokens") for row in rows if row.get("average_total_tokens")]
     latency_values = [row.get("average_latency_ms") for row in rows if row.get("average_latency_ms")]
@@ -180,9 +207,10 @@ def render_markdown(payload: dict[str, Any]) -> str:
             "",
             "- LlamaIndex Vector and Long-context both reached `0.920` answer accuracy on the expanded subset.",
             "- LlamaIndex Vector used the fewest average tokens and preserved `1.000` evidence recall.",
-            "- Long-context used about `36x` more average tokens than the lowest-token candidate while producing lower citation evidence recall.",
+            "- PageIndex used a small three-page context and modest tokens, but its expanded retrieval misses reduced answer accuracy to `0.760`.",
+            "- Long-context used far more average tokens than the lowest-token candidate while producing lower citation evidence recall than LlamaIndex Vector.",
             "- `fb_exp_020` is the shared answer failure across all compared methods and should be treated as a high-value reasoning prompt or benchmark-analysis case.",
-            "- These results still do not establish broad PageIndex superiority; PageIndex expanded QA has not yet been run on this 25-question subset.",
+            "- These results do not support broad PageIndex superiority claims yet; they identify PageIndex ranking robustness as the next contribution target.",
             "",
             "## Source Reports",
             "",
@@ -205,11 +233,18 @@ def main() -> None:
         type=Path,
         default=ROOT / "reports" / "long_context_expanded_llm_diagnostics.json",
     )
+    parser.add_argument(
+        "--pageindex-json",
+        type=Path,
+        default=ROOT / "reports" / "pageindex_expanded_llm_diagnostics.json",
+    )
     parser.add_argument("--output-json", type=Path, default=DEFAULT_OUTPUT_JSON)
     parser.add_argument("--output-md", type=Path, default=DEFAULT_OUTPUT_MD)
     args = parser.parse_args()
 
     rows = load_llamaindex_rows(args.llamaindex_json)
+    if args.pageindex_json.exists():
+        rows.append(load_pageindex_row(args.pageindex_json))
     rows.append(load_long_context_row(args.long_context_json))
     rows = add_relative_costs(rows)
     payload = {

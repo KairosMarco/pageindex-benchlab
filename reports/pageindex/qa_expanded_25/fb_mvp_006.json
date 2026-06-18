@@ -165,7 +165,7 @@
     "output": null,
     "total": null
   },
-  "latency_ms": 290,
+  "latency_ms": 289,
   "metadata": {
     "structure_path": "reports\\pageindex\\structures\\BOEING_2022_10K_structure.json",
     "pdf_path": "datasets\\raw\\financebench\\pdfs\\BOEING_2022_10K.pdf",

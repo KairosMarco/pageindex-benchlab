@@ -157,7 +157,7 @@
     "output": null,
     "total": null
   },
-  "latency_ms": 73,
+  "latency_ms": 76,
   "metadata": {
     "structure_path": "reports\\pageindex\\structures\\MGMRESORTS_2022Q4_EARNINGS_structure.json",
     "pdf_path": "datasets\\raw\\financebench\\pdfs\\MGMRESORTS_2022Q4_EARNINGS.pdf",

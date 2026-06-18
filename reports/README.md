@@ -30,6 +30,9 @@ reports/expanded_llm_validation_report.json
 reports/long_context_expanded_llm_diagnostics.md
 reports/long_context_expanded_llm_diagnostics.json
 reports/expanded_long_context_validation_report.json
+reports/pageindex_expanded_llm_diagnostics.md
+reports/pageindex_expanded_llm_diagnostics.json
+reports/expanded_pageindex_llm_validation_report.json
 reports/expanded_cost_quality_summary.md
 reports/expanded_cost_quality_summary.json
 reports/finance_prompt_variant_summary.md
@@ -49,6 +52,10 @@ reports/pageindex/expanded_partial_summary.json
 reports/pageindex/evidence_eval_qa_expanded_25.json
 reports/pageindex/qa_expanded_25_manifest.json
 reports/pageindex/qa_expanded_25/
+reports/pageindex/evidence_eval_qa_llm_expanded_25.json
+reports/pageindex/answer_eval_qa_llm_expanded_25.json
+reports/pageindex/qa_llm_expanded_25_manifest.json
+reports/pageindex/qa_llm_expanded_25/
 reports/pageindex/pageindex_qa_mvp_report.md
 reports/pageindex/evidence_eval.json
 reports/pageindex/qa_manifest.json

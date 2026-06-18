@@ -1,0 +1,183 @@
+{
+  "method": "pageindex_tree_qa",
+  "question_id": "fb_exp_020",
+  "question": "Is CVS Health a capital-intensive business based on FY2022 data?",
+  "answer": "Based on the provided document pages, it is not possible to determine if CVS Health is a capital-intensive business based on FY2022 data. The pages do not contain information about capital expenditures, asset intensity, or related financial metrics for that fiscal year.\n\nThe closest mention is on page 32, which notes that regulations \"Require the Company to maintain minimum capital levels in its subsidiaries and monitor its solvency and reserve adequacy,\" but this is a regulatory solvency requirement, not a description of the business's capital intensity. The other pages (page 30 on regulations, page 63 on provider contracts and suppliers) do not address this topic.",
+  "citations": [
+    {
+      "document_id": "CVSHEALTH_2022_10K",
+      "page": 30,
+      "section": "Contract Audits",
+      "text": "cific MLR and the premiums established under the OPM’s Insured contracts and costs allocated pursuant to the OPM’s cost-based contracts are in compliance with the requirements of the applicable FEHB program. The OPM may seek premium refunds or institute other sanctions against the Company if it fails to comply with the FEHB program requirements. Clinical Services Regulation - The Company provides clinical services to health plans, PBMs and providers for a variety of complex and common medical co",
+      "metadata": {
+        "score": 12,
+        "matched_page_terms": [
+          "based",
+          "business",
+          "capital",
+          "data"
+        ],
+        "matched_section_terms": [],
+        "node_id": "0086",
+        "start_index": 29,
+        "end_index": 30
+      }
+    },
+    {
+      "document_id": "CVSHEALTH_2022_10K",
+      "page": 32,
+      "section": "Required Regulatory Approvals",
+      "text": "• Require the Company to maintain minimum capital levels in its subsidiaries and monitor its solvency and reserve adequacy; • Regulate the Company’s investment activities on the basis of quality, diversification and other quantitative criteria; and/or • Exclude the Company’s plans from participating in Public Exchanges if they are deemed to have a history of “unreasonable” premium rate increases or fail to meet other criteria set by HHS or the applicable state. The Company’s operations, current ",
+      "metadata": {
+        "score": 12,
+        "matched_page_terms": [
+          "based",
+          "business",
+          "capital",
+          "data"
+        ],
+        "matched_section_terms": [],
+        "node_id": "0097",
+        "start_index": 31,
+        "end_index": 32
+      }
+    },
+    {
+      "document_id": "CVSHEALTH_2022_10K",
+      "page": 63,
+      "section": null,
+      "text": "hese arrangements with us depends upon, among other things, our ability to provide them with up to date quality of care data to support these value-based contracts. These arrangements are designed to give providers incentives to engage in population health management and optimize delivery of health care to our members. These arrangements also may allow us to expand into new geographies, target new customer groups, increase membership and reduce medical costs and, if we provide technology or othe",
+      "metadata": {
+        "score": 12,
+        "matched_page_terms": [
+          "based",
+          "business",
+          "capital",
+          "data"
+        ],
+        "matched_section_terms": [],
+        "node_id": null,
+        "start_index": null,
+        "end_index": null
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "select_tree_node",
+      "target": "Item 1: Business",
+      "metadata": {
+        "node_id": "0002",
+        "start_index": 4,
+        "end_index": 4
+      }
+    },
+    {
+      "step": 2,
+      "action": "select_tree_node",
+      "target": "Item 1. Business.",
+      "metadata": {
+        "node_id": "0004",
+        "start_index": 4,
+        "end_index": 4
+      }
+    },
+    {
+      "step": 3,
+      "action": "select_tree_node",
+      "target": "Business Strategy",
+      "metadata": {
+        "node_id": "0006",
+        "start_index": 4,
+        "end_index": 4
+      }
+    },
+    {
+      "step": 4,
+      "action": "select_tree_node",
+      "target": "Working Capital Practices",
+      "metadata": {
+        "node_id": "0048",
+        "start_index": 16,
+        "end_index": 16
+      }
+    },
+    {
+      "step": 5,
+      "action": "select_tree_node",
+      "target": "Human Capital",
+      "metadata": {
+        "node_id": "0049",
+        "start_index": 16,
+        "end_index": 16
+      }
+    },
+    {
+      "step": 6,
+      "action": "score_page",
+      "target": "page 30",
+      "metadata": {
+        "score": 12,
+        "section": "Contract Audits",
+        "matched_page_terms": [
+          "based",
+          "business",
+          "capital",
+          "data"
+        ],
+        "matched_section_terms": []
+      }
+    },
+    {
+      "step": 7,
+      "action": "score_page",
+      "target": "page 32",
+      "metadata": {
+        "score": 12,
+        "section": "Required Regulatory Approvals",
+        "matched_page_terms": [
+          "based",
+          "business",
+          "capital",
+          "data"
+        ],
+        "matched_section_terms": []
+      }
+    },
+    {
+      "step": 8,
+      "action": "score_page",
+      "target": "page 63",
+      "metadata": {
+        "score": 12,
+        "section": null,
+        "matched_page_terms": [
+          "based",
+          "business",
+          "capital",
+          "data"
+        ],
+        "matched_section_terms": []
+      }
+    }
+  ],
+  "token_usage": {
+    "input": 3328,
+    "output": 393,
+    "total": 3721
+  },
+  "latency_ms": 7750,
+  "metadata": {
+    "structure_path": "reports\\pageindex\\structures\\CVSHEALTH_2022_10K_structure.json",
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\CVSHEALTH_2022_10K.pdf",
+    "selected_pages_one_indexed": [
+      30,
+      32,
+      63
+    ],
+    "max_pages": 3,
+    "adapter_mode": "tree_page_scoring",
+    "llm_enabled": true
+  }
+}

@@ -1,0 +1,175 @@
+{
+  "method": "pageindex_tree_qa",
+  "question_id": "fb_exp_023",
+  "question": "Did Pfizer grow its PPNE between FY20 and FY21?",
+  "answer": "Selected 5 PageIndex nodes and 3 scored pages for answering.",
+  "citations": [
+    {
+      "document_id": "PFIZER_2021_10K",
+      "page": 63,
+      "section": "A. Basis of Presentation",
+      "text": "we completed the sale of our Meridian subsidiary, the manufacturer of EpiPen and other auto-injector products. Prior to its sale, Meridian was managed within the Hospital therapeutic area. Beginning in the fourth quarter of 2021, the financial results of Meridian are reflected as discontinued operations for all periods presented. On December 21, 2020, Pfizer and Viatris completed the termination of a pre- existing strategic collaboration between Pfizer and Mylan for generic drugs in Japan (the M",
+      "metadata": {
+        "score": 9,
+        "matched_page_terms": [
+          "between",
+          "did",
+          "its"
+        ],
+        "matched_section_terms": [],
+        "node_id": "0155",
+        "start_index": 63,
+        "end_index": 63
+      }
+    },
+    {
+      "document_id": "PFIZER_2021_10K",
+      "page": 76,
+      "section": "E. Collaborative Arrangements",
+      "text": "Subsidiary Companies the development costs until commercialization of the vaccine. Thereafter, BioNTech was to repay us its 50 percent share of these development costs through reductions in gross profit sharing and milestone payments to BioNTech over time. On January 29, 2021, we and BioNTech signed an amended version of the April 2020 agreement. Under the January 2021 agreement, BioNTech paid us their 50 percent share of prior development costs in a lump sum payment during the first quarter of ",
+      "metadata": {
+        "score": 9,
+        "matched_page_terms": [
+          "between",
+          "did",
+          "its"
+        ],
+        "matched_section_terms": [],
+        "node_id": "0180",
+        "start_index": 75,
+        "end_index": 76
+      }
+    },
+    {
+      "document_id": "PFIZER_2021_10K",
+      "page": 10,
+      "section": "ABOUT PFIZER",
+      "text": "er 31, 2021, we completed the sale of our Meridian subsidiary, which was part of the Hospital therapeutic area prior to its sale. See Note 1A for additional information. For additional information on our operating segments and products, see Note 17 and for additional information on the key operational revenue drivers of our business, see the Analysis of the Consolidated Statements of Income section within MD&A. For a discussion of the risks associated with our dependence on certain of our major ",
+      "metadata": {
+        "score": 6,
+        "matched_page_terms": [
+          "between",
+          "its"
+        ],
+        "matched_section_terms": [],
+        "node_id": "0006",
+        "start_index": 9,
+        "end_index": 10
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "select_tree_node",
+      "target": "Preface",
+      "metadata": {
+        "node_id": "0000",
+        "start_index": 1,
+        "end_index": 2
+      }
+    },
+    {
+      "step": 2,
+      "action": "select_tree_node",
+      "target": "DEFINED TERMS",
+      "metadata": {
+        "node_id": "0001",
+        "start_index": 3,
+        "end_index": 6
+      }
+    },
+    {
+      "step": 3,
+      "action": "select_tree_node",
+      "target": "AVAILABLE INFORMATION",
+      "metadata": {
+        "node_id": "0002",
+        "start_index": 6,
+        "end_index": 6
+      }
+    },
+    {
+      "step": 4,
+      "action": "select_tree_node",
+      "target": "FORWARD-LOOKING INFORMATION AND FACTORS THAT MAY AFFECT FUTURE RESULTS",
+      "metadata": {
+        "node_id": "0003",
+        "start_index": 7,
+        "end_index": 9
+      }
+    },
+    {
+      "step": 5,
+      "action": "select_tree_node",
+      "target": "PART I",
+      "metadata": {
+        "node_id": "0004",
+        "start_index": 9,
+        "end_index": 9
+      }
+    },
+    {
+      "step": 6,
+      "action": "score_page",
+      "target": "page 63",
+      "metadata": {
+        "score": 9,
+        "section": "A. Basis of Presentation",
+        "matched_page_terms": [
+          "between",
+          "did",
+          "its"
+        ],
+        "matched_section_terms": []
+      }
+    },
+    {
+      "step": 7,
+      "action": "score_page",
+      "target": "page 76",
+      "metadata": {
+        "score": 9,
+        "section": "E. Collaborative Arrangements",
+        "matched_page_terms": [
+          "between",
+          "did",
+          "its"
+        ],
+        "matched_section_terms": []
+      }
+    },
+    {
+      "step": 8,
+      "action": "score_page",
+      "target": "page 10",
+      "metadata": {
+        "score": 6,
+        "section": "ABOUT PFIZER",
+        "matched_page_terms": [
+          "between",
+          "its"
+        ],
+        "matched_section_terms": []
+      }
+    }
+  ],
+  "token_usage": {
+    "input": null,
+    "output": null,
+    "total": null
+  },
+  "latency_ms": 305,
+  "metadata": {
+    "structure_path": "reports\\pageindex\\structures\\PFIZER_2021_10K_structure.json",
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\PFIZER_2021_10K.pdf",
+    "selected_pages_one_indexed": [
+      63,
+      76,
+      10
+    ],
+    "max_pages": 3,
+    "adapter_mode": "tree_page_scoring",
+    "llm_enabled": false
+  }
+}

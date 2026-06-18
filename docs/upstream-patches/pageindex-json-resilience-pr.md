@@ -23,6 +23,7 @@ KeyError: 'toc_detected'
 KeyError: 'page_index_given_in_toc'
 AttributeError: 'dict' object has no attribute 'extend'
 TypeError: unsupported operand type(s) for +: 'int' and 'NoneType'
+KeyError: 'physical_index'
 ```
 
 or noisy JSON such as a fenced response containing `{"toc_detected": "yes"}`.
@@ -64,10 +65,12 @@ Result after the patch:
 
 ```text
 PageIndex structures generated: 11 / 11 unique MVP PDFs
-Partial expanded structures generated: 19 / 24 unique expanded PDFs
-Partial expanded retrieval-only QA: 20 / 25 questions generated
-Partial expanded evidence recall: 0.850
-Partial expanded citation precision: 0.283
+Expanded structures generated: 24 / 24 unique expanded PDFs
+Expanded retrieval-only QA: 25 / 25 questions generated
+Expanded retrieval-only evidence recall: 0.760
+Expanded retrieval-only citation precision: 0.253
+Expanded LLM QA: 25 / 25 answers generated
+Expanded LLM answer accuracy: 0.760
 ```
 
 Local benchmark notes:
@@ -90,6 +93,8 @@ Recommended implementation scope:
 - Normalize model-produced TOC JSON to `list[dict]` before using list operations such as `.extend()`.
 - Avoid adding page offsets when the detected offset is missing.
 - Avoid crashing `single_toc_item_index_fixer()` when `physical_index` is missing or null.
+- Return low-confidence no-TOC structures instead of raising after repeated verification failures.
+- Leave TOC items unresolved when page-number repair output is empty or omits `physical_index`.
 
 Examples of safe fallbacks:
 
@@ -126,6 +131,8 @@ TOC helpers return safe defaults instead of raising KeyError on missing fields.
 single_toc_item_index_fixer handles missing physical_index safely.
 TOC continuation helpers normalize dict/object responses before list extension.
 TOC page-offset helpers tolerate missing offsets without raising TypeError.
+No-TOC processing falls back without raising when verification remains below threshold.
+Page-number repair skips unresolved items when physical_index is absent.
 ```
 
 ## Expected Impact

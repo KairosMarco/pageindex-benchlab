@@ -1,0 +1,139 @@
+{
+  "method": "pageindex_tree_qa",
+  "question_id": "fb_exp_025",
+  "question": "What drove the reduction in SG&A expense as a percent of net sales in FY2023?",
+  "answer": "The provided document pages do not contain information explaining what drove the reduction in SG&A expense as a percent of net sales. The documents show the SG&A expense percentage decreased from 23.9% in fiscal 2021 to 23.5% in fiscal 2022 (Page 6), but do not discuss the reasons for this change or provide any details for fiscal 2023 results.",
+  "citations": [
+    {
+      "document_id": "ULTABEAUTY_2023Q4_EARNINGS",
+      "page": 3,
+      "section": "For the Full Year of Fiscal 2022",
+      "text": "Cash and cash equivalents at the end of the fourth quarter of fiscal 2022 were $737.9 million. Merchandise inventories, net at the end of the fourth quarter of fiscal 2022 totaled $1.6 billion compared to $1.5 billion at the end of the fourth quarter of fiscal 2021. The $104.2 million increase was primarily due to the opening of 47 new stores since January 29, 2022, inventory to support new brand launches and brand expansions, and inventory cost increases. Share Repurchase Program During the fou",
+      "metadata": {
+        "score": 9,
+        "matched_page_terms": [
+          "expense",
+          "net",
+          "sales"
+        ],
+        "matched_section_terms": [],
+        "node_id": "0002",
+        "start_index": 2,
+        "end_index": 3
+      }
+    },
+    {
+      "document_id": "ULTABEAUTY_2023Q4_EARNINGS",
+      "page": 6,
+      "section": "Exhibit 1 Ulta Beauty, Inc. Consolidated Statements of Income",
+      "text": "f Income (In thousands, except per share data) 13 Weeks Ended January 28, January 29, 2023 2022 (Unaudited) (Unaudited) Net sales $ 3,226,773 100.0% $ 2,729,388 100.0% Cost of sales 2,014,270 62.4% 1,702,059 62.4% Gross profit 1,212,503 37.6% 1,027,329 37.6% Selling, general and administrative expenses 762,706 23.6% 649,968 23.8% Pre-opening expenses 2,179 0.1% 1,739 0.1% Operating income 447,618 13.9% 375,622 13.8% Interest (income) expense, net (4,378) (0.1%) 467 0.1% Income before income taxe",
+      "metadata": {
+        "score": 9,
+        "matched_page_terms": [
+          "expense",
+          "net",
+          "sales"
+        ],
+        "matched_section_terms": [],
+        "node_id": "0010",
+        "start_index": 6,
+        "end_index": 6
+      }
+    },
+    {
+      "document_id": "ULTABEAUTY_2023Q4_EARNINGS",
+      "page": 9,
+      "section": "Exhibit 6 Ulta Beauty, Inc. Sales by Category",
+      "text": "600 3rd Quarter 13,922,600 151,730 0 14,074,330 4th Quarter 14,074,330 126,073 0 14,200,403 Exhibit 6 Ulta Beauty, Inc. Sales by Category The following tables set forth the approximate percentage of net sales by primary category: 13 Weeks Ended January 28, January 29, 2023 2022 Cosmetics 40% 41% Haircare products and styling tools 20% 20% Skincare 16% 15% Fragrance and bath 18% 18% Services 3% 3% Accessories and other 3% 3% 100% 100% 52 Weeks Ended January 28, January 29, 2023 2022 Cosmetics 42%",
+      "metadata": {
+        "score": 8,
+        "matched_page_terms": [
+          "net",
+          "sales"
+        ],
+        "matched_section_terms": [
+          "sales"
+        ],
+        "node_id": "0015",
+        "start_index": 9,
+        "end_index": 9
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "select_tree_node",
+      "target": "Exhibit 6 Ulta Beauty, Inc. Sales by Category",
+      "metadata": {
+        "node_id": "0015",
+        "start_index": 9,
+        "end_index": 9
+      }
+    },
+    {
+      "step": 2,
+      "action": "score_page",
+      "target": "page 3",
+      "metadata": {
+        "score": 9,
+        "section": "For the Full Year of Fiscal 2022",
+        "matched_page_terms": [
+          "expense",
+          "net",
+          "sales"
+        ],
+        "matched_section_terms": []
+      }
+    },
+    {
+      "step": 3,
+      "action": "score_page",
+      "target": "page 6",
+      "metadata": {
+        "score": 9,
+        "section": "Exhibit 1 Ulta Beauty, Inc. Consolidated Statements of Income",
+        "matched_page_terms": [
+          "expense",
+          "net",
+          "sales"
+        ],
+        "matched_section_terms": []
+      }
+    },
+    {
+      "step": 4,
+      "action": "score_page",
+      "target": "page 9",
+      "metadata": {
+        "score": 8,
+        "section": "Exhibit 6 Ulta Beauty, Inc. Sales by Category",
+        "matched_page_terms": [
+          "net",
+          "sales"
+        ],
+        "matched_section_terms": [
+          "sales"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": 1910,
+    "output": 520,
+    "total": 2430
+  },
+  "latency_ms": 7268,
+  "metadata": {
+    "structure_path": "reports\\pageindex\\structures\\ULTABEAUTY_2023Q4_EARNINGS_structure.json",
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\ULTABEAUTY_2023Q4_EARNINGS.pdf",
+    "selected_pages_one_indexed": [
+      3,
+      6,
+      9
+    ],
+    "max_pages": 3,
+    "adapter_mode": "tree_page_scoring",
+    "llm_enabled": true
+  }
+}

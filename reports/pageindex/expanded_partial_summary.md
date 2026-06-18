@@ -1,44 +1,36 @@
-# PageIndex Expanded Partial Summary
+# PageIndex Expanded Retrieval Summary
 
 Date: 2026-06-18
 
 ## Scope
 
-This report summarizes the current partial PageIndex expanded retrieval-only run. It does not include LLM answer generation.
+This report summarizes the complete 25-question PageIndex expanded retrieval-only run. It does not include LLM answer generation.
 
 ## Coverage
 
 - Questions: `25`
 - Unique source documents: `24`
-- Documents with PageIndex structures and PDFs: `19`
-- Missing PageIndex structures: `5`
+- Documents with PageIndex structures and PDFs: `24`
+- Missing PageIndex structures: `0`
 - Missing PDFs: `0`
-- Runnable questions with current structures: `20`
-- Retrieval-only QA generated: `20`
-- Retrieval-only QA failed: `5`
-- Full expanded PageIndex QA ready: `False`
+- Runnable questions with current structures: `25`
+- Retrieval-only QA generated: `25`
+- Retrieval-only QA failed: `0`
+- Full expanded PageIndex QA ready: `True`
 
 ## Retrieval Metrics
 
-- Evaluated PageIndex results: `20`
-- Average evidence recall: `0.850`
-- Average citation precision: `0.283`
+- Evaluated PageIndex results: `25`
+- Average evidence recall: `0.760`
+- Average citation precision: `0.253`
 
 ## Missing Structures
 
-- `AMERICANWATERWORKS_2020_10K`
-- `COCACOLA_2021_10K`
-- `CVSHEALTH_2022_10K`
-- `GENERALMILLS_2020_10K`
-- `PFIZER_2021_10K`
+No missing structures.
 
 ## QA Failures
 
-- `fb_exp_019` / `AMERICANWATERWORKS_2020_10K`: Missing PageIndex structure: reports\pageindex\structures\AMERICANWATERWORKS_2020_10K_structure.json
-- `fb_exp_020` / `CVSHEALTH_2022_10K`: Missing PageIndex structure: reports\pageindex\structures\CVSHEALTH_2022_10K_structure.json
-- `fb_exp_022` / `COCACOLA_2021_10K`: Missing PageIndex structure: reports\pageindex\structures\COCACOLA_2021_10K_structure.json
-- `fb_exp_023` / `PFIZER_2021_10K`: Missing PageIndex structure: reports\pageindex\structures\PFIZER_2021_10K_structure.json
-- `fb_exp_024` / `GENERALMILLS_2020_10K`: Missing PageIndex structure: reports\pageindex\structures\GENERALMILLS_2020_10K_structure.json
+No QA failures.
 
 ## Evidence Issues
 
@@ -46,14 +38,18 @@ This report summarizes the current partial PageIndex expanded retrieval-only run
 |---|---|---:|---:|---|---|
 | `fb_exp_014` | `AMERICANEXPRESS_2022_10K` | 0.000 | 0.000 | 96 | 104, 121, 134 |
 | `fb_exp_017` | `CORNING_2022_10K` | 0.000 | 0.000 | 60 | 34, 16, 66 |
+| `fb_exp_020` | `CVSHEALTH_2022_10K` | 0.000 | 0.000 | 108, 110 | 30, 32, 63 |
+| `fb_exp_022` | `COCACOLA_2021_10K` | 0.000 | 0.000 | 62 | 68, 77, 85 |
+| `fb_exp_023` | `PFIZER_2021_10K` | 0.000 | 0.000 | 59 | 63, 76, 10 |
 | `fb_exp_025` | `ULTABEAUTY_2023Q4_EARNINGS` | 0.000 | 0.000 | 2 | 3, 6, 9 |
 
 ## Interpretation
 
-- The current PageIndex expanded run is a partial retrieval-only result, not a complete 25-question comparison.
-- PageIndex generated retrieval outputs for `20 / 25` questions and reached `0.850` average evidence recall on those generated outputs.
-- The five missing questions are blocked by missing structures, not by QA adapter failures.
-- Additional PageIndex indexing robustness is needed before running full expanded PageIndex LLM answer generation.
+- PageIndex generated retrieval-only outputs for all `25 / 25` expanded questions with no QA failures.
+- The full expanded retrieval-only run reached `0.760` average evidence recall and `0.253` average citation precision.
+- The six evidence misses show that complete structure coverage alone is not enough; PageIndex ranking needs further work before strong expanded-set claims.
+- The next PageIndex benchmark step is expanded LLM answer generation, followed by evidence and answer evaluation against the same 25-question set.
+- The retained `expanded_partial_summary` file name is historical; the current contents summarize the full retrieval-only run.
 
 ## Source Artifacts
 

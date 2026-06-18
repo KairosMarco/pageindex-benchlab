@@ -195,7 +195,7 @@
     "output": null,
     "total": null
   },
-  "latency_ms": 127,
+  "latency_ms": 115,
   "metadata": {
     "structure_path": "reports\\pageindex\\structures\\AMAZON_2017_10K_structure.json",
     "pdf_path": "datasets\\raw\\financebench\\pdfs\\AMAZON_2017_10K.pdf",

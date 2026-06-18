@@ -1,9 +1,9 @@
 {
   "summary": {
-    "result_count": 20,
+    "result_count": 25,
     "failure_count": 0,
-    "average_evidence_recall": 0.85,
-    "average_citation_precision": 0.2833333333333333,
+    "average_evidence_recall": 0.76,
+    "average_citation_precision": 0.2533333333333333,
     "citation_page_base": 1,
     "results_dir": "reports\\pageindex\\qa_expanded_25"
   },
@@ -155,6 +155,56 @@
       }
     },
     {
+      "question_id": "fb_exp_019",
+      "gold_pages_zero_indexed": [
+        85
+      ],
+      "gold_pages_one_indexed": [
+        86
+      ],
+      "predicted_pages": [
+        66,
+        86,
+        93
+      ],
+      "evidence_recall": 1.0,
+      "citation_precision": 0.3333333333333333,
+      "matched_pages": [
+        85
+      ],
+      "metadata": {
+        "citation_page_base": 1,
+        "result_path": "reports\\pageindex\\qa_expanded_25\\fb_exp_019.json",
+        "method": "pageindex_tree_qa",
+        "doc_name": "AMERICANWATERWORKS_2020_10K"
+      }
+    },
+    {
+      "question_id": "fb_exp_020",
+      "gold_pages_zero_indexed": [
+        107,
+        109
+      ],
+      "gold_pages_one_indexed": [
+        108,
+        110
+      ],
+      "predicted_pages": [
+        30,
+        32,
+        63
+      ],
+      "evidence_recall": 0.0,
+      "citation_precision": 0.0,
+      "matched_pages": [],
+      "metadata": {
+        "citation_page_base": 1,
+        "result_path": "reports\\pageindex\\qa_expanded_25\\fb_exp_020.json",
+        "method": "pageindex_tree_qa",
+        "doc_name": "CVSHEALTH_2022_10K"
+      }
+    },
+    {
       "question_id": "fb_exp_021",
       "gold_pages_zero_indexed": [
         0
@@ -177,6 +227,77 @@
         "result_path": "reports\\pageindex\\qa_expanded_25\\fb_exp_021.json",
         "method": "pageindex_tree_qa",
         "doc_name": "PEPSICO_2023Q1_EARNINGS"
+      }
+    },
+    {
+      "question_id": "fb_exp_022",
+      "gold_pages_zero_indexed": [
+        61
+      ],
+      "gold_pages_one_indexed": [
+        62
+      ],
+      "predicted_pages": [
+        68,
+        77,
+        85
+      ],
+      "evidence_recall": 0.0,
+      "citation_precision": 0.0,
+      "matched_pages": [],
+      "metadata": {
+        "citation_page_base": 1,
+        "result_path": "reports\\pageindex\\qa_expanded_25\\fb_exp_022.json",
+        "method": "pageindex_tree_qa",
+        "doc_name": "COCACOLA_2021_10K"
+      }
+    },
+    {
+      "question_id": "fb_exp_023",
+      "gold_pages_zero_indexed": [
+        58
+      ],
+      "gold_pages_one_indexed": [
+        59
+      ],
+      "predicted_pages": [
+        63,
+        76,
+        10
+      ],
+      "evidence_recall": 0.0,
+      "citation_precision": 0.0,
+      "matched_pages": [],
+      "metadata": {
+        "citation_page_base": 1,
+        "result_path": "reports\\pageindex\\qa_expanded_25\\fb_exp_023.json",
+        "method": "pageindex_tree_qa",
+        "doc_name": "PFIZER_2021_10K"
+      }
+    },
+    {
+      "question_id": "fb_exp_024",
+      "gold_pages_zero_indexed": [
+        49
+      ],
+      "gold_pages_one_indexed": [
+        50
+      ],
+      "predicted_pages": [
+        30,
+        50,
+        29
+      ],
+      "evidence_recall": 1.0,
+      "citation_precision": 0.3333333333333333,
+      "matched_pages": [
+        49
+      ],
+      "metadata": {
+        "citation_page_base": 1,
+        "result_path": "reports\\pageindex\\qa_expanded_25\\fb_exp_024.json",
+        "method": "pageindex_tree_qa",
+        "doc_name": "GENERALMILLS_2020_10K"
       }
     },
     {

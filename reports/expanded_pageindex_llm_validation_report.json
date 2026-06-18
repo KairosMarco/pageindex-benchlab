@@ -1,0 +1,161 @@
+{
+  "status": "pass",
+  "diagnostics": "reports\\pageindex_expanded_llm_diagnostics.json",
+  "expected_question_count": 25,
+  "check_count": 20,
+  "failed_check_count": 0,
+  "checks": [
+    {
+      "name": "diagnostics file exists",
+      "passed": true,
+      "details": {
+        "path": "reports\\pageindex_expanded_llm_diagnostics.json"
+      }
+    },
+    {
+      "name": "method is PageIndex",
+      "passed": true,
+      "details": {
+        "actual": "pageindex_tree_qa_llm"
+      }
+    },
+    {
+      "name": "summary question count",
+      "passed": true,
+      "details": {
+        "expected": 25,
+        "actual": 25
+      }
+    },
+    {
+      "name": "result count",
+      "passed": true,
+      "details": {
+        "expected": 25,
+        "actual": 25
+      }
+    },
+    {
+      "name": "manifest count",
+      "passed": true,
+      "details": {
+        "expected": 25,
+        "actual": 25
+      }
+    },
+    {
+      "name": "generation failures",
+      "passed": true,
+      "details": {
+        "actual": 0
+      }
+    },
+    {
+      "name": "evaluation failures",
+      "passed": true,
+      "details": {
+        "actual": 0
+      }
+    },
+    {
+      "name": "evidence recall present",
+      "passed": true,
+      "details": {
+        "actual": 0.76
+      }
+    },
+    {
+      "name": "citation precision present",
+      "passed": true,
+      "details": {
+        "actual": 0.2533333333333333
+      }
+    },
+    {
+      "name": "answer accuracy present",
+      "passed": true,
+      "details": {
+        "actual": 0.76
+      }
+    },
+    {
+      "name": "answer verdict count",
+      "passed": true,
+      "details": {
+        "expected": 25,
+        "actual": 25,
+        "verdict_counts": {
+          "correct": 19,
+          "partial": 1,
+          "incorrect": 5
+        }
+      }
+    },
+    {
+      "name": "token usage complete",
+      "passed": true,
+      "details": {
+        "token_usage_count": 25,
+        "expected": 25
+      }
+    },
+    {
+      "name": "latency complete",
+      "passed": true,
+      "details": {
+        "latency_count": 25,
+        "expected": 25
+      }
+    },
+    {
+      "name": "selected page count present",
+      "passed": true,
+      "details": {
+        "actual": 3.0
+      }
+    },
+    {
+      "name": "mechanical gate",
+      "passed": true,
+      "details": {
+        "status": "complete"
+      }
+    },
+    {
+      "name": "per-question rows",
+      "passed": true,
+      "details": {
+        "expected": 25,
+        "actual": 25
+      }
+    },
+    {
+      "name": "artifact exists results_dir",
+      "passed": true,
+      "details": {
+        "path": "reports\\pageindex\\qa_llm_expanded_25"
+      }
+    },
+    {
+      "name": "artifact exists manifest",
+      "passed": true,
+      "details": {
+        "path": "reports\\pageindex\\qa_llm_expanded_25_manifest.json"
+      }
+    },
+    {
+      "name": "artifact exists evidence_eval",
+      "passed": true,
+      "details": {
+        "path": "reports\\pageindex\\evidence_eval_qa_llm_expanded_25.json"
+      }
+    },
+    {
+      "name": "artifact exists answer_eval",
+      "passed": true,
+      "details": {
+        "path": "reports\\pageindex\\answer_eval_qa_llm_expanded_25.json"
+      }
+    }
+  ]
+}

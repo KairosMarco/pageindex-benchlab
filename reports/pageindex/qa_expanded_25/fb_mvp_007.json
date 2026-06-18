@@ -199,7 +199,7 @@
     "output": null,
     "total": null
   },
-  "latency_ms": 113,
+  "latency_ms": 129,
   "metadata": {
     "structure_path": "reports\\pageindex\\structures\\COSTCO_2021_10K_structure.json",
     "pdf_path": "datasets\\raw\\financebench\\pdfs\\COSTCO_2021_10K.pdf",

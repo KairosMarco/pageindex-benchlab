@@ -171,7 +171,7 @@
     "output": null,
     "total": null
   },
-  "latency_ms": 140,
+  "latency_ms": 143,
   "metadata": {
     "structure_path": "reports\\pageindex\\structures\\JOHNSON_JOHNSON_2023_8K_dated-2023-08-30_structure.json",
     "pdf_path": "datasets\\raw\\financebench\\pdfs\\JOHNSON_JOHNSON_2023_8K_dated-2023-08-30.pdf",

@@ -1,0 +1,173 @@
+{
+  "method": "pageindex_tree_qa",
+  "question_id": "fb_exp_018",
+  "question": "Which region had the Highest EBITDAR Contribution for MGM during FY2022?",
+  "answer": "Las Vegas Strip Resorts had the highest Adjusted Property EBITDAR contribution for MGM during FY2022 at $3,142,308 thousand (Page 13).",
+  "citations": [
+    {
+      "document_id": "MGMRESORTS_2022Q4_EARNINGS",
+      "page": 13,
+      "section": "MGM RESORTS INTERNATIONAL AND SUBSIDIARIES SUPPLEMENTAL DATA – ADJUSTED PROPERTY EBITDAR AND ADJUSTED EBITDAR",
+      "text": "6 $ 3,056,892 $ 13,127,485 $ 9,680,140 MGM RESORTS INTERNATIONAL AND SUBSIDIARIES SUPPLEMENTAL DATA – ADJUSTED PROPERTY EBITDAR AND ADJUSTED EBITDAR (In thousands) (Unaudited) Three months ended Twelve months ended December 31, 2022 December 31, 2021 December 31, 2022 December 31, 2021 Las Vegas Strip Resorts $ 877,052 $ 698,739 $ 3,142,308 $ 1,738,211 Regional Operations 319,517 309,250 1,294,630 1,217,814 MGM China (54,979) 5,015 (203,136) 25,367 Unconsolidated affiliates(1) (43,029) (49,698) ",
+      "metadata": {
+        "score": 8,
+        "matched_page_terms": [
+          "during",
+          "ebitdar"
+        ],
+        "matched_section_terms": [
+          "ebitdar"
+        ],
+        "node_id": "0024",
+        "start_index": 13,
+        "end_index": 14
+      }
+    },
+    {
+      "document_id": "MGMRESORTS_2022Q4_EARNINGS",
+      "page": 14,
+      "section": "MGM RESORTS INTERNATIONAL AND SUBSIDIARIES SUPPLEMENTAL DATA – ADJUSTED PROPERTY EBITDAR AND ADJUSTED EBITDAR",
+      "text": "NTERNATIONAL AND SUBSIDIARIES RECONCILIATION OF NET INCOME (LOSS) ATTRIBUTABLE TO MGM RESORTS INTERNATIONAL TO ADJUSTED EBITDAR (In thousands) (Unaudited) Three months ended Twelve months ended December 31, 2022 December 31, 2021 December 31, 2022 December 31, 2021 Net income attributable to MGM Resorts International $ 284,002 $ 131,013 $ 1,473,093 $ 1,254,370 Plus: Net loss attributable to noncontrolling interests (604,016) (14,926) (1,266,362) (45,981) Net income (loss) (320,014) 116,087 206,7",
+      "metadata": {
+        "score": 8,
+        "matched_page_terms": [
+          "ebitdar",
+          "had"
+        ],
+        "matched_section_terms": [
+          "ebitdar"
+        ],
+        "node_id": "0024",
+        "start_index": 13,
+        "end_index": 14
+      }
+    },
+    {
+      "document_id": "MGMRESORTS_2022Q4_EARNINGS",
+      "page": 15,
+      "section": "MGM RESORTS INTERNATIONAL AND SUBSIDIARIES RECONCILIATIONS OF LAS VEGAS STRIP RESORTS NET REVENUES AND LAS VEGAS STRIP RESORTS ADJUSTED PROPERTY EBITDAR TO TABLE GAMES HOLD ADJUSTED LAS VEGAS STRIP RESORTS NET REVENUES AND TABLE GAMES HOLD ADJUSTED LAS VEGAS STRIP RESORTS ADJUSTED PROPERTY EBITDAR",
+      "text": "TABLE GAMES HOLD ADJUSTED LAS VEGAS STRIP RESORTS SAME-STORE NET REVENUES AND LAS VEGAS STRIP RESORTS ADJUSTED PROPERTY EBITDAR TO LAS VEGAS STRIP RESORTS SAME-STORE ADJUSTED PROPERTY EBITDAR AND TABLE GAMES HOLD ADJUSTED LAS VEGAS STRIP RESORTS SAME-STORE ADJUSTED PROPERTY EBITDAR (In thousands) (Unaudited) Three months ended Twelve months ended December 31, 2022 December 31, 2021 December 31, 2022 December 31, 2021 Las Vegas Strip Resorts net revenues $ 2,297,282 $ 1,806,686 $ 8,398,372 $ 4,73",
+      "metadata": {
+        "score": 8,
+        "matched_page_terms": [
+          "ebitdar",
+          "had"
+        ],
+        "matched_section_terms": [
+          "ebitdar"
+        ],
+        "node_id": "0026",
+        "start_index": 14,
+        "end_index": 15
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "select_tree_node",
+      "target": "MGM RESORTS INTERNATIONAL AND SUBSIDIARIES SUPPLEMENTAL DATA – ADJUSTED PROPERTY EBITDAR AND ADJUSTED EBITDAR",
+      "metadata": {
+        "node_id": "0024",
+        "start_index": 13,
+        "end_index": 14
+      }
+    },
+    {
+      "step": 2,
+      "action": "select_tree_node",
+      "target": "MGM RESORTS INTERNATIONAL AND SUBSIDIARIES RECONCILIATION OF NET INCOME (LOSS) ATTRIBUTABLE TO MGM RESORTS INTERNATIONAL TO ADJUSTED EBITDAR",
+      "metadata": {
+        "node_id": "0025",
+        "start_index": 14,
+        "end_index": 14
+      }
+    },
+    {
+      "step": 3,
+      "action": "select_tree_node",
+      "target": "MGM RESORTS INTERNATIONAL AND SUBSIDIARIES RECONCILIATIONS OF LAS VEGAS STRIP RESORTS NET REVENUES AND LAS VEGAS STRIP RESORTS ADJUSTED PROPERTY EBITDAR TO TABLE GAMES HOLD ADJUSTED LAS VEGAS STRIP RESORTS NET REVENUES AND TABLE GAMES HOLD ADJUSTED LAS VEGAS STRIP RESORTS ADJUSTED PROPERTY EBITDAR",
+      "metadata": {
+        "node_id": "0026",
+        "start_index": 14,
+        "end_index": 15
+      }
+    },
+    {
+      "step": 4,
+      "action": "select_tree_node",
+      "target": "MGM RESORTS INTERNATIONAL AND SUBSIDIARIES RECONCILIATIONS OF LAS VEGAS STRIP RESORTS NET REVENUES TO TABLE GAMES HOLD ADJUSTED LAS VEGAS STRIP RESORTS SAME-STORE NET REVENUES AND LAS VEGAS STRIP RESORTS ADJUSTED PROPERTY EBITDAR TO LAS VEGAS STRIP RESORTS SAME-STORE ADJUSTED PROPERTY EBITDAR AND TABLE GAMES HOLD ADJUSTED LAS VEGAS STRIP RESORTS SAME-STORE ADJUSTED PROPERTY EBITDAR",
+      "metadata": {
+        "node_id": "0027",
+        "start_index": 15,
+        "end_index": 15
+      }
+    },
+    {
+      "step": 5,
+      "action": "score_page",
+      "target": "page 13",
+      "metadata": {
+        "score": 8,
+        "section": "MGM RESORTS INTERNATIONAL AND SUBSIDIARIES SUPPLEMENTAL DATA – ADJUSTED PROPERTY EBITDAR AND ADJUSTED EBITDAR",
+        "matched_page_terms": [
+          "during",
+          "ebitdar"
+        ],
+        "matched_section_terms": [
+          "ebitdar"
+        ]
+      }
+    },
+    {
+      "step": 6,
+      "action": "score_page",
+      "target": "page 14",
+      "metadata": {
+        "score": 8,
+        "section": "MGM RESORTS INTERNATIONAL AND SUBSIDIARIES SUPPLEMENTAL DATA – ADJUSTED PROPERTY EBITDAR AND ADJUSTED EBITDAR",
+        "matched_page_terms": [
+          "ebitdar",
+          "had"
+        ],
+        "matched_section_terms": [
+          "ebitdar"
+        ]
+      }
+    },
+    {
+      "step": 7,
+      "action": "score_page",
+      "target": "page 15",
+      "metadata": {
+        "score": 8,
+        "section": "MGM RESORTS INTERNATIONAL AND SUBSIDIARIES RECONCILIATIONS OF LAS VEGAS STRIP RESORTS NET REVENUES AND LAS VEGAS STRIP RESORTS ADJUSTED PROPERTY EBITDAR TO TABLE GAMES HOLD ADJUSTED LAS VEGAS STRIP RESORTS NET REVENUES AND TABLE GAMES HOLD ADJUSTED LAS VEGAS STRIP RESORTS ADJUSTED PROPERTY EBITDAR",
+        "matched_page_terms": [
+          "ebitdar",
+          "had"
+        ],
+        "matched_section_terms": [
+          "ebitdar"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": 2764,
+    "output": 389,
+    "total": 3153
+  },
+  "latency_ms": 5348,
+  "metadata": {
+    "structure_path": "reports\\pageindex\\structures\\MGMRESORTS_2022Q4_EARNINGS_structure.json",
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\MGMRESORTS_2022Q4_EARNINGS.pdf",
+    "selected_pages_one_indexed": [
+      13,
+      14,
+      15
+    ],
+    "max_pages": 3,
+    "adapter_mode": "tree_page_scoring",
+    "llm_enabled": true
+  }
+}

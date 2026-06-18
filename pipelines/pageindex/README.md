@@ -109,25 +109,48 @@ Summary:
 ```text
 Questions: 25
 Unique source documents: 24
-Documents with PageIndex structures and PDFs: 19
-Runnable questions with current structures: 20
-Missing PageIndex structures: 5
+Documents with PageIndex structures and PDFs: 24
+Runnable questions with current structures: 25
+Missing PageIndex structures: 0
 Missing PDFs: 0
 ```
 
-Current partial retrieval-only result:
+Current expanded retrieval-only result:
 
 ```text
-Generated QA outputs: 20 / 25
-Average evidence recall: 0.850
-Average citation precision: 0.283
+Generated QA outputs: 25 / 25
+Average evidence recall: 0.760
+Average citation precision: 0.253
 ```
 
-Full expanded PageIndex QA should wait until the 5 missing structures are indexed. Use the readiness script to regenerate the report after indexing:
+Run or refresh the expanded retrieval-only artifacts:
 
 ```powershell
 python scripts\summarize_pageindex_expanded_readiness.py
+python scripts\run_pageindex_qa_mvp.py --questions datasets\financebench\expanded_questions_25.jsonl --structure-dir reports\pageindex\structures --output-dir reports\pageindex\qa_expanded_25 --manifest reports\pageindex\qa_expanded_25_manifest.json --no-llm --force --continue-on-error
+python scripts\evaluate_evidence_mvp.py --questions datasets\financebench\expanded_questions_25.jsonl --results-dir reports\pageindex\qa_expanded_25 --output reports\pageindex\evidence_eval_qa_expanded_25.json --continue-on-error
 python scripts\summarize_pageindex_expanded_partial.py
+```
+
+Current expanded LLM result:
+
+```text
+Generated answers: 25 / 25
+Evidence recall: 0.760
+Citation precision: 0.253
+Answer accuracy: 0.760
+Verdicts: 19 correct, 1 partial, 5 incorrect
+Average total tokens: 3,046
+Average latency: 5,787 ms
+```
+
+Expanded LLM artifacts:
+
+```text
+reports/pageindex_expanded_llm_diagnostics.md
+reports/pageindex_expanded_llm_diagnostics.json
+reports/expanded_pageindex_llm_validation_report.json
+reports/pageindex/qa_llm_expanded_25/
 ```
 
 LLM mode requires a LiteLLM model string and provider API key:

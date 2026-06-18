@@ -231,7 +231,7 @@
     "output": null,
     "total": null
   },
-  "latency_ms": 416,
+  "latency_ms": 390,
   "metadata": {
     "structure_path": "reports\\pageindex\\structures\\3M_2018_10K_structure.json",
     "pdf_path": "datasets\\raw\\financebench\\pdfs\\3M_2018_10K.pdf",

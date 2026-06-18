@@ -92,14 +92,28 @@ def fmt(value: Any) -> str:
 
 def render_markdown(payload: dict[str, Any]) -> str:
     summary = payload["summary"]
+    full_run = (
+        summary["full_expanded_ready"]
+        and summary["qa_generated_count"] == summary["question_count"]
+        and summary["qa_failed_count"] == 0
+        and summary["evidence_result_count"] == summary["question_count"]
+    )
+    title = "PageIndex Expanded Retrieval Summary" if full_run else "PageIndex Expanded Partial Summary"
+    scope = (
+        "This report summarizes the complete 25-question PageIndex expanded retrieval-only run. "
+        "It does not include LLM answer generation."
+        if full_run
+        else "This report summarizes the current partial PageIndex expanded retrieval-only run. "
+        "It does not include LLM answer generation."
+    )
     lines = [
-        "# PageIndex Expanded Partial Summary",
+        f"# {title}",
         "",
         f"Date: {summary['date']}",
         "",
         "## Scope",
         "",
-        "This report summarizes the current partial PageIndex expanded retrieval-only run. It does not include LLM answer generation.",
+        scope,
         "",
         "## Coverage",
         "",
@@ -163,10 +177,29 @@ def render_markdown(payload: dict[str, Any]) -> str:
             "",
             "## Interpretation",
             "",
-            "- The current PageIndex expanded run is a partial retrieval-only result, not a complete 25-question comparison.",
-            "- PageIndex generated retrieval outputs for `20 / 25` questions and reached `0.850` average evidence recall on those generated outputs.",
-            "- The five missing questions are blocked by missing structures, not by QA adapter failures.",
-            "- Additional PageIndex indexing robustness is needed before running full expanded PageIndex LLM answer generation.",
+        ]
+    )
+    if full_run:
+        lines.extend(
+            [
+                "- PageIndex generated retrieval-only outputs for all `25 / 25` expanded questions with no QA failures.",
+                "- The full expanded retrieval-only run reached `0.760` average evidence recall and `0.253` average citation precision.",
+                "- The six evidence misses show that complete structure coverage alone is not enough; PageIndex ranking needs further work before strong expanded-set claims.",
+                "- The next PageIndex benchmark step is expanded LLM answer generation, followed by evidence and answer evaluation against the same 25-question set.",
+                "- The retained `expanded_partial_summary` file name is historical; the current contents summarize the full retrieval-only run.",
+            ]
+        )
+    else:
+        lines.extend(
+            [
+                "- The current PageIndex expanded run is a partial retrieval-only result, not a complete 25-question comparison.",
+                f"- PageIndex generated retrieval outputs for `{summary['qa_generated_count']} / {summary['question_count']}` questions and reached `{fmt(summary['average_evidence_recall'])}` average evidence recall on those generated outputs.",
+                "- Some questions remain blocked by missing structures, not by QA adapter failures.",
+                "- Additional PageIndex indexing robustness is needed before running full expanded PageIndex LLM answer generation.",
+            ]
+        )
+    lines.extend(
+        [
             "",
             "## Source Artifacts",
             "",
@@ -179,7 +212,7 @@ def render_markdown(payload: dict[str, Any]) -> str:
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Summarize partial PageIndex expanded retrieval-only results.")
+    parser = argparse.ArgumentParser(description="Summarize PageIndex expanded retrieval-only results.")
     parser.add_argument("--readiness", type=Path, default=DEFAULT_READINESS)
     parser.add_argument("--qa-manifest", type=Path, default=DEFAULT_QA_MANIFEST)
     parser.add_argument("--evidence", type=Path, default=DEFAULT_EVIDENCE)
@@ -192,8 +225,8 @@ def main() -> None:
     args.output_json.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     args.output_md.parent.mkdir(parents=True, exist_ok=True)
     args.output_md.write_text(render_markdown(payload), encoding="utf-8")
-    print(f"PageIndex expanded partial JSON: {args.output_json}")
-    print(f"PageIndex expanded partial report: {args.output_md}")
+    print(f"PageIndex expanded retrieval JSON: {args.output_json}")
+    print(f"PageIndex expanded retrieval report: {args.output_md}")
 
 
 if __name__ == "__main__":

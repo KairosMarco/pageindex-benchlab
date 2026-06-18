@@ -123,7 +123,7 @@
     "output": null,
     "total": null
   },
-  "latency_ms": 16,
+  "latency_ms": 18,
   "metadata": {
     "structure_path": "reports\\pageindex\\structures\\ULTABEAUTY_2023Q4_EARNINGS_structure.json",
     "pdf_path": "datasets\\raw\\financebench\\pdfs\\ULTABEAUTY_2023Q4_EARNINGS.pdf",

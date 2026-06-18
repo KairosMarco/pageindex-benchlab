@@ -3,68 +3,25 @@
     "date": "2026-06-18",
     "question_count": 25,
     "unique_doc_count": 24,
-    "ready_doc_count": 19,
-    "missing_structure_count": 5,
+    "ready_doc_count": 24,
+    "missing_structure_count": 0,
     "missing_pdf_count": 0,
-    "runnable_question_count": 20,
-    "qa_generated_count": 20,
-    "qa_failed_count": 5,
+    "runnable_question_count": 25,
+    "qa_generated_count": 25,
+    "qa_failed_count": 0,
     "qa_status_counts": {
-      "generated": 20,
-      "failed": 5
+      "generated": 25
     },
-    "evidence_result_count": 20,
-    "average_evidence_recall": 0.85,
-    "average_citation_precision": 0.2833333333333333,
-    "full_expanded_ready": false,
+    "evidence_result_count": 25,
+    "average_evidence_recall": 0.76,
+    "average_citation_precision": 0.2533333333333333,
+    "full_expanded_ready": true,
     "readiness_report": "reports\\pageindex\\expanded_readiness.json",
     "qa_manifest": "reports\\pageindex\\qa_expanded_25_manifest.json",
     "evidence_eval": "reports\\pageindex\\evidence_eval_qa_expanded_25.json"
   },
-  "missing_structures": [
-    "AMERICANWATERWORKS_2020_10K",
-    "COCACOLA_2021_10K",
-    "CVSHEALTH_2022_10K",
-    "GENERALMILLS_2020_10K",
-    "PFIZER_2021_10K"
-  ],
-  "qa_failures": [
-    {
-      "question_id": "fb_exp_019",
-      "doc_name": "AMERICANWATERWORKS_2020_10K",
-      "status": "failed",
-      "latency_ms": 0,
-      "error": "Missing PageIndex structure: reports\\pageindex\\structures\\AMERICANWATERWORKS_2020_10K_structure.json"
-    },
-    {
-      "question_id": "fb_exp_020",
-      "doc_name": "CVSHEALTH_2022_10K",
-      "status": "failed",
-      "latency_ms": 0,
-      "error": "Missing PageIndex structure: reports\\pageindex\\structures\\CVSHEALTH_2022_10K_structure.json"
-    },
-    {
-      "question_id": "fb_exp_022",
-      "doc_name": "COCACOLA_2021_10K",
-      "status": "failed",
-      "latency_ms": 0,
-      "error": "Missing PageIndex structure: reports\\pageindex\\structures\\COCACOLA_2021_10K_structure.json"
-    },
-    {
-      "question_id": "fb_exp_023",
-      "doc_name": "PFIZER_2021_10K",
-      "status": "failed",
-      "latency_ms": 0,
-      "error": "Missing PageIndex structure: reports\\pageindex\\structures\\PFIZER_2021_10K_structure.json"
-    },
-    {
-      "question_id": "fb_exp_024",
-      "doc_name": "GENERALMILLS_2020_10K",
-      "status": "failed",
-      "latency_ms": 0,
-      "error": "Missing PageIndex structure: reports\\pageindex\\structures\\GENERALMILLS_2020_10K_structure.json"
-    }
-  ],
+  "missing_structures": [],
+  "qa_failures": [],
   "evidence_issues": [
     {
       "question_id": "fb_exp_014",
@@ -92,6 +49,49 @@
         34,
         16,
         66
+      ]
+    },
+    {
+      "question_id": "fb_exp_020",
+      "doc_name": "CVSHEALTH_2022_10K",
+      "evidence_recall": 0.0,
+      "citation_precision": 0.0,
+      "gold_pages_one_indexed": [
+        108,
+        110
+      ],
+      "predicted_pages": [
+        30,
+        32,
+        63
+      ]
+    },
+    {
+      "question_id": "fb_exp_022",
+      "doc_name": "COCACOLA_2021_10K",
+      "evidence_recall": 0.0,
+      "citation_precision": 0.0,
+      "gold_pages_one_indexed": [
+        62
+      ],
+      "predicted_pages": [
+        68,
+        77,
+        85
+      ]
+    },
+    {
+      "question_id": "fb_exp_023",
+      "doc_name": "PFIZER_2021_10K",
+      "evidence_recall": 0.0,
+      "citation_precision": 0.0,
+      "gold_pages_one_indexed": [
+        59
+      ],
+      "predicted_pages": [
+        63,
+        76,
+        10
       ]
     },
     {

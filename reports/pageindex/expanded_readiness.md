@@ -7,19 +7,15 @@ Date: 2026-06-18
 - Question file: `datasets\financebench\expanded_questions_25.jsonl`
 - Questions: `25`
 - Unique source documents: `24`
-- Documents with PageIndex structures and PDFs: `19`
-- Missing PageIndex structures: `5`
+- Documents with PageIndex structures and PDFs: `24`
+- Missing PageIndex structures: `0`
 - Missing PDFs: `0`
-- Runnable questions with current structures: `20`
-- Full expanded PageIndex QA ready: `False`
+- Runnable questions with current structures: `25`
+- Full expanded PageIndex QA ready: `True`
 
 ## Missing Structures
 
-- `AMERICANWATERWORKS_2020_10K`
-- `COCACOLA_2021_10K`
-- `CVSHEALTH_2022_10K`
-- `GENERALMILLS_2020_10K`
-- `PFIZER_2021_10K`
+No missing structures.
 
 ## Document Coverage
 
@@ -31,33 +27,26 @@ Date: 2026-06-18
 | `AMCOR_2023Q4_EARNINGS` | 1 | yes | yes |
 | `AMD_2022_10K` | 2 | yes | yes |
 | `AMERICANEXPRESS_2022_10K` | 1 | yes | yes |
-| `AMERICANWATERWORKS_2020_10K` | 1 | yes | missing |
+| `AMERICANWATERWORKS_2020_10K` | 1 | yes | yes |
 | `BESTBUY_2023_10K` | 1 | yes | yes |
 | `BLOCK_2016_10K` | 1 | yes | yes |
 | `BOEING_2022_10K` | 1 | yes | yes |
-| `COCACOLA_2021_10K` | 1 | yes | missing |
+| `COCACOLA_2021_10K` | 1 | yes | yes |
 | `CORNING_2022_10K` | 1 | yes | yes |
 | `COSTCO_2021_10K` | 1 | yes | yes |
-| `CVSHEALTH_2022_10K` | 1 | yes | missing |
+| `CVSHEALTH_2022_10K` | 1 | yes | yes |
 | `FOOTLOCKER_2022_8K_dated-2022-05-20` | 1 | yes | yes |
-| `GENERALMILLS_2020_10K` | 1 | yes | missing |
+| `GENERALMILLS_2020_10K` | 1 | yes | yes |
 | `JOHNSON_JOHNSON_2023_8K_dated-2023-08-30` | 1 | yes | yes |
 | `JPMORGAN_2023Q2_10Q` | 1 | yes | yes |
 | `MGMRESORTS_2022Q4_EARNINGS` | 1 | yes | yes |
 | `MICROSOFT_2016_10K` | 1 | yes | yes |
 | `NIKE_2023_10K` | 1 | yes | yes |
 | `PEPSICO_2023Q1_EARNINGS` | 1 | yes | yes |
-| `PFIZER_2021_10K` | 1 | yes | missing |
+| `PFIZER_2021_10K` | 1 | yes | yes |
 | `ULTABEAUTY_2023Q4_EARNINGS` | 1 | yes | yes |
 
 ## Commands
-
-Index missing structures:
-
-```powershell
-$env:DEEPSEEK_API_KEY="YOUR_KEY"
-python scripts\run_pageindex_mvp.py --questions datasets\financebench\expanded_questions_25.jsonl --pdf-dir datasets\raw\financebench\pdfs --output-dir reports\pageindex\structures --model deepseek/deepseek-v4-pro --continue-on-error --doc-name AMERICANWATERWORKS_2020_10K --doc-name COCACOLA_2021_10K --doc-name CVSHEALTH_2022_10K --doc-name GENERALMILLS_2020_10K --doc-name PFIZER_2021_10K
-```
 
 Run PageIndex expanded retrieval-only QA after all structures exist:
 
@@ -68,6 +57,6 @@ python scripts\evaluate_evidence_mvp.py --questions datasets\financebench\expand
 
 ## Interpretation
 
-- PageIndex expanded 25-question QA is not ready for a full run until the missing structures are indexed.
-- The current `19` covered documents support `20` runnable questions, but do not cover the full expanded set.
-- The next PageIndex benchmark step is indexing the `5` missing expanded documents, then rerunning retrieval-only QA and evidence evaluation before LLM answer generation.
+- PageIndex expanded 25-question retrieval-only QA is ready to run.
+- The current `24` covered documents support all `25` expanded questions.
+- The next PageIndex benchmark step is running expanded LLM answer generation and answer evaluation.

@@ -183,7 +183,7 @@
     "output": null,
     "total": null
   },
-  "latency_ms": 170,
+  "latency_ms": 177,
   "metadata": {
     "structure_path": "reports\\pageindex\\structures\\MICROSOFT_2016_10K_structure.json",
     "pdf_path": "datasets\\raw\\financebench\\pdfs\\MICROSOFT_2016_10K.pdf",

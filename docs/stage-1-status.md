@@ -1,6 +1,6 @@
 # Stage 1 Status
 
-Date: 2026-06-16
+Date: 2026-06-18
 
 ## Current Stage
 
@@ -975,7 +975,7 @@ Interpretation:
 
 ## PageIndex Expanded Readiness
 
-The expanded PageIndex run is now explicitly tracked before spending more indexing or answer-generation calls.
+The expanded PageIndex run is now mechanically complete for the 25-question subset.
 
 Readiness artifacts:
 
@@ -989,30 +989,20 @@ Current coverage:
 ```text
 Questions: 25
 Unique source documents: 24
-Documents with PageIndex structures and PDFs: 19
-Runnable questions with current structures: 20
-Missing PageIndex structures: 5
+Documents with PageIndex structures and PDFs: 24
+Runnable questions with current structures: 25
+Missing PageIndex structures: 0
 Missing PDFs: 0
-Full expanded PageIndex QA ready: false
+Full expanded PageIndex QA ready: true
 ```
 
-The missing structures are:
+Expanded PageIndex retrieval-only QA has been run for the full set:
 
 ```text
-AMERICANWATERWORKS_2020_10K
-COCACOLA_2021_10K
-CVSHEALTH_2022_10K
-GENERALMILLS_2020_10K
-PFIZER_2021_10K
-```
-
-Partial expanded PageIndex retrieval-only QA has been run for the currently runnable questions:
-
-```text
-Generated QA outputs: 20
-Failed QA outputs due to missing structures: 5
-Average evidence recall on generated outputs: 0.850
-Average citation precision on generated outputs: 0.283
+Generated QA outputs: 25
+Failed QA outputs: 0
+Average evidence recall: 0.760
+Average citation precision: 0.253
 ```
 
 Artifacts:
@@ -1025,13 +1015,46 @@ reports/pageindex/qa_expanded_25_manifest.json
 reports/pageindex/evidence_eval_qa_expanded_25.json
 ```
 
-Observed indexing blockers:
+Expanded PageIndex LLM answer generation has also been run:
+
+```text
+Model: deepseek/deepseek-v4-pro
+Generated answers: 25 / 25
+Generation failures: 0
+Evaluation failures: 0
+Evidence recall: 0.760
+Citation precision: 0.253
+Answer accuracy: 0.760
+Verdicts: 19 correct, 1 partial, 5 incorrect
+Average total tokens: 3,046
+Average latency: 5,787 ms
+Validation: pass, 20 checks, 0 failed
+```
+
+Artifacts:
+
+```text
+reports/pageindex_expanded_llm_diagnostics.md
+reports/pageindex_expanded_llm_diagnostics.json
+reports/expanded_pageindex_llm_validation_report.json
+reports/pageindex/qa_llm_expanded_25/
+reports/pageindex/qa_llm_expanded_25_manifest.json
+reports/pageindex/evidence_eval_qa_llm_expanded_25.json
+reports/pageindex/answer_eval_qa_llm_expanded_25.json
+```
+
+Observed indexing robustness issues fixed locally:
 
 - `PFIZER_2021_10K` failed because PageIndex attempted to add an integer page number to a missing page-offset value.
-- `AMERICANWATERWORKS_2020_10K` stayed active for an unusually long indexing run without producing a structure or manifest and was stopped to unblock partial QA.
-- `CVSHEALTH_2022_10K`, `GENERALMILLS_2020_10K`, and `COCACOLA_2021_10K` remain unindexed.
+- `CVSHEALTH_2022_10K` needed a low-confidence no-TOC fallback rather than a hard `Processing failed` exception.
+- `COCACOLA_2021_10K` needed defensive handling when `add_page_number_to_toc()` returned JSON without `physical_index`.
+- `AMERICANWATERWORKS_2020_10K` succeeded when run as a single-document indexing job.
 
-The next PageIndex experiment should index the 5 remaining documents, rerun `scripts/summarize_pageindex_expanded_readiness.py`, rerun expanded retrieval-only QA, and only then start expanded PageIndex LLM answer generation.
+Interpretation:
+
+- The original 12-question MVP result did not generalize to the expanded 25-question set.
+- PageIndex used a compact three-page answer context, but six evidence misses reduced expanded answer accuracy.
+- The next PageIndex experiment should inspect ranking and page-selection behavior for `fb_exp_014`, `fb_exp_017`, `fb_exp_020`, `fb_exp_022`, `fb_exp_023`, and `fb_exp_025`.
 
 ## Upstream Contribution Drafts
 
@@ -1042,15 +1065,15 @@ docs/upstream-pageindex-benchmark-issue.md
 docs/upstream-patches/pageindex-json-resilience-pr.md
 ```
 
-The issue draft presents the benchmark plan conservatively: PageIndex has strong MVP evidence recall, but the expanded PageIndex run is not complete yet. The PR draft focuses on robust JSON extraction and conservative fallbacks for noisy model responses.
+The issue draft presents the benchmark plan conservatively: PageIndex has strong MVP evidence recall, but the expanded PageIndex run exposes ranking gaps. The PR draft focuses on robust JSON extraction and conservative fallbacks for noisy model responses.
 
 ## Next Stage 1 Work
 
 The next work should strengthen the benchmark beyond the dependency-light MVP baselines:
 
 1. Use the PageIndex upstream issue and PR drafts as the first contribution candidates.
-2. Index the 5 missing PageIndex structures for the expanded 25-question set.
-3. Run expanded PageIndex retrieval-only QA and evidence evaluation after all structures exist.
+2. Open a small PageIndex upstream PR for JSON response resilience and fallback handling.
+3. Investigate the six PageIndex expanded evidence misses and turn them into ranking-improvement test cases.
 4. Add GraphRAG and HyperGraphRAG after the expanded baselines are stable.
 5. Consider evaluator refinements for rounding tolerance and extra-but-supported legal details before further prompt tuning.
 
@@ -1066,16 +1089,4 @@ Stage 1 is complete when:
 
 ## Current Blocker
 
-Model-backed PageIndex indexing and QA require a provider API key in the current shell, usable provider quota, and reliable JSON output.
-
-The first 19 PageIndex structures are available, but full expanded PageIndex QA is still blocked by 5 missing structures:
-
-```text
-AMERICANWATERWORKS_2020_10K
-COCACOLA_2021_10K
-CVSHEALTH_2022_10K
-GENERALMILLS_2020_10K
-PFIZER_2021_10K
-```
-
-Next, index these structures with the current PageIndex MVP script, regenerate the readiness report, then run expanded PageIndex retrieval-only QA.
+There is no mechanical blocker for PageIndex expanded QA now. The main blocker is methodological: PageIndex ranking needs improvement or explanation on the six expanded evidence misses before the project can claim PageIndex has a unique advantage over stronger LlamaIndex baselines.

@@ -119,7 +119,7 @@ Completed:
   - This matched LlamaIndex Vector answer accuracy, but used about `36x` more average tokens and produced weaker citation-page recall.
 - Expanded cross-method cost/quality summary now exists:
   - `reports/expanded_cost_quality_summary.md`
-  - Shared answer failure across LlamaIndex Vector, LlamaIndex Hybrid, and Long-context: `fb_exp_020`.
+  - The shared hard answer case across compared expanded methods remains `fb_exp_020`.
 - LlamaIndex Vector answer-prompt variants have been tested as an answer-generation ablation:
   - Default prompt: answer accuracy `0.920`, verdicts `23 correct / 1 partial / 1 incorrect`, average total tokens `2,543`.
   - `finance_reasoning_v2`: answer accuracy `0.960`, verdicts `24 correct / 0 partial / 1 incorrect`, average total tokens `2,885`.
@@ -131,11 +131,19 @@ Completed:
 - PageIndex expanded-readiness tracking now exists:
   - `reports/pageindex/expanded_readiness.md`
   - `reports/pageindex/expanded_readiness.json`
-  - Current expanded PageIndex coverage is `20 / 25` runnable questions because `5` PageIndex structure files still need indexing.
-- PageIndex partial expanded retrieval-only QA now exists:
+  - Current expanded PageIndex coverage is `25 / 25` runnable questions because all `24` unique source documents now have structures and PDFs.
+- PageIndex expanded retrieval-only QA now exists:
   - `reports/pageindex/expanded_partial_summary.md`
   - `reports/pageindex/evidence_eval_qa_expanded_25.json`
-  - Current partial PageIndex expanded result: `20` generated QA outputs, average evidence recall `0.850`, average citation precision `0.283`.
+  - Current expanded PageIndex retrieval-only result: `25` generated QA outputs, average evidence recall `0.760`, average citation precision `0.253`.
+- PageIndex expanded LLM answer generation and judging now exists:
+  - `reports/pageindex_expanded_llm_diagnostics.md`
+  - `reports/expanded_pageindex_llm_validation_report.json`
+  - Current expanded PageIndex LLM result: evidence recall `0.760`, citation precision `0.253`, answer accuracy `0.760`, average total tokens `3,046`, average latency `5,787 ms`.
+- Expanded cross-method cost/quality summary now includes PageIndex:
+  - LlamaIndex Vector: evidence recall `1.000`, answer accuracy `0.920`, average total tokens `2,543`.
+  - PageIndex: evidence recall `0.760`, answer accuracy `0.760`, average total tokens `3,046`.
+  - Long-context: evidence recall `0.800`, answer accuracy `0.920`, average total tokens `92,500`.
 - PageIndex upstream contribution drafts now exist:
   - `docs/upstream-pageindex-benchmark-issue.md`
   - `docs/upstream-patches/pageindex-json-resilience-pr.md`
@@ -147,7 +155,8 @@ See:
 - [Stage 1 status](docs/stage-1-status.md)
 - [Benchmark schema](docs/schema.md)
 - [PageIndex expanded readiness](reports/pageindex/expanded_readiness.md)
-- [PageIndex expanded partial summary](reports/pageindex/expanded_partial_summary.md)
+- [PageIndex expanded retrieval summary](reports/pageindex/expanded_partial_summary.md)
+- [PageIndex expanded LLM diagnostics](reports/pageindex_expanded_llm_diagnostics.md)
 - [PageIndex upstream benchmark issue draft](docs/upstream-pageindex-benchmark-issue.md)
 
 ## Project Structure
@@ -309,6 +318,6 @@ A GPU may become useful later for local LLMs, large embedding jobs, or large rer
 ## Next Actions
 
 1. Use the PageIndex upstream issue and PR drafts as the first contribution candidates.
-2. Index the 5 missing PageIndex structures listed in `reports/pageindex/expanded_readiness.md`.
-3. Rerun PageIndex expanded retrieval-only QA and evidence evaluation after all expanded structures exist.
+2. Open a small PageIndex upstream PR for JSON response resilience and conservative fallback handling.
+3. Investigate PageIndex ranking failures on the six expanded evidence-miss questions.
 4. Add GraphRAG and HyperGraphRAG after the expanded baselines are stable.

@@ -1,0 +1,1089 @@
+{
+  "doc_name": "AMERICANWATERWORKS_2020_10K.pdf",
+  "structure": [
+    {
+      "title": "Preface",
+      "node_id": "0000",
+      "start_index": 1,
+      "end_index": 3
+    },
+    {
+      "title": "Forward-Looking Statements",
+      "node_id": "0001",
+      "start_index": 3,
+      "end_index": 6
+    },
+    {
+      "title": "Part I",
+      "node_id": "0002",
+      "start_index": 6,
+      "end_index": 6,
+      "nodes": [
+        {
+          "title": "Item 1. Business",
+          "node_id": "0003",
+          "start_index": 6,
+          "end_index": 6,
+          "nodes": [
+            {
+              "title": "ITEM 1. BUSINESS",
+              "node_id": "0004",
+              "start_index": 6,
+              "end_index": 6,
+              "nodes": [
+                {
+                  "title": "The Company",
+                  "node_id": "0005",
+                  "start_index": 6,
+                  "end_index": 6
+                },
+                {
+                  "title": "Regulated Businesses",
+                  "node_id": "0006",
+                  "start_index": 6,
+                  "end_index": 7,
+                  "nodes": [
+                    {
+                      "title": "Customers",
+                      "node_id": "0007",
+                      "start_index": 7,
+                      "end_index": 8
+                    },
+                    {
+                      "title": "Capital Investment",
+                      "node_id": "0008",
+                      "start_index": 8,
+                      "end_index": 8
+                    },
+                    {
+                      "title": "Regulation and Rate Making",
+                      "node_id": "0009",
+                      "start_index": 8,
+                      "end_index": 9
+                    },
+                    {
+                      "title": "Acquisitions and Strategic Growth",
+                      "node_id": "0010",
+                      "start_index": 9,
+                      "end_index": 10
+                    },
+                    {
+                      "title": "Sale of New York American Water Company, Inc.",
+                      "node_id": "0011",
+                      "start_index": 10,
+                      "end_index": 10
+                    },
+                    {
+                      "title": "Industry Legislation",
+                      "node_id": "0012",
+                      "start_index": 10,
+                      "end_index": 11
+                    },
+                    {
+                      "title": "Competition",
+                      "node_id": "0013",
+                      "start_index": 11,
+                      "end_index": 11
+                    },
+                    {
+                      "title": "Condemnation and Eminent Domain",
+                      "node_id": "0014",
+                      "start_index": 11,
+                      "end_index": 12
+                    },
+                    {
+                      "title": "Water Supply and Wastewater Services",
+                      "node_id": "0015",
+                      "start_index": 12,
+                      "end_index": 14
+                    },
+                    {
+                      "title": "Seasonality",
+                      "node_id": "0016",
+                      "start_index": 14,
+                      "end_index": 14
+                    }
+                  ]
+                },
+                {
+                  "title": "Market-Based Businesses",
+                  "node_id": "0017",
+                  "start_index": 14,
+                  "end_index": 15,
+                  "nodes": [
+                    {
+                      "title": "Homeowner Services Group",
+                      "node_id": "0018",
+                      "start_index": 15,
+                      "end_index": 15
+                    },
+                    {
+                      "title": "Military Services Group",
+                      "node_id": "0019",
+                      "start_index": 15,
+                      "end_index": 15
+                    },
+                    {
+                      "title": "Competition",
+                      "node_id": "0020",
+                      "start_index": 15,
+                      "end_index": 15
+                    }
+                  ]
+                },
+                {
+                  "title": "Environmental, Health and Safety, Water Quality and Other Regulation",
+                  "node_id": "0021",
+                  "start_index": 15,
+                  "end_index": 16,
+                  "nodes": [
+                    {
+                      "title": "Safe Drinking Water Act",
+                      "node_id": "0022",
+                      "start_index": 16,
+                      "end_index": 17
+                    },
+                    {
+                      "title": "Lead and Copper Rule and Reduction of Lead in Drinking Water Act",
+                      "node_id": "0023",
+                      "start_index": 17,
+                      "end_index": 18
+                    },
+                    {
+                      "title": "Clean Water Act",
+                      "node_id": "0024",
+                      "start_index": 18,
+                      "end_index": 18
+                    }
+                  ]
+                },
+                {
+                  "title": "Research and Development",
+                  "node_id": "0025",
+                  "start_index": 18,
+                  "end_index": 18,
+                  "nodes": [
+                    {
+                      "title": "The Company\u2019s Research and Development Program",
+                      "node_id": "0026",
+                      "start_index": 18,
+                      "end_index": 18
+                    },
+                    {
+                      "title": "Contaminants of Emerging Concern",
+                      "node_id": "0027",
+                      "start_index": 18,
+                      "end_index": 19
+                    }
+                  ]
+                },
+                {
+                  "title": "Service Company and Security",
+                  "node_id": "0028",
+                  "start_index": 19,
+                  "end_index": 19
+                },
+                {
+                  "title": "Environmental, Social Responsibility and Governance",
+                  "node_id": "0029",
+                  "start_index": 19,
+                  "end_index": 20,
+                  "nodes": [
+                    {
+                      "title": "Environmental and Sustainability Practices",
+                      "node_id": "0030",
+                      "start_index": 20,
+                      "end_index": 20,
+                      "nodes": [
+                        {
+                          "title": "Energy and Emissions",
+                          "node_id": "0031",
+                          "start_index": 20,
+                          "end_index": 20
+                        },
+                        {
+                          "title": "Water Efficiency and Resiliency",
+                          "node_id": "0032",
+                          "start_index": 20,
+                          "end_index": 20
+                        },
+                        {
+                          "title": "Policy Leadership",
+                          "node_id": "0033",
+                          "start_index": 20,
+                          "end_index": 20
+                        }
+                      ]
+                    },
+                    {
+                      "title": "Social Responsibility",
+                      "node_id": "0034",
+                      "start_index": 20,
+                      "end_index": 20,
+                      "nodes": [
+                        {
+                          "title": "People",
+                          "node_id": "0035",
+                          "start_index": 20,
+                          "end_index": 21
+                        },
+                        {
+                          "title": "Customers",
+                          "node_id": "0036",
+                          "start_index": 21,
+                          "end_index": 21
+                        },
+                        {
+                          "title": "Communities",
+                          "node_id": "0037",
+                          "start_index": 21,
+                          "end_index": 21
+                        }
+                      ]
+                    },
+                    {
+                      "title": "Governance",
+                      "node_id": "0038",
+                      "start_index": 21,
+                      "end_index": 21,
+                      "nodes": [
+                        {
+                          "title": "Board and Committees",
+                          "node_id": "0039",
+                          "start_index": 21,
+                          "end_index": 21
+                        },
+                        {
+                          "title": "Demonstrated and Representative Expertise",
+                          "node_id": "0040",
+                          "start_index": 21,
+                          "end_index": 21
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "title": "Human Capital Resources",
+                  "node_id": "0041",
+                  "start_index": 21,
+                  "end_index": 21,
+                  "nodes": [
+                    {
+                      "title": "Overview",
+                      "node_id": "0042",
+                      "start_index": 21,
+                      "end_index": 21
+                    },
+                    {
+                      "title": "Employee Safety",
+                      "node_id": "0043",
+                      "start_index": 21,
+                      "end_index": 22
+                    },
+                    {
+                      "title": "Supporting Employees During the COVID-19 Pandemic",
+                      "node_id": "0044",
+                      "start_index": 22,
+                      "end_index": 22
+                    },
+                    {
+                      "title": "Inclusion and Diversity",
+                      "node_id": "0045",
+                      "start_index": 22,
+                      "end_index": 23
+                    },
+                    {
+                      "title": "Talent Development",
+                      "node_id": "0046",
+                      "start_index": 23,
+                      "end_index": 23
+                    },
+                    {
+                      "title": "Workforce Data",
+                      "node_id": "0047",
+                      "start_index": 23,
+                      "end_index": 23
+                    }
+                  ]
+                },
+                {
+                  "title": "Information About Our Executive Officers",
+                  "node_id": "0048",
+                  "start_index": 23,
+                  "end_index": 25
+                },
+                {
+                  "title": "Available Information",
+                  "node_id": "0049",
+                  "start_index": 25,
+                  "end_index": 27
+                }
+              ]
+            },
+            {
+              "title": "ITEM 1A. RISK FACTORS",
+              "node_id": "0050",
+              "start_index": 27,
+              "end_index": 27
+            }
+          ]
+        },
+        {
+          "title": "Item 1A. Risk Factors",
+          "node_id": "0051",
+          "start_index": 27,
+          "end_index": 42
+        },
+        {
+          "title": "Item 1B. Unresolved Staff Comments",
+          "node_id": "0052",
+          "start_index": 42,
+          "end_index": 42
+        },
+        {
+          "title": "Item 2. Properties",
+          "node_id": "0053",
+          "start_index": 42,
+          "end_index": 42
+        },
+        {
+          "title": "Item 3. Legal Proceedings",
+          "node_id": "0054",
+          "start_index": 42,
+          "end_index": 49
+        },
+        {
+          "title": "Item 4. Mine Safety Disclosures",
+          "node_id": "0055",
+          "start_index": 49,
+          "end_index": 50
+        }
+      ]
+    },
+    {
+      "title": "Part II",
+      "node_id": "0056",
+      "start_index": 50,
+      "end_index": 50,
+      "nodes": [
+        {
+          "title": "Item 5. Market For Registrant\u2019s Common Equity, Related Stockholder Matters and Issuer Purchases of Equity Securities",
+          "node_id": "0057",
+          "start_index": 50,
+          "end_index": 50
+        },
+        {
+          "title": "Item 6. Selected Financial Data",
+          "node_id": "0058",
+          "start_index": 50,
+          "end_index": 51
+        },
+        {
+          "title": "Item 7. Management\u2019s Discussion and Analysis of Financial Condition and Results of Operations",
+          "node_id": "0059",
+          "start_index": 51,
+          "end_index": 51,
+          "nodes": [
+            {
+              "title": "ITEM 7. MANAGEMENT\u2019S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND RESULTS OF OPERATIONS",
+              "node_id": "0060",
+              "start_index": 51,
+              "end_index": 51,
+              "nodes": [
+                {
+                  "title": "Overview",
+                  "node_id": "0061",
+                  "start_index": 51,
+                  "end_index": 51
+                },
+                {
+                  "title": "Novel Coronavirus (COVID-19) Pandemic Update",
+                  "node_id": "0062",
+                  "start_index": 51,
+                  "end_index": 52,
+                  "nodes": [
+                    {
+                      "title": "Financing Activities",
+                      "node_id": "0063",
+                      "start_index": 52,
+                      "end_index": 53
+                    }
+                  ]
+                },
+                {
+                  "title": "Financial Results",
+                  "node_id": "0064",
+                  "start_index": 53,
+                  "end_index": 53
+                },
+                {
+                  "title": "Growth\u2014through capital investment in infrastructure and regulated acquisitions, as well as strategic growth opportunities in the Market-Based Businesses",
+                  "node_id": "0065",
+                  "start_index": 53,
+                  "end_index": 53,
+                  "nodes": [
+                    {
+                      "title": "Regulated Businesses Growth and Optimization",
+                      "node_id": "0066",
+                      "start_index": 53,
+                      "end_index": 53
+                    },
+                    {
+                      "title": "Sale of New York American Water Company, Inc.",
+                      "node_id": "0067",
+                      "start_index": 53,
+                      "end_index": 53
+                    },
+                    {
+                      "title": "Market-Based Businesses Growth",
+                      "node_id": "0068",
+                      "start_index": 53,
+                      "end_index": 53
+                    },
+                    {
+                      "title": "Future Growth",
+                      "node_id": "0069",
+                      "start_index": 53,
+                      "end_index": 54
+                    }
+                  ]
+                },
+                {
+                  "title": "Operational Excellence",
+                  "node_id": "0070",
+                  "start_index": 54,
+                  "end_index": 56
+                },
+                {
+                  "title": "Regulatory Matters",
+                  "node_id": "0071",
+                  "start_index": 56,
+                  "end_index": 56,
+                  "nodes": [
+                    {
+                      "title": "General Rate Cases",
+                      "node_id": "0072",
+                      "start_index": 56,
+                      "end_index": 56
+                    },
+                    {
+                      "title": "Pending General Rate Case Filings",
+                      "node_id": "0073",
+                      "start_index": 56,
+                      "end_index": 58
+                    },
+                    {
+                      "title": "Infrastructure Surcharges",
+                      "node_id": "0074",
+                      "start_index": 58,
+                      "end_index": 58
+                    },
+                    {
+                      "title": "Pending Infrastructure Surcharge Filings",
+                      "node_id": "0075",
+                      "start_index": 58,
+                      "end_index": 59
+                    }
+                  ]
+                },
+                {
+                  "title": "Tax Matters",
+                  "node_id": "0076",
+                  "start_index": 59,
+                  "end_index": 59,
+                  "nodes": [
+                    {
+                      "title": "CARES Act",
+                      "node_id": "0077",
+                      "start_index": 59,
+                      "end_index": 59
+                    },
+                    {
+                      "title": "Tax Cuts and Jobs Act",
+                      "node_id": "0078",
+                      "start_index": 59,
+                      "end_index": 59
+                    },
+                    {
+                      "title": "Federal Net Operating Loss",
+                      "node_id": "0079",
+                      "start_index": 59,
+                      "end_index": 59
+                    },
+                    {
+                      "title": "Legislative Updates",
+                      "node_id": "0080",
+                      "start_index": 59,
+                      "end_index": 60
+                    }
+                  ]
+                },
+                {
+                  "title": "Consolidated Results of Operations",
+                  "node_id": "0081",
+                  "start_index": 60,
+                  "end_index": 60
+                },
+                {
+                  "title": "Segment Results of Operations",
+                  "node_id": "0082",
+                  "start_index": 60,
+                  "end_index": 61,
+                  "nodes": [
+                    {
+                      "title": "Regulated Businesses Segment",
+                      "node_id": "0083",
+                      "start_index": 61,
+                      "end_index": 61,
+                      "nodes": [
+                        {
+                          "title": "Operating Revenues",
+                          "node_id": "0084",
+                          "start_index": 61,
+                          "end_index": 62
+                        },
+                        {
+                          "title": "Operation and Maintenance",
+                          "node_id": "0085",
+                          "start_index": 62,
+                          "end_index": 62,
+                          "nodes": [
+                            {
+                              "title": "Employee-Related Costs",
+                              "node_id": "0086",
+                              "start_index": 62,
+                              "end_index": 63
+                            },
+                            {
+                              "title": "Production Costs",
+                              "node_id": "0087",
+                              "start_index": 63,
+                              "end_index": 63
+                            },
+                            {
+                              "title": "Operating Supplies and Services",
+                              "node_id": "0088",
+                              "start_index": 63,
+                              "end_index": 63
+                            },
+                            {
+                              "title": "Maintenance Materials and Supplies",
+                              "node_id": "0089",
+                              "start_index": 63,
+                              "end_index": 63
+                            },
+                            {
+                              "title": "Other (Operation and Maintenance)",
+                              "node_id": "0090",
+                              "start_index": 63,
+                              "end_index": 63
+                            }
+                          ]
+                        },
+                        {
+                          "title": "Depreciation and Amortization",
+                          "node_id": "0091",
+                          "start_index": 63,
+                          "end_index": 63
+                        },
+                        {
+                          "title": "Other Income (Expenses)",
+                          "node_id": "0092",
+                          "start_index": 63,
+                          "end_index": 64
+                        }
+                      ]
+                    },
+                    {
+                      "title": "Market-Based Businesses",
+                      "node_id": "0093",
+                      "start_index": 64,
+                      "end_index": 64,
+                      "nodes": [
+                        {
+                          "title": "Operating Revenues",
+                          "node_id": "0094",
+                          "start_index": 64,
+                          "end_index": 64
+                        },
+                        {
+                          "title": "Operation and Maintenance",
+                          "node_id": "0095",
+                          "start_index": 64,
+                          "end_index": 64
+                        },
+                        {
+                          "title": "Depreciation and Amortization",
+                          "node_id": "0096",
+                          "start_index": 64,
+                          "end_index": 64
+                        },
+                        {
+                          "title": "Loss (Gain) on Asset Dispositions and Purchases",
+                          "node_id": "0097",
+                          "start_index": 64,
+                          "end_index": 64
+                        },
+                        {
+                          "title": "Provision for Income Taxes",
+                          "node_id": "0098",
+                          "start_index": 64,
+                          "end_index": 65
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "title": "Liquidity and Capital Resources",
+                  "node_id": "0099",
+                  "start_index": 65,
+                  "end_index": 65,
+                  "nodes": [
+                    {
+                      "title": "Cash Flows Provided by Operating Activities",
+                      "node_id": "0100",
+                      "start_index": 65,
+                      "end_index": 67
+                    },
+                    {
+                      "title": "Cash Flows Used in Investing Activities",
+                      "node_id": "0101",
+                      "start_index": 67,
+                      "end_index": 68
+                    },
+                    {
+                      "title": "Cash Flows from Financing Activities",
+                      "node_id": "0102",
+                      "start_index": 68,
+                      "end_index": 70
+                    },
+                    {
+                      "title": "Issuer and Guarantor of Senior Notes",
+                      "node_id": "0103",
+                      "start_index": 70,
+                      "end_index": 70
+                    },
+                    {
+                      "title": "Credit Facilities and Short-Term Debt",
+                      "node_id": "0104",
+                      "start_index": 70,
+                      "end_index": 71
+                    },
+                    {
+                      "title": "Capital Structure",
+                      "node_id": "0105",
+                      "start_index": 71,
+                      "end_index": 71
+                    },
+                    {
+                      "title": "Debt Covenants",
+                      "node_id": "0106",
+                      "start_index": 71,
+                      "end_index": 72
+                    },
+                    {
+                      "title": "Security Ratings",
+                      "node_id": "0107",
+                      "start_index": 72,
+                      "end_index": 72
+                    },
+                    {
+                      "title": "Dividends and Regulatory Restrictions",
+                      "node_id": "0108",
+                      "start_index": 72,
+                      "end_index": 72
+                    },
+                    {
+                      "title": "Insurance Coverage",
+                      "node_id": "0109",
+                      "start_index": 72,
+                      "end_index": 72
+                    }
+                  ]
+                },
+                {
+                  "title": "Critical Accounting Policies and Estimates",
+                  "node_id": "0110",
+                  "start_index": 72,
+                  "end_index": 73,
+                  "nodes": [
+                    {
+                      "title": "Regulation and Regulatory Accounting",
+                      "node_id": "0111",
+                      "start_index": 73,
+                      "end_index": 73
+                    },
+                    {
+                      "title": "Accounting for Income Taxes",
+                      "node_id": "0112",
+                      "start_index": 73,
+                      "end_index": 74
+                    },
+                    {
+                      "title": "Accounting for Pension and Postretirement Benefits",
+                      "node_id": "0113",
+                      "start_index": 74,
+                      "end_index": 75,
+                      "nodes": [
+                        {
+                          "title": "Postretirement Medical Bargaining Plan Changes",
+                          "node_id": "0114",
+                          "start_index": 75,
+                          "end_index": 76
+                        }
+                      ]
+                    },
+                    {
+                      "title": "Revenue Recognition",
+                      "node_id": "0115",
+                      "start_index": 76,
+                      "end_index": 77
+                    },
+                    {
+                      "title": "Accounting for Contingencies",
+                      "node_id": "0116",
+                      "start_index": 77,
+                      "end_index": 77
+                    },
+                    {
+                      "title": "New Accounting Standards",
+                      "node_id": "0117",
+                      "start_index": 77,
+                      "end_index": 77
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "title": "ITEM 7A. QUANTITATIVE AND QUALITATIVE DISCLOSURES ABOUT MARKET RISK",
+              "node_id": "0118",
+              "start_index": 77,
+              "end_index": 77
+            }
+          ]
+        },
+        {
+          "title": "Item 7A. Quantitative and Qualitative Disclosures About Market Risk",
+          "node_id": "0119",
+          "start_index": 77,
+          "end_index": 79
+        },
+        {
+          "title": "Item 8. Financial Statements and Supplementary Data",
+          "node_id": "0120",
+          "start_index": 79,
+          "end_index": 79,
+          "nodes": [
+            {
+              "title": "ITEM 8. FINANCIAL STATEMENTS AND SUPPLEMENTARY DATA",
+              "node_id": "0121",
+              "start_index": 79,
+              "end_index": 80,
+              "nodes": [
+                {
+                  "title": "Report of Independent Registered Public Accounting Firm",
+                  "node_id": "0122",
+                  "start_index": 80,
+                  "end_index": 82
+                },
+                {
+                  "title": "American Water Works Company, Inc. and Subsidiary Companies Consolidated Balance Sheets",
+                  "node_id": "0123",
+                  "start_index": 82,
+                  "end_index": 84
+                },
+                {
+                  "title": "American Water Works Company, Inc. and Subsidiary Companies Consolidated Statements of Operations",
+                  "node_id": "0124",
+                  "start_index": 84,
+                  "end_index": 85
+                },
+                {
+                  "title": "American Water Works Company, Inc. and Subsidiary Companies Consolidated Statements of Comprehensive Income",
+                  "node_id": "0125",
+                  "start_index": 85,
+                  "end_index": 86
+                },
+                {
+                  "title": "American Water Works Company, Inc. and Subsidiary Companies Consolidated Statements of Cash Flows",
+                  "node_id": "0126",
+                  "start_index": 86,
+                  "end_index": 87
+                },
+                {
+                  "title": "American Water Works Company, Inc. and Subsidiary Companies Consolidated Statements of Changes in Shareholders\u2019 Equity",
+                  "node_id": "0127",
+                  "start_index": 87,
+                  "end_index": 88
+                },
+                {
+                  "title": "American Water Works Company, Inc. and Subsidiary Companies Notes to Consolidated Financial Statements",
+                  "node_id": "0128",
+                  "start_index": 88,
+                  "end_index": 88,
+                  "nodes": [
+                    {
+                      "title": "Note 1: Organization and Operation",
+                      "node_id": "0129",
+                      "start_index": 88,
+                      "end_index": 88
+                    },
+                    {
+                      "title": "Note 2: Significant Accounting Policies",
+                      "node_id": "0130",
+                      "start_index": 88,
+                      "end_index": 95
+                    },
+                    {
+                      "title": "Note 3: Impact of Novel Coronavirus (COVID-19) Pandemic",
+                      "node_id": "0131",
+                      "start_index": 95,
+                      "end_index": 96
+                    },
+                    {
+                      "title": "Note 4: Regulatory Matters",
+                      "node_id": "0132",
+                      "start_index": 96,
+                      "end_index": 100
+                    },
+                    {
+                      "title": "Note 5: Revenue Recognition",
+                      "node_id": "0133",
+                      "start_index": 100,
+                      "end_index": 101
+                    },
+                    {
+                      "title": "Note 6: Acquisitions and Divestitures",
+                      "node_id": "0134",
+                      "start_index": 101,
+                      "end_index": 103
+                    },
+                    {
+                      "title": "Note 7: Property, Plant and Equipment",
+                      "node_id": "0135",
+                      "start_index": 103,
+                      "end_index": 104
+                    },
+                    {
+                      "title": "Note 8: Allowance for Uncollectible Accounts",
+                      "node_id": "0136",
+                      "start_index": 104,
+                      "end_index": 104
+                    },
+                    {
+                      "title": "Note 9: Goodwill and Other Intangible Assets",
+                      "node_id": "0137",
+                      "start_index": 104,
+                      "end_index": 105
+                    },
+                    {
+                      "title": "Note 10: Shareholders\u2019 Equity",
+                      "node_id": "0138",
+                      "start_index": 105,
+                      "end_index": 106
+                    },
+                    {
+                      "title": "Note 11: Stock Based Compensation",
+                      "node_id": "0139",
+                      "start_index": 106,
+                      "end_index": 109
+                    },
+                    {
+                      "title": "Note 12: Long-Term Debt",
+                      "node_id": "0140",
+                      "start_index": 109,
+                      "end_index": 111
+                    },
+                    {
+                      "title": "Note 13: Short-Term Debt",
+                      "node_id": "0141",
+                      "start_index": 111,
+                      "end_index": 112
+                    },
+                    {
+                      "title": "Note 14: General Taxes",
+                      "node_id": "0142",
+                      "start_index": 112,
+                      "end_index": 112
+                    },
+                    {
+                      "title": "Note 15: Income Taxes",
+                      "node_id": "0143",
+                      "start_index": 112,
+                      "end_index": 114
+                    },
+                    {
+                      "title": "Note 16: Employee Benefits",
+                      "node_id": "0144",
+                      "start_index": 114,
+                      "end_index": 123
+                    },
+                    {
+                      "title": "Note 17: Commitments and Contingencies",
+                      "node_id": "0145",
+                      "start_index": 123,
+                      "end_index": 126
+                    },
+                    {
+                      "title": "Note 18: Earnings per Common Share",
+                      "node_id": "0146",
+                      "start_index": 126,
+                      "end_index": 127
+                    },
+                    {
+                      "title": "Note 19: Fair Value of Financial Information",
+                      "node_id": "0147",
+                      "start_index": 127,
+                      "end_index": 129
+                    },
+                    {
+                      "title": "Note 20: Leases",
+                      "node_id": "0148",
+                      "start_index": 129,
+                      "end_index": 129
+                    },
+                    {
+                      "title": "Note 21: Segment Information",
+                      "node_id": "0149",
+                      "start_index": 129,
+                      "end_index": 131
+                    },
+                    {
+                      "title": "Note 22: Unaudited Quarterly Data",
+                      "node_id": "0150",
+                      "start_index": 131,
+                      "end_index": 132
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "title": "ITEM 9. CHANGES IN AND DISAGREEMENTS WITH ACCOUNTANTS ON ACCOUNTING AND FINANCIAL DISCLOSURE",
+              "node_id": "0151",
+              "start_index": 132,
+              "end_index": 132
+            },
+            {
+              "title": "ITEM 9A. CONTROLS AND PROCEDURES",
+              "node_id": "0152",
+              "start_index": 132,
+              "end_index": 132,
+              "nodes": [
+                {
+                  "title": "Disclosure Controls and Procedures",
+                  "node_id": "0153",
+                  "start_index": 132,
+                  "end_index": 132
+                },
+                {
+                  "title": "Management\u2019s Report on Internal Control over Financial Reporting",
+                  "node_id": "0154",
+                  "start_index": 132,
+                  "end_index": 132
+                },
+                {
+                  "title": "Changes in Internal Control over Financial Reporting",
+                  "node_id": "0155",
+                  "start_index": 132,
+                  "end_index": 132
+                }
+              ]
+            },
+            {
+              "title": "ITEM 9B. OTHER INFORMATION",
+              "node_id": "0156",
+              "start_index": 132,
+              "end_index": 132
+            }
+          ]
+        },
+        {
+          "title": "Item 9. Changes in and Disagreements with Accountants on Accounting and Financial Disclosure",
+          "node_id": "0157",
+          "start_index": 132,
+          "end_index": 132
+        },
+        {
+          "title": "Item 9A. Controls and Procedures",
+          "node_id": "0158",
+          "start_index": 132,
+          "end_index": 132
+        },
+        {
+          "title": "Item 9B. Other Information",
+          "node_id": "0159",
+          "start_index": 132,
+          "end_index": 133
+        }
+      ]
+    },
+    {
+      "title": "Part III",
+      "node_id": "0160",
+      "start_index": 133,
+      "end_index": 133,
+      "nodes": [
+        {
+          "title": "Item 10. Directors, Executive Officers of the Registrant and Corporate Governance",
+          "node_id": "0161",
+          "start_index": 133,
+          "end_index": 133
+        },
+        {
+          "title": "Item 11. Executive Compensation",
+          "node_id": "0162",
+          "start_index": 133,
+          "end_index": 133
+        },
+        {
+          "title": "Item 12. Security Ownership of Certain Beneficial Owners and Management and Related Stockholder Matters",
+          "node_id": "0163",
+          "start_index": 133,
+          "end_index": 133
+        },
+        {
+          "title": "Item 13. Certain Relationships and Related Transactions and Director Independence",
+          "node_id": "0164",
+          "start_index": 133,
+          "end_index": 133
+        },
+        {
+          "title": "Item 14. Principal Accountant Fees and Services",
+          "node_id": "0165",
+          "start_index": 133,
+          "end_index": 134
+        }
+      ]
+    },
+    {
+      "title": "Part IV",
+      "node_id": "0166",
+      "start_index": 134,
+      "end_index": 134,
+      "nodes": [
+        {
+          "title": "Item 15. Exhibits and Financial Statement Schedules",
+          "node_id": "0167",
+          "start_index": 134,
+          "end_index": 134
+        },
+        {
+          "title": "Exhibit Index",
+          "node_id": "0168",
+          "start_index": 134,
+          "end_index": 139
+        },
+        {
+          "title": "Signatures",
+          "node_id": "0169",
+          "start_index": 139,
+          "end_index": 152
+        }
+      ]
+    }
+  ]
+}

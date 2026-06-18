@@ -1,0 +1,1749 @@
+{
+  "doc_name": "PFIZER_2021_10K.pdf",
+  "structure": [
+    {
+      "title": "Preface",
+      "node_id": "0000",
+      "start_index": 1,
+      "end_index": 2
+    },
+    {
+      "title": "DEFINED TERMS",
+      "node_id": "0001",
+      "start_index": 3,
+      "end_index": 6
+    },
+    {
+      "title": "AVAILABLE INFORMATION",
+      "node_id": "0002",
+      "start_index": 6,
+      "end_index": 6
+    },
+    {
+      "title": "FORWARD-LOOKING INFORMATION AND FACTORS THAT MAY AFFECT FUTURE RESULTS",
+      "node_id": "0003",
+      "start_index": 7,
+      "end_index": 9
+    },
+    {
+      "title": "PART I",
+      "node_id": "0004",
+      "start_index": 9,
+      "end_index": 9,
+      "nodes": [
+        {
+          "title": "ITEM 1. BUSINESS",
+          "node_id": "0005",
+          "start_index": 9,
+          "end_index": 9,
+          "nodes": [
+            {
+              "title": "ABOUT PFIZER",
+              "node_id": "0006",
+              "start_index": 9,
+              "end_index": 10
+            },
+            {
+              "title": "COMMERCIAL OPERATIONS",
+              "node_id": "0007",
+              "start_index": 10,
+              "end_index": 10
+            },
+            {
+              "title": "COLLABORATION AND CO-PROMOTION",
+              "node_id": "0008",
+              "start_index": 10,
+              "end_index": 11
+            },
+            {
+              "title": "RESEARCH AND DEVELOPMENT",
+              "node_id": "0009",
+              "start_index": 11,
+              "end_index": 11,
+              "nodes": [
+                {
+                  "title": "Our R&D Priorities and Strategy.",
+                  "node_id": "0010",
+                  "start_index": 11,
+                  "end_index": 11
+                },
+                {
+                  "title": "Our R&D Operations.",
+                  "node_id": "0011",
+                  "start_index": 11,
+                  "end_index": 11
+                },
+                {
+                  "title": "Our R&D Pipeline.",
+                  "node_id": "0012",
+                  "start_index": 12,
+                  "end_index": 12
+                }
+              ]
+            },
+            {
+              "title": "INTERNATIONAL OPERATIONS",
+              "node_id": "0013",
+              "start_index": 12,
+              "end_index": 12
+            },
+            {
+              "title": "SALES AND MARKETING",
+              "node_id": "0014",
+              "start_index": 12,
+              "end_index": 12
+            },
+            {
+              "title": "PATENTS AND OTHER INTELLECTUAL PROPERTY RIGHTS",
+              "node_id": "0015",
+              "start_index": 13,
+              "end_index": 12,
+              "nodes": [
+                {
+                  "title": "Patents.",
+                  "node_id": "0016",
+                  "start_index": 13,
+                  "end_index": 14
+                },
+                {
+                  "title": "Loss of Intellectual Property Rights.",
+                  "node_id": "0017",
+                  "start_index": 14,
+                  "end_index": 14
+                },
+                {
+                  "title": "Trademarks.",
+                  "node_id": "0018",
+                  "start_index": 14,
+                  "end_index": 14
+                }
+              ]
+            },
+            {
+              "title": "COMPETITION",
+              "node_id": "0019",
+              "start_index": 14,
+              "end_index": 15
+            },
+            {
+              "title": "PRICING PRESSURES AND MANAGED CARE ORGANIZATIONS",
+              "node_id": "0020",
+              "start_index": 15,
+              "end_index": 15,
+              "nodes": [
+                {
+                  "title": "Commercial Pricing Pressures.",
+                  "node_id": "0021",
+                  "start_index": 15,
+                  "end_index": 15
+                },
+                {
+                  "title": "Managed Care Organizations.",
+                  "node_id": "0022",
+                  "start_index": 15,
+                  "end_index": 16
+                }
+              ]
+            },
+            {
+              "title": "RAW MATERIALS",
+              "node_id": "0023",
+              "start_index": 16,
+              "end_index": 16
+            },
+            {
+              "title": "GOVERNMENT REGULATION AND PRICE CONSTRAINTS",
+              "node_id": "0024",
+              "start_index": 16,
+              "end_index": 16,
+              "nodes": [
+                {
+                  "title": "In the United States",
+                  "node_id": "0025",
+                  "start_index": 16,
+                  "end_index": 17,
+                  "nodes": [
+                    {
+                      "title": "Pricing, Reimbursement and Access Regulations.",
+                      "node_id": "0026",
+                      "start_index": 17,
+                      "end_index": 17
+                    },
+                    {
+                      "title": "Anti-Corruption.",
+                      "node_id": "0027",
+                      "start_index": 17,
+                      "end_index": 17
+                    },
+                    {
+                      "title": "Data Privacy.",
+                      "node_id": "0028",
+                      "start_index": 17,
+                      "end_index": 17
+                    }
+                  ]
+                },
+                {
+                  "title": "Outside the United States",
+                  "node_id": "0029",
+                  "start_index": 17,
+                  "end_index": 17,
+                  "nodes": [
+                    {
+                      "title": "New Drug Approvals.",
+                      "node_id": "0030",
+                      "start_index": 17,
+                      "end_index": 17
+                    },
+                    {
+                      "title": "Pharmacovigilance.",
+                      "node_id": "0031",
+                      "start_index": 17,
+                      "end_index": 17
+                    },
+                    {
+                      "title": "Pricing and Reimbursement.",
+                      "node_id": "0032",
+                      "start_index": 17,
+                      "end_index": 17,
+                      "nodes": [
+                        {
+                          "title": "In China",
+                          "node_id": "0033",
+                          "start_index": 18,
+                          "end_index": 18
+                        }
+                      ]
+                    },
+                    {
+                      "title": "Healthcare Provider Transparency and Disclosures.",
+                      "node_id": "0034",
+                      "start_index": 18,
+                      "end_index": 18
+                    },
+                    {
+                      "title": "Intellectual Property.",
+                      "node_id": "0035",
+                      "start_index": 18,
+                      "end_index": 18
+                    },
+                    {
+                      "title": "Data Privacy.",
+                      "node_id": "0036",
+                      "start_index": 18,
+                      "end_index": 18
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "title": "ENVIRONMENTAL MATTERS",
+              "node_id": "0037",
+              "start_index": 18,
+              "end_index": 18
+            },
+            {
+              "title": "HUMAN CAPITAL",
+              "node_id": "0038",
+              "start_index": 18,
+              "end_index": 19,
+              "nodes": [
+                {
+                  "title": "Core Values.",
+                  "node_id": "0039",
+                  "start_index": 19,
+                  "end_index": 19
+                },
+                {
+                  "title": "Diversity, Equity and Inclusion.",
+                  "node_id": "0040",
+                  "start_index": 19,
+                  "end_index": 19
+                },
+                {
+                  "title": "Colleague Engagement.",
+                  "node_id": "0041",
+                  "start_index": 19,
+                  "end_index": 19
+                },
+                {
+                  "title": "Performance, Leadership and Growth.",
+                  "node_id": "0042",
+                  "start_index": 19,
+                  "end_index": 19
+                },
+                {
+                  "title": "Health, Safety and Well-Being.",
+                  "node_id": "0043",
+                  "start_index": 19,
+                  "end_index": 19
+                },
+                {
+                  "title": "Pay Equity.",
+                  "node_id": "0044",
+                  "start_index": 19,
+                  "end_index": 19
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "ITEM 1A. RISK FACTORS",
+          "node_id": "0045",
+          "start_index": 19,
+          "end_index": 20,
+          "nodes": [
+            {
+              "title": "RISKS RELATED TO OUR BUSINESS, INDUSTRY AND OPERATIONS:",
+              "node_id": "0046",
+              "start_index": 20,
+              "end_index": 20,
+              "nodes": [
+                {
+                  "title": "MANAGED CARE TRENDS",
+                  "node_id": "0047",
+                  "start_index": 20,
+                  "end_index": 20
+                },
+                {
+                  "title": "COMPETITIVE PRODUCTS",
+                  "node_id": "0048",
+                  "start_index": 20,
+                  "end_index": 20
+                },
+                {
+                  "title": "CONCENTRATION",
+                  "node_id": "0049",
+                  "start_index": 20,
+                  "end_index": 21
+                },
+                {
+                  "title": "RESEARCH AND DEVELOPMENT",
+                  "node_id": "0050",
+                  "start_index": 21,
+                  "end_index": 21
+                },
+                {
+                  "title": "GLOBAL OPERATIONS",
+                  "node_id": "0051",
+                  "start_index": 21,
+                  "end_index": 22
+                },
+                {
+                  "title": "PRODUCT MANUFACTURING, SALES AND MARKETING RISKS",
+                  "node_id": "0052",
+                  "start_index": 22,
+                  "end_index": 22
+                },
+                {
+                  "title": "COLLABORATIONS AND OTHER RELATIONSHIPS WITH THIRD PARTIES",
+                  "node_id": "0053",
+                  "start_index": 22,
+                  "end_index": 22
+                },
+                {
+                  "title": "COUNTERFEIT PRODUCTS",
+                  "node_id": "0054",
+                  "start_index": 22,
+                  "end_index": 22
+                }
+              ]
+            },
+            {
+              "title": "RISKS RELATED TO GOVERNMENT REGULATION AND LEGAL PROCEEDINGS:",
+              "node_id": "0055",
+              "start_index": 23,
+              "end_index": 23,
+              "nodes": [
+                {
+                  "title": "PRICING AND REIMBURSEMENT",
+                  "node_id": "0056",
+                  "start_index": 23,
+                  "end_index": 23
+                },
+                {
+                  "title": "U.S. HEALTHCARE REGULATION",
+                  "node_id": "0057",
+                  "start_index": 23,
+                  "end_index": 23
+                },
+                {
+                  "title": "DEVELOPMENT, REGULATORY APPROVAL AND MARKETING OF PRODUCTS",
+                  "node_id": "0058",
+                  "start_index": 23,
+                  "end_index": 24
+                },
+                {
+                  "title": "POST-AUTHORIZATION/APPROVAL DATA",
+                  "node_id": "0059",
+                  "start_index": 24,
+                  "end_index": 24
+                },
+                {
+                  "title": "LEGAL MATTERS",
+                  "node_id": "0060",
+                  "start_index": 24,
+                  "end_index": 25
+                }
+              ]
+            },
+            {
+              "title": "RISKS RELATED TO INTELLECTUAL PROPERTY, TECHNOLOGY AND SECURITY:",
+              "node_id": "0061",
+              "start_index": 25,
+              "end_index": 25,
+              "nodes": [
+                {
+                  "title": "INTELLECTUAL PROPERTY PROTECTION",
+                  "node_id": "0062",
+                  "start_index": 25,
+                  "end_index": 25
+                },
+                {
+                  "title": "THIRD-PARTY INTELLECTUAL PROPERTY CLAIMS",
+                  "node_id": "0063",
+                  "start_index": 25,
+                  "end_index": 26
+                },
+                {
+                  "title": "INFORMATION TECHNOLOGY AND SECURITY",
+                  "node_id": "0064",
+                  "start_index": 26,
+                  "end_index": 26
+                }
+              ]
+            },
+            {
+              "title": "RISKS RELATED TO BUSINESS DEVELOPMENT:",
+              "node_id": "0065",
+              "start_index": 26,
+              "end_index": 26,
+              "nodes": [
+                {
+                  "title": "BUSINESS DEVELOPMENT ACTIVITIES",
+                  "node_id": "0066",
+                  "start_index": 26,
+                  "end_index": 26
+                },
+                {
+                  "title": "SPIN-OFF AND COMBINATION OF UPJOHN WITH MYLAN",
+                  "node_id": "0067",
+                  "start_index": 26,
+                  "end_index": 26
+                },
+                {
+                  "title": "CONSUMER HEALTHCARE JV WITH GSK",
+                  "node_id": "0068",
+                  "start_index": 26,
+                  "end_index": 27
+                }
+              ]
+            },
+            {
+              "title": "GENERAL RISKS:",
+              "node_id": "0069",
+              "start_index": 27,
+              "end_index": 27,
+              "nodes": [
+                {
+                  "title": "COVID-19 PANDEMIC",
+                  "node_id": "0070",
+                  "start_index": 27,
+                  "end_index": 28
+                },
+                {
+                  "title": "MARKET FLUCTUATIONS IN OUR EQUITY AND OTHER INVESTMENTS",
+                  "node_id": "0071",
+                  "start_index": 28,
+                  "end_index": 28
+                },
+                {
+                  "title": "COST AND EXPENSE CONTROL AND NONORDINARY EVENTS",
+                  "node_id": "0072",
+                  "start_index": 28,
+                  "end_index": 28
+                },
+                {
+                  "title": "INTANGIBLE ASSETS, GOODWILL AND EQUITY-METHOD INVESTMENTS",
+                  "node_id": "0073",
+                  "start_index": 28,
+                  "end_index": 29
+                },
+                {
+                  "title": "CHANGES IN LAWS AND ACCOUNTING STANDARDS",
+                  "node_id": "0074",
+                  "start_index": 29,
+                  "end_index": 29
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "ITEM 2. PROPERTIES",
+          "node_id": "0075",
+          "start_index": 29,
+          "end_index": 29
+        },
+        {
+          "title": "ITEM 3. LEGAL PROCEEDINGS",
+          "node_id": "0076",
+          "start_index": 29,
+          "end_index": 29
+        },
+        {
+          "title": "INFORMATION ABOUT OUR EXECUTIVE OFFICERS",
+          "node_id": "0077",
+          "start_index": 29,
+          "end_index": 30
+        }
+      ]
+    },
+    {
+      "title": "PART II",
+      "node_id": "0078",
+      "start_index": 30,
+      "end_index": 30,
+      "nodes": [
+        {
+          "title": "ITEM 5. MARKET FOR THE COMPANY\u2019S COMMON EQUITY, RELATED STOCKHOLDER MATTERS AND ISSUER PURCHASES OF EQUITY SECURITIES",
+          "node_id": "0079",
+          "start_index": 30,
+          "end_index": 30,
+          "nodes": [
+            {
+              "title": "PEER GROUP PERFORMANCE GRAPH",
+              "node_id": "0080",
+              "start_index": 31,
+              "end_index": 31
+            }
+          ]
+        },
+        {
+          "title": "ITEM 6. [RESERVED]",
+          "node_id": "0081",
+          "start_index": 31,
+          "end_index": 31
+        },
+        {
+          "title": "ITEM 7. MANAGEMENT\u2019S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND RESULTS OF OPERATIONS",
+          "node_id": "0082",
+          "start_index": 32,
+          "end_index": 32,
+          "nodes": [
+            {
+              "title": "OVERVIEW OF OUR PERFORMANCE, OPERATING ENVIRONMENT, STRATEGY AND OUTLOOK",
+              "node_id": "0083",
+              "start_index": 32,
+              "end_index": 32,
+              "nodes": [
+                {
+                  "title": "Financial Highlights",
+                  "node_id": "0084",
+                  "start_index": 32,
+                  "end_index": 32
+                },
+                {
+                  "title": "Our Business and Strategy",
+                  "node_id": "0085",
+                  "start_index": 32,
+                  "end_index": 33
+                },
+                {
+                  "title": "Our Business Development Initiatives",
+                  "node_id": "0086",
+                  "start_index": 33,
+                  "end_index": 33
+                },
+                {
+                  "title": "Our 2021 Performance",
+                  "node_id": "0087",
+                  "start_index": 33,
+                  "end_index": 34
+                },
+                {
+                  "title": "Our Operating Environment",
+                  "node_id": "0088",
+                  "start_index": 34,
+                  "end_index": 34,
+                  "nodes": [
+                    {
+                      "title": "Regulatory Environment\u2013\u2013Pipeline Productivity",
+                      "node_id": "0089",
+                      "start_index": 34,
+                      "end_index": 34
+                    },
+                    {
+                      "title": "Intellectual Property Rights and Collaboration/Licensing Rights",
+                      "node_id": "0090",
+                      "start_index": 34,
+                      "end_index": 34
+                    },
+                    {
+                      "title": "Regulatory Environment/Pricing and Access\u2013\u2013Government and Other Payer Group Pressures",
+                      "node_id": "0091",
+                      "start_index": 34,
+                      "end_index": 34
+                    },
+                    {
+                      "title": "Product Supply",
+                      "node_id": "0092",
+                      "start_index": 34,
+                      "end_index": 34
+                    },
+                    {
+                      "title": "The Global Economic Environment",
+                      "node_id": "0093",
+                      "start_index": 34,
+                      "end_index": 35
+                    },
+                    {
+                      "title": "COVID-19 Pandemic",
+                      "node_id": "0094",
+                      "start_index": 35,
+                      "end_index": 35,
+                      "nodes": [
+                        {
+                          "title": "Our Response to COVID-19",
+                          "node_id": "0095",
+                          "start_index": 35,
+                          "end_index": 35
+                        },
+                        {
+                          "title": "Impact of COVID-19 on Our Business and Operations",
+                          "node_id": "0096",
+                          "start_index": 35,
+                          "end_index": 36
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "title": "SIGNIFICANT ACCOUNTING POLICIES AND APPLICATION OF CRITICAL ACCOUNTING ESTIMATES AND ASSUMPTIONS",
+              "node_id": "0097",
+              "start_index": 36,
+              "end_index": 36,
+              "nodes": [
+                {
+                  "title": "Acquisitions",
+                  "node_id": "0098",
+                  "start_index": 36,
+                  "end_index": 36
+                },
+                {
+                  "title": "Revenues",
+                  "node_id": "0099",
+                  "start_index": 36,
+                  "end_index": 37
+                },
+                {
+                  "title": "Asset Impairments",
+                  "node_id": "0100",
+                  "start_index": 37,
+                  "end_index": 37,
+                  "nodes": [
+                    {
+                      "title": "Identifiable Intangible Assets",
+                      "node_id": "0101",
+                      "start_index": 37,
+                      "end_index": 37
+                    },
+                    {
+                      "title": "Goodwill",
+                      "node_id": "0102",
+                      "start_index": 37,
+                      "end_index": 37
+                    }
+                  ]
+                },
+                {
+                  "title": "Benefit Plans",
+                  "node_id": "0103",
+                  "start_index": 37,
+                  "end_index": 38,
+                  "nodes": [
+                    {
+                      "title": "Expected Annual Rate of Return on Plan Assets",
+                      "node_id": "0104",
+                      "start_index": 38,
+                      "end_index": 38
+                    },
+                    {
+                      "title": "Discount Rate Used to Measure Plan Obligations",
+                      "node_id": "0105",
+                      "start_index": 38,
+                      "end_index": 38
+                    }
+                  ]
+                },
+                {
+                  "title": "Income Tax Assets and Liabilities",
+                  "node_id": "0106",
+                  "start_index": 38,
+                  "end_index": 38
+                },
+                {
+                  "title": "Contingencies",
+                  "node_id": "0107",
+                  "start_index": 38,
+                  "end_index": 39
+                }
+              ]
+            },
+            {
+              "title": "ANALYSIS OF THE CONSOLIDATED STATEMENTS OF INCOME",
+              "node_id": "0108",
+              "start_index": 39,
+              "end_index": 39,
+              "nodes": [
+                {
+                  "title": "Revenues by Geography",
+                  "node_id": "0109",
+                  "start_index": 39,
+                  "end_index": 39,
+                  "nodes": [
+                    {
+                      "title": "2021 v. 2020",
+                      "node_id": "0110",
+                      "start_index": 39,
+                      "end_index": 39
+                    },
+                    {
+                      "title": "2020 v. 2019",
+                      "node_id": "0111",
+                      "start_index": 40,
+                      "end_index": 40
+                    }
+                  ]
+                },
+                {
+                  "title": "Revenue Deductions",
+                  "node_id": "0112",
+                  "start_index": 40,
+                  "end_index": 40
+                },
+                {
+                  "title": "Revenues\u2014Selected Product Discussion",
+                  "node_id": "0113",
+                  "start_index": 41,
+                  "end_index": 42
+                },
+                {
+                  "title": "Costs and Expenses",
+                  "node_id": "0114",
+                  "start_index": 42,
+                  "end_index": 42,
+                  "nodes": [
+                    {
+                      "title": "Cost of Sales",
+                      "node_id": "0115",
+                      "start_index": 42,
+                      "end_index": 43
+                    },
+                    {
+                      "title": "Selling, Informational and Administrative (SI&A) Expenses",
+                      "node_id": "0116",
+                      "start_index": 43,
+                      "end_index": 43
+                    },
+                    {
+                      "title": "Research and Development (R&D) Expenses",
+                      "node_id": "0117",
+                      "start_index": 43,
+                      "end_index": 43
+                    },
+                    {
+                      "title": "Amortization of Intangible Assets",
+                      "node_id": "0118",
+                      "start_index": 43,
+                      "end_index": 43
+                    },
+                    {
+                      "title": "Restructuring Charges and Other Costs Associated with Acquisitions and Cost-Reduction/Productivity Initiatives",
+                      "node_id": "0119",
+                      "start_index": 43,
+                      "end_index": 43,
+                      "nodes": [
+                        {
+                          "title": "Transforming to a More Focused Company Program",
+                          "node_id": "0120",
+                          "start_index": 43,
+                          "end_index": 44
+                        }
+                      ]
+                    },
+                    {
+                      "title": "Other (Income)/Deductions\u2013\u2013Net",
+                      "node_id": "0121",
+                      "start_index": 44,
+                      "end_index": 44
+                    },
+                    {
+                      "title": "Provision/(Benefit) for Taxes on Income",
+                      "node_id": "0122",
+                      "start_index": 44,
+                      "end_index": 44
+                    },
+                    {
+                      "title": "Discontinued Operations",
+                      "node_id": "0123",
+                      "start_index": 44,
+                      "end_index": 44
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "title": "PRODUCT DEVELOPMENTS",
+              "node_id": "0124",
+              "start_index": 44,
+              "end_index": 47
+            },
+            {
+              "title": "NON-GAAP FINANCIAL MEASURE: ADJUSTED INCOME",
+              "node_id": "0125",
+              "start_index": 47,
+              "end_index": 47,
+              "nodes": [
+                {
+                  "title": "Purchase Accounting Adjustments",
+                  "node_id": "0126",
+                  "start_index": 48,
+                  "end_index": 48
+                },
+                {
+                  "title": "Acquisition-Related Items",
+                  "node_id": "0127",
+                  "start_index": 48,
+                  "end_index": 48
+                },
+                {
+                  "title": "Discontinued Operations",
+                  "node_id": "0128",
+                  "start_index": 48,
+                  "end_index": 48
+                },
+                {
+                  "title": "Certain Significant Items",
+                  "node_id": "0129",
+                  "start_index": 48,
+                  "end_index": 48
+                },
+                {
+                  "title": "Reconciliations of GAAP Reported to Non-GAAP Adjusted Information\u2013\u2013Certain Line Items",
+                  "node_id": "0130",
+                  "start_index": 49,
+                  "end_index": 50
+                }
+              ]
+            },
+            {
+              "title": "ANALYSIS OF THE CONSOLIDATED STATEMENTS OF CASH FLOWS",
+              "node_id": "0131",
+              "start_index": 51,
+              "end_index": 51
+            },
+            {
+              "title": "ANALYSIS OF FINANCIAL CONDITION, LIQUIDITY, CAPITAL RESOURCES AND MARKET RISK",
+              "node_id": "0132",
+              "start_index": 51,
+              "end_index": 52,
+              "nodes": [
+                {
+                  "title": "Credit Ratings",
+                  "node_id": "0133",
+                  "start_index": 52,
+                  "end_index": 52
+                },
+                {
+                  "title": "Capital Allocation Framework",
+                  "node_id": "0134",
+                  "start_index": 52,
+                  "end_index": 52
+                },
+                {
+                  "title": "Off-Balance Sheet Arrangements, Contractual, and Other Obligations",
+                  "node_id": "0135",
+                  "start_index": 52,
+                  "end_index": 53
+                },
+                {
+                  "title": "Global Economic Conditions",
+                  "node_id": "0136",
+                  "start_index": 53,
+                  "end_index": 53
+                },
+                {
+                  "title": "Market Risk",
+                  "node_id": "0137",
+                  "start_index": 53,
+                  "end_index": 53,
+                  "nodes": [
+                    {
+                      "title": "Foreign Exchange Risk",
+                      "node_id": "0138",
+                      "start_index": 53,
+                      "end_index": 53
+                    },
+                    {
+                      "title": "Interest Rate Risk",
+                      "node_id": "0139",
+                      "start_index": 53,
+                      "end_index": 53
+                    },
+                    {
+                      "title": "Equity Price Risk",
+                      "node_id": "0140",
+                      "start_index": 53,
+                      "end_index": 53
+                    },
+                    {
+                      "title": "LIBOR",
+                      "node_id": "0141",
+                      "start_index": 53,
+                      "end_index": 53
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "title": "NEW ACCOUNTING STANDARDS",
+              "node_id": "0142",
+              "start_index": 54,
+              "end_index": 54,
+              "nodes": [
+                {
+                  "title": "Recently Adopted Accounting Standard",
+                  "node_id": "0143",
+                  "start_index": 54,
+                  "end_index": 54
+                },
+                {
+                  "title": "Recently Issued Accounting Standards, Not Adopted as of December 31, 2021",
+                  "node_id": "0144",
+                  "start_index": 54,
+                  "end_index": 54
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "ITEM 7A. QUANTITATIVE AND QUALITATIVE DISCLOSURES ABOUT MARKET RISK",
+          "node_id": "0145",
+          "start_index": 54,
+          "end_index": 54
+        },
+        {
+          "title": "ITEM 8. FINANCIAL STATEMENTS AND SUPPLEMENTARY DATA",
+          "node_id": "0146",
+          "start_index": 55,
+          "end_index": 55,
+          "nodes": [
+            {
+              "title": "Report of Independent Registered Public Accounting Firm",
+              "node_id": "0147",
+              "start_index": 55,
+              "end_index": 56
+            },
+            {
+              "title": "Consolidated Statements of Income",
+              "node_id": "0148",
+              "start_index": 57,
+              "end_index": 57
+            },
+            {
+              "title": "Consolidated Statements of Comprehensive Income",
+              "node_id": "0149",
+              "start_index": 58,
+              "end_index": 59
+            },
+            {
+              "title": "Consolidated Balance Sheets",
+              "node_id": "0150",
+              "start_index": 59,
+              "end_index": 59
+            },
+            {
+              "title": "Consolidated Statements of Equity",
+              "node_id": "0151",
+              "start_index": 60,
+              "end_index": 60
+            },
+            {
+              "title": "Consolidated Statements of Cash Flows",
+              "node_id": "0152",
+              "start_index": 61,
+              "end_index": 62
+            },
+            {
+              "title": "Notes to Consolidated Financial Statements",
+              "node_id": "0153",
+              "start_index": 63,
+              "end_index": 63,
+              "nodes": [
+                {
+                  "title": "Note 1. Basis of Presentation and Significant Accounting Policies",
+                  "node_id": "0154",
+                  "start_index": 63,
+                  "end_index": 63,
+                  "nodes": [
+                    {
+                      "title": "A. Basis of Presentation",
+                      "node_id": "0155",
+                      "start_index": 63,
+                      "end_index": 63
+                    },
+                    {
+                      "title": "B. New Accounting Standard Adopted in 2021",
+                      "node_id": "0156",
+                      "start_index": 63,
+                      "end_index": 63
+                    },
+                    {
+                      "title": "C. Change in Accounting Principle",
+                      "node_id": "0157",
+                      "start_index": 63,
+                      "end_index": 65
+                    },
+                    {
+                      "title": "D. Estimates and Assumptions",
+                      "node_id": "0158",
+                      "start_index": 65,
+                      "end_index": 65
+                    },
+                    {
+                      "title": "E. Acquisitions",
+                      "node_id": "0159",
+                      "start_index": 65,
+                      "end_index": 65
+                    },
+                    {
+                      "title": "F. Fair Value",
+                      "node_id": "0160",
+                      "start_index": 65,
+                      "end_index": 66
+                    },
+                    {
+                      "title": "G. Foreign Currency Translation",
+                      "node_id": "0161",
+                      "start_index": 66,
+                      "end_index": 66
+                    },
+                    {
+                      "title": "H. Revenues and Trade Accounts Receivable",
+                      "node_id": "0162",
+                      "start_index": 66,
+                      "end_index": 67
+                    },
+                    {
+                      "title": "I. Collaborative Arrangements",
+                      "node_id": "0163",
+                      "start_index": 67,
+                      "end_index": 67
+                    },
+                    {
+                      "title": "J. Cost of Sales and Inventories",
+                      "node_id": "0164",
+                      "start_index": 67,
+                      "end_index": 67
+                    },
+                    {
+                      "title": "K. Selling, Informational and Administrative Expenses",
+                      "node_id": "0165",
+                      "start_index": 67,
+                      "end_index": 68
+                    },
+                    {
+                      "title": "L. Research and Development Expenses",
+                      "node_id": "0166",
+                      "start_index": 68,
+                      "end_index": 68
+                    },
+                    {
+                      "title": "M. Amortization of Intangible Assets, Depreciation and Certain Long-Lived Assets",
+                      "node_id": "0167",
+                      "start_index": 68,
+                      "end_index": 68
+                    },
+                    {
+                      "title": "N. Restructuring Charges and Other Costs Associated with Acquisitions and Cost-Reduction/Productivity Initiatives",
+                      "node_id": "0168",
+                      "start_index": 68,
+                      "end_index": 68
+                    },
+                    {
+                      "title": "O. Cash Equivalents and Statement of Cash Flows",
+                      "node_id": "0169",
+                      "start_index": 68,
+                      "end_index": 69
+                    },
+                    {
+                      "title": "P. Investments and Derivative Financial Instruments",
+                      "node_id": "0170",
+                      "start_index": 69,
+                      "end_index": 69
+                    },
+                    {
+                      "title": "Q. Tax Assets and Liabilities and Income Tax Contingencies",
+                      "node_id": "0171",
+                      "start_index": 69,
+                      "end_index": 70
+                    },
+                    {
+                      "title": "R. Pension and Postretirement Benefit Plans",
+                      "node_id": "0172",
+                      "start_index": 70,
+                      "end_index": 70
+                    },
+                    {
+                      "title": "S. Legal and Environmental Contingencies",
+                      "node_id": "0173",
+                      "start_index": 70,
+                      "end_index": 70
+                    },
+                    {
+                      "title": "T. Share-Based Payments",
+                      "node_id": "0174",
+                      "start_index": 70,
+                      "end_index": 70
+                    }
+                  ]
+                },
+                {
+                  "title": "Note 2. Acquisitions, Divestitures, Equity-Method Investments, Licensing Arrangements and Collaborative Arrangements",
+                  "node_id": "0175",
+                  "start_index": 70,
+                  "end_index": 70,
+                  "nodes": [
+                    {
+                      "title": "A. Acquisitions",
+                      "node_id": "0176",
+                      "start_index": 70,
+                      "end_index": 71
+                    },
+                    {
+                      "title": "B. Divestitures",
+                      "node_id": "0177",
+                      "start_index": 71,
+                      "end_index": 73
+                    },
+                    {
+                      "title": "C. Equity-Method Investments",
+                      "node_id": "0178",
+                      "start_index": 73,
+                      "end_index": 74
+                    },
+                    {
+                      "title": "D. Licensing Arrangements",
+                      "node_id": "0179",
+                      "start_index": 74,
+                      "end_index": 75
+                    },
+                    {
+                      "title": "E. Collaborative Arrangements",
+                      "node_id": "0180",
+                      "start_index": 75,
+                      "end_index": 76
+                    }
+                  ]
+                },
+                {
+                  "title": "Note 3. Restructuring Charges and Other Costs Associated with Acquisitions and Cost-Reduction/Productivity Initiatives",
+                  "node_id": "0181",
+                  "start_index": 76,
+                  "end_index": 76,
+                  "nodes": [
+                    {
+                      "title": "A. Transforming to a More Focused Company Program",
+                      "node_id": "0182",
+                      "start_index": 76,
+                      "end_index": 77
+                    },
+                    {
+                      "title": "B. Key Activities",
+                      "node_id": "0183",
+                      "start_index": 77,
+                      "end_index": 78
+                    }
+                  ]
+                },
+                {
+                  "title": "Note 4. Other (Income)/Deductions\u2014Net",
+                  "node_id": "0184",
+                  "start_index": 78,
+                  "end_index": 78
+                },
+                {
+                  "title": "Note 5. Tax Matters",
+                  "node_id": "0185",
+                  "start_index": 78,
+                  "end_index": 78,
+                  "nodes": [
+                    {
+                      "title": "A. Taxes on Income from Continuing Operations",
+                      "node_id": "0186",
+                      "start_index": 78,
+                      "end_index": 80
+                    },
+                    {
+                      "title": "B. Tax Rate Reconciliation",
+                      "node_id": "0187",
+                      "start_index": 80,
+                      "end_index": 80
+                    },
+                    {
+                      "title": "C. Deferred Taxes",
+                      "node_id": "0188",
+                      "start_index": 80,
+                      "end_index": 81
+                    },
+                    {
+                      "title": "D. Tax Contingencies",
+                      "node_id": "0189",
+                      "start_index": 81,
+                      "end_index": 82
+                    },
+                    {
+                      "title": "E. Tax Provision/(Benefit) on Other Comprehensive Income/(Loss)",
+                      "node_id": "0190",
+                      "start_index": 82,
+                      "end_index": 82
+                    }
+                  ]
+                },
+                {
+                  "title": "Note 6. Accumulated Other Comprehensive Loss, Excluding Noncontrolling Interests",
+                  "node_id": "0191",
+                  "start_index": 82,
+                  "end_index": 83
+                },
+                {
+                  "title": "Note 7. Financial Instruments",
+                  "node_id": "0192",
+                  "start_index": 83,
+                  "end_index": 83,
+                  "nodes": [
+                    {
+                      "title": "A. Fair Value Measurements",
+                      "node_id": "0193",
+                      "start_index": 83,
+                      "end_index": 84
+                    },
+                    {
+                      "title": "B. Investments",
+                      "node_id": "0194",
+                      "start_index": 84,
+                      "end_index": 85
+                    },
+                    {
+                      "title": "C. Short-Term Borrowings",
+                      "node_id": "0195",
+                      "start_index": 85,
+                      "end_index": 85
+                    },
+                    {
+                      "title": "D. Long-Term Debt",
+                      "node_id": "0196",
+                      "start_index": 85,
+                      "end_index": 86
+                    },
+                    {
+                      "title": "E. Derivative Financial Instruments and Hedging Activities",
+                      "node_id": "0197",
+                      "start_index": 86,
+                      "end_index": 87
+                    },
+                    {
+                      "title": "F. Credit Risk",
+                      "node_id": "0198",
+                      "start_index": 87,
+                      "end_index": 88
+                    }
+                  ]
+                },
+                {
+                  "title": "Note 8. Other Financial Information",
+                  "node_id": "0199",
+                  "start_index": 88,
+                  "end_index": 88,
+                  "nodes": [
+                    {
+                      "title": "A. Inventories",
+                      "node_id": "0200",
+                      "start_index": 88,
+                      "end_index": 88
+                    },
+                    {
+                      "title": "B. Other Current Liabilities",
+                      "node_id": "0201",
+                      "start_index": 88,
+                      "end_index": 88
+                    }
+                  ]
+                },
+                {
+                  "title": "Note 9. Property, Plant and Equipment (PP&E)",
+                  "node_id": "0202",
+                  "start_index": 88,
+                  "end_index": 89
+                },
+                {
+                  "title": "Note 10. Identifiable Intangible Assets and Goodwill",
+                  "node_id": "0203",
+                  "start_index": 89,
+                  "end_index": 89,
+                  "nodes": [
+                    {
+                      "title": "A. Identifiable Intangible Assets",
+                      "node_id": "0204",
+                      "start_index": 89,
+                      "end_index": 90
+                    },
+                    {
+                      "title": "B. Goodwill",
+                      "node_id": "0205",
+                      "start_index": 90,
+                      "end_index": 90
+                    }
+                  ]
+                },
+                {
+                  "title": "Note 11. Pension and Postretirement Benefit Plans and Defined Contribution Plans",
+                  "node_id": "0206",
+                  "start_index": 90,
+                  "end_index": 90,
+                  "nodes": [
+                    {
+                      "title": "A. Components of Net Periodic Benefit Costs and Changes in Other Comprehensive Income/(Loss)",
+                      "node_id": "0207",
+                      "start_index": 90,
+                      "end_index": 91
+                    },
+                    {
+                      "title": "B. Actuarial Assumptions",
+                      "node_id": "0208",
+                      "start_index": 91,
+                      "end_index": 92
+                    },
+                    {
+                      "title": "C. Obligations and Funded Status",
+                      "node_id": "0209",
+                      "start_index": 92,
+                      "end_index": 93
+                    },
+                    {
+                      "title": "D. Plan Assets",
+                      "node_id": "0210",
+                      "start_index": 93,
+                      "end_index": 94
+                    },
+                    {
+                      "title": "E. Cash Flows",
+                      "node_id": "0211",
+                      "start_index": 94,
+                      "end_index": 94
+                    },
+                    {
+                      "title": "F. Defined Contribution Plans",
+                      "node_id": "0212",
+                      "start_index": 94,
+                      "end_index": 95
+                    }
+                  ]
+                },
+                {
+                  "title": "Note 12. Equity",
+                  "node_id": "0213",
+                  "start_index": 95,
+                  "end_index": 95,
+                  "nodes": [
+                    {
+                      "title": "A. Common Stock Purchases",
+                      "node_id": "0214",
+                      "start_index": 95,
+                      "end_index": 95
+                    },
+                    {
+                      "title": "B. Preferred Stock and Employee Stock Ownership Plans",
+                      "node_id": "0215",
+                      "start_index": 95,
+                      "end_index": 95
+                    }
+                  ]
+                },
+                {
+                  "title": "Note 13. Share-Based Payments",
+                  "node_id": "0216",
+                  "start_index": 95,
+                  "end_index": 99
+                },
+                {
+                  "title": "Note 14. Earnings Per Common Share Attributable to Pfizer Inc. Common Shareholders",
+                  "node_id": "0217",
+                  "start_index": 99,
+                  "end_index": 99
+                },
+                {
+                  "title": "Note 15. Leases",
+                  "node_id": "0218",
+                  "start_index": 99,
+                  "end_index": 100
+                },
+                {
+                  "title": "Note 16. Contingencies and Certain Commitments",
+                  "node_id": "0219",
+                  "start_index": 100,
+                  "end_index": 100,
+                  "nodes": [
+                    {
+                      "title": "A. Legal Proceedings",
+                      "node_id": "0220",
+                      "start_index": 100,
+                      "end_index": 101,
+                      "nodes": [
+                        {
+                          "title": "A1. Legal Proceedings\u2013\u2013Patent Litigation",
+                          "node_id": "0221",
+                          "start_index": 101,
+                          "end_index": 102
+                        },
+                        {
+                          "title": "A2. Legal Proceedings\u2013\u2013Product Litigation",
+                          "node_id": "0222",
+                          "start_index": 102,
+                          "end_index": 104
+                        },
+                        {
+                          "title": "A3. Legal Proceedings\u2013\u2013Commercial and Other Matters",
+                          "node_id": "0223",
+                          "start_index": 104,
+                          "end_index": 105
+                        },
+                        {
+                          "title": "A4. Legal Proceedings\u2013\u2013Government Investigations",
+                          "node_id": "0224",
+                          "start_index": 105,
+                          "end_index": 106
+                        },
+                        {
+                          "title": "A5. Legal Proceedings\u2013\u2013Matters Resolved During 2021",
+                          "node_id": "0225",
+                          "start_index": 106,
+                          "end_index": 106
+                        }
+                      ]
+                    },
+                    {
+                      "title": "B. Guarantees and Indemnifications",
+                      "node_id": "0226",
+                      "start_index": 106,
+                      "end_index": 106
+                    },
+                    {
+                      "title": "C. Certain Commitments",
+                      "node_id": "0227",
+                      "start_index": 106,
+                      "end_index": 106
+                    },
+                    {
+                      "title": "D. Contingent Consideration for Acquisitions",
+                      "node_id": "0228",
+                      "start_index": 106,
+                      "end_index": 106
+                    },
+                    {
+                      "title": "E. Insurance",
+                      "node_id": "0229",
+                      "start_index": 106,
+                      "end_index": 107
+                    }
+                  ]
+                },
+                {
+                  "title": "Note 17. Segment, Geographic and Other Revenue Information",
+                  "node_id": "0230",
+                  "start_index": 107,
+                  "end_index": 107,
+                  "nodes": [
+                    {
+                      "title": "A. Segment Information",
+                      "node_id": "0231",
+                      "start_index": 107,
+                      "end_index": 108
+                    },
+                    {
+                      "title": "B. Geographic Information",
+                      "node_id": "0232",
+                      "start_index": 108,
+                      "end_index": 108
+                    },
+                    {
+                      "title": "C. Other Revenue Information",
+                      "node_id": "0233",
+                      "start_index": 108,
+                      "end_index": 108,
+                      "nodes": [
+                        {
+                          "title": "Significant Customers",
+                          "node_id": "0234",
+                          "start_index": 108,
+                          "end_index": 109
+                        },
+                        {
+                          "title": "Significant Product Revenues",
+                          "node_id": "0235",
+                          "start_index": 109,
+                          "end_index": 110
+                        },
+                        {
+                          "title": "Remaining Performance Obligations",
+                          "node_id": "0236",
+                          "start_index": 110,
+                          "end_index": 111
+                        },
+                        {
+                          "title": "Deferred Revenues",
+                          "node_id": "0237",
+                          "start_index": 111,
+                          "end_index": 111
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "title": "Selected Quarterly Financial Data (Unaudited)",
+              "node_id": "0238",
+              "start_index": 112,
+              "end_index": 113
+            }
+          ]
+        },
+        {
+          "title": "ITEM 9. CHANGES IN AND DISAGREEMENTS WITH ACCOUNTANTS ON ACCOUNTING AND FINANCIAL DISCLOSURE",
+          "node_id": "0239",
+          "start_index": 113,
+          "end_index": 113
+        },
+        {
+          "title": "ITEM 9A. CONTROLS AND PROCEDURES",
+          "node_id": "0240",
+          "start_index": 113,
+          "end_index": 113,
+          "nodes": [
+            {
+              "title": "Report of Independent Registered Public Accounting Firm",
+              "node_id": "0241",
+              "start_index": 114,
+              "end_index": 114
+            },
+            {
+              "title": "Management\u2019s Report on Internal Control Over Financial Reporting",
+              "node_id": "0242",
+              "start_index": 115,
+              "end_index": 115
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "PART III",
+      "node_id": "0243",
+      "start_index": 116,
+      "end_index": 116,
+      "nodes": [
+        {
+          "title": "ITEM 10. DIRECTORS, EXECUTIVE OFFICERS AND CORPORATE GOVERNANCE",
+          "node_id": "0244",
+          "start_index": 116,
+          "end_index": 116
+        },
+        {
+          "title": "ITEM 11. EXECUTIVE COMPENSATION",
+          "node_id": "0245",
+          "start_index": 116,
+          "end_index": 116
+        },
+        {
+          "title": "ITEM 12. SECURITY OWNERSHIP OF CERTAIN BENEFICIAL OWNERS AND MANAGEMENT AND RELATED STOCKHOLDER MATTERS",
+          "node_id": "0246",
+          "start_index": 116,
+          "end_index": 116
+        },
+        {
+          "title": "ITEM 13. CERTAIN RELATIONSHIPS AND RELATED TRANSACTIONS, AND DIRECTOR INDEPENDENCE",
+          "node_id": "0247",
+          "start_index": 116,
+          "end_index": 116
+        },
+        {
+          "title": "ITEM 14. PRINCIPAL ACCOUNTING FEES AND SERVICES",
+          "node_id": "0248",
+          "start_index": 116,
+          "end_index": 116
+        }
+      ]
+    },
+    {
+      "title": "PART IV",
+      "node_id": "0249",
+      "start_index": 117,
+      "end_index": 117,
+      "nodes": [
+        {
+          "title": "ITEM 15. EXHIBITS, FINANCIAL STATEMENT SCHEDULES",
+          "node_id": "0250",
+          "start_index": 117,
+          "end_index": 120
+        },
+        {
+          "title": "ITEM 16. FORM 10-K SUMMARY",
+          "node_id": "0251",
+          "start_index": 120,
+          "end_index": 120
+        },
+        {
+          "title": "SIGNATURES",
+          "node_id": "0252",
+          "start_index": 121,
+          "end_index": 121
+        }
+      ]
+    },
+    {
+      "title": "EXHIBIT 4.24",
+      "node_id": "0253",
+      "start_index": 122,
+      "end_index": 123,
+      "nodes": [
+        {
+          "title": "Issuance in Euros",
+          "node_id": "0254",
+          "start_index": 124,
+          "end_index": 124
+        },
+        {
+          "title": "Payment of Additional Amounts",
+          "node_id": "0255",
+          "start_index": 124,
+          "end_index": 125
+        },
+        {
+          "title": "Ranking",
+          "node_id": "0256",
+          "start_index": 125,
+          "end_index": 125
+        },
+        {
+          "title": "Listing",
+          "node_id": "0257",
+          "start_index": 125,
+          "end_index": 125
+        },
+        {
+          "title": "Covenants",
+          "node_id": "0258",
+          "start_index": 125,
+          "end_index": 126
+        },
+        {
+          "title": "Optional Redemption of 2022 Notes and 2027 Notes; Redemption for Tax Reasons; No Sinking Fund",
+          "node_id": "0259",
+          "start_index": 126,
+          "end_index": 127
+        },
+        {
+          "title": "Book-Entry",
+          "node_id": "0260",
+          "start_index": 127,
+          "end_index": 127,
+          "nodes": [
+            {
+              "title": "Global Clearance and Settlement",
+              "node_id": "0261",
+              "start_index": 127,
+              "end_index": 129
+            },
+            {
+              "title": "Secondary Market Trading",
+              "node_id": "0262",
+              "start_index": 129,
+              "end_index": 129
+            }
+          ]
+        },
+        {
+          "title": "Exchange of Global Notes for Certificated Notes",
+          "node_id": "0263",
+          "start_index": 130,
+          "end_index": 130
+        },
+        {
+          "title": "Modification of Indenture",
+          "node_id": "0264",
+          "start_index": 130,
+          "end_index": 130
+        },
+        {
+          "title": "Events of Default",
+          "node_id": "0265",
+          "start_index": 130,
+          "end_index": 131
+        },
+        {
+          "title": "Defeasance",
+          "node_id": "0266",
+          "start_index": 131,
+          "end_index": 131
+        }
+      ]
+    },
+    {
+      "title": "EXHIBIT 21",
+      "node_id": "0267",
+      "start_index": 132,
+      "end_index": 138
+    },
+    {
+      "title": "EXHIBIT 23",
+      "node_id": "0268",
+      "start_index": 139,
+      "end_index": 139
+    },
+    {
+      "title": "EXHIBIT 31.1",
+      "node_id": "0269",
+      "start_index": 140,
+      "end_index": 140
+    },
+    {
+      "title": "EXHIBIT 31.2",
+      "node_id": "0270",
+      "start_index": 141,
+      "end_index": 141
+    },
+    {
+      "title": "EXHIBIT 32.1",
+      "node_id": "0271",
+      "start_index": 142,
+      "end_index": 142
+    },
+    {
+      "title": "EXHIBIT 32.2",
+      "node_id": "0272",
+      "start_index": 143,
+      "end_index": 143
+    }
+  ]
+}

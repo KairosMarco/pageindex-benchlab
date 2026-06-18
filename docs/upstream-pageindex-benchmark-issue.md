@@ -94,10 +94,21 @@ Answer accuracy: 0.920
 Average total tokens: 92,500
 ```
 
+PageIndex tree QA:
+
+```text
+Questions: 25
+Evidence recall: 0.760
+Citation precision: 0.253
+Answer accuracy: 0.760
+Average total tokens: 3,046
+```
+
 Key interpretation:
 
 - Long-context used about `36x` more average tokens than LlamaIndex Vector on the expanded subset.
 - The strongest LlamaIndex candidates reached perfect page-level evidence recall on this subset, so remaining failures are mostly answer-generation or judge-strictness issues rather than retrieval misses.
+- PageIndex used compact three-page answer contexts, but six expanded evidence misses reduced answer accuracy.
 - A shared hard case was `fb_exp_020`, a capital-intensity question where several methods had access to the relevant pages but interpreted the finance concept incorrectly.
 
 ## Prompt-Ablation Finding
@@ -132,30 +143,23 @@ reports/finance_prompt_variant_summary.md
 reports/finance_prompt_variant_summary.json
 ```
 
-## Current PageIndex Expanded Readiness
+## Current PageIndex Expanded Result
 
-PageIndex expanded QA is not ready for a full 25-question run yet because five PageIndex structure files are still incomplete. A partial retrieval-only run is available.
+PageIndex expanded QA is now mechanically complete for the 25-question subset.
 
 ```text
 Expanded questions: 25
 Unique documents: 24
-Documents with PageIndex structures and PDFs: 19
-Missing PageIndex structures: 5
+Documents with PageIndex structures and PDFs: 24
+Missing PageIndex structures: 0
 Missing PDFs: 0
-Runnable questions with current structures: 20
-Retrieval-only QA generated: 20
-Average evidence recall on generated outputs: 0.850
-Average citation precision on generated outputs: 0.283
-```
-
-Missing structures:
-
-```text
-AMERICANWATERWORKS_2020_10K
-COCACOLA_2021_10K
-CVSHEALTH_2022_10K
-GENERALMILLS_2020_10K
-PFIZER_2021_10K
+Runnable questions with current structures: 25
+Retrieval-only QA generated: 25
+Retrieval-only evidence recall: 0.760
+Retrieval-only citation precision: 0.253
+LLM answers generated: 25
+LLM answer accuracy: 0.760
+LLM verdicts: 19 correct, 1 partial, 5 incorrect
 ```
 
 Artifacts:
@@ -166,9 +170,11 @@ reports/pageindex/expanded_readiness.json
 reports/pageindex/expanded_indexing_notes.md
 reports/pageindex/expanded_partial_summary.md
 reports/pageindex/evidence_eval_qa_expanded_25.json
+reports/pageindex_expanded_llm_diagnostics.md
+reports/expanded_pageindex_llm_validation_report.json
 ```
 
-The partial expanded run surfaced three retrieval misses among generated outputs: `fb_exp_014`, `fb_exp_017`, and `fb_exp_025`. It also surfaced indexing robustness issues on long SEC filings, including model-produced TOC JSON with unexpected object/list shapes, missing page-offset values, and long-running indexing jobs that do not produce a structure.
+The expanded run surfaced six retrieval misses: `fb_exp_014`, `fb_exp_017`, `fb_exp_020`, `fb_exp_022`, `fb_exp_023`, and `fb_exp_025`. It also surfaced indexing robustness issues on long SEC filings, including model-produced TOC JSON with unexpected object/list shapes, missing page-offset values, low-confidence no-TOC processing failures, and missing `physical_index` fields.
 
 ## Proposed Next Work
 
@@ -191,4 +197,4 @@ This gives PageIndex a reproducible comparison against strong baselines instead 
 - explainable tree/path retrieval
 - lower answer context than full long-context prompting
 
-The benchmark is intentionally conservative: it does not claim broad PageIndex superiority until the expanded PageIndex run is complete.
+The benchmark is intentionally conservative: the expanded run is complete, but it does not support broad PageIndex superiority claims yet. The current useful contribution target is improving PageIndex indexing robustness and ranking diagnostics on the six evidence misses.

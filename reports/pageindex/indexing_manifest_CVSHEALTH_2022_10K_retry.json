@@ -1,0 +1,28 @@
+[
+  {
+    "doc_name": "CVSHEALTH_2022_10K",
+    "status": "generated",
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\CVSHEALTH_2022_10K.pdf",
+    "structure_path": "reports\\pageindex\\structures\\CVSHEALTH_2022_10K_structure.json",
+    "size_bytes": 109676,
+    "latency_ms": 1694629,
+    "command": [
+      "D:\\pageindex-demo\\PageIndex\\.venv\\Scripts\\python.exe",
+      "run_pageindex.py",
+      "--pdf_path",
+      "D:\\pageindex-benchlab\\datasets\\raw\\financebench\\pdfs\\CVSHEALTH_2022_10K.pdf",
+      "--if-add-node-summary",
+      "no",
+      "--if-add-doc-description",
+      "no",
+      "--if-add-node-text",
+      "no",
+      "--toc-check-pages",
+      "5",
+      "--max-pages-per-node",
+      "8",
+      "--model",
+      "deepseek/deepseek-v4-pro"
+    ]
+  }
+]

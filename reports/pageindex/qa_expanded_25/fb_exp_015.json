@@ -129,7 +129,7 @@
     "output": null,
     "total": null
   },
-  "latency_ms": 14,
+  "latency_ms": 15,
   "metadata": {
     "structure_path": "reports\\pageindex\\structures\\FOOTLOCKER_2022_8K_dated-2022-05-20_structure.json",
     "pdf_path": "datasets\\raw\\financebench\\pdfs\\FOOTLOCKER_2022_8K_dated-2022-05-20.pdf",

@@ -13,7 +13,7 @@
     ],
     "citation_count": 3,
     "max_pages": 3,
-    "latency_ms": 417,
+    "latency_ms": 396,
     "llm_enabled": false,
     "model": null
   },
@@ -31,7 +31,7 @@
     ],
     "citation_count": 3,
     "max_pages": 3,
-    "latency_ms": 128,
+    "latency_ms": 116,
     "llm_enabled": false,
     "model": null
   },
@@ -49,7 +49,7 @@
     ],
     "citation_count": 3,
     "max_pages": 3,
-    "latency_ms": 379,
+    "latency_ms": 392,
     "llm_enabled": false,
     "model": null
   },
@@ -67,7 +67,7 @@
     ],
     "citation_count": 3,
     "max_pages": 3,
-    "latency_ms": 358,
+    "latency_ms": 388,
     "llm_enabled": false,
     "model": null
   },
@@ -85,7 +85,7 @@
     ],
     "citation_count": 3,
     "max_pages": 3,
-    "latency_ms": 153,
+    "latency_ms": 138,
     "llm_enabled": false,
     "model": null
   },
@@ -121,7 +121,7 @@
     ],
     "citation_count": 3,
     "max_pages": 3,
-    "latency_ms": 115,
+    "latency_ms": 130,
     "llm_enabled": false,
     "model": null
   },
@@ -139,7 +139,7 @@
     ],
     "citation_count": 3,
     "max_pages": 3,
-    "latency_ms": 171,
+    "latency_ms": 178,
     "llm_enabled": false,
     "model": null
   },
@@ -157,7 +157,7 @@
     ],
     "citation_count": 3,
     "max_pages": 3,
-    "latency_ms": 173,
+    "latency_ms": 189,
     "llm_enabled": false,
     "model": null
   },
@@ -175,7 +175,7 @@
     ],
     "citation_count": 3,
     "max_pages": 3,
-    "latency_ms": 25,
+    "latency_ms": 30,
     "llm_enabled": false,
     "model": null
   },
@@ -193,7 +193,7 @@
     ],
     "citation_count": 3,
     "max_pages": 3,
-    "latency_ms": 390,
+    "latency_ms": 486,
     "llm_enabled": false,
     "model": null
   },
@@ -211,7 +211,7 @@
     ],
     "citation_count": 3,
     "max_pages": 3,
-    "latency_ms": 142,
+    "latency_ms": 144,
     "llm_enabled": false,
     "model": null
   },
@@ -229,7 +229,7 @@
     ],
     "citation_count": 3,
     "max_pages": 3,
-    "latency_ms": 180,
+    "latency_ms": 207,
     "llm_enabled": false,
     "model": null
   },
@@ -247,7 +247,7 @@
     ],
     "citation_count": 3,
     "max_pages": 3,
-    "latency_ms": 409,
+    "latency_ms": 476,
     "llm_enabled": false,
     "model": null
   },
@@ -265,7 +265,7 @@
     ],
     "citation_count": 3,
     "max_pages": 3,
-    "latency_ms": 15,
+    "latency_ms": 16,
     "llm_enabled": false,
     "model": null
   },
@@ -283,7 +283,7 @@
     ],
     "citation_count": 3,
     "max_pages": 3,
-    "latency_ms": 172,
+    "latency_ms": 186,
     "llm_enabled": false,
     "model": null
   },
@@ -301,7 +301,7 @@
     ],
     "citation_count": 3,
     "max_pages": 3,
-    "latency_ms": 258,
+    "latency_ms": 272,
     "llm_enabled": false,
     "model": null
   },
@@ -319,23 +319,45 @@
     ],
     "citation_count": 3,
     "max_pages": 3,
-    "latency_ms": 74,
+    "latency_ms": 78,
     "llm_enabled": false,
     "model": null
   },
   {
     "question_id": "fb_exp_019",
     "doc_name": "AMERICANWATERWORKS_2020_10K",
-    "status": "failed",
-    "latency_ms": 0,
-    "error": "Missing PageIndex structure: reports\\pageindex\\structures\\AMERICANWATERWORKS_2020_10K_structure.json"
+    "status": "generated",
+    "output_path": "reports\\pageindex\\qa_expanded_25\\fb_exp_019.json",
+    "structure_path": "reports\\pageindex\\structures\\AMERICANWATERWORKS_2020_10K_structure.json",
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\AMERICANWATERWORKS_2020_10K.pdf",
+    "selected_pages_one_indexed": [
+      66,
+      86,
+      93
+    ],
+    "citation_count": 3,
+    "max_pages": 3,
+    "latency_ms": 286,
+    "llm_enabled": false,
+    "model": null
   },
   {
     "question_id": "fb_exp_020",
     "doc_name": "CVSHEALTH_2022_10K",
-    "status": "failed",
-    "latency_ms": 0,
-    "error": "Missing PageIndex structure: reports\\pageindex\\structures\\CVSHEALTH_2022_10K_structure.json"
+    "status": "generated",
+    "output_path": "reports\\pageindex\\qa_expanded_25\\fb_exp_020.json",
+    "structure_path": "reports\\pageindex\\structures\\CVSHEALTH_2022_10K_structure.json",
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\CVSHEALTH_2022_10K.pdf",
+    "selected_pages_one_indexed": [
+      30,
+      32,
+      63
+    ],
+    "citation_count": 3,
+    "max_pages": 3,
+    "latency_ms": 439,
+    "llm_enabled": false,
+    "model": null
   },
   {
     "question_id": "fb_exp_021",
@@ -351,30 +373,63 @@
     ],
     "citation_count": 3,
     "max_pages": 3,
-    "latency_ms": 25,
+    "latency_ms": 31,
     "llm_enabled": false,
     "model": null
   },
   {
     "question_id": "fb_exp_022",
     "doc_name": "COCACOLA_2021_10K",
-    "status": "failed",
-    "latency_ms": 0,
-    "error": "Missing PageIndex structure: reports\\pageindex\\structures\\COCACOLA_2021_10K_structure.json"
+    "status": "generated",
+    "output_path": "reports\\pageindex\\qa_expanded_25\\fb_exp_022.json",
+    "structure_path": "reports\\pageindex\\structures\\COCACOLA_2021_10K_structure.json",
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\COCACOLA_2021_10K.pdf",
+    "selected_pages_one_indexed": [
+      68,
+      77,
+      85
+    ],
+    "citation_count": 3,
+    "max_pages": 3,
+    "latency_ms": 797,
+    "llm_enabled": false,
+    "model": null
   },
   {
     "question_id": "fb_exp_023",
     "doc_name": "PFIZER_2021_10K",
-    "status": "failed",
-    "latency_ms": 0,
-    "error": "Missing PageIndex structure: reports\\pageindex\\structures\\PFIZER_2021_10K_structure.json"
+    "status": "generated",
+    "output_path": "reports\\pageindex\\qa_expanded_25\\fb_exp_023.json",
+    "structure_path": "reports\\pageindex\\structures\\PFIZER_2021_10K_structure.json",
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\PFIZER_2021_10K.pdf",
+    "selected_pages_one_indexed": [
+      63,
+      76,
+      10
+    ],
+    "citation_count": 3,
+    "max_pages": 3,
+    "latency_ms": 307,
+    "llm_enabled": false,
+    "model": null
   },
   {
     "question_id": "fb_exp_024",
     "doc_name": "GENERALMILLS_2020_10K",
-    "status": "failed",
-    "latency_ms": 0,
-    "error": "Missing PageIndex structure: reports\\pageindex\\structures\\GENERALMILLS_2020_10K_structure.json"
+    "status": "generated",
+    "output_path": "reports\\pageindex\\qa_expanded_25\\fb_exp_024.json",
+    "structure_path": "reports\\pageindex\\structures\\GENERALMILLS_2020_10K_structure.json",
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\GENERALMILLS_2020_10K.pdf",
+    "selected_pages_one_indexed": [
+      30,
+      50,
+      29
+    ],
+    "citation_count": 3,
+    "max_pages": 3,
+    "latency_ms": 288,
+    "llm_enabled": false,
+    "model": null
   },
   {
     "question_id": "fb_exp_025",
@@ -390,7 +445,7 @@
     ],
     "citation_count": 3,
     "max_pages": 3,
-    "latency_ms": 17,
+    "latency_ms": 20,
     "llm_enabled": false,
     "model": null
   }

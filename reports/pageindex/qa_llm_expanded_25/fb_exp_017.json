@@ -1,0 +1,183 @@
+{
+  "method": "pageindex_tree_qa",
+  "question_id": "fb_exp_017",
+  "question": "Does Corning have positive working capital based on FY2022 data? If working capital is not a useful or relevant metric for this company, then please state that and explain why.",
+  "answer": "Yes, Corning has positive working capital based on FY2022 data. The document page reports working capital of $2,278 million as of December 31, 2022. This metric is relevant, as the company states it funds its working capital with cash from operations and short-term borrowings.\n\n**Page 34**",
+  "citations": [
+    {
+      "document_id": "CORNING_2022_10K",
+      "page": 34,
+      "section": "Key Balance Sheet Data",
+      "text": "Table of Contents LIQUIDITY AND CAPITAL RESOURCES Our financial condition and liquidity are strong. We are not aware of any known trends, demands, commitments, events or uncertainties that will result in or that are reasonably likely to result in a material decrease in our liquidity. In addition, other than items discussed, there are no known material trends, favorable or unfavorable, in our capital resources and no expected material changes in the mix of such resources. Our major source of fund",
+      "metadata": {
+        "score": 13,
+        "matched_page_terms": [
+          "capital",
+          "data",
+          "working"
+        ],
+        "matched_section_terms": [
+          "capital",
+          "data"
+        ],
+        "node_id": "0067",
+        "start_index": 34,
+        "end_index": 35
+      }
+    },
+    {
+      "document_id": "CORNING_2022_10K",
+      "page": 16,
+      "section": "Risks Related to Our Business",
+      "text": " and contract manufacturers. IT systems enable us to conduct, monitor and/or protect our business, operations, systems, data and other assets. In the ordinary course of our business, we and our providers collect, process, transmit and store sensitive data, including intellectual property, our proprietary information and that of our customers, suppliers and business partners, as well as personally identifiable information. Intrusion into a supplier or contract manufacturer system not integrated w",
+      "metadata": {
+        "score": 9,
+        "matched_page_terms": [
+          "based",
+          "data",
+          "positive"
+        ],
+        "matched_section_terms": [],
+        "node_id": "0027",
+        "start_index": 13,
+        "end_index": 17
+      }
+    },
+    {
+      "document_id": "CORNING_2022_10K",
+      "page": 66,
+      "section": "1. Summary of Significant Accounting Policies",
+      "text": "cted term and forfeiture rates. Corning utilizes a blended approach for calculating the volatility assumption, which is based on the weighted average of the short-term implied volatility, the most recent volatility for the period equal to the expected term and the most recent 15-year historical volatility. The risk-free rate used is the implied rate for a zero-coupon U.S. Treasury bond with a term equal to the option’s expected term. The expected term is the period the options are expected to be",
+      "metadata": {
+        "score": 9,
+        "matched_page_terms": [
+          "based",
+          "capital",
+          "useful"
+        ],
+        "matched_section_terms": [],
+        "node_id": "0103",
+        "start_index": 63,
+        "end_index": 71
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "select_tree_node",
+      "target": "Human Capital Management Overview",
+      "metadata": {
+        "node_id": "0019",
+        "start_index": 8,
+        "end_index": 8
+      }
+    },
+    {
+      "step": 2,
+      "action": "select_tree_node",
+      "target": "LIQUIDITY AND CAPITAL RESOURCES",
+      "metadata": {
+        "node_id": "0066",
+        "start_index": 34,
+        "end_index": 34
+      }
+    },
+    {
+      "step": 3,
+      "action": "select_tree_node",
+      "target": "Key Balance Sheet Data",
+      "metadata": {
+        "node_id": "0067",
+        "start_index": 34,
+        "end_index": 35
+      }
+    },
+    {
+      "step": 4,
+      "action": "select_tree_node",
+      "target": "Capital Expenditures",
+      "metadata": {
+        "node_id": "0077",
+        "start_index": 37,
+        "end_index": 37
+      }
+    },
+    {
+      "step": 5,
+      "action": "select_tree_node",
+      "target": "Item 8. Financial Statements and Supplementary Data",
+      "metadata": {
+        "node_id": "0094",
+        "start_index": 44,
+        "end_index": 44
+      }
+    },
+    {
+      "step": 6,
+      "action": "score_page",
+      "target": "page 34",
+      "metadata": {
+        "score": 13,
+        "section": "Key Balance Sheet Data",
+        "matched_page_terms": [
+          "capital",
+          "data",
+          "working"
+        ],
+        "matched_section_terms": [
+          "capital",
+          "data"
+        ]
+      }
+    },
+    {
+      "step": 7,
+      "action": "score_page",
+      "target": "page 16",
+      "metadata": {
+        "score": 9,
+        "section": "Risks Related to Our Business",
+        "matched_page_terms": [
+          "based",
+          "data",
+          "positive"
+        ],
+        "matched_section_terms": []
+      }
+    },
+    {
+      "step": 8,
+      "action": "score_page",
+      "target": "page 66",
+      "metadata": {
+        "score": 9,
+        "section": "1. Summary of Significant Accounting Policies",
+        "matched_page_terms": [
+          "based",
+          "capital",
+          "useful"
+        ],
+        "matched_section_terms": []
+      }
+    }
+  ],
+  "token_usage": {
+    "input": 2518,
+    "output": 276,
+    "total": 2794
+  },
+  "latency_ms": 5123,
+  "metadata": {
+    "structure_path": "reports\\pageindex\\structures\\CORNING_2022_10K_structure.json",
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\CORNING_2022_10K.pdf",
+    "selected_pages_one_indexed": [
+      34,
+      16,
+      66
+    ],
+    "max_pages": 3,
+    "adapter_mode": "tree_page_scoring",
+    "llm_enabled": true
+  }
+}

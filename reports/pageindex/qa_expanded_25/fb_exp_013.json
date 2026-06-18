@@ -187,7 +187,7 @@
     "output": null,
     "total": null
   },
-  "latency_ms": 179,
+  "latency_ms": 206,
   "metadata": {
     "structure_path": "reports\\pageindex\\structures\\ADOBE_2016_10K_structure.json",
     "pdf_path": "datasets\\raw\\financebench\\pdfs\\ADOBE_2016_10K.pdf",

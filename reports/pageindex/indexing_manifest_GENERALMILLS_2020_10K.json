@@ -1,0 +1,28 @@
+[
+  {
+    "doc_name": "GENERALMILLS_2020_10K",
+    "status": "generated",
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\GENERALMILLS_2020_10K.pdf",
+    "structure_path": "reports\\pageindex\\structures\\GENERALMILLS_2020_10K_structure.json",
+    "size_bytes": 26519,
+    "latency_ms": 597756,
+    "command": [
+      "D:\\pageindex-demo\\PageIndex\\.venv\\Scripts\\python.exe",
+      "run_pageindex.py",
+      "--pdf_path",
+      "D:\\pageindex-benchlab\\datasets\\raw\\financebench\\pdfs\\GENERALMILLS_2020_10K.pdf",
+      "--if-add-node-summary",
+      "no",
+      "--if-add-doc-description",
+      "no",
+      "--if-add-node-text",
+      "no",
+      "--toc-check-pages",
+      "5",
+      "--max-pages-per-node",
+      "8",
+      "--model",
+      "deepseek/deepseek-v4-pro"
+    ]
+  }
+]

@@ -1,0 +1,181 @@
+{
+  "method": "pageindex_tree_qa",
+  "question_id": "fb_mvp_006",
+  "question": "Has Boeing reported any materially important ongoing legal battles from FY2022?",
+  "answer": "Yes, Boeing reported two materially important ongoing legal battles. On page 113, it discusses remaining pending lawsuits related to the 737 MAX accidents for which a range of loss cannot be reasonably estimated. It also describes an ongoing arbitration with Embraer, regarding a dispute over terminated joint venture agreements, which was expected to be complete in late 2023 or early 2024.",
+  "citations": [
+    {
+      "document_id": "BOEING_2022_10K",
+      "page": 113,
+      "section": "Note 21 – Legal Proceedings",
+      "text": "Table of Contents based upon current information, that the outcome of any such legal proceeding, claim, or government dispute and investigation will not have a material effect on our financial position, results of operations or cash flows. Where it is reasonably possible that we will incur losses in excess of recorded amounts in connection with any of the matters set forth below, we will disclose either the amount or range of reasonably possible losses in excess of such amounts or, where no such",
+      "metadata": {
+        "score": 16,
+        "matched_page_terms": [
+          "accident",
+          "has",
+          "lawsuits",
+          "legal"
+        ],
+        "matched_section_terms": [
+          "legal",
+          "proceedings"
+        ],
+        "node_id": "0106",
+        "start_index": 112,
+        "end_index": 113
+      }
+    },
+    {
+      "document_id": "BOEING_2022_10K",
+      "page": 19,
+      "section": "Item 1A. Risk Factors",
+      "text": "otentially resulting in significant liabilities. See Note 21 of the Consolidated Financial Statements for discussion of legal proceedings resulting from the October 29, 2018 accident of Lion Air Flight 610 and the March 10, 2019 accident of Ethiopian Airlines Flight 302. The amount of insurance coverage we maintain may be inadequate to cover these or other claims or liabilities. A significant portion of our customer financing portfolio is concentrated among certain customers and in certain types",
+      "metadata": {
+        "score": 15,
+        "matched_page_terms": [
+          "accident",
+          "legal",
+          "materially",
+          "proceedings"
+        ],
+        "matched_section_terms": [],
+        "node_id": "0003",
+        "start_index": 8,
+        "end_index": 19
+      }
+    },
+    {
+      "document_id": "BOEING_2022_10K",
+      "page": 20,
+      "section": "Item 3. Legal Proceedings",
+      "text": "e, installations and equipment at U.S. government bases for use in connection with various contract activities. Item 3. Legal Proceedings Currently, we are involved in a number of legal proceedings. For a discussion of contingencies related to legal proceedings, see Note 21 to our Consolidated Financial Statements, which is hereby incorporated by reference. Item 4. Mine Safety Disclosures Not applicable (1) (1) 18",
+      "metadata": {
+        "score": 13,
+        "matched_page_terms": [
+          "legal",
+          "proceedings"
+        ],
+        "matched_section_terms": [
+          "legal",
+          "proceedings"
+        ],
+        "node_id": "0006",
+        "start_index": 20,
+        "end_index": 20
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "select_tree_node",
+      "target": "Item 3. Legal Proceedings",
+      "metadata": {
+        "node_id": "0006",
+        "start_index": 20,
+        "end_index": 20
+      }
+    },
+    {
+      "step": 2,
+      "action": "select_tree_node",
+      "target": "Note 21 – Legal Proceedings",
+      "metadata": {
+        "node_id": "0106",
+        "start_index": 112,
+        "end_index": 113
+      }
+    },
+    {
+      "step": 3,
+      "action": "select_tree_node",
+      "target": "Legal",
+      "metadata": {
+        "node_id": "0063",
+        "start_index": 47,
+        "end_index": 47
+      }
+    },
+    {
+      "step": 4,
+      "action": "select_tree_node",
+      "target": "10.8 Legal Action",
+      "metadata": {
+        "node_id": "0222",
+        "start_index": 179,
+        "end_index": 179
+      }
+    },
+    {
+      "step": 5,
+      "action": "score_page",
+      "target": "page 113",
+      "metadata": {
+        "score": 16,
+        "section": "Note 21 – Legal Proceedings",
+        "matched_page_terms": [
+          "accident",
+          "has",
+          "lawsuits",
+          "legal"
+        ],
+        "matched_section_terms": [
+          "legal",
+          "proceedings"
+        ]
+      }
+    },
+    {
+      "step": 6,
+      "action": "score_page",
+      "target": "page 19",
+      "metadata": {
+        "score": 15,
+        "section": "Item 1A. Risk Factors",
+        "matched_page_terms": [
+          "accident",
+          "legal",
+          "materially",
+          "proceedings"
+        ],
+        "matched_section_terms": []
+      }
+    },
+    {
+      "step": 7,
+      "action": "score_page",
+      "target": "page 20",
+      "metadata": {
+        "score": 13,
+        "section": "Item 3. Legal Proceedings",
+        "matched_page_terms": [
+          "legal",
+          "proceedings"
+        ],
+        "matched_section_terms": [
+          "legal",
+          "proceedings"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": 1991,
+    "output": 416,
+    "total": 2407
+  },
+  "latency_ms": 7006,
+  "metadata": {
+    "structure_path": "reports\\pageindex\\structures\\BOEING_2022_10K_structure.json",
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\BOEING_2022_10K.pdf",
+    "selected_pages_one_indexed": [
+      113,
+      19,
+      20
+    ],
+    "max_pages": 3,
+    "adapter_mode": "tree_page_scoring",
+    "llm_enabled": true
+  }
+}

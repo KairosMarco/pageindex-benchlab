@@ -1,0 +1,394 @@
+{
+  "summary": {
+    "result_count": 25,
+    "failure_count": 0,
+    "average_answer_score": 0.78,
+    "accuracy": 0.76,
+    "verdict_counts": {
+      "correct": 19,
+      "partial": 1,
+      "incorrect": 5
+    },
+    "mode": "llm",
+    "model": "deepseek/deepseek-v4-pro",
+    "results_dir": "reports\\pageindex\\qa_llm_expanded_25"
+  },
+  "per_question": [
+    {
+      "question_id": "fb_exp_013",
+      "score": 1.0,
+      "verdict": "correct",
+      "rationale": "The predicted answer gives exactly 65.4%, which matches the gold answer, and includes the correct calculation from the income statement.",
+      "gold_answer": "65.4%",
+      "predicted_answer": "The year-over-year change in unadjusted operating income is 65.4%.\n\nThis is calculated using the operating income figures from the consolidated statements of income on page 62: ($1,493,602 - $903,095) / $903,095 = 0.65387, which rounds to 65.4%.\n\n**Page 62**",
+      "metadata": {
+        "mode": "llm_judge",
+        "model": "deepseek/deepseek-v4-pro",
+        "result_path": "reports\\pageindex\\qa_llm_expanded_25\\fb_exp_013.json",
+        "method": "pageindex_tree_qa",
+        "doc_name": "ADOBE_2016_10K"
+      }
+    },
+    {
+      "question_id": "fb_exp_014",
+      "score": 1.0,
+      "verdict": "correct",
+      "rationale": "The predicted answer correctly states that gross margin is not a useful metric for American Express and explains why, aligning with the gold answer that performance is not measured through gross margin.",
+      "gold_answer": "Performance is not measured through gross margin",
+      "predicted_answer": "Based on the provided document pages, gross margin is not mentioned, and the documents do not contain information to explain what drove its change. Gross margin is typically not a useful metric for a financial services company like American Express because it calculates revenue minus cost of goods sold, which doesn't apply to their business model. Their financial performance is driven by net interest income and non-interest revenue, not the sale of physical goods. The document pages provided focus on items like goodwill (pages 104, 121) and derivatives (page 134), which are more relevant to a financial institution.",
+      "metadata": {
+        "mode": "llm_judge",
+        "model": "deepseek/deepseek-v4-pro",
+        "result_path": "reports\\pageindex\\qa_llm_expanded_25\\fb_exp_014.json",
+        "method": "pageindex_tree_qa",
+        "doc_name": "AMERICANEXPRESS_2022_10K"
+      }
+    },
+    {
+      "question_id": "fb_exp_015",
+      "score": 1.0,
+      "verdict": "correct",
+      "rationale": "The predicted answer correctly states 'Yes' and names Richard A. Johnson, matching the gold answer exactly. The additional details (vote counts) do not contradict and fully address the question.",
+      "gold_answer": "Yes, his name is Richard A. Johnson",
+      "predicted_answer": "Yes, Richard A. Johnson had substantially more votes against (16,105,005) than the other nominees, whose votes against ranged from 294,935 to 6,074,467 (Page 2).",
+      "metadata": {
+        "mode": "llm_judge",
+        "model": "deepseek/deepseek-v4-pro",
+        "result_path": "reports\\pageindex\\qa_llm_expanded_25\\fb_exp_015.json",
+        "method": "pageindex_tree_qa",
+        "doc_name": "FOOTLOCKER_2022_8K_dated-2022-05-20"
+      }
+    },
+    {
+      "question_id": "fb_exp_016",
+      "score": 1.0,
+      "verdict": "correct",
+      "rationale": "The predicted answer states the working capital ratio is 1.73, which exactly matches the gold answer of 1.73. It also provides supporting calculations that align with the definition.",
+      "gold_answer": "1.73",
+      "predicted_answer": "The working capital ratio, defined as total current assets divided by total current liabilities, for FY2016 is 1.73.\n\nThis is calculated using the FY2016 data from the consolidated balance sheet on page 68: $1,001,425 (total current assets) divided by $577,464 (total current liabilities).",
+      "metadata": {
+        "mode": "llm_judge",
+        "model": "deepseek/deepseek-v4-pro",
+        "result_path": "reports\\pageindex\\qa_llm_expanded_25\\fb_exp_016.json",
+        "method": "pageindex_tree_qa",
+        "doc_name": "BLOCK_2016_10K"
+      }
+    },
+    {
+      "question_id": "fb_exp_017",
+      "score": 0.5,
+      "verdict": "partial",
+      "rationale": "The predicted answer correctly states that Corning has positive working capital, matching the gold answer's yes. However, it provides an incorrect specific amount ($2,278 million vs. the gold's $831 million), which introduces a factual error. While the question only asks whether working capital is positive, the extra erroneous detail prevents the answer from being fully correct.",
+      "gold_answer": "Yes. Corning had a positive working capital amount of $831 million by FY 2022 close. This answer considers only operating current assets and current liabilities that were clearly shown in the balance sheet.",
+      "predicted_answer": "Yes, Corning has positive working capital based on FY2022 data. The document page reports working capital of $2,278 million as of December 31, 2022. This metric is relevant, as the company states it funds its working capital with cash from operations and short-term borrowings.\n\n**Page 34**",
+      "metadata": {
+        "mode": "llm_judge",
+        "model": "deepseek/deepseek-v4-pro",
+        "result_path": "reports\\pageindex\\qa_llm_expanded_25\\fb_exp_017.json",
+        "method": "pageindex_tree_qa",
+        "doc_name": "CORNING_2022_10K"
+      }
+    },
+    {
+      "question_id": "fb_exp_018",
+      "score": 1.0,
+      "verdict": "correct",
+      "rationale": "Both the predicted and gold answers identify Las Vegas (including Las Vegas Strip Resorts) as the region with the highest EBITDAR contribution for MGM in FY2022. The predicted answer provides a specific dollar amount from page 13, which aligns with the gold answer stating Las Vegas resorts contributed ~90% of company-level EBITDAR. The question is fully answered.",
+      "gold_answer": "Las Vegas resorts contributed ~90% of company level EBITDAR during FY2022.",
+      "predicted_answer": "Las Vegas Strip Resorts had the highest Adjusted Property EBITDAR contribution for MGM during FY2022 at $3,142,308 thousand (Page 13).",
+      "metadata": {
+        "mode": "llm_judge",
+        "model": "deepseek/deepseek-v4-pro",
+        "result_path": "reports\\pageindex\\qa_llm_expanded_25\\fb_exp_018.json",
+        "method": "pageindex_tree_qa",
+        "doc_name": "MGMRESORTS_2022Q4_EARNINGS"
+      }
+    },
+    {
+      "question_id": "fb_exp_019",
+      "score": 0.0,
+      "verdict": "incorrect",
+      "rationale": "The gold answer is $0.40 billion, while the predicted answer gives $0.389 billion. The values are materially different (by $11 million) and do not match.",
+      "gold_answer": "$0.40",
+      "predicted_answer": "The Consolidated Statements of Cash Flows on page 86 reports under \"CASH FLOWS FROM FINANCING ACTIVITIES\" that \"Dividends paid\" for the year ended December 31, 2020, was $(389) million. This represents a cash outflow of $0.389 billion.",
+      "metadata": {
+        "mode": "llm_judge",
+        "model": "deepseek/deepseek-v4-pro",
+        "result_path": "reports\\pageindex\\qa_llm_expanded_25\\fb_exp_019.json",
+        "method": "pageindex_tree_qa",
+        "doc_name": "AMERICANWATERWORKS_2020_10K"
+      }
+    },
+    {
+      "question_id": "fb_exp_020",
+      "score": 0.0,
+      "verdict": "incorrect",
+      "rationale": "The predicted answer states it is not possible to determine whether CVS Health is a capital-intensive business, while the gold answer gives a definitive 'Yes' supported by FY2022 ROA and asset composition data. This is a direct contradiction, not a wording difference, and fails to answer the question correctly.",
+      "gold_answer": "Yes, CVS Health requires an extensive asset base to operate, which is evident from its ROA of only 1.82% in 2022 and 3.39% in 2021, though it should be noted that a significant portion of this asset base is goodwill, and CVS's fixed assets/total assets ratio is on the lower side of 5.6%.",
+      "predicted_answer": "Based on the provided document pages, it is not possible to determine if CVS Health is a capital-intensive business based on FY2022 data. The pages do not contain information about capital expenditures, asset intensity, or related financial metrics for that fiscal year.\n\nThe closest mention is on page 32, which notes that regulations \"Require the Company to maintain minimum capital levels in its subsidiaries and monitor its solvency and reserve adequacy,\" but this is a regulatory solvency requirement, not a description of the business's capital intensity. The other pages (page 30 on regulations, page 63 on provider contracts and suppliers) do not address this topic.",
+      "metadata": {
+        "mode": "llm_judge",
+        "model": "deepseek/deepseek-v4-pro",
+        "result_path": "reports\\pageindex\\qa_llm_expanded_25\\fb_exp_020.json",
+        "method": "pageindex_tree_qa",
+        "doc_name": "CVSHEALTH_2022_10K"
+      }
+    },
+    {
+      "question_id": "fb_exp_021",
+      "score": 1.0,
+      "verdict": "correct",
+      "rationale": "The predicted answer states that PepsiCo raised guidance due to a strong start to the year, which fully matches the gold answer's reason. The added quote and detail do not contradict and are directly supportive.",
+      "gold_answer": "Pepsico experienced a strong start to FY2023.",
+      "predicted_answer": "Based on the provided document, PepsiCo raised its full-year guidance due to a strong start to the year.\n\nAs stated by the CEO: \"Given our strong start to the year, we now expect our full-year 2023 organic revenue to increase 8 percent (previously 6 percent) and core constant currency EPS to increase 9 percent (previously 8 percent)\" (Page 1).",
+      "metadata": {
+        "mode": "llm_judge",
+        "model": "deepseek/deepseek-v4-pro",
+        "result_path": "reports\\pageindex\\qa_llm_expanded_25\\fb_exp_021.json",
+        "method": "pageindex_tree_qa",
+        "doc_name": "PEPSICO_2023Q1_EARNINGS"
+      }
+    },
+    {
+      "question_id": "fb_exp_022",
+      "score": 0.0,
+      "verdict": "incorrect",
+      "rationale": "The predicted answer asserts that the COGS % margin cannot be calculated due to missing data, while the gold answer provides a specific value of 39.7%. This directly contradicts the gold answer and fails to answer the question.",
+      "gold_answer": "39.7%",
+      "predicted_answer": "Based on the provided document pages, the FY2021 COGS % margin cannot be calculated because the Cost of Goods Sold (COGS) amount is not shown. The income statement line item for COGS is mentioned on page 68, but no actual figure for FY2021 COGS is provided. While the Net Operating Revenues for FY2021 are listed as $38,655 million on page 77, the necessary COGS value to perform the calculation is absent.",
+      "metadata": {
+        "mode": "llm_judge",
+        "model": "deepseek/deepseek-v4-pro",
+        "result_path": "reports\\pageindex\\qa_llm_expanded_25\\fb_exp_022.json",
+        "method": "pageindex_tree_qa",
+        "doc_name": "COCACOLA_2021_10K"
+      }
+    },
+    {
+      "question_id": "fb_exp_023",
+      "score": 0.0,
+      "verdict": "incorrect",
+      "rationale": "The gold answer states \"Yes, change in PPNE was positive year over year.\" The predicted answer claims the question cannot be answered due to lack of data. This is materially different from the affirmative gold answer, thus it is incorrect.",
+      "gold_answer": "Yes, change in PPNE was positive year over year",
+      "predicted_answer": "The provided document pages do not contain any mention of \"PPNE\" or sufficient data to determine if it grew between FY20 and FY21. Therefore, the question cannot be answered from the given pages.",
+      "metadata": {
+        "mode": "llm_judge",
+        "model": "deepseek/deepseek-v4-pro",
+        "result_path": "reports\\pageindex\\qa_llm_expanded_25\\fb_exp_023.json",
+        "method": "pageindex_tree_qa",
+        "doc_name": "PFIZER_2021_10K"
+      }
+    },
+    {
+      "question_id": "fb_exp_024",
+      "score": 1.0,
+      "verdict": "correct",
+      "rationale": "The predicted answer provides the exact working capital ratio of 0.68, matching the gold answer and rounding to two decimal places as required. It also correctly references the FY2020 statement of financial position figures.",
+      "gold_answer": "0.68",
+      "predicted_answer": "The working capital ratio, defined as total current assets divided by total current liabilities, is calculated using FY2020 figures from the statement of financial position. Total current assets were $5,121.3 million, and total current liabilities were $7,491.5 million (page 50). This results in a ratio of 0.68 when rounded to two decimal places.",
+      "metadata": {
+        "mode": "llm_judge",
+        "model": "deepseek/deepseek-v4-pro",
+        "result_path": "reports\\pageindex\\qa_llm_expanded_25\\fb_exp_024.json",
+        "method": "pageindex_tree_qa",
+        "doc_name": "GENERALMILLS_2020_10K"
+      }
+    },
+    {
+      "question_id": "fb_exp_025",
+      "score": 0.0,
+      "verdict": "incorrect",
+      "rationale": "The predicted answer claims the document does not explain the drivers of SG&A reduction, but the gold answer provides specific drivers: lower marketing expenses and leverage of incentive compensation due to higher sales. Therefore, the predicted answer is materially incorrect.",
+      "gold_answer": "Lower marketing expenses and leverage of incentive compensation due to higher sales. The answer here assumes FY2023 refers to the 12 months ended on January 28, 2023 (although the company refers to this period as its fiscal 2022.",
+      "predicted_answer": "The provided document pages do not contain information explaining what drove the reduction in SG&A expense as a percent of net sales. The documents show the SG&A expense percentage decreased from 23.9% in fiscal 2021 to 23.5% in fiscal 2022 (Page 6), but do not discuss the reasons for this change or provide any details for fiscal 2023 results.",
+      "metadata": {
+        "mode": "llm_judge",
+        "model": "deepseek/deepseek-v4-pro",
+        "result_path": "reports\\pageindex\\qa_llm_expanded_25\\fb_exp_025.json",
+        "method": "pageindex_tree_qa",
+        "doc_name": "ULTABEAUTY_2023Q4_EARNINGS"
+      }
+    },
+    {
+      "question_id": "fb_mvp_001",
+      "score": 1.0,
+      "verdict": "correct",
+      "rationale": "The predicted answer provides the exact capital expenditure amount of $1,577 million, which matches the gold answer of $1577.00. The numeric value is the same, only formatted differently, and it is derived from the cash flow statement as required.",
+      "gold_answer": "$1577.00",
+      "predicted_answer": "The FY2018 capital expenditure amount for 3M is $1,577 million, as shown under \"Purchases of property, plant and equipment (PP&E)\" in the cash flows from investing activities section of the cash flow statement (page 60).",
+      "metadata": {
+        "mode": "llm_judge",
+        "model": "deepseek/deepseek-v4-pro",
+        "result_path": "reports\\pageindex\\qa_llm_expanded_25\\fb_mvp_001.json",
+        "method": "pageindex_tree_qa",
+        "doc_name": "3M_2018_10K"
+      }
+    },
+    {
+      "question_id": "fb_mvp_002",
+      "score": 1.0,
+      "verdict": "correct",
+      "rationale": "The predicted answer states the year-over-year change is 30.8%, which matches the gold answer exactly. It also correctly shows the calculation using the Total net sales line items.",
+      "gold_answer": "30.8%",
+      "predicted_answer": "The year-over-year change in total net sales from FY2016 to FY2017 is 30.8%.\n\nThis is calculated using the \"Total net sales\" line item from the consolidated statements of operations on page 38, which shows $135,987 million for 2016 and $177,866 million for 2017. The calculation is ((177,866 - 135,987) / 135,987) * 100 = 30.8% (rounded to one decimal place).",
+      "metadata": {
+        "mode": "llm_judge",
+        "model": "deepseek/deepseek-v4-pro",
+        "result_path": "reports\\pageindex\\qa_llm_expanded_25\\fb_mvp_002.json",
+        "method": "pageindex_tree_qa",
+        "doc_name": "AMAZON_2017_10K"
+      }
+    },
+    {
+      "question_id": "fb_mvp_003",
+      "score": 1.0,
+      "verdict": "correct",
+      "rationale": "The predicted answer includes all major products and services listed in the gold answer: CPUs, GPUs, APUs, chipsets, data center and professional GPUs, embedded processors, semi‑custom SoC products, development services, DPUs, FPGAs, and Adaptive SoC products. The extra mention of licensing IP does not contradict or omit any required information, so the answer is fully responsive.",
+      "gold_answer": "AMD sells server microprocessors (CPUs) and graphics processing units (GPUs), data processing units (DPUs), Field Programmable Gate Arrays (FPGAs), and Adaptive System-on-Chip (SoC) products for data centers; CPUs, accelerated processing units (APUs) that integrate CPUs and GPUs, and chipsets for desktop and notebook personal computers; discrete GPUs, and semi-custom SoC products and development services; and embedded CPUs, GPUs, APUs, FPGAs, and Adaptive SoC products.",
+      "predicted_answer": "Based on the provided document pages, as of FY22, AMD's major products and services include:\nx86 microprocessors (CPUs) and graphics processing units (GPUs), as standalone devices or as incorporated into accelerated processing units (APUs), chipsets, data center and professional GPUs, embedded processors, semi-custom System-on-Chip (SoC) products, microprocessor and SoC development services and technology, data processing units (DPUs), Field Programmable Gate Arrays (FPGAs), and Adaptive SoC products. The company may also sell or license portions of its intellectual property (IP) portfolio (Page 60).",
+      "metadata": {
+        "mode": "llm_judge",
+        "model": "deepseek/deepseek-v4-pro",
+        "result_path": "reports\\pageindex\\qa_llm_expanded_25\\fb_mvp_003.json",
+        "method": "pageindex_tree_qa",
+        "doc_name": "AMD_2022_10K"
+      }
+    },
+    {
+      "question_id": "fb_mvp_004",
+      "score": 1.0,
+      "verdict": "correct",
+      "rationale": "The predicted answer correctly identifies operating activities as bringing in the most cash flow for AMD in FY22, matching the gold answer. It provides specific figures and page reference that confirm this conclusion.",
+      "gold_answer": "In 2022, AMD brought in the most cashflow from Operations",
+      "predicted_answer": "Based on the consolidated statements of cash flows, operating activities brought in the most cash flow for AMD in FY22.\n\nNet cash provided by operating activities was $3,565 million. In comparison, investing activities provided $1,999 million, and financing activities used $3,264 million (Page 58).",
+      "metadata": {
+        "mode": "llm_judge",
+        "model": "deepseek/deepseek-v4-pro",
+        "result_path": "reports\\pageindex\\qa_llm_expanded_25\\fb_mvp_004.json",
+        "method": "pageindex_tree_qa",
+        "doc_name": "AMD_2022_10K"
+      }
+    },
+    {
+      "question_id": "fb_mvp_005",
+      "score": 1.0,
+      "verdict": "correct",
+      "rationale": "The predicted answer correctly states that Best Buy's gross margins are historically consistent and notes the 1.1% decline between fiscal years 2022 and 2023, fully matching the gold answer. It also appropriately addresses the question's alternative by stating the metric is relevant for analyzing Best Buy's own historical performance.",
+      "gold_answer": "Yes, the margins have been consistent, there has been a minor decline of 1.1% in gross margins between FY2022 and FY2023.",
+      "predicted_answer": "According to the provided document pages, Best Buy's gross margins are historically consistent, fluctuating less than 2% over the three reported fiscal years.\n\n*   Page 25 presents the \"Gross profit as a % of revenue\" for fiscal years 2023, 2022, and 2021 as 21.4%, 22.5%, and 22.4%, respectively. The highest rate was 22.5% and the lowest was 21.4%, a difference of 1.1 percentage points, which is within the 2% threshold.\n\nThe document also notes that while this metric is used, its comparability to other retailers may be limited. A footnote on page 25 states: \"Because retailers vary in how they record costs of operating their supply chain between cost of sales and SG&A, our gross profit rate and SG&A rate may not be comparable to other retailers' corresponding rates.\" However, the metric is still presented and relevant for analyzing Best Buy's own historical performance.",
+      "metadata": {
+        "mode": "llm_judge",
+        "model": "deepseek/deepseek-v4-pro",
+        "result_path": "reports\\pageindex\\qa_llm_expanded_25\\fb_mvp_005.json",
+        "method": "pageindex_tree_qa",
+        "doc_name": "BESTBUY_2023_10K"
+      }
+    },
+    {
+      "question_id": "fb_mvp_006",
+      "score": 1.0,
+      "verdict": "correct",
+      "rationale": "Both the gold and predicted answers confirm that Boeing has materially important ongoing legal battles, with the predicted answer specifically referencing the 737 MAX accident lawsuits (which stem from the 2018 Lion Air and 2019 Ethiopian Airlines crashes) and adding an arbitration detail, which does not contradict the gold answer.",
+      "gold_answer": "Yes. Multiple lawsuits have been filed against Boeing resulting from a 2018 Lion Air crash and a 2019 Ethiopian Airlines crash.",
+      "predicted_answer": "Yes, Boeing reported two materially important ongoing legal battles. On page 113, it discusses remaining pending lawsuits related to the 737 MAX accidents for which a range of loss cannot be reasonably estimated. It also describes an ongoing arbitration with Embraer, regarding a dispute over terminated joint venture agreements, which was expected to be complete in late 2023 or early 2024.",
+      "metadata": {
+        "mode": "llm_judge",
+        "model": "deepseek/deepseek-v4-pro",
+        "result_path": "reports\\pageindex\\qa_llm_expanded_25\\fb_mvp_006.json",
+        "method": "pageindex_tree_qa",
+        "doc_name": "BOEING_2022_10K"
+      }
+    },
+    {
+      "question_id": "fb_mvp_007",
+      "score": 1.0,
+      "verdict": "correct",
+      "rationale": "The predicted answer provides the correct amount ($59,268 million) which matches the gold answer ($59268.00) exactly, just formatted differently.",
+      "gold_answer": "$59268.00",
+      "predicted_answer": "According to the consolidated balance sheet, Costco's total assets at the end of FY2021 were $59,268 million (page 38).",
+      "metadata": {
+        "mode": "llm_judge",
+        "model": "deepseek/deepseek-v4-pro",
+        "result_path": "reports\\pageindex\\qa_llm_expanded_25\\fb_mvp_007.json",
+        "method": "pageindex_tree_qa",
+        "doc_name": "COSTCO_2021_10K"
+      }
+    },
+    {
+      "question_id": "fb_mvp_008",
+      "score": 1.0,
+      "verdict": "correct",
+      "rationale": "The predicted answer provides $32,780 million, which matches the gold answer of $32780.00 million exactly.",
+      "gold_answer": "$32780.00",
+      "predicted_answer": "Based on the provided statement of income on page 52, the FY2016 total cost of revenue (COGS) for Microsoft is $32,780 million (page 52).",
+      "metadata": {
+        "mode": "llm_judge",
+        "model": "deepseek/deepseek-v4-pro",
+        "result_path": "reports\\pageindex\\qa_llm_expanded_25\\fb_mvp_008.json",
+        "method": "pageindex_tree_qa",
+        "doc_name": "MICROSOFT_2016_10K"
+      }
+    },
+    {
+      "question_id": "fb_mvp_009",
+      "score": 1.0,
+      "verdict": "correct",
+      "rationale": "The predicted answer correctly identifies operations as the activity that brought in the most cash flow, matching the gold answer. Additional numerical details and page reference do not detract.",
+      "gold_answer": "Among the three, cash flow from operations was the highest for Nike in FY2023.",
+      "predicted_answer": "Operations brought in the most cash flow for Nike in FY2023, providing $5,841 million. In comparison, investing activities provided $564 million, and financing activities used $7,447 million (page 62).",
+      "metadata": {
+        "mode": "llm_judge",
+        "model": "deepseek/deepseek-v4-pro",
+        "result_path": "reports\\pageindex\\qa_llm_expanded_25\\fb_mvp_009.json",
+        "method": "pageindex_tree_qa",
+        "doc_name": "NIKE_2023_10K"
+      }
+    },
+    {
+      "question_id": "fb_mvp_010",
+      "score": 1.0,
+      "verdict": "correct",
+      "rationale": "The predicted answer supplies the exact same adjusted EBITDA value for FY 2023 ($2,018 million) as the gold answer ($2,018mn). It fully answers the question with no material differences.",
+      "gold_answer": "AMCOR's Adj. EBITDA was $2,018mn in FY 2023",
+      "predicted_answer": "Based on the provided document pages, Amcor's Adjusted Non-GAAP EBITDA for the fiscal year 2023 was $2,018 million.\n\nThis figure is presented on page 12 in the reconciliation table for the \"Twelve Months Ended June 30, 2023\" (Page 12).",
+      "metadata": {
+        "mode": "llm_judge",
+        "model": "deepseek/deepseek-v4-pro",
+        "result_path": "reports\\pageindex\\qa_llm_expanded_25\\fb_mvp_010.json",
+        "method": "pageindex_tree_qa",
+        "doc_name": "AMCOR_2023Q4_EARNINGS"
+      }
+    },
+    {
+      "question_id": "fb_mvp_011",
+      "score": 1.0,
+      "verdict": "correct",
+      "rationale": "The predicted answer states that the risk decreased, which directly matches the gold answer's 'Yes. It decreased.' It fully answers the question and provides correct supporting detail.",
+      "gold_answer": "Yes. It decreased.",
+      "predicted_answer": "Yes, the risk that JPMorgan Chase faced decreased.\n\nAccording to page 85, \"Average total VaR decreased by $7 million for the three months ended June 30, 2023, compared with the same period in the prior year\".",
+      "metadata": {
+        "mode": "llm_judge",
+        "model": "deepseek/deepseek-v4-pro",
+        "result_path": "reports\\pageindex\\qa_llm_expanded_25\\fb_mvp_011.json",
+        "method": "pageindex_tree_qa",
+        "doc_name": "JPMORGAN_2023Q2_10Q"
+      }
+    },
+    {
+      "question_id": "fb_mvp_012",
+      "score": 1.0,
+      "verdict": "correct",
+      "rationale": "The predicted answer identifies the same business segment (Consumer Health) and the same effective date (August 30, 2023) as the gold answer. The minor omission of the word 'segment' is a wording difference that does not change the meaning, so the answer is fully correct.",
+      "gold_answer": "The Consumer Health business segment will be treated as a discontinued operation from August 30, 2023 onward.",
+      "predicted_answer": "The Consumer Health business will be treated as a discontinued operation from August 30, 2023 onward (page 4).",
+      "metadata": {
+        "mode": "llm_judge",
+        "model": "deepseek/deepseek-v4-pro",
+        "result_path": "reports\\pageindex\\qa_llm_expanded_25\\fb_mvp_012.json",
+        "method": "pageindex_tree_qa",
+        "doc_name": "JOHNSON_JOHNSON_2023_8K_dated-2023-08-30"
+      }
+    }
+  ],
+  "failures": []
+}

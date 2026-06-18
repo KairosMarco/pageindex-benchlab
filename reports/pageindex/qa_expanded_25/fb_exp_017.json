@@ -167,7 +167,7 @@
     "output": null,
     "total": null
   },
-  "latency_ms": 257,
+  "latency_ms": 271,
   "metadata": {
     "structure_path": "reports\\pageindex\\structures\\CORNING_2022_10K_structure.json",
     "pdf_path": "datasets\\raw\\financebench\\pdfs\\CORNING_2022_10K.pdf",

@@ -145,7 +145,7 @@
     "output": null,
     "total": null
   },
-  "latency_ms": 407,
+  "latency_ms": 474,
   "metadata": {
     "structure_path": "reports\\pageindex\\structures\\AMERICANEXPRESS_2022_10K_structure.json",
     "pdf_path": "datasets\\raw\\financebench\\pdfs\\AMERICANEXPRESS_2022_10K.pdf",
