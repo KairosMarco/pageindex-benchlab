@@ -1,0 +1,222 @@
+diff --git a/pageindex/page_index.py b/pageindex/page_index.py
+index 9004309..2ee7c31 100644
+--- a/pageindex/page_index.py
++++ b/pageindex/page_index.py
+@@ -122 +122,3 @@ def toc_detector_single_page(content, model=None):
+-    return json_content['toc_detected']
++    if not isinstance(json_content, dict):
++        return 'no'
++    return json_content.get('toc_detected', 'no')
+@@ -140 +142,3 @@ def check_if_toc_extraction_is_complete(content, toc, model=None):
+-    return json_content['completed']
++    if not isinstance(json_content, dict):
++        return 'no'
++    return json_content.get('completed', 'no')
+@@ -158 +162,3 @@ def check_if_toc_transformation_is_complete(content, toc, model=None):
+-    return json_content['completed']
++    if not isinstance(json_content, dict):
++        return 'no'
++    return json_content.get('completed', 'no')
+@@ -220 +226,3 @@ def detect_page_index(toc_content, model=None):
+-    return json_content['page_index_given_in_toc']
++    if not isinstance(json_content, dict):
++        return 'no'
++    return json_content.get('page_index_given_in_toc', 'no')
+@@ -416,0 +425,2 @@ def add_page_offset_to_toc_json(data, offset):
++    if offset is None:
++        return data
+@@ -505,0 +516,16 @@ def remove_first_physical_index_section(text):
++
++def _as_toc_list(value):
++    """Normalize model-produced TOC JSON to a list of section dictionaries."""
++
++    if isinstance(value, list):
++        return [item for item in value if isinstance(item, dict)]
++    if isinstance(value, dict):
++        if isinstance(value.get("toc"), list):
++            return [item for item in value["toc"] if isinstance(item, dict)]
++        if isinstance(value.get("items"), list):
++            return [item for item in value["items"] if isinstance(item, dict)]
++        if all(key in value for key in ("title", "physical_index")):
++            return [value]
++    return []
++
++
+@@ -537 +563 @@ def generate_toc_continue(toc_content, part, model=None):
+-        return extract_json(response)
++        return _as_toc_list(extract_json(response))
+@@ -572 +598 @@ def generate_toc_init(part, model=None):
+-         return extract_json(response)
++         return _as_toc_list(extract_json(response))
+@@ -687,2 +713,8 @@ def process_none_page_numbers(toc_items, page_list, start_index=1, model=None):
+-            if isinstance(result[0]['physical_index'], str) and result[0]['physical_index'].startswith('<physical_index'):
+-                item['physical_index'] = int(result[0]['physical_index'].split('_')[-1].rstrip('>').strip())
++            # LLM output may be empty or omit physical_index. Leave the item
++            # unresolved so the caller can filter or fall back instead of
++            # failing the whole document.
++            if not isinstance(result, list) or not result or not isinstance(result[0], dict):
++                continue
++            physical_index = result[0].get('physical_index')
++            if isinstance(physical_index, str) and physical_index.startswith('<physical_index'):
++                item['physical_index'] = int(physical_index.split('_')[-1].rstrip('>').strip())
+@@ -756 +788,6 @@ async def single_toc_item_index_fixer(section_title, content, model=None):
+-    return convert_physical_index_to_int(json_content['physical_index'])
++    if not isinstance(json_content, dict):
++        return None
++    physical_index = json_content.get('physical_index')
++    if physical_index is None:
++        return None
++    return convert_physical_index_to_int(physical_index)
+@@ -997 +1034,2 @@ async def meta_processor(page_list, mode=None, toc_content=None, toc_page_list=N
+-            raise Exception('Processing failed')
++            logger.warning('Falling back to low-confidence no-TOC structure')
++            return toc_with_page_number
+@@ -1154 +1192 @@ def validate_and_truncate_physical_indices(toc_with_page_number, page_list_lengt
+-    return toc_with_page_number
+\ No newline at end of file
++    return toc_with_page_number
+diff --git a/pageindex/utils.py b/pageindex/utils.py
+index f00ccf3..ed39ae6 100644
+--- a/pageindex/utils.py
++++ b/pageindex/utils.py
+@@ -11,0 +12 @@ import pymupdf
++import re
+@@ -98,0 +100,26 @@ def get_json_content(response):
++def _normalize_json_candidate(candidate):
++    candidate = candidate.strip()
++    candidate = re.sub(r"\bNone\b", "null", candidate)
++    candidate = re.sub(r"\bTrue\b", "true", candidate)
++    candidate = re.sub(r"\bFalse\b", "false", candidate)
++    candidate = candidate.replace(",]", "]").replace(",}", "}")
++    return candidate
++
++
++def _json_candidates(content):
++    if not content:
++        return
++
++    fenced_blocks = re.findall(r"```(?:json)?\s*(.*?)```", content, flags=re.DOTALL | re.IGNORECASE)
++    for block in fenced_blocks:
++        yield block
++
++    yield content
++
++    # Some models add explanations before or after JSON. Try decoding from each
++    # plausible JSON start and allow trailing text after the decoded object.
++    for index, char in enumerate(content):
++        if char in "{[":
++            yield content[index:]
++
++
+@@ -100,21 +127,8 @@ def extract_json(content):
+-    try:
+-        # First, try to extract JSON enclosed within ```json and ```
+-        start_idx = content.find("```json")
+-        if start_idx != -1:
+-            start_idx += 7  # Adjust index to start after the delimiter
+-            end_idx = content.rfind("```")
+-            json_content = content[start_idx:end_idx].strip()
+-        else:
+-            # If no delimiters, assume entire content could be JSON
+-            json_content = content.strip()
+-
+-        # Clean up common issues that might cause parsing errors
+-        json_content = json_content.replace('None', 'null')  # Replace Python None with JSON null
+-        json_content = json_content.replace('\n', ' ').replace('\r', ' ')  # Remove newlines
+-        json_content = ' '.join(json_content.split())  # Normalize whitespace
+-
+-        # Attempt to parse and return the JSON object
+-        return json.loads(json_content)
+-    except json.JSONDecodeError as e:
+-        logging.error(f"Failed to extract JSON: {e}")
+-        # Try to clean up the content further if initial parsing fails
++    decoder = json.JSONDecoder()
++    last_error = None
++
++    for candidate in _json_candidates(content):
++        json_content = _normalize_json_candidate(candidate)
++        if not json_content:
++            continue
++
+@@ -122,2 +135,0 @@ def extract_json(content):
+-            # Remove any trailing commas before closing brackets/braces
+-            json_content = json_content.replace(',]', ']').replace(',}', '}')
+@@ -125,6 +137,15 @@ def extract_json(content):
+-        except:
+-            logging.error("Failed to parse JSON even after cleanup")
+-            return {}
+-    except Exception as e:
+-        logging.error(f"Unexpected error while extracting JSON: {e}")
+-        return {}
++        except json.JSONDecodeError as e:
++            last_error = e
++
++        try:
++            parsed, _ = decoder.raw_decode(json_content)
++            return parsed
++        except json.JSONDecodeError as e:
++            last_error = e
++
++    if last_error:
++        logging.error(f"Failed to extract JSON: {last_error}")
++        logging.error("Failed to parse JSON even after cleanup")
++    else:
++        logging.error("Failed to extract JSON: empty response")
++    return {}
+@@ -710 +730,0 @@ def print_wrapped(text, width=100):
+-
+diff --git a/tests/test_json_resilience.py b/tests/test_json_resilience.py
+new file mode 100644
+index 0000000..e57ca7b
+--- /dev/null
++++ b/tests/test_json_resilience.py
+@@ -0,0 +1,49 @@
++﻿import unittest
++
++from pageindex.page_index import _as_toc_list, add_page_offset_to_toc_json
++from pageindex.utils import extract_json
++
++
++class JsonExtractionTests(unittest.TestCase):
++    def test_extract_json_from_fenced_block(self):
++        payload = extract_json('```json\n{"toc_detected": "yes"}\n```')
++
++        self.assertEqual(payload["toc_detected"], "yes")
++
++    def test_extract_json_after_explanatory_text(self):
++        payload = extract_json('Here is the JSON:\n{"toc_detected": "no"}')
++
++        self.assertEqual(payload["toc_detected"], "no")
++
++    def test_extract_json_array_with_trailing_text(self):
++        payload = extract_json('[{"title": "Item 1", "physical_index": "<physical_index_3>"}]\nDone.')
++
++        self.assertEqual(payload[0]["title"], "Item 1")
++
++    def test_extract_json_python_literals(self):
++        payload = extract_json('{"page": None, "valid": True, "done": False}')
++
++        self.assertIsNone(payload["page"])
++        self.assertIs(payload["valid"], True)
++        self.assertIs(payload["done"], False)
++
++
++class TocFallbackTests(unittest.TestCase):
++    def test_as_toc_list_accepts_plain_list(self):
++        payload = [{"title": "Item 1", "physical_index": 3}, "bad"]
++
++        self.assertEqual(_as_toc_list(payload), [{"title": "Item 1", "physical_index": 3}])
++
++    def test_as_toc_list_accepts_common_wrappers(self):
++        payload = {"toc": [{"title": "Item 1", "physical_index": 3}]}
++
++        self.assertEqual(_as_toc_list(payload), [{"title": "Item 1", "physical_index": 3}])
++
++    def test_page_offset_none_is_noop(self):
++        payload = [{"title": "Item 1", "page": 5}]
++
++        self.assertEqual(add_page_offset_to_toc_json(payload, None), payload)
++
++
++if __name__ == "__main__":
++    unittest.main()

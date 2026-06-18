@@ -163,6 +163,11 @@ Completed:
   - `docs/upstream-pageindex-benchmark-issue.md`
   - `docs/upstream-pageindex-ranking-diagnostics-note.md`
   - `docs/upstream-patches/pageindex-json-resilience-pr.md`
+- First PageIndex upstream PR candidate is now PR-ready:
+  - `docs/upstream-patches/pageindex-json-resilience.patch`
+  - `docs/upstream-patches/pageindex-json-resilience-pr-ready.md`
+  - Scope: robust JSON extraction and conservative TOC fallback handling for noisy LLM responses.
+  - Local patch validation: `7` standard-library `unittest` tests passed, plus `py_compile` for touched PageIndex files.
 
 Current owner: project owner. PH is on standby for later task assignment.
 
@@ -334,9 +339,9 @@ A GPU may become useful later for local LLMs, large embedding jobs, or large rer
 
 ## Next Actions
 
-1. Use the PageIndex upstream issue and PR drafts as the first contribution candidates.
-2. Open a small PageIndex upstream PR for JSON response resilience and conservative fallback handling.
-3. Turn the PageIndex ranking diagnostics note into a small upstream benchmark/retrieval discussion.
+1. Fork PageIndex and open the JSON response resilience PR using `docs/upstream-patches/pageindex-json-resilience-pr-ready.md`.
+2. Respond to maintainer review quickly; split the patch if requested.
+3. After the PR is open, post the benchmark/ranking diagnostics as a separate issue or discussion, not inside the code PR.
 4. Decide whether to run a full 25-question PageIndex `finance_reasoning_v3` prompt-variant ablation, or keep it as a targeted diagnostic only.
 5. Add evaluator notes for rounded USD-billion answers and definition-sensitive finance questions.
-6. Add GraphRAG and HyperGraphRAG after the expanded baselines are stable.
+6. Add GraphRAG and HyperGraphRAG after the first upstream contributor action is in flight.

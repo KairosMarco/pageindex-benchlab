@@ -1142,13 +1142,41 @@ docs/upstream-patches/pageindex-json-resilience-pr.md
 
 The issue draft presents the benchmark plan conservatively: PageIndex has strong MVP evidence recall and a current expanded result that is competitive on this small finance subset after ranking diagnostics. The PR draft focuses on robust JSON extraction and conservative fallbacks for noisy model responses.
 
+The first contributor-oriented PageIndex PR candidate is now prepared as a direct patch:
+
+```text
+docs/upstream-patches/pageindex-json-resilience.patch
+docs/upstream-patches/pageindex-json-resilience-pr-ready.md
+```
+
+Patch scope:
+
+- robust `extract_json()` handling for fenced, embedded, array, trailing-text, and Python-literal JSON responses;
+- safe defaults for missing TOC detector and completion fields;
+- normalization of model-produced TOC JSON before list operations;
+- conservative fallback when page offsets or `physical_index` values are missing;
+- focused `unittest` coverage.
+
+Patch validation:
+
+```text
+D:\pageindex-demo\PageIndex\.venv\Scripts\python.exe -m unittest discover -s tests
+Ran 7 tests
+OK
+
+D:\pageindex-demo\PageIndex\.venv\Scripts\python.exe -m py_compile pageindex\utils.py pageindex\page_index.py tests\test_json_resilience.py
+passed
+```
+
+This is the current highest-priority contributor action because it can become a concrete upstream PR. Benchmark discussion should be opened separately after this PR is in flight.
+
 ## Next Stage 1 Work
 
 The next work should strengthen the benchmark beyond the dependency-light MVP baselines:
 
-1. Use the PageIndex upstream issue and PR drafts as the first contribution candidates.
-2. Open a small PageIndex upstream PR for JSON response resilience and fallback handling.
-3. Turn the PageIndex ranking diagnostics note into a small upstream benchmark/retrieval discussion.
+1. Fork PageIndex and open the JSON response resilience PR using `docs/upstream-patches/pageindex-json-resilience-pr-ready.md`.
+2. Respond to maintainer review quickly; split the patch if requested.
+3. Turn the PageIndex ranking diagnostics note into a small upstream benchmark/retrieval discussion after the code PR is open.
 4. Decide whether to run a full 25-question PageIndex `finance_reasoning_v3` prompt-variant ablation or keep it as a targeted diagnostic only.
 5. Consider evaluator refinements for rounding tolerance and capital-intensity reasoning before broader prompt tuning.
 6. Add GraphRAG and HyperGraphRAG after the expanded baselines are stable.
