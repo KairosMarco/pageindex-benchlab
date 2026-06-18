@@ -171,11 +171,12 @@ reports/pageindex/expanded_indexing_notes.md
 reports/pageindex/expanded_partial_summary.md
 reports/pageindex/evidence_eval_qa_expanded_25.json
 reports/pageindex/pageindex_ranking_diagnostics.md
+reports/pageindex/pageindex_answer_issue_analysis.md
 reports/pageindex_expanded_llm_diagnostics.md
 reports/expanded_pageindex_llm_validation_report.json
 ```
 
-The legacy PageIndex scorer surfaced six retrieval misses: `fb_exp_014`, `fb_exp_017`, `fb_exp_020`, `fb_exp_022`, `fb_exp_023`, and `fb_exp_025`. The current label-free finance line-item scorer fixes those misses without using gold evidence during retrieval. The expanded run also surfaced indexing robustness issues on long SEC filings, including model-produced TOC JSON with unexpected object/list shapes, missing page-offset values, low-confidence no-TOC processing failures, and missing `physical_index` fields.
+The legacy PageIndex scorer surfaced six retrieval misses: `fb_exp_014`, `fb_exp_017`, `fb_exp_020`, `fb_exp_022`, `fb_exp_023`, and `fb_exp_025`. The current label-free finance line-item scorer fixes those misses without using gold evidence during retrieval. The remaining answer issues are not retrieval misses: `fb_exp_019` is a rounding or judge-policy case, and `fb_exp_020` is a finance concept-definition case after successful evidence retrieval. The expanded run also surfaced indexing robustness issues on long SEC filings, including model-produced TOC JSON with unexpected object/list shapes, missing page-offset values, low-confidence no-TOC processing failures, and missing `physical_index` fields.
 
 ## Proposed Next Work
 
@@ -188,6 +189,7 @@ Possible PageIndex contributions:
 - Add defensive handling when TOC extraction returns objects instead of lists, or when page-offset detection returns null.
 - Add benchmark reproduction notes for FinanceBench-style page-evidence QA.
 - Add or document PageIndex ranking diagnostics that compare legacy and current page scoring on evidence-page recall.
+- Add answer-issue diagnostics that distinguish retrieval failures from answer-reasoning and evaluator-policy failures.
 - Add a minimal script or documentation example showing how to run PageIndex over a local PDF and inspect the produced structure.
 
 ## Why This Helps PageIndex

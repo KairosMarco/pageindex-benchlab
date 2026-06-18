@@ -1057,6 +1057,14 @@ Interpretation:
 - The initial PageIndex expanded scorer did not generalize to the 25-question set, but the current label-free finance line-item boost restores top-three evidence recall to `1.000`.
 - PageIndex used a compact three-page answer context. The remaining answer issues are `fb_exp_019` and `fb_exp_020`, both after successful evidence retrieval.
 - The ranking diagnostics now provide a before/after contribution artifact: legacy scorer recall `0.760`, current scorer recall `1.000`, with no candidate regressions.
+- The answer issue analysis separates `fb_exp_019` as a rounding or judge-policy case from `fb_exp_020` as a capital-intensity reasoning case.
+
+Answer issue artifacts:
+
+```text
+reports/pageindex/pageindex_answer_issue_analysis.md
+reports/pageindex/pageindex_answer_issue_analysis.json
+```
 
 ## Upstream Contribution Drafts
 
@@ -1064,6 +1072,7 @@ Two PageIndex contribution drafts are ready for review and community use:
 
 ```text
 docs/upstream-pageindex-benchmark-issue.md
+docs/upstream-pageindex-ranking-diagnostics-note.md
 docs/upstream-patches/pageindex-json-resilience-pr.md
 ```
 
@@ -1075,9 +1084,10 @@ The next work should strengthen the benchmark beyond the dependency-light MVP ba
 
 1. Use the PageIndex upstream issue and PR drafts as the first contribution candidates.
 2. Open a small PageIndex upstream PR for JSON response resilience and fallback handling.
-3. Turn the PageIndex ranking diagnostics into a small upstream benchmark/retrieval note.
-4. Add GraphRAG and HyperGraphRAG after the expanded baselines are stable.
-5. Consider evaluator refinements for rounding tolerance and capital-intensity reasoning before further prompt tuning.
+3. Turn the PageIndex ranking diagnostics note into a small upstream benchmark/retrieval discussion.
+4. Run a PageIndex answer-prompt ablation for `fb_exp_019` and `fb_exp_020`, mirroring the existing LlamaIndex finance prompt variants.
+5. Consider evaluator refinements for rounding tolerance and capital-intensity reasoning before broader prompt tuning.
+6. Add GraphRAG and HyperGraphRAG after the expanded baselines are stable.
 
 ## Stage 1 Exit Criteria
 

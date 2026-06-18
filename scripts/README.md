@@ -149,6 +149,7 @@ python scripts\evaluate_evidence_mvp.py --questions datasets\financebench\expand
 python scripts\evaluate_answers_mvp.py --questions datasets\financebench\expanded_questions_25.jsonl --results-dir reports\pageindex\qa_llm_expanded_25 --output reports\pageindex\answer_eval_qa_llm_expanded_25.json --mode llm --model deepseek/deepseek-v4-pro --continue-on-error
 python scripts\summarize_pageindex_expanded_llm.py
 python scripts\validate_expanded_pageindex_llm_artifacts.py
+python scripts\analyze_pageindex_answer_issues.py
 ```
 
 Current expanded PageIndex LLM result:
@@ -159,6 +160,15 @@ Evidence recall: 1.000
 Citation precision: 0.347
 Answer accuracy: 0.920
 Verdicts: 23 correct, 0 partial, 2 incorrect
+```
+
+Current non-correct answer analysis:
+
+```text
+Issue count: 2
+Retrieval succeeded for issue cases: 2 / 2
+fb_exp_019: rounding or judge-policy case
+fb_exp_020: capital-intensity reasoning case
 ```
 
 ## Run Long-context MVP Baseline

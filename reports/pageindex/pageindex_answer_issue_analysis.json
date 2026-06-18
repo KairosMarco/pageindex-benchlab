@@ -1,0 +1,156 @@
+{
+  "summary": {
+    "date": "2026-06-18",
+    "method": "pageindex_tree_qa_llm",
+    "question_file": "datasets\\financebench\\expanded_questions_25.jsonl",
+    "results_dir": "reports\\pageindex\\qa_llm_expanded_25",
+    "evidence_eval": "reports\\pageindex\\evidence_eval_qa_llm_expanded_25.json",
+    "answer_eval": "reports\\pageindex\\answer_eval_qa_llm_expanded_25.json",
+    "prompt_variant_summary": "reports\\finance_prompt_variant_summary.json",
+    "issue_count": 2,
+    "issue_ids": [
+      "fb_exp_019",
+      "fb_exp_020"
+    ],
+    "retrieval_succeeded_count": 2
+  },
+  "issues": [
+    {
+      "question_id": "fb_exp_019",
+      "doc_name": "AMERICANWATERWORKS_2020_10K",
+      "question": "How much (in USD billions) did American Water Works pay out in cash dividends for FY2020? Compute or extract the answer by primarily using the details outlined in the statement of cash flows.",
+      "issue_type": "rounding_or_judge_strictness",
+      "failure_mode": "The retrieved evidence is correct and the answer extracts the exact table value, but the judge compares `$0.389 billion` against the rounded gold answer `$0.40`.",
+      "recommended_action": "Add an evaluator tolerance or answer-format policy for USD billions when the source table reports millions and the gold answer is rounded.",
+      "gold_answer": "$0.40",
+      "predicted_answer": "Based on the Consolidated Statements of Cash Flows, American Water Works paid out $389 million in dividends for the fiscal year 2020 (page 86). \n\nIn USD billions, this amount is $0.389 billion.",
+      "judge_verdict": "incorrect",
+      "judge_score": 0.0,
+      "judge_rationale": "The predicted answer states $0.389 billion, which does not match the gold answer of $0.40 billion. The difference is material and not a rounding discrepancy from the provided gold answer.",
+      "gold_pages_one_indexed": [
+        86
+      ],
+      "selected_pages_one_indexed": [
+        86,
+        66,
+        93
+      ],
+      "matched_pages_zero_indexed": [
+        85
+      ],
+      "matched_pages_one_indexed": [
+        86
+      ],
+      "evidence_recall": 1.0,
+      "citation_precision": 0.3333333333333333,
+      "retrieval_succeeded": true,
+      "token_usage": {
+        "input": 2769,
+        "output": 290,
+        "total": 3059
+      },
+      "latency_ms": 4261,
+      "prompt_variant_outcomes": [
+        {
+          "run_type": "variant",
+          "key": "default",
+          "label": "default prompt",
+          "verdict": "correct",
+          "answer_accuracy": 0.92,
+          "average_total_tokens": 2543.2
+        },
+        {
+          "run_type": "variant",
+          "key": "finance_reasoning_v2",
+          "label": "finance reasoning v2",
+          "verdict": "incorrect",
+          "answer_accuracy": 0.96,
+          "average_total_tokens": 2885.24
+        },
+        {
+          "run_type": "variant",
+          "key": "finance_reasoning_v3",
+          "label": "finance reasoning v3",
+          "verdict": "correct",
+          "answer_accuracy": 0.92,
+          "average_total_tokens": 2978.32
+        }
+      ],
+      "result_path": "reports\\pageindex\\qa_llm_expanded_25\\fb_exp_019.json"
+    },
+    {
+      "question_id": "fb_exp_020",
+      "doc_name": "CVSHEALTH_2022_10K",
+      "question": "Is CVS Health a capital-intensive business based on FY2022 data?",
+      "issue_type": "finance_concept_definition",
+      "failure_mode": "The retrieved evidence is correct, but the answer uses a narrow fixed-asset ratio interpretation while the gold answer treats low ROA and the broader goodwill-heavy asset base as capital intensity evidence.",
+      "recommended_action": "Add prompt guidance or benchmark notes that capital intensity questions may require ROA and broad asset-base reasoning, not only PP&E divided by total assets.",
+      "gold_answer": "Yes, CVS Health requires an extensive asset base to operate, which is evident from its ROA of only 1.82% in 2022 and 3.39% in 2021, though it should be noted that a significant portion of this asset base is goodwill, and CVS's fixed assets/total assets ratio is on the lower side of 5.6%.",
+      "predicted_answer": "No, based on the FY2022 data provided, CVS Health does not appear to be a capital-intensive business. Capital-intensive businesses typically have a high proportion of fixed assets like property, plant, and equipment relative to total assets. For CVS Health, property and equipment, net, was $12,873 million, which is only a small fraction of its $228,275 million in total assets (Page 110). The majority of its assets are current assets, goodwill, and intangible assets. Furthermore, the largest operating cost is the variable cost of products sold ($196,892 million), not depreciation of a massive physical asset base (Page 108).",
+      "judge_verdict": "incorrect",
+      "judge_score": 0.0,
+      "judge_rationale": "The gold answer says 'Yes, CVS Health is a capital-intensive business', while the predicted answer says 'No, CVS Health does not appear to be a capital-intensive business.' These are opposite conclusions, so the predicted answer is incorrect.",
+      "gold_pages_one_indexed": [
+        108,
+        110
+      ],
+      "selected_pages_one_indexed": [
+        110,
+        133,
+        108
+      ],
+      "matched_pages_zero_indexed": [
+        107,
+        109
+      ],
+      "matched_pages_one_indexed": [
+        108,
+        110
+      ],
+      "evidence_recall": 1.0,
+      "citation_precision": 0.6666666666666666,
+      "retrieval_succeeded": true,
+      "token_usage": {
+        "input": 2257,
+        "output": 418,
+        "total": 2675
+      },
+      "latency_ms": 6969,
+      "prompt_variant_outcomes": [
+        {
+          "run_type": "variant",
+          "key": "default",
+          "label": "default prompt",
+          "verdict": "incorrect",
+          "answer_accuracy": 0.92,
+          "average_total_tokens": 2543.2
+        },
+        {
+          "run_type": "variant",
+          "key": "finance_reasoning_v2",
+          "label": "finance reasoning v2",
+          "verdict": "correct",
+          "answer_accuracy": 0.96,
+          "average_total_tokens": 2885.24
+        },
+        {
+          "run_type": "variant",
+          "key": "finance_reasoning_v3",
+          "label": "finance reasoning v3",
+          "verdict": "correct",
+          "answer_accuracy": 0.92,
+          "average_total_tokens": 2978.32
+        },
+        {
+          "run_type": "probe",
+          "key": "finance_reasoning_v1_probe",
+          "label": "v1 hard-case probe",
+          "verdict": "incorrect",
+          "answer_accuracy": 0.0,
+          "average_total_tokens": 3975.0
+        }
+      ],
+      "result_path": "reports\\pageindex\\qa_llm_expanded_25\\fb_exp_020.json"
+    }
+  ]
+}

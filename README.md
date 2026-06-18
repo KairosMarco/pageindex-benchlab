@@ -144,12 +144,16 @@ Completed:
   - `reports/pageindex_expanded_llm_diagnostics.md`
   - `reports/expanded_pageindex_llm_validation_report.json`
   - Current expanded PageIndex LLM result: evidence recall `1.000`, citation precision `0.347`, answer accuracy `0.920`, average total tokens `2,882`, average latency `4,840 ms`.
+- PageIndex expanded answer issue analysis now exists:
+  - `reports/pageindex/pageindex_answer_issue_analysis.md`
+  - Remaining PageIndex answer issues are not retrieval misses: `fb_exp_019` is a rounding or judge-policy case, and `fb_exp_020` is a capital-intensity reasoning case.
 - Expanded cross-method cost/quality summary now includes PageIndex:
   - LlamaIndex Vector: evidence recall `1.000`, answer accuracy `0.920`, average total tokens `2,543`.
   - PageIndex: evidence recall `1.000`, answer accuracy `0.920`, average total tokens `2,882`.
   - Long-context: evidence recall `0.800`, answer accuracy `0.920`, average total tokens `92,500`.
 - PageIndex upstream contribution drafts now exist:
   - `docs/upstream-pageindex-benchmark-issue.md`
+  - `docs/upstream-pageindex-ranking-diagnostics-note.md`
   - `docs/upstream-patches/pageindex-json-resilience-pr.md`
 
 Current owner: project owner. PH is on standby for later task assignment.
@@ -161,6 +165,7 @@ See:
 - [PageIndex expanded readiness](reports/pageindex/expanded_readiness.md)
 - [PageIndex expanded retrieval summary](reports/pageindex/expanded_partial_summary.md)
 - [PageIndex expanded LLM diagnostics](reports/pageindex_expanded_llm_diagnostics.md)
+- [PageIndex answer issue analysis](reports/pageindex/pageindex_answer_issue_analysis.md)
 - [PageIndex upstream benchmark issue draft](docs/upstream-pageindex-benchmark-issue.md)
 
 ## Project Structure
@@ -323,5 +328,6 @@ A GPU may become useful later for local LLMs, large embedding jobs, or large rer
 
 1. Use the PageIndex upstream issue and PR drafts as the first contribution candidates.
 2. Open a small PageIndex upstream PR for JSON response resilience and conservative fallback handling.
-3. Turn the PageIndex ranking diagnostics into a small upstream benchmark/retrieval note, including the legacy-vs-current scorer comparison.
-4. Add GraphRAG and HyperGraphRAG after the expanded baselines are stable.
+3. Turn the PageIndex ranking diagnostics note into a small upstream benchmark/retrieval discussion.
+4. Run a PageIndex answer-prompt ablation for `fb_exp_019` and `fb_exp_020`.
+5. Add GraphRAG and HyperGraphRAG after the expanded baselines are stable.
