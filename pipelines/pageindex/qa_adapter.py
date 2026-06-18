@@ -11,6 +11,7 @@ import fitz
 from litellm import completion
 
 from benchlab.schemas import BenchmarkQuestion, BenchmarkResult, Citation, RetrievalTraceStep, TokenUsage
+from pipelines.finance_rerank import financial_line_item_boost
 from pipelines.pageindex.adapter import flatten_nodes, load_structure
 
 
@@ -272,13 +273,20 @@ def score_pages(
             phrase_boost += 10
         if "consolidated statements of cash flows" in combined_text and terms & {"cash", "flow", "flows"}:
             phrase_boost += 10
-        score = len(matched_page_terms) * 3 + len(matched_section_terms) * 2 + phrase_boost
+        # Reuse the same label-free finance line-item signals used by the
+        # LlamaIndex diagnostics. This only reads the question and candidate
+        # page text, never FinanceBench gold evidence pages.
+        finance_boost, finance_reasons = financial_line_item_boost(question, combined_text)
+        score = len(matched_page_terms) * 3 + len(matched_section_terms) * 2 + phrase_boost + finance_boost
         if score:
             best_section = best_section_for_page(sections, terms)
             scored.append(
                 {
                     "page": page_no,
                     "score": score,
+                    "phrase_boost": phrase_boost,
+                    "finance_boost": finance_boost,
+                    "finance_boost_reasons": finance_reasons,
                     "text": page_text,
                     "section": best_section,
                     "matched_page_terms": matched_page_terms,
@@ -367,6 +375,9 @@ def run_pageindex_qa(
             text=text_snippet(item.get("text") or "", set(item.get("matched_page_terms", []))),
             metadata={
                 "score": item.get("score"),
+                "phrase_boost": item.get("phrase_boost"),
+                "finance_boost": item.get("finance_boost"),
+                "finance_boost_reasons": item.get("finance_boost_reasons", []),
                 "matched_page_terms": item.get("matched_page_terms", []),
                 "matched_section_terms": item.get("matched_section_terms", []),
                 "node_id": (item.get("section") or {}).get("node_id"),
@@ -397,6 +408,9 @@ def run_pageindex_qa(
             target=f"page {item['page']}",
             metadata={
                 "score": item.get("score"),
+                "phrase_boost": item.get("phrase_boost"),
+                "finance_boost": item.get("finance_boost"),
+                "finance_boost_reasons": item.get("finance_boost_reasons", []),
                 "section": (item.get("section") or {}).get("title"),
                 "matched_page_terms": item.get("matched_page_terms", []),
                 "matched_section_terms": item.get("matched_section_terms", []),

@@ -2,59 +2,70 @@
   "method": "pageindex_tree_qa",
   "question_id": "fb_exp_023",
   "question": "Did Pfizer grow its PPNE between FY20 and FY21?",
-  "answer": "The provided document pages do not contain any mention of \"PPNE\" or sufficient data to determine if it grew between FY20 and FY21. Therefore, the question cannot be answered from the given pages.",
+  "answer": "Yes, Pfizer's Property, Plant and Equipment (PPNE) grew between FY20 and FY21. The value increased from $13,745 million in 2020 to $14,882 million in 2021 (page 59).",
   "citations": [
     {
       "document_id": "PFIZER_2021_10K",
-      "page": 63,
-      "section": "A. Basis of Presentation",
-      "text": "we completed the sale of our Meridian subsidiary, the manufacturer of EpiPen and other auto-injector products. Prior to its sale, Meridian was managed within the Hospital therapeutic area. Beginning in the fourth quarter of 2021, the financial results of Meridian are reflected as discontinued operations for all periods presented. On December 21, 2020, Pfizer and Viatris completed the termination of a pre- existing strategic collaboration between Pfizer and Mylan for generic drugs in Japan (the M",
+      "page": 59,
+      "section": "Consolidated Statements of Comprehensive Income",
+      "text": "Consolidated Balance Sheets Pfizer Inc. and Subsidiary Companies As of December 31, (MILLIONS, EXCEPT PER COMMON SHARE DATA) 2021 2020 Assets Cash and cash equivalents $ 1,944 $ 1,786 Short-term investments 29,125 10,437 Trade accounts receivable, less allowance for doubtful accounts: 2021—$492; 2020—$508 11,479 7,913 Inventories 9,059 8,020 Current tax assets 4,266 3,264 Other current assets 3,820 3,646 Total current assets 59,693 35,067 Equity-method investments 16,472 16,856 Long-term investm",
       "metadata": {
-        "score": 9,
-        "matched_page_terms": [
-          "between",
-          "did",
-          "its"
+        "score": 68.0,
+        "phrase_boost": 0,
+        "finance_boost": 68.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "balance_sheet_title",
+          "total_assets_line_item",
+          "ppne_line_item"
         ],
+        "matched_page_terms": [],
         "matched_section_terms": [],
-        "node_id": "0155",
-        "start_index": 63,
-        "end_index": 63
+        "node_id": "0149",
+        "start_index": 58,
+        "end_index": 59
       }
     },
     {
       "document_id": "PFIZER_2021_10K",
-      "page": 76,
-      "section": "E. Collaborative Arrangements",
-      "text": "Subsidiary Companies the development costs until commercialization of the vaccine. Thereafter, BioNTech was to repay us its 50 percent share of these development costs through reductions in gross profit sharing and milestone payments to BioNTech over time. On January 29, 2021, we and BioNTech signed an amended version of the April 2020 agreement. Under the January 2021 agreement, BioNTech paid us their 50 percent share of prior development costs in a lump sum payment during the first quarter of ",
+      "page": 72,
+      "section": "B. Divestitures",
+      "text": " $ 2,529 $ 5,318 In 2021, Discontinued operations—net of tax primarily includes (i) the operations of Meridian prior to its sale on December 31, 2021 recognized in Income/(loss) from discontinued operations—net of tax, which includes a pre-tax amount for a Multi-District Litigation relating to EpiPen against the Company in the U.S. District Court for the District of Kansas for $345 million; and (ii) the after tax loss of $167 million related to the sale of Meridian recognized in Loss on sale of ",
       "metadata": {
-        "score": 9,
+        "score": 37.0,
+        "phrase_boost": 0,
+        "finance_boost": 34.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "ppne_line_item"
+        ],
         "matched_page_terms": [
-          "between",
-          "did",
           "its"
         ],
         "matched_section_terms": [],
-        "node_id": "0180",
-        "start_index": 75,
-        "end_index": 76
+        "node_id": "0177",
+        "start_index": 71,
+        "end_index": 73
       }
     },
     {
       "document_id": "PFIZER_2021_10K",
-      "page": 10,
-      "section": "ABOUT PFIZER",
-      "text": "er 31, 2021, we completed the sale of our Meridian subsidiary, which was part of the Hospital therapeutic area prior to its sale. See Note 1A for additional information. For additional information on our operating segments and products, see Note 17 and for additional information on the key operational revenue drivers of our business, see the Analysis of the Consolidated Statements of Income section within MD&A. For a discussion of the risks associated with our dependence on certain of our major ",
+      "page": 61,
+      "section": "Consolidated Statements of Cash Flows",
+      "text": "Consolidated Statements of Cash Flows Pfizer Inc. and Subsidiary Companies Year Ended December 31, (MILLIONS) 2021 2020 2019 Operating Activities Net income before allocation to noncontrolling interests $ 22,025 $ 9,195 $ 16,056 Discontinued operations—net of tax (434) 2,529 5,318 Net income from continuing operations before allocation to noncontrolling interests 22,459 6,666 10,738 Adjustments to reconcile net income before allocation to noncontrolling interests to net cash provided by operatin",
       "metadata": {
-        "score": 6,
-        "matched_page_terms": [
-          "between",
-          "its"
+        "score": 34.0,
+        "phrase_boost": 0,
+        "finance_boost": 34.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "ppne_line_item"
         ],
+        "matched_page_terms": [],
         "matched_section_terms": [],
-        "node_id": "0006",
-        "start_index": 9,
-        "end_index": 10
+        "node_id": "0152",
+        "start_index": 61,
+        "end_index": 62
       }
     }
   ],
@@ -112,28 +123,36 @@
     {
       "step": 6,
       "action": "score_page",
-      "target": "page 63",
+      "target": "page 59",
       "metadata": {
-        "score": 9,
-        "section": "A. Basis of Presentation",
-        "matched_page_terms": [
-          "between",
-          "did",
-          "its"
+        "score": 68.0,
+        "phrase_boost": 0,
+        "finance_boost": 68.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "balance_sheet_title",
+          "total_assets_line_item",
+          "ppne_line_item"
         ],
+        "section": "Consolidated Statements of Comprehensive Income",
+        "matched_page_terms": [],
         "matched_section_terms": []
       }
     },
     {
       "step": 7,
       "action": "score_page",
-      "target": "page 76",
+      "target": "page 72",
       "metadata": {
-        "score": 9,
-        "section": "E. Collaborative Arrangements",
+        "score": 37.0,
+        "phrase_boost": 0,
+        "finance_boost": 34.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "ppne_line_item"
+        ],
+        "section": "B. Divestitures",
         "matched_page_terms": [
-          "between",
-          "did",
           "its"
         ],
         "matched_section_terms": []
@@ -142,31 +161,34 @@
     {
       "step": 8,
       "action": "score_page",
-      "target": "page 10",
+      "target": "page 61",
       "metadata": {
-        "score": 6,
-        "section": "ABOUT PFIZER",
-        "matched_page_terms": [
-          "between",
-          "its"
+        "score": 34.0,
+        "phrase_boost": 0,
+        "finance_boost": 34.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "ppne_line_item"
         ],
+        "section": "Consolidated Statements of Cash Flows",
+        "matched_page_terms": [],
         "matched_section_terms": []
       }
     }
   ],
   "token_usage": {
-    "input": 4152,
-    "output": 307,
-    "total": 4459
+    "input": 3100,
+    "output": 250,
+    "total": 3350
   },
-  "latency_ms": 5146,
+  "latency_ms": 3951,
   "metadata": {
     "structure_path": "reports\\pageindex\\structures\\PFIZER_2021_10K_structure.json",
     "pdf_path": "datasets\\raw\\financebench\\pdfs\\PFIZER_2021_10K.pdf",
     "selected_pages_one_indexed": [
-      63,
-      76,
-      10
+      59,
+      72,
+      61
     ],
     "max_pages": 3,
     "adapter_mode": "tree_page_scoring",

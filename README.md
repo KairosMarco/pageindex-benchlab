@@ -135,14 +135,18 @@ Completed:
 - PageIndex expanded retrieval-only QA now exists:
   - `reports/pageindex/expanded_partial_summary.md`
   - `reports/pageindex/evidence_eval_qa_expanded_25.json`
-  - Current expanded PageIndex retrieval-only result: `25` generated QA outputs, average evidence recall `0.760`, average citation precision `0.253`.
+  - Current expanded PageIndex retrieval-only result: `25` generated QA outputs, average evidence recall `1.000`, average citation precision `0.347`.
+- PageIndex expanded ranking diagnostics now explain the improvement from the legacy scorer to the current finance line-item scorer:
+  - Legacy scorer: evidence recall `0.760`, citation precision `0.253`.
+  - Current scorer: evidence recall `1.000`, citation precision `0.347`.
+  - Diagnostic report: `reports/pageindex/pageindex_ranking_diagnostics.md`.
 - PageIndex expanded LLM answer generation and judging now exists:
   - `reports/pageindex_expanded_llm_diagnostics.md`
   - `reports/expanded_pageindex_llm_validation_report.json`
-  - Current expanded PageIndex LLM result: evidence recall `0.760`, citation precision `0.253`, answer accuracy `0.760`, average total tokens `3,046`, average latency `5,787 ms`.
+  - Current expanded PageIndex LLM result: evidence recall `1.000`, citation precision `0.347`, answer accuracy `0.920`, average total tokens `2,882`, average latency `4,840 ms`.
 - Expanded cross-method cost/quality summary now includes PageIndex:
   - LlamaIndex Vector: evidence recall `1.000`, answer accuracy `0.920`, average total tokens `2,543`.
-  - PageIndex: evidence recall `0.760`, answer accuracy `0.760`, average total tokens `3,046`.
+  - PageIndex: evidence recall `1.000`, answer accuracy `0.920`, average total tokens `2,882`.
   - Long-context: evidence recall `0.800`, answer accuracy `0.920`, average total tokens `92,500`.
 - PageIndex upstream contribution drafts now exist:
   - `docs/upstream-pageindex-benchmark-issue.md`
@@ -319,5 +323,5 @@ A GPU may become useful later for local LLMs, large embedding jobs, or large rer
 
 1. Use the PageIndex upstream issue and PR drafts as the first contribution candidates.
 2. Open a small PageIndex upstream PR for JSON response resilience and conservative fallback handling.
-3. Investigate PageIndex ranking failures on the six expanded evidence-miss questions.
+3. Turn the PageIndex ranking diagnostics into a small upstream benchmark/retrieval note, including the legacy-vs-current scorer comparison.
 4. Add GraphRAG and HyperGraphRAG after the expanded baselines are stable.

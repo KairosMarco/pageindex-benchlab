@@ -10,7 +10,12 @@
       "section": "PepsiCo Reports First-Quarter 2023 Results; Raises Full-Year Guidance",
       "text": "PepsiCo Reports First-Quarter 2023 Results; Raises Full-Year Guidance Reported (GAAP) First-Quarter 2023 Results First-Quarter Net revenue growth 10.2% Foreign exchange impact on net revenue (2.5)% Earnings per share (EPS) $1.40 EPS change (54)% Foreign exchange impact on EPS (2)% Organic/Core (non-GAAP)1 First-Quarter 2023 Results First-Quarter Organic revenue growth 14.3% Core EPS $1.50 Core constant currency EPS change 18% PURCHASE, N.Y. - April 25, 2023 - PepsiCo, Inc. (NASDAQ: PEP) today re",
       "metadata": {
-        "score": 10,
+        "score": 14.125,
+        "phrase_boost": 0,
+        "finance_boost": 4.125,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
         "matched_page_terms": [
           "full",
           "guidance"
@@ -30,7 +35,12 @@
       "section": "2023 guidance",
       "text": " we believe are not indicative of ongoing performance or that we believe impact comparability with the prior year. 2023 guidance Our 2023 organic revenue growth guidance excludes the impact of acquisitions and divestitures, foreign exchange translation and the impact of a 53rd reporting week in 2022. Our 2023 core effective tax rate guidance and 2023 core constant currency EPS growth guidance exclude the mark-to-market net impact included in corporate unallocated expenses, restructuring and impa",
       "metadata": {
-        "score": 8,
+        "score": 10.75,
+        "phrase_boost": 0,
+        "finance_boost": 2.75,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
         "matched_page_terms": [
           "full",
           "guidance"
@@ -45,20 +55,23 @@
     },
     {
       "document_id": "PEPSICO_2023Q1_EARNINGS",
-      "page": 3,
-      "section": "Guidance and Outlook",
-      "text": "Guidance and Outlook The Company provides guidance on a non-GAAP basis as we cannot predict certain elements which are included in reported GAAP results, including the impact of foreign exchange translation and commodity mark-to-market net impacts. For fiscal year 2023, the Company now expects to deliver 8 percent organic revenue growth (previously 6 percent), and 9 percent core constant currency EPS growth (previously 8 percent). Consistent with its previous guidance for 2023, the Company conti",
+      "page": 11,
+      "section": "2023 guidance",
+      "text": "PepsiCo, Inc. and Subsidiaries Reconciliation of GAAP and Non-GAAP Information Organic Revenue Growth Rates 12 Weeks Ended March 25, 2023 (unaudited) 12 Weeks Ended 3/25/2023 Impact of Impact of Net Revenue Year over Year % Change Reported % Change, GAAP Measure Foreign exchange translation Acquisitions and divestitures Organic % Change, Non-GAAP Measure(b) Organic volume(c) Effective net pricing Frito-Lay North America 15 % — — 16 % — 16 Quaker Foods North America 9 % 1 — 10 % (5) 15 PepsiCo Be",
       "metadata": {
-        "score": 5,
-        "matched_page_terms": [
-          "guidance"
+        "score": 8.75,
+        "phrase_boost": 0,
+        "finance_boost": 6.75,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
         ],
+        "matched_page_terms": [],
         "matched_section_terms": [
           "guidance"
         ],
-        "node_id": "0006",
-        "start_index": 3,
-        "end_index": 3
+        "node_id": "0014",
+        "start_index": 10,
+        "end_index": 11
       }
     }
   ],
@@ -98,7 +111,12 @@
       "action": "score_page",
       "target": "page 1",
       "metadata": {
-        "score": 10,
+        "score": 14.125,
+        "phrase_boost": 0,
+        "finance_boost": 4.125,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
         "section": "PepsiCo Reports First-Quarter 2023 Results; Raises Full-Year Guidance",
         "matched_page_terms": [
           "full",
@@ -115,7 +133,12 @@
       "action": "score_page",
       "target": "page 10",
       "metadata": {
-        "score": 8,
+        "score": 10.75,
+        "phrase_boost": 0,
+        "finance_boost": 2.75,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
         "section": "2023 guidance",
         "matched_page_terms": [
           "full",
@@ -129,13 +152,16 @@
     {
       "step": 6,
       "action": "score_page",
-      "target": "page 3",
+      "target": "page 11",
       "metadata": {
-        "score": 5,
-        "section": "Guidance and Outlook",
-        "matched_page_terms": [
-          "guidance"
+        "score": 8.75,
+        "phrase_boost": 0,
+        "finance_boost": 6.75,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
         ],
+        "section": "2023 guidance",
+        "matched_page_terms": [],
         "matched_section_terms": [
           "guidance"
         ]
@@ -147,14 +173,14 @@
     "output": null,
     "total": null
   },
-  "latency_ms": 29,
+  "latency_ms": 21,
   "metadata": {
     "structure_path": "reports\\pageindex\\structures\\PEPSICO_2023Q1_EARNINGS_structure.json",
     "pdf_path": "datasets\\raw\\financebench\\pdfs\\PEPSICO_2023Q1_EARNINGS.pdf",
     "selected_pages_one_indexed": [
       1,
       10,
-      3
+      11
     ],
     "max_pages": 3,
     "adapter_mode": "tree_page_scoring",

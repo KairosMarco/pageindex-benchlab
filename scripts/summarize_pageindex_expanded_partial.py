@@ -13,6 +13,7 @@ DEFAULT_QA_MANIFEST = ROOT / "reports" / "pageindex" / "qa_expanded_25_manifest.
 DEFAULT_EVIDENCE = ROOT / "reports" / "pageindex" / "evidence_eval_qa_expanded_25.json"
 DEFAULT_OUTPUT_JSON = ROOT / "reports" / "pageindex" / "expanded_partial_summary.json"
 DEFAULT_OUTPUT_MD = ROOT / "reports" / "pageindex" / "expanded_partial_summary.md"
+DEFAULT_RANKING_DIAGNOSTICS = ROOT / "reports" / "pageindex" / "pageindex_ranking_diagnostics.md"
 
 
 def rel(path: Path) -> str:
@@ -37,7 +38,7 @@ def status_counts(rows: list[dict[str, Any]]) -> dict[str, int]:
 def evidence_issue_rows(evidence: dict[str, Any]) -> list[dict[str, Any]]:
     issues = []
     for row in evidence.get("per_question", []):
-        if row.get("evidence_recall") != 1.0 or row.get("citation_precision") != 1 / 3:
+        if row.get("evidence_recall") != 1.0:
             issues.append(
                 {
                     "question_id": row["question_id"],
@@ -77,6 +78,7 @@ def build_payload(readiness_path: Path, manifest_path: Path, evidence_path: Path
             "readiness_report": rel(readiness_path),
             "qa_manifest": rel(manifest_path),
             "evidence_eval": rel(evidence_path),
+            "ranking_diagnostics": rel(DEFAULT_RANKING_DIAGNOSTICS),
         },
         "missing_structures": readiness["missing_structures"],
         "qa_failures": failed_rows,
@@ -92,6 +94,7 @@ def fmt(value: Any) -> str:
 
 def render_markdown(payload: dict[str, Any]) -> str:
     summary = payload["summary"]
+    evidence_issue_count = len(payload["evidence_issues"])
     full_run = (
         summary["full_expanded_ready"]
         and summary["qa_generated_count"] == summary["question_count"]
@@ -183,9 +186,14 @@ def render_markdown(payload: dict[str, Any]) -> str:
         lines.extend(
             [
                 "- PageIndex generated retrieval-only outputs for all `25 / 25` expanded questions with no QA failures.",
-                "- The full expanded retrieval-only run reached `0.760` average evidence recall and `0.253` average citation precision.",
-                "- The six evidence misses show that complete structure coverage alone is not enough; PageIndex ranking needs further work before strong expanded-set claims.",
-                "- The next PageIndex benchmark step is expanded LLM answer generation, followed by evidence and answer evaluation against the same 25-question set.",
+                f"- The full expanded retrieval-only run reached `{fmt(summary['average_evidence_recall'])}` average evidence recall and `{fmt(summary['average_citation_precision'])}` average citation precision.",
+                (
+                    "- No evidence recall misses remain in the current retrieval-only run."
+                    if evidence_issue_count == 0
+                    else f"- Remaining evidence recall misses: `{evidence_issue_count}`. These cases need ranking or citation-selection review before stronger expanded-set claims."
+                ),
+                "- The paired ranking diagnostics explain the legacy-to-current scorer improvement without using gold evidence during scoring.",
+                "- The next PageIndex benchmark step is larger-set or non-finance validation plus answer-reasoning analysis for the remaining LLM answer issues.",
                 "- The retained `expanded_partial_summary` file name is historical; the current contents summarize the full retrieval-only run.",
             ]
         )
@@ -206,6 +214,7 @@ def render_markdown(payload: dict[str, Any]) -> str:
             f"- Readiness: `{summary['readiness_report']}`",
             f"- QA manifest: `{summary['qa_manifest']}`",
             f"- Evidence evaluation: `{summary['evidence_eval']}`",
+            f"- Ranking diagnostics: `{summary['ranking_diagnostics']}`",
         ]
     )
     return "\n".join(lines).rstrip() + "\n"

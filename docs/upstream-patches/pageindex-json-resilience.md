@@ -51,10 +51,10 @@ Generated: COSTCO_2021_10K, JPMORGAN_2023Q2_10Q, NIKE_2023_10K
 Final status: 11 / 11 unique MVP PDFs indexed
 Expanded status: 24 / 24 unique expanded PDFs indexed
 Expanded retrieval-only QA: 25 / 25 questions generated
-Expanded retrieval-only evidence recall: 0.760
-Expanded retrieval-only citation precision: 0.253
+Expanded retrieval-only evidence recall: 1.000
+Expanded retrieval-only citation precision: 0.347
 Expanded LLM QA: 25 / 25 answers generated
-Expanded LLM answer accuracy: 0.760
+Expanded LLM answer accuracy: 0.920
 ```
 
 ## Upstream Contribution Candidate

@@ -13,100 +13,15 @@
       "generated": 25
     },
     "evidence_result_count": 25,
-    "average_evidence_recall": 0.76,
-    "average_citation_precision": 0.2533333333333333,
+    "average_evidence_recall": 1.0,
+    "average_citation_precision": 0.3466666666666666,
     "full_expanded_ready": true,
     "readiness_report": "reports\\pageindex\\expanded_readiness.json",
     "qa_manifest": "reports\\pageindex\\qa_expanded_25_manifest.json",
-    "evidence_eval": "reports\\pageindex\\evidence_eval_qa_expanded_25.json"
+    "evidence_eval": "reports\\pageindex\\evidence_eval_qa_expanded_25.json",
+    "ranking_diagnostics": "reports\\pageindex\\pageindex_ranking_diagnostics.md"
   },
   "missing_structures": [],
   "qa_failures": [],
-  "evidence_issues": [
-    {
-      "question_id": "fb_exp_014",
-      "doc_name": "AMERICANEXPRESS_2022_10K",
-      "evidence_recall": 0.0,
-      "citation_precision": 0.0,
-      "gold_pages_one_indexed": [
-        96
-      ],
-      "predicted_pages": [
-        104,
-        121,
-        134
-      ]
-    },
-    {
-      "question_id": "fb_exp_017",
-      "doc_name": "CORNING_2022_10K",
-      "evidence_recall": 0.0,
-      "citation_precision": 0.0,
-      "gold_pages_one_indexed": [
-        60
-      ],
-      "predicted_pages": [
-        34,
-        16,
-        66
-      ]
-    },
-    {
-      "question_id": "fb_exp_020",
-      "doc_name": "CVSHEALTH_2022_10K",
-      "evidence_recall": 0.0,
-      "citation_precision": 0.0,
-      "gold_pages_one_indexed": [
-        108,
-        110
-      ],
-      "predicted_pages": [
-        30,
-        32,
-        63
-      ]
-    },
-    {
-      "question_id": "fb_exp_022",
-      "doc_name": "COCACOLA_2021_10K",
-      "evidence_recall": 0.0,
-      "citation_precision": 0.0,
-      "gold_pages_one_indexed": [
-        62
-      ],
-      "predicted_pages": [
-        68,
-        77,
-        85
-      ]
-    },
-    {
-      "question_id": "fb_exp_023",
-      "doc_name": "PFIZER_2021_10K",
-      "evidence_recall": 0.0,
-      "citation_precision": 0.0,
-      "gold_pages_one_indexed": [
-        59
-      ],
-      "predicted_pages": [
-        63,
-        76,
-        10
-      ]
-    },
-    {
-      "question_id": "fb_exp_025",
-      "doc_name": "ULTABEAUTY_2023Q4_EARNINGS",
-      "evidence_recall": 0.0,
-      "citation_precision": 0.0,
-      "gold_pages_one_indexed": [
-        2
-      ],
-      "predicted_pages": [
-        3,
-        6,
-        9
-      ]
-    }
-  ]
+  "evidence_issues": []
 }

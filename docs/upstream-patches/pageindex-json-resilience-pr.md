@@ -67,10 +67,10 @@ Result after the patch:
 PageIndex structures generated: 11 / 11 unique MVP PDFs
 Expanded structures generated: 24 / 24 unique expanded PDFs
 Expanded retrieval-only QA: 25 / 25 questions generated
-Expanded retrieval-only evidence recall: 0.760
-Expanded retrieval-only citation precision: 0.253
+Expanded retrieval-only evidence recall: 1.000
+Expanded retrieval-only citation precision: 0.347
 Expanded LLM QA: 25 / 25 answers generated
-Expanded LLM answer accuracy: 0.760
+Expanded LLM answer accuracy: 0.920
 ```
 
 Local benchmark notes:

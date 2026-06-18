@@ -2,7 +2,7 @@
   "method": "pageindex_tree_qa",
   "question_id": "fb_mvp_010",
   "question": "What Was AMCOR's Adjusted Non GAAP EBITDA for FY 2023",
-  "answer": "Based on the provided document pages, Amcor's Adjusted Non-GAAP EBITDA for the fiscal year 2023 was $2,018 million.\n\nThis figure is presented on page 12 in the reconciliation table for the \"Twelve Months Ended June 30, 2023\" (Page 12).",
+  "answer": "Amcor's Adjusted Non-GAAP EBITDA for FY 2023 was $2,018 million. \n\nThis information is found on page 12, in the table for the \"Twelve Months Ended June 30, 2023\" under the \"Adjusted EBITDA\" row.",
   "citations": [
     {
       "document_id": "AMCOR_2023Q4_EARNINGS",
@@ -10,11 +10,50 @@
       "section": "Reconciliation of Non-GAAP Measures",
       "text": "Reconciliation of Non-GAAP Measures Reconciliation of adjusted Earnings before interest, tax, depreciation and amortization (EBITDA), Earnings before interest and tax (EBIT), Net income, Earnings per share (EPS) and Free Cash Flow Three Months Ended June 30, 2022 Three Months Ended June 30, 2023 ($ million) EBITDA EBIT Net Income EPS (Diluted US cents)(1) EBITDA EBIT Net Income EPS (Diluted US cents)(1) Net income attributable to Amcor 109 109 109 7.3 181 181 181 12.3 Net income attributable to ",
       "metadata": {
-        "score": 27,
+        "score": 71.0,
+        "phrase_boost": 6,
+        "finance_boost": 44.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "requested_year_present",
+          "adjusted_ebitda_line_item",
+          "ebitda_reconciliation_table"
+        ],
         "matched_page_terms": [
           "adjusted",
           "ebitda",
           "gaap",
+          "non",
+          "reconciliation"
+        ],
+        "matched_section_terms": [
+          "gaap",
+          "non",
+          "reconciliation"
+        ],
+        "node_id": "0021",
+        "start_index": 11,
+        "end_index": 12
+      }
+    },
+    {
+      "document_id": "AMCOR_2023Q4_EARNINGS",
+      "page": 12,
+      "section": "Reconciliation of Non-GAAP Measures",
+      "text": "Twelve Months Ended June 30, 2022 Twelve Months Ended June 30, 2023 ($ million) EBITDA EBIT Net Income EPS (Diluted US cents)(1) EBITDA EBIT Net Income EPS (Diluted US cents)(1) Net income attributable to Amcor 805 805 805 52.9 1,048 1,048 1,048 70.5 Net income attributable to non-controlling interests 10 10 10 10 Tax expense 300 300 193 193 Interest expense, net 135 135 259 259 Depreciation and amortization 579 569 EBITDA, EBIT, Net income and EPS 1,829 1,250 805 52.9 2,080 1,510 1,048 70.5 201",
+      "metadata": {
+        "score": 65.0,
+        "phrase_boost": 3,
+        "finance_boost": 44.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "requested_year_present",
+          "adjusted_ebitda_line_item",
+          "ebitda_reconciliation_table"
+        ],
+        "matched_page_terms": [
+          "adjusted",
+          "ebitda",
           "non",
           "reconciliation"
         ],
@@ -34,7 +73,13 @@
       "section": "Presentation of non-GAAP information",
       "text": "ly. Actual results could differ materially from those currently anticipated due to a number of risks and uncertainties. None of Amcor or any of its respective directors, executive officers, or advisors provide any representation, assurance, or guarantee that the occurrence of the events expressed or implied in any forward-looking statements will actually occur. Risks and uncertainties that could cause actual results to differ from expectations include, but are not limited to: changes in consumer",
       "metadata": {
-        "score": 25,
+        "score": 53.0,
+        "phrase_boost": 6,
+        "finance_boost": 28.0,
+        "finance_boost_reasons": [
+          "requested_year_present",
+          "adjusted_ebitda_line_item"
+        ],
         "matched_page_terms": [
           "adjusted",
           "ebitda",
@@ -49,29 +94,6 @@
         "node_id": "0015",
         "start_index": 7,
         "end_index": 7
-      }
-    },
-    {
-      "document_id": "AMCOR_2023Q4_EARNINGS",
-      "page": 12,
-      "section": "Reconciliation of Non-GAAP Measures",
-      "text": "Twelve Months Ended June 30, 2022 Twelve Months Ended June 30, 2023 ($ million) EBITDA EBIT Net Income EPS (Diluted US cents)(1) EBITDA EBIT Net Income EPS (Diluted US cents)(1) Net income attributable to Amcor 805 805 805 52.9 1,048 1,048 1,048 70.5 Net income attributable to non-controlling interests 10 10 10 10 Tax expense 300 300 193 193 Interest expense, net 135 135 259 259 Depreciation and amortization 579 569 EBITDA, EBIT, Net income and EPS 1,829 1,250 805 52.9 2,080 1,510 1,048 70.5 201",
-      "metadata": {
-        "score": 21,
-        "matched_page_terms": [
-          "adjusted",
-          "ebitda",
-          "non",
-          "reconciliation"
-        ],
-        "matched_section_terms": [
-          "gaap",
-          "non",
-          "reconciliation"
-        ],
-        "node_id": "0021",
-        "start_index": 11,
-        "end_index": 12
       }
     }
   ],
@@ -131,7 +153,15 @@
       "action": "score_page",
       "target": "page 11",
       "metadata": {
-        "score": 27,
+        "score": 71.0,
+        "phrase_boost": 6,
+        "finance_boost": 44.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "requested_year_present",
+          "adjusted_ebitda_line_item",
+          "ebitda_reconciliation_table"
+        ],
         "section": "Reconciliation of Non-GAAP Measures",
         "matched_page_terms": [
           "adjusted",
@@ -150,29 +180,17 @@
     {
       "step": 7,
       "action": "score_page",
-      "target": "page 7",
-      "metadata": {
-        "score": 25,
-        "section": "Presentation of non-GAAP information",
-        "matched_page_terms": [
-          "adjusted",
-          "ebitda",
-          "gaap",
-          "non",
-          "reconciliation"
-        ],
-        "matched_section_terms": [
-          "gaap",
-          "non"
-        ]
-      }
-    },
-    {
-      "step": 8,
-      "action": "score_page",
       "target": "page 12",
       "metadata": {
-        "score": 21,
+        "score": 65.0,
+        "phrase_boost": 3,
+        "finance_boost": 44.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "requested_year_present",
+          "adjusted_ebitda_line_item",
+          "ebitda_reconciliation_table"
+        ],
         "section": "Reconciliation of Non-GAAP Measures",
         "matched_page_terms": [
           "adjusted",
@@ -186,21 +204,47 @@
           "reconciliation"
         ]
       }
+    },
+    {
+      "step": 8,
+      "action": "score_page",
+      "target": "page 7",
+      "metadata": {
+        "score": 53.0,
+        "phrase_boost": 6,
+        "finance_boost": 28.0,
+        "finance_boost_reasons": [
+          "requested_year_present",
+          "adjusted_ebitda_line_item"
+        ],
+        "section": "Presentation of non-GAAP information",
+        "matched_page_terms": [
+          "adjusted",
+          "ebitda",
+          "gaap",
+          "non",
+          "reconciliation"
+        ],
+        "matched_section_terms": [
+          "gaap",
+          "non"
+        ]
+      }
     }
   ],
   "token_usage": {
     "input": 3647,
-    "output": 345,
-    "total": 3992
+    "output": 229,
+    "total": 3876
   },
-  "latency_ms": 5721,
+  "latency_ms": 3685,
   "metadata": {
     "structure_path": "reports\\pageindex\\structures\\AMCOR_2023Q4_EARNINGS_structure.json",
     "pdf_path": "datasets\\raw\\financebench\\pdfs\\AMCOR_2023Q4_EARNINGS.pdf",
     "selected_pages_one_indexed": [
       11,
-      7,
-      12
+      12,
+      7
     ],
     "max_pages": 3,
     "adapter_mode": "tree_page_scoring",

@@ -7,13 +7,13 @@
     "structure_path": "reports\\pageindex\\structures\\3M_2018_10K_structure.json",
     "pdf_path": "datasets\\raw\\financebench\\pdfs\\3M_2018_10K.pdf",
     "selected_pages_one_indexed": [
-      49,
       60,
-      83
+      46,
+      49
     ],
     "citation_count": 3,
     "max_pages": 3,
-    "latency_ms": 5453,
+    "latency_ms": 4695,
     "llm_enabled": true,
     "model": "deepseek/deepseek-v4-pro"
   },
@@ -25,13 +25,13 @@
     "structure_path": "reports\\pageindex\\structures\\AMAZON_2017_10K_structure.json",
     "pdf_path": "datasets\\raw\\financebench\\pdfs\\AMAZON_2017_10K.pdf",
     "selected_pages_one_indexed": [
-      49,
       38,
+      49,
       48
     ],
     "citation_count": 3,
     "max_pages": 3,
-    "latency_ms": 5416,
+    "latency_ms": 4385,
     "llm_enabled": true,
     "model": "deepseek/deepseek-v4-pro"
   },
@@ -43,13 +43,13 @@
     "structure_path": "reports\\pageindex\\structures\\AMD_2022_10K_structure.json",
     "pdf_path": "datasets\\raw\\financebench\\pdfs\\AMD_2022_10K.pdf",
     "selected_pages_one_indexed": [
-      60,
       4,
-      7
+      60,
+      43
     ],
     "citation_count": 3,
     "max_pages": 3,
-    "latency_ms": 8793,
+    "latency_ms": 6577,
     "llm_enabled": true,
     "model": "deepseek/deepseek-v4-pro"
   },
@@ -61,13 +61,13 @@
     "structure_path": "reports\\pageindex\\structures\\AMD_2022_10K_structure.json",
     "pdf_path": "datasets\\raw\\financebench\\pdfs\\AMD_2022_10K.pdf",
     "selected_pages_one_indexed": [
-      59,
       58,
-      51
+      59,
+      101
     ],
     "citation_count": 3,
     "max_pages": 3,
-    "latency_ms": 5210,
+    "latency_ms": 3894,
     "llm_enabled": true,
     "model": "deepseek/deepseek-v4-pro"
   },
@@ -80,12 +80,12 @@
     "pdf_path": "datasets\\raw\\financebench\\pdfs\\BESTBUY_2023_10K.pdf",
     "selected_pages_one_indexed": [
       40,
-      25,
-      28
+      51,
+      54
     ],
     "citation_count": 3,
     "max_pages": 3,
-    "latency_ms": 12429,
+    "latency_ms": 8080,
     "llm_enabled": true,
     "model": "deepseek/deepseek-v4-pro"
   },
@@ -103,7 +103,7 @@
     ],
     "citation_count": 3,
     "max_pages": 3,
-    "latency_ms": 7008,
+    "latency_ms": 5407,
     "llm_enabled": true,
     "model": "deepseek/deepseek-v4-pro"
   },
@@ -117,11 +117,11 @@
     "selected_pages_one_indexed": [
       38,
       51,
-      45
+      53
     ],
     "citation_count": 3,
     "max_pages": 3,
-    "latency_ms": 3446,
+    "latency_ms": 4471,
     "llm_enabled": true,
     "model": "deepseek/deepseek-v4-pro"
   },
@@ -134,12 +134,12 @@
     "pdf_path": "datasets\\raw\\financebench\\pdfs\\MICROSOFT_2016_10K.pdf",
     "selected_pages_one_indexed": [
       52,
-      31,
-      58
+      33,
+      32
     ],
     "citation_count": 3,
     "max_pages": 3,
-    "latency_ms": 3259,
+    "latency_ms": 3186,
     "llm_enabled": true,
     "model": "deepseek/deepseek-v4-pro"
   },
@@ -157,7 +157,7 @@
     ],
     "citation_count": 3,
     "max_pages": 3,
-    "latency_ms": 5144,
+    "latency_ms": 3487,
     "llm_enabled": true,
     "model": "deepseek/deepseek-v4-pro"
   },
@@ -170,12 +170,12 @@
     "pdf_path": "datasets\\raw\\financebench\\pdfs\\AMCOR_2023Q4_EARNINGS.pdf",
     "selected_pages_one_indexed": [
       11,
-      7,
-      12
+      12,
+      7
     ],
     "citation_count": 3,
     "max_pages": 3,
-    "latency_ms": 5723,
+    "latency_ms": 3686,
     "llm_enabled": true,
     "model": "deepseek/deepseek-v4-pro"
   },
@@ -189,11 +189,11 @@
     "selected_pages_one_indexed": [
       85,
       54,
-      87
+      84
     ],
     "citation_count": 3,
     "max_pages": 3,
-    "latency_ms": 4318,
+    "latency_ms": 5423,
     "llm_enabled": true,
     "model": "deepseek/deepseek-v4-pro"
   },
@@ -207,11 +207,11 @@
     "selected_pages_one_indexed": [
       4,
       6,
-      8
+      12
     ],
     "citation_count": 3,
     "max_pages": 3,
-    "latency_ms": 3672,
+    "latency_ms": 3160,
     "llm_enabled": true,
     "model": "deepseek/deepseek-v4-pro"
   },
@@ -224,12 +224,12 @@
     "pdf_path": "datasets\\raw\\financebench\\pdfs\\ADOBE_2016_10K.pdf",
     "selected_pages_one_indexed": [
       62,
-      47,
-      42
+      95,
+      92
     ],
     "citation_count": 3,
     "max_pages": 3,
-    "latency_ms": 5618,
+    "latency_ms": 3834,
     "llm_enabled": true,
     "model": "deepseek/deepseek-v4-pro"
   },
@@ -241,13 +241,13 @@
     "structure_path": "reports\\pageindex\\structures\\AMERICANEXPRESS_2022_10K_structure.json",
     "pdf_path": "datasets\\raw\\financebench\\pdfs\\AMERICANEXPRESS_2022_10K.pdf",
     "selected_pages_one_indexed": [
-      104,
-      121,
-      134
+      47,
+      96,
+      136
     ],
     "citation_count": 3,
     "max_pages": 3,
-    "latency_ms": 7110,
+    "latency_ms": 8201,
     "llm_enabled": true,
     "model": "deepseek/deepseek-v4-pro"
   },
@@ -265,7 +265,7 @@
     ],
     "citation_count": 3,
     "max_pages": 3,
-    "latency_ms": 3637,
+    "latency_ms": 4471,
     "llm_enabled": true,
     "model": "deepseek/deepseek-v4-pro"
   },
@@ -279,11 +279,11 @@
     "selected_pages_one_indexed": [
       68,
       41,
-      80
+      76
     ],
     "citation_count": 3,
     "max_pages": 3,
-    "latency_ms": 6956,
+    "latency_ms": 4301,
     "llm_enabled": true,
     "model": "deepseek/deepseek-v4-pro"
   },
@@ -295,13 +295,13 @@
     "structure_path": "reports\\pageindex\\structures\\CORNING_2022_10K_structure.json",
     "pdf_path": "datasets\\raw\\financebench\\pdfs\\CORNING_2022_10K.pdf",
     "selected_pages_one_indexed": [
-      34,
-      16,
-      66
+      60,
+      20,
+      93
     ],
     "citation_count": 3,
     "max_pages": 3,
-    "latency_ms": 5124,
+    "latency_ms": 5004,
     "llm_enabled": true,
     "model": "deepseek/deepseek-v4-pro"
   },
@@ -319,7 +319,7 @@
     ],
     "citation_count": 3,
     "max_pages": 3,
-    "latency_ms": 5350,
+    "latency_ms": 3699,
     "llm_enabled": true,
     "model": "deepseek/deepseek-v4-pro"
   },
@@ -331,13 +331,13 @@
     "structure_path": "reports\\pageindex\\structures\\AMERICANWATERWORKS_2020_10K_structure.json",
     "pdf_path": "datasets\\raw\\financebench\\pdfs\\AMERICANWATERWORKS_2020_10K.pdf",
     "selected_pages_one_indexed": [
-      66,
       86,
+      66,
       93
     ],
     "citation_count": 3,
     "max_pages": 3,
-    "latency_ms": 4373,
+    "latency_ms": 4262,
     "llm_enabled": true,
     "model": "deepseek/deepseek-v4-pro"
   },
@@ -349,13 +349,13 @@
     "structure_path": "reports\\pageindex\\structures\\CVSHEALTH_2022_10K_structure.json",
     "pdf_path": "datasets\\raw\\financebench\\pdfs\\CVSHEALTH_2022_10K.pdf",
     "selected_pages_one_indexed": [
-      30,
-      32,
-      63
+      110,
+      133,
+      108
     ],
     "citation_count": 3,
     "max_pages": 3,
-    "latency_ms": 7752,
+    "latency_ms": 6971,
     "llm_enabled": true,
     "model": "deepseek/deepseek-v4-pro"
   },
@@ -369,11 +369,11 @@
     "selected_pages_one_indexed": [
       1,
       10,
-      3
+      11
     ],
     "citation_count": 3,
     "max_pages": 3,
-    "latency_ms": 4346,
+    "latency_ms": 3785,
     "llm_enabled": true,
     "model": "deepseek/deepseek-v4-pro"
   },
@@ -386,12 +386,12 @@
     "pdf_path": "datasets\\raw\\financebench\\pdfs\\COCACOLA_2021_10K.pdf",
     "selected_pages_one_indexed": [
       68,
-      77,
-      85
+      62,
+      101
     ],
     "citation_count": 3,
     "max_pages": 3,
-    "latency_ms": 6233,
+    "latency_ms": 7020,
     "llm_enabled": true,
     "model": "deepseek/deepseek-v4-pro"
   },
@@ -403,13 +403,13 @@
     "structure_path": "reports\\pageindex\\structures\\PFIZER_2021_10K_structure.json",
     "pdf_path": "datasets\\raw\\financebench\\pdfs\\PFIZER_2021_10K.pdf",
     "selected_pages_one_indexed": [
-      63,
-      76,
-      10
+      59,
+      72,
+      61
     ],
     "citation_count": 3,
     "max_pages": 3,
-    "latency_ms": 5148,
+    "latency_ms": 3952,
     "llm_enabled": true,
     "model": "deepseek/deepseek-v4-pro"
   },
@@ -421,13 +421,13 @@
     "structure_path": "reports\\pageindex\\structures\\GENERALMILLS_2020_10K_structure.json",
     "pdf_path": "datasets\\raw\\financebench\\pdfs\\GENERALMILLS_2020_10K.pdf",
     "selected_pages_one_indexed": [
-      30,
       50,
-      29
+      66,
+      30
     ],
     "citation_count": 3,
     "max_pages": 3,
-    "latency_ms": 5929,
+    "latency_ms": 4281,
     "llm_enabled": true,
     "model": "deepseek/deepseek-v4-pro"
   },
@@ -439,13 +439,13 @@
     "structure_path": "reports\\pageindex\\structures\\ULTABEAUTY_2023Q4_EARNINGS_structure.json",
     "pdf_path": "datasets\\raw\\financebench\\pdfs\\ULTABEAUTY_2023Q4_EARNINGS.pdf",
     "selected_pages_one_indexed": [
-      3,
-      6,
-      9
+      2,
+      1,
+      6
     ],
     "citation_count": 3,
     "max_pages": 3,
-    "latency_ms": 7270,
+    "latency_ms": 4790,
     "llm_enabled": true,
     "model": "deepseek/deepseek-v4-pro"
   }

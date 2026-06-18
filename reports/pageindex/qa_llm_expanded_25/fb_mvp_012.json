@@ -2,7 +2,7 @@
   "method": "pageindex_tree_qa",
   "question_id": "fb_mvp_012",
   "question": "Which business segment of JnJ will be treated as a discontinued operation from August 30, 2023 onward?",
-  "answer": "The Consumer Health business will be treated as a discontinued operation from August 30, 2023 onward (page 4).",
+  "answer": "The Consumer Health business segment will be treated as a discontinued operation (Page 4).",
   "citations": [
     {
       "document_id": "JOHNSON_JOHNSON_2023_8K_dated-2023-08-30",
@@ -10,7 +10,15 @@
       "section": "Exhibit 99.1 Johnson & Johnson Announces Updated Financials and 2023 Guidance Following Completion of the Kenvue Separation",
       "text": "Exhibit 99.1 Johnson & Johnson Announces Updated Financials and 2023 Guidance Following Completion of the Kenvue Separation • Company expects increased 2023 Reported Sales Growth of 7.0% - 8.0%, Operational Sales Growth of 7.5% - 8.5%, and Adjusted Operational Sales Growth of 6.2% - 7.2%; Figures exclude the COVID-19 Vaccine • Company expects 2023 Adjusted Reported Earnings Per Share (EPS) of $10.00 - $10.10, reflecting increased growth of 12.5% at the mid-point and Adjusted Operational EPS of $",
       "metadata": {
-        "score": 37,
+        "score": 77.0,
+        "phrase_boost": 3,
+        "finance_boost": 40.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "requested_year_present",
+          "consumer_health_term",
+          "discontinued_operations_term"
+        ],
         "matched_page_terms": [
           "august",
           "business",
@@ -38,7 +46,14 @@
       "section": "UPDATED FULL-YEAR 2023 GUIDANCE:",
       "text": "terial to Johnson & Johnson's results computed in accordance with GAAP. ($ in Billions, except EPS; Shares in Millions) August 2023 (excl. Consumer Health) July 2023 (incl. Consumer Health) Adjusted Operational Sales Change vs. Prior Year / Mid-point 6.2% – 7.2% / 6.7% 6.0% – 7.0% / 6.5% Operational Sales / Mid-point Change vs. Prior Year / Mid-point $83.6B – $84.4B / $84.0B 7.5% – 8.5% / 8.0% $99.3B – $100.3B / $99.8B 7.0% – 8.0% / 7.5% Reported Sales / Mid-point Change vs. Prior Year / Mid-poi",
       "metadata": {
-        "score": 18,
+        "score": 46.0,
+        "phrase_boost": 0,
+        "finance_boost": 28.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "requested_year_present",
+          "consumer_health_term"
+        ],
         "matched_page_terms": [
           "august",
           "consumer",
@@ -55,22 +70,27 @@
     },
     {
       "document_id": "JOHNSON_JOHNSON_2023_8K_dated-2023-08-30",
-      "page": 8,
-      "section": "NOTE TO INVESTORS CONCERNING FORWARD-LOOKING STATEMENTS:",
-      "text": "regarding, among other things: future operating and financial performance, product development, and market position and business strategy. The reader is cautioned not to rely on these forward-looking statements. These statements are based on current expectations of future events. If underlying assumptions prove inaccurate or known or unknown risks or uncertainties materialize, actual results could vary materially from the expectations and projections of Johnson & Johnson. Risks and uncertainties",
+      "page": 12,
+      "section": "Johnson & Johnson and Subsidiaries Condensed Consolidated Statement of Earnings",
+      "text": "5,019 11.8 Provision for/(Benefit from) taxes on income (796) (3.9) 930 4.3 134 0.3 Net earnings/(loss) from Continuing Operations $ (491) (2.3) % $ 5,376 25.0 % $ 4,885 11.5 % Net earnings/(loss) from Discontinued Operations, net of tax 423 (232) 191 Net earnings/(loss) $ (68) $ 5,144 $ 5,076 Net Earnings (loss) per Share (Diluted) from Continuing Operations $ (0.19) $ 2.05 $ 1.86 Net Earnings (loss) per Share (Diluted) from Discontinued Operations $ 0.16 $ (0.09) $ 0.07 Average shares outstand",
       "metadata": {
-        "score": 15,
+        "score": 40.0,
+        "phrase_boost": 3,
+        "finance_boost": 28.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "requested_year_present",
+          "discontinued_operations_term"
+        ],
         "matched_page_terms": [
-          "business",
-          "consumer",
+          "discontinued",
           "health",
-          "jnj",
-          "separation"
+          "operations"
         ],
         "matched_section_terms": [],
-        "node_id": "0012",
-        "start_index": 8,
-        "end_index": 8
+        "node_id": "0015",
+        "start_index": 12,
+        "end_index": 14
       }
     }
   ],
@@ -110,7 +130,15 @@
       "action": "score_page",
       "target": "page 4",
       "metadata": {
-        "score": 37,
+        "score": 77.0,
+        "phrase_boost": 3,
+        "finance_boost": 40.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "requested_year_present",
+          "consumer_health_term",
+          "discontinued_operations_term"
+        ],
         "section": "Exhibit 99.1 Johnson & Johnson Announces Updated Financials and 2023 Guidance Following Completion of the Kenvue Separation",
         "matched_page_terms": [
           "august",
@@ -135,7 +163,14 @@
       "action": "score_page",
       "target": "page 6",
       "metadata": {
-        "score": 18,
+        "score": 46.0,
+        "phrase_boost": 0,
+        "finance_boost": 28.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "requested_year_present",
+          "consumer_health_term"
+        ],
         "section": "UPDATED FULL-YEAR 2023 GUIDANCE:",
         "matched_page_terms": [
           "august",
@@ -151,34 +186,39 @@
     {
       "step": 6,
       "action": "score_page",
-      "target": "page 8",
+      "target": "page 12",
       "metadata": {
-        "score": 15,
-        "section": "NOTE TO INVESTORS CONCERNING FORWARD-LOOKING STATEMENTS:",
+        "score": 40.0,
+        "phrase_boost": 3,
+        "finance_boost": 28.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "requested_year_present",
+          "discontinued_operations_term"
+        ],
+        "section": "Johnson & Johnson and Subsidiaries Condensed Consolidated Statement of Earnings",
         "matched_page_terms": [
-          "business",
-          "consumer",
+          "discontinued",
           "health",
-          "jnj",
-          "separation"
+          "operations"
         ],
         "matched_section_terms": []
       }
     }
   ],
   "token_usage": {
-    "input": 2107,
-    "output": 216,
-    "total": 2323
+    "input": 2836,
+    "output": 195,
+    "total": 3031
   },
-  "latency_ms": 3669,
+  "latency_ms": 3159,
   "metadata": {
     "structure_path": "reports\\pageindex\\structures\\JOHNSON_JOHNSON_2023_8K_dated-2023-08-30_structure.json",
     "pdf_path": "datasets\\raw\\financebench\\pdfs\\JOHNSON_JOHNSON_2023_8K_dated-2023-08-30.pdf",
     "selected_pages_one_indexed": [
       4,
       6,
-      8
+      12
     ],
     "max_pages": 3,
     "adapter_mode": "tree_page_scoring",

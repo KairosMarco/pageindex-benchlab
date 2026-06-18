@@ -2,63 +2,73 @@
   "method": "pageindex_tree_qa",
   "question_id": "fb_exp_017",
   "question": "Does Corning have positive working capital based on FY2022 data? If working capital is not a useful or relevant metric for this company, then please state that and explain why.",
-  "answer": "Yes, Corning has positive working capital based on FY2022 data. The document page reports working capital of $2,278 million as of December 31, 2022. This metric is relevant, as the company states it funds its working capital with cash from operations and short-term borrowings.\n\n**Page 34**",
+  "answer": "Yes, Corning had positive working capital based on FY2022 data. \n\nWorking capital, calculated as current assets minus current liabilities, is positive:\n- Total current assets: $7,453 million (Page 60)\n- Total current liabilities: $5,175 million (Page 60)\n\nThe provided document pages do not indicate that working capital is not a useful or relevant metric for this company.",
   "citations": [
     {
       "document_id": "CORNING_2022_10K",
-      "page": 34,
-      "section": "Key Balance Sheet Data",
-      "text": "Table of Contents LIQUIDITY AND CAPITAL RESOURCES Our financial condition and liquidity are strong. We are not aware of any known trends, demands, commitments, events or uncertainties that will result in or that are reasonably likely to result in a material decrease in our liquidity. In addition, other than items discussed, there are no known material trends, favorable or unfavorable, in our capital resources and no expected material changes in the mix of such resources. Our major source of fund",
+      "page": 60,
+      "section": "Consolidated Statements of Comprehensive Income",
+      "text": "e $0.50 per share; Shares authorized 3.8 billion; Shares issued: 1.8 billion and 1.8 billion 910 907 Additional paid-in capital – common stock 16,682 16,475 Retained earnings 16,778 16,389 Treasury stock, at cost; Shares held: 977 million and 970 million (20,532) (20,263) Accumulated other comprehensive loss (1,830) (1,175) Total Corning Incorporated shareholders’ equity 12,008 12,333 Non-controlling interest 267 212 Total equity 12,275 12,545 Total Liabilities and Equity $ 29,499 $ 30,154 The a",
       "metadata": {
-        "score": 13,
+        "score": 73.0,
+        "phrase_boost": 0,
+        "finance_boost": 70.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "balance_sheet_title",
+          "total_assets_line_item",
+          "working_capital_line_items"
+        ],
         "matched_page_terms": [
-          "capital",
-          "data",
-          "working"
+          "capital"
         ],
-        "matched_section_terms": [
-          "capital",
-          "data"
-        ],
-        "node_id": "0067",
-        "start_index": 34,
-        "end_index": 35
+        "matched_section_terms": [],
+        "node_id": "0098",
+        "start_index": 59,
+        "end_index": 60
       }
     },
     {
       "document_id": "CORNING_2022_10K",
-      "page": 16,
-      "section": "Risks Related to Our Business",
-      "text": " and contract manufacturers. IT systems enable us to conduct, monitor and/or protect our business, operations, systems, data and other assets. In the ordinary course of our business, we and our providers collect, process, transmit and store sensitive data, including intellectual property, our proprietary information and that of our customers, suppliers and business partners, as well as personally identifiable information. Intrusion into a supplier or contract manufacturer system not integrated w",
+      "page": 20,
+      "section": "General Risk Factors",
+      "text": "nistrative 2.4 1.8 0.6 Research and development 3.9 1.9 2.0 Warehouse 3.8 3.0 0.8 Total 65.8 27.4 38.4 Total assets and capital expenditures by reportable segment are included in Note 19 (Reportable Segments) in the accompanying notes to the consolidated financial statements. Information concerning lease commitments is included in Note 6 (Leases) in the accompanying notes to the consolidated financial statements. Item 3. Legal Proceedings Corning is a defendant in various lawsuits and is subject",
       "metadata": {
-        "score": 9,
+        "score": 29.125,
+        "phrase_boost": 0,
+        "finance_boost": 23.125,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "total_assets_line_item"
+        ],
         "matched_page_terms": [
           "based",
-          "data",
-          "positive"
+          "capital"
         ],
         "matched_section_terms": [],
-        "node_id": "0027",
-        "start_index": 13,
-        "end_index": 17
+        "node_id": "0028",
+        "start_index": 17,
+        "end_index": 20
       }
     },
     {
       "document_id": "CORNING_2022_10K",
-      "page": 66,
-      "section": "1. Summary of Significant Accounting Policies",
-      "text": "cted term and forfeiture rates. Corning utilizes a blended approach for calculating the volatility assumption, which is based on the weighted average of the short-term implied volatility, the most recent volatility for the period equal to the expected term and the most recent 15-year historical volatility. The risk-free rate used is the implied rate for a zero-coupon U.S. Treasury bond with a term equal to the option’s expected term. The expected term is the period the options are expected to be",
+      "page": 93,
+      "section": "New Accounting Standards",
+      "text": "Table of Contents 14. Hedging Activities (Continued) The following tables summarize the effect in the consolidated statements of income relating to Corning’s derivative financial instruments (in millions). The accumulated derivative gain included in accumulated other comprehensive loss on the consolidated balance sheets as of December 31, 2022 and 2021 is $19 million and $52 million, respectively. Derivatives hedging relationships Gain (loss) recognized in other comprehensive income (OCI) Locati",
       "metadata": {
-        "score": 9,
-        "matched_page_terms": [
-          "based",
-          "capital",
-          "useful"
+        "score": 24.0,
+        "phrase_boost": 0,
+        "finance_boost": 24.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "balance_sheet_title"
         ],
+        "matched_page_terms": [],
         "matched_section_terms": [],
-        "node_id": "0103",
-        "start_index": 63,
-        "end_index": 71
+        "node_id": "0112",
+        "start_index": 70,
+        "end_index": 93
       }
     }
   ],
@@ -116,32 +126,40 @@
     {
       "step": 6,
       "action": "score_page",
-      "target": "page 34",
+      "target": "page 60",
       "metadata": {
-        "score": 13,
-        "section": "Key Balance Sheet Data",
-        "matched_page_terms": [
-          "capital",
-          "data",
-          "working"
+        "score": 73.0,
+        "phrase_boost": 0,
+        "finance_boost": 70.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "balance_sheet_title",
+          "total_assets_line_item",
+          "working_capital_line_items"
         ],
-        "matched_section_terms": [
-          "capital",
-          "data"
-        ]
+        "section": "Consolidated Statements of Comprehensive Income",
+        "matched_page_terms": [
+          "capital"
+        ],
+        "matched_section_terms": []
       }
     },
     {
       "step": 7,
       "action": "score_page",
-      "target": "page 16",
+      "target": "page 20",
       "metadata": {
-        "score": 9,
-        "section": "Risks Related to Our Business",
+        "score": 29.125,
+        "phrase_boost": 0,
+        "finance_boost": 23.125,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "total_assets_line_item"
+        ],
+        "section": "General Risk Factors",
         "matched_page_terms": [
           "based",
-          "data",
-          "positive"
+          "capital"
         ],
         "matched_section_terms": []
       }
@@ -149,32 +167,34 @@
     {
       "step": 8,
       "action": "score_page",
-      "target": "page 66",
+      "target": "page 93",
       "metadata": {
-        "score": 9,
-        "section": "1. Summary of Significant Accounting Policies",
-        "matched_page_terms": [
-          "based",
-          "capital",
-          "useful"
+        "score": 24.0,
+        "phrase_boost": 0,
+        "finance_boost": 24.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "balance_sheet_title"
         ],
+        "section": "New Accounting Standards",
+        "matched_page_terms": [],
         "matched_section_terms": []
       }
     }
   ],
   "token_usage": {
-    "input": 2518,
-    "output": 276,
-    "total": 2794
+    "input": 2481,
+    "output": 317,
+    "total": 2798
   },
-  "latency_ms": 5123,
+  "latency_ms": 5002,
   "metadata": {
     "structure_path": "reports\\pageindex\\structures\\CORNING_2022_10K_structure.json",
     "pdf_path": "datasets\\raw\\financebench\\pdfs\\CORNING_2022_10K.pdf",
     "selected_pages_one_indexed": [
-      34,
-      16,
-      66
+      60,
+      20,
+      93
     ],
     "max_pages": 3,
     "adapter_mode": "tree_page_scoring",

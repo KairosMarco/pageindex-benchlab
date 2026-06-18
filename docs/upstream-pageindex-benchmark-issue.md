@@ -98,17 +98,17 @@ PageIndex tree QA:
 
 ```text
 Questions: 25
-Evidence recall: 0.760
-Citation precision: 0.253
-Answer accuracy: 0.760
-Average total tokens: 3,046
+Evidence recall: 1.000
+Citation precision: 0.347
+Answer accuracy: 0.920
+Average total tokens: 2,882
 ```
 
 Key interpretation:
 
 - Long-context used about `36x` more average tokens than LlamaIndex Vector on the expanded subset.
-- The strongest LlamaIndex candidates reached perfect page-level evidence recall on this subset, so remaining failures are mostly answer-generation or judge-strictness issues rather than retrieval misses.
-- PageIndex used compact three-page answer contexts, but six expanded evidence misses reduced answer accuracy.
+- The strongest LlamaIndex candidate and the current PageIndex scorer both reached perfect page-level evidence recall on this subset, so remaining failures are mostly answer-generation or judge-strictness issues rather than retrieval misses.
+- PageIndex used compact three-page answer contexts; its current result is competitive on this small finance subset after ranking diagnostics and finance line-item scoring.
 - A shared hard case was `fb_exp_020`, a capital-intensity question where several methods had access to the relevant pages but interpreted the finance concept incorrectly.
 
 ## Prompt-Ablation Finding
@@ -155,11 +155,11 @@ Missing PageIndex structures: 0
 Missing PDFs: 0
 Runnable questions with current structures: 25
 Retrieval-only QA generated: 25
-Retrieval-only evidence recall: 0.760
-Retrieval-only citation precision: 0.253
+Retrieval-only evidence recall: 1.000
+Retrieval-only citation precision: 0.347
 LLM answers generated: 25
-LLM answer accuracy: 0.760
-LLM verdicts: 19 correct, 1 partial, 5 incorrect
+LLM answer accuracy: 0.920
+LLM verdicts: 23 correct, 0 partial, 2 incorrect
 ```
 
 Artifacts:
@@ -170,11 +170,12 @@ reports/pageindex/expanded_readiness.json
 reports/pageindex/expanded_indexing_notes.md
 reports/pageindex/expanded_partial_summary.md
 reports/pageindex/evidence_eval_qa_expanded_25.json
+reports/pageindex/pageindex_ranking_diagnostics.md
 reports/pageindex_expanded_llm_diagnostics.md
 reports/expanded_pageindex_llm_validation_report.json
 ```
 
-The expanded run surfaced six retrieval misses: `fb_exp_014`, `fb_exp_017`, `fb_exp_020`, `fb_exp_022`, `fb_exp_023`, and `fb_exp_025`. It also surfaced indexing robustness issues on long SEC filings, including model-produced TOC JSON with unexpected object/list shapes, missing page-offset values, low-confidence no-TOC processing failures, and missing `physical_index` fields.
+The legacy PageIndex scorer surfaced six retrieval misses: `fb_exp_014`, `fb_exp_017`, `fb_exp_020`, `fb_exp_022`, `fb_exp_023`, and `fb_exp_025`. The current label-free finance line-item scorer fixes those misses without using gold evidence during retrieval. The expanded run also surfaced indexing robustness issues on long SEC filings, including model-produced TOC JSON with unexpected object/list shapes, missing page-offset values, low-confidence no-TOC processing failures, and missing `physical_index` fields.
 
 ## Proposed Next Work
 
@@ -186,6 +187,7 @@ Possible PageIndex contributions:
 - Add or document robust JSON parsing for LLM responses that include fenced JSON, explanatory text, or missing fields.
 - Add defensive handling when TOC extraction returns objects instead of lists, or when page-offset detection returns null.
 - Add benchmark reproduction notes for FinanceBench-style page-evidence QA.
+- Add or document PageIndex ranking diagnostics that compare legacy and current page scoring on evidence-page recall.
 - Add a minimal script or documentation example showing how to run PageIndex over a local PDF and inspect the produced structure.
 
 ## Why This Helps PageIndex
@@ -197,4 +199,4 @@ This gives PageIndex a reproducible comparison against strong baselines instead 
 - explainable tree/path retrieval
 - lower answer context than full long-context prompting
 
-The benchmark is intentionally conservative: the expanded run is complete, but it does not support broad PageIndex superiority claims yet. The current useful contribution target is improving PageIndex indexing robustness and ranking diagnostics on the six evidence misses.
+The benchmark is intentionally conservative: the expanded run is complete and PageIndex is competitive on this small finance subset, but it does not support broad PageIndex superiority claims yet. The current useful contribution target is upstreaming indexing robustness, ranking diagnostics, and reproducible benchmark notes.

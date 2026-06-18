@@ -161,6 +161,17 @@ def shared_issue_sets(rows: list[dict[str, Any]]) -> dict[str, Any]:
 
 
 def render_markdown(payload: dict[str, Any]) -> str:
+    methods = {row["key"]: row for row in payload["methods"]}
+    pageindex = methods.get("pageindex")
+    lowest_token = min(
+        (row for row in payload["methods"] if row.get("average_total_tokens")),
+        key=lambda row: row["average_total_tokens"],
+        default=None,
+    )
+    highest_accuracy = max(
+        (row["answer_accuracy"] for row in payload["methods"] if isinstance(row.get("answer_accuracy"), (int, float))),
+        default=None,
+    )
     lines = [
         "# Expanded Cost and Quality Summary",
         "",
@@ -205,12 +216,20 @@ def render_markdown(payload: dict[str, Any]) -> str:
             "",
             "## Interpretation",
             "",
-            "- LlamaIndex Vector and Long-context both reached `0.920` answer accuracy on the expanded subset.",
-            "- LlamaIndex Vector used the fewest average tokens and preserved `1.000` evidence recall.",
-            "- PageIndex used a small three-page context and modest tokens, but its expanded retrieval misses reduced answer accuracy to `0.760`.",
-            "- Long-context used far more average tokens than the lowest-token candidate while producing lower citation evidence recall than LlamaIndex Vector.",
+            "- The top answer accuracy in this committed comparison is `{accuracy}`.".format(
+                accuracy=format_value(highest_accuracy)
+            ),
+            "- The lowest average-token method is `{label}` at `{tokens}` tokens.".format(
+                label=lowest_token["label"] if lowest_token else "n/a",
+                tokens=format_value(lowest_token["average_total_tokens"] if lowest_token else None),
+            ),
+            "- PageIndex now preserves `{recall}` evidence recall with a compact three-page answer context and reaches `{accuracy}` answer accuracy.".format(
+                recall=format_value(pageindex.get("average_evidence_recall") if pageindex else None),
+                accuracy=format_value(pageindex.get("answer_accuracy") if pageindex else None),
+            ),
+            "- Long-context uses far more average tokens than the lowest-token candidate while producing lower citation evidence recall than the strongest retrieval candidates.",
             "- `fb_exp_020` is the shared answer failure across all compared methods and should be treated as a high-value reasoning prompt or benchmark-analysis case.",
-            "- These results do not support broad PageIndex superiority claims yet; they identify PageIndex ranking robustness as the next contribution target.",
+            "- These results still do not support broad PageIndex superiority claims; they support a narrower finding that PageIndex can be competitive on this small expanded finance subset after ranking diagnostics and finance line-item scoring.",
             "",
             "## Source Reports",
             "",

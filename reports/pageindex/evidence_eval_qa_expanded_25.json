@@ -2,8 +2,8 @@
   "summary": {
     "result_count": 25,
     "failure_count": 0,
-    "average_evidence_recall": 0.76,
-    "average_citation_precision": 0.2533333333333333,
+    "average_evidence_recall": 1.0,
+    "average_citation_precision": 0.3466666666666666,
     "citation_page_base": 1,
     "results_dir": "reports\\pageindex\\qa_expanded_25"
   },
@@ -18,8 +18,8 @@
       ],
       "predicted_pages": [
         62,
-        47,
-        42
+        95,
+        92
       ],
       "evidence_recall": 1.0,
       "citation_precision": 0.3333333333333333,
@@ -42,13 +42,15 @@
         96
       ],
       "predicted_pages": [
-        104,
-        121,
-        134
+        47,
+        96,
+        136
       ],
-      "evidence_recall": 0.0,
-      "citation_precision": 0.0,
-      "matched_pages": [],
+      "evidence_recall": 1.0,
+      "citation_precision": 0.3333333333333333,
+      "matched_pages": [
+        95
+      ],
       "metadata": {
         "citation_page_base": 1,
         "result_path": "reports\\pageindex\\qa_expanded_25\\fb_exp_014.json",
@@ -92,7 +94,7 @@
       "predicted_pages": [
         68,
         41,
-        80
+        76
       ],
       "evidence_recall": 1.0,
       "citation_precision": 0.3333333333333333,
@@ -115,13 +117,15 @@
         60
       ],
       "predicted_pages": [
-        34,
-        16,
-        66
+        60,
+        20,
+        93
       ],
-      "evidence_recall": 0.0,
-      "citation_precision": 0.0,
-      "matched_pages": [],
+      "evidence_recall": 1.0,
+      "citation_precision": 0.3333333333333333,
+      "matched_pages": [
+        59
+      ],
       "metadata": {
         "citation_page_base": 1,
         "result_path": "reports\\pageindex\\qa_expanded_25\\fb_exp_017.json",
@@ -163,8 +167,8 @@
         86
       ],
       "predicted_pages": [
-        66,
         86,
+        66,
         93
       ],
       "evidence_recall": 1.0,
@@ -190,13 +194,16 @@
         110
       ],
       "predicted_pages": [
-        30,
-        32,
-        63
+        110,
+        133,
+        108
       ],
-      "evidence_recall": 0.0,
-      "citation_precision": 0.0,
-      "matched_pages": [],
+      "evidence_recall": 1.0,
+      "citation_precision": 0.6666666666666666,
+      "matched_pages": [
+        107,
+        109
+      ],
       "metadata": {
         "citation_page_base": 1,
         "result_path": "reports\\pageindex\\qa_expanded_25\\fb_exp_020.json",
@@ -215,7 +222,7 @@
       "predicted_pages": [
         1,
         10,
-        3
+        11
       ],
       "evidence_recall": 1.0,
       "citation_precision": 0.3333333333333333,
@@ -239,12 +246,14 @@
       ],
       "predicted_pages": [
         68,
-        77,
-        85
+        62,
+        101
       ],
-      "evidence_recall": 0.0,
-      "citation_precision": 0.0,
-      "matched_pages": [],
+      "evidence_recall": 1.0,
+      "citation_precision": 0.3333333333333333,
+      "matched_pages": [
+        61
+      ],
       "metadata": {
         "citation_page_base": 1,
         "result_path": "reports\\pageindex\\qa_expanded_25\\fb_exp_022.json",
@@ -261,13 +270,15 @@
         59
       ],
       "predicted_pages": [
-        63,
-        76,
-        10
+        59,
+        72,
+        61
       ],
-      "evidence_recall": 0.0,
-      "citation_precision": 0.0,
-      "matched_pages": [],
+      "evidence_recall": 1.0,
+      "citation_precision": 0.3333333333333333,
+      "matched_pages": [
+        58
+      ],
       "metadata": {
         "citation_page_base": 1,
         "result_path": "reports\\pageindex\\qa_expanded_25\\fb_exp_023.json",
@@ -284,9 +295,9 @@
         50
       ],
       "predicted_pages": [
-        30,
         50,
-        29
+        66,
+        30
       ],
       "evidence_recall": 1.0,
       "citation_precision": 0.3333333333333333,
@@ -309,13 +320,15 @@
         2
       ],
       "predicted_pages": [
-        3,
-        6,
-        9
+        2,
+        1,
+        6
       ],
-      "evidence_recall": 0.0,
-      "citation_precision": 0.0,
-      "matched_pages": [],
+      "evidence_recall": 1.0,
+      "citation_precision": 0.3333333333333333,
+      "matched_pages": [
+        1
+      ],
       "metadata": {
         "citation_page_base": 1,
         "result_path": "reports\\pageindex\\qa_expanded_25\\fb_exp_025.json",
@@ -332,9 +345,9 @@
         60
       ],
       "predicted_pages": [
-        49,
         60,
-        83
+        46,
+        49
       ],
       "evidence_recall": 1.0,
       "citation_precision": 0.3333333333333333,
@@ -357,8 +370,8 @@
         38
       ],
       "predicted_pages": [
-        49,
         38,
+        49,
         48
       ],
       "evidence_recall": 1.0,
@@ -382,9 +395,9 @@
         4
       ],
       "predicted_pages": [
-        60,
         4,
-        7
+        60,
+        43
       ],
       "evidence_recall": 1.0,
       "citation_precision": 0.3333333333333333,
@@ -407,9 +420,9 @@
         58
       ],
       "predicted_pages": [
-        59,
         58,
-        51
+        59,
+        101
       ],
       "evidence_recall": 1.0,
       "citation_precision": 0.3333333333333333,
@@ -433,8 +446,8 @@
       ],
       "predicted_pages": [
         40,
-        25,
-        28
+        51,
+        54
       ],
       "evidence_recall": 1.0,
       "citation_precision": 0.3333333333333333,
@@ -484,7 +497,7 @@
       "predicted_pages": [
         38,
         51,
-        45
+        53
       ],
       "evidence_recall": 1.0,
       "citation_precision": 0.3333333333333333,
@@ -508,8 +521,8 @@
       ],
       "predicted_pages": [
         52,
-        31,
-        58
+        33,
+        32
       ],
       "evidence_recall": 1.0,
       "citation_precision": 0.3333333333333333,
@@ -558,8 +571,8 @@
       ],
       "predicted_pages": [
         11,
-        7,
-        12
+        12,
+        7
       ],
       "evidence_recall": 1.0,
       "citation_precision": 0.3333333333333333,
@@ -584,7 +597,7 @@
       "predicted_pages": [
         85,
         54,
-        87
+        84
       ],
       "evidence_recall": 1.0,
       "citation_precision": 0.3333333333333333,
@@ -609,7 +622,7 @@
       "predicted_pages": [
         4,
         6,
-        8
+        12
       ],
       "evidence_recall": 1.0,
       "citation_precision": 0.3333333333333333,

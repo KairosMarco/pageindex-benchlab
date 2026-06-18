@@ -10,7 +10,15 @@
       "section": "Market Risk Management",
       "text": "The table below shows the results of the Firm’s Risk Management VaR measure using a 95% confidence level. VaR can vary significantly as positions change, market volatility fluctuates, and diversification benefits change. Total VaR Three months ended June 30, 2023 March 31, 2023 June 30, 2022 (in millions) Avg. Min Max Avg. Min Max Avg. Min Max CIB trading VaR by risk type Fixed income $ 57 $ 50 $ 66 $ 56 $ 45 $ 71 $ 60 $ 48 $ 79 Foreign exchange 12 7 24 10 6 17 8 4 13 Equities 8 5 11 7 5 10 11 7",
       "metadata": {
-        "score": 34,
+        "score": 72.0,
+        "phrase_boost": 0,
+        "finance_boost": 38.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "requested_year_present",
+          "var_line_item",
+          "risk_direction_term"
+        ],
         "matched_page_terms": [
           "average",
           "compared",
@@ -38,7 +46,14 @@
       "section": "LIQUIDITY RISK MANAGEMENT",
       "text": "LIQUIDITY RISK MANAGEMENT Liquidity risk is the risk that the Firm will be unable to meet its contractual and contingent financial obligations as they arise or that it does not have the appropriate amount, composition and tenor of funding and liquidity to support its assets and liabilities. Refer to pages 97-104 of JPMorgan Chase’s 2022 Form 10-K and the Firm’s U.S. LCR Disclosure reports, which are available on the Firm’s website, for a further discussion of the Firm’s liquidity risk. LCR and H",
       "metadata": {
-        "score": 26,
+        "score": 44.0,
+        "phrase_boost": 0,
+        "finance_boost": 18.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "requested_year_present",
+          "risk_direction_term"
+        ],
         "matched_page_terms": [
           "average",
           "compared",
@@ -59,27 +74,30 @@
     },
     {
       "document_id": "JPMORGAN_2023Q2_10Q",
-      "page": 87,
-      "section": "Market Risk Management",
-      "text": "Structural interest rate risk management The effect of interest rate exposure on the Firm’s reported net income is important as interest rate risk represents one of the Firm’s significant market risks. Interest rate risk arises not only from trading activities but also from the Firm’s traditional banking activities, which include extension of loans and credit facilities, taking deposits, issuing debt and the investment securities portfolio. One way that the Firm evaluates its structural interest",
+      "page": 84,
+      "section": "MARKET RISK MANAGEMENT",
+      "text": "MARKET RISK MANAGEMENT Market risk is the risk associated with the effect of changes in market factors such as interest and foreign exchange rates, equity and commodity prices, credit spreads or implied volatilities, on the value of assets and liabilities held for both the short and long term. Refer to Market Risk Management on pages 131-138 of JPMorgan Chase’s 2022 Form 10-K for a discussion of the Firm’s Market Risk Management organization, market risk measurement, risk monitoring and control,",
       "metadata": {
-        "score": 25,
+        "score": 38.5,
+        "phrase_boost": 0,
+        "finance_boost": 22.5,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "var_line_item"
+        ],
         "matched_page_terms": [
-          "compared",
           "market",
-          "prior",
-          "quarter",
+          "period",
           "risk",
-          "second",
           "var"
         ],
         "matched_section_terms": [
           "market",
           "risk"
         ],
-        "node_id": "0229",
+        "node_id": "0128",
         "start_index": 84,
-        "end_index": 89
+        "end_index": 84
       }
     }
   ],
@@ -139,7 +157,15 @@
       "action": "score_page",
       "target": "page 85",
       "metadata": {
-        "score": 34,
+        "score": 72.0,
+        "phrase_boost": 0,
+        "finance_boost": 38.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "requested_year_present",
+          "var_line_item",
+          "risk_direction_term"
+        ],
         "section": "Market Risk Management",
         "matched_page_terms": [
           "average",
@@ -164,7 +190,14 @@
       "action": "score_page",
       "target": "page 54",
       "metadata": {
-        "score": 26,
+        "score": 44.0,
+        "phrase_boost": 0,
+        "finance_boost": 18.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "requested_year_present",
+          "risk_direction_term"
+        ],
         "section": "LIQUIDITY RISK MANAGEMENT",
         "matched_page_terms": [
           "average",
@@ -184,17 +217,20 @@
     {
       "step": 8,
       "action": "score_page",
-      "target": "page 87",
+      "target": "page 84",
       "metadata": {
-        "score": 25,
-        "section": "Market Risk Management",
+        "score": 38.5,
+        "phrase_boost": 0,
+        "finance_boost": 22.5,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "var_line_item"
+        ],
+        "section": "MARKET RISK MANAGEMENT",
         "matched_page_terms": [
-          "compared",
           "market",
-          "prior",
-          "quarter",
+          "period",
           "risk",
-          "second",
           "var"
         ],
         "matched_section_terms": [
@@ -209,14 +245,14 @@
     "output": null,
     "total": null
   },
-  "latency_ms": 485,
+  "latency_ms": 381,
   "metadata": {
     "structure_path": "reports\\pageindex\\structures\\JPMORGAN_2023Q2_10Q_structure.json",
     "pdf_path": "datasets\\raw\\financebench\\pdfs\\JPMORGAN_2023Q2_10Q.pdf",
     "selected_pages_one_indexed": [
       85,
       54,
-      87
+      84
     ],
     "max_pages": 3,
     "adapter_mode": "tree_page_scoring",

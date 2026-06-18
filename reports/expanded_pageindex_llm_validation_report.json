@@ -61,21 +61,21 @@
       "name": "evidence recall present",
       "passed": true,
       "details": {
-        "actual": 0.76
+        "actual": 1.0
       }
     },
     {
       "name": "citation precision present",
       "passed": true,
       "details": {
-        "actual": 0.2533333333333333
+        "actual": 0.3466666666666666
       }
     },
     {
       "name": "answer accuracy present",
       "passed": true,
       "details": {
-        "actual": 0.76
+        "actual": 0.92
       }
     },
     {
@@ -85,9 +85,9 @@
         "expected": 25,
         "actual": 25,
         "verdict_counts": {
-          "correct": 19,
-          "partial": 1,
-          "incorrect": 5
+          "correct": 23,
+          "partial": 0,
+          "incorrect": 2
         }
       }
     },

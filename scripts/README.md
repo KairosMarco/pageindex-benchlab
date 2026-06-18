@@ -129,14 +129,15 @@ Run retrieval-only expanded PageIndex QA:
 python scripts\run_pageindex_qa_mvp.py --questions datasets\financebench\expanded_questions_25.jsonl --structure-dir reports\pageindex\structures --output-dir reports\pageindex\qa_expanded_25 --manifest reports\pageindex\qa_expanded_25_manifest.json --no-llm --force --continue-on-error
 python scripts\evaluate_evidence_mvp.py --questions datasets\financebench\expanded_questions_25.jsonl --results-dir reports\pageindex\qa_expanded_25 --output reports\pageindex\evidence_eval_qa_expanded_25.json --continue-on-error
 python scripts\summarize_pageindex_expanded_partial.py
+python scripts\analyze_pageindex_expanded_ranking.py
 ```
 
 Current expanded PageIndex retrieval-only result:
 
 ```text
 Generated QA outputs: 25 / 25
-Average evidence recall: 0.760
-Average citation precision: 0.253
+Average evidence recall: 1.000
+Average citation precision: 0.347
 ```
 
 Run expanded PageIndex LLM answer generation and validation:
@@ -154,10 +155,10 @@ Current expanded PageIndex LLM result:
 
 ```text
 Generated answers: 25 / 25
-Evidence recall: 0.760
-Citation precision: 0.253
-Answer accuracy: 0.760
-Verdicts: 19 correct, 1 partial, 5 incorrect
+Evidence recall: 1.000
+Citation precision: 0.347
+Answer accuracy: 0.920
+Verdicts: 23 correct, 0 partial, 2 incorrect
 ```
 
 ## Run Long-context MVP Baseline

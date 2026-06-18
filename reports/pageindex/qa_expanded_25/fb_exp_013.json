@@ -10,7 +10,13 @@
       "section": "ADOBE SYSTEMS INCORPORATED CONSOLIDATED STATEMENTS OF INCOME",
       "text": "Table of Contents 62 ADOBE SYSTEMS INCORPORATED CONSOLIDATED STATEMENTS OF INCOME (In thousands, except per share data) Years Ended December 2, 2016 November 27, 2015 November 28, 2014 Revenue: Subscription $ 4,584,833 $ 3,223,904 $ 2,076,584 Product 800,498 1,125,146 1,627,803 Services and support 469,099 446,461 442,678 Total revenue 5,854,430 4,795,511 4,147,065 Cost of revenue: Subscription 461,860 409,194 335,432 Product 68,917 90,035 97,099 Services and support 289,131 245,088 189,549 Tota",
       "metadata": {
-        "score": 31,
+        "score": 55.0,
+        "phrase_boost": 14,
+        "finance_boost": 24.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "income_statement_title"
+        ],
         "matched_page_terms": [
           "cost",
           "income",
@@ -28,47 +34,54 @@
     },
     {
       "document_id": "ADOBE_2016_10K",
-      "page": 47,
-      "section": "Item 7. Management's Discussion and Analysis of Financial Condition and Results of Operations",
-      "text": "Table of Contents 47 Cost of Revenue (dollars in millions) Fiscal 2016 Fiscal 2015 Fiscal 2014 % Change 2016-2015 % Change 2015-2014 Subscription $ 461.9 $ 409.2 $ 335.5 13 % 22 % Percentage of total revenue 8% 9% 8% Product 68.9 90.0 97.1 (23)% (7)% Percentage of total revenue 1% 2% 2% Services and support 289.1 245.1 189.5 18 % 29 % Percentage of total revenue 5% 5% 5% Total cost of revenue $ 819.9 $ 744.3 $ 622.1 10 % 20 % Subscription Cost of subscription revenue consists of third-party roya",
+      "page": 95,
+      "section": "NOTE 14. COMMITMENTS AND CONTINGENCIES",
+      "text": "p to the residual value guarantee amount less our investment in lease receivable. The Almaden Tower lease qualifies for operating lease accounting treatment and, as such, the building and the related obligation are not included in our Consolidated Balance Sheets. Unconditional Purchase Obligations Our purchase obligations consist of agreements to purchase goods and services entered into in the ordinary course of business. The following table summarizes our non-cancellable unconditional purchase ",
       "metadata": {
-        "score": 28,
-        "matched_page_terms": [
-          "change",
-          "cost",
-          "operating",
-          "operations",
-          "revenue"
+        "score": 42.125,
+        "phrase_boost": 6,
+        "finance_boost": 21.125,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "income_statement_title"
         ],
-        "matched_section_terms": [
-          "operations"
-        ],
-        "node_id": "0011",
-        "start_index": 37,
-        "end_index": 57
-      }
-    },
-    {
-      "document_id": "ADOBE_2016_10K",
-      "page": 42,
-      "section": "Item 7. Management's Discussion and Analysis of Financial Condition and Results of Operations",
-      "text": "r recent financial results reflect the success of these investments. In fiscal 2016, we achieved record Marketing Cloud revenue of $1.63 billion, which represents 20% year-over-year revenue growth. In December 2016, we acquired TubeMogul and we will integrate TubeMogul in our Digital Marketing business in the first quarter of fiscal 2017. We expect that the addition of TubeMogul and sustained demand across our portfolio of Marketing Cloud solutions will drive revenue growth in future years. Fina",
-      "metadata": {
-        "score": 23,
         "matched_page_terms": [
-          "change",
           "cost",
           "income",
           "operating",
           "operations",
           "revenue"
         ],
-        "matched_section_terms": [
-          "operations"
+        "matched_section_terms": [],
+        "node_id": "0034",
+        "start_index": 94,
+        "end_index": 97
+      }
+    },
+    {
+      "document_id": "ADOBE_2016_10K",
+      "page": 92,
+      "section": "NOTE 11. STOCK-BASED COMPENSATION",
+      "text": "Table of Contents ADOBE SYSTEMS INCORPORATED NOTES TO CONSOLIDATED FINANCIAL STATEMENTS (Continued) 92 Total stock-based compensation costs that have been included in our Consolidated Statements of Income for fiscal 2016, 2015 and 2014 were as follows (in thousands): Income Statement Classifications Cost of Revenue– Subscription Cost of Revenue– Services and Support Research and Development Sales and Marketing General and Administrative Total(1) Option Grants and Stock Purchase Rights 2016 $ 1,4",
+      "metadata": {
+        "score": 42.0,
+        "phrase_boost": 3,
+        "finance_boost": 24.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "income_statement_title"
         ],
-        "node_id": "0011",
-        "start_index": 37,
-        "end_index": 57
+        "matched_page_terms": [
+          "cost",
+          "income",
+          "revenue",
+          "sales",
+          "statement"
+        ],
+        "matched_section_terms": [],
+        "node_id": "0031",
+        "start_index": 88,
+        "end_index": 92
       }
     }
   ],
@@ -128,7 +141,13 @@
       "action": "score_page",
       "target": "page 62",
       "metadata": {
-        "score": 31,
+        "score": 55.0,
+        "phrase_boost": 14,
+        "finance_boost": 24.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "income_statement_title"
+        ],
         "section": "ADOBE SYSTEMS INCORPORATED CONSOLIDATED STATEMENTS OF INCOME",
         "matched_page_terms": [
           "cost",
@@ -145,40 +164,47 @@
     {
       "step": 7,
       "action": "score_page",
-      "target": "page 47",
+      "target": "page 95",
       "metadata": {
-        "score": 28,
-        "section": "Item 7. Management's Discussion and Analysis of Financial Condition and Results of Operations",
-        "matched_page_terms": [
-          "change",
-          "cost",
-          "operating",
-          "operations",
-          "revenue"
+        "score": 42.125,
+        "phrase_boost": 6,
+        "finance_boost": 21.125,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "income_statement_title"
         ],
-        "matched_section_terms": [
-          "operations"
-        ]
-      }
-    },
-    {
-      "step": 8,
-      "action": "score_page",
-      "target": "page 42",
-      "metadata": {
-        "score": 23,
-        "section": "Item 7. Management's Discussion and Analysis of Financial Condition and Results of Operations",
+        "section": "NOTE 14. COMMITMENTS AND CONTINGENCIES",
         "matched_page_terms": [
-          "change",
           "cost",
           "income",
           "operating",
           "operations",
           "revenue"
         ],
-        "matched_section_terms": [
-          "operations"
-        ]
+        "matched_section_terms": []
+      }
+    },
+    {
+      "step": 8,
+      "action": "score_page",
+      "target": "page 92",
+      "metadata": {
+        "score": 42.0,
+        "phrase_boost": 3,
+        "finance_boost": 24.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "income_statement_title"
+        ],
+        "section": "NOTE 11. STOCK-BASED COMPENSATION",
+        "matched_page_terms": [
+          "cost",
+          "income",
+          "revenue",
+          "sales",
+          "statement"
+        ],
+        "matched_section_terms": []
       }
     }
   ],
@@ -187,14 +213,14 @@
     "output": null,
     "total": null
   },
-  "latency_ms": 206,
+  "latency_ms": 177,
   "metadata": {
     "structure_path": "reports\\pageindex\\structures\\ADOBE_2016_10K_structure.json",
     "pdf_path": "datasets\\raw\\financebench\\pdfs\\ADOBE_2016_10K.pdf",
     "selected_pages_one_indexed": [
       62,
-      47,
-      42
+      95,
+      92
     ],
     "max_pages": 3,
     "adapter_mode": "tree_page_scoring",

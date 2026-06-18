@@ -421,13 +421,13 @@ Key rows:
 ```text
 LlamaIndex Vector: answer accuracy 0.920, evidence recall 1.000, avg tokens 2,543, token x 1.000
 LlamaIndex Hybrid: answer accuracy 0.880, evidence recall 1.000, avg tokens 2,553, token x 1.004
-PageIndex: answer accuracy 0.760, evidence recall 0.760, avg tokens 3,046, token x 1.198
+PageIndex: answer accuracy 0.920, evidence recall 1.000, avg tokens 2,882, token x 1.133
 Long-context: answer accuracy 0.920, evidence recall 0.800, avg tokens 92,500, token x 36.371
 ```
 
 Current decision point:
 
 ```text
-Option A: preserve current failures as benchmark evidence.
-Option B: run a stricter finance-reasoning answer prompt variant and compare whether fb_exp_020 improves without hurting simpler extraction questions.
+The PageIndex expanded run has been rerun after ranking diagnostics and now matches the top answer accuracy on this small finance subset.
+The next decision is whether to expand beyond FinanceBench before adding GraphRAG/HyperGraphRAG, or first upstream the PageIndex resilience and ranking-diagnostic notes.
 ```

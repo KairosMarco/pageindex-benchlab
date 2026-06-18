@@ -6,11 +6,44 @@
   "citations": [
     {
       "document_id": "AMD_2022_10K",
+      "page": 4,
+      "section": "Preface",
+      "text": "g other things: possible impact of future accounting rules on AMD’s consolidated financial statements; demand for AMD’s products; the growth, change and competitive landscape of the markets in which AMD participates; international sales will continue to be a significant portion of total sales in the foreseeable future; that AMD’s cash, cash equivalents and short-term investment balances together with the availability under that certain revolving credit facility (the Revolving Credit Agreement) m",
+      "metadata": {
+        "score": 57.0,
+        "phrase_boost": 0,
+        "finance_boost": 39.0,
+        "finance_boost_reasons": [
+          "business_overview_intro",
+          "amd_product_terms"
+        ],
+        "matched_page_terms": [
+          "cpus",
+          "gpus",
+          "graphics",
+          "overview",
+          "products",
+          "services"
+        ],
+        "matched_section_terms": [],
+        "node_id": "0000",
+        "start_index": 1,
+        "end_index": 4
+      }
+    },
+    {
+      "document_id": "AMD_2022_10K",
       "page": 60,
       "section": "NOTE 1 – The Company",
       "text": "any. References herein to AMD or the Company mean Advanced Micro Devices, Inc. and its consolidated subsidiaries. AMD’s products include x86 microprocessors (CPUs) and graphics processing units (GPUs), as standalone devices or as incorporated into accelerated processing units (APUs), chipsets, data center and professional GPUs, embedded processors, semi-custom System-on-Chip (SoC) products, microprocessor and SoC development services and technology, data processing units (DPUs), Field Programmab",
       "metadata": {
-        "score": 21,
+        "score": 39.5,
+        "phrase_boost": 0,
+        "finance_boost": 18.5,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "amd_product_terms"
+        ],
         "matched_page_terms": [
           "cpus",
           "gpus",
@@ -28,44 +61,27 @@
     },
     {
       "document_id": "AMD_2022_10K",
-      "page": 4,
-      "section": "Preface",
-      "text": "g other things: possible impact of future accounting rules on AMD’s consolidated financial statements; demand for AMD’s products; the growth, change and competitive landscape of the markets in which AMD participates; international sales will continue to be a significant portion of total sales in the foreseeable future; that AMD’s cash, cash equivalents and short-term investment balances together with the availability under that certain revolving credit facility (the Revolving Credit Agreement) m",
+      "page": 43,
+      "section": "ITEM 6. [Reserved]",
+      "text": "esults of Operations” in Part II, Item 7 of our Annual Report on Form 10-K for the fiscal year ended December 25, 2021. Overview 2022 was a transformative year for AMD as we took several major steps that scaled and reshaped our business. In February 2022, we completed our strategic acquisition of Xilinx, Inc. (Xilinx) which expanded our technology and product portfolio to include adaptable hardware platforms that enable hardware acceleration and rapid innovation across a variety of technologies ",
       "metadata": {
-        "score": 18,
-        "matched_page_terms": [
-          "cpus",
-          "gpus",
-          "graphics",
-          "overview",
-          "products",
-          "services"
+        "score": 30.0,
+        "phrase_boost": 0,
+        "finance_boost": 18.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "amd_product_terms"
         ],
-        "matched_section_terms": [],
-        "node_id": "0000",
-        "start_index": 1,
-        "end_index": 4
-      }
-    },
-    {
-      "document_id": "AMD_2022_10K",
-      "page": 7,
-      "section": "ITEM 1. Business",
-      "text": "Table of Contents Data Center Products Server CPUs. Our CPUs for server platforms currently include the AMD EPYC™ Series processors – AMD EPYC 9004 Series, AMD EPYC 7003 Series and AMD EPYC 7002 Series. Our 4 Gen AMD EPYC 9004 Series processors are built on the “Zen 4” core and are designed to deliver leadership performance and energy efficiency across multiple market segments and workloads. Our 3 Gen AMD EPYC processors include AMD 3D V-Cache™ technology for leadership performance in technical ",
-      "metadata": {
-        "score": 18,
         "matched_page_terms": [
-          "cpus",
-          "gpus",
           "major",
+          "overview",
           "processors",
-          "products",
-          "services"
+          "products"
         ],
         "matched_section_terms": [],
-        "node_id": "0002",
-        "start_index": 4,
-        "end_index": 17
+        "node_id": "0025",
+        "start_index": 42,
+        "end_index": 43
       }
     }
   ],
@@ -83,9 +99,39 @@
     {
       "step": 2,
       "action": "score_page",
+      "target": "page 4",
+      "metadata": {
+        "score": 57.0,
+        "phrase_boost": 0,
+        "finance_boost": 39.0,
+        "finance_boost_reasons": [
+          "business_overview_intro",
+          "amd_product_terms"
+        ],
+        "section": "Preface",
+        "matched_page_terms": [
+          "cpus",
+          "gpus",
+          "graphics",
+          "overview",
+          "products",
+          "services"
+        ],
+        "matched_section_terms": []
+      }
+    },
+    {
+      "step": 3,
+      "action": "score_page",
       "target": "page 60",
       "metadata": {
-        "score": 21,
+        "score": 39.5,
+        "phrase_boost": 0,
+        "finance_boost": 18.5,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "amd_product_terms"
+        ],
         "section": "NOTE 1 – The Company",
         "matched_page_terms": [
           "cpus",
@@ -100,37 +146,23 @@
       }
     },
     {
-      "step": 3,
-      "action": "score_page",
-      "target": "page 4",
-      "metadata": {
-        "score": 18,
-        "section": "Preface",
-        "matched_page_terms": [
-          "cpus",
-          "gpus",
-          "graphics",
-          "overview",
-          "products",
-          "services"
-        ],
-        "matched_section_terms": []
-      }
-    },
-    {
       "step": 4,
       "action": "score_page",
-      "target": "page 7",
+      "target": "page 43",
       "metadata": {
-        "score": 18,
-        "section": "ITEM 1. Business",
+        "score": 30.0,
+        "phrase_boost": 0,
+        "finance_boost": 18.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "amd_product_terms"
+        ],
+        "section": "ITEM 6. [Reserved]",
         "matched_page_terms": [
-          "cpus",
-          "gpus",
           "major",
+          "overview",
           "processors",
-          "products",
-          "services"
+          "products"
         ],
         "matched_section_terms": []
       }
@@ -141,14 +173,14 @@
     "output": null,
     "total": null
   },
-  "latency_ms": 390,
+  "latency_ms": 331,
   "metadata": {
     "structure_path": "reports\\pageindex\\structures\\AMD_2022_10K_structure.json",
     "pdf_path": "datasets\\raw\\financebench\\pdfs\\AMD_2022_10K.pdf",
     "selected_pages_one_indexed": [
-      60,
       4,
-      7
+      60,
+      43
     ],
     "max_pages": 3,
     "adapter_mode": "tree_page_scoring",

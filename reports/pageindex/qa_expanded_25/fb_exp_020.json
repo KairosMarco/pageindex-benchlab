@@ -6,59 +6,73 @@
   "citations": [
     {
       "document_id": "CVSHEALTH_2022_10K",
-      "page": 30,
-      "section": "Contract Audits",
-      "text": "cific MLR and the premiums established under the OPM’s Insured contracts and costs allocated pursuant to the OPM’s cost-based contracts are in compliance with the requirements of the applicable FEHB program. The OPM may seek premium refunds or institute other sanctions against the Company if it fails to comply with the FEHB program requirements. Clinical Services Regulation - The Company provides clinical services to health plans, PBMs and providers for a variety of complex and common medical co",
+      "page": 110,
+      "section": "Consolidated Statements of Comprehensive Income",
+      "text": "0 shares outstanding at December 31, 2022 and 1,744 shares issued and 1,322 shares outstanding at December 31, 2021 and capital surplus 48,193 47,377 Treasury stock, at cost: 458 and 422 shares at December 31, 2022 and 2021 (31,858) (28,173) Retained earnings 56,145 54,906 Accumulated other comprehensive income (loss) (1,465) 965 Total CVS Health shareholders’ equity 71,015 75,075 Noncontrolling interests 300 306 Total shareholders’ equity 71,315 75,381 Total liabilities and shareholders’ equity",
       "metadata": {
-        "score": 12,
+        "score": 67.0,
+        "phrase_boost": 0,
+        "finance_boost": 64.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "balance_sheet_title",
+          "total_assets_line_item",
+          "capital_intensity_balance_sheet_lines"
+        ],
         "matched_page_terms": [
-          "based",
-          "business",
-          "capital",
-          "data"
+          "capital"
         ],
         "matched_section_terms": [],
-        "node_id": "0086",
-        "start_index": 29,
-        "end_index": 30
+        "node_id": "0228",
+        "start_index": 109,
+        "end_index": 110
       }
     },
     {
       "document_id": "CVSHEALTH_2022_10K",
-      "page": 32,
-      "section": "Required Regulatory Approvals",
-      "text": "• Require the Company to maintain minimum capital levels in its subsidiaries and monitor its solvency and reserve adequacy; • Regulate the Company’s investment activities on the basis of quality, diversification and other quantitative criteria; and/or • Exclude the Company’s plans from participating in Public Exchanges if they are deemed to have a history of “unreasonable” premium rate increases or fail to meet other criteria set by HHS or the applicable state. The Company’s operations, current ",
+      "page": 133,
+      "section": "Related Party Transactions",
+      "text": "/Other segment for the years ended December 31, 2022, 2021 and 2020. Discontinued Operations In connection with certain business dispositions completed between 1995 and 1997, the Company retained guarantees on store lease obligations for a number of former subsidiaries, including Linens ‘n Things and Bob’s Stores, each of which subsequently filed for bankruptcy. The Company’s loss from discontinued operations includes lease-related costs that the Company believes it will likely be required to sa",
       "metadata": {
-        "score": 12,
+        "score": 57.75,
+        "phrase_boost": 0,
+        "finance_boost": 51.75,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "capital_intensity_income_statement_lines",
+          "capital_intensity_primary_income_statement_lines"
+        ],
         "matched_page_terms": [
           "based",
-          "business",
-          "capital",
-          "data"
+          "business"
         ],
         "matched_section_terms": [],
-        "node_id": "0097",
-        "start_index": 31,
-        "end_index": 32
+        "node_id": "0302",
+        "start_index": 132,
+        "end_index": 133
       }
     },
     {
       "document_id": "CVSHEALTH_2022_10K",
-      "page": 63,
-      "section": null,
-      "text": "hese arrangements with us depends upon, among other things, our ability to provide them with up to date quality of care data to support these value-based contracts. These arrangements are designed to give providers incentives to engage in population health management and optimize delivery of health care to our members. These arrangements also may allow us to expand into new geographies, target new customer groups, increase membership and reduce medical costs and, if we provide technology or othe",
+      "page": 108,
+      "section": "Item 8. Financial Statements and Supplementary Data.",
+      "text": "Index to Consolidated Financial Statements Consolidated Statements of Operations For the Years Ended December 31, In millions, except per share amounts 2022 2021 2020 Revenues: Products $ 226,616 $ 203,738 $ 190,688 Premiums 85,330 76,132 69,364 Services 9,683 11,042 7,856 Net investment income 838 1,199 798 Total revenues 322,467 292,111 268,706 Operating costs: Cost of products sold 196,892 175,803 163,981 Benefit costs 71,281 64,260 55,679 Opioid litigation charges 5,803 — — Loss on assets he",
       "metadata": {
-        "score": 12,
-        "matched_page_terms": [
-          "based",
-          "business",
-          "capital",
+        "score": 56.0,
+        "phrase_boost": 0,
+        "finance_boost": 54.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "capital_intensity_income_statement_lines",
+          "capital_intensity_primary_income_statement_lines"
+        ],
+        "matched_page_terms": [],
+        "matched_section_terms": [
           "data"
         ],
-        "matched_section_terms": [],
-        "node_id": null,
-        "start_index": null,
-        "end_index": null
+        "node_id": "0226",
+        "start_index": 107,
+        "end_index": 108
       }
     }
   ],
@@ -116,15 +130,20 @@
     {
       "step": 6,
       "action": "score_page",
-      "target": "page 30",
+      "target": "page 110",
       "metadata": {
-        "score": 12,
-        "section": "Contract Audits",
+        "score": 67.0,
+        "phrase_boost": 0,
+        "finance_boost": 64.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "balance_sheet_title",
+          "total_assets_line_item",
+          "capital_intensity_balance_sheet_lines"
+        ],
+        "section": "Consolidated Statements of Comprehensive Income",
         "matched_page_terms": [
-          "based",
-          "business",
-          "capital",
-          "data"
+          "capital"
         ],
         "matched_section_terms": []
       }
@@ -132,15 +151,20 @@
     {
       "step": 7,
       "action": "score_page",
-      "target": "page 32",
+      "target": "page 133",
       "metadata": {
-        "score": 12,
-        "section": "Required Regulatory Approvals",
+        "score": 57.75,
+        "phrase_boost": 0,
+        "finance_boost": 51.75,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "capital_intensity_income_statement_lines",
+          "capital_intensity_primary_income_statement_lines"
+        ],
+        "section": "Related Party Transactions",
         "matched_page_terms": [
           "based",
-          "business",
-          "capital",
-          "data"
+          "business"
         ],
         "matched_section_terms": []
       }
@@ -148,17 +172,21 @@
     {
       "step": 8,
       "action": "score_page",
-      "target": "page 63",
+      "target": "page 108",
       "metadata": {
-        "score": 12,
-        "section": null,
-        "matched_page_terms": [
-          "based",
-          "business",
-          "capital",
-          "data"
+        "score": 56.0,
+        "phrase_boost": 0,
+        "finance_boost": 54.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "capital_intensity_income_statement_lines",
+          "capital_intensity_primary_income_statement_lines"
         ],
-        "matched_section_terms": []
+        "section": "Item 8. Financial Statements and Supplementary Data.",
+        "matched_page_terms": [],
+        "matched_section_terms": [
+          "data"
+        ]
       }
     }
   ],
@@ -167,14 +195,14 @@
     "output": null,
     "total": null
   },
-  "latency_ms": 438,
+  "latency_ms": 414,
   "metadata": {
     "structure_path": "reports\\pageindex\\structures\\CVSHEALTH_2022_10K_structure.json",
     "pdf_path": "datasets\\raw\\financebench\\pdfs\\CVSHEALTH_2022_10K.pdf",
     "selected_pages_one_indexed": [
-      30,
-      32,
-      63
+      110,
+      133,
+      108
     ],
     "max_pages": 3,
     "adapter_mode": "tree_page_scoring",

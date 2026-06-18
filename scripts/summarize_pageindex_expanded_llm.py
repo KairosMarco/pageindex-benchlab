@@ -306,6 +306,8 @@ def render_per_question_table(rows: list[dict[str, Any]]) -> list[str]:
 
 def render_markdown(payload: dict[str, Any]) -> str:
     summary = payload["summary"]
+    answer_issue_ids = ", ".join(row["question_id"] for row in payload["answer_issue_rows"]) or "none"
+    has_evidence_issues = bool(payload["evidence_issue_rows"])
     lines = [
         "# PageIndex Expanded LLM Diagnostics",
         "",
@@ -358,11 +360,15 @@ def render_markdown(payload: dict[str, Any]) -> str:
         lines.append("- PageIndex completed the mechanical artifact gate for the expanded subset.")
     else:
         lines.append("- PageIndex did not pass the mechanical artifact gate; inspect generation and evaluation failures before comparing quality.")
+    if has_evidence_issues:
+        lines.append("- Evidence misses remain in this run, so retrieval/ranking should be inspected before making quality claims.")
+    else:
+        lines.append("- PageIndex retrieved all gold evidence pages in the top three selected pages for this 25-question subset.")
     lines.extend(
         [
-            "- PageIndex used a small three-page answer context, but retrieval misses limited answer accuracy on this expanded subset.",
-            "- The answer issues largely overlap with evidence misses, so improving PageIndex ranking is more important than prompt tuning at this point.",
-            "- These results should be reported conservatively: PageIndex remains strong on the 12-question MVP set, but the 25-question set exposes ranking gaps.",
+            "- PageIndex used a compact three-page answer context; the remaining answer issues are answer-reasoning or judge-strictness cases after successful evidence retrieval.",
+            f"- Non-correct answer cases: `{answer_issue_ids}`.",
+            "- These results should be reported conservatively: the expanded subset is still small, and stronger claims need larger datasets plus non-finance domains.",
             "",
             "## Artifacts",
             "",

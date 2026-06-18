@@ -6,53 +6,70 @@
   "citations": [
     {
       "document_id": "AMERICANEXPRESS_2022_10K",
-      "page": 104,
-      "section": "Marketing",
-      "text": "anager. We evaluate goodwill for impairment annually as of June 30, or more frequently if events occur or circumstances change that would more likely than not reduce the fair value of one or more of our reporting units below its carrying value. Prior to completing the assessment of goodwill for impairment, we also perform a recoverability test of certain long-lived assets. We have the option to perform a qualitative assessment of goodwill impairment to determine whether it is more likely than no",
+      "page": 47,
+      "section": "Executive Overview",
+      "text": ", 2021, filed with the SEC on February 11, 2022. Beginning in the first quarter of 2022, we made reporting presentation changes to our Consolidated Statements of Income to separately present revenues earned from processed volumes, previously reported in Discount revenue, Other fees and commissions and Other revenue, as Processed revenue. The remaining balances from Other fees and commissions and Other revenue were combined as Service fees and other revenue. We also disaggregated Marketing and bu",
       "metadata": {
-        "score": 6,
+        "score": 53.0,
+        "phrase_boost": 0,
+        "finance_boost": 50.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "income_statement_title",
+          "gross_margin_line_items",
+          "financial_services_income_lines"
+        ],
         "matched_page_terms": [
-          "change",
-          "useful"
+          "change"
         ],
         "matched_section_terms": [],
-        "node_id": "0046",
-        "start_index": 103,
-        "end_index": 104
+        "node_id": "0015",
+        "start_index": 43,
+        "end_index": 47
       }
     },
     {
       "document_id": "AMERICANEXPRESS_2022_10K",
-      "page": 121,
-      "section": "GOODWILL",
-      "text": "1, 2022 and 2021. OTHER INTANGIBLE ASSETS Intangible assets are amortized on a straight-line basis over their estimated useful lives of 1 to 22 years. We review long-lived assets and asset groups, including intangible assets, for impairment whenever events and circumstances indicate their carrying amounts may not be recoverable. An impairment is recognized if the carrying amount is not recoverable and exceeds the asset or asset group’s fair value. The gross carrying amount for other intangible a",
+      "page": 96,
+      "section": "Index to Consolidated Financial Statements",
+      "text": "Table of Contents CONSOLIDATED STATEMENTS OF INCOME Year Ended December 31 (Millions, except per share amounts) 2022 2021 2020 Revenues Non-interest revenues Discount revenue $ 30,739 $ 24,563 $ 19,435 Net card fees 6,070 5,195 4,664 Service fees and other revenue 4,521 3,316 2,702 Processed revenue 1,637 1,556 1,301 Total non-interest revenues 42,967 34,630 28,102 Interest income Interest on loans 11,967 8,850 9,779 Interest and dividends on investment securities 96 83 127 Deposits with banks a",
       "metadata": {
-        "score": 6,
-        "matched_page_terms": [
-          "gross",
-          "useful"
+        "score": 50.0,
+        "phrase_boost": 0,
+        "finance_boost": 50.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "income_statement_title",
+          "gross_margin_line_items",
+          "financial_services_income_lines"
         ],
+        "matched_page_terms": [],
         "matched_section_terms": [],
-        "node_id": "0068",
-        "start_index": 121,
-        "end_index": 121
+        "node_id": "0026",
+        "start_index": 95,
+        "end_index": 96
       }
     },
     {
       "document_id": "AMERICANEXPRESS_2022_10K",
-      "page": 134,
-      "section": "COMMITMENTS",
-      "text": "nstruments derive their value from an underlying variable or multiple variables, including interest rates and foreign exchange rates, and are carried at fair value on the Consolidated Balance Sheets. These instruments enable end users to increase, reduce or alter exposure to various market risks and, for that reason, are an integral component of our market risk management. We do not transact in derivatives for trading purposes. Market risk is the risk to earnings or asset and liability values re",
+      "page": 136,
+      "section": "Interest Rate Contracts",
+      "text": "Table of Contents The following table presents the gains and losses recognized in Interest expense on the Consolidated Statements of Income associated with the fair value hedges of our fixed-rate long-term debt for the years ended December 31: Gains (losses) (Millions) 2022 2021 2020 Fixed-rate long-term debt $ 473 $ 385 $ (405) Derivatives designated as hedging instruments (476) (385) 409 Total $ (3) $ — $ 4 The carrying values of the hedged liabilities, recorded within Long-term debt on the Co",
       "metadata": {
-        "score": 6,
-        "matched_page_terms": [
-          "change",
-          "margin"
+        "score": 49.875,
+        "phrase_boost": 0,
+        "finance_boost": 49.875,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "income_statement_title",
+          "gross_margin_line_items",
+          "financial_services_income_lines"
         ],
+        "matched_page_terms": [],
         "matched_section_terms": [],
-        "node_id": "0088",
-        "start_index": 133,
-        "end_index": 134
+        "node_id": "0092",
+        "start_index": 135,
+        "end_index": 136
       }
     }
   ],
@@ -100,13 +117,20 @@
     {
       "step": 5,
       "action": "score_page",
-      "target": "page 104",
+      "target": "page 47",
       "metadata": {
-        "score": 6,
-        "section": "Marketing",
+        "score": 53.0,
+        "phrase_boost": 0,
+        "finance_boost": 50.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "income_statement_title",
+          "gross_margin_line_items",
+          "financial_services_income_lines"
+        ],
+        "section": "Executive Overview",
         "matched_page_terms": [
-          "change",
-          "useful"
+          "change"
         ],
         "matched_section_terms": []
       }
@@ -114,28 +138,38 @@
     {
       "step": 6,
       "action": "score_page",
-      "target": "page 121",
+      "target": "page 96",
       "metadata": {
-        "score": 6,
-        "section": "GOODWILL",
-        "matched_page_terms": [
-          "gross",
-          "useful"
+        "score": 50.0,
+        "phrase_boost": 0,
+        "finance_boost": 50.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "income_statement_title",
+          "gross_margin_line_items",
+          "financial_services_income_lines"
         ],
+        "section": "Index to Consolidated Financial Statements",
+        "matched_page_terms": [],
         "matched_section_terms": []
       }
     },
     {
       "step": 7,
       "action": "score_page",
-      "target": "page 134",
+      "target": "page 136",
       "metadata": {
-        "score": 6,
-        "section": "COMMITMENTS",
-        "matched_page_terms": [
-          "change",
-          "margin"
+        "score": 49.875,
+        "phrase_boost": 0,
+        "finance_boost": 49.875,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "income_statement_title",
+          "gross_margin_line_items",
+          "financial_services_income_lines"
         ],
+        "section": "Interest Rate Contracts",
+        "matched_page_terms": [],
         "matched_section_terms": []
       }
     }
@@ -145,14 +179,14 @@
     "output": null,
     "total": null
   },
-  "latency_ms": 474,
+  "latency_ms": 395,
   "metadata": {
     "structure_path": "reports\\pageindex\\structures\\AMERICANEXPRESS_2022_10K_structure.json",
     "pdf_path": "datasets\\raw\\financebench\\pdfs\\AMERICANEXPRESS_2022_10K.pdf",
     "selected_pages_one_indexed": [
-      104,
-      121,
-      134
+      47,
+      96,
+      136
     ],
     "max_pages": 3,
     "adapter_mode": "tree_page_scoring",

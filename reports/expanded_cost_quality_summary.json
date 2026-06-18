@@ -34,7 +34,7 @@
       ],
       "evidence_issue_ids": [],
       "token_multiplier_vs_lowest": 1.0,
-      "latency_multiplier_vs_lowest": 2.851
+      "latency_multiplier_vs_lowest": 3.409
     },
     {
       "key": "hybrid",
@@ -66,7 +66,7 @@
       ],
       "evidence_issue_ids": [],
       "token_multiplier_vs_lowest": 1.004,
-      "latency_multiplier_vs_lowest": 2.911
+      "latency_multiplier_vs_lowest": 3.481
     },
     {
       "key": "pageindex",
@@ -76,38 +76,27 @@
       "mechanical_gate_passed": true,
       "generation_failure_count": 0,
       "evaluation_failure_count": 0,
-      "average_evidence_recall": 0.76,
-      "average_citation_precision": 0.2533333333333333,
-      "answer_accuracy": 0.76,
-      "average_answer_score": 0.78,
+      "average_evidence_recall": 1.0,
+      "average_citation_precision": 0.3466666666666666,
+      "answer_accuracy": 0.92,
+      "average_answer_score": 0.92,
       "answer_verdict_counts": {
-        "correct": 19,
-        "partial": 1,
-        "incorrect": 5
+        "correct": 23,
+        "partial": 0,
+        "incorrect": 2
       },
-      "average_total_tokens": 3045.68,
-      "median_total_tokens": 3025.0,
-      "total_tokens": 76142,
-      "average_latency_ms": 5786.6,
-      "median_latency_ms": 5414.0,
+      "average_total_tokens": 2882.16,
+      "median_total_tokens": 2951.0,
+      "total_tokens": 72054,
+      "average_latency_ms": 4839.6,
+      "median_latency_ms": 4384.0,
       "average_selected_page_count": 3.0,
       "answer_issue_ids": [
-        "fb_exp_017",
         "fb_exp_019",
-        "fb_exp_020",
-        "fb_exp_022",
-        "fb_exp_023",
-        "fb_exp_025"
+        "fb_exp_020"
       ],
-      "evidence_issue_ids": [
-        "fb_exp_014",
-        "fb_exp_017",
-        "fb_exp_020",
-        "fb_exp_022",
-        "fb_exp_023",
-        "fb_exp_025"
-      ],
-      "token_multiplier_vs_lowest": 1.198,
+      "evidence_issue_ids": [],
+      "token_multiplier_vs_lowest": 1.133,
       "latency_multiplier_vs_lowest": 1.0
     },
     {
@@ -146,7 +135,7 @@
         "fb_mvp_005"
       ],
       "token_multiplier_vs_lowest": 36.371,
-      "latency_multiplier_vs_lowest": 2.207
+      "latency_multiplier_vs_lowest": 2.639
     }
   ],
   "issue_summary": {
@@ -154,18 +143,13 @@
       "fb_exp_017",
       "fb_exp_019",
       "fb_exp_020",
-      "fb_exp_022",
-      "fb_exp_023",
-      "fb_exp_025",
       "fb_mvp_003"
     ],
     "all_evidence_issue_ids": [
       "fb_exp_014",
       "fb_exp_017",
       "fb_exp_020",
-      "fb_exp_022",
       "fb_exp_023",
-      "fb_exp_025",
       "fb_mvp_005"
     ],
     "common_answer_issue_ids": [
@@ -183,12 +167,8 @@
         "fb_exp_020"
       ],
       "pageindex": [
-        "fb_exp_017",
         "fb_exp_019",
-        "fb_exp_020",
-        "fb_exp_022",
-        "fb_exp_023",
-        "fb_exp_025"
+        "fb_exp_020"
       ],
       "long_context": [
         "fb_exp_020",
@@ -198,14 +178,7 @@
     "per_method_evidence_issue_ids": {
       "vector": [],
       "hybrid": [],
-      "pageindex": [
-        "fb_exp_014",
-        "fb_exp_017",
-        "fb_exp_020",
-        "fb_exp_022",
-        "fb_exp_023",
-        "fb_exp_025"
-      ],
+      "pageindex": [],
       "long_context": [
         "fb_exp_014",
         "fb_exp_017",

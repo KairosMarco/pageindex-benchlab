@@ -10,7 +10,15 @@
       "section": "CONSOLIDATED BALANCE SHEETS",
       "text": "SQUARE, INC. CONSOLIDATED BALANCE SHEETS (In thousands, except share and per share data) December 31, 2016 2015 Assets Current assets: Cash and cash equivalents $ 452,030 $ 461,329 Short-term investments 59,901 — Restricted cash 22,131 13,537 Settlements receivable 321,102 142,727 Customer funds held 43,574 9,446 Loans held for sale 42,144 604 Merchant cash advance receivable, net 4,212 36,473 Other current assets 56,331 41,447 Total current assets 1,001,425 705,563 Property and equipment, net 8",
       "metadata": {
-        "score": 47,
+        "score": 117.0,
+        "phrase_boost": 13,
+        "finance_boost": 70.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "balance_sheet_title",
+          "total_assets_line_item",
+          "working_capital_line_items"
+        ],
         "matched_page_terms": [
           "assets",
           "balance",
@@ -38,7 +46,13 @@
       "section": "Selected Financial Data",
       "text": "820 $ 3,984 Sales and marketing 14,122 7,360 3,738 1,235 668 General and administrative 33,260 20,194 7,604 4,603 3,462 Total share-based compensation $ 138,786 $ 82,292 $ 36,100 $ 14,658 $ 8,114 December 31, 2016 2015 2014 2013 (in thousands) Consolidated Balance Sheet Data: Cash and cash equivalents $ 452,030 $ 461,329 $ 222,315 $ 166,176 Settlements receivable 321,102 142,727 115,481 64,968 Working capital 423,961 371,361 218,761 124,061 Total assets 1,211,362 894,772 541,888 318,341 Customer",
       "metadata": {
-        "score": 32,
+        "score": 58.0,
+        "phrase_boost": 0,
+        "finance_boost": 26.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "total_assets_line_item"
+        ],
         "matched_page_terms": [
           "assets",
           "balance",
@@ -61,27 +75,31 @@
     },
     {
       "document_id": "BLOCK_2016_10K",
-      "page": 80,
-      "section": "Cash and Cash Equivalents and Restricted Cash",
-      "text": " to multi-year lease agreements entered into in 2012 and 2014 (Note 16 ). The Company has recorded this amount as a non-current asset on the consolidated balance sheets as the terms of the related leases extend beyond one year. Concentration of Credit Risk For the year ended December 31, 2016 , the Company had no customer who accounted for greater than 10% of total net revenue. For the years ended December 31, 2015 and 2014 , the Company had no customer other than Starbucks who accounted for gre",
+      "page": 76,
+      "section": "Business",
+      "text": "SQUARE, INC. NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS NOTE 1 - DESCRIPTION OF BUSINESS AND SUMMARY OF SIGNIFICANT ACCOUNTING POLICIES Business Square, Inc. (together with its subsidiaries, Square or the Company) is a cohesive commerce ecosystem that helps its sellers start, run, and grow their businesses – from managed payments solutions to point of sale, hardware to software, loans to payroll and more. Businesses and individuals can also use Square Cash, an easy way to send and receive mo",
       "metadata": {
-        "score": 30,
+        "score": 46.625,
+        "phrase_boost": 0,
+        "finance_boost": 22.625,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "total_assets_line_item"
+        ],
         "matched_page_terms": [
           "assets",
           "balance",
-          "considering",
           "current",
           "data",
-          "liabilities",
+          "sheet",
           "sheets",
           "square",
-          "total",
-          "two"
+          "total"
         ],
         "matched_section_terms": [],
-        "node_id": "0141",
-        "start_index": 79,
-        "end_index": 80
+        "node_id": "0123",
+        "start_index": 76,
+        "end_index": 76
       }
     }
   ],
@@ -141,7 +159,15 @@
       "action": "score_page",
       "target": "page 68",
       "metadata": {
-        "score": 47,
+        "score": 117.0,
+        "phrase_boost": 13,
+        "finance_boost": 70.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "balance_sheet_title",
+          "total_assets_line_item",
+          "working_capital_line_items"
+        ],
         "section": "CONSOLIDATED BALANCE SHEETS",
         "matched_page_terms": [
           "assets",
@@ -166,7 +192,13 @@
       "action": "score_page",
       "target": "page 41",
       "metadata": {
-        "score": 32,
+        "score": 58.0,
+        "phrase_boost": 0,
+        "finance_boost": 26.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "total_assets_line_item"
+        ],
         "section": "Selected Financial Data",
         "matched_page_terms": [
           "assets",
@@ -188,21 +220,25 @@
     {
       "step": 8,
       "action": "score_page",
-      "target": "page 80",
+      "target": "page 76",
       "metadata": {
-        "score": 30,
-        "section": "Cash and Cash Equivalents and Restricted Cash",
+        "score": 46.625,
+        "phrase_boost": 0,
+        "finance_boost": 22.625,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "total_assets_line_item"
+        ],
+        "section": "Business",
         "matched_page_terms": [
           "assets",
           "balance",
-          "considering",
           "current",
           "data",
-          "liabilities",
+          "sheet",
           "sheets",
           "square",
-          "total",
-          "two"
+          "total"
         ],
         "matched_section_terms": []
       }
@@ -213,14 +249,14 @@
     "output": null,
     "total": null
   },
-  "latency_ms": 185,
+  "latency_ms": 166,
   "metadata": {
     "structure_path": "reports\\pageindex\\structures\\BLOCK_2016_10K_structure.json",
     "pdf_path": "datasets\\raw\\financebench\\pdfs\\BLOCK_2016_10K.pdf",
     "selected_pages_one_indexed": [
       68,
       41,
-      80
+      76
     ],
     "max_pages": 3,
     "adapter_mode": "tree_page_scoring",

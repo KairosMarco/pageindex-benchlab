@@ -70,11 +70,11 @@ After all structures were available, PageIndex retrieval-only QA was run on the 
 ```text
 Generated QA outputs: 25 / 25
 Failed QA outputs: 0
-Average evidence recall: 0.760
-Average citation precision: 0.253
+Average evidence recall: 1.000
+Average citation precision: 0.347
 ```
 
-Evidence misses:
+Legacy scorer evidence misses fixed by current finance line-item scoring:
 
 ```text
 fb_exp_014
@@ -92,6 +92,8 @@ reports/pageindex/qa_expanded_25_manifest.json
 reports/pageindex/evidence_eval_qa_expanded_25.json
 reports/pageindex/expanded_partial_summary.md
 reports/pageindex/expanded_partial_summary.json
+reports/pageindex/pageindex_ranking_diagnostics.md
+reports/pageindex/pageindex_ranking_diagnostics.json
 ```
 
 The `expanded_partial_summary` filename is historical. The current file contents summarize the complete retrieval-only run.
@@ -105,12 +107,12 @@ Model: deepseek/deepseek-v4-pro
 Generated answers: 25 / 25
 Generation failures: 0
 Evaluation failures: 0
-Evidence recall: 0.760
-Citation precision: 0.253
-Answer accuracy: 0.760
-Verdicts: 19 correct, 1 partial, 5 incorrect
-Average total tokens: 3,046
-Average latency: 5,787 ms
+Evidence recall: 1.000
+Citation precision: 0.347
+Answer accuracy: 0.920
+Verdicts: 23 correct, 0 partial, 2 incorrect
+Average total tokens: 2,882
+Average latency: 4,840 ms
 Validation: pass, 20 checks, 0 failed
 ```
 
@@ -129,5 +131,6 @@ reports/pageindex/answer_eval_qa_llm_expanded_25.json
 ## Interpretation
 
 - The expanded run is now complete mechanically: all structures, retrieval outputs, LLM answers, evidence eval, and answer eval exist.
-- PageIndex remains strong on the original 12-question MVP set, but the 25-question expanded set exposes ranking gaps.
-- The next PageIndex contribution should focus on retrieval/ranking diagnostics for the six evidence misses, plus upstreaming the JSON resilience fixes used to complete indexing.
+- The current PageIndex scorer retrieves all gold evidence pages in the top three selected pages for this 25-question subset.
+- The ranking diagnostics preserve the before/after evidence: the legacy scorer had six evidence misses, while the current finance line-item scorer has none.
+- The next PageIndex contribution should package the retrieval/ranking diagnostics and upstream the JSON resilience fixes used to complete indexing.

@@ -49,6 +49,8 @@ reports/pageindex/expanded_readiness.json
 reports/pageindex/expanded_indexing_notes.md
 reports/pageindex/expanded_partial_summary.md
 reports/pageindex/expanded_partial_summary.json
+reports/pageindex/pageindex_ranking_diagnostics.md
+reports/pageindex/pageindex_ranking_diagnostics.json
 reports/pageindex/evidence_eval_qa_expanded_25.json
 reports/pageindex/qa_expanded_25_manifest.json
 reports/pageindex/qa_expanded_25/

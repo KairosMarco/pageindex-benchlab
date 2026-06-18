@@ -2,45 +2,25 @@
   "method": "pageindex_tree_qa",
   "question_id": "fb_mvp_001",
   "question": "What is the FY2018 capital expenditure amount (in USD millions) for 3M? Give a response to the question by relying on the details shown in the cash flow statement.",
-  "answer": "The FY2018 capital expenditure amount for 3M is $1,577 million, as shown under \"Purchases of property, plant and equipment (PP&E)\" in the cash flows from investing activities section of the cash flow statement (page 60).",
+  "answer": "The FY2018 capital expenditure amount for 3M is $1,577 million, as shown under \"Purchases of property, plant and equipment (PP&E)\" in the cash flow statement. (Page 60)",
   "citations": [
-    {
-      "document_id": "3M_2018_10K",
-      "page": 49,
-      "section": "Financial Condition and Liquidity",
-      "text": "Table of Contents Other cash flows from financing activities may include various other items, such as changes in cash overdraft balances, and principal payments for capital leases. In addition, in 2017, this included a payment related to the $96 million in interest expense associated with premiums and fees for the early retirement of debt. See Note 12 for additional details. Free Cash Flow (non-GAAP measure): Free cash flow and free cash flow conversion are not defined under U.S. generally accep",
-      "metadata": {
-        "score": 48,
-        "matched_page_terms": [
-          "amount",
-          "capital",
-          "cash",
-          "details",
-          "equipment",
-          "financing",
-          "flow",
-          "flows",
-          "investing",
-          "millions",
-          "operating",
-          "operations",
-          "plant",
-          "property",
-          "purchases"
-        ],
-        "matched_section_terms": [],
-        "node_id": "0018",
-        "start_index": 43,
-        "end_index": 50
-      }
-    },
     {
       "document_id": "3M_2018_10K",
       "page": 60,
       "section": "Consolidated Statement of Cash Flows for the years ended December 31, 2018, 2017 and 2016",
       "text": "Table of Contents 3M Company and Subsidiaries Consolidated Statement of Cash Flow s Years ended December 31 (Millions) 2018 2017 2016 Cash Flows from Operating Activities Net income including noncontrolling interest $ 5,363 $ 4,869 $ 5,058 Adjustments to reconcile net income including noncontrolling interest to net cash provided by operating activities Depreciation and amortization 1,488 1,544 1,474 Company pension and postretirement contributions (370) (967) (383) Company pension and postretire",
       "metadata": {
-        "score": 45,
+        "score": 123.0,
+        "phrase_boost": 3,
+        "finance_boost": 78.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "cash_flow_statement_title",
+          "operating_cash_flow_section",
+          "investing_cash_flow_section",
+          "financing_cash_flow_section",
+          "capex_line_item"
+        ],
         "matched_page_terms": [
           "cash",
           "equipment",
@@ -67,12 +47,58 @@
     },
     {
       "document_id": "3M_2018_10K",
-      "page": 83,
-      "section": "Note 9. Supplemental Cash Flow Information",
-      "text": "f Contents Reclassifications out of Accumulated Other Comprehensive Income Attributable to 3M Amounts Reclassified from Details about Accumulated Other Accumulated Other Comprehensive Income Comprehensive Income Components Year ended December 31, Location on Income (Millions) 2018 2017 2016 Statement Gains (losses) associated with defined benefit pension and postretirement plans amortization Transition asset $ — $ — $ 1 See Note 13 Prior service benefit 76 89 92 See Note 13 Net actuarial loss (6",
+      "page": 46,
+      "section": "Financial Condition and Liquidity",
+      "text": "Table of Contents Cash Flows: Cash flows from operating, investing and financing activities are provided in the tables that follow. Individual amounts in the Consolidated Statement of Cash Flows exclude the effects of acquisitions, divestitures and exchange rate impacts on cash and cash equivalents, which are presented separately in the cash flows. Thus, the amounts presented in the following operating, investing and financing activities tables reflect changes in balances from period to period a",
       "metadata": {
-        "score": 40,
+        "score": 109.0,
+        "phrase_boost": 3,
+        "finance_boost": 70.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "cash_flow_statement_title",
+          "operating_cash_flow_section",
+          "investing_cash_flow_section",
+          "capex_line_item"
+        ],
         "matched_page_terms": [
+          "capital",
+          "cash",
+          "equipment",
+          "financing",
+          "flows",
+          "investing",
+          "millions",
+          "operating",
+          "plant",
+          "property",
+          "purchases",
+          "statement"
+        ],
+        "matched_section_terms": [],
+        "node_id": "0018",
+        "start_index": 43,
+        "end_index": 50
+      }
+    },
+    {
+      "document_id": "3M_2018_10K",
+      "page": 49,
+      "section": "Financial Condition and Liquidity",
+      "text": "Table of Contents Other cash flows from financing activities may include various other items, such as changes in cash overdraft balances, and principal payments for capital leases. In addition, in 2017, this included a payment related to the $96 million in interest expense associated with premiums and fees for the early retirement of debt. See Note 12 for additional details. Free Cash Flow (non-GAAP measure): Free cash flow and free cash flow conversion are not defined under U.S. generally accep",
+      "metadata": {
+        "score": 105.875,
+        "phrase_boost": 3,
+        "finance_boost": 57.875,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "operating_cash_flow_section",
+          "investing_cash_flow_section",
+          "financing_cash_flow_section",
+          "capex_line_item"
+        ],
+        "matched_page_terms": [
+          "amount",
           "capital",
           "cash",
           "details",
@@ -82,15 +108,16 @@
           "flows",
           "investing",
           "millions",
-          "statement"
+          "operating",
+          "operations",
+          "plant",
+          "property",
+          "purchases"
         ],
-        "matched_section_terms": [
-          "cash",
-          "flow"
-        ],
-        "node_id": "0040",
-        "start_index": 83,
-        "end_index": 84
+        "matched_section_terms": [],
+        "node_id": "0018",
+        "start_index": 43,
+        "end_index": 50
       }
     }
   ],
@@ -148,36 +175,19 @@
     {
       "step": 6,
       "action": "score_page",
-      "target": "page 49",
-      "metadata": {
-        "score": 48,
-        "section": "Financial Condition and Liquidity",
-        "matched_page_terms": [
-          "amount",
-          "capital",
-          "cash",
-          "details",
-          "equipment",
-          "financing",
-          "flow",
-          "flows",
-          "investing",
-          "millions",
-          "operating",
-          "operations",
-          "plant",
-          "property",
-          "purchases"
-        ],
-        "matched_section_terms": []
-      }
-    },
-    {
-      "step": 7,
-      "action": "score_page",
       "target": "page 60",
       "metadata": {
-        "score": 45,
+        "score": 123.0,
+        "phrase_boost": 3,
+        "finance_boost": 78.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "cash_flow_statement_title",
+          "operating_cash_flow_section",
+          "investing_cash_flow_section",
+          "financing_cash_flow_section",
+          "capex_line_item"
+        ],
         "section": "Consolidated Statement of Cash Flows for the years ended December 31, 2018, 2017 and 2016",
         "matched_page_terms": [
           "cash",
@@ -201,13 +211,56 @@
       }
     },
     {
+      "step": 7,
+      "action": "score_page",
+      "target": "page 46",
+      "metadata": {
+        "score": 109.0,
+        "phrase_boost": 3,
+        "finance_boost": 70.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "cash_flow_statement_title",
+          "operating_cash_flow_section",
+          "investing_cash_flow_section",
+          "capex_line_item"
+        ],
+        "section": "Financial Condition and Liquidity",
+        "matched_page_terms": [
+          "capital",
+          "cash",
+          "equipment",
+          "financing",
+          "flows",
+          "investing",
+          "millions",
+          "operating",
+          "plant",
+          "property",
+          "purchases",
+          "statement"
+        ],
+        "matched_section_terms": []
+      }
+    },
+    {
       "step": 8,
       "action": "score_page",
-      "target": "page 83",
+      "target": "page 49",
       "metadata": {
-        "score": 40,
-        "section": "Note 9. Supplemental Cash Flow Information",
+        "score": 105.875,
+        "phrase_boost": 3,
+        "finance_boost": 57.875,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "operating_cash_flow_section",
+          "investing_cash_flow_section",
+          "financing_cash_flow_section",
+          "capex_line_item"
+        ],
+        "section": "Financial Condition and Liquidity",
         "matched_page_terms": [
+          "amount",
           "capital",
           "cash",
           "details",
@@ -217,28 +270,29 @@
           "flows",
           "investing",
           "millions",
-          "statement"
+          "operating",
+          "operations",
+          "plant",
+          "property",
+          "purchases"
         ],
-        "matched_section_terms": [
-          "cash",
-          "flow"
-        ]
+        "matched_section_terms": []
       }
     }
   ],
   "token_usage": {
-    "input": 2613,
-    "output": 351,
-    "total": 2964
+    "input": 2856,
+    "output": 288,
+    "total": 3144
   },
-  "latency_ms": 5450,
+  "latency_ms": 4694,
   "metadata": {
     "structure_path": "reports\\pageindex\\structures\\3M_2018_10K_structure.json",
     "pdf_path": "datasets\\raw\\financebench\\pdfs\\3M_2018_10K.pdf",
     "selected_pages_one_indexed": [
-      49,
       60,
-      83
+      46,
+      49
     ],
     "max_pages": 3,
     "adapter_mode": "tree_page_scoring",

@@ -2,7 +2,7 @@
   "method": "pageindex_tree_qa",
   "question_id": "fb_exp_022",
   "question": "What is Coca Cola's FY2021 COGS % margin? Calculate what was asked by utilizing the line items clearly shown in the income statement.",
-  "answer": "Based on the provided document pages, the FY2021 COGS % margin cannot be calculated because the Cost of Goods Sold (COGS) amount is not shown. The income statement line item for COGS is mentioned on page 68, but no actual figure for FY2021 COGS is provided. While the Net Operating Revenues for FY2021 are listed as $38,655 million on page 77, the necessary COGS value to perform the calculation is absent.",
+  "answer": "Coca-Cola's FY2021 COGS % margin is approximately 39.7%. This is calculated using the Cost of goods sold ($15,357 million) divided by Net Operating Revenues ($38,655 million), as shown on page 62.",
   "citations": [
     {
       "document_id": "COCACOLA_2021_10K",
@@ -10,7 +10,13 @@
       "section": "Revenue Recognition",
       "text": "e ability to exercise significant influence over operating and financial policies of the investee. Our consolidated net income includes our Company’s proportionate share of the net income or loss of these companies. Our judgment regarding the level of influence over each equity method investee includes considering key factors such as our ownership interest, representation on the board of directors, participation in policy-making decisions, other commercial arrangements and material intercompany ",
       "metadata": {
-        "score": 27,
+        "score": 45.125,
+        "phrase_boost": 3,
+        "finance_boost": 18.125,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "income_statement_title"
+        ],
         "matched_page_terms": [
           "cost",
           "goods",
@@ -31,47 +37,54 @@
     },
     {
       "document_id": "COCACOLA_2021_10K",
-      "page": 77,
-      "section": "NOTE 3: REVENUE RECOGNITION",
-      "text": "Revenue is recognized when performance obligations under the terms of the contracts with our customers are satisfied. Our performance obligation generally consists of the promise to sell concentrates, syrups or finished products to our bottling partners, wholesalers, distributors or retailers. Control of the concentrates, syrups or finished products is transferred upon shipment to, or receipt at, our customers’ locations, as determined by the specific terms of the contract. Upon transfer of cont",
+      "page": 62,
+      "section": "THE COCA-COLA COMPANY AND SUBSIDIARIES CONSOLIDATED STATEMENTS OF INCOME",
+      "text": "THE COCA-COLA COMPANY AND SUBSIDIARIES CONSOLIDATED STATEMENTS OF INCOME (In millions except per share data) Year Ended December 31, 2021 2020 2019 Net Operating Revenues $ 38,655 $ 33,014 $ 37,266 Cost of goods sold 15,357 13,433 14,619 Gross Profit 23,298 19,581 22,647 Selling, general and administrative expenses 12,144 9,731 12,103 Other operating charges 846 853 458 Operating Income 10,308 8,997 10,086 Interest income 276 370 563 Interest expense 1,597 1,437 946 Equity income (loss) — net 1,",
       "metadata": {
-        "score": 20,
+        "score": 38.0,
+        "phrase_boost": 3,
+        "finance_boost": 24.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "income_statement_title"
+        ],
         "matched_page_terms": [
           "cost",
-          "income",
-          "operations",
-          "revenue",
-          "sales",
-          "statement"
+          "goods",
+          "income"
         ],
         "matched_section_terms": [
-          "revenue"
+          "income"
         ],
-        "node_id": "0109",
-        "start_index": 76,
-        "end_index": 77
+        "node_id": "0070",
+        "start_index": 62,
+        "end_index": 62
       }
     },
     {
       "document_id": "COCACOLA_2021_10K",
-      "page": 85,
-      "section": "Hedges of Net Investments in Foreign Operations Strategy",
-      "text": "Hedges of Net Investments in Foreign Operations Strategy The Company uses forward contracts and a portion of its foreign currency denominated debt, a non-derivative financial instrument, to protect the value of our net investments in a number of foreign operations. For derivative financial instruments that are designated and qualify as hedges of net investments in foreign operations, the changes in the fair values of the derivative financial instruments are recognized in net foreign currency tra",
+      "page": 101,
+      "section": "Components of Net Periodic Benefit Cost (Income)",
+      "text": "nd cash equivalents $ 33 $ 30 Equity securities: U.S.-based companies 184 170 International-based companies 12 12 Fixed-income securities: Government bonds 3 3 Corporate bonds and debt securities 82 80 Mutual, pooled and commingled funds 87 86 Hedge funds/limited partnerships 9 7 Real estate 5 4 Other 4 4 Total other postretirement benefit plan assets $ 419 $ 396 Fair value disclosures related to our other postretirement benefit plan assets are included in Note 16. Fair value disclosures include",
       "metadata": {
-        "score": 20,
+        "score": 37.0,
+        "phrase_boost": 3,
+        "finance_boost": 24.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "income_statement_title"
+        ],
         "matched_page_terms": [
           "cost",
-          "goods",
-          "income",
-          "operations",
-          "statement"
+          "income"
         ],
         "matched_section_terms": [
-          "operations"
+          "cost",
+          "income"
         ],
-        "node_id": "0118",
-        "start_index": 85,
-        "end_index": 85
+        "node_id": "0146",
+        "start_index": 101,
+        "end_index": 101
       }
     }
   ],
@@ -131,7 +144,13 @@
       "action": "score_page",
       "target": "page 68",
       "metadata": {
-        "score": 27,
+        "score": 45.125,
+        "phrase_boost": 3,
+        "finance_boost": 18.125,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "income_statement_title"
+        ],
         "section": "Revenue Recognition",
         "matched_page_terms": [
           "cost",
@@ -151,56 +170,63 @@
     {
       "step": 7,
       "action": "score_page",
-      "target": "page 77",
+      "target": "page 62",
       "metadata": {
-        "score": 20,
-        "section": "NOTE 3: REVENUE RECOGNITION",
+        "score": 38.0,
+        "phrase_boost": 3,
+        "finance_boost": 24.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "income_statement_title"
+        ],
+        "section": "THE COCA-COLA COMPANY AND SUBSIDIARIES CONSOLIDATED STATEMENTS OF INCOME",
         "matched_page_terms": [
           "cost",
-          "income",
-          "operations",
-          "revenue",
-          "sales",
-          "statement"
+          "goods",
+          "income"
         ],
         "matched_section_terms": [
-          "revenue"
+          "income"
         ]
       }
     },
     {
       "step": 8,
       "action": "score_page",
-      "target": "page 85",
+      "target": "page 101",
       "metadata": {
-        "score": 20,
-        "section": "Hedges of Net Investments in Foreign Operations Strategy",
+        "score": 37.0,
+        "phrase_boost": 3,
+        "finance_boost": 24.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "income_statement_title"
+        ],
+        "section": "Components of Net Periodic Benefit Cost (Income)",
         "matched_page_terms": [
           "cost",
-          "goods",
-          "income",
-          "operations",
-          "statement"
+          "income"
         ],
         "matched_section_terms": [
-          "operations"
+          "cost",
+          "income"
         ]
       }
     }
   ],
   "token_usage": {
-    "input": 3016,
-    "output": 316,
-    "total": 3332
+    "input": 2236,
+    "output": 254,
+    "total": 2490
   },
-  "latency_ms": 6231,
+  "latency_ms": 7019,
   "metadata": {
     "structure_path": "reports\\pageindex\\structures\\COCACOLA_2021_10K_structure.json",
     "pdf_path": "datasets\\raw\\financebench\\pdfs\\COCACOLA_2021_10K.pdf",
     "selected_pages_one_indexed": [
       68,
-      77,
-      85
+      62,
+      101
     ],
     "max_pages": 3,
     "adapter_mode": "tree_page_scoring",

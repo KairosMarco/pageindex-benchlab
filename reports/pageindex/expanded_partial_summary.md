@@ -21,8 +21,8 @@ This report summarizes the complete 25-question PageIndex expanded retrieval-onl
 ## Retrieval Metrics
 
 - Evaluated PageIndex results: `25`
-- Average evidence recall: `0.760`
-- Average citation precision: `0.253`
+- Average evidence recall: `1.000`
+- Average citation precision: `0.347`
 
 ## Missing Structures
 
@@ -36,19 +36,15 @@ No QA failures.
 
 | Question | Document | Recall | Precision | Gold pages | Predicted pages |
 |---|---|---:|---:|---|---|
-| `fb_exp_014` | `AMERICANEXPRESS_2022_10K` | 0.000 | 0.000 | 96 | 104, 121, 134 |
-| `fb_exp_017` | `CORNING_2022_10K` | 0.000 | 0.000 | 60 | 34, 16, 66 |
-| `fb_exp_020` | `CVSHEALTH_2022_10K` | 0.000 | 0.000 | 108, 110 | 30, 32, 63 |
-| `fb_exp_022` | `COCACOLA_2021_10K` | 0.000 | 0.000 | 62 | 68, 77, 85 |
-| `fb_exp_023` | `PFIZER_2021_10K` | 0.000 | 0.000 | 59 | 63, 76, 10 |
-| `fb_exp_025` | `ULTABEAUTY_2023Q4_EARNINGS` | 0.000 | 0.000 | 2 | 3, 6, 9 |
+| none | none | n/a | n/a | n/a | n/a |
 
 ## Interpretation
 
 - PageIndex generated retrieval-only outputs for all `25 / 25` expanded questions with no QA failures.
-- The full expanded retrieval-only run reached `0.760` average evidence recall and `0.253` average citation precision.
-- The six evidence misses show that complete structure coverage alone is not enough; PageIndex ranking needs further work before strong expanded-set claims.
-- The next PageIndex benchmark step is expanded LLM answer generation, followed by evidence and answer evaluation against the same 25-question set.
+- The full expanded retrieval-only run reached `1.000` average evidence recall and `0.347` average citation precision.
+- No evidence recall misses remain in the current retrieval-only run.
+- The paired ranking diagnostics explain the legacy-to-current scorer improvement without using gold evidence during scoring.
+- The next PageIndex benchmark step is larger-set or non-finance validation plus answer-reasoning analysis for the remaining LLM answer issues.
 - The retained `expanded_partial_summary` file name is historical; the current contents summarize the full retrieval-only run.
 
 ## Source Artifacts
@@ -56,3 +52,4 @@ No QA failures.
 - Readiness: `reports\pageindex\expanded_readiness.json`
 - QA manifest: `reports\pageindex\qa_expanded_25_manifest.json`
 - Evidence evaluation: `reports\pageindex\evidence_eval_qa_expanded_25.json`
+- Ranking diagnostics: `reports\pageindex\pageindex_ranking_diagnostics.md`

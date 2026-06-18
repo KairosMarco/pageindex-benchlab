@@ -15,6 +15,21 @@ def normalize_financial_text(text: str) -> str:
     return normalized.strip()
 
 
+def _mentions_sga(text: str) -> bool:
+    """Match common SG&A spellings after text normalization."""
+
+    return _has_any(
+        text,
+        (
+            "sg&a",
+            "sg and a",
+            "sga",
+            "selling, general and administrative",
+            "selling general and administrative",
+        ),
+    )
+
+
 def _has_any(text: str, patterns: tuple[str, ...]) -> bool:
     return any(pattern in text for pattern in patterns)
 
@@ -118,11 +133,39 @@ def financial_line_item_boost(question: BenchmarkQuestion, text: str) -> tuple[f
             score = _add(score, reasons, 22.0, "capital_intensity_balance_sheet_lines")
         if _has_any(q, ("capital-intensive", "capital intensive")) and has_income_statement_title and has_income_statement_lines:
             score = _add(score, reasons, 18.0, "capital_intensity_income_statement_lines")
+        if _has_any(q, ("capital-intensive", "capital intensive")) and has_income_statement_title and _has_any(
+            t,
+            ("revenues:", "total revenues", "operating costs:", "total operating costs", "net income"),
+        ):
+            score = _add(score, reasons, 28.0, "capital_intensity_primary_income_statement_lines")
         if _has_any(q, ("ppne", "property, plant and equipment", "property plant and equipment")) and _has_any(
             t,
             ("property, plant and equipment", "property plant and equipment", "property and equipment"),
         ):
             score = _add(score, reasons, 26.0, "ppne_line_item")
+
+    asks_sga_driver = _mentions_sga(q) and _has_any(
+        q,
+        ("what drove", "drove", "driven", "driver", "drivers", "reduction", "decrease", "decreased", "why"),
+    )
+    if asks_sga_driver:
+        has_sga_context = _mentions_sga(t)
+        has_driver_language = _has_any(t, ("primarily due to", "driven by", "due to", "partially offset"))
+        has_percent_of_sales = _has_any(t, ("as a percentage of net sales", "percent of net sales"))
+        has_sga_driver_terms = _has_any(
+            t,
+            (
+                "marketing expenses",
+                "incentive compensation",
+                "store payroll",
+                "corporate overhead",
+                "wage investments",
+            ),
+        )
+        if has_sga_context and has_driver_language and has_percent_of_sales:
+            score = _add(score, reasons, 30.0, "sga_percent_of_sales_driver_narrative")
+        if has_sga_context and has_sga_driver_terms:
+            score = _add(score, reasons, 12.0, "sga_driver_terms")
 
     if _has_any(q, ("legal", "lawsuit", "lawsuits", "legal battles")):
         if _has_any(t, ("legal proceedings", "legal actions", "multiple legal actions have been filed")):

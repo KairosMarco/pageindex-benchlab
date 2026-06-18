@@ -1001,8 +1001,8 @@ Expanded PageIndex retrieval-only QA has been run for the full set:
 ```text
 Generated QA outputs: 25
 Failed QA outputs: 0
-Average evidence recall: 0.760
-Average citation precision: 0.253
+Average evidence recall: 1.000
+Average citation precision: 0.347
 ```
 
 Artifacts:
@@ -1013,6 +1013,8 @@ reports/pageindex/expanded_partial_summary.md
 reports/pageindex/expanded_partial_summary.json
 reports/pageindex/qa_expanded_25_manifest.json
 reports/pageindex/evidence_eval_qa_expanded_25.json
+reports/pageindex/pageindex_ranking_diagnostics.md
+reports/pageindex/pageindex_ranking_diagnostics.json
 ```
 
 Expanded PageIndex LLM answer generation has also been run:
@@ -1022,12 +1024,12 @@ Model: deepseek/deepseek-v4-pro
 Generated answers: 25 / 25
 Generation failures: 0
 Evaluation failures: 0
-Evidence recall: 0.760
-Citation precision: 0.253
-Answer accuracy: 0.760
-Verdicts: 19 correct, 1 partial, 5 incorrect
-Average total tokens: 3,046
-Average latency: 5,787 ms
+Evidence recall: 1.000
+Citation precision: 0.347
+Answer accuracy: 0.920
+Verdicts: 23 correct, 0 partial, 2 incorrect
+Average total tokens: 2,882
+Average latency: 4,840 ms
 Validation: pass, 20 checks, 0 failed
 ```
 
@@ -1052,9 +1054,9 @@ Observed indexing robustness issues fixed locally:
 
 Interpretation:
 
-- The original 12-question MVP result did not generalize to the expanded 25-question set.
-- PageIndex used a compact three-page answer context, but six evidence misses reduced expanded answer accuracy.
-- The next PageIndex experiment should inspect ranking and page-selection behavior for `fb_exp_014`, `fb_exp_017`, `fb_exp_020`, `fb_exp_022`, `fb_exp_023`, and `fb_exp_025`.
+- The initial PageIndex expanded scorer did not generalize to the 25-question set, but the current label-free finance line-item boost restores top-three evidence recall to `1.000`.
+- PageIndex used a compact three-page answer context. The remaining answer issues are `fb_exp_019` and `fb_exp_020`, both after successful evidence retrieval.
+- The ranking diagnostics now provide a before/after contribution artifact: legacy scorer recall `0.760`, current scorer recall `1.000`, with no candidate regressions.
 
 ## Upstream Contribution Drafts
 
@@ -1065,7 +1067,7 @@ docs/upstream-pageindex-benchmark-issue.md
 docs/upstream-patches/pageindex-json-resilience-pr.md
 ```
 
-The issue draft presents the benchmark plan conservatively: PageIndex has strong MVP evidence recall, but the expanded PageIndex run exposes ranking gaps. The PR draft focuses on robust JSON extraction and conservative fallbacks for noisy model responses.
+The issue draft presents the benchmark plan conservatively: PageIndex has strong MVP evidence recall and a current expanded result that is competitive on this small finance subset after ranking diagnostics. The PR draft focuses on robust JSON extraction and conservative fallbacks for noisy model responses.
 
 ## Next Stage 1 Work
 
@@ -1073,9 +1075,9 @@ The next work should strengthen the benchmark beyond the dependency-light MVP ba
 
 1. Use the PageIndex upstream issue and PR drafts as the first contribution candidates.
 2. Open a small PageIndex upstream PR for JSON response resilience and fallback handling.
-3. Investigate the six PageIndex expanded evidence misses and turn them into ranking-improvement test cases.
+3. Turn the PageIndex ranking diagnostics into a small upstream benchmark/retrieval note.
 4. Add GraphRAG and HyperGraphRAG after the expanded baselines are stable.
-5. Consider evaluator refinements for rounding tolerance and extra-but-supported legal details before further prompt tuning.
+5. Consider evaluator refinements for rounding tolerance and capital-intensity reasoning before further prompt tuning.
 
 ## Stage 1 Exit Criteria
 
@@ -1089,4 +1091,4 @@ Stage 1 is complete when:
 
 ## Current Blocker
 
-There is no mechanical blocker for PageIndex expanded QA now. The main blocker is methodological: PageIndex ranking needs improvement or explanation on the six expanded evidence misses before the project can claim PageIndex has a unique advantage over stronger LlamaIndex baselines.
+There is no mechanical blocker for PageIndex expanded QA now. The remaining blocker is methodological: the 25-question finance subset is still too small to support broad PageIndex superiority claims, and the two remaining PageIndex answer issues need reasoning or evaluator analysis.

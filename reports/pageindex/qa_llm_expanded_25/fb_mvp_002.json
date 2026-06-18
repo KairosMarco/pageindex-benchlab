@@ -2,15 +2,50 @@
   "method": "pageindex_tree_qa",
   "question_id": "fb_mvp_002",
   "question": "What is Amazon's year-over-year change in revenue from FY2016 to FY2017 (in units of percents and round to one decimal place)? Calculate what was asked by utilizing the line items clearly shown in the statement of income.",
-  "answer": "The year-over-year change in total net sales from FY2016 to FY2017 is 30.8%.\n\nThis is calculated using the \"Total net sales\" line item from the consolidated statements of operations on page 38, which shows $135,987 million for 2016 and $177,866 million for 2017. The calculation is ((177,866 - 135,987) / 135,987) * 100 = 30.8% (rounded to one decimal place).",
+  "answer": "The year-over-year change in revenue from FY2016 to FY2017 is 30.8%.\n\nTotal net sales for FY2016 were $135,987 million, and for FY2017 they were $177,866 million (Page 38). The calculation is (($177,866 - $135,987) / $135,987) * 100 = 30.8%.",
   "citations": [
+    {
+      "document_id": "AMAZON_2017_10K",
+      "page": 38,
+      "section": "CONSOLIDATED STATEMENTS OF OPERATIONS",
+      "text": "Table of Contents AMAZON.COM, INC. CONSOLIDATED STATEMENTS OF OPERATIONS (in millions, except per share data) Year Ended December 31, 2015 2016 2017 Net product sales $ 79,268 $ 94,665 $ 118,573 Net service sales 27,738 41,322 59,293 Total net sales 107,006 135,987 177,866 Operating expenses: Cost of sales 71,651 88,265 111,934 Fulfillment 13,410 17,619 25,249 Marketing 5,254 7,233 10,069 Technology and content 12,540 16,085 22,620 General and administrative 1,747 2,432 3,674 Other operating exp",
+      "metadata": {
+        "score": 80.0,
+        "phrase_boost": 21,
+        "finance_boost": 42.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "income_statement_title",
+          "total_net_sales_line_item"
+        ],
+        "matched_page_terms": [
+          "cost",
+          "income",
+          "net",
+          "operations",
+          "sales"
+        ],
+        "matched_section_terms": [
+          "operations"
+        ],
+        "node_id": "0016",
+        "start_index": 38,
+        "end_index": 39
+      }
+    },
     {
       "document_id": "AMAZON_2017_10K",
       "page": 49,
       "section": "Unearned Revenue",
       "text": "Table of Contents unearned revenue as of December 31, 2016 and 2017 . The amortization of previously unearned revenue was approximately $10.0 billion and $14.3 billion in 2016 and 2017 . Foreign Currency We have internationally-focused websites for Australia, Brazil, Canada, China, France, Germany, India, Italy, Japan, Mexico, the Netherlands, Spain, and the United Kingdom . Net sales generated from these websites, as well as most of the related expenses directly incurred from those operations, ",
       "metadata": {
-        "score": 39,
+        "score": 59.25,
+        "phrase_boost": 13,
+        "finance_boost": 20.25,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "income_statement_title"
+        ],
         "matched_page_terms": [
           "change",
           "cost",
@@ -31,33 +66,16 @@
     },
     {
       "document_id": "AMAZON_2017_10K",
-      "page": 38,
-      "section": "CONSOLIDATED STATEMENTS OF OPERATIONS",
-      "text": "Table of Contents AMAZON.COM, INC. CONSOLIDATED STATEMENTS OF OPERATIONS (in millions, except per share data) Year Ended December 31, 2015 2016 2017 Net product sales $ 79,268 $ 94,665 $ 118,573 Net service sales 27,738 41,322 59,293 Total net sales 107,006 135,987 177,866 Operating expenses: Cost of sales 71,651 88,265 111,934 Fulfillment 13,410 17,619 25,249 Marketing 5,254 7,233 10,069 Technology and content 12,540 16,085 22,620 General and administrative 1,747 2,432 3,674 Other operating exp",
-      "metadata": {
-        "score": 38,
-        "matched_page_terms": [
-          "cost",
-          "income",
-          "net",
-          "operations",
-          "sales"
-        ],
-        "matched_section_terms": [
-          "operations"
-        ],
-        "node_id": "0016",
-        "start_index": 38,
-        "end_index": 39
-      }
-    },
-    {
-      "document_id": "AMAZON_2017_10K",
       "page": 48,
       "section": "Unearned Revenue",
       "text": "Table of Contents expensed as incurred. These capitalized costs are amortized to “Cost of sales” on an accelerated basis that follows the viewing pattern of customer streams in the first months after availability. Investments We generally invest our excess cash in investment grade short- to intermediate-term fixed income securities and AAA-rated money market funds. Such investments are included in “Cash and cash equivalents” or “Marketable securities” on the accompanying consolidated balance she",
       "metadata": {
-        "score": 36,
+        "score": 52.0,
+        "phrase_boost": 13,
+        "finance_boost": 16.0,
+        "finance_boost_reasons": [
+          "income_statement_title"
+        ],
         "matched_page_terms": [
           "change",
           "cost",
@@ -130,9 +148,41 @@
     {
       "step": 6,
       "action": "score_page",
+      "target": "page 38",
+      "metadata": {
+        "score": 80.0,
+        "phrase_boost": 21,
+        "finance_boost": 42.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "income_statement_title",
+          "total_net_sales_line_item"
+        ],
+        "section": "CONSOLIDATED STATEMENTS OF OPERATIONS",
+        "matched_page_terms": [
+          "cost",
+          "income",
+          "net",
+          "operations",
+          "sales"
+        ],
+        "matched_section_terms": [
+          "operations"
+        ]
+      }
+    },
+    {
+      "step": 7,
+      "action": "score_page",
       "target": "page 49",
       "metadata": {
-        "score": 39,
+        "score": 59.25,
+        "phrase_boost": 13,
+        "finance_boost": 20.25,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "income_statement_title"
+        ],
         "section": "Unearned Revenue",
         "matched_page_terms": [
           "change",
@@ -150,30 +200,16 @@
       }
     },
     {
-      "step": 7,
-      "action": "score_page",
-      "target": "page 38",
-      "metadata": {
-        "score": 38,
-        "section": "CONSOLIDATED STATEMENTS OF OPERATIONS",
-        "matched_page_terms": [
-          "cost",
-          "income",
-          "net",
-          "operations",
-          "sales"
-        ],
-        "matched_section_terms": [
-          "operations"
-        ]
-      }
-    },
-    {
       "step": 8,
       "action": "score_page",
       "target": "page 48",
       "metadata": {
-        "score": 36,
+        "score": 52.0,
+        "phrase_boost": 13,
+        "finance_boost": 16.0,
+        "finance_boost_reasons": [
+          "income_statement_title"
+        ],
         "section": "Unearned Revenue",
         "matched_page_terms": [
           "change",
@@ -192,16 +228,16 @@
   ],
   "token_usage": {
     "input": 2716,
-    "output": 365,
-    "total": 3081
+    "output": 327,
+    "total": 3043
   },
-  "latency_ms": 5414,
+  "latency_ms": 4384,
   "metadata": {
     "structure_path": "reports\\pageindex\\structures\\AMAZON_2017_10K_structure.json",
     "pdf_path": "datasets\\raw\\financebench\\pdfs\\AMAZON_2017_10K.pdf",
     "selected_pages_one_indexed": [
-      49,
       38,
+      49,
       48
     ],
     "max_pages": 3,

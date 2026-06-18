@@ -10,7 +10,14 @@
       "section": "COSTCO WHOLESALE CORPORATION CONSOLIDATED BALANCE SHEETS",
       "text": "Table of Contents COSTCO WHOLESALE CORPORATION CONSOLIDATED BALANCE SHEETS (amounts in millions, except par value and share data) August 29, 2021 August 30, 2020 ASSETS CURRENT ASSETS Cash and cash equivalents $ 11,258 $ 12,277 Short-term investments 917 1,028 Receivables, net 1,803 1,550 Merchandise inventories 14,215 12,242 Other current assets 1,312 1,023 Total current assets 29,505 28,120 OTHER ASSETS Property and equipment, net 23,492 21,807 Operating lease right-of-use assets 2,890 2,788 O",
       "metadata": {
-        "score": 41,
+        "score": 83.0,
+        "phrase_boost": 16,
+        "finance_boost": 42.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "balance_sheet_title",
+          "total_assets_line_item"
+        ],
         "matched_page_terms": [
           "assets",
           "balance",
@@ -35,7 +42,12 @@
       "section": "Assets and Liabilities Measured at Fair Value on a Recurring Basis",
       "text": "Table of Contents Note 4—Fair Value Measurement Assets and Liabilities Measured at Fair Value on a Recurring Basis The table below presents information regarding the Company’s financial assets and financial liabilities that are measured at fair value on a recurring basis and indicate the level within the hierarchy reflecting the valuation techniques utilized to determine such fair value. Level 2 2021 2020 Investment in government and agency securities $ 393 $ 508 Forward foreign-exchange contrac",
       "metadata": {
-        "score": 38,
+        "score": 44.875,
+        "phrase_boost": 13,
+        "finance_boost": 6.875,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
         "matched_page_terms": [
           "assets",
           "balance",
@@ -56,25 +68,28 @@
     },
     {
       "document_id": "COSTCO_2021_10K",
-      "page": 45,
-      "section": "Goodwill and Acquired Intangible Assets",
-      "text": "any determines at inception whether a contract is or contains a lease. The Company initially records right-of-use (ROU) assets and lease obligations for its finance and operating leases based on the discounted future minimum lease payments over the term. The lease term is defined as the noncancelable period of the lease plus any options to extend when it is reasonably certain that the Company will exercise the option. As the rate implicit in the Company's leases is not easily determinable, the p",
+      "page": 53,
+      "section": "Long-Term Debt",
+      "text": "Table of Contents Note 6—Leases The tables below present information regarding the Company's lease assets and liabilities. 2021 2020 Assets Operating lease right-of-use assets $ 2,890 $ 2,788 Finance lease assets 1,000 592 Total lease assets $ 3,890 $ 3,380 Liabilities Current Operating lease liabilities $ 222 $ 231 Finance lease liabilities 72 31 Long-term Operating lease liabilities 2,642 2,558 Finance lease liabilities 980 657 Total lease liabilities $ 3,916 $ 3,477 _______________ (1) Includ",
       "metadata": {
-        "score": 33,
+        "score": 38.125,
+        "phrase_boost": 13,
+        "finance_boost": 7.125,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
         "matched_page_terms": [
           "assets",
           "balance",
+          "information",
           "liabilities",
-          "sheet",
           "sheets",
           "total"
         ],
-        "matched_section_terms": [
-          "assets"
-        ],
-        "node_id": "0043",
-        "start_index": 45,
-        "end_index": 46
+        "matched_section_terms": [],
+        "node_id": "0064",
+        "start_index": 51,
+        "end_index": 53
       }
     }
   ],
@@ -134,7 +149,14 @@
       "action": "score_page",
       "target": "page 38",
       "metadata": {
-        "score": 41,
+        "score": 83.0,
+        "phrase_boost": 16,
+        "finance_boost": 42.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "balance_sheet_title",
+          "total_assets_line_item"
+        ],
         "section": "COSTCO WHOLESALE CORPORATION CONSOLIDATED BALANCE SHEETS",
         "matched_page_terms": [
           "assets",
@@ -156,7 +178,12 @@
       "action": "score_page",
       "target": "page 51",
       "metadata": {
-        "score": 38,
+        "score": 44.875,
+        "phrase_boost": 13,
+        "finance_boost": 6.875,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
         "section": "Assets and Liabilities Measured at Fair Value on a Recurring Basis",
         "matched_page_terms": [
           "assets",
@@ -176,21 +203,24 @@
     {
       "step": 8,
       "action": "score_page",
-      "target": "page 45",
+      "target": "page 53",
       "metadata": {
-        "score": 33,
-        "section": "Goodwill and Acquired Intangible Assets",
+        "score": 38.125,
+        "phrase_boost": 13,
+        "finance_boost": 7.125,
+        "finance_boost_reasons": [
+          "table_like_numeric_density"
+        ],
+        "section": "Long-Term Debt",
         "matched_page_terms": [
           "assets",
           "balance",
+          "information",
           "liabilities",
-          "sheet",
           "sheets",
           "total"
         ],
-        "matched_section_terms": [
-          "assets"
-        ]
+        "matched_section_terms": []
       }
     }
   ],
@@ -199,14 +229,14 @@
     "output": null,
     "total": null
   },
-  "latency_ms": 129,
+  "latency_ms": 120,
   "metadata": {
     "structure_path": "reports\\pageindex\\structures\\COSTCO_2021_10K_structure.json",
     "pdf_path": "datasets\\raw\\financebench\\pdfs\\COSTCO_2021_10K.pdf",
     "selected_pages_one_indexed": [
       38,
       51,
-      45
+      53
     ],
     "max_pages": 3,
     "adapter_mode": "tree_page_scoring",
