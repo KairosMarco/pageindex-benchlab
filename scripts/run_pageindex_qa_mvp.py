@@ -14,7 +14,12 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 from benchlab.schemas import BenchmarkQuestion  # noqa: E402
-from pipelines.pageindex.qa_adapter import DEFAULT_MAX_PAGES, run_pageindex_qa  # noqa: E402
+from pipelines.pageindex.qa_adapter import (  # noqa: E402
+    DEFAULT_ANSWER_PROMPT_MODE,
+    DEFAULT_MAX_PAGES,
+    SUPPORTED_ANSWER_PROMPT_MODES,
+    run_pageindex_qa,
+)
 
 
 DEFAULT_QUESTIONS = ROOT / "datasets" / "financebench" / "mvp_questions.jsonl"
@@ -69,6 +74,11 @@ def main() -> None:
     parser.add_argument("--model", default=None, help="LiteLLM model name used for answer generation.")
     parser.add_argument("--no-llm", action="store_true", help="Only run retrieval and citation generation.")
     parser.add_argument("--max-pages", type=int, default=DEFAULT_MAX_PAGES)
+    parser.add_argument(
+        "--answer-prompt-mode",
+        choices=SUPPORTED_ANSWER_PROMPT_MODES,
+        default=DEFAULT_ANSWER_PROMPT_MODE,
+    )
     parser.add_argument("--force", action="store_true", help="Re-run questions even if the output JSON already exists.")
     parser.add_argument("--continue-on-error", action="store_true")
     args = parser.parse_args()
@@ -103,6 +113,7 @@ def main() -> None:
                     "status": "exists",
                     "output_path": rel(output_path),
                     "size_bytes": output_path.stat().st_size,
+                    "answer_prompt_mode": args.answer_prompt_mode,
                 }
             )
             continue
@@ -121,6 +132,7 @@ def main() -> None:
                 model=args.model,
                 no_llm=args.no_llm,
                 max_pages=args.max_pages,
+                answer_prompt_mode=args.answer_prompt_mode,
             )
             result.metadata = compact_result_metadata(result.metadata)
             output_path.write_text(result.model_dump_json(indent=2) + "\n", encoding="utf-8")
@@ -138,6 +150,7 @@ def main() -> None:
                     "latency_ms": int((time.perf_counter() - started) * 1000),
                     "llm_enabled": not args.no_llm,
                     "model": args.model,
+                    "answer_prompt_mode": args.answer_prompt_mode,
                 }
             )
         except Exception as exc:

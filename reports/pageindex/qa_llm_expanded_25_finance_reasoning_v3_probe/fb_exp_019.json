@@ -1,0 +1,237 @@
+{
+  "method": "pageindex_tree_qa",
+  "question_id": "fb_exp_019",
+  "question": "How much (in USD billions) did American Water Works pay out in cash dividends for FY2020? Compute or extract the answer by primarily using the details outlined in the statement of cash flows.",
+  "answer": "$0.40 billion ($389 million) (per the Consolidated Statements of Cash Flows, page 86).",
+  "citations": [
+    {
+      "document_id": "AMERICANWATERWORKS_2020_10K",
+      "page": 86,
+      "section": "American Water Works Company, Inc. and Subsidiary Companies Consolidated Statements of Cash Flows",
+      "text": "Table of Contents American Water Works Company, Inc. and Subsidiary Companies Consolidated Statements of Cash Flows (In millions) For the Years Ended December 31, 2020 2019 2018 CASH FLOWS FROM OPERATING ACTIVITIES Net income $ 709 $ 621 $ 565 Adjustments to reconcile to net cash flows provided by operating activities: Depreciation and amortization 604 582 545 Deferred income taxes and amortization of investment tax credits 207 208 195 Provision for losses on accounts receivable 34 28 33 Loss (g",
+      "metadata": {
+        "score": 76.0,
+        "phrase_boost": 13,
+        "finance_boost": 50.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "cash_flow_statement_title",
+          "operating_cash_flow_section",
+          "investing_cash_flow_section",
+          "financing_cash_flow_section"
+        ],
+        "matched_page_terms": [
+          "cash",
+          "dividends",
+          "flows"
+        ],
+        "matched_section_terms": [
+          "cash",
+          "flows"
+        ],
+        "node_id": "0126",
+        "start_index": 86,
+        "end_index": 87
+      }
+    },
+    {
+      "document_id": "AMERICANWATERWORKS_2020_10K",
+      "page": 66,
+      "section": "Cash Flows Provided by Operating Activities",
+      "text": "Table of Contents Cash flows provided by operating activities have been a reliable, steady source of funding, sufficient to meet operating requirements and fund the majority of the Company’s capital investments. The Company expects to seek access to debt and equity capital markets to meet the balance of its capital investment, if any, and fund its dividend payments, as needed. Operating cash flows can be negatively affected by changes in the Company’s rate regulated environments, changes in the ",
+      "metadata": {
+        "score": 53.0,
+        "phrase_boost": 13,
+        "finance_boost": 24.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "cash_flow_statement_title"
+        ],
+        "matched_page_terms": [
+          "cash",
+          "details",
+          "flows",
+          "pay"
+        ],
+        "matched_section_terms": [
+          "cash",
+          "flows"
+        ],
+        "node_id": "0100",
+        "start_index": 65,
+        "end_index": 67
+      }
+    },
+    {
+      "document_id": "AMERICANWATERWORKS_2020_10K",
+      "page": 93,
+      "section": "Note 2: Significant Accounting Policies",
+      "text": "basis. See Note 15—Income Taxes for additional information. Allowance for Funds Used During Construction AFUDC is a non-cash credit to income with a corresponding charge to utility plant that represents the cost of borrowed funds or a return on equity funds devoted to plant under construction. The regulated utility subsidiaries record AFUDC to the extent permitted by the PUCs. The portion of AFUDC attributable to borrowed funds is shown as a reduction of interest, net on the Consolidated Stateme",
+      "metadata": {
+        "score": 51.0,
+        "phrase_boost": 13,
+        "finance_boost": 29.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "cash_flow_statement_title",
+          "operating_cash_flow_section"
+        ],
+        "matched_page_terms": [
+          "cash",
+          "flows",
+          "pay"
+        ],
+        "matched_section_terms": [],
+        "node_id": "0130",
+        "start_index": 88,
+        "end_index": 95
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "select_tree_node",
+      "target": "Cash Flows Provided by Operating Activities",
+      "metadata": {
+        "node_id": "0100",
+        "start_index": 65,
+        "end_index": 67
+      }
+    },
+    {
+      "step": 2,
+      "action": "select_tree_node",
+      "target": "Cash Flows Used in Investing Activities",
+      "metadata": {
+        "node_id": "0101",
+        "start_index": 67,
+        "end_index": 68
+      }
+    },
+    {
+      "step": 3,
+      "action": "select_tree_node",
+      "target": "Cash Flows from Financing Activities",
+      "metadata": {
+        "node_id": "0102",
+        "start_index": 68,
+        "end_index": 70
+      }
+    },
+    {
+      "step": 4,
+      "action": "select_tree_node",
+      "target": "American Water Works Company, Inc. and Subsidiary Companies Consolidated Statements of Cash Flows",
+      "metadata": {
+        "node_id": "0126",
+        "start_index": 86,
+        "end_index": 87
+      }
+    },
+    {
+      "step": 5,
+      "action": "select_tree_node",
+      "target": "Dividends and Regulatory Restrictions",
+      "metadata": {
+        "node_id": "0108",
+        "start_index": 72,
+        "end_index": 72
+      }
+    },
+    {
+      "step": 6,
+      "action": "score_page",
+      "target": "page 86",
+      "metadata": {
+        "score": 76.0,
+        "phrase_boost": 13,
+        "finance_boost": 50.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "cash_flow_statement_title",
+          "operating_cash_flow_section",
+          "investing_cash_flow_section",
+          "financing_cash_flow_section"
+        ],
+        "section": "American Water Works Company, Inc. and Subsidiary Companies Consolidated Statements of Cash Flows",
+        "matched_page_terms": [
+          "cash",
+          "dividends",
+          "flows"
+        ],
+        "matched_section_terms": [
+          "cash",
+          "flows"
+        ]
+      }
+    },
+    {
+      "step": 7,
+      "action": "score_page",
+      "target": "page 66",
+      "metadata": {
+        "score": 53.0,
+        "phrase_boost": 13,
+        "finance_boost": 24.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "cash_flow_statement_title"
+        ],
+        "section": "Cash Flows Provided by Operating Activities",
+        "matched_page_terms": [
+          "cash",
+          "details",
+          "flows",
+          "pay"
+        ],
+        "matched_section_terms": [
+          "cash",
+          "flows"
+        ]
+      }
+    },
+    {
+      "step": 8,
+      "action": "score_page",
+      "target": "page 93",
+      "metadata": {
+        "score": 51.0,
+        "phrase_boost": 13,
+        "finance_boost": 29.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "cash_flow_statement_title",
+          "operating_cash_flow_section"
+        ],
+        "section": "Note 2: Significant Accounting Policies",
+        "matched_page_terms": [
+          "cash",
+          "flows",
+          "pay"
+        ],
+        "matched_section_terms": []
+      }
+    }
+  ],
+  "token_usage": {
+    "input": 3100,
+    "output": 918,
+    "total": 4018
+  },
+  "latency_ms": 17981,
+  "metadata": {
+    "structure_path": "reports\\pageindex\\structures\\AMERICANWATERWORKS_2020_10K_structure.json",
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\AMERICANWATERWORKS_2020_10K.pdf",
+    "selected_pages_one_indexed": [
+      86,
+      66,
+      93
+    ],
+    "max_pages": 3,
+    "adapter_mode": "tree_page_scoring",
+    "llm_enabled": true,
+    "model": "deepseek/deepseek-v4-pro",
+    "answer_prompt_mode": "finance_reasoning_v3"
+  }
+}

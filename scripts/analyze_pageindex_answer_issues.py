@@ -20,6 +20,7 @@ DEFAULT_RESULTS_DIR = ROOT / "reports" / "pageindex" / "qa_llm_expanded_25"
 DEFAULT_EVIDENCE_EVAL = ROOT / "reports" / "pageindex" / "evidence_eval_qa_llm_expanded_25.json"
 DEFAULT_ANSWER_EVAL = ROOT / "reports" / "pageindex" / "answer_eval_qa_llm_expanded_25.json"
 DEFAULT_PROMPT_VARIANTS = ROOT / "reports" / "finance_prompt_variant_summary.json"
+DEFAULT_PAGEINDEX_PROMPT_VARIANTS = ROOT / "reports" / "pageindex" / "pageindex_prompt_variant_summary.json"
 DEFAULT_OUTPUT_JSON = ROOT / "reports" / "pageindex" / "pageindex_answer_issue_analysis.json"
 DEFAULT_OUTPUT_MD = ROOT / "reports" / "pageindex" / "pageindex_answer_issue_analysis.md"
 
@@ -105,6 +106,27 @@ def prompt_variant_outcomes(payload: dict[str, Any] | None, question_id: str) ->
     return rows
 
 
+def pageindex_prompt_variant_outcomes(payload: dict[str, Any] | None, question_id: str) -> list[dict[str, Any]]:
+    if not payload:
+        return []
+    rows = []
+    for run in payload.get("runs", []):
+        for outcome in run.get("target_outcomes", []):
+            if outcome.get("question_id") != question_id:
+                continue
+            rows.append(
+                {
+                    "run_type": run.get("result_scope"),
+                    "key": run.get("key"),
+                    "label": run.get("label"),
+                    "verdict": outcome.get("verdict"),
+                    "answer_accuracy": run.get("answer_accuracy"),
+                    "average_total_tokens": run.get("average_total_tokens"),
+                }
+            )
+    return rows
+
+
 def build_issue_row(
     *,
     question_id: str,
@@ -113,6 +135,7 @@ def build_issue_row(
     evidence_row: dict[str, Any],
     answer_row: dict[str, Any],
     prompt_variants: dict[str, Any] | None,
+    pageindex_prompt_variants: dict[str, Any] | None,
 ) -> dict[str, Any]:
     analysis = ISSUE_ANALYSIS.get(
         question_id,
@@ -152,6 +175,7 @@ def build_issue_row(
         "token_usage": result.token_usage.model_dump(),
         "latency_ms": result.latency_ms,
         "prompt_variant_outcomes": prompt_variant_outcomes(prompt_variants, question_id),
+        "pageindex_prompt_variant_outcomes": pageindex_prompt_variant_outcomes(pageindex_prompt_variants, question_id),
         "result_path": rel(DEFAULT_RESULTS_DIR / f"{question_id}.json"),
     }
 
@@ -161,6 +185,7 @@ def build_payload(args: argparse.Namespace) -> dict[str, Any]:
     answer_eval = load_json(args.answer_eval)
     evidence_eval = load_json(args.evidence_eval)
     prompt_variants = load_json_if_exists(args.prompt_variants)
+    pageindex_prompt_variants = load_json_if_exists(args.pageindex_prompt_variants)
     answer_by_id = row_by_question(answer_eval)
     evidence_by_id = row_by_question(evidence_eval)
     issue_ids = args.question_id or non_correct_question_ids(answer_eval)
@@ -176,6 +201,7 @@ def build_payload(args: argparse.Namespace) -> dict[str, Any]:
                 evidence_row=evidence_by_id.get(question_id, {}),
                 answer_row=answer_by_id.get(question_id, {}),
                 prompt_variants=prompt_variants,
+                pageindex_prompt_variants=pageindex_prompt_variants,
             )
         )
 
@@ -188,6 +214,9 @@ def build_payload(args: argparse.Namespace) -> dict[str, Any]:
             "evidence_eval": rel(args.evidence_eval),
             "answer_eval": rel(args.answer_eval),
             "prompt_variant_summary": rel(args.prompt_variants) if args.prompt_variants.exists() else None,
+            "pageindex_prompt_variant_summary": rel(args.pageindex_prompt_variants)
+            if args.pageindex_prompt_variants.exists()
+            else None,
             "issue_count": len(rows),
             "issue_ids": [row["question_id"] for row in rows],
             "retrieval_succeeded_count": sum(1 for row in rows if row["retrieval_succeeded"]),
@@ -296,11 +325,13 @@ def render_markdown(payload: dict[str, Any]) -> str:
                 f"- {row['failure_mode']}",
                 f"- Recommended next action: {row['recommended_action']}",
                 "",
-                "Prompt-variant evidence:",
+                "LlamaIndex prompt-variant evidence:",
                 "",
             ]
         )
         lines.extend(render_variant_table(row["prompt_variant_outcomes"]))
+        lines.extend(["", "PageIndex prompt-variant evidence:", ""])
+        lines.extend(render_variant_table(row["pageindex_prompt_variant_outcomes"]))
 
     lines.extend(
         [
@@ -310,12 +341,14 @@ def render_markdown(payload: dict[str, Any]) -> str:
             "- These are not current PageIndex retrieval failures; both cases retrieved the gold evidence pages.",
             "- `fb_exp_019` should be treated as a rounding or judge-policy case before changing retrieval or prompts.",
             "- `fb_exp_020` is a genuine finance-reasoning case shared across methods: models often choose a fixed-asset ratio definition while the gold answer uses ROA and broad asset intensity.",
-            "- The next useful experiment is a PageIndex answer-prompt ablation mirroring the existing LlamaIndex `finance_reasoning_v2/v3` probes.",
+            "- The PageIndex targeted prompt ablation shows `finance_reasoning_v3` fixed both current PageIndex answer issues, while `finance_reasoning_v2` fixed `fb_exp_020` but not the rounded-billion answer in `fb_exp_019`.",
+            "- This remains prompt-ablation evidence only; the default prompt remains the committed 25-question cross-method PageIndex baseline unless a full 25-question PageIndex prompt-variant run is executed.",
             "",
             "## Source Artifacts",
             "",
             f"- PageIndex LLM diagnostics: `reports\\pageindex_expanded_llm_diagnostics.json`",
             f"- Finance prompt variants: `{summary['prompt_variant_summary']}`",
+            f"- PageIndex prompt variants: `{summary['pageindex_prompt_variant_summary']}`",
         ]
     )
     return "\n".join(lines).rstrip() + "\n"
@@ -328,6 +361,7 @@ def main() -> None:
     parser.add_argument("--evidence-eval", type=Path, default=DEFAULT_EVIDENCE_EVAL)
     parser.add_argument("--answer-eval", type=Path, default=DEFAULT_ANSWER_EVAL)
     parser.add_argument("--prompt-variants", type=Path, default=DEFAULT_PROMPT_VARIANTS)
+    parser.add_argument("--pageindex-prompt-variants", type=Path, default=DEFAULT_PAGEINDEX_PROMPT_VARIANTS)
     parser.add_argument("--question-id", action="append", help="Analyze only the given non-correct question id.")
     parser.add_argument("--output-json", type=Path, default=DEFAULT_OUTPUT_JSON)
     parser.add_argument("--output-md", type=Path, default=DEFAULT_OUTPUT_MD)

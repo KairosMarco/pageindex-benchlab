@@ -7,6 +7,7 @@
     "evidence_eval": "reports\\pageindex\\evidence_eval_qa_llm_expanded_25.json",
     "answer_eval": "reports\\pageindex\\answer_eval_qa_llm_expanded_25.json",
     "prompt_variant_summary": "reports\\finance_prompt_variant_summary.json",
+    "pageindex_prompt_variant_summary": "reports\\pageindex\\pageindex_prompt_variant_summary.json",
     "issue_count": 2,
     "issue_ids": [
       "fb_exp_019",
@@ -74,6 +75,32 @@
           "verdict": "correct",
           "answer_accuracy": 0.92,
           "average_total_tokens": 2978.32
+        }
+      ],
+      "pageindex_prompt_variant_outcomes": [
+        {
+          "run_type": "full_run",
+          "key": "default",
+          "label": "default prompt",
+          "verdict": "incorrect",
+          "answer_accuracy": 0.92,
+          "average_total_tokens": 2882.16
+        },
+        {
+          "run_type": "targeted_probe",
+          "key": "finance_reasoning_v2_probe",
+          "label": "finance reasoning v2 probe",
+          "verdict": "incorrect",
+          "answer_accuracy": 0.5,
+          "average_total_tokens": 3521.0
+        },
+        {
+          "run_type": "targeted_probe",
+          "key": "finance_reasoning_v3_probe",
+          "label": "finance reasoning v3 probe",
+          "verdict": "correct",
+          "answer_accuracy": 1.0,
+          "average_total_tokens": 3714.0
         }
       ],
       "result_path": "reports\\pageindex\\qa_llm_expanded_25\\fb_exp_019.json"
@@ -148,6 +175,32 @@
           "verdict": "incorrect",
           "answer_accuracy": 0.0,
           "average_total_tokens": 3975.0
+        }
+      ],
+      "pageindex_prompt_variant_outcomes": [
+        {
+          "run_type": "full_run",
+          "key": "default",
+          "label": "default prompt",
+          "verdict": "incorrect",
+          "answer_accuracy": 0.92,
+          "average_total_tokens": 2882.16
+        },
+        {
+          "run_type": "targeted_probe",
+          "key": "finance_reasoning_v2_probe",
+          "label": "finance reasoning v2 probe",
+          "verdict": "correct",
+          "answer_accuracy": 0.5,
+          "average_total_tokens": 3521.0
+        },
+        {
+          "run_type": "targeted_probe",
+          "key": "finance_reasoning_v3_probe",
+          "label": "finance reasoning v3 probe",
+          "verdict": "correct",
+          "answer_accuracy": 1.0,
+          "average_total_tokens": 3714.0
         }
       ],
       "result_path": "reports\\pageindex\\qa_llm_expanded_25\\fb_exp_020.json"

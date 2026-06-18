@@ -1,0 +1,40 @@
+[
+  {
+    "question_id": "fb_exp_019",
+    "doc_name": "AMERICANWATERWORKS_2020_10K",
+    "status": "generated",
+    "output_path": "reports\\pageindex\\qa_llm_expanded_25_finance_reasoning_v2_probe\\fb_exp_019.json",
+    "structure_path": "reports\\pageindex\\structures\\AMERICANWATERWORKS_2020_10K_structure.json",
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\AMERICANWATERWORKS_2020_10K.pdf",
+    "selected_pages_one_indexed": [
+      86,
+      66,
+      93
+    ],
+    "citation_count": 3,
+    "max_pages": 3,
+    "latency_ms": 7866,
+    "llm_enabled": true,
+    "model": "deepseek/deepseek-v4-pro",
+    "answer_prompt_mode": "finance_reasoning_v2"
+  },
+  {
+    "question_id": "fb_exp_020",
+    "doc_name": "CVSHEALTH_2022_10K",
+    "status": "generated",
+    "output_path": "reports\\pageindex\\qa_llm_expanded_25_finance_reasoning_v2_probe\\fb_exp_020.json",
+    "structure_path": "reports\\pageindex\\structures\\CVSHEALTH_2022_10K_structure.json",
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\CVSHEALTH_2022_10K.pdf",
+    "selected_pages_one_indexed": [
+      110,
+      133,
+      108
+    ],
+    "citation_count": 3,
+    "max_pages": 3,
+    "latency_ms": 16543,
+    "llm_enabled": true,
+    "model": "deepseek/deepseek-v4-pro",
+    "answer_prompt_mode": "finance_reasoning_v2"
+  }
+]

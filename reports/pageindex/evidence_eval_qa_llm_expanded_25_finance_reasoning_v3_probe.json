@@ -1,0 +1,66 @@
+{
+  "summary": {
+    "result_count": 2,
+    "failure_count": 0,
+    "average_evidence_recall": 1.0,
+    "average_citation_precision": 0.5,
+    "citation_page_base": 1,
+    "results_dir": "reports\\pageindex\\qa_llm_expanded_25_finance_reasoning_v3_probe"
+  },
+  "per_question": [
+    {
+      "question_id": "fb_exp_019",
+      "gold_pages_zero_indexed": [
+        85
+      ],
+      "gold_pages_one_indexed": [
+        86
+      ],
+      "predicted_pages": [
+        86,
+        66,
+        93
+      ],
+      "evidence_recall": 1.0,
+      "citation_precision": 0.3333333333333333,
+      "matched_pages": [
+        85
+      ],
+      "metadata": {
+        "citation_page_base": 1,
+        "result_path": "reports\\pageindex\\qa_llm_expanded_25_finance_reasoning_v3_probe\\fb_exp_019.json",
+        "method": "pageindex_tree_qa",
+        "doc_name": "AMERICANWATERWORKS_2020_10K"
+      }
+    },
+    {
+      "question_id": "fb_exp_020",
+      "gold_pages_zero_indexed": [
+        107,
+        109
+      ],
+      "gold_pages_one_indexed": [
+        108,
+        110
+      ],
+      "predicted_pages": [
+        110,
+        133,
+        108
+      ],
+      "evidence_recall": 1.0,
+      "citation_precision": 0.6666666666666666,
+      "matched_pages": [
+        107,
+        109
+      ],
+      "metadata": {
+        "citation_page_base": 1,
+        "result_path": "reports\\pageindex\\qa_llm_expanded_25_finance_reasoning_v3_probe\\fb_exp_020.json",
+        "method": "pageindex_tree_qa",
+        "doc_name": "CVSHEALTH_2022_10K"
+      }
+    }
+  ],
+  "failures": []
+}

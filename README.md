@@ -147,6 +147,14 @@ Completed:
 - PageIndex expanded answer issue analysis now exists:
   - `reports/pageindex/pageindex_answer_issue_analysis.md`
   - Remaining PageIndex answer issues are not retrieval misses: `fb_exp_019` is a rounding or judge-policy case, and `fb_exp_020` is a capital-intensity reasoning case.
+- PageIndex targeted answer-prompt probes have been run for the two remaining expanded answer issues:
+  - Default prompt: full 25-question baseline answer accuracy `0.920`, with `fb_exp_019` and `fb_exp_020` incorrect after successful retrieval.
+  - `finance_reasoning_v2` probe: evidence recall `1.000`, answer accuracy `0.500` on the two target questions; it fixed `fb_exp_020` but still failed the rounded-billion answer for `fb_exp_019`.
+  - `finance_reasoning_v3` probe: evidence recall `1.000`, answer accuracy `1.000` on the two target questions; it fixed both `fb_exp_019` and `fb_exp_020`.
+  - This is prompt-ablation evidence only. The default prompt remains the committed 25-question cross-method PageIndex baseline unless a full prompt-variant run is executed.
+  - Reports:
+    - `reports/pageindex/pageindex_prompt_variant_summary.md`
+    - `reports/pageindex/pageindex_prompt_variant_summary.json`
 - Expanded cross-method cost/quality summary now includes PageIndex:
   - LlamaIndex Vector: evidence recall `1.000`, answer accuracy `0.920`, average total tokens `2,543`.
   - PageIndex: evidence recall `1.000`, answer accuracy `0.920`, average total tokens `2,882`.
@@ -329,5 +337,6 @@ A GPU may become useful later for local LLMs, large embedding jobs, or large rer
 1. Use the PageIndex upstream issue and PR drafts as the first contribution candidates.
 2. Open a small PageIndex upstream PR for JSON response resilience and conservative fallback handling.
 3. Turn the PageIndex ranking diagnostics note into a small upstream benchmark/retrieval discussion.
-4. Run a PageIndex answer-prompt ablation for `fb_exp_019` and `fb_exp_020`.
-5. Add GraphRAG and HyperGraphRAG after the expanded baselines are stable.
+4. Decide whether to run a full 25-question PageIndex `finance_reasoning_v3` prompt-variant ablation, or keep it as a targeted diagnostic only.
+5. Add evaluator notes for rounded USD-billion answers and definition-sensitive finance questions.
+6. Add GraphRAG and HyperGraphRAG after the expanded baselines are stable.

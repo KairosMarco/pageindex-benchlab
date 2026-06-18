@@ -1,0 +1,213 @@
+{
+  "method": "pageindex_tree_qa",
+  "question_id": "fb_exp_020",
+  "question": "Is CVS Health a capital-intensive business based on FY2022 data?",
+  "answer": "Yes, CVS Health is a capital-intensive business under a broad asset-intensity definition. This definition considers a business capital-intensive if it requires significant total assets relative to its earnings, resulting in a low return on assets (ROA). For FY2022, net income attributable to CVS Health was $4,149 million (p. 108) and total assets were $228,275 million (p. 110), yielding an ROA of approximately 1.8%. This low ROA and the massive asset base—including $78.2 billion in goodwill, $24.8 billion in intangible assets, net, and $17.9 billion in operating lease right-of-use assets (p. 110)—are direct evidence of capital intensity. Caveat: Property and equipment, net ($12.9 billion) represents only about 5.6% of total assets, so physical fixed-asset intensity is low, but the business remains asset-intensive overall due to goodwill, intangibles, and operating leases.",
+  "citations": [
+    {
+      "document_id": "CVSHEALTH_2022_10K",
+      "page": 110,
+      "section": "Consolidated Statements of Comprehensive Income",
+      "text": "0 shares outstanding at December 31, 2022 and 1,744 shares issued and 1,322 shares outstanding at December 31, 2021 and capital surplus 48,193 47,377 Treasury stock, at cost: 458 and 422 shares at December 31, 2022 and 2021 (31,858) (28,173) Retained earnings 56,145 54,906 Accumulated other comprehensive income (loss) (1,465) 965 Total CVS Health shareholders’ equity 71,015 75,075 Noncontrolling interests 300 306 Total shareholders’ equity 71,315 75,381 Total liabilities and shareholders’ equity",
+      "metadata": {
+        "score": 67.0,
+        "phrase_boost": 0,
+        "finance_boost": 64.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "balance_sheet_title",
+          "total_assets_line_item",
+          "capital_intensity_balance_sheet_lines"
+        ],
+        "matched_page_terms": [
+          "capital"
+        ],
+        "matched_section_terms": [],
+        "node_id": "0228",
+        "start_index": 109,
+        "end_index": 110
+      }
+    },
+    {
+      "document_id": "CVSHEALTH_2022_10K",
+      "page": 133,
+      "section": "Related Party Transactions",
+      "text": "/Other segment for the years ended December 31, 2022, 2021 and 2020. Discontinued Operations In connection with certain business dispositions completed between 1995 and 1997, the Company retained guarantees on store lease obligations for a number of former subsidiaries, including Linens ‘n Things and Bob’s Stores, each of which subsequently filed for bankruptcy. The Company’s loss from discontinued operations includes lease-related costs that the Company believes it will likely be required to sa",
+      "metadata": {
+        "score": 57.75,
+        "phrase_boost": 0,
+        "finance_boost": 51.75,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "capital_intensity_income_statement_lines",
+          "capital_intensity_primary_income_statement_lines"
+        ],
+        "matched_page_terms": [
+          "based",
+          "business"
+        ],
+        "matched_section_terms": [],
+        "node_id": "0302",
+        "start_index": 132,
+        "end_index": 133
+      }
+    },
+    {
+      "document_id": "CVSHEALTH_2022_10K",
+      "page": 108,
+      "section": "Item 8. Financial Statements and Supplementary Data.",
+      "text": "Index to Consolidated Financial Statements Consolidated Statements of Operations For the Years Ended December 31, In millions, except per share amounts 2022 2021 2020 Revenues: Products $ 226,616 $ 203,738 $ 190,688 Premiums 85,330 76,132 69,364 Services 9,683 11,042 7,856 Net investment income 838 1,199 798 Total revenues 322,467 292,111 268,706 Operating costs: Cost of products sold 196,892 175,803 163,981 Benefit costs 71,281 64,260 55,679 Opioid litigation charges 5,803 — — Loss on assets he",
+      "metadata": {
+        "score": 56.0,
+        "phrase_boost": 0,
+        "finance_boost": 54.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "capital_intensity_income_statement_lines",
+          "capital_intensity_primary_income_statement_lines"
+        ],
+        "matched_page_terms": [],
+        "matched_section_terms": [
+          "data"
+        ],
+        "node_id": "0226",
+        "start_index": 107,
+        "end_index": 108
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "select_tree_node",
+      "target": "Item 1: Business",
+      "metadata": {
+        "node_id": "0002",
+        "start_index": 4,
+        "end_index": 4
+      }
+    },
+    {
+      "step": 2,
+      "action": "select_tree_node",
+      "target": "Item 1. Business.",
+      "metadata": {
+        "node_id": "0004",
+        "start_index": 4,
+        "end_index": 4
+      }
+    },
+    {
+      "step": 3,
+      "action": "select_tree_node",
+      "target": "Business Strategy",
+      "metadata": {
+        "node_id": "0006",
+        "start_index": 4,
+        "end_index": 4
+      }
+    },
+    {
+      "step": 4,
+      "action": "select_tree_node",
+      "target": "Working Capital Practices",
+      "metadata": {
+        "node_id": "0048",
+        "start_index": 16,
+        "end_index": 16
+      }
+    },
+    {
+      "step": 5,
+      "action": "select_tree_node",
+      "target": "Human Capital",
+      "metadata": {
+        "node_id": "0049",
+        "start_index": 16,
+        "end_index": 16
+      }
+    },
+    {
+      "step": 6,
+      "action": "score_page",
+      "target": "page 110",
+      "metadata": {
+        "score": 67.0,
+        "phrase_boost": 0,
+        "finance_boost": 64.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "balance_sheet_title",
+          "total_assets_line_item",
+          "capital_intensity_balance_sheet_lines"
+        ],
+        "section": "Consolidated Statements of Comprehensive Income",
+        "matched_page_terms": [
+          "capital"
+        ],
+        "matched_section_terms": []
+      }
+    },
+    {
+      "step": 7,
+      "action": "score_page",
+      "target": "page 133",
+      "metadata": {
+        "score": 57.75,
+        "phrase_boost": 0,
+        "finance_boost": 51.75,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "capital_intensity_income_statement_lines",
+          "capital_intensity_primary_income_statement_lines"
+        ],
+        "section": "Related Party Transactions",
+        "matched_page_terms": [
+          "based",
+          "business"
+        ],
+        "matched_section_terms": []
+      }
+    },
+    {
+      "step": 8,
+      "action": "score_page",
+      "target": "page 108",
+      "metadata": {
+        "score": 56.0,
+        "phrase_boost": 0,
+        "finance_boost": 54.0,
+        "finance_boost_reasons": [
+          "table_like_numeric_density",
+          "capital_intensity_income_statement_lines",
+          "capital_intensity_primary_income_statement_lines"
+        ],
+        "section": "Item 8. Financial Statements and Supplementary Data.",
+        "matched_page_terms": [],
+        "matched_section_terms": [
+          "data"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": 2540,
+    "output": 991,
+    "total": 3531
+  },
+  "latency_ms": 16541,
+  "metadata": {
+    "structure_path": "reports\\pageindex\\structures\\CVSHEALTH_2022_10K_structure.json",
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\CVSHEALTH_2022_10K.pdf",
+    "selected_pages_one_indexed": [
+      110,
+      133,
+      108
+    ],
+    "max_pages": 3,
+    "adapter_mode": "tree_page_scoring",
+    "llm_enabled": true,
+    "model": "deepseek/deepseek-v4-pro",
+    "answer_prompt_mode": "finance_reasoning_v2"
+  }
+}

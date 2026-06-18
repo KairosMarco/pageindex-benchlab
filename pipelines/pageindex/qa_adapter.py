@@ -16,6 +16,16 @@ from pipelines.pageindex.adapter import flatten_nodes, load_structure
 
 
 DEFAULT_MAX_PAGES = 3
+DEFAULT_ANSWER_PROMPT_MODE = "default"
+FINANCE_REASONING_ANSWER_PROMPT_MODE = "finance_reasoning_v1"
+FINANCE_REASONING_V2_ANSWER_PROMPT_MODE = "finance_reasoning_v2"
+FINANCE_REASONING_V3_ANSWER_PROMPT_MODE = "finance_reasoning_v3"
+SUPPORTED_ANSWER_PROMPT_MODES = (
+    DEFAULT_ANSWER_PROMPT_MODE,
+    FINANCE_REASONING_ANSWER_PROMPT_MODE,
+    FINANCE_REASONING_V2_ANSWER_PROMPT_MODE,
+    FINANCE_REASONING_V3_ANSWER_PROMPT_MODE,
+)
 
 
 def load_question(path: Path, question_id: str) -> BenchmarkQuestion:
@@ -325,9 +335,18 @@ def select_pages(
     ]
 
 
-def answer_with_llm(model: str, question: str, page_text: list[dict[str, Any]]) -> tuple[str, TokenUsage]:
-    context = "\n\n".join(f"[PAGE {p['page']}]\n{p['text']}" for p in page_text)
-    prompt = f"""Use only the provided document pages to answer the question.
+def render_context(page_text: list[dict[str, Any]]) -> str:
+    return "\n\n".join(f"[PAGE {p['page']}]\n{p['text']}" for p in page_text)
+
+
+def build_answer_prompt(
+    question: str,
+    context: str,
+    *,
+    prompt_mode: str = DEFAULT_ANSWER_PROMPT_MODE,
+) -> str:
+    if prompt_mode == DEFAULT_ANSWER_PROMPT_MODE:
+        return f"""Use only the provided document pages to answer the question.
 Return a concise answer and cite page numbers.
 
 QUESTION:
@@ -336,6 +355,73 @@ QUESTION:
 DOCUMENT PAGES:
 {context}
 """
+    if prompt_mode == FINANCE_REASONING_ANSWER_PROMPT_MODE:
+        return f"""Use only the provided document pages to answer the question.
+Return a concise answer and cite page numbers.
+
+Apply strict finance reasoning before giving the final answer:
+- Do not decide conceptual finance questions from a single ratio when the evidence gives multiple relevant indicators.
+- For capital-intensive questions, compare asset base, return on assets, PP&E or fixed assets as a share of total assets, goodwill/intangibles, leased-asset business model indicators, capex, and the business model. If the evidence includes low ROA or large goodwill/asset base, discuss that evidence explicitly before the yes/no conclusion.
+- For working-capital questions, state which definition is used. If the question or evidence points to operating working capital, do not silently substitute total current assets minus total current liabilities.
+- For unit conversions, convert values before judging numeric agreement. Example: $389 million = $0.389 billion, approximately $0.39 billion or $0.40 billion depending on requested rounding.
+- If indicators conflict, explain the competing indicators and then give the best supported conclusion from the provided pages.
+
+QUESTION:
+{question}
+
+DOCUMENT PAGES:
+{context}
+"""
+    if prompt_mode == FINANCE_REASONING_V2_ANSWER_PROMPT_MODE:
+        return f"""Use only the provided document pages to answer the question.
+Return a concise answer and cite page numbers.
+
+Apply strict finance reasoning before giving the final answer:
+- Treat conceptual finance questions as definition-sensitive. State the definition you are applying before the final conclusion.
+- For capital-intensive questions, use a broad asset-intensity definition unless the question explicitly asks only about PP&E or capex intensity. Under this definition, low ROA and a large total asset base are direct evidence of capital intensity.
+- Do not reject capital intensity only because PP&E / total assets is low, because leases, acquired goodwill, insurance/PBM assets, and other required operating assets can still make the business asset-intensive. If PP&E or fixed assets are low, present that as a caveat rather than as a standalone negative conclusion.
+- If evidence shows low ROA together with significant total assets, goodwill, intangibles, or leased operating assets, the answer should generally be "Yes, with caveats" unless stronger contrary evidence is present in the pages.
+- For working-capital questions, state which definition is used. If the question or evidence points to operating working capital, do not silently substitute total current assets minus total current liabilities.
+- For unit conversions, convert values before judging numeric agreement. Example: $389 million = $0.389 billion, approximately $0.39 billion or $0.40 billion depending on requested rounding.
+- If indicators conflict, explain the competing indicators and then give the best supported conclusion from the provided pages.
+
+QUESTION:
+{question}
+
+DOCUMENT PAGES:
+{context}
+"""
+    if prompt_mode == FINANCE_REASONING_V3_ANSWER_PROMPT_MODE:
+        return f"""Use only the provided document pages to answer the question.
+Return a concise answer and cite page numbers.
+
+Apply strict finance reasoning before giving the final answer:
+- Treat conceptual finance questions as definition-sensitive. State the definition you are applying before the final conclusion.
+- For capital-intensive questions, use a broad asset-intensity definition unless the question explicitly asks only about PP&E or capex intensity. Under this definition, low ROA and a large total asset base are direct evidence of capital intensity.
+- Do not reject capital intensity only because PP&E / total assets is low, because leases, acquired goodwill, insurance/PBM assets, and other required operating assets can still make the business asset-intensive. If PP&E or fixed assets are low, present that as a caveat rather than as a standalone negative conclusion.
+- If evidence shows low ROA together with significant total assets, goodwill, intangibles, or leased operating assets, the answer should generally be "Yes, with caveats" unless stronger contrary evidence is present in the pages.
+- For working-capital questions, state which definition is used. If the question or evidence points to operating working capital, do not silently substitute total current assets minus total current liabilities.
+- For unit conversions, convert values before judging numeric agreement and match the requested reporting unit. If the question asks for USD billions and does not specify decimal places, provide the benchmark-style rounded billion answer first, then include the exact source value in parentheses. Example: $389 million = $0.389 billion, so answer "$0.40 billion ($389 million)" rather than only "$0.389 billion" or "$0.39 billion".
+- If indicators conflict, explain the competing indicators and then give the best supported conclusion from the provided pages.
+
+QUESTION:
+{question}
+
+DOCUMENT PAGES:
+{context}
+"""
+    raise ValueError(f"Unsupported answer prompt mode: {prompt_mode}")
+
+
+def answer_with_llm(
+    model: str,
+    question: str,
+    page_text: list[dict[str, Any]],
+    *,
+    prompt_mode: str = DEFAULT_ANSWER_PROMPT_MODE,
+) -> tuple[str, TokenUsage]:
+    context = render_context(page_text)
+    prompt = build_answer_prompt(question, context, prompt_mode=prompt_mode)
     response = completion(
         model=model,
         messages=[{"role": "user", "content": prompt}],
@@ -358,6 +444,7 @@ def run_pageindex_qa(
     model: str | None,
     no_llm: bool = False,
     max_pages: int = DEFAULT_MAX_PAGES,
+    answer_prompt_mode: str = DEFAULT_ANSWER_PROMPT_MODE,
 ) -> BenchmarkResult:
     started = time.perf_counter()
     structure = load_structure(structure_path)
@@ -425,7 +512,12 @@ def run_pageindex_qa(
     else:
         if not model:
             raise ValueError("model is required unless --no-llm is set")
-        answer, token_usage = answer_with_llm(model, question.question, page_text)
+        answer, token_usage = answer_with_llm(
+            model,
+            question.question,
+            page_text,
+            prompt_mode=answer_prompt_mode,
+        )
 
     latency_ms = int((time.perf_counter() - started) * 1000)
     return BenchmarkResult(
@@ -444,6 +536,8 @@ def run_pageindex_qa(
             "max_pages": max_pages,
             "adapter_mode": "tree_page_scoring",
             "llm_enabled": not no_llm,
+            "model": model,
+            "answer_prompt_mode": answer_prompt_mode,
         },
     )
 
@@ -457,6 +551,11 @@ def main() -> None:
     parser.add_argument("--model", default=None)
     parser.add_argument("--no-llm", action="store_true")
     parser.add_argument("--max-pages", type=int, default=DEFAULT_MAX_PAGES)
+    parser.add_argument(
+        "--answer-prompt-mode",
+        choices=SUPPORTED_ANSWER_PROMPT_MODES,
+        default=DEFAULT_ANSWER_PROMPT_MODE,
+    )
     parser.add_argument("--output", type=Path, required=True)
     args = parser.parse_args()
 
@@ -468,6 +567,7 @@ def main() -> None:
         model=args.model,
         no_llm=args.no_llm,
         max_pages=args.max_pages,
+        answer_prompt_mode=args.answer_prompt_mode,
     )
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(result.model_dump_json(indent=2) + "\n", encoding="utf-8")

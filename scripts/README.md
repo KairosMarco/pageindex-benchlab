@@ -171,6 +171,30 @@ fb_exp_019: rounding or judge-policy case
 fb_exp_020: capital-intensity reasoning case
 ```
 
+Run targeted PageIndex answer-prompt probes for the two remaining expanded answer issues:
+
+```powershell
+$env:DEEPSEEK_API_KEY="YOUR_KEY"
+python scripts\run_pageindex_qa_mvp.py --questions datasets\financebench\expanded_questions_25.jsonl --structure-dir reports\pageindex\structures --output-dir reports\pageindex\qa_llm_expanded_25_finance_reasoning_v2_probe --manifest reports\pageindex\qa_llm_expanded_25_finance_reasoning_v2_probe_manifest.json --model deepseek/deepseek-v4-pro --answer-prompt-mode finance_reasoning_v2 --question-id fb_exp_019 --question-id fb_exp_020 --force --continue-on-error
+python scripts\evaluate_evidence_mvp.py --questions datasets\financebench\expanded_questions_25.jsonl --results-dir reports\pageindex\qa_llm_expanded_25_finance_reasoning_v2_probe --output reports\pageindex\evidence_eval_qa_llm_expanded_25_finance_reasoning_v2_probe.json --continue-on-error
+python scripts\evaluate_answers_mvp.py --questions datasets\financebench\expanded_questions_25.jsonl --results-dir reports\pageindex\qa_llm_expanded_25_finance_reasoning_v2_probe --output reports\pageindex\answer_eval_qa_llm_expanded_25_finance_reasoning_v2_probe.json --mode llm --model deepseek/deepseek-v4-pro --continue-on-error
+
+python scripts\run_pageindex_qa_mvp.py --questions datasets\financebench\expanded_questions_25.jsonl --structure-dir reports\pageindex\structures --output-dir reports\pageindex\qa_llm_expanded_25_finance_reasoning_v3_probe --manifest reports\pageindex\qa_llm_expanded_25_finance_reasoning_v3_probe_manifest.json --model deepseek/deepseek-v4-pro --answer-prompt-mode finance_reasoning_v3 --question-id fb_exp_019 --question-id fb_exp_020 --force --continue-on-error
+python scripts\evaluate_evidence_mvp.py --questions datasets\financebench\expanded_questions_25.jsonl --results-dir reports\pageindex\qa_llm_expanded_25_finance_reasoning_v3_probe --output reports\pageindex\evidence_eval_qa_llm_expanded_25_finance_reasoning_v3_probe.json --continue-on-error
+python scripts\evaluate_answers_mvp.py --questions datasets\financebench\expanded_questions_25.jsonl --results-dir reports\pageindex\qa_llm_expanded_25_finance_reasoning_v3_probe --output reports\pageindex\answer_eval_qa_llm_expanded_25_finance_reasoning_v3_probe.json --mode llm --model deepseek/deepseek-v4-pro --continue-on-error
+python scripts\summarize_pageindex_prompt_variants.py
+python scripts\analyze_pageindex_answer_issues.py
+```
+
+Current targeted PageIndex prompt-ablation result:
+
+```text
+finance_reasoning_v2 probe: evidence recall 1.000, answer accuracy 0.500
+finance_reasoning_v3 probe: evidence recall 1.000, answer accuracy 1.000
+```
+
+The prompt probes are diagnostic only. The default prompt remains the main 25-question PageIndex comparison row.
+
 ## Run Long-context MVP Baseline
 
 Smoke test without LLM answer generation:

@@ -52,13 +52,21 @@ Diagnosis:
 - The retrieved evidence is correct and the answer extracts the exact table value, but the judge compares `$0.389 billion` against the rounded gold answer `$0.40`.
 - Recommended next action: Add an evaluator tolerance or answer-format policy for USD billions when the source table reports millions and the gold answer is rounded.
 
-Prompt-variant evidence:
+LlamaIndex prompt-variant evidence:
 
 | Run | Verdict | Accuracy | Avg tokens |
 |---|---|---:|---:|
 | default prompt | correct | 0.920 | 2543.200 |
 | finance reasoning v2 | incorrect | 0.960 | 2885.240 |
 | finance reasoning v3 | correct | 0.920 | 2978.320 |
+
+PageIndex prompt-variant evidence:
+
+| Run | Verdict | Accuracy | Avg tokens |
+|---|---|---:|---:|
+| default prompt | incorrect | 0.920 | 2882.160 |
+| finance reasoning v2 probe | incorrect | 0.500 | 3521.000 |
+| finance reasoning v3 probe | correct | 1.000 | 3714.000 |
 
 ## fb_exp_020 - finance_concept_definition
 
@@ -90,7 +98,7 @@ Diagnosis:
 - The retrieved evidence is correct, but the answer uses a narrow fixed-asset ratio interpretation while the gold answer treats low ROA and the broader goodwill-heavy asset base as capital intensity evidence.
 - Recommended next action: Add prompt guidance or benchmark notes that capital intensity questions may require ROA and broad asset-base reasoning, not only PP&E divided by total assets.
 
-Prompt-variant evidence:
+LlamaIndex prompt-variant evidence:
 
 | Run | Verdict | Accuracy | Avg tokens |
 |---|---|---:|---:|
@@ -99,14 +107,24 @@ Prompt-variant evidence:
 | finance reasoning v3 | correct | 0.920 | 2978.320 |
 | v1 hard-case probe | incorrect | 0.000 | 3975.000 |
 
+PageIndex prompt-variant evidence:
+
+| Run | Verdict | Accuracy | Avg tokens |
+|---|---|---:|---:|
+| default prompt | incorrect | 0.920 | 2882.160 |
+| finance reasoning v2 probe | correct | 0.500 | 3521.000 |
+| finance reasoning v3 probe | correct | 1.000 | 3714.000 |
+
 ## Interpretation
 
 - These are not current PageIndex retrieval failures; both cases retrieved the gold evidence pages.
 - `fb_exp_019` should be treated as a rounding or judge-policy case before changing retrieval or prompts.
 - `fb_exp_020` is a genuine finance-reasoning case shared across methods: models often choose a fixed-asset ratio definition while the gold answer uses ROA and broad asset intensity.
-- The next useful experiment is a PageIndex answer-prompt ablation mirroring the existing LlamaIndex `finance_reasoning_v2/v3` probes.
+- The PageIndex targeted prompt ablation shows `finance_reasoning_v3` fixed both current PageIndex answer issues, while `finance_reasoning_v2` fixed `fb_exp_020` but not the rounded-billion answer in `fb_exp_019`.
+- This remains prompt-ablation evidence only; the default prompt remains the committed 25-question cross-method PageIndex baseline unless a full 25-question PageIndex prompt-variant run is executed.
 
 ## Source Artifacts
 
 - PageIndex LLM diagnostics: `reports\pageindex_expanded_llm_diagnostics.json`
 - Finance prompt variants: `reports\finance_prompt_variant_summary.json`
+- PageIndex prompt variants: `reports\pageindex\pageindex_prompt_variant_summary.json`

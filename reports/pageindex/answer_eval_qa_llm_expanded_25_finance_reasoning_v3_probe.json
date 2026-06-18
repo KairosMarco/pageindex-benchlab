@@ -1,0 +1,49 @@
+{
+  "summary": {
+    "result_count": 2,
+    "failure_count": 0,
+    "average_answer_score": 1.0,
+    "accuracy": 1.0,
+    "verdict_counts": {
+      "correct": 2,
+      "partial": 0,
+      "incorrect": 0
+    },
+    "mode": "llm",
+    "model": "deepseek/deepseek-v4-pro",
+    "results_dir": "reports\\pageindex\\qa_llm_expanded_25_finance_reasoning_v3_probe"
+  },
+  "per_question": [
+    {
+      "question_id": "fb_exp_019",
+      "score": 1.0,
+      "verdict": "correct",
+      "rationale": "The predicted answer provides the amount as $0.40 billion, which exactly matches the gold answer of $0.40 (billion). The additional parenthetical detail does not contradict this amount.",
+      "gold_answer": "$0.40",
+      "predicted_answer": "$0.40 billion ($389 million) (per the Consolidated Statements of Cash Flows, page 86).",
+      "metadata": {
+        "mode": "llm_judge",
+        "model": "deepseek/deepseek-v4-pro",
+        "result_path": "reports\\pageindex\\qa_llm_expanded_25_finance_reasoning_v3_probe\\fb_exp_019.json",
+        "method": "pageindex_tree_qa",
+        "doc_name": "AMERICANWATERWORKS_2020_10K"
+      }
+    },
+    {
+      "question_id": "fb_exp_020",
+      "score": 1.0,
+      "verdict": "correct",
+      "rationale": "The predicted answer correctly concludes that CVS Health is capital-intensive based on FY2022 data, using ROA of ~1.8% and acknowledging the caveat that fixed assets are a small portion of total assets, which aligns with the gold answer's main point and supporting detail.",
+      "gold_answer": "Yes, CVS Health requires an extensive asset base to operate, which is evident from its ROA of only 1.82% in 2022 and 3.39% in 2021, though it should be noted that a significant portion of this asset base is goodwill, and CVS's fixed assets/total assets ratio is on the lower side of 5.6%.",
+      "predicted_answer": "Applying a broad asset-intensity definition, a business is considered capital-intensive if it requires a large asset base relative to its earnings, evidenced by a low Return on Assets (ROA). Under this definition, CVS Health is capital-intensive based on FY2022 data, with the caveat that traditional fixed assets (PP&E) are a small portion of total assets.\n\nBased on the provided data:\n*   FY2022 net income attributable to CVS Health was $4,149 million (Page 108).\n*   FY2022 total assets were $228,275 million (Page 110).\n*   This results in an ROA of 1.8% ($4,149 / $228,275), which is low and directly indicates capital intensity.\n\nThe asset base is dominated by significant intangible assets and operating leases, which are required operating assets under the broad definition. Goodwill ($78,150 million) and Intangible assets, net ($24,754 million) together total $102,904 million, and Operating lease right-of-use assets are $17,872 million (Page 110). This contrasts with Property and equipment, net of only $12,873 million (Page 110), which is a caveat to a traditional fixed-asset view of capital intensity.",
+      "metadata": {
+        "mode": "llm_judge",
+        "model": "deepseek/deepseek-v4-pro",
+        "result_path": "reports\\pageindex\\qa_llm_expanded_25_finance_reasoning_v3_probe\\fb_exp_020.json",
+        "method": "pageindex_tree_qa",
+        "doc_name": "CVSHEALTH_2022_10K"
+      }
+    }
+  ],
+  "failures": []
+}

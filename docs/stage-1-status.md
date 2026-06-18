@@ -1066,6 +1066,70 @@ reports/pageindex/pageindex_answer_issue_analysis.md
 reports/pageindex/pageindex_answer_issue_analysis.json
 ```
 
+### PageIndex Answer Prompt Ablation
+
+The PageIndex QA adapter now supports the same answer-prompt modes used by the LlamaIndex prompt diagnostics:
+
+```text
+default
+finance_reasoning_v1
+finance_reasoning_v2
+finance_reasoning_v3
+```
+
+The default prompt remains the committed cross-method PageIndex baseline. The finance prompts are diagnostic answer-generation ablations.
+
+Targeted probes were run for the two remaining PageIndex expanded answer issues:
+
+```text
+Target questions: fb_exp_019, fb_exp_020
+Model: deepseek/deepseek-v4-pro
+```
+
+Results:
+
+```text
+Default prompt, full 25-question baseline:
+evidence recall: 1.000
+answer accuracy: 0.920
+target outcomes: fb_exp_019 incorrect, fb_exp_020 incorrect
+
+finance_reasoning_v2 probe:
+questions: 2
+evidence recall: 1.000
+answer accuracy: 0.500
+verdicts: 1 correct, 0 partial, 1 incorrect
+target outcomes: fb_exp_019 incorrect, fb_exp_020 correct
+
+finance_reasoning_v3 probe:
+questions: 2
+evidence recall: 1.000
+answer accuracy: 1.000
+verdicts: 2 correct, 0 partial, 0 incorrect
+target outcomes: fb_exp_019 correct, fb_exp_020 correct
+```
+
+Generated artifacts:
+
+```text
+reports/pageindex/pageindex_prompt_variant_summary.md
+reports/pageindex/pageindex_prompt_variant_summary.json
+reports/pageindex/qa_llm_expanded_25_finance_reasoning_v2_probe/
+reports/pageindex/qa_llm_expanded_25_finance_reasoning_v2_probe_manifest.json
+reports/pageindex/evidence_eval_qa_llm_expanded_25_finance_reasoning_v2_probe.json
+reports/pageindex/answer_eval_qa_llm_expanded_25_finance_reasoning_v2_probe.json
+reports/pageindex/qa_llm_expanded_25_finance_reasoning_v3_probe/
+reports/pageindex/qa_llm_expanded_25_finance_reasoning_v3_probe_manifest.json
+reports/pageindex/evidence_eval_qa_llm_expanded_25_finance_reasoning_v3_probe.json
+reports/pageindex/answer_eval_qa_llm_expanded_25_finance_reasoning_v3_probe.json
+```
+
+Interpretation:
+
+- `fb_exp_019` is still primarily a rounding or judge-policy case. The v3 prompt fixed it by returning `$0.40 billion ($389 million)`.
+- `fb_exp_020` is a finance concept-definition case. The v2 and v3 prompts fixed it by applying a broad asset-intensity definition with ROA and total asset-base evidence.
+- This does not replace the default 25-question PageIndex baseline. A full 25-question prompt-variant run is required before using v3 as a cross-method comparison row.
+
 ## Upstream Contribution Drafts
 
 Two PageIndex contribution drafts are ready for review and community use:
@@ -1085,7 +1149,7 @@ The next work should strengthen the benchmark beyond the dependency-light MVP ba
 1. Use the PageIndex upstream issue and PR drafts as the first contribution candidates.
 2. Open a small PageIndex upstream PR for JSON response resilience and fallback handling.
 3. Turn the PageIndex ranking diagnostics note into a small upstream benchmark/retrieval discussion.
-4. Run a PageIndex answer-prompt ablation for `fb_exp_019` and `fb_exp_020`, mirroring the existing LlamaIndex finance prompt variants.
+4. Decide whether to run a full 25-question PageIndex `finance_reasoning_v3` prompt-variant ablation or keep it as a targeted diagnostic only.
 5. Consider evaluator refinements for rounding tolerance and capital-intensity reasoning before broader prompt tuning.
 6. Add GraphRAG and HyperGraphRAG after the expanded baselines are stable.
 

@@ -1,0 +1,49 @@
+{
+  "summary": {
+    "result_count": 2,
+    "failure_count": 0,
+    "average_answer_score": 0.5,
+    "accuracy": 0.5,
+    "verdict_counts": {
+      "correct": 1,
+      "partial": 0,
+      "incorrect": 1
+    },
+    "mode": "llm",
+    "model": "deepseek/deepseek-v4-pro",
+    "results_dir": "reports\\pageindex\\qa_llm_expanded_25_finance_reasoning_v2_probe"
+  },
+  "per_question": [
+    {
+      "question_id": "fb_exp_019",
+      "score": 0.0,
+      "verdict": "incorrect",
+      "rationale": "The predicted answer states $389 million ($0.389 billion, approximately $0.39 billion), while the gold answer is $0.40 billion. The difference of $0.01 billion ($10 million) is material, and the predicted amount does not match the expected figure.",
+      "gold_answer": "$0.40",
+      "predicted_answer": "According to the consolidated statement of cash flows on page 86, American Water Works paid $389 million in dividends for FY2020. \n\nConverted to USD billions, $389 million is $0.389 billion (approximately $0.39 billion).",
+      "metadata": {
+        "mode": "llm_judge",
+        "model": "deepseek/deepseek-v4-pro",
+        "result_path": "reports\\pageindex\\qa_llm_expanded_25_finance_reasoning_v2_probe\\fb_exp_019.json",
+        "method": "pageindex_tree_qa",
+        "doc_name": "AMERICANWATERWORKS_2020_10K"
+      }
+    },
+    {
+      "question_id": "fb_exp_020",
+      "score": 1.0,
+      "verdict": "correct",
+      "rationale": "The predicted answer agrees with the gold answer that CVS Health is capital-intensive based on FY2022 data, citing a low ROA (~1.8%) and noting that goodwill comprises a significant portion of assets while fixed assets are only about 5.6% of total assets. The predicted answer's details and caveats align perfectly with the gold answer's reasoning and conclusion.",
+      "gold_answer": "Yes, CVS Health requires an extensive asset base to operate, which is evident from its ROA of only 1.82% in 2022 and 3.39% in 2021, though it should be noted that a significant portion of this asset base is goodwill, and CVS's fixed assets/total assets ratio is on the lower side of 5.6%.",
+      "predicted_answer": "Yes, CVS Health is a capital-intensive business under a broad asset-intensity definition. This definition considers a business capital-intensive if it requires significant total assets relative to its earnings, resulting in a low return on assets (ROA). For FY2022, net income attributable to CVS Health was $4,149 million (p. 108) and total assets were $228,275 million (p. 110), yielding an ROA of approximately 1.8%. This low ROA and the massive asset base—including $78.2 billion in goodwill, $24.8 billion in intangible assets, net, and $17.9 billion in operating lease right-of-use assets (p. 110)—are direct evidence of capital intensity. Caveat: Property and equipment, net ($12.9 billion) represents only about 5.6% of total assets, so physical fixed-asset intensity is low, but the business remains asset-intensive overall due to goodwill, intangibles, and operating leases.",
+      "metadata": {
+        "mode": "llm_judge",
+        "model": "deepseek/deepseek-v4-pro",
+        "result_path": "reports\\pageindex\\qa_llm_expanded_25_finance_reasoning_v2_probe\\fb_exp_020.json",
+        "method": "pageindex_tree_qa",
+        "doc_name": "CVSHEALTH_2022_10K"
+      }
+    }
+  ],
+  "failures": []
+}
