@@ -1,62 +1,48 @@
-# PageIndex Docs PR Handoff
+# PageIndex PR #334: Windows And Provider Docs
 
-Date: 2026-06-22
-
-## Objective
-
-Open a second focused upstream contribution to `VectifyAI/PageIndex`: a README quickstart improvement for Windows PowerShell and LiteLLM provider setup.
-
-This PR is intentionally separate from the JSON resilience code PR.
-
-Target upstream repository:
-
-```text
-https://github.com/VectifyAI/PageIndex
-```
-
-Prepared PR title:
-
-```text
-Document Windows and LiteLLM provider setup
-```
-
-## Current Status
-
-The docs PR branch has been prepared locally against the current upstream `main` and opened upstream.
-
-Open PR:
+PR:
 
 ```text
 https://github.com/VectifyAI/PageIndex/pull/334
 ```
 
-Local PageIndex PR workspace:
+Status on 2026-06-22:
 
 ```text
-D:\pageindex-upstream-pr
+Open; no maintainer comments or reviews yet.
 ```
 
-Branch:
+## Purpose
 
-```text
-docs/windows-provider-quickstart
-```
+Improve the PageIndex README quickstart for Windows PowerShell users and non-OpenAI LiteLLM providers.
 
-Local commit:
+## Scope
 
-```text
-f650b6c Document Windows and LiteLLM provider setup
-```
-
-Changed file:
+Changed upstream file:
 
 ```text
 README.md
 ```
 
+Local branch:
+
+```text
+D:\pageindex-upstream-pr
+docs/windows-provider-quickstart
+f650b6c Document Windows and LiteLLM provider setup
+```
+
+## Implementation Summary
+
+- Recommend creating a Python virtual environment before dependency installation.
+- Add Windows PowerShell virtualenv activation commands.
+- Document the scoped `Set-ExecutionPolicy -Scope CurrentUser RemoteSigned` fix for blocked `Activate.ps1`.
+- Add a LiteLLM non-OpenAI provider example using `DASHSCOPE_API_KEY` and `--model dashscope/qwen-plus`.
+- Point users to LiteLLM provider docs for exact model prefixes and environment variables.
+
 ## Validation
 
-Command run from `D:\pageindex-upstream-pr`:
+Command:
 
 ```powershell
 git diff --check
@@ -68,69 +54,6 @@ Result:
 No whitespace errors.
 ```
 
-## Why This PR Is Good Contributor Material
+## Review Strategy
 
-- It is small and reviewable.
-- It addresses real onboarding friction encountered during local setup.
-- It does not touch runtime behavior.
-- It documents existing multi-LLM support instead of adding a new dependency.
-- It can be reviewed independently from the JSON resilience code PR.
-
-## Current Blocker
-
-There is no local blocker for the initial docs PR. The next dependency is maintainer review.
-
-## Path A: GitHub CLI
-
-Run:
-
-```powershell
-gh auth login
-gh repo fork VectifyAI/PageIndex --clone=false
-cd D:\pageindex-upstream-pr
-git checkout docs/windows-provider-quickstart
-git remote set-url origin https://github.com/KairosMarco/PageIndex.git
-git remote add upstream https://github.com/VectifyAI/PageIndex.git
-git push -u origin docs/windows-provider-quickstart
-gh pr create --repo VectifyAI/PageIndex --head KairosMarco:docs/windows-provider-quickstart --base main --title "Document Windows and LiteLLM provider setup" --body-file D:\pageindex-benchlab\docs\upstream-patches\pageindex-windows-provider-quickstart-pr-body.md
-```
-
-If `git remote add upstream` says the remote already exists, continue with the next command.
-
-## Path B: GitHub Web UI
-
-1. Open:
-
-```text
-https://github.com/VectifyAI/PageIndex/fork
-```
-
-2. Create the fork under the `KairosMarco` account.
-
-3. Push the prepared local branch:
-
-```powershell
-cd D:\pageindex-upstream-pr
-git checkout docs/windows-provider-quickstart
-git remote set-url origin https://github.com/KairosMarco/PageIndex.git
-git remote add upstream https://github.com/VectifyAI/PageIndex.git
-git push -u origin docs/windows-provider-quickstart
-```
-
-4. Open the compare URL:
-
-```text
-https://github.com/VectifyAI/PageIndex/compare/main...KairosMarco:PageIndex:docs/windows-provider-quickstart
-```
-
-5. Use this PR body:
-
-```text
-D:\pageindex-benchlab\docs\upstream-patches\pageindex-windows-provider-quickstart-pr-body.md
-```
-
-## Recommended Order
-
-Open the JSON resilience PR first because it is a code contribution with tests.
-
-Open this docs PR second, or use it as the lower-risk first PR if maintainers prefer documentation-only contributions before code changes.
+This is a low-risk docs PR. If maintainers object to the specific provider example, replace it with a generic LiteLLM provider placeholder.

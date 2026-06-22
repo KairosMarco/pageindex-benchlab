@@ -1,170 +1,29 @@
 # Reports
 
-This directory stores generated benchmark reports.
+This directory stores generated benchmark reports and raw result artifacts.
 
-Do not commit raw model outputs containing private or paid data unless they are explicitly safe to publish.
+## Read These First
 
-Current committed PageIndex MVP reports:
+| Report | Purpose |
+|---|---|
+| `expanded_cost_quality_summary.md` | Cross-method 25-question summary |
+| `pageindex_expanded_llm_diagnostics.md` | PageIndex expanded answer-generation diagnostics |
+| `pageindex/pageindex_ranking_diagnostics.md` | PageIndex page-ranking before/after diagnostics |
+| `pageindex/pageindex_answer_issue_analysis.md` | Remaining PageIndex answer issue analysis |
+| `finance_prompt_variant_summary.md` | Prompt-ablation summary |
 
-```text
-reports/stage1_metrics_summary.md
-reports/stage1_metrics_summary.json
-reports/stage1_retrieval_comparison.md
-reports/stage1_detailed_evidence_report.md
-reports/stage1_detailed_evidence_report.json
-reports/stage1_per_question_results.csv
-reports/stage1_validation_report.json
-reports/stage1_environment_report.json
-reports/llamaindex_finance_llm_diagnostics.md
-reports/llamaindex_finance_llm_diagnostics.json
-reports/llamaindex_context_tuning.md
-reports/llamaindex_context_tuning.json
-reports/llamaindex_expanded_retrieval.md
-reports/llamaindex_expanded_retrieval.json
-reports/llamaindex_expanded_retrieval_concept_v2.md
-reports/llamaindex_expanded_retrieval_concept_v2.json
-reports/expanded_retrieval_validation_report.json
-reports/llamaindex_expanded_llm_diagnostics.md
-reports/llamaindex_expanded_llm_diagnostics.json
-reports/expanded_llm_validation_report.json
-reports/long_context_expanded_llm_diagnostics.md
-reports/long_context_expanded_llm_diagnostics.json
-reports/expanded_long_context_validation_report.json
-reports/pageindex_expanded_llm_diagnostics.md
-reports/pageindex_expanded_llm_diagnostics.json
-reports/expanded_pageindex_llm_validation_report.json
-reports/expanded_cost_quality_summary.md
-reports/expanded_cost_quality_summary.json
-reports/finance_prompt_variant_summary.md
-reports/finance_prompt_variant_summary.json
-reports/llamaindex_expanded_llm_diagnostics_finance_reasoning_v2.md
-reports/llamaindex_expanded_llm_diagnostics_finance_reasoning_v2.json
-reports/llamaindex_expanded_llm_diagnostics_finance_reasoning_v3.md
-reports/llamaindex_expanded_llm_diagnostics_finance_reasoning_v3.json
-reports/expanded_llm_validation_report_finance_reasoning_v2.json
-reports/expanded_llm_validation_report_finance_reasoning_v3.json
-reports/expanded_25_pdf_manifest.json
-reports/pageindex/expanded_readiness.md
-reports/pageindex/expanded_readiness.json
-reports/pageindex/expanded_indexing_notes.md
-reports/pageindex/expanded_partial_summary.md
-reports/pageindex/expanded_partial_summary.json
-reports/pageindex/pageindex_ranking_diagnostics.md
-reports/pageindex/pageindex_ranking_diagnostics.json
-reports/pageindex/pageindex_answer_issue_analysis.md
-reports/pageindex/pageindex_answer_issue_analysis.json
-reports/pageindex/pageindex_prompt_variant_summary.md
-reports/pageindex/pageindex_prompt_variant_summary.json
-reports/pageindex/evidence_eval_qa_expanded_25.json
-reports/pageindex/qa_expanded_25_manifest.json
-reports/pageindex/qa_expanded_25/
-reports/pageindex/evidence_eval_qa_llm_expanded_25.json
-reports/pageindex/answer_eval_qa_llm_expanded_25.json
-reports/pageindex/qa_llm_expanded_25_manifest.json
-reports/pageindex/qa_llm_expanded_25/
-reports/pageindex/evidence_eval_qa_llm_expanded_25_finance_reasoning_v2_probe.json
-reports/pageindex/answer_eval_qa_llm_expanded_25_finance_reasoning_v2_probe.json
-reports/pageindex/qa_llm_expanded_25_finance_reasoning_v2_probe_manifest.json
-reports/pageindex/qa_llm_expanded_25_finance_reasoning_v2_probe/
-reports/pageindex/evidence_eval_qa_llm_expanded_25_finance_reasoning_v3_probe.json
-reports/pageindex/answer_eval_qa_llm_expanded_25_finance_reasoning_v3_probe.json
-reports/pageindex/qa_llm_expanded_25_finance_reasoning_v3_probe_manifest.json
-reports/pageindex/qa_llm_expanded_25_finance_reasoning_v3_probe/
-reports/pageindex/pageindex_qa_mvp_report.md
-reports/pageindex/evidence_eval.json
-reports/pageindex/qa_manifest.json
-reports/pageindex/qa/
-reports/pageindex/evidence_eval_llm.json
-reports/pageindex/answer_eval_heuristic.json
-reports/pageindex/answer_eval_llm.json
-reports/pageindex/qa_llm_manifest.json
-reports/pageindex/qa_llm/
-reports/long_context/long_context_smoke_report.md
-reports/long_context/evidence_eval_smoke.json
-reports/long_context/qa_smoke_manifest.json
-reports/long_context/qa_smoke/
-reports/long_context/evidence_eval_llm.json
-reports/long_context/answer_eval_heuristic.json
-reports/long_context/answer_eval_llm.json
-reports/long_context/qa_llm_manifest.json
-reports/long_context/qa_llm/
-reports/long_context/evidence_eval_qa_llm_expanded_25.json
-reports/long_context/answer_eval_qa_llm_expanded_25.json
-reports/long_context/qa_llm_expanded_25_manifest.json
-reports/long_context/qa_llm_expanded_25/
-reports/vector_rag/evidence_eval_smoke.json
-reports/vector_rag/qa_smoke_manifest.json
-reports/vector_rag/qa_smoke/
-reports/vector_rag/evidence_eval_llm.json
-reports/vector_rag/answer_eval_heuristic.json
-reports/vector_rag/answer_eval_llm.json
-reports/vector_rag/qa_llm_manifest.json
-reports/vector_rag/qa_llm/
-reports/hybrid_rag/evidence_eval_smoke.json
-reports/hybrid_rag/qa_smoke_manifest.json
-reports/hybrid_rag/qa_smoke/
-reports/hybrid_rag/evidence_eval_llm.json
-reports/hybrid_rag/answer_eval_heuristic.json
-reports/hybrid_rag/answer_eval_llm.json
-reports/hybrid_rag/qa_llm_manifest.json
-reports/hybrid_rag/qa_llm/
-reports/llamaindex_vector_rag/evidence_eval_smoke.json
-reports/llamaindex_vector_rag/evidence_eval_smoke_cite6.json
-reports/llamaindex_vector_rag/evidence_eval_smoke_cite12.json
-reports/llamaindex_vector_rag/evidence_eval_smoke_finance.json
-reports/llamaindex_vector_rag/evidence_eval_llm_finance.json
-reports/llamaindex_vector_rag/answer_eval_llm_finance.json
-reports/llamaindex_vector_rag/evidence_eval_llm_finance_r3.json
-reports/llamaindex_vector_rag/answer_eval_llm_finance_r3.json
-reports/llamaindex_vector_rag/qa_smoke_manifest.json
-reports/llamaindex_vector_rag/qa_smoke/
-reports/llamaindex_vector_rag/qa_smoke_cite6_manifest.json
-reports/llamaindex_vector_rag/qa_smoke_cite6/
-reports/llamaindex_vector_rag/qa_smoke_cite12_manifest.json
-reports/llamaindex_vector_rag/qa_smoke_cite12/
-reports/llamaindex_vector_rag/qa_smoke_finance_manifest.json
-reports/llamaindex_vector_rag/qa_smoke_finance/
-reports/llamaindex_vector_rag/qa_llm_finance_manifest.json
-reports/llamaindex_vector_rag/qa_llm_finance/
-reports/llamaindex_vector_rag/qa_llm_finance_r3_manifest.json
-reports/llamaindex_vector_rag/qa_llm_finance_r3/
-reports/llamaindex_vector_rag/evidence_eval_qa_llm_expanded_25_concept_v2_r3.json
-reports/llamaindex_vector_rag/answer_eval_qa_llm_expanded_25_concept_v2_r3.json
-reports/llamaindex_vector_rag/qa_llm_expanded_25_concept_v2_r3_manifest.json
-reports/llamaindex_vector_rag/qa_llm_expanded_25_concept_v2_r3/
-reports/llamaindex_vector_rag/evidence_eval_qa_llm_expanded_25_concept_v2_r3_finance_reasoning_v2.json
-reports/llamaindex_vector_rag/answer_eval_qa_llm_expanded_25_concept_v2_r3_finance_reasoning_v2.json
-reports/llamaindex_vector_rag/qa_llm_expanded_25_concept_v2_r3_finance_reasoning_v2_manifest.json
-reports/llamaindex_vector_rag/qa_llm_expanded_25_concept_v2_r3_finance_reasoning_v2/
-reports/llamaindex_vector_rag/evidence_eval_qa_llm_expanded_25_concept_v2_r3_finance_reasoning_v3.json
-reports/llamaindex_vector_rag/answer_eval_qa_llm_expanded_25_concept_v2_r3_finance_reasoning_v3.json
-reports/llamaindex_vector_rag/qa_llm_expanded_25_concept_v2_r3_finance_reasoning_v3_manifest.json
-reports/llamaindex_vector_rag/qa_llm_expanded_25_concept_v2_r3_finance_reasoning_v3/
-reports/llamaindex_hybrid_rag/evidence_eval_smoke.json
-reports/llamaindex_hybrid_rag/evidence_eval_smoke_cite6.json
-reports/llamaindex_hybrid_rag/evidence_eval_smoke_cite12.json
-reports/llamaindex_hybrid_rag/evidence_eval_smoke_cross.json
-reports/llamaindex_hybrid_rag/evidence_eval_smoke_finance.json
-reports/llamaindex_hybrid_rag/evidence_eval_llm_finance.json
-reports/llamaindex_hybrid_rag/answer_eval_llm_finance.json
-reports/llamaindex_hybrid_rag/evidence_eval_llm_finance_r3.json
-reports/llamaindex_hybrid_rag/answer_eval_llm_finance_r3.json
-reports/llamaindex_hybrid_rag/qa_smoke_manifest.json
-reports/llamaindex_hybrid_rag/qa_smoke/
-reports/llamaindex_hybrid_rag/qa_smoke_cite6_manifest.json
-reports/llamaindex_hybrid_rag/qa_smoke_cite6/
-reports/llamaindex_hybrid_rag/qa_smoke_cite12_manifest.json
-reports/llamaindex_hybrid_rag/qa_smoke_cite12/
-reports/llamaindex_hybrid_rag/qa_smoke_cross_manifest.json
-reports/llamaindex_hybrid_rag/qa_smoke_cross/
-reports/llamaindex_hybrid_rag/qa_smoke_finance_manifest.json
-reports/llamaindex_hybrid_rag/qa_smoke_finance/
-reports/llamaindex_hybrid_rag/qa_llm_finance_manifest.json
-reports/llamaindex_hybrid_rag/qa_llm_finance/
-reports/llamaindex_hybrid_rag/qa_llm_finance_r3_manifest.json
-reports/llamaindex_hybrid_rag/qa_llm_finance_r3/
-reports/llamaindex_hybrid_rag/evidence_eval_qa_llm_expanded_25_concept_v2_r3.json
-reports/llamaindex_hybrid_rag/answer_eval_qa_llm_expanded_25_concept_v2_r3.json
-reports/llamaindex_hybrid_rag/qa_llm_expanded_25_concept_v2_r3_manifest.json
-reports/llamaindex_hybrid_rag/qa_llm_expanded_25_concept_v2_r3/
-```
+## Validation Artifacts
+
+| File | Purpose |
+|---|---|
+| `stage1_validation_report.json` | MVP artifact validation |
+| `expanded_retrieval_validation_report.json` | Expanded retrieval validation |
+| `expanded_llm_validation_report.json` | Expanded LlamaIndex LLM validation |
+| `expanded_pageindex_llm_validation_report.json` | Expanded PageIndex LLM validation |
+| `expanded_long_context_validation_report.json` | Expanded long-context validation |
+
+## Raw Outputs
+
+Subdirectories such as `pageindex/qa_llm_expanded_25/`, `long_context/qa_llm_expanded_25/`, and `llamaindex_*` contain generated per-question artifacts.
+
+Do not commit private documents, API keys, or paid credentials. Local PDFs remain under ignored dataset directories.

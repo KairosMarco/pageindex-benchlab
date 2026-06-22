@@ -3,115 +3,81 @@
 Goal:
 
 ```text
-Open concrete upstream contributions so `KairosMarco` can become a visible contributor to PageIndex and related RAG projects.
+Earn visible upstream contribution credit through small, reviewable PageIndex contributions backed by local benchmark evidence.
 ```
 
 ## Current Priority
 
-The highest-priority action is responding to maintainer feedback on the PageIndex JSON response resilience PR.
+Monitor and respond to the two open PageIndex PRs:
 
-Open upstream PR:
+| PR | Priority | Action |
+|---|---:|---|
+| https://github.com/VectifyAI/PageIndex/pull/333 | 1 | Respond to code review; split if maintainers request smaller scope |
+| https://github.com/VectifyAI/PageIndex/pull/334 | 2 | Respond to wording or docs-structure feedback |
 
-```text
-https://github.com/VectifyAI/PageIndex/pull/333
-```
-
-Prepared artifacts:
-
-```text
-docs/upstream-patches/pageindex-json-resilience.patch
-docs/upstream-patches/pageindex-json-resilience-pr-ready.md
-docs/upstream-patches/pageindex-json-resilience-pr-body.md
-docs/pageindex-upstream-pr-handoff.md
-```
-
-Second prepared PageIndex PR candidate:
+Current PR status on 2026-06-22:
 
 ```text
-docs/upstream-patches/pageindex-windows-provider-quickstart-pr-body.md
-docs/pageindex-docs-pr-handoff.md
+PR #333: open, no comments or reviews yet
+PR #334: open, no comments or reviews yet
 ```
 
-The second candidate is a documentation-only README improvement for Windows PowerShell virtualenv activation and LiteLLM provider setup. It is intentionally separate from the code PR.
+## Response Policy
 
-Why this first:
+- Do not repeatedly ping maintainers.
+- Wait several working days before a follow-up comment.
+- Keep follow-up comments short and specific.
+- If review arrives, reply within 24 hours when possible.
+- Keep benchmark discussion out of the code PR unless maintainers ask for it.
 
-- It fixes concrete failures observed during local PageIndex indexing.
-- It is small enough for maintainers to review.
-- It includes tests.
-- It avoids making broad benchmark superiority claims.
-- It can directly produce a GitHub contributor record if accepted.
-
-## Maintainer Response Tasks
-
-1. Monitor `https://github.com/VectifyAI/PageIndex/pull/333`.
-2. Reply to maintainer review within 24 hours when possible.
-3. If maintainers request smaller changes, split the PR into:
-   - JSON parser robustness,
-   - TOC fallback handling,
-   - tests.
-4. Monitor the documentation PR: `https://github.com/VectifyAI/PageIndex/pull/334`.
-5. Open a separate benchmark/ranking diagnostic issue or discussion after the code PR is in review.
-
-The local PR branch is already prepared:
+Suggested PR #333 follow-up if there is no response after several working days:
 
 ```text
-Workspace: D:\pageindex-upstream-pr
-Branch: fix/json-response-resilience
-Commit: 1cf28e5 Improve JSON extraction and TOC fallback handling
-Validation: 7 unittest tests passed; py_compile passed
+Hi maintainers, just checking whether this PR is aligned with the direction of PageIndex.
+
+I kept the scope focused on JSON response resilience and TOC fallback handling, with unittest coverage. Happy to split this into smaller PRs if that would make review easier.
 ```
 
-Exact push and PR commands are documented in:
+## If PR #333 Is Too Broad
 
-```text
-docs/pageindex-upstream-pr-handoff.md
-```
+Split into smaller PRs:
 
-If maintainers prefer a lower-risk first contribution, open the docs PR from:
-
-```text
-Workspace: D:\pageindex-upstream-pr
-Branch: docs/windows-provider-quickstart
-Commit: f650b6c Document Windows and LiteLLM provider setup
-Validation: git diff --check passed
-Handoff: docs/pageindex-docs-pr-handoff.md
-PR: https://github.com/VectifyAI/PageIndex/pull/334
-```
-
-## What Not To Do Yet
-
-- Do not open a large benchmark PR in PageIndex before the robustness PR is in flight.
-- Do not claim PageIndex is broadly better than RAG.
-- Do not mix finance prompt tuning into the first PageIndex code PR.
-- Do not include API keys, local PDFs, or generated raw benchmark outputs in upstream PRs.
+1. `extract_json()` parser robustness.
+2. TOC fallback handling for missing fields and object/list normalization.
+3. Test-only follow-up if maintainers prefer smaller review steps.
 
 ## Next Contribution Candidates
 
-After the JSON resilience PR is open:
+Only open these after the current PRs have had time for review:
 
-1. PageIndex issue or discussion: benchmark plan and evidence-page QA diagnostics.
-2. Documentation PR: Windows quickstart and provider key setup.
-3. Documentation PR: local PDF example with expected output shape.
-4. Diagnostic PR or example: PageIndex structure-to-evidence-page scoring report.
-5. LlamaIndex contribution: small docs/example issue based on finance-aware reranking diagnostics.
+1. PageIndex benchmark/ranking diagnostics issue or discussion.
+2. PageIndex local PDF example with expected output shape.
+3. PageIndex `.env.example` or provider setup docs, if maintainers want more quickstart coverage.
+4. LlamaIndex docs/example issue based on finance-aware reranking diagnostics.
+
+## Boundaries
+
+- Do not claim PageIndex is broadly better than RAG.
+- Do not open large benchmark PRs against PageIndex.
+- Do not include API keys, local PDFs, or raw generated benchmark outputs in upstream PRs.
+- Keep each upstream contribution scoped to one reviewable topic.
 
 ## Success Criteria
 
 Minimum success:
 
 ```text
-One upstream PR opened with tests and clear validation.
+At least one PageIndex PR receives maintainer review.
 ```
 
 Better success:
 
 ```text
-Maintainer review received and addressed.
+At least one PageIndex PR is merged.
 ```
 
 Best success:
 
 ```text
-PR merged, GitHub contributor record created, and follow-up issue/discussion opened with benchmark evidence.
+PR #333 is merged, contributor credit is created, and a separate benchmark diagnostics discussion is opened with scoped evidence.
 ```
