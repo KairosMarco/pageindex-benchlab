@@ -178,6 +178,7 @@ Completed:
   - Scope: README quickstart clarification for Windows PowerShell virtualenv activation and LiteLLM provider setup.
   - Local upstream branch: `D:\pageindex-upstream-pr`, branch `docs/windows-provider-quickstart`, commit `f650b6c`.
   - Local validation: `git diff --check` passed.
+  - Upstream PR opened: https://github.com/VectifyAI/PageIndex/pull/334
 
 Current owner: project owner. PH is on standby for later task assignment.
 

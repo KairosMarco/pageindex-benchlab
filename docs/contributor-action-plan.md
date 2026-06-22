@@ -50,7 +50,7 @@ Why this first:
    - JSON parser robustness,
    - TOC fallback handling,
    - tests.
-4. Open the documentation PR as the second PageIndex contribution candidate.
+4. Monitor the documentation PR: `https://github.com/VectifyAI/PageIndex/pull/334`.
 5. Open a separate benchmark/ranking diagnostic issue or discussion after the code PR is in review.
 
 The local PR branch is already prepared:
@@ -76,6 +76,7 @@ Branch: docs/windows-provider-quickstart
 Commit: f650b6c Document Windows and LiteLLM provider setup
 Validation: git diff --check passed
 Handoff: docs/pageindex-docs-pr-handoff.md
+PR: https://github.com/VectifyAI/PageIndex/pull/334
 ```
 
 ## PH Tasks When Available

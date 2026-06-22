@@ -70,6 +70,7 @@ Branch: docs/windows-provider-quickstart
 Commit: f650b6c Document Windows and LiteLLM provider setup
 Validation: git diff --check passed
 Handoff: docs/pageindex-docs-pr-handoff.md
+PR: https://github.com/VectifyAI/PageIndex/pull/334
 ```
 
 ## Completed

@@ -22,7 +22,13 @@ Document Windows and LiteLLM provider setup
 
 ## Current Status
 
-The docs PR branch has been prepared locally against the current upstream `main`.
+The docs PR branch has been prepared locally against the current upstream `main` and opened upstream.
+
+Open PR:
+
+```text
+https://github.com/VectifyAI/PageIndex/pull/334
+```
 
 Local PageIndex PR workspace:
 
@@ -72,19 +78,7 @@ No whitespace errors.
 
 ## Current Blocker
 
-The local GitHub CLI is not authenticated:
-
-```text
-gh auth status
-=> You are not logged into any GitHub hosts.
-```
-
-The expected fork is also not currently reachable:
-
-```text
-https://github.com/KairosMarco/PageIndex
-=> Repository not found
-```
+There is no local blocker for the initial docs PR. The next dependency is maintainer review.
 
 ## Path A: GitHub CLI
 
