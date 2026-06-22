@@ -6,8 +6,8 @@ Date: 2026-06-22
 
 | PR | Type | Status | Local branch | Purpose |
 |---|---|---|---|---|
-| https://github.com/VectifyAI/PageIndex/pull/333 | Code + tests | Open | `fix/json-response-resilience` | Improve JSON extraction and TOC fallback robustness |
-| https://github.com/VectifyAI/PageIndex/pull/334 | Docs | Open | `docs/windows-provider-quickstart` | Improve Windows and LiteLLM provider quickstart |
+| https://github.com/VectifyAI/PageIndex/pull/333 | Code + tests | Open | `fix/json-response-resilience` | `fix: improve JSON extraction and TOC fallback handling` |
+| https://github.com/VectifyAI/PageIndex/pull/334 | Docs | Open | `docs/windows-provider-quickstart` | `docs: document Windows and LiteLLM provider setup` |
 
 Current GitHub state:
 
@@ -39,6 +39,8 @@ https://github.com/VectifyAI/PageIndex
 PR #333 is the main contributor-quality change because it fixes observed runtime failure classes and includes tests.
 
 PR #334 is a low-risk documentation improvement based on real setup friction encountered while running PageIndex on Windows with LiteLLM-compatible providers.
+
+Title format was updated on 2026-06-22 to match the repository's common PR style.
 
 ## Supporting BenchLab Evidence
 

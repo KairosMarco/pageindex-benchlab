@@ -14,6 +14,7 @@
 | Document | Purpose |
 |---|---|
 | `upstream-pr-overview.md` | Open PageIndex PR overview |
+| `pageindex-pr-pattern-review.md` | Review of PageIndex PR title and merge patterns |
 | `contributor-action-plan.md` | Maintainer follow-up and next contribution plan |
 | `pageindex-upstream-pr-handoff.md` | PR #333 record |
 | `pageindex-docs-pr-handoff.md` | PR #334 record |

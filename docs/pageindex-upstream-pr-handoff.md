@@ -6,6 +6,12 @@ PR:
 https://github.com/VectifyAI/PageIndex/pull/333
 ```
 
+Title:
+
+```text
+fix: improve JSON extraction and TOC fallback handling
+```
+
 Status on 2026-06-22:
 
 ```text

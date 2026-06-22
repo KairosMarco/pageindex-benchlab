@@ -19,8 +19,8 @@ The current work was executed independently by `KairosMarco`. The repository has
 
 Open upstream PRs:
 
-- [PR #333: Improve JSON extraction and TOC fallback handling](https://github.com/VectifyAI/PageIndex/pull/333)
-- [PR #334: Document Windows and LiteLLM provider setup](https://github.com/VectifyAI/PageIndex/pull/334)
+- [PR #333: fix: improve JSON extraction and TOC fallback handling](https://github.com/VectifyAI/PageIndex/pull/333)
+- [PR #334: docs: document Windows and LiteLLM provider setup](https://github.com/VectifyAI/PageIndex/pull/334)
 
 ## Benchmark Question
 
@@ -77,6 +77,7 @@ Conservative reading:
 - [Stage 1 status](docs/stage-1-status.md)
 - [Baseline diagnostics summary](docs/baseline-diagnostics-summary.md)
 - [Upstream PR overview](docs/upstream-pr-overview.md)
+- [PageIndex PR pattern review](docs/pageindex-pr-pattern-review.md)
 - [Docs index](docs/README.md)
 
 ## Reproduce Core Workflow

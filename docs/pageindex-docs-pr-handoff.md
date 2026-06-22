@@ -6,6 +6,12 @@ PR:
 https://github.com/VectifyAI/PageIndex/pull/334
 ```
 
+Title:
+
+```text
+docs: document Windows and LiteLLM provider setup
+```
+
 Status on 2026-06-22:
 
 ```text
