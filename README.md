@@ -1,14 +1,19 @@
 # PageIndex BenchLab
 
-An open benchmark workspace for evaluating **PageIndex** against long-context LLMs, Vector RAG, Hybrid RAG, GraphRAG, and HyperGraphRAG on structured long-document question answering.
+PageIndex BenchLab is a reproducible benchmark and upstream-contribution workspace for evaluating **PageIndex** against long-context LLMs and RAG baselines on structured long-document question answering.
 
-## Why This Project Exists
+The current work has been executed independently by `KairosMarco`. The repository now focuses on two outcomes:
 
-PageIndex proposes a document-native, tree-based retrieval approach for long documents. Instead of only asking whether PageIndex is "better than RAG", this project asks a narrower and more useful question:
+- evidence-backed comparison of PageIndex, long-context LLM, Vector RAG, and Hybrid RAG on FinanceBench-style documents;
+- small, reviewable upstream contributions to `VectifyAI/PageIndex`.
 
-> On structured long documents such as SEC filings, annual reports, contracts, and technical manuals, can PageIndex retrieve better evidence, produce more precise citations, and provide a more explainable retrieval path than other RAG methods?
+## Project Question
 
-The benchmark focuses on:
+PageIndex should not be judged by a broad claim such as "better than all RAG." This project uses a narrower question:
+
+> On structured long documents such as SEC filings, annual reports, contracts, and technical manuals, can PageIndex retrieve better evidence, produce usable citations, and provide a more explainable retrieval path than other RAG methods?
+
+The benchmark tracks:
 
 - `answer_accuracy`
 - `evidence_recall`
@@ -21,217 +26,129 @@ The benchmark focuses on:
 
 ## Compared Methods
 
-| Method | Role in this benchmark | Source |
+| Method | Role | Source |
 |---|---|---|
 | PageIndex | Main method under evaluation | https://github.com/VectifyAI/PageIndex |
-| Long-context LLM | Strong baseline: put the full document in context | https://platform.openai.com/docs/api-reference/responses/create |
-| Vector RAG + reranker | Traditional strong semantic retrieval baseline | https://github.com/run-llama/llama_index |
-| Hybrid RAG | BM25 + vector retrieval + fusion/rerank baseline | https://docs.llamaindex.ai/ |
-| GraphRAG | Graph-based baseline for entity and relationship analysis | https://github.com/microsoft/graphrag |
-| HyperGraphRAG | Hypergraph baseline for n-ary facts and multi-hop reasoning | https://github.com/LHRLAB/HyperGraphRAG |
+| Long-context LLM | Strong baseline that puts the document into model context | https://platform.openai.com/docs/api-reference/responses/create |
+| Vector RAG + reranker | Traditional semantic retrieval baseline | https://github.com/run-llama/llama_index |
+| Hybrid RAG | BM25 + vector retrieval + rerank baseline | https://docs.llamaindex.ai/ |
+| GraphRAG | Planned graph-based baseline | https://github.com/microsoft/graphrag |
+| HyperGraphRAG | Planned hypergraph baseline | https://github.com/LHRLAB/HyperGraphRAG |
 
-## First Milestone
+## Current Status
 
-The first milestone is intentionally small:
+Status: **Stage 1 - expanded FinanceBench diagnostics and upstream contribution tracking**.
 
-- Use `FinanceBench` / SEC filing questions.
-- Run 10-20 questions first.
-- Compare:
-  - PageIndex
-  - Long-context LLM
-  - Vector RAG + reranker
-  - Hybrid RAG
-- Generate a reproducible Markdown or HTML report.
-- Use the results to prepare small upstream PRs for PageIndex and related RAG projects.
+The repository has progressed beyond the initial MVP setup. It now contains:
 
-FinanceBench source:
+- unified benchmark schema in `benchlab/schemas.py`;
+- FinanceBench MVP and expanded 25-question subsets;
+- PageIndex, Long-context, Vector RAG, and Hybrid RAG pipelines;
+- evidence-page and LLM-judge answer evaluators;
+- generated reports for retrieval quality, answer quality, token cost, latency, and failure analysis;
+- two open upstream PageIndex PRs.
 
-- https://github.com/patronus-ai/financebench
-- https://arxiv.org/abs/2311.11944
+## Upstream Contributions
 
-## Current Stage
+Two PageIndex upstream PRs have been opened from this work.
 
-Status: **Stage 1 - MVP Benchmark Setup**.
+| PR | Type | Status | Purpose |
+|---|---|---|---|
+| https://github.com/VectifyAI/PageIndex/pull/333 | Code + tests | Open | Improve JSON extraction and conservative TOC fallback handling for noisy LLM responses |
+| https://github.com/VectifyAI/PageIndex/pull/334 | Documentation | Open | Document Windows PowerShell virtualenv setup and LiteLLM provider configuration |
 
-Completed:
-
-- PageIndex local demo ran successfully with DashScope/Qwen through LiteLLM.
-- PageIndex demo tree output is stored under `examples/pageindex-demo/`.
-- Unified benchmark schema exists in `benchlab/schemas.py`.
-- FinanceBench MVP subset exists in `datasets/financebench/mvp_questions.jsonl`.
-- PageIndex tree adapter exists in `pipelines/pageindex/adapter.py`.
-- Evidence page evaluator exists in `evaluators/evidence.py`.
-- Upstream PageIndex dependency issue draft exists in `docs/upstream-pageindex-dependency-issue.md`.
-- FinanceBench MVP PDFs can be downloaded with `scripts/download_mvp_pdfs.py`.
-- PageIndex batch indexing can be run with `scripts/run_pageindex_mvp.py` after setting a provider API key.
-- PageIndex structures have been generated for all 11 unique MVP PDFs.
-- PageIndex retrieval-only QA has been run for all 12 MVP questions.
-- Current PageIndex no-LLM evidence result: average evidence recall `1.000`, average citation precision `0.333`.
-- Long-context baseline code exists and the no-LLM smoke test has been run for all 12 MVP questions.
-- Current Long-context no-LLM smoke result: average evidence recall `0.583`, average citation precision `0.194`.
-- PageIndex LLM answer generation has been run for all 12 MVP questions with `deepseek/deepseek-v4-pro`.
-- Long-context LLM answer generation has been run for all 12 MVP questions with `deepseek/deepseek-v4-pro`.
-- Vector RAG + reranker MVP has been run for all 12 MVP questions with `deepseek/deepseek-v4-pro`.
-- Hybrid RAG MVP has been run for all 12 MVP questions with `deepseek/deepseek-v4-pro`.
-- Current LLM evidence results:
-  - PageIndex: average evidence recall `1.000`, average citation precision `0.333`.
-  - Long-context: average evidence recall `0.917`, average citation precision `0.306`.
-  - Vector RAG + reranker MVP: average evidence recall `1.000`, average citation precision `0.333`.
-  - Hybrid RAG MVP: average evidence recall `1.000`, average citation precision `0.333`.
-- Current LLM-judge answer accuracy:
-  - PageIndex: `1.000`
-  - Long-context: `1.000`
-  - Vector RAG + reranker MVP: `0.917`
-  - Hybrid RAG MVP: `1.000`
-- Current average total tokens per answer:
-  - PageIndex: `2,984`
-  - Long-context: `84,843`
-  - Vector RAG + reranker MVP: `2,299`
-  - Hybrid RAG MVP: `2,413`
-- Detailed evidence-backed reports now exist:
-  - `reports/stage1_detailed_evidence_report.md`
-  - `reports/stage1_per_question_results.csv`
-  - `reports/stage1_validation_report.json`
-- LlamaIndex Vector and Hybrid diagnostic baselines now have a label-free finance-aware reranker.
-- Current finance-aware LlamaIndex retrieval-only diagnostics:
-  - LlamaIndex Vector RAG: average evidence recall `1.000`, average citation precision `0.333`.
-  - LlamaIndex Hybrid RAG: average evidence recall `1.000`, average citation precision `0.333`.
-- LlamaIndex finance-aware LLM diagnostics have been run with `deepseek/deepseek-v4-pro`.
-- Current finance-aware LlamaIndex LLM diagnostics:
-  - LlamaIndex Vector RAG: evidence recall `1.000`, citation precision `0.333`, answer accuracy `1.000`, average total tokens `8,964`, average latency `16,723 ms`.
-  - LlamaIndex Hybrid RAG: evidence recall `1.000`, citation precision `0.333`, answer accuracy `1.000`, average total tokens `9,216`, average latency `18,596 ms`.
-- Current low-context LlamaIndex tuning result:
-  - LlamaIndex Vector RAG with `rerank_top_k=3`: answer accuracy `1.000`, average total tokens `2,424`, about `73%` fewer tokens than the original `rerank_top_k=12` diagnostic.
-  - LlamaIndex Hybrid RAG with `rerank_top_k=3`: answer accuracy `1.000`, average total tokens `2,520`, about `73%` fewer tokens than the original `rerank_top_k=12` diagnostic.
-- A 25-question expanded FinanceBench subset now exists in `datasets/financebench/expanded_questions_25.jsonl`.
-- Expanded retrieval diagnostics show why larger-subset validation matters:
-  - The first finance-aware LlamaIndex reranker dropped to evidence recall `0.880` for Vector and `0.840` for Hybrid.
-  - The `concept_v2` label-free reranker signals restored evidence recall `1.000` for both Vector and Hybrid at `rerank_top_k=3`.
-  - The `concept_v2` `rerank_top_k=3` runs use the smallest answer context among passing expanded retrieval variants.
-- Expanded LLM answer generation and judging have now been run for the 25-question `concept_v2`, `rerank_top_k=3` LlamaIndex candidates:
-  - LlamaIndex Vector RAG: evidence recall `1.000`, citation precision `0.360`, answer accuracy `0.920`, average total tokens `2,543`, average latency `16,497 ms`.
-  - LlamaIndex Hybrid RAG: evidence recall `1.000`, citation precision `0.360`, answer accuracy `0.880`, average total tokens `2,553`, average latency `16,846 ms`.
-  - Mechanical artifact validation passed with `37 / 37` checks.
-  - The remaining answer issues are reasoning failures after successful evidence retrieval, especially `fb_exp_017` working-capital definition, `fb_exp_019` rounding strictness for Hybrid, and `fb_exp_020` capital-intensity interpretation.
-- Expanded Long-context LLM diagnostics have also been run on the same 25-question set:
-  - Long-context LLM: evidence recall `0.800`, citation precision `0.267`, answer accuracy `0.920`, average total tokens `92,500`, average latency `12,772 ms`.
-  - Mechanical artifact validation passed with `21 / 21` checks.
-  - This matched LlamaIndex Vector answer accuracy, but used about `36x` more average tokens and produced weaker citation-page recall.
-- Expanded cross-method cost/quality summary now exists:
-  - `reports/expanded_cost_quality_summary.md`
-  - The shared hard answer case across compared expanded methods remains `fb_exp_020`.
-- LlamaIndex Vector answer-prompt variants have been tested as an answer-generation ablation:
-  - Default prompt: answer accuracy `0.920`, verdicts `23 correct / 1 partial / 1 incorrect`, average total tokens `2,543`.
-  - `finance_reasoning_v2`: answer accuracy `0.960`, verdicts `24 correct / 0 partial / 1 incorrect`, average total tokens `2,885`.
-  - `finance_reasoning_v3`: answer accuracy `0.920`, verdicts `23 correct / 2 partial / 0 incorrect`, average total tokens `2,978`.
-  - The prompt variants fixed some hard reasoning cases, especially `fb_exp_020`, but introduced other formatting or scope regressions. The default prompt remains the main cross-method baseline.
-- Finance prompt variant summary now exists:
-  - `reports/finance_prompt_variant_summary.md`
-  - `reports/finance_prompt_variant_summary.json`
-- PageIndex expanded-readiness tracking now exists:
-  - `reports/pageindex/expanded_readiness.md`
-  - `reports/pageindex/expanded_readiness.json`
-  - Current expanded PageIndex coverage is `25 / 25` runnable questions because all `24` unique source documents now have structures and PDFs.
-- PageIndex expanded retrieval-only QA now exists:
-  - `reports/pageindex/expanded_partial_summary.md`
-  - `reports/pageindex/evidence_eval_qa_expanded_25.json`
-  - Current expanded PageIndex retrieval-only result: `25` generated QA outputs, average evidence recall `1.000`, average citation precision `0.347`.
-- PageIndex expanded ranking diagnostics now explain the improvement from the legacy scorer to the current finance line-item scorer:
-  - Legacy scorer: evidence recall `0.760`, citation precision `0.253`.
-  - Current scorer: evidence recall `1.000`, citation precision `0.347`.
-  - Diagnostic report: `reports/pageindex/pageindex_ranking_diagnostics.md`.
-- PageIndex expanded LLM answer generation and judging now exists:
-  - `reports/pageindex_expanded_llm_diagnostics.md`
-  - `reports/expanded_pageindex_llm_validation_report.json`
-  - Current expanded PageIndex LLM result: evidence recall `1.000`, citation precision `0.347`, answer accuracy `0.920`, average total tokens `2,882`, average latency `4,840 ms`.
-- PageIndex expanded answer issue analysis now exists:
-  - `reports/pageindex/pageindex_answer_issue_analysis.md`
-  - Remaining PageIndex answer issues are not retrieval misses: `fb_exp_019` is a rounding or judge-policy case, and `fb_exp_020` is a capital-intensity reasoning case.
-- PageIndex targeted answer-prompt probes have been run for the two remaining expanded answer issues:
-  - Default prompt: full 25-question baseline answer accuracy `0.920`, with `fb_exp_019` and `fb_exp_020` incorrect after successful retrieval.
-  - `finance_reasoning_v2` probe: evidence recall `1.000`, answer accuracy `0.500` on the two target questions; it fixed `fb_exp_020` but still failed the rounded-billion answer for `fb_exp_019`.
-  - `finance_reasoning_v3` probe: evidence recall `1.000`, answer accuracy `1.000` on the two target questions; it fixed both `fb_exp_019` and `fb_exp_020`.
-  - This is prompt-ablation evidence only. The default prompt remains the committed 25-question cross-method PageIndex baseline unless a full prompt-variant run is executed.
-  - Reports:
-    - `reports/pageindex/pageindex_prompt_variant_summary.md`
-    - `reports/pageindex/pageindex_prompt_variant_summary.json`
-- Expanded cross-method cost/quality summary now includes PageIndex:
-  - LlamaIndex Vector: evidence recall `1.000`, answer accuracy `0.920`, average total tokens `2,543`.
-  - PageIndex: evidence recall `1.000`, answer accuracy `0.920`, average total tokens `2,882`.
-  - Long-context: evidence recall `0.800`, answer accuracy `0.920`, average total tokens `92,500`.
-- PageIndex upstream contribution drafts now exist:
-  - `docs/upstream-pageindex-benchmark-issue.md`
-  - `docs/upstream-pageindex-ranking-diagnostics-note.md`
-  - `docs/upstream-patches/pageindex-json-resilience-pr.md`
-- First PageIndex upstream PR candidate is now PR-ready:
-  - `docs/upstream-patches/pageindex-json-resilience.patch`
-  - `docs/upstream-patches/pageindex-json-resilience-pr-ready.md`
-  - `docs/upstream-patches/pageindex-json-resilience-pr-body.md`
-  - `docs/pageindex-upstream-pr-handoff.md`
-  - Scope: robust JSON extraction and conservative TOC fallback handling for noisy LLM responses.
-  - Local upstream branch: `D:\pageindex-upstream-pr`, branch `fix/json-response-resilience`, commit `1cf28e5`.
-  - Local patch validation: `7` standard-library `unittest` tests passed, plus `py_compile` for touched PageIndex files.
-  - Upstream PR opened: https://github.com/VectifyAI/PageIndex/pull/333
-- Second PageIndex upstream PR candidate is now locally prepared:
-  - `docs/pageindex-docs-pr-handoff.md`
-  - `docs/upstream-patches/pageindex-windows-provider-quickstart-pr-body.md`
-  - Scope: README quickstart clarification for Windows PowerShell virtualenv activation and LiteLLM provider setup.
-  - Local upstream branch: `D:\pageindex-upstream-pr`, branch `docs/windows-provider-quickstart`, commit `f650b6c`.
-  - Local validation: `git diff --check` passed.
-  - Upstream PR opened: https://github.com/VectifyAI/PageIndex/pull/334
-
-Current owner: project owner. PH is on standby for later task assignment.
-
-See:
-
-- [Stage 1 status](docs/stage-1-status.md)
-- [Benchmark schema](docs/schema.md)
-- [PageIndex expanded readiness](reports/pageindex/expanded_readiness.md)
-- [PageIndex expanded retrieval summary](reports/pageindex/expanded_partial_summary.md)
-- [PageIndex expanded LLM diagnostics](reports/pageindex_expanded_llm_diagnostics.md)
-- [PageIndex answer issue analysis](reports/pageindex/pageindex_answer_issue_analysis.md)
-- [PageIndex upstream benchmark issue draft](docs/upstream-pageindex-benchmark-issue.md)
-- [PageIndex upstream PR handoff](docs/pageindex-upstream-pr-handoff.md)
-- [PageIndex docs PR handoff](docs/pageindex-docs-pr-handoff.md)
-
-## Project Structure
+Local PageIndex PR workspace:
 
 ```text
-pageindex-benchlab/
-  README.md
-  CONTRIBUTING.md
-  docs/
-    collaboration-plan.md
-    rag-method-comparison-sources.md
-    pageindex-rag-workflow.png
-  datasets/
-    README.md
-  pipelines/
-    pageindex/
-    long_context/
-    vector_rag/
-    hybrid_rag/
-    graphrag/
-    hypergraphrag/
-  evaluators/
-  examples/
-  reports/
+D:\pageindex-upstream-pr
 ```
 
-## Collaboration Plan
+PR handoff documents:
 
-Workflow overview:
+- [PageIndex JSON resilience PR handoff](docs/pageindex-upstream-pr-handoff.md)
+- [PageIndex docs PR handoff](docs/pageindex-docs-pr-handoff.md)
+- [Contributor action plan](docs/contributor-action-plan.md)
 
-![PageIndex BenchLab workflow](docs/pageindex-rag-workflow.png)
+## Expanded 25-Question Results
 
-Detailed planning documents:
+The current expanded comparison uses a 25-question FinanceBench subset over structured financial documents.
 
-- [Collaboration plan](docs/collaboration-plan.md)
-- [RAG method comparison and sources](docs/rag-method-comparison-sources.md)
+| Method | Evidence recall | Citation precision | Answer accuracy | Avg total tokens | Avg latency |
+|---|---:|---:|---:|---:|---:|
+| PageIndex | `1.000` | `0.347` | `0.920` | `2,882` | `4,840 ms` |
+| LlamaIndex Vector RAG | `1.000` | `0.360` | `0.920` | `2,543` | `16,497 ms` |
+| LlamaIndex Hybrid RAG | `1.000` | `0.360` | `0.880` | `2,553` | `16,846 ms` |
+| Long-context LLM | `0.800` | `0.267` | `0.920` | `92,500` | `12,772 ms` |
+
+Interpretation:
+
+- PageIndex matched LlamaIndex Vector answer accuracy on this subset while using far fewer tokens than the long-context baseline.
+- PageIndex retrieval found the gold evidence pages for all 25 questions in the expanded retrieval run.
+- Remaining PageIndex answer issues were not retrieval misses; they were answer-generation or judge-policy issues around rounding and finance-definition reasoning.
+- These are scoped benchmark results, not a universal claim that one method is always better.
+
+Key reports:
+
+- [Expanded cost/quality summary](reports/expanded_cost_quality_summary.md)
+- [PageIndex expanded LLM diagnostics](reports/pageindex_expanded_llm_diagnostics.md)
+- [PageIndex expanded retrieval summary](reports/pageindex/expanded_partial_summary.md)
+- [PageIndex ranking diagnostics](reports/pageindex/pageindex_ranking_diagnostics.md)
+- [PageIndex answer issue analysis](reports/pageindex/pageindex_answer_issue_analysis.md)
+- [Finance prompt variant summary](reports/finance_prompt_variant_summary.md)
+- [Stage 1 detailed evidence report](reports/stage1_detailed_evidence_report.md)
+- [Per-question result CSV](reports/stage1_per_question_results.csv)
+
+## Reproduce The Core Workflow
+
+Create a Python environment:
+
+```powershell
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+pip install -r requirements.txt
+```
+
+If PowerShell blocks virtualenv activation:
+
+```powershell
+Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
+.\.venv\Scripts\Activate.ps1
+```
+
+Download FinanceBench MVP PDFs:
+
+```powershell
+python scripts\download_mvp_pdfs.py
+```
+
+Run PageIndex MVP indexing after setting a provider key:
+
+```powershell
+$env:DEEPSEEK_API_KEY="YOUR_KEY"
+python scripts\run_pageindex_mvp.py
+```
+
+Run major diagnostics from the existing scripts:
+
+```powershell
+python scripts\run_pageindex_qa_mvp.py
+python scripts\run_long_context_mvp.py
+python scripts\run_vector_rag_mvp.py
+python scripts\run_hybrid_rag_mvp.py
+```
+
+Detailed run commands and historical notes are kept in:
+
+- [Stage 1 status](docs/stage-1-status.md)
+- [Scripts README](scripts/README.md)
+- [PageIndex pipeline README](pipelines/pageindex/README.md)
+- [Long-context pipeline README](pipelines/long_context/README.md)
+- [Vector RAG pipeline README](pipelines/vector_rag/README.md)
+- [Hybrid RAG pipeline README](pipelines/hybrid_rag/README.md)
 
 ## Output Schema
 
-Each pipeline should eventually produce the same JSON-compatible result shape. The canonical models are in `benchlab/schemas.py`:
+Each pipeline should produce the same JSON-compatible result shape. The canonical models are in `benchlab/schemas.py`.
 
 ```json
 {
@@ -262,99 +179,53 @@ Each pipeline should eventually produce the same JSON-compatible result shape. T
 }
 ```
 
-## Team Roles
+Schema documentation:
 
-### Project Owner
+- [Benchmark schema](docs/schema.md)
 
-Responsibilities:
-
-- Define question sets.
-- Define evaluation metrics.
-- Design reports and README.
-- Maintain the contribution roadmap.
-- Communicate with upstream communities.
-- Try to implement the first MVP.
-
-### PH
-
-Responsibilities:
-
-- Connect PageIndex.
-- Connect LlamaIndex.
-- Connect GraphRAG.
-- Connect HyperGraphRAG.
-- Build pipeline adapters.
-- Run experiments.
-- Write benchmark code.
-- Record environment, model versions, token usage, latency, and failure cases.
-
-## Suggested Roadmap
-
-### Week 1
-
-- Set up this repository.
-- Add the collaboration plan.
-- Run the PageIndex demo locally.
-- Select 10-20 FinanceBench questions.
-- Define the unified output schema.
-
-### Week 2
-
-- Implement the PageIndex adapter.
-- Implement the Vector RAG + reranker baseline.
-- Implement `evidence_recall` and `citation_precision`.
-- Generate the first report from 10 questions.
-
-### Week 3
-
-- Implement Hybrid RAG.
-- Implement or improve the Long-context baseline.
-- Collect failure cases.
-- Open a PageIndex issue describing the benchmark plan.
-
-### Week 4
-
-- Release `v0.1`.
-- Submit the first small upstream PR.
-- Improve documentation.
-- Plan GraphRAG and HyperGraphRAG integration.
-
-## Upstream Contribution Strategy
-
-Do not start with a large feature PR. Start with small, easy-to-review contributions:
-
-- Documentation fixes.
-- Windows quickstart.
-- `.env.example`.
-- Example fixes.
-- Benchmark reproduction notes.
-- Small evaluation scripts.
-
-Recommended first PageIndex PR:
+## Repository Structure
 
 ```text
-docs: add Windows quickstart and minimal local PDF example
+pageindex-benchlab/
+  benchlab/              shared schema and helpers
+  datasets/              FinanceBench subsets and dataset notes
+  docs/                  status, contribution, and source documents
+  evaluators/            evidence and answer evaluators
+  examples/              demo outputs
+  pipelines/             PageIndex, long-context, vector, hybrid, graph placeholders
+  reports/               generated benchmark reports and raw outputs
+  scripts/               runnable benchmark and reporting commands
+  tests/                 local tests
 ```
 
 ## Hardware Requirements
 
-The first milestone does **not** require a local GPU.
+The current benchmark does **not** require a local GPU.
 
-Recommended first setup:
+Recommended setup:
 
 - Python 3.10+
 - Git
 - 16 GB RAM preferred
-- LLM API key, such as OpenAI / Gemini / Claude
-- Small local reranker or API-based reranker
+- an LLM provider API key for answer generation and judging
 
-A GPU may become useful later for local LLMs, large embedding jobs, or large rerankers, but it is not required to become a contributor or run the first benchmark.
+A GPU may become useful later for local LLMs, local embeddings, or local rerankers, but it is not required for the current PageIndex contribution workflow.
 
-## Next Actions
+## Current Next Actions
 
-1. Fork PageIndex and open the JSON response resilience PR using `docs/upstream-patches/pageindex-json-resilience-pr-ready.md`.
-2. Respond to maintainer review quickly; split the patch if requested.
-3. After the PR is open, post the benchmark/ranking diagnostics as a separate issue or discussion, not inside the code PR.
-4. Decide whether to run a full 25-question PageIndex `finance_reasoning_v3` prompt-variant ablation, or keep it as a targeted diagnostic only.
-5. Add evaluator notes for rounded USD-billion answers and definition-sensitive finance questions.
-6. Add GraphRAG and HyperGraphRAG after the first upstream contributor action is in flight.
+1. Monitor PageIndex PR #333 and respond to maintainer feedback.
+2. Monitor PageIndex PR #334 and adjust wording if maintainers request changes.
+3. If #333 is considered too broad, split it into smaller PRs:
+   - JSON parser robustness;
+   - TOC fallback handling;
+   - tests.
+4. Open a separate PageIndex issue or discussion for benchmark/ranking diagnostics after maintainers have had time to review the code PR.
+5. Continue benchmark work only when it supports a concrete upstream contribution or a clearly scoped report.
+
+## Contribution Principles
+
+- Keep upstream PRs small and reviewable.
+- Do not include API keys, private PDFs, or generated raw outputs in upstream PRs.
+- Do not make broad superiority claims without scoped evidence.
+- Separate code fixes, documentation fixes, and benchmark discussion into different PRs or issues.
+- Treat benchmark results as evidence for hypotheses, not marketing claims.

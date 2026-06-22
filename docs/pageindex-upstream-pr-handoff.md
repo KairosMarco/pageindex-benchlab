@@ -4,7 +4,7 @@ Date: 2026-06-22
 
 ## Objective
 
-Open a focused upstream PR to `VectifyAI/PageIndex` so the project owner can earn a visible contributor record through a real bug fix with tests.
+Open a focused upstream PR to `VectifyAI/PageIndex` so `KairosMarco` can earn a visible contributor record through a real bug fix with tests.
 
 Target upstream repository:
 

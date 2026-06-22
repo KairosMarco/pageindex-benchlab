@@ -20,9 +20,9 @@ Stage 1 means the repository now has enough structure to start running repeatabl
 
 ## Current Ownership
 
-For this stage, the project owner is taking over all active work.
+This stage has been executed independently by `KairosMarco`.
 
-PH is on standby and will be assigned implementation tasks later when available.
+The previous collaboration split is no longer part of the active project plan.
 
 ## Contributor Outcome Status
 

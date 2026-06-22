@@ -3,7 +3,7 @@
 Goal:
 
 ```text
-Open concrete upstream contributions so the project owner can become a visible contributor to PageIndex and related RAG projects.
+Open concrete upstream contributions so `KairosMarco` can become a visible contributor to PageIndex and related RAG projects.
 ```
 
 ## Current Priority
@@ -42,7 +42,7 @@ Why this first:
 - It avoids making broad benchmark superiority claims.
 - It can directly produce a GitHub contributor record if accepted.
 
-## Owner Tasks
+## Maintainer Response Tasks
 
 1. Monitor `https://github.com/VectifyAI/PageIndex/pull/333`.
 2. Reply to maintainer review within 24 hours when possible.
@@ -78,15 +78,6 @@ Validation: git diff --check passed
 Handoff: docs/pageindex-docs-pr-handoff.md
 PR: https://github.com/VectifyAI/PageIndex/pull/334
 ```
-
-## PH Tasks When Available
-
-PH should focus on implementation follow-up after the PR is open:
-
-1. Re-run the PageIndex indexing smoke test from a clean fork branch.
-2. Confirm the patch does not change successful demo output shape.
-3. Help split the PR if maintainers ask for smaller patches.
-4. Prepare the next code contribution after the first PR is in review.
 
 ## What Not To Do Yet
 
