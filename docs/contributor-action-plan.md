@@ -19,6 +19,15 @@ docs/upstream-patches/pageindex-json-resilience-pr-body.md
 docs/pageindex-upstream-pr-handoff.md
 ```
 
+Second prepared PageIndex PR candidate:
+
+```text
+docs/upstream-patches/pageindex-windows-provider-quickstart-pr-body.md
+docs/pageindex-docs-pr-handoff.md
+```
+
+The second candidate is a documentation-only README improvement for Windows PowerShell virtualenv activation and LiteLLM provider setup. It is intentionally separate from the code PR.
+
 Why this first:
 
 - It fixes concrete failures observed during local PageIndex indexing.
@@ -53,6 +62,16 @@ Exact push and PR commands are documented in:
 
 ```text
 docs/pageindex-upstream-pr-handoff.md
+```
+
+If maintainers prefer a lower-risk first contribution, open the docs PR from:
+
+```text
+Workspace: D:\pageindex-upstream-pr
+Branch: docs/windows-provider-quickstart
+Commit: f650b6c Document Windows and LiteLLM provider setup
+Validation: git diff --check passed
+Handoff: docs/pageindex-docs-pr-handoff.md
 ```
 
 ## PH Tasks When Available

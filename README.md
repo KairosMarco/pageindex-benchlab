@@ -172,6 +172,12 @@ Completed:
   - Local upstream branch: `D:\pageindex-upstream-pr`, branch `fix/json-response-resilience`, commit `1cf28e5`.
   - Local patch validation: `7` standard-library `unittest` tests passed, plus `py_compile` for touched PageIndex files.
   - Remaining blocker: fork or GitHub CLI login is required before opening the upstream PR.
+- Second PageIndex upstream PR candidate is now locally prepared:
+  - `docs/pageindex-docs-pr-handoff.md`
+  - `docs/upstream-patches/pageindex-windows-provider-quickstart-pr-body.md`
+  - Scope: README quickstart clarification for Windows PowerShell virtualenv activation and LiteLLM provider setup.
+  - Local upstream branch: `D:\pageindex-upstream-pr`, branch `docs/windows-provider-quickstart`, commit `f650b6c`.
+  - Local validation: `git diff --check` passed.
 
 Current owner: project owner. PH is on standby for later task assignment.
 
@@ -185,6 +191,7 @@ See:
 - [PageIndex answer issue analysis](reports/pageindex/pageindex_answer_issue_analysis.md)
 - [PageIndex upstream benchmark issue draft](docs/upstream-pageindex-benchmark-issue.md)
 - [PageIndex upstream PR handoff](docs/pageindex-upstream-pr-handoff.md)
+- [PageIndex docs PR handoff](docs/pageindex-docs-pr-handoff.md)
 
 ## Project Structure
 

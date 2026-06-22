@@ -56,6 +56,16 @@ Exact commands are documented in:
 docs/pageindex-upstream-pr-handoff.md
 ```
 
+A second documentation-only PageIndex PR candidate is also prepared:
+
+```text
+Workspace: D:\pageindex-upstream-pr
+Branch: docs/windows-provider-quickstart
+Commit: f650b6c Document Windows and LiteLLM provider setup
+Validation: git diff --check passed
+Handoff: docs/pageindex-docs-pr-handoff.md
+```
+
 ## Completed
 
 ### Unified Output Schema
