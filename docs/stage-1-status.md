@@ -24,6 +24,38 @@ For this stage, the project owner is taking over all active work.
 
 PH is on standby and will be assigned implementation tasks later when available.
 
+## Contributor Outcome Status
+
+The first PageIndex upstream PR candidate has moved from patch draft to a local PR-ready branch.
+
+Local upstream workspace:
+
+```text
+D:\pageindex-upstream-pr
+```
+
+Branch and commit:
+
+```text
+fix/json-response-resilience
+1cf28e5 Improve JSON extraction and TOC fallback handling
+```
+
+Validation:
+
+```text
+7 unittest tests passed
+py_compile passed for touched PageIndex files
+```
+
+The remaining step is account-side GitHub work: create or authenticate access to the `KairosMarco/PageIndex` fork, push the branch, and open the PR to `VectifyAI/PageIndex`.
+
+Exact commands are documented in:
+
+```text
+docs/pageindex-upstream-pr-handoff.md
+```
+
 ## Completed
 
 ### Unified Output Schema

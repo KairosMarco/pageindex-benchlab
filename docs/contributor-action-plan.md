@@ -15,6 +15,8 @@ Prepared artifacts:
 ```text
 docs/upstream-patches/pageindex-json-resilience.patch
 docs/upstream-patches/pageindex-json-resilience-pr-ready.md
+docs/upstream-patches/pageindex-json-resilience-pr-body.md
+docs/pageindex-upstream-pr-handoff.md
 ```
 
 Why this first:
@@ -29,14 +31,29 @@ Why this first:
 
 1. Log in to GitHub CLI or use the GitHub web UI.
 2. Fork `VectifyAI/PageIndex`.
-3. Apply `docs/upstream-patches/pageindex-json-resilience.patch`.
-4. Run the tests listed in `docs/upstream-patches/pageindex-json-resilience-pr-ready.md`.
-5. Open the PR with the prepared title and body.
+3. Push the prepared local branch from `D:\pageindex-upstream-pr`.
+4. Open the PR with the prepared title and body.
+5. Add the PR URL back to the BenchLab docs.
 6. Reply to maintainer review within 24 hours when possible.
 7. If maintainers request smaller changes, split the PR into:
    - JSON parser robustness,
    - TOC fallback handling,
    - tests.
+
+The local PR branch is already prepared:
+
+```text
+Workspace: D:\pageindex-upstream-pr
+Branch: fix/json-response-resilience
+Commit: 1cf28e5 Improve JSON extraction and TOC fallback handling
+Validation: 7 unittest tests passed; py_compile passed
+```
+
+Exact push and PR commands are documented in:
+
+```text
+docs/pageindex-upstream-pr-handoff.md
+```
 
 ## PH Tasks When Available
 

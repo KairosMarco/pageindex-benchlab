@@ -166,8 +166,12 @@ Completed:
 - First PageIndex upstream PR candidate is now PR-ready:
   - `docs/upstream-patches/pageindex-json-resilience.patch`
   - `docs/upstream-patches/pageindex-json-resilience-pr-ready.md`
+  - `docs/upstream-patches/pageindex-json-resilience-pr-body.md`
+  - `docs/pageindex-upstream-pr-handoff.md`
   - Scope: robust JSON extraction and conservative TOC fallback handling for noisy LLM responses.
+  - Local upstream branch: `D:\pageindex-upstream-pr`, branch `fix/json-response-resilience`, commit `1cf28e5`.
   - Local patch validation: `7` standard-library `unittest` tests passed, plus `py_compile` for touched PageIndex files.
+  - Remaining blocker: fork or GitHub CLI login is required before opening the upstream PR.
 
 Current owner: project owner. PH is on standby for later task assignment.
 
@@ -180,6 +184,7 @@ See:
 - [PageIndex expanded LLM diagnostics](reports/pageindex_expanded_llm_diagnostics.md)
 - [PageIndex answer issue analysis](reports/pageindex/pageindex_answer_issue_analysis.md)
 - [PageIndex upstream benchmark issue draft](docs/upstream-pageindex-benchmark-issue.md)
+- [PageIndex upstream PR handoff](docs/pageindex-upstream-pr-handoff.md)
 
 ## Project Structure
 
