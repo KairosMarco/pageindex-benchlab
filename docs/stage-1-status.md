@@ -48,7 +48,13 @@ Validation:
 py_compile passed for touched PageIndex files
 ```
 
-The remaining step is account-side GitHub work: create or authenticate access to the `KairosMarco/PageIndex` fork, push the branch, and open the PR to `VectifyAI/PageIndex`.
+The PR has been opened upstream:
+
+```text
+https://github.com/VectifyAI/PageIndex/pull/333
+```
+
+The next step is monitoring maintainer feedback and responding quickly.
 
 Exact commands are documented in:
 

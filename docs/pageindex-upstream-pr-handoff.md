@@ -20,7 +20,13 @@ Improve JSON extraction and TOC fallback handling
 
 ## Current Status
 
-The PR branch has been prepared locally against the current upstream `main`.
+The PR branch has been prepared locally against the current upstream `main` and opened upstream.
+
+Open PR:
+
+```text
+https://github.com/VectifyAI/PageIndex/pull/333
+```
 
 Local PageIndex PR workspace:
 
@@ -87,21 +93,13 @@ KeyError: 'physical_index'
 
 ## Current Blocker
 
-The local GitHub CLI is not authenticated:
+There is no local blocker for the initial PR. The next dependency is maintainer review.
+
+Recommended next action:
 
 ```text
-gh auth status
-=> You are not logged into any GitHub hosts.
+Monitor PR #333 and respond to maintainer comments within 24 hours when possible.
 ```
-
-The expected fork is also not currently reachable:
-
-```text
-https://github.com/KairosMarco/PageIndex
-=> Repository not found
-```
-
-This means the code is ready, but the upstream PR cannot be opened from this machine until the owner either logs in with GitHub CLI or creates the fork through the GitHub web UI.
 
 ## Path A: GitHub CLI
 

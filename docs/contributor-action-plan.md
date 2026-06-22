@@ -8,7 +8,13 @@ Open concrete upstream contributions so the project owner can become a visible c
 
 ## Current Priority
 
-The highest-priority action is opening the PageIndex JSON response resilience PR.
+The highest-priority action is responding to maintainer feedback on the PageIndex JSON response resilience PR.
+
+Open upstream PR:
+
+```text
+https://github.com/VectifyAI/PageIndex/pull/333
+```
 
 Prepared artifacts:
 
@@ -38,16 +44,14 @@ Why this first:
 
 ## Owner Tasks
 
-1. Log in to GitHub CLI or use the GitHub web UI.
-2. Fork `VectifyAI/PageIndex`.
-3. Push the prepared local branch from `D:\pageindex-upstream-pr`.
-4. Open the PR with the prepared title and body.
-5. Add the PR URL back to the BenchLab docs.
-6. Reply to maintainer review within 24 hours when possible.
-7. If maintainers request smaller changes, split the PR into:
+1. Monitor `https://github.com/VectifyAI/PageIndex/pull/333`.
+2. Reply to maintainer review within 24 hours when possible.
+3. If maintainers request smaller changes, split the PR into:
    - JSON parser robustness,
    - TOC fallback handling,
    - tests.
+4. Open the documentation PR as the second PageIndex contribution candidate.
+5. Open a separate benchmark/ranking diagnostic issue or discussion after the code PR is in review.
 
 The local PR branch is already prepared:
 

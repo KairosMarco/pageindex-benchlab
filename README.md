@@ -171,7 +171,7 @@ Completed:
   - Scope: robust JSON extraction and conservative TOC fallback handling for noisy LLM responses.
   - Local upstream branch: `D:\pageindex-upstream-pr`, branch `fix/json-response-resilience`, commit `1cf28e5`.
   - Local patch validation: `7` standard-library `unittest` tests passed, plus `py_compile` for touched PageIndex files.
-  - Remaining blocker: fork or GitHub CLI login is required before opening the upstream PR.
+  - Upstream PR opened: https://github.com/VectifyAI/PageIndex/pull/333
 - Second PageIndex upstream PR candidate is now locally prepared:
   - `docs/pageindex-docs-pr-handoff.md`
   - `docs/upstream-patches/pageindex-windows-provider-quickstart-pr-body.md`
