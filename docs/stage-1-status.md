@@ -1,6 +1,6 @@
 # Stage 1 Status
 
-Date: 2026-06-22
+Date: 2026-06-23
 
 ## Summary
 
@@ -20,6 +20,7 @@ The active contributor is `KairosMarco`; there is no active collaborator split i
 | Hybrid RAG | MVP and expanded LlamaIndex diagnostics complete | `pipelines/llamaindex_hybrid_rag/`, `reports/llamaindex_expanded_llm_diagnostics.md` |
 | GraphRAG | Placeholder only | `pipelines/graphrag/` |
 | HyperGraphRAG | Placeholder only | `pipelines/hypergraphrag/` |
+| BookRAG | Planned external baseline; readiness check added | `pipelines/bookrag/`, `scripts/check_bookrag_readiness.py` |
 | Upstream PRs | Two PageIndex PRs open | `docs/upstream-pr-overview.md` |
 
 ## Current Benchmark Snapshot
@@ -114,11 +115,12 @@ reports/expanded_long_context_validation_report.json
 
 ## Current Next Step
 
-The next useful action is maintainer follow-up, not more broad benchmarking.
+The next useful action remains PageIndex maintainer follow-up. BookRAG is now tracked as a planned external baseline, but it should not distract from the open upstream PRs.
 
 Recommended order:
 
 1. Wait for maintainer review on PR #333 and PR #334.
 2. If no response after several working days, leave a concise follow-up comment on PR #333.
 3. If maintainers request smaller scope, split PR #333 into smaller parser/fallback/test PRs.
-4. Open a separate PageIndex issue or discussion for benchmark/ranking diagnostics.
+4. Keep BookRAG as external readiness work until the local checkout and method-specific environment are available.
+5. Open a separate PageIndex issue or discussion for benchmark/ranking diagnostics.

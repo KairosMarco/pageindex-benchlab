@@ -10,4 +10,4 @@ Planned adapters:
 - `hybrid_rag/`
 - `graphrag/`
 - `hypergraphrag/`
-
+- `bookrag/`

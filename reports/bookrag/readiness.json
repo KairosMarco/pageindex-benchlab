@@ -1,0 +1,170 @@
+{
+  "summary": {
+    "bookrag_repo": "D:\\bookrag-source",
+    "repo_exists": false,
+    "remote": null,
+    "python_executable": "D:\\ana3\\python.exe",
+    "python_version": "3.13.9 | packaged by Anaconda, Inc. | (main, Oct 21 2025, 19:09:58) [MSC v.1929 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python_version_ok": false,
+    "license_present": false,
+    "missing_paths": [
+      "README.md",
+      "requirements.txt",
+      "environment.yml",
+      "main.py",
+      "Core",
+      "Core/construct_index.py",
+      "Core/inference.py",
+      "Core/rag",
+      "Scripts",
+      "Scripts/cfg",
+      "config"
+    ],
+    "missing_packages": [
+      "chromadb",
+      "json_repair",
+      "mineru",
+      "openai",
+      "spacy",
+      "torch",
+      "torchvision",
+      "ultralytics"
+    ],
+    "import_failures": [],
+    "ready_for_adapter_work": false
+  },
+  "paths": [
+    {
+      "path": "README.md",
+      "exists": false
+    },
+    {
+      "path": "requirements.txt",
+      "exists": false
+    },
+    {
+      "path": "environment.yml",
+      "exists": false
+    },
+    {
+      "path": "main.py",
+      "exists": false
+    },
+    {
+      "path": "Core",
+      "exists": false
+    },
+    {
+      "path": "Core/construct_index.py",
+      "exists": false
+    },
+    {
+      "path": "Core/inference.py",
+      "exists": false
+    },
+    {
+      "path": "Core/rag",
+      "exists": false
+    },
+    {
+      "path": "Scripts",
+      "exists": false
+    },
+    {
+      "path": "Scripts/cfg",
+      "exists": false
+    },
+    {
+      "path": "config",
+      "exists": false
+    }
+  ],
+  "packages": [
+    {
+      "name": "beautifulsoup4",
+      "purpose": "HTML parsing dependency",
+      "version": "4.13.5",
+      "available": true
+    },
+    {
+      "name": "chromadb",
+      "purpose": "BookRAG vector store dependency",
+      "version": null,
+      "available": false
+    },
+    {
+      "name": "json_repair",
+      "purpose": "model JSON repair dependency",
+      "version": null,
+      "available": false
+    },
+    {
+      "name": "mineru",
+      "purpose": "PDF parsing dependency",
+      "version": null,
+      "available": false
+    },
+    {
+      "name": "networkx",
+      "purpose": "graph processing dependency",
+      "version": "3.5",
+      "available": true
+    },
+    {
+      "name": "openai",
+      "purpose": "LLM provider dependency",
+      "version": null,
+      "available": false
+    },
+    {
+      "name": "pandas",
+      "purpose": "dataset and result handling dependency",
+      "version": "2.3.3",
+      "available": true
+    },
+    {
+      "name": "pydantic",
+      "purpose": "schema/config dependency",
+      "version": "2.12.4",
+      "available": true
+    },
+    {
+      "name": "PyYAML",
+      "purpose": "YAML config dependency",
+      "version": "6.0.3",
+      "available": true
+    },
+    {
+      "name": "spacy",
+      "purpose": "entity extraction dependency",
+      "version": null,
+      "available": false
+    },
+    {
+      "name": "torch",
+      "purpose": "model/runtime dependency",
+      "version": null,
+      "available": false
+    },
+    {
+      "name": "torchvision",
+      "purpose": "vision model dependency",
+      "version": null,
+      "available": false
+    },
+    {
+      "name": "ultralytics",
+      "purpose": "layout/document vision dependency",
+      "version": null,
+      "available": false
+    }
+  ],
+  "imports": [],
+  "recommendations": [
+    "Clone BookRAG outside this repository, for example: git clone https://github.com/sam234990/BookRAG D:\\bookrag-source",
+    "Use a Python 3.12 environment for BookRAG, matching the upstream README.",
+    "Install BookRAG dependencies in a separate environment, not in BenchLab's main environment.",
+    "No local BookRAG license file was detected. Confirm license terms before redistributing code or artifacts."
+  ]
+}

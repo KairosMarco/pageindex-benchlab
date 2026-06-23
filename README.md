@@ -13,7 +13,7 @@ The current work was executed independently by `KairosMarco`. The repository has
 |---|---|
 | Benchmark scope | 25-question FinanceBench expanded subset |
 | Implemented methods | PageIndex, Long-context LLM, LlamaIndex Vector RAG, LlamaIndex Hybrid RAG |
-| Planned methods | GraphRAG, HyperGraphRAG |
+| Planned methods | GraphRAG, HyperGraphRAG, BookRAG |
 | Main reports | `reports/expanded_cost_quality_summary.md`, `reports/pageindex_expanded_llm_diagnostics.md` |
 | Upstream PRs | PageIndex PR #333 and PR #334 are open |
 
@@ -47,6 +47,7 @@ Tracked metrics:
 | LlamaIndex Hybrid RAG | BM25 + vector retrieval baseline | https://docs.llamaindex.ai/ |
 | GraphRAG | Planned graph baseline | https://github.com/microsoft/graphrag |
 | HyperGraphRAG | Planned hypergraph baseline | https://github.com/LHRLAB/HyperGraphRAG |
+| BookRAG | Planned structural graph-tree baseline | https://github.com/sam234990/BookRAG |
 
 ## Key Result Snapshot
 
@@ -76,6 +77,7 @@ Conservative reading:
 - [Finance prompt variant summary](reports/finance_prompt_variant_summary.md)
 - [Stage 1 status](docs/stage-1-status.md)
 - [Baseline diagnostics summary](docs/baseline-diagnostics-summary.md)
+- [BookRAG integration plan](docs/bookrag-integration-plan.md)
 - [Upstream PR overview](docs/upstream-pr-overview.md)
 - [PageIndex PR pattern review](docs/pageindex-pr-pattern-review.md)
 - [Docs index](docs/README.md)
@@ -121,6 +123,7 @@ More run details:
 - [Long-context pipeline README](pipelines/long_context/README.md)
 - [Vector RAG pipeline README](pipelines/vector_rag/README.md)
 - [Hybrid RAG pipeline README](pipelines/hybrid_rag/README.md)
+- [BookRAG pipeline README](pipelines/bookrag/README.md)
 
 ## Repository Structure
 
@@ -141,8 +144,9 @@ tests/        local tests
 1. Monitor PageIndex PR #333 and respond to maintainer feedback.
 2. Monitor PageIndex PR #334 and adjust wording if requested.
 3. If PR #333 is too broad, split it into parser, TOC fallback, and test-only PRs.
-4. Open a separate PageIndex issue or discussion for benchmark/ranking diagnostics.
-5. Continue benchmark work only when it supports a concrete upstream contribution or a scoped report.
+4. Add BookRAG as an external graph-tree baseline after readiness checks pass.
+5. Open a separate PageIndex issue or discussion for benchmark/ranking diagnostics.
+6. Continue benchmark work only when it supports a concrete upstream contribution or a scoped report.
 
 ## Contribution Rules
 

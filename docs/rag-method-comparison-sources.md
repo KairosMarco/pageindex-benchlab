@@ -17,6 +17,27 @@ This document records the comparison methods used or planned in PageIndex BenchL
 |---|---|---|---|
 | GraphRAG | Planned | Entity and relationship graph baseline | https://github.com/microsoft/graphrag |
 | HyperGraphRAG | Planned | Hypergraph baseline for n-ary relations | https://github.com/LHRLAB/HyperGraphRAG |
+| BookRAG | Planned | Structural graph-tree baseline for complex documents | https://github.com/sam234990/BookRAG |
+
+## Structural Graph-Tree Baseline
+
+BookRAG is tracked separately from GraphRAG because it combines document hierarchy with entity relations and tree-graph mappings. In this benchmark, it should answer a specific comparison question:
+
+> Does a heavier graph-tree index improve long-document QA enough to justify its setup and runtime cost compared with PageIndex's tree-only approach?
+
+Primary sources:
+
+- https://github.com/sam234990/BookRAG
+- https://arxiv.org/abs/2512.03413
+- https://arxiv.org/pdf/2512.03413
+- https://www.51cto.com/aigc/11012.html
+
+Integration notes:
+
+- Keep BookRAG as an external checkout.
+- Do not add BookRAG's heavy dependencies to the main BenchLab `requirements.txt`.
+- Use `scripts/check_bookrag_readiness.py` before adapter work.
+- Treat BookRAG result rows as planned until at least one schema-valid output is produced and evaluated.
 
 ## Evaluation Discipline
 

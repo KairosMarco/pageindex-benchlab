@@ -1,6 +1,6 @@
 # Baseline Diagnostics Summary
 
-Date: 2026-06-22
+Date: 2026-06-23
 
 ## Purpose
 
@@ -41,6 +41,9 @@ reports/expanded_cost_quality_summary.md
 
 Do not expand baselines just to add surface area. Next work should support a specific contribution or report:
 
-1. Add GraphRAG only if a clear graph-specific question set is defined.
-2. Add HyperGraphRAG only if n-ary relationship questions are defined.
-3. Expand beyond finance only after the PageIndex upstream PRs receive review or merge.
+1. Add BookRAG first as an external graph-tree baseline because it directly tests the added value of tree + graph structure against PageIndex's tree-only approach.
+2. Add GraphRAG only if a clear graph-specific question set is defined.
+3. Add HyperGraphRAG only if n-ary relationship questions are defined.
+4. Expand beyond finance only after the PageIndex upstream PRs receive review or merge.
+
+BookRAG is not yet a measured result. The current repository only includes readiness and integration planning for it.

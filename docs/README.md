@@ -6,6 +6,7 @@
 |---|---|
 | `stage-1-status.md` | Current benchmark and contribution status |
 | `baseline-diagnostics-summary.md` | Current baseline result summary |
+| `bookrag-integration-plan.md` | BookRAG baseline scope and integration phases |
 | `schema.md` | Shared benchmark result schema |
 | `rag-method-comparison-sources.md` | Method/source map |
 

@@ -264,6 +264,30 @@ python scripts\evaluate_evidence_mvp.py --results-dir reports\hybrid_rag\qa_llm 
 python scripts\evaluate_answers_mvp.py --results-dir reports\hybrid_rag\qa_llm --output reports\hybrid_rag\answer_eval_llm.json --mode llm --model deepseek/deepseek-v4-pro --continue-on-error
 ```
 
+## Check BookRAG Readiness
+
+BookRAG is a planned external graph-tree baseline. Keep its source and environment outside this repository.
+
+Check whether a local BookRAG checkout and environment are ready for adapter work:
+
+```powershell
+python scripts\check_bookrag_readiness.py --bookrag-repo D:\bookrag-source
+```
+
+This writes:
+
+```text
+reports/bookrag/readiness.json
+```
+
+The readiness script does not run BookRAG indexing. It checks the expected repository files, Python version, selected package metadata, and optionally selected imports:
+
+```powershell
+python scripts\check_bookrag_readiness.py --bookrag-repo D:\bookrag-source --import-check
+```
+
+BookRAG requires a heavier method-specific setup than the current baselines, including MinerU and, in the default configuration, a MinerU/SGLang parsing service. Do not add BookRAG dependencies to BenchLab's main `requirements.txt`.
+
 ## Run LlamaIndex Vector RAG Diagnostic Baseline
 
 Current finance-aware smoke test without LLM answer generation:
