@@ -1,0 +1,679 @@
+{
+  "source_questions": "D:\\pageindex-benchlab\\datasets\\financebench\\expanded_questions_25.jsonl",
+  "pdf_dir": "D:\\pageindex-benchlab\\datasets\\raw\\financebench\\pdfs",
+  "record_count": 25,
+  "question_count": 25,
+  "document_count": 24,
+  "missing_pdfs": [],
+  "documents": [
+    {
+      "doc_uuid": "68cb39d6-4c13-5cfc-a537-987de4dcfe32",
+      "doc_name": "3M_2018_10K",
+      "company": "3M",
+      "doc_type": "10k",
+      "doc_period": 2018,
+      "doc_path": "D:\\pageindex-benchlab\\datasets\\raw\\financebench\\pdfs\\3M_2018_10K.pdf",
+      "question_ids": [
+        "fb_mvp_001"
+      ]
+    },
+    {
+      "doc_uuid": "d6e4f518-293c-5ae2-9f3b-29c389e30de7",
+      "doc_name": "ADOBE_2016_10K",
+      "company": "Adobe",
+      "doc_type": "10k",
+      "doc_period": 2016,
+      "doc_path": "D:\\pageindex-benchlab\\datasets\\raw\\financebench\\pdfs\\ADOBE_2016_10K.pdf",
+      "question_ids": [
+        "fb_exp_013"
+      ]
+    },
+    {
+      "doc_uuid": "74166bf4-ce4c-5d58-9738-cdcfd37cc2eb",
+      "doc_name": "AMAZON_2017_10K",
+      "company": "Amazon",
+      "doc_type": "10k",
+      "doc_period": 2017,
+      "doc_path": "D:\\pageindex-benchlab\\datasets\\raw\\financebench\\pdfs\\AMAZON_2017_10K.pdf",
+      "question_ids": [
+        "fb_mvp_002"
+      ]
+    },
+    {
+      "doc_uuid": "c986ce90-4d33-5092-abab-2abf1134ed08",
+      "doc_name": "AMCOR_2023Q4_EARNINGS",
+      "company": "Amcor",
+      "doc_type": "Earnings",
+      "doc_period": 2023,
+      "doc_path": "D:\\pageindex-benchlab\\datasets\\raw\\financebench\\pdfs\\AMCOR_2023Q4_EARNINGS.pdf",
+      "question_ids": [
+        "fb_mvp_010"
+      ]
+    },
+    {
+      "doc_uuid": "f347afc6-eb78-526e-aff3-f40149d3db04",
+      "doc_name": "AMD_2022_10K",
+      "company": "AMD",
+      "doc_type": "10k",
+      "doc_period": 2022,
+      "doc_path": "D:\\pageindex-benchlab\\datasets\\raw\\financebench\\pdfs\\AMD_2022_10K.pdf",
+      "question_ids": [
+        "fb_mvp_003",
+        "fb_mvp_004"
+      ]
+    },
+    {
+      "doc_uuid": "2b2de53b-6915-58bd-987d-5b01b1bcd268",
+      "doc_name": "AMERICANEXPRESS_2022_10K",
+      "company": "American Express",
+      "doc_type": "10k",
+      "doc_period": 2022,
+      "doc_path": "D:\\pageindex-benchlab\\datasets\\raw\\financebench\\pdfs\\AMERICANEXPRESS_2022_10K.pdf",
+      "question_ids": [
+        "fb_exp_014"
+      ]
+    },
+    {
+      "doc_uuid": "8e656ede-d063-57e8-8107-c7e6aa5311eb",
+      "doc_name": "AMERICANWATERWORKS_2020_10K",
+      "company": "American Water Works",
+      "doc_type": "10k",
+      "doc_period": 2020,
+      "doc_path": "D:\\pageindex-benchlab\\datasets\\raw\\financebench\\pdfs\\AMERICANWATERWORKS_2020_10K.pdf",
+      "question_ids": [
+        "fb_exp_019"
+      ]
+    },
+    {
+      "doc_uuid": "c5ad8ece-29dc-5fac-98ee-948711b0aa93",
+      "doc_name": "BESTBUY_2023_10K",
+      "company": "Best Buy",
+      "doc_type": "10k",
+      "doc_period": 2023,
+      "doc_path": "D:\\pageindex-benchlab\\datasets\\raw\\financebench\\pdfs\\BESTBUY_2023_10K.pdf",
+      "question_ids": [
+        "fb_mvp_005"
+      ]
+    },
+    {
+      "doc_uuid": "8890f020-0781-5667-8eac-d13fff340106",
+      "doc_name": "BLOCK_2016_10K",
+      "company": "Block",
+      "doc_type": "10k",
+      "doc_period": 2016,
+      "doc_path": "D:\\pageindex-benchlab\\datasets\\raw\\financebench\\pdfs\\BLOCK_2016_10K.pdf",
+      "question_ids": [
+        "fb_exp_016"
+      ]
+    },
+    {
+      "doc_uuid": "fa414a07-cbe4-54c8-abff-827ed65b4354",
+      "doc_name": "BOEING_2022_10K",
+      "company": "Boeing",
+      "doc_type": "10k",
+      "doc_period": 2022,
+      "doc_path": "D:\\pageindex-benchlab\\datasets\\raw\\financebench\\pdfs\\BOEING_2022_10K.pdf",
+      "question_ids": [
+        "fb_mvp_006"
+      ]
+    },
+    {
+      "doc_uuid": "78cf1c10-a7ae-57e1-af72-dadcc1ea7616",
+      "doc_name": "COCACOLA_2021_10K",
+      "company": "Coca-Cola",
+      "doc_type": "10k",
+      "doc_period": 2021,
+      "doc_path": "D:\\pageindex-benchlab\\datasets\\raw\\financebench\\pdfs\\COCACOLA_2021_10K.pdf",
+      "question_ids": [
+        "fb_exp_022"
+      ]
+    },
+    {
+      "doc_uuid": "32916bf8-e11a-55c0-bc6d-9155f4b71ee0",
+      "doc_name": "CORNING_2022_10K",
+      "company": "Corning",
+      "doc_type": "10k",
+      "doc_period": 2022,
+      "doc_path": "D:\\pageindex-benchlab\\datasets\\raw\\financebench\\pdfs\\CORNING_2022_10K.pdf",
+      "question_ids": [
+        "fb_exp_017"
+      ]
+    },
+    {
+      "doc_uuid": "825c3d09-305f-50cc-b0ef-aee13d7d4bc1",
+      "doc_name": "COSTCO_2021_10K",
+      "company": "Costco",
+      "doc_type": "10k",
+      "doc_period": 2021,
+      "doc_path": "D:\\pageindex-benchlab\\datasets\\raw\\financebench\\pdfs\\COSTCO_2021_10K.pdf",
+      "question_ids": [
+        "fb_mvp_007"
+      ]
+    },
+    {
+      "doc_uuid": "404723d2-38d4-5198-ac16-31ae19e945d6",
+      "doc_name": "CVSHEALTH_2022_10K",
+      "company": "CVS Health",
+      "doc_type": "10k",
+      "doc_period": 2022,
+      "doc_path": "D:\\pageindex-benchlab\\datasets\\raw\\financebench\\pdfs\\CVSHEALTH_2022_10K.pdf",
+      "question_ids": [
+        "fb_exp_020"
+      ]
+    },
+    {
+      "doc_uuid": "bcddc9b7-46bf-56e1-af85-f52d1d6103d7",
+      "doc_name": "FOOTLOCKER_2022_8K_dated-2022-05-20",
+      "company": "Foot Locker",
+      "doc_type": "8k",
+      "doc_period": 2022,
+      "doc_path": "D:\\pageindex-benchlab\\datasets\\raw\\financebench\\pdfs\\FOOTLOCKER_2022_8K_dated-2022-05-20.pdf",
+      "question_ids": [
+        "fb_exp_015"
+      ]
+    },
+    {
+      "doc_uuid": "6ead2248-0de5-5cb9-a2e0-ed27c1afd65a",
+      "doc_name": "GENERALMILLS_2020_10K",
+      "company": "General Mills",
+      "doc_type": "10k",
+      "doc_period": 2020,
+      "doc_path": "D:\\pageindex-benchlab\\datasets\\raw\\financebench\\pdfs\\GENERALMILLS_2020_10K.pdf",
+      "question_ids": [
+        "fb_exp_024"
+      ]
+    },
+    {
+      "doc_uuid": "3d51af1f-c5a5-5c39-85ca-a917a7ff5991",
+      "doc_name": "JOHNSON_JOHNSON_2023_8K_dated-2023-08-30",
+      "company": "Johnson & Johnson",
+      "doc_type": "8k",
+      "doc_period": 2023,
+      "doc_path": "D:\\pageindex-benchlab\\datasets\\raw\\financebench\\pdfs\\JOHNSON_JOHNSON_2023_8K_dated-2023-08-30.pdf",
+      "question_ids": [
+        "fb_mvp_012"
+      ]
+    },
+    {
+      "doc_uuid": "87aafb09-a189-541b-826c-b7b0b2d506b7",
+      "doc_name": "JPMORGAN_2023Q2_10Q",
+      "company": "JPMorgan",
+      "doc_type": "10q",
+      "doc_period": 2023,
+      "doc_path": "D:\\pageindex-benchlab\\datasets\\raw\\financebench\\pdfs\\JPMORGAN_2023Q2_10Q.pdf",
+      "question_ids": [
+        "fb_mvp_011"
+      ]
+    },
+    {
+      "doc_uuid": "0eb1f8f0-3187-5712-9602-b98c53f00183",
+      "doc_name": "MGMRESORTS_2022Q4_EARNINGS",
+      "company": "MGM Resorts",
+      "doc_type": "Earnings",
+      "doc_period": 2022,
+      "doc_path": "D:\\pageindex-benchlab\\datasets\\raw\\financebench\\pdfs\\MGMRESORTS_2022Q4_EARNINGS.pdf",
+      "question_ids": [
+        "fb_exp_018"
+      ]
+    },
+    {
+      "doc_uuid": "11482716-a128-5316-8ca9-ae44a49b67e4",
+      "doc_name": "MICROSOFT_2016_10K",
+      "company": "Microsoft",
+      "doc_type": "10k",
+      "doc_period": 2016,
+      "doc_path": "D:\\pageindex-benchlab\\datasets\\raw\\financebench\\pdfs\\MICROSOFT_2016_10K.pdf",
+      "question_ids": [
+        "fb_mvp_008"
+      ]
+    },
+    {
+      "doc_uuid": "4d030785-b251-58e8-b89c-bc8ad150fd78",
+      "doc_name": "NIKE_2023_10K",
+      "company": "Nike",
+      "doc_type": "10k",
+      "doc_period": 2023,
+      "doc_path": "D:\\pageindex-benchlab\\datasets\\raw\\financebench\\pdfs\\NIKE_2023_10K.pdf",
+      "question_ids": [
+        "fb_mvp_009"
+      ]
+    },
+    {
+      "doc_uuid": "acea9ba1-12e7-534b-914c-50fc1ce3a15f",
+      "doc_name": "PEPSICO_2023Q1_EARNINGS",
+      "company": "PepsiCo",
+      "doc_type": "Earnings",
+      "doc_period": 2023,
+      "doc_path": "D:\\pageindex-benchlab\\datasets\\raw\\financebench\\pdfs\\PEPSICO_2023Q1_EARNINGS.pdf",
+      "question_ids": [
+        "fb_exp_021"
+      ]
+    },
+    {
+      "doc_uuid": "197c742f-9d83-5f49-9045-117d09461910",
+      "doc_name": "PFIZER_2021_10K",
+      "company": "Pfizer",
+      "doc_type": "10k",
+      "doc_period": 2021,
+      "doc_path": "D:\\pageindex-benchlab\\datasets\\raw\\financebench\\pdfs\\PFIZER_2021_10K.pdf",
+      "question_ids": [
+        "fb_exp_023"
+      ]
+    },
+    {
+      "doc_uuid": "59285970-f114-5234-86a3-270a5992d212",
+      "doc_name": "ULTABEAUTY_2023Q4_EARNINGS",
+      "company": "Ulta Beauty",
+      "doc_type": "Earnings",
+      "doc_period": 2023,
+      "doc_path": "D:\\pageindex-benchlab\\datasets\\raw\\financebench\\pdfs\\ULTABEAUTY_2023Q4_EARNINGS.pdf",
+      "question_ids": [
+        "fb_exp_025"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "fb_mvp_001",
+      "source_id": "financebench_id_03029",
+      "doc_uuid": "68cb39d6-4c13-5cfc-a537-987de4dcfe32",
+      "doc_name": "3M_2018_10K",
+      "doc_path": "D:\\pageindex-benchlab\\datasets\\raw\\financebench\\pdfs\\3M_2018_10K.pdf",
+      "gold_answer": "$1577.00",
+      "gold_pages_one_indexed": [
+        60
+      ],
+      "gold_pages_zero_indexed": [
+        59
+      ],
+      "question_type": "metrics-generated",
+      "question_reasoning": "Information extraction"
+    },
+    {
+      "question_id": "fb_mvp_002",
+      "source_id": "financebench_id_08135",
+      "doc_uuid": "74166bf4-ce4c-5d58-9738-cdcfd37cc2eb",
+      "doc_name": "AMAZON_2017_10K",
+      "doc_path": "D:\\pageindex-benchlab\\datasets\\raw\\financebench\\pdfs\\AMAZON_2017_10K.pdf",
+      "gold_answer": "30.8%",
+      "gold_pages_one_indexed": [
+        38
+      ],
+      "gold_pages_zero_indexed": [
+        37
+      ],
+      "question_type": "metrics-generated",
+      "question_reasoning": "Numerical reasoning"
+    },
+    {
+      "question_id": "fb_mvp_003",
+      "source_id": "financebench_id_00995",
+      "doc_uuid": "f347afc6-eb78-526e-aff3-f40149d3db04",
+      "doc_name": "AMD_2022_10K",
+      "doc_path": "D:\\pageindex-benchlab\\datasets\\raw\\financebench\\pdfs\\AMD_2022_10K.pdf",
+      "gold_answer": "AMD sells server microprocessors (CPUs) and graphics processing units (GPUs), data processing units (DPUs), Field Programmable Gate Arrays (FPGAs), and Adaptive System-on-Chip (SoC) products for data centers; CPUs, accelerated processing units (APUs) that integrate CPUs and GPUs, and chipsets for desktop and notebook personal computers; discrete GPUs, and semi-custom SoC products and development services; and embedded CPUs, GPUs, APUs, FPGAs, and Adaptive SoC products.",
+      "gold_pages_one_indexed": [
+        4
+      ],
+      "gold_pages_zero_indexed": [
+        3
+      ],
+      "question_type": "domain-relevant",
+      "question_reasoning": "Information extraction"
+    },
+    {
+      "question_id": "fb_mvp_004",
+      "source_id": "financebench_id_01279",
+      "doc_uuid": "f347afc6-eb78-526e-aff3-f40149d3db04",
+      "doc_name": "AMD_2022_10K",
+      "doc_path": "D:\\pageindex-benchlab\\datasets\\raw\\financebench\\pdfs\\AMD_2022_10K.pdf",
+      "gold_answer": "In 2022, AMD brought in the most cashflow from Operations",
+      "gold_pages_one_indexed": [
+        58
+      ],
+      "gold_pages_zero_indexed": [
+        57
+      ],
+      "question_type": "domain-relevant",
+      "question_reasoning": "Numerical reasoning"
+    },
+    {
+      "question_id": "fb_mvp_005",
+      "source_id": "financebench_id_00685",
+      "doc_uuid": "c5ad8ece-29dc-5fac-98ee-948711b0aa93",
+      "doc_name": "BESTBUY_2023_10K",
+      "doc_path": "D:\\pageindex-benchlab\\datasets\\raw\\financebench\\pdfs\\BESTBUY_2023_10K.pdf",
+      "gold_answer": "Yes, the margins have been consistent, there has been a minor decline of 1.1% in gross margins between FY2022 and FY2023.",
+      "gold_pages_one_indexed": [
+        40
+      ],
+      "gold_pages_zero_indexed": [
+        39
+      ],
+      "question_type": "domain-relevant",
+      "question_reasoning": "Logical reasoning (based on numerical reasoning) OR Logical reasoning"
+    },
+    {
+      "question_id": "fb_mvp_006",
+      "source_id": "financebench_id_01091",
+      "doc_uuid": "fa414a07-cbe4-54c8-abff-827ed65b4354",
+      "doc_name": "BOEING_2022_10K",
+      "doc_path": "D:\\pageindex-benchlab\\datasets\\raw\\financebench\\pdfs\\BOEING_2022_10K.pdf",
+      "gold_answer": "Yes. Multiple lawsuits have been filed against Boeing resulting from a 2018 Lion Air crash and a 2019 Ethiopian Airlines crash.",
+      "gold_pages_one_indexed": [
+        113
+      ],
+      "gold_pages_zero_indexed": [
+        112
+      ],
+      "question_type": "domain-relevant",
+      "question_reasoning": "Information extraction"
+    },
+    {
+      "question_id": "fb_mvp_007",
+      "source_id": "financebench_id_04209",
+      "doc_uuid": "825c3d09-305f-50cc-b0ef-aee13d7d4bc1",
+      "doc_name": "COSTCO_2021_10K",
+      "doc_path": "D:\\pageindex-benchlab\\datasets\\raw\\financebench\\pdfs\\COSTCO_2021_10K.pdf",
+      "gold_answer": "$59268.00",
+      "gold_pages_one_indexed": [
+        38
+      ],
+      "gold_pages_zero_indexed": [
+        37
+      ],
+      "question_type": "metrics-generated",
+      "question_reasoning": "Information extraction"
+    },
+    {
+      "question_id": "fb_mvp_008",
+      "source_id": "financebench_id_04700",
+      "doc_uuid": "11482716-a128-5316-8ca9-ae44a49b67e4",
+      "doc_name": "MICROSOFT_2016_10K",
+      "doc_path": "D:\\pageindex-benchlab\\datasets\\raw\\financebench\\pdfs\\MICROSOFT_2016_10K.pdf",
+      "gold_answer": "$32780.00",
+      "gold_pages_one_indexed": [
+        52
+      ],
+      "gold_pages_zero_indexed": [
+        51
+      ],
+      "question_type": "metrics-generated",
+      "question_reasoning": "Information extraction"
+    },
+    {
+      "question_id": "fb_mvp_009",
+      "source_id": "financebench_id_01163",
+      "doc_uuid": "4d030785-b251-58e8-b89c-bc8ad150fd78",
+      "doc_name": "NIKE_2023_10K",
+      "doc_path": "D:\\pageindex-benchlab\\datasets\\raw\\financebench\\pdfs\\NIKE_2023_10K.pdf",
+      "gold_answer": "Among the three, cash flow from operations was the highest for Nike in FY2023.",
+      "gold_pages_one_indexed": [
+        62
+      ],
+      "gold_pages_zero_indexed": [
+        61
+      ],
+      "question_type": "domain-relevant",
+      "question_reasoning": "Numerical reasoning"
+    },
+    {
+      "question_id": "fb_mvp_010",
+      "source_id": "financebench_id_01928",
+      "doc_uuid": "c986ce90-4d33-5092-abab-2abf1134ed08",
+      "doc_name": "AMCOR_2023Q4_EARNINGS",
+      "doc_path": "D:\\pageindex-benchlab\\datasets\\raw\\financebench\\pdfs\\AMCOR_2023Q4_EARNINGS.pdf",
+      "gold_answer": "AMCOR's Adj. EBITDA was $2,018mn in FY 2023",
+      "gold_pages_one_indexed": [
+        12
+      ],
+      "gold_pages_zero_indexed": [
+        11
+      ],
+      "question_type": "novel-generated",
+      "question_reasoning": null
+    },
+    {
+      "question_id": "fb_mvp_011",
+      "source_id": "financebench_id_02049",
+      "doc_uuid": "87aafb09-a189-541b-826c-b7b0b2d506b7",
+      "doc_name": "JPMORGAN_2023Q2_10Q",
+      "doc_path": "D:\\pageindex-benchlab\\datasets\\raw\\financebench\\pdfs\\JPMORGAN_2023Q2_10Q.pdf",
+      "gold_answer": "Yes. It decreased.",
+      "gold_pages_one_indexed": [
+        85
+      ],
+      "gold_pages_zero_indexed": [
+        84
+      ],
+      "question_type": "novel-generated",
+      "question_reasoning": null
+    },
+    {
+      "question_id": "fb_mvp_012",
+      "source_id": "financebench_id_01488",
+      "doc_uuid": "3d51af1f-c5a5-5c39-85ca-a917a7ff5991",
+      "doc_name": "JOHNSON_JOHNSON_2023_8K_dated-2023-08-30",
+      "doc_path": "D:\\pageindex-benchlab\\datasets\\raw\\financebench\\pdfs\\JOHNSON_JOHNSON_2023_8K_dated-2023-08-30.pdf",
+      "gold_answer": "The Consumer Health business segment will be treated as a discontinued operation from August 30, 2023 onward.",
+      "gold_pages_one_indexed": [
+        4
+      ],
+      "gold_pages_zero_indexed": [
+        3
+      ],
+      "question_type": "novel-generated",
+      "question_reasoning": null
+    },
+    {
+      "question_id": "fb_exp_013",
+      "source_id": "financebench_id_07507",
+      "doc_uuid": "d6e4f518-293c-5ae2-9f3b-29c389e30de7",
+      "doc_name": "ADOBE_2016_10K",
+      "doc_path": "D:\\pageindex-benchlab\\datasets\\raw\\financebench\\pdfs\\ADOBE_2016_10K.pdf",
+      "gold_answer": "65.4%",
+      "gold_pages_one_indexed": [
+        62
+      ],
+      "gold_pages_zero_indexed": [
+        61
+      ],
+      "question_type": "metrics-generated",
+      "question_reasoning": "Numerical reasoning"
+    },
+    {
+      "question_id": "fb_exp_014",
+      "source_id": "financebench_id_00720",
+      "doc_uuid": "2b2de53b-6915-58bd-987d-5b01b1bcd268",
+      "doc_name": "AMERICANEXPRESS_2022_10K",
+      "doc_path": "D:\\pageindex-benchlab\\datasets\\raw\\financebench\\pdfs\\AMERICANEXPRESS_2022_10K.pdf",
+      "gold_answer": "Performance is not measured through gross margin",
+      "gold_pages_one_indexed": [
+        96
+      ],
+      "gold_pages_zero_indexed": [
+        95
+      ],
+      "question_type": "domain-relevant",
+      "question_reasoning": "Logical reasoning (based on numerical reasoning) OR Numerical reasoning OR Logical reasoning"
+    },
+    {
+      "question_id": "fb_exp_015",
+      "source_id": "financebench_id_00822",
+      "doc_uuid": "bcddc9b7-46bf-56e1-af85-f52d1d6103d7",
+      "doc_name": "FOOTLOCKER_2022_8K_dated-2022-05-20",
+      "doc_path": "D:\\pageindex-benchlab\\datasets\\raw\\financebench\\pdfs\\FOOTLOCKER_2022_8K_dated-2022-05-20.pdf",
+      "gold_answer": "Yes, his name is Richard A. Johnson",
+      "gold_pages_one_indexed": [
+        2
+      ],
+      "gold_pages_zero_indexed": [
+        1
+      ],
+      "question_type": "novel-generated",
+      "question_reasoning": null
+    },
+    {
+      "question_id": "fb_exp_016",
+      "source_id": "financebench_id_04660",
+      "doc_uuid": "8890f020-0781-5667-8eac-d13fff340106",
+      "doc_name": "BLOCK_2016_10K",
+      "doc_path": "D:\\pageindex-benchlab\\datasets\\raw\\financebench\\pdfs\\BLOCK_2016_10K.pdf",
+      "gold_answer": "1.73",
+      "gold_pages_one_indexed": [
+        68
+      ],
+      "gold_pages_zero_indexed": [
+        67
+      ],
+      "question_type": "metrics-generated",
+      "question_reasoning": "Numerical reasoning"
+    },
+    {
+      "question_id": "fb_exp_017",
+      "source_id": "financebench_id_00005",
+      "doc_uuid": "32916bf8-e11a-55c0-bc6d-9155f4b71ee0",
+      "doc_name": "CORNING_2022_10K",
+      "doc_path": "D:\\pageindex-benchlab\\datasets\\raw\\financebench\\pdfs\\CORNING_2022_10K.pdf",
+      "gold_answer": "Yes. Corning had a positive working capital amount of $831 million by FY 2022 close. This answer considers only operating current assets and current liabilities that were clearly shown in the balance sheet.",
+      "gold_pages_one_indexed": [
+        60
+      ],
+      "gold_pages_zero_indexed": [
+        59
+      ],
+      "question_type": "domain-relevant",
+      "question_reasoning": "Numerical reasoning OR Logical reasoning"
+    },
+    {
+      "question_id": "fb_exp_018",
+      "source_id": "financebench_id_00382",
+      "doc_uuid": "0eb1f8f0-3187-5712-9602-b98c53f00183",
+      "doc_name": "MGMRESORTS_2022Q4_EARNINGS",
+      "doc_path": "D:\\pageindex-benchlab\\datasets\\raw\\financebench\\pdfs\\MGMRESORTS_2022Q4_EARNINGS.pdf",
+      "gold_answer": "Las Vegas resorts contributed ~90% of company level EBITDAR during FY2022.",
+      "gold_pages_one_indexed": [
+        13
+      ],
+      "gold_pages_zero_indexed": [
+        12
+      ],
+      "question_type": "novel-generated",
+      "question_reasoning": null
+    },
+    {
+      "question_id": "fb_exp_019",
+      "source_id": "financebench_id_05718",
+      "doc_uuid": "8e656ede-d063-57e8-8107-c7e6aa5311eb",
+      "doc_name": "AMERICANWATERWORKS_2020_10K",
+      "doc_path": "D:\\pageindex-benchlab\\datasets\\raw\\financebench\\pdfs\\AMERICANWATERWORKS_2020_10K.pdf",
+      "gold_answer": "$0.40",
+      "gold_pages_one_indexed": [
+        86
+      ],
+      "gold_pages_zero_indexed": [
+        85
+      ],
+      "question_type": "metrics-generated",
+      "question_reasoning": "Information extraction"
+    },
+    {
+      "question_id": "fb_exp_020",
+      "source_id": "financebench_id_00790",
+      "doc_uuid": "404723d2-38d4-5198-ac16-31ae19e945d6",
+      "doc_name": "CVSHEALTH_2022_10K",
+      "doc_path": "D:\\pageindex-benchlab\\datasets\\raw\\financebench\\pdfs\\CVSHEALTH_2022_10K.pdf",
+      "gold_answer": "Yes, CVS Health requires an extensive asset base to operate, which is evident from its ROA of only 1.82% in 2022 and 3.39% in 2021, though it should be noted that a significant portion of this asset base is goodwill, and CVS's fixed assets/total assets ratio is on the lower side of 5.6%.",
+      "gold_pages_one_indexed": [
+        108,
+        110
+      ],
+      "gold_pages_zero_indexed": [
+        107,
+        109
+      ],
+      "question_type": "domain-relevant",
+      "question_reasoning": "Logical reasoning (based on numerical reasoning)"
+    },
+    {
+      "question_id": "fb_exp_021",
+      "source_id": "financebench_id_01474",
+      "doc_uuid": "acea9ba1-12e7-534b-914c-50fc1ce3a15f",
+      "doc_name": "PEPSICO_2023Q1_EARNINGS",
+      "doc_path": "D:\\pageindex-benchlab\\datasets\\raw\\financebench\\pdfs\\PEPSICO_2023Q1_EARNINGS.pdf",
+      "gold_answer": "Pepsico experienced a strong start to FY2023.",
+      "gold_pages_one_indexed": [
+        1
+      ],
+      "gold_pages_zero_indexed": [
+        0
+      ],
+      "question_type": "novel-generated",
+      "question_reasoning": null
+    },
+    {
+      "question_id": "fb_exp_022",
+      "source_id": "financebench_id_09724",
+      "doc_uuid": "78cf1c10-a7ae-57e1-af72-dadcc1ea7616",
+      "doc_name": "COCACOLA_2021_10K",
+      "doc_path": "D:\\pageindex-benchlab\\datasets\\raw\\financebench\\pdfs\\COCACOLA_2021_10K.pdf",
+      "gold_answer": "39.7%",
+      "gold_pages_one_indexed": [
+        62
+      ],
+      "gold_pages_zero_indexed": [
+        61
+      ],
+      "question_type": "metrics-generated",
+      "question_reasoning": "Numerical reasoning"
+    },
+    {
+      "question_id": "fb_exp_023",
+      "source_id": "financebench_id_00302",
+      "doc_uuid": "197c742f-9d83-5f49-9045-117d09461910",
+      "doc_name": "PFIZER_2021_10K",
+      "doc_path": "D:\\pageindex-benchlab\\datasets\\raw\\financebench\\pdfs\\PFIZER_2021_10K.pdf",
+      "gold_answer": "Yes, change in PPNE was positive year over year",
+      "gold_pages_one_indexed": [
+        59
+      ],
+      "gold_pages_zero_indexed": [
+        58
+      ],
+      "question_type": "novel-generated",
+      "question_reasoning": null
+    },
+    {
+      "question_id": "fb_exp_024",
+      "source_id": "financebench_id_03471",
+      "doc_uuid": "6ead2248-0de5-5cb9-a2e0-ed27c1afd65a",
+      "doc_name": "GENERALMILLS_2020_10K",
+      "doc_path": "D:\\pageindex-benchlab\\datasets\\raw\\financebench\\pdfs\\GENERALMILLS_2020_10K.pdf",
+      "gold_answer": "0.68",
+      "gold_pages_one_indexed": [
+        50
+      ],
+      "gold_pages_zero_indexed": [
+        49
+      ],
+      "question_type": "metrics-generated",
+      "question_reasoning": "Numerical reasoning"
+    },
+    {
+      "question_id": "fb_exp_025",
+      "source_id": "financebench_id_00601",
+      "doc_uuid": "59285970-f114-5234-86a3-270a5992d212",
+      "doc_name": "ULTABEAUTY_2023Q4_EARNINGS",
+      "doc_path": "D:\\pageindex-benchlab\\datasets\\raw\\financebench\\pdfs\\ULTABEAUTY_2023Q4_EARNINGS.pdf",
+      "gold_answer": "Lower marketing expenses and leverage of incentive compensation due to higher sales. The answer here assumes FY2023 refers to the 12 months ended on January 28, 2023 (although the company refers to this period as its fiscal 2022.",
+      "gold_pages_one_indexed": [
+        2
+      ],
+      "gold_pages_zero_indexed": [
+        1
+      ],
+      "question_type": "novel-generated",
+      "question_reasoning": null
+    }
+  ]
+}

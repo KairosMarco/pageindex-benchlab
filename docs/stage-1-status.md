@@ -20,7 +20,7 @@ The active contributor is `KairosMarco`; there is no active collaborator split i
 | Hybrid RAG | MVP and expanded LlamaIndex diagnostics complete | `pipelines/llamaindex_hybrid_rag/`, `reports/llamaindex_expanded_llm_diagnostics.md` |
 | GraphRAG | Placeholder only | `pipelines/graphrag/` |
 | HyperGraphRAG | Placeholder only | `pipelines/hypergraphrag/` |
-| BookRAG | Planned external baseline; readiness check added | `pipelines/bookrag/`, `scripts/check_bookrag_readiness.py` |
+| BookRAG | Planned external baseline; readiness, dataset bridge, and config template added | `pipelines/bookrag/`, `scripts/check_bookrag_readiness.py`, `scripts/build_bookrag_dataset.py`, `scripts/prepare_bookrag_config.py` |
 | Upstream PRs | Two PageIndex PRs open | `docs/upstream-pr-overview.md` |
 
 ## Current Benchmark Snapshot

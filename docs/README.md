@@ -10,6 +10,12 @@
 | `schema.md` | Shared benchmark result schema |
 | `rag-method-comparison-sources.md` | Method/source map |
 
+## BookRAG Reports
+
+| Document | Purpose |
+|---|---|
+| `../reports/bookrag/status.md` | BookRAG readiness, VLDB value, and next execution steps |
+
 ## Upstream Contribution Docs
 
 | Document | Purpose |

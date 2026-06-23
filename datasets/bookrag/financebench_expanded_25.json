@@ -1,0 +1,152 @@
+[
+  {
+    "question": "What is the FY2018 capital expenditure amount (in USD millions) for 3M? Give a response to the question by relying on the details shown in the cash flow statement.",
+    "answer": "$1577.00",
+    "doc_uuid": "68cb39d6-4c13-5cfc-a537-987de4dcfe32",
+    "doc_path": "D:\\pageindex-benchlab\\datasets\\raw\\financebench\\pdfs\\3M_2018_10K.pdf"
+  },
+  {
+    "question": "What is Amazon's year-over-year change in revenue from FY2016 to FY2017 (in units of percents and round to one decimal place)? Calculate what was asked by utilizing the line items clearly shown in the statement of income.",
+    "answer": "30.8%",
+    "doc_uuid": "74166bf4-ce4c-5d58-9738-cdcfd37cc2eb",
+    "doc_path": "D:\\pageindex-benchlab\\datasets\\raw\\financebench\\pdfs\\AMAZON_2017_10K.pdf"
+  },
+  {
+    "question": "What are the major products and services that AMD sells as of FY22?",
+    "answer": "AMD sells server microprocessors (CPUs) and graphics processing units (GPUs), data processing units (DPUs), Field Programmable Gate Arrays (FPGAs), and Adaptive System-on-Chip (SoC) products for data centers; CPUs, accelerated processing units (APUs) that integrate CPUs and GPUs, and chipsets for desktop and notebook personal computers; discrete GPUs, and semi-custom SoC products and development services; and embedded CPUs, GPUs, APUs, FPGAs, and Adaptive SoC products.",
+    "doc_uuid": "f347afc6-eb78-526e-aff3-f40149d3db04",
+    "doc_path": "D:\\pageindex-benchlab\\datasets\\raw\\financebench\\pdfs\\AMD_2022_10K.pdf"
+  },
+  {
+    "question": "Among operations, investing, and financing activities, which brought in the most (or lost the least) cash flow for AMD in FY22?",
+    "answer": "In 2022, AMD brought in the most cashflow from Operations",
+    "doc_uuid": "f347afc6-eb78-526e-aff3-f40149d3db04",
+    "doc_path": "D:\\pageindex-benchlab\\datasets\\raw\\financebench\\pdfs\\AMD_2022_10K.pdf"
+  },
+  {
+    "question": "Are Best Buy's gross margins historically consistent (not fluctuating more than roughly 2% each year)? If gross margins are not a relevant metric for a company like this, then please state that and explain why.",
+    "answer": "Yes, the margins have been consistent, there has been a minor decline of 1.1% in gross margins between FY2022 and FY2023.",
+    "doc_uuid": "c5ad8ece-29dc-5fac-98ee-948711b0aa93",
+    "doc_path": "D:\\pageindex-benchlab\\datasets\\raw\\financebench\\pdfs\\BESTBUY_2023_10K.pdf"
+  },
+  {
+    "question": "Has Boeing reported any materially important ongoing legal battles from FY2022?",
+    "answer": "Yes. Multiple lawsuits have been filed against Boeing resulting from a 2018 Lion Air crash and a 2019 Ethiopian Airlines crash.",
+    "doc_uuid": "fa414a07-cbe4-54c8-abff-827ed65b4354",
+    "doc_path": "D:\\pageindex-benchlab\\datasets\\raw\\financebench\\pdfs\\BOEING_2022_10K.pdf"
+  },
+  {
+    "question": "Using only the information within the balance sheet, how much total assets did Costco have at the end of FY2021? Answer in USD millions.",
+    "answer": "$59268.00",
+    "doc_uuid": "825c3d09-305f-50cc-b0ef-aee13d7d4bc1",
+    "doc_path": "D:\\pageindex-benchlab\\datasets\\raw\\financebench\\pdfs\\COSTCO_2021_10K.pdf"
+  },
+  {
+    "question": "What is the FY2016 COGS for Microsoft? Please state answer in USD millions. Provide a response to the question by primarily using the statement of income.",
+    "answer": "$32780.00",
+    "doc_uuid": "11482716-a128-5316-8ca9-ae44a49b67e4",
+    "doc_path": "D:\\pageindex-benchlab\\datasets\\raw\\financebench\\pdfs\\MICROSOFT_2016_10K.pdf"
+  },
+  {
+    "question": "Among operations, investing, and financing activities, which brought in the most (or lost the least) cash flow for Nike in FY2023?",
+    "answer": "Among the three, cash flow from operations was the highest for Nike in FY2023.",
+    "doc_uuid": "4d030785-b251-58e8-b89c-bc8ad150fd78",
+    "doc_path": "D:\\pageindex-benchlab\\datasets\\raw\\financebench\\pdfs\\NIKE_2023_10K.pdf"
+  },
+  {
+    "question": "What Was AMCOR's Adjusted Non GAAP EBITDA for FY 2023",
+    "answer": "AMCOR's Adj. EBITDA was $2,018mn in FY 2023",
+    "doc_uuid": "c986ce90-4d33-5092-abab-2abf1134ed08",
+    "doc_path": "D:\\pageindex-benchlab\\datasets\\raw\\financebench\\pdfs\\AMCOR_2023Q4_EARNINGS.pdf"
+  },
+  {
+    "question": "Looking at VaR, did the risk that JPM faced in the second fiscal quarter of 2023 decrease compared to the same period in the prior year?",
+    "answer": "Yes. It decreased.",
+    "doc_uuid": "87aafb09-a189-541b-826c-b7b0b2d506b7",
+    "doc_path": "D:\\pageindex-benchlab\\datasets\\raw\\financebench\\pdfs\\JPMORGAN_2023Q2_10Q.pdf"
+  },
+  {
+    "question": "Which business segment of JnJ will be treated as a discontinued operation from August 30, 2023 onward?",
+    "answer": "The Consumer Health business segment will be treated as a discontinued operation from August 30, 2023 onward.",
+    "doc_uuid": "3d51af1f-c5a5-5c39-85ca-a917a7ff5991",
+    "doc_path": "D:\\pageindex-benchlab\\datasets\\raw\\financebench\\pdfs\\JOHNSON_JOHNSON_2023_8K_dated-2023-08-30.pdf"
+  },
+  {
+    "question": "What is Adobe's year-over-year change in unadjusted operating income from FY2015 to FY2016 (in units of percents and round to one decimal place)? Give a solution to the question by using the income statement.",
+    "answer": "65.4%",
+    "doc_uuid": "d6e4f518-293c-5ae2-9f3b-29c389e30de7",
+    "doc_path": "D:\\pageindex-benchlab\\datasets\\raw\\financebench\\pdfs\\ADOBE_2016_10K.pdf"
+  },
+  {
+    "question": "What drove gross margin change as of the FY2022 for American Express? If gross margin is not a useful metric for a company like this, then please state that and explain why.",
+    "answer": "Performance is not measured through gross margin",
+    "doc_uuid": "2b2de53b-6915-58bd-987d-5b01b1bcd268",
+    "doc_path": "D:\\pageindex-benchlab\\datasets\\raw\\financebench\\pdfs\\AMERICANEXPRESS_2022_10K.pdf"
+  },
+  {
+    "question": "Were there any board member nominees who had substantially more votes against joining than the other nominees?",
+    "answer": "Yes, his name is Richard A. Johnson",
+    "doc_uuid": "bcddc9b7-46bf-56e1-af85-f52d1d6103d7",
+    "doc_path": "D:\\pageindex-benchlab\\datasets\\raw\\financebench\\pdfs\\FOOTLOCKER_2022_8K_dated-2022-05-20.pdf"
+  },
+  {
+    "question": "Considering the data in the balance sheet, what is Block's (formerly known as Square) FY2016 working capital ratio? Define working capital ratio as total current assets divided by total current liabilities. Round your answer to two decimal places.",
+    "answer": "1.73",
+    "doc_uuid": "8890f020-0781-5667-8eac-d13fff340106",
+    "doc_path": "D:\\pageindex-benchlab\\datasets\\raw\\financebench\\pdfs\\BLOCK_2016_10K.pdf"
+  },
+  {
+    "question": "Does Corning have positive working capital based on FY2022 data? If working capital is not a useful or relevant metric for this company, then please state that and explain why.",
+    "answer": "Yes. Corning had a positive working capital amount of $831 million by FY 2022 close. This answer considers only operating current assets and current liabilities that were clearly shown in the balance sheet.",
+    "doc_uuid": "32916bf8-e11a-55c0-bc6d-9155f4b71ee0",
+    "doc_path": "D:\\pageindex-benchlab\\datasets\\raw\\financebench\\pdfs\\CORNING_2022_10K.pdf"
+  },
+  {
+    "question": "Which region had the Highest EBITDAR Contribution for MGM during FY2022?",
+    "answer": "Las Vegas resorts contributed ~90% of company level EBITDAR during FY2022.",
+    "doc_uuid": "0eb1f8f0-3187-5712-9602-b98c53f00183",
+    "doc_path": "D:\\pageindex-benchlab\\datasets\\raw\\financebench\\pdfs\\MGMRESORTS_2022Q4_EARNINGS.pdf"
+  },
+  {
+    "question": "How much (in USD billions) did American Water Works pay out in cash dividends for FY2020? Compute or extract the answer by primarily using the details outlined in the statement of cash flows.",
+    "answer": "$0.40",
+    "doc_uuid": "8e656ede-d063-57e8-8107-c7e6aa5311eb",
+    "doc_path": "D:\\pageindex-benchlab\\datasets\\raw\\financebench\\pdfs\\AMERICANWATERWORKS_2020_10K.pdf"
+  },
+  {
+    "question": "Is CVS Health a capital-intensive business based on FY2022 data?",
+    "answer": "Yes, CVS Health requires an extensive asset base to operate, which is evident from its ROA of only 1.82% in 2022 and 3.39% in 2021, though it should be noted that a significant portion of this asset base is goodwill, and CVS's fixed assets/total assets ratio is on the lower side of 5.6%.",
+    "doc_uuid": "404723d2-38d4-5198-ac16-31ae19e945d6",
+    "doc_path": "D:\\pageindex-benchlab\\datasets\\raw\\financebench\\pdfs\\CVSHEALTH_2022_10K.pdf"
+  },
+  {
+    "question": "As of FY2023Q1, why did Pepsico raise full year guidance for FY2023?",
+    "answer": "Pepsico experienced a strong start to FY2023.",
+    "doc_uuid": "acea9ba1-12e7-534b-914c-50fc1ce3a15f",
+    "doc_path": "D:\\pageindex-benchlab\\datasets\\raw\\financebench\\pdfs\\PEPSICO_2023Q1_EARNINGS.pdf"
+  },
+  {
+    "question": "What is Coca Cola's FY2021 COGS % margin? Calculate what was asked by utilizing the line items clearly shown in the income statement.",
+    "answer": "39.7%",
+    "doc_uuid": "78cf1c10-a7ae-57e1-af72-dadcc1ea7616",
+    "doc_path": "D:\\pageindex-benchlab\\datasets\\raw\\financebench\\pdfs\\COCACOLA_2021_10K.pdf"
+  },
+  {
+    "question": "Did Pfizer grow its PPNE between FY20 and FY21?",
+    "answer": "Yes, change in PPNE was positive year over year",
+    "doc_uuid": "197c742f-9d83-5f49-9045-117d09461910",
+    "doc_path": "D:\\pageindex-benchlab\\datasets\\raw\\financebench\\pdfs\\PFIZER_2021_10K.pdf"
+  },
+  {
+    "question": "By drawing conclusions from the information stated only in the statement of financial position, what is General Mills's FY2020 working capital ratio? Define working capital ratio as total current assets divided by total current liabilities. Round your answer to two decimal places.",
+    "answer": "0.68",
+    "doc_uuid": "6ead2248-0de5-5cb9-a2e0-ed27c1afd65a",
+    "doc_path": "D:\\pageindex-benchlab\\datasets\\raw\\financebench\\pdfs\\GENERALMILLS_2020_10K.pdf"
+  },
+  {
+    "question": "What drove the reduction in SG&A expense as a percent of net sales in FY2023?",
+    "answer": "Lower marketing expenses and leverage of incentive compensation due to higher sales. The answer here assumes FY2023 refers to the 12 months ended on January 28, 2023 (although the company refers to this period as its fiscal 2022.",
+    "doc_uuid": "59285970-f114-5234-86a3-270a5992d212",
+    "doc_path": "D:\\pageindex-benchlab\\datasets\\raw\\financebench\\pdfs\\ULTABEAUTY_2023Q4_EARNINGS.pdf"
+  }
+]

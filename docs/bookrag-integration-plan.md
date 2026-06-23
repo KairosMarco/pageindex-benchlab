@@ -16,6 +16,9 @@ The goal is not to replace PageIndex in the benchmark. The goal is to test wheth
 | BookRAG arXiv abstract | https://arxiv.org/abs/2512.03413 |
 | BookRAG PDF | https://arxiv.org/pdf/2512.03413 |
 | Secondary article | https://www.51cto.com/aigc/11012.html |
+| VLDB 2026 official site | https://vldb.org/2026/ |
+| VLDB Endowment conference page | https://www.vldb.org/conference.html |
+| CORE ranking entry for VLDB | https://portal.core.edu.au/conf-ranks/1261/ |
 | PageIndex repository | https://github.com/VectifyAI/PageIndex |
 
 ## Technical Positioning
@@ -91,6 +94,21 @@ Create a conversion script from BenchLab JSONL questions to BookRAG's released d
 ```
 
 The bridge must preserve BenchLab `question_id` through metadata or sidecar mapping so BookRAG outputs can be evaluated by existing BenchLab scripts.
+
+Implemented:
+
+```text
+scripts/build_bookrag_dataset.py
+scripts/prepare_bookrag_config.py
+datasets/bookrag/financebench_expanded_25.json
+datasets/bookrag/financebench_expanded_25_mapping.json
+reports/bookrag/config/financebench_expanded_25.yaml
+reports/bookrag/config/financebench_gbc_template.yaml
+```
+
+The BookRAG dataset file uses only the upstream fields described in the BookRAG README: `question`, `answer`, `doc_uuid`, and `doc_path`. The BenchLab-specific fields are kept in the sidecar mapping file.
+
+The generated system config is intentionally a template. It contains `TODO_*` placeholders for LLM, VLM, MinerU, embedding, and reranker endpoints. Do not commit real keys or private service URLs.
 
 ### Phase 2: Index Construction Adapter
 

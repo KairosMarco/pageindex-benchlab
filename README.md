@@ -78,6 +78,7 @@ Conservative reading:
 - [Stage 1 status](docs/stage-1-status.md)
 - [Baseline diagnostics summary](docs/baseline-diagnostics-summary.md)
 - [BookRAG integration plan](docs/bookrag-integration-plan.md)
+- [BookRAG status](reports/bookrag/status.md)
 - [Upstream PR overview](docs/upstream-pr-overview.md)
 - [PageIndex PR pattern review](docs/pageindex-pr-pattern-review.md)
 - [Docs index](docs/README.md)

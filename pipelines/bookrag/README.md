@@ -19,6 +19,13 @@ BookRAG is a planned structural graph-tree baseline. It is not part of the commi
 
 This repository intentionally does not add BookRAG's dependencies to the main `requirements.txt`. BookRAG has a heavier runtime profile than the current PageIndex/LlamaIndex baselines, including Python 3.12, MinerU, ChromaDB, spaCy, Torch, Ultralytics, and a MinerU/SGLang parsing service in the default setup. It should be installed and checked as an external method-specific environment.
 
+Local readiness is recorded in:
+
+```text
+reports/bookrag/status.md
+reports/bookrag/readiness.json
+```
+
 ## Why Add It
 
 BookRAG is directly relevant to the PageIndex comparison because it extends the tree-first idea into a richer structure-aware index:
@@ -77,9 +84,49 @@ The bridge must preserve:
 - gold evidence pages;
 - output path mapping back to BenchLab schemas.
 
+Implemented:
+
+```powershell
+python scripts\build_bookrag_dataset.py --questions datasets\financebench\expanded_questions_25.jsonl --output datasets\bookrag\financebench_expanded_25.json --mapping datasets\bookrag\financebench_expanded_25_mapping.json
+```
+
+Outputs:
+
+```text
+datasets/bookrag/financebench_expanded_25.json
+datasets/bookrag/financebench_expanded_25_mapping.json
+```
+
+Prepare BookRAG YAML configs:
+
+```powershell
+python scripts\prepare_bookrag_config.py
+```
+
+Outputs:
+
+```text
+reports/bookrag/config/financebench_expanded_25.yaml
+reports/bookrag/config/financebench_gbc_template.yaml
+```
+
+The system config is a template. Replace all `TODO_*` values before running BookRAG.
+
 ### Phase 3: Offline Index Construction
 
 Run BookRAG's index construction against the same FinanceBench PDFs used by PageIndex and LlamaIndex baselines.
+
+Environment:
+
+```powershell
+conda activate gbc-rag
+```
+
+Smoke check:
+
+```powershell
+python D:\bookrag-source\main.py --help
+```
 
 Record:
 

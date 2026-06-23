@@ -288,6 +288,40 @@ python scripts\check_bookrag_readiness.py --bookrag-repo D:\bookrag-source --imp
 
 BookRAG requires a heavier method-specific setup than the current baselines, including MinerU and, in the default configuration, a MinerU/SGLang parsing service. Do not add BookRAG dependencies to BenchLab's main `requirements.txt`.
 
+Build the FinanceBench dataset file expected by BookRAG:
+
+```powershell
+python scripts\build_bookrag_dataset.py --questions datasets\financebench\expanded_questions_25.jsonl --output datasets\bookrag\financebench_expanded_25.json --mapping datasets\bookrag\financebench_expanded_25_mapping.json
+```
+
+This writes a BookRAG-shaped dataset plus a BenchLab sidecar mapping:
+
+```text
+datasets/bookrag/financebench_expanded_25.json
+datasets/bookrag/financebench_expanded_25_mapping.json
+```
+
+Prepare BookRAG YAML configs:
+
+```powershell
+python scripts\prepare_bookrag_config.py
+```
+
+This writes:
+
+```text
+reports/bookrag/config/financebench_expanded_25.yaml
+reports/bookrag/config/financebench_gbc_template.yaml
+```
+
+The system config is a template and must be edited before running BookRAG. Keep real API keys and service URLs out of git.
+
+Current BookRAG status:
+
+```text
+reports/bookrag/status.md
+```
+
 ## Run LlamaIndex Vector RAG Diagnostic Baseline
 
 Current finance-aware smoke test without LLM answer generation:

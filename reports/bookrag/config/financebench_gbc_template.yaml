@@ -1,0 +1,72 @@
+pdf_path: D:\pageindex-benchlab\datasets\raw\financebench\pdfs\3M_2018_10K.pdf
+save_path: D:\pageindex-benchlab\reports\bookrag\workdir\indexes\3M_2018_10K
+llm:
+  model_name: TODO_LLM_MODEL
+  api_key: TODO_LLM_API_KEY_OR_PLACEHOLDER
+  api_base: TODO_OPENAI_COMPATIBLE_BASE_URL
+  backend: openai
+  max_tokens: 5000
+  temperature: 0.1
+  frequency_penalty: 0.0
+  presence_penalty: 0.0
+  max_workers: 4
+vlm:
+  model_name: TODO_VLM_MODEL
+  api_key: TODO_VLM_API_KEY_OR_PLACEHOLDER
+  api_base: TODO_VLM_OPENAI_COMPATIBLE_BASE_URL
+  temperature: 0.1
+  max_tokens: 6000
+  backend: gpt
+index:
+  chunk_size: 512
+  overlap: 50
+mineru:
+  backend: vlm-sglang-client
+  method: vlm
+  server_url: TODO_MINERU_SGLANG_SERVER_URL
+  lang: en
+tree:
+  node_keywords: true
+  node_summary: true
+graph:
+  extractor_type: llm
+  local_model_name: en_core_web_sm
+  image_description_force: true
+  max_gleaning: 0
+  refine_type: advanced
+  embedding_config:
+    model_name: TODO_TEXT_EMBEDDING_MODEL
+    backend: openai
+    max_length: 4096
+    device: cpu
+    api_base: TODO_EMBEDDING_OPENAI_COMPATIBLE_BASE_URL
+  reranker_config:
+    model_name: TODO_RERANKER_MODEL
+    max_length: 4096
+    device: cpu
+    backend: vllm
+    api_base: TODO_RERANKER_OPENAI_COMPATIBLE_BASE_URL
+vdb:
+  mm_embedding: true
+  vdb_dir_name: Tree_vdb
+  collection_name: TreeVDB
+  embedding_config:
+    model_name: TODO_MULTIMODAL_EMBEDDING_MODEL
+    device: cpu
+rag_force_reprocess: true
+rag:
+  strategy: gbc
+  variant: standard
+  topk: 10
+  sim_threshold_e: 0.3
+  select_depth: 2
+  max_retry: 2
+  reranker_config:
+    model_name: TODO_RERANKER_MODEL
+    max_length: 4096
+    device: cpu
+    backend: vllm
+    api_base: TODO_RERANKER_OPENAI_COMPATIBLE_BASE_URL
+  mm_reranker_config:
+    model_name: TODO_MULTIMODAL_EMBEDDING_MODEL
+    device: cpu

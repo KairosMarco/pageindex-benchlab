@@ -1,109 +1,88 @@
 {
   "summary": {
     "bookrag_repo": "D:\\bookrag-source",
-    "repo_exists": false,
+    "repo_exists": true,
     "remote": null,
-    "python_executable": "D:\\ana3\\python.exe",
-    "python_version": "3.13.9 | packaged by Anaconda, Inc. | (main, Oct 21 2025, 19:09:58) [MSC v.1929 64 bit (AMD64)]",
+    "python_executable": "D:\\Anaconda_envs\\envs\\gbc-rag\\python.exe",
+    "python_version": "3.12.13 | packaged by Anaconda, Inc. | (main, Mar 19 2026, 20:16:45) [MSC v.1942 64 bit (AMD64)]",
     "platform": "Windows-11-10.0.26200-SP0",
-    "python_version_ok": false,
+    "python_version_ok": true,
     "license_present": false,
-    "missing_paths": [
-      "README.md",
-      "requirements.txt",
-      "environment.yml",
-      "main.py",
-      "Core",
-      "Core/construct_index.py",
-      "Core/inference.py",
-      "Core/rag",
-      "Scripts",
-      "Scripts/cfg",
-      "config"
-    ],
-    "missing_packages": [
-      "chromadb",
-      "json_repair",
-      "mineru",
-      "openai",
-      "spacy",
-      "torch",
-      "torchvision",
-      "ultralytics"
-    ],
+    "missing_paths": [],
+    "missing_packages": [],
     "import_failures": [],
-    "ready_for_adapter_work": false
+    "ready_for_adapter_work": true
   },
   "paths": [
     {
       "path": "README.md",
-      "exists": false
+      "exists": true
     },
     {
       "path": "requirements.txt",
-      "exists": false
+      "exists": true
     },
     {
       "path": "environment.yml",
-      "exists": false
+      "exists": true
     },
     {
       "path": "main.py",
-      "exists": false
+      "exists": true
     },
     {
       "path": "Core",
-      "exists": false
+      "exists": true
     },
     {
       "path": "Core/construct_index.py",
-      "exists": false
+      "exists": true
     },
     {
       "path": "Core/inference.py",
-      "exists": false
+      "exists": true
     },
     {
       "path": "Core/rag",
-      "exists": false
+      "exists": true
     },
     {
       "path": "Scripts",
-      "exists": false
+      "exists": true
     },
     {
       "path": "Scripts/cfg",
-      "exists": false
+      "exists": true
     },
     {
       "path": "config",
-      "exists": false
+      "exists": true
     }
   ],
   "packages": [
     {
       "name": "beautifulsoup4",
       "purpose": "HTML parsing dependency",
-      "version": "4.13.5",
+      "version": "4.13.4",
       "available": true
     },
     {
       "name": "chromadb",
       "purpose": "BookRAG vector store dependency",
-      "version": null,
-      "available": false
+      "version": "1.0.13",
+      "available": true
     },
     {
       "name": "json_repair",
       "purpose": "model JSON repair dependency",
-      "version": null,
-      "available": false
+      "version": "0.46.2",
+      "available": true
     },
     {
       "name": "mineru",
       "purpose": "PDF parsing dependency",
-      "version": null,
-      "available": false
+      "version": "2.1.11",
+      "available": true
     },
     {
       "name": "networkx",
@@ -114,57 +93,85 @@
     {
       "name": "openai",
       "purpose": "LLM provider dependency",
-      "version": null,
-      "available": false
+      "version": "1.70.0",
+      "available": true
     },
     {
       "name": "pandas",
       "purpose": "dataset and result handling dependency",
-      "version": "2.3.3",
+      "version": "2.3.0",
       "available": true
     },
     {
       "name": "pydantic",
       "purpose": "schema/config dependency",
-      "version": "2.12.4",
+      "version": "2.11.7",
       "available": true
     },
     {
       "name": "PyYAML",
       "purpose": "YAML config dependency",
-      "version": "6.0.3",
+      "version": "6.0.2",
       "available": true
     },
     {
       "name": "spacy",
       "purpose": "entity extraction dependency",
-      "version": null,
-      "available": false
+      "version": "3.8.7",
+      "available": true
     },
     {
       "name": "torch",
       "purpose": "model/runtime dependency",
-      "version": null,
-      "available": false
+      "version": "2.7.1",
+      "available": true
     },
     {
       "name": "torchvision",
       "purpose": "vision model dependency",
-      "version": null,
-      "available": false
+      "version": "0.22.1",
+      "available": true
     },
     {
       "name": "ultralytics",
       "purpose": "layout/document vision dependency",
-      "version": null,
-      "available": false
+      "version": "8.3.155",
+      "available": true
     }
   ],
-  "imports": [],
+  "imports": [
+    {
+      "module": "yaml",
+      "available": true,
+      "error": "",
+      "purpose": "YAML config import"
+    },
+    {
+      "module": "networkx",
+      "available": true,
+      "error": "",
+      "purpose": "graph processing import"
+    },
+    {
+      "module": "spacy",
+      "available": true,
+      "error": "",
+      "purpose": "entity extraction import"
+    },
+    {
+      "module": "chromadb",
+      "available": true,
+      "error": "",
+      "purpose": "vector store import"
+    },
+    {
+      "module": "mineru",
+      "available": true,
+      "error": "",
+      "purpose": "PDF parsing import"
+    }
+  ],
   "recommendations": [
-    "Clone BookRAG outside this repository, for example: git clone https://github.com/sam234990/BookRAG D:\\bookrag-source",
-    "Use a Python 3.12 environment for BookRAG, matching the upstream README.",
-    "Install BookRAG dependencies in a separate environment, not in BenchLab's main environment.",
     "No local BookRAG license file was detected. Confirm license terms before redistributing code or artifacts."
   ]
 }

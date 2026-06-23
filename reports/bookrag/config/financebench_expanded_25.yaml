@@ -1,0 +1,3 @@
+dataset_path: D:\pageindex-benchlab\datasets\bookrag\financebench_expanded_25.json
+working_dir: D:\pageindex-benchlab\reports\bookrag\workdir
+dataset_name: financebench
