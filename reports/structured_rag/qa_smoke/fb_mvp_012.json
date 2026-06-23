@@ -1,0 +1,167 @@
+{
+  "method": "structured_tree_graph_rag",
+  "question_id": "fb_mvp_012",
+  "question": "Which business segment of JnJ will be treated as a discontinued operation from August 30, 2023 onward?",
+  "answer": "Structured RAG retrieved the most relevant document tree nodes and entity-linked passages. Use the cited pages as supporting evidence: [PAGE 13], [PAGE 14], [PAGE 12].",
+  "citations": [
+    {
+      "document_id": "JOHNSON_JOHNSON_2023_8K_dated-2023-08-30",
+      "page": 13,
+      "section": "SIX MONTHS",
+      "text": "ngs before provision for taxes on income 5,203 26.2 5,144 25.4 10,347 25.8 Provision for taxes on income 632 3.2 882 4.3 1,514 3.7 Net earnings from Continuing Operations $ 4,571 23.0 % $ 4,262 21.1 % $ 8,833 22.1 % Net earnings from Discontinued Operations, net of tax 578 552 1,130 Net earnings $ 5,149 $ 4,814 $ 9,963 Net Earnings per Share (Diluted) from Continuing Operations $ 1.71 $ 1.60 $ 3.31 Net Earnings per Share (Diluted) from Discontinued Operations $ 0.22 $ 0.20 $ 0.42 Average shares outstanding (Diluted) 2,666.5 2,667.9 2,669.2 Effective tax rate from Continuing Operations 12.1 % 17.1 % 14.6 % Adjusted earnings from continuing operations before provision for taxes and net earning",
+      "metadata": {
+        "node_id": "p13_n0",
+        "parent_id": "section_p8",
+        "score": 2.8968829621933776,
+        "lexical_score": 0.056882962193377656,
+        "structural_score": 0.18,
+        "entity_score": 0.16,
+        "phrase_boost": 2.5,
+        "matched_terms": [
+          "discontinued"
+        ],
+        "matched_entities": [
+          "discontinued",
+          "discontinued operations"
+        ]
+      }
+    },
+    {
+      "document_id": "JOHNSON_JOHNSON_2023_8K_dated-2023-08-30",
+      "page": 14,
+      "section": "FULL YEAR",
+      "text": "ngs before provision for taxes on income 5,172 25.9 3,840 19.3 19,359 24.2 Provision for taxes on income 862 4.3 613 3.1 2,989 3.7 Net earnings from Continuing Operations $ 4,310 21.6 % $ 3,227 16.2 % $ 16,370 20.5 % Net earnings from Discontinued Operations, net of tax 148 293 1,571 Net earnings $ 4,458 $ 3,520 $ 17,941 Net Earnings per Share (Diluted) from Continuing Operations $ 1.62 $ 1.22 $ 6.14 Net Earnings per Share (Diluted) from Discontinued Operations $ 0.06 $ 0.11 $ 0.59 Average shares outstanding (Diluted) 2,661.3 2,650.1 2,663.9 Effective tax rate from Continuing Operations 16.7 % 16.0 % 15.4 % Adjusted earnings from continuing operations before provision for taxes and net earni",
+      "metadata": {
+        "node_id": "p14_n0",
+        "parent_id": "section_p8",
+        "score": 2.8966058096173652,
+        "lexical_score": 0.05660580961736527,
+        "structural_score": 0.18,
+        "entity_score": 0.16,
+        "phrase_boost": 2.5,
+        "matched_terms": [
+          "discontinued"
+        ],
+        "matched_entities": [
+          "discontinued",
+          "discontinued operations"
+        ]
+      }
+    },
+    {
+      "document_id": "JOHNSON_JOHNSON_2023_8K_dated-2023-08-30",
+      "page": 12,
+      "section": "SIX MONTHS",
+      "text": "axes on income (1,287) (6.2) 6,306 29.3 5,019 11.8 Provision for/(Benefit from) taxes on income (796) (3.9) 930 4.3 134 0.3 Net earnings/(loss) from Continuing Operations $ (491) (2.3) % $ 5,376 25.0 % $ 4,885 11.5 % Net earnings/(loss) from Discontinued Operations, net of tax 423 (232) 191 Net earnings/(loss) $ (68) $ 5,144 $ 5,076 Net Earnings (loss) per Share (Diluted) from Continuing Operations $ (0.19) $ 2.05 $ 1.86 Net Earnings (loss) per Share (Diluted) from Discontinued Operations $ 0.16 $ (0.09) $ 0.07 Average shares outstanding (Diluted) 2,605.5 * 2,625.7 2,630.7 *Basic Shares used as in an overall loss position Effective tax rate from Continuing Operations 61.8 % 14.7 % 2.7 % Adju",
+      "metadata": {
+        "node_id": "p12_n0",
+        "parent_id": "section_p8",
+        "score": 2.8947377859467065,
+        "lexical_score": 0.05473778594670647,
+        "structural_score": 0.18,
+        "entity_score": 0.16,
+        "phrase_boost": 2.5,
+        "matched_terms": [
+          "discontinued"
+        ],
+        "matched_entities": [
+          "discontinued",
+          "discontinued operations"
+        ]
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "build_document_tree",
+      "target": "JOHNSON_JOHNSON_2023_8K_dated-2023-08-30.pdf",
+      "metadata": {
+        "page_count": 27,
+        "node_count": 43,
+        "node_words": 320
+      }
+    },
+    {
+      "step": 2,
+      "action": "build_entity_graph",
+      "target": "lightweight_entity_cooccurrence_graph",
+      "metadata": {
+        "entity_count": 1146,
+        "edge_count": 14457,
+        "entity_top_k": 8
+      }
+    },
+    {
+      "step": 3,
+      "action": "rank_tree_graph_node",
+      "target": "p13_n0",
+      "metadata": {
+        "rank": 1,
+        "page": 13,
+        "section": "SIX MONTHS",
+        "score": 2.8968829621933776,
+        "matched_terms": [
+          "discontinued"
+        ],
+        "matched_entities": [
+          "discontinued",
+          "discontinued operations"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "rank_tree_graph_node",
+      "target": "p14_n0",
+      "metadata": {
+        "rank": 2,
+        "page": 14,
+        "section": "FULL YEAR",
+        "score": 2.8966058096173652,
+        "matched_terms": [
+          "discontinued"
+        ],
+        "matched_entities": [
+          "discontinued",
+          "discontinued operations"
+        ]
+      }
+    },
+    {
+      "step": 5,
+      "action": "rank_tree_graph_node",
+      "target": "p12_n0",
+      "metadata": {
+        "rank": 3,
+        "page": 12,
+        "section": "SIX MONTHS",
+        "score": 2.8947377859467065,
+        "matched_terms": [
+          "discontinued"
+        ],
+        "matched_entities": [
+          "discontinued",
+          "discontinued operations"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": null,
+    "output": null,
+    "total": null
+  },
+  "latency_ms": 133,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\JOHNSON_JOHNSON_2023_8K_dated-2023-08-30.pdf",
+    "page_count": 27,
+    "node_count": 43,
+    "entity_count": 1146,
+    "edge_count": 14457,
+    "retrieve_top_k": 12,
+    "max_citations": 3,
+    "inspiration": "BookRAG-style tree plus entity graph plus tree-node mapping; independently implemented for BenchLab.",
+    "llm_enabled": false
+  }
+}

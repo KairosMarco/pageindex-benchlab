@@ -20,6 +20,7 @@ Current local status:
 | BookRAG system config | Template generated; MinerU defaults to local `pipeline`; model endpoint `TODO_*` values still need replacement |
 | Config-load smoke checks | Passed against BookRAG's own config loaders |
 | Actual BookRAG index/RAG run | First one-document tree-index attempt started; not completed |
+| Upstream communication | License discussion commented; Windows/setup adapter question opened |
 
 ## Generated BenchLab Artifacts
 
@@ -132,3 +133,17 @@ It contains `TODO_*` placeholders and no real API keys. Its default PDF parsing 
 Promotion rule:
 
 BookRAG should stay out of the main comparison table until at least one schema-valid answer output is generated and evaluated.
+
+## Upstream Communication
+
+Current BookRAG upstream links:
+
+- License discussion: https://github.com/sam234990/BookRAG/issues/5
+- BenchLab comment on license discussion: https://github.com/sam234990/BookRAG/issues/5#issuecomment-4776317274
+- Windows/local setup and external benchmark adapter question: https://github.com/sam234990/BookRAG/issues/6
+
+Rationale:
+
+- Do not duplicate the existing license issue.
+- Ask maintainers whether Windows/local setup notes and external benchmark adapter docs are welcome before preparing a PR.
+- Keep BenchLab's local structural adapter independent until BookRAG's license and contribution direction are clearer.

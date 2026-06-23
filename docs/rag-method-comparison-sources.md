@@ -11,6 +11,7 @@ This document records the comparison methods used or planned in PageIndex BenchL
 | LlamaIndex Vector RAG | Active | Semantic retrieval baseline | https://github.com/run-llama/llama_index |
 | LlamaIndex Hybrid RAG | Active | BM25 + vector retrieval baseline | https://docs.llamaindex.ai/ |
 | BookRAG | Adapter preparation | Structural graph-tree baseline for complex documents | https://github.com/sam234990/BookRAG |
+| Structured Tree-Graph RAG | Active local baseline | Independent minimal tree + entity graph retrieval baseline | `pipelines/structured_rag/` |
 
 ## Planned Methods
 
@@ -39,6 +40,7 @@ Integration notes:
 - Use `scripts/check_bookrag_readiness.py` before adapter work.
 - Treat BookRAG result rows as excluded from the measured result table until at least one schema-valid output is produced and evaluated.
 - Current adapter preparation includes dataset conversion, sidecar mapping, YAML config templates, and BookRAG config-load smoke checks.
+- Use `pipelines/structured_rag/` as the independent local structural baseline while BookRAG runtime work continues.
 
 ## Evaluation Discipline
 

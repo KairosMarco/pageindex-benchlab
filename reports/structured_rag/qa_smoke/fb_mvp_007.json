@@ -1,0 +1,223 @@
+{
+  "method": "structured_tree_graph_rag",
+  "question_id": "fb_mvp_007",
+  "question": "Using only the information within the balance sheet, how much total assets did Costco have at the end of FY2021? Answer in USD millions.",
+  "answer": "Structured RAG retrieved the most relevant document tree nodes and entity-linked passages. Use the cited pages as supporting evidence: [PAGE 38], [PAGE 51], [PAGE 53].",
+  "citations": [
+    {
+      "document_id": "COSTCO_2021_10K",
+      "page": 38,
+      "section": "COSTCO WHOLESALE CORPORATION",
+      "text": "Table of Contents COSTCO WHOLESALE CORPORATION CONSOLIDATED BALANCE SHEETS (amounts in millions, except par value and share data) August 29, 2021 August 30, 2020 ASSETS CURRENT ASSETS Cash and cash equivalents $ 11,258 $ 12,277 Short-term investments 917 1,028 Receivables, net 1,803 1,550 Merchandise inventories 14,215 12,242 Other current assets 1,312 1,023 Total current assets 29,505 28,120 OTHER ASSETS Property and equipment, net 23,492 21,807 Operating lease right-of-use assets 2,890 2,788 Other long-term assets 3,381 2,841 TOTAL ASSETS $ 59,268 $ 55,556 LIABILITIES AND EQUITY CURRENT LIABILITIES Accounts payable $ 16,278 $ 14,172 Accrued salaries and benefits 4,090 3,605 Accrued member",
+      "metadata": {
+        "node_id": "p38_n0",
+        "parent_id": "section_p33",
+        "score": 3.608424351308808,
+        "lexical_score": 0.2884243513088083,
+        "structural_score": 0.18,
+        "entity_score": 0.64,
+        "phrase_boost": 2.5,
+        "matched_terms": [
+          "assets",
+          "balance",
+          "equity",
+          "liabilities",
+          "millions",
+          "total"
+        ],
+        "matched_entities": [
+          "assets",
+          "assets current assets cash",
+          "balance",
+          "balance sheets",
+          "commitments and contingencies equity preferred",
+          "equity",
+          "liabilities",
+          "liabilities and equity current liabilities"
+        ]
+      }
+    },
+    {
+      "document_id": "COSTCO_2021_10K",
+      "page": 51,
+      "section": "Note 4—Fair Value Measurement",
+      "text": "Table of Contents Note 4—Fair Value Measurement Assets and Liabilities Measured at Fair Value on a Recurring Basis The table below presents information regarding the Company’s financial assets and financial liabilities that are measured at fair value on a recurring basis and indicate the level within the hierarchy reflecting the valuation techniques utilized to determine such fair value. Level 2 2021 2020 Investment in government and agency securities $ 393 $ 508 Forward foreign-exchange contracts, in asset position 17 1 Forward foreign-exchange contracts, in (liability) position (2) (21) Total $ 408 $ 488 ____________ (1) At August 29, 2021, $12 cash and cash equivalents and $381 short-term",
+      "metadata": {
+        "node_id": "p51_n0",
+        "parent_id": "section_p51",
+        "score": 3.31328871146728,
+        "lexical_score": 0.15328871146728026,
+        "structural_score": 0.18,
+        "entity_score": 0.48,
+        "phrase_boost": 2.5,
+        "matched_terms": [
+          "assets",
+          "balance",
+          "did",
+          "end",
+          "information",
+          "liabilities",
+          "total"
+        ],
+        "matched_entities": [
+          "assets",
+          "fair value measurement assets",
+          "liabilities",
+          "liabilities measured",
+          "nonrecurring basis assets",
+          "total"
+        ]
+      }
+    },
+    {
+      "document_id": "COSTCO_2021_10K",
+      "page": 53,
+      "section": "Note 6—Leases",
+      "text": "Table of Contents Note 6—Leases The tables below present information regarding the Company's lease assets and liabilities. 2021 2020 Assets Operating lease right-of-use assets $ 2,890 $ 2,788 Finance lease assets 1,000 592 Total lease assets $ 3,890 $ 3,380 Liabilities Current Operating lease liabilities $ 222 $ 231 Finance lease liabilities 72 31 Long-term Operating lease liabilities 2,642 2,558 Finance lease liabilities 980 657 Total lease liabilities $ 3,916 $ 3,477 _______________ (1) Included in other long-term assets in the consolidated balance sheets. (2) Included in other current liabilities in the consolidated balance sheets. (3) Included in other long-term liabilities in the consol",
+      "metadata": {
+        "node_id": "p53_n0",
+        "parent_id": "section_p53",
+        "score": 3.2281571933459356,
+        "lexical_score": 0.1481571933459356,
+        "structural_score": 0.18,
+        "entity_score": 0.4,
+        "phrase_boost": 2.5,
+        "matched_terms": [
+          "assets",
+          "balance",
+          "information",
+          "liabilities",
+          "total"
+        ],
+        "matched_entities": [
+          "assets",
+          "assets operating",
+          "liabilities",
+          "liabilities current operating",
+          "total"
+        ]
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "build_document_tree",
+      "target": "COSTCO_2021_10K.pdf",
+      "metadata": {
+        "page_count": 76,
+        "node_count": 163,
+        "node_words": 320
+      }
+    },
+    {
+      "step": 2,
+      "action": "build_entity_graph",
+      "target": "lightweight_entity_cooccurrence_graph",
+      "metadata": {
+        "entity_count": 2182,
+        "edge_count": 30957,
+        "entity_top_k": 8
+      }
+    },
+    {
+      "step": 3,
+      "action": "rank_tree_graph_node",
+      "target": "p38_n0",
+      "metadata": {
+        "rank": 1,
+        "page": 38,
+        "section": "COSTCO WHOLESALE CORPORATION",
+        "score": 3.608424351308808,
+        "matched_terms": [
+          "assets",
+          "balance",
+          "equity",
+          "liabilities",
+          "millions",
+          "total"
+        ],
+        "matched_entities": [
+          "assets",
+          "assets current assets cash",
+          "balance",
+          "balance sheets",
+          "commitments and contingencies equity preferred",
+          "equity",
+          "liabilities",
+          "liabilities and equity current liabilities"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "rank_tree_graph_node",
+      "target": "p51_n0",
+      "metadata": {
+        "rank": 2,
+        "page": 51,
+        "section": "Note 4—Fair Value Measurement",
+        "score": 3.31328871146728,
+        "matched_terms": [
+          "assets",
+          "balance",
+          "did",
+          "end",
+          "information",
+          "liabilities",
+          "total"
+        ],
+        "matched_entities": [
+          "assets",
+          "fair value measurement assets",
+          "liabilities",
+          "liabilities measured",
+          "nonrecurring basis assets",
+          "total"
+        ]
+      }
+    },
+    {
+      "step": 5,
+      "action": "rank_tree_graph_node",
+      "target": "p53_n0",
+      "metadata": {
+        "rank": 3,
+        "page": 53,
+        "section": "Note 6—Leases",
+        "score": 3.2281571933459356,
+        "matched_terms": [
+          "assets",
+          "balance",
+          "information",
+          "liabilities",
+          "total"
+        ],
+        "matched_entities": [
+          "assets",
+          "assets operating",
+          "liabilities",
+          "liabilities current operating",
+          "total"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": null,
+    "output": null,
+    "total": null
+  },
+  "latency_ms": 167,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\COSTCO_2021_10K.pdf",
+    "page_count": 76,
+    "node_count": 163,
+    "entity_count": 2182,
+    "edge_count": 30957,
+    "retrieve_top_k": 12,
+    "max_citations": 3,
+    "inspiration": "BookRAG-style tree plus entity graph plus tree-node mapping; independently implemented for BenchLab.",
+    "llm_enabled": false
+  }
+}

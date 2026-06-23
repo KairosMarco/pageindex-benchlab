@@ -12,7 +12,7 @@ The current work was executed independently by `KairosMarco`. The repository has
 | Area | Status |
 |---|---|
 | Benchmark scope | 25-question FinanceBench expanded subset |
-| Implemented methods | PageIndex, Long-context LLM, LlamaIndex Vector RAG, LlamaIndex Hybrid RAG |
+| Implemented methods | PageIndex, Long-context LLM, LlamaIndex Vector RAG, LlamaIndex Hybrid RAG, Structured Tree-Graph RAG |
 | BookRAG status | External checkout, conda environment, dataset bridge, config templates, and config-load smoke checks are complete; first index/RAG run is still pending |
 | Planned methods | GraphRAG, HyperGraphRAG |
 | Main reports | `reports/expanded_cost_quality_summary.md`, `reports/pageindex_expanded_llm_diagnostics.md` |
@@ -49,6 +49,7 @@ Tracked metrics:
 | GraphRAG | Planned graph baseline | https://github.com/microsoft/graphrag |
 | HyperGraphRAG | Planned hypergraph baseline | https://github.com/LHRLAB/HyperGraphRAG |
 | BookRAG | Priority structural graph-tree baseline; adapter preparation in progress | https://github.com/sam234990/BookRAG |
+| Structured Tree-Graph RAG | Local minimal BookRAG-style structural retrieval baseline, independently implemented | `pipelines/structured_rag/` |
 
 ## Key Result Snapshot
 
@@ -126,6 +127,7 @@ More run details:
 - [Vector RAG pipeline README](pipelines/vector_rag/README.md)
 - [Hybrid RAG pipeline README](pipelines/hybrid_rag/README.md)
 - [BookRAG pipeline README](pipelines/bookrag/README.md)
+- [Structured Tree-Graph RAG README](pipelines/structured_rag/README.md)
 
 ## Repository Structure
 
@@ -140,6 +142,10 @@ reports/      generated reports and raw outputs
 scripts/      runnable benchmark commands
 tests/        local tests
 ```
+
+## BookRAG Boundary
+
+BookRAG is treated as an external baseline. BenchLab does not vendor BookRAG source code or generated BookIndex artifacts. The local Structured Tree-Graph RAG adapter is independently implemented to test the same design direction while avoiding license ambiguity.
 
 ## Next Actions
 

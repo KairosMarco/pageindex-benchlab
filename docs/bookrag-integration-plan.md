@@ -177,3 +177,20 @@ BookRAG strengthens BenchLab's independent value even if PageIndex PRs take time
 For PageIndex upstream contribution, BookRAG should be used as comparative context, not as a claim that PageIndex is obsolete. The useful framing is:
 
 > PageIndex is a lightweight tree-only baseline. BookRAG is a heavier graph-tree baseline. BenchLab measures when the additional graph structure is worth the setup and runtime cost.
+
+## Local Structured Baseline
+
+Because the BookRAG repository currently has no detected license file, BenchLab avoids copying or vendoring BookRAG source code. The repository now includes an independently implemented minimal structural baseline:
+
+```text
+pipelines/structured_rag/
+scripts/run_structured_rag_mvp.py
+```
+
+This adapter follows the same research question as BookRAG at a smaller scale:
+
+```text
+document tree nodes + entity graph + entity-to-node mapping -> page-level evidence
+```
+
+It is not a BookRAG replacement. It is a controllable benchmark harness for testing structural retrieval before full BookRAG indexing and RAG inference are available.

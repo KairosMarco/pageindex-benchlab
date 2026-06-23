@@ -1,0 +1,179 @@
+{
+  "method": "structured_tree_graph_rag",
+  "question_id": "fb_mvp_003",
+  "question": "What are the major products and services that AMD sells as of FY22?",
+  "answer": "Structured RAG retrieved the most relevant document tree nodes and entity-linked passages. Use the cited pages as supporting evidence: [PAGE 10], [PAGE 111], [PAGE 7].",
+  "citations": [
+    {
+      "document_id": "AMD_2022_10K",
+      "page": 10,
+      "section": "Page 10",
+      "text": "Table of Contents FPGAs and Adaptive SoCs. Our FPGA products are hardware-customizable devices that can be tailored to meet the specific needs of each customer, enabling them to differentiate their products and accelerate time-to-market. Our FPGA families include UltraScale+™ (based on 16 nm technology), UltraScale™ (20 nm), 7 Series (28 nm) and older series. Adaptive SoC products include the Zynq SoC and UltraScale+ Multi-Processing System on a Chip (MPSoCs) which combine FPGA technology with a heterogeneous processing system, as well as the industry’s first RFSoC architecture with integrated radio frequency (RF) data converters. The Versal portfolio is composed of software-programmable Ada",
+      "metadata": {
+        "node_id": "p10_n0",
+        "parent_id": "section_p4",
+        "score": 0.5236472782174648,
+        "lexical_score": 0.02364727821746487,
+        "structural_score": 0.18,
+        "entity_score": 0.32,
+        "phrase_boost": 0.0,
+        "matched_terms": [
+          "products",
+          "services"
+        ],
+        "matched_entities": [
+          "configuration products. we",
+          "products",
+          "services",
+          "services adaptable platforms. we"
+        ]
+      }
+    },
+    {
+      "document_id": "AMD_2022_10K",
+      "page": 111,
+      "section": "Page 111",
+      "text": "Exhibit 21 Solarflare India Private Limited India Xilinx India Technology Services Private Limited India Xilinx Finance Ireland Limited Ireland Xilinx Ireland Unlimited Company Ireland Xilinx Israel Limited Israel Advanced Micro Devices S.p.A. Italy AMD Japan Ltd. Japan Silexica Japan KK Japan Xilinx K.K. Japan Advanced Micro Devices Sdn. Bhd. Malaysia Advanced Micro Devices Global Services (M) Sdn. Bhd. Malaysia ATI Technologies (L) Inc. Malaysia Advanced Micro Devices Malaysia Ltd. Malaysia Xilinx NL B.V. Netherlands Advanced Micro Devices (Poland) sp. z o.o. Poland AMD Advanced Micro Devices (ROU) S.R.L. Romania Advanced Micro Devices RS d.o.o. Serbia Advanced Micro Devices (Singapore) Pt",
+      "metadata": {
+        "node_id": "p111_n0",
+        "parent_id": "section_p99",
+        "score": 0.4353985002301938,
+        "lexical_score": 0.015398500230193755,
+        "structural_score": 0.18,
+        "entity_score": 0.24,
+        "phrase_boost": 0.0,
+        "matched_terms": [
+          "services"
+        ],
+        "matched_entities": [
+          "devices global services",
+          "services",
+          "xilinx india technology services private"
+        ]
+      }
+    },
+    {
+      "document_id": "AMD_2022_10K",
+      "page": 7,
+      "section": "Page 7",
+      "text": "Table of Contents Data Center Products Server CPUs. Our CPUs for server platforms currently include the AMD EPYC™ Series processors – AMD EPYC 9004 Series, AMD EPYC 7003 Series and AMD EPYC 7002 Series. Our 4 Gen AMD EPYC 9004 Series processors are built on the “Zen 4” core and are designed to deliver leadership performance and energy efficiency across multiple market segments and workloads. Our 3 Gen AMD EPYC processors include AMD 3D V-Cache™ technology for leadership performance in technical computing workloads. FPGAs and Adaptive SoCs. We offer a wide range of FPGAs, Adaptive SoCs and acceleration cards for the data center. Devices include the Virtex™ and Kintex™ FPGA products, as well a",
+      "metadata": {
+        "node_id": "p7_n0",
+        "parent_id": "section_p4",
+        "score": 0.42458824027721553,
+        "lexical_score": 0.08458824027721548,
+        "structural_score": 0.18,
+        "entity_score": 0.16,
+        "phrase_boost": 0.0,
+        "matched_terms": [
+          "major",
+          "products",
+          "services"
+        ],
+        "matched_entities": [
+          "contents data center products server",
+          "products"
+        ]
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "build_document_tree",
+      "target": "AMD_2022_10K.pdf",
+      "metadata": {
+        "page_count": 121,
+        "node_count": 292,
+        "node_words": 320
+      }
+    },
+    {
+      "step": 2,
+      "action": "build_entity_graph",
+      "target": "lightweight_entity_cooccurrence_graph",
+      "metadata": {
+        "entity_count": 3318,
+        "edge_count": 49384,
+        "entity_top_k": 8
+      }
+    },
+    {
+      "step": 3,
+      "action": "rank_tree_graph_node",
+      "target": "p10_n0",
+      "metadata": {
+        "rank": 1,
+        "page": 10,
+        "section": "Page 10",
+        "score": 0.5236472782174648,
+        "matched_terms": [
+          "products",
+          "services"
+        ],
+        "matched_entities": [
+          "configuration products. we",
+          "products",
+          "services",
+          "services adaptable platforms. we"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "rank_tree_graph_node",
+      "target": "p111_n0",
+      "metadata": {
+        "rank": 2,
+        "page": 111,
+        "section": "Page 111",
+        "score": 0.4353985002301938,
+        "matched_terms": [
+          "services"
+        ],
+        "matched_entities": [
+          "devices global services",
+          "services",
+          "xilinx india technology services private"
+        ]
+      }
+    },
+    {
+      "step": 5,
+      "action": "rank_tree_graph_node",
+      "target": "p7_n0",
+      "metadata": {
+        "rank": 3,
+        "page": 7,
+        "section": "Page 7",
+        "score": 0.42458824027721553,
+        "matched_terms": [
+          "major",
+          "products",
+          "services"
+        ],
+        "matched_entities": [
+          "contents data center products server",
+          "products"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": null,
+    "output": null,
+    "total": null
+  },
+  "latency_ms": 478,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\AMD_2022_10K.pdf",
+    "page_count": 121,
+    "node_count": 292,
+    "entity_count": 3318,
+    "edge_count": 49384,
+    "retrieve_top_k": 12,
+    "max_citations": 3,
+    "inspiration": "BookRAG-style tree plus entity graph plus tree-node mapping; independently implemented for BenchLab.",
+    "llm_enabled": false
+  }
+}

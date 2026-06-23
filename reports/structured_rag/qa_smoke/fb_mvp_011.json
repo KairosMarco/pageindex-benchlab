@@ -1,0 +1,222 @@
+{
+  "method": "structured_tree_graph_rag",
+  "question_id": "fb_mvp_011",
+  "question": "Looking at VaR, did the risk that JPM faced in the second fiscal quarter of 2023 decrease compared to the same period in the prior year?",
+  "answer": "Structured RAG retrieved the most relevant document tree nodes and entity-linked passages. Use the cited pages as supporting evidence: [PAGE 85], [PAGE 84], [PAGE 47].",
+  "citations": [
+    {
+      "document_id": "JPMORGAN_2023Q2_10Q",
+      "page": 85,
+      "section": "Page 85",
+      "text": "was flat for the three months ended June 30, 2023, when compared with March 31, 2023, reflecting increases in fixed income offset by market volatility relating to commodities rolling out of the one-year historical look-back period. Year over year results Average total VaR decreased by $7 million for the three months ended June 30, 2023, compared with the same period in the prior year predominantly driven by risk reductions impacting Credit Portfolio VaR as well as fixed income. The following graph presents daily Risk Management VaR for the five trailing quarters. Daily Risk Management VaR $ millions 0 50 100 Second Quarter 2022 Third Quarter 2022 Fourth Quarter 2022 First Quarter 2023 Second",
+      "metadata": {
+        "node_id": "p85_n2",
+        "parent_id": "section_p78",
+        "score": 1.1870619717635584,
+        "lexical_score": 0.3670619717635585,
+        "structural_score": 0.18,
+        "entity_score": 0.64,
+        "phrase_boost": 0.0,
+        "matched_terms": [
+          "compared",
+          "period",
+          "prior",
+          "quarter",
+          "risk",
+          "same",
+          "second",
+          "var"
+        ],
+        "matched_entities": [
+          "credit portfolio var",
+          "daily risk management var",
+          "first quarter",
+          "fourth quarter",
+          "quarter",
+          "risk",
+          "risk management var",
+          "second"
+        ]
+      }
+    },
+    {
+      "document_id": "JPMORGAN_2023Q2_10Q",
+      "page": 84,
+      "section": "MARKET RISK MANAGEMENT",
+      "text": "MARKET RISK MANAGEMENT Market risk is the risk associated with the effect of changes in market factors such as interest and foreign exchange rates, equity and commodity prices, credit spreads or implied volatilities, on the value of assets and liabilities held for both the short and long term. Refer to Market Risk Management on pages 131-138 of JPMorgan Chase’s 2022 Form 10-K for a discussion of the Firm’s Market Risk Management organization, market risk measurement, risk monitoring and control, and predominant business activities that give rise to market risk. Models used to measure market risk are inherently imprecise and are limited in their ability to measure certain risks or to predict",
+      "metadata": {
+        "node_id": "p84_n0",
+        "parent_id": "section_p78",
+        "score": 1.0159552867468582,
+        "lexical_score": 0.1959552867468581,
+        "structural_score": 0.18,
+        "entity_score": 0.64,
+        "phrase_boost": 0.0,
+        "matched_terms": [
+          "period",
+          "risk",
+          "var"
+        ],
+        "matched_entities": [
+          "k. market risk management",
+          "market risk management",
+          "market risk management market",
+          "model risk management",
+          "regulatory var",
+          "regulatory var. the firm",
+          "risk",
+          "risk management var"
+        ]
+      }
+    },
+    {
+      "document_id": "JPMORGAN_2023Q2_10Q",
+      "page": 47,
+      "section": "FIRMWIDE RISK MANAGEMENT",
+      "text": "Form 10-Q page reference Form 10-K page reference Strategic Risk 85 Capital Risk 48–53 86-96 Liquidity Risk 54–61 97-104 Reputation Risk 105 Consumer Credit Risk 65–69 110-115 Wholesale Credit Risk 70–79 116-126 Investment Portfolio Risk 83 130 Market Risk 84–89 131-138 Country Risk 90 139-140 Climate Risk 141 Operational Risk 142-148 Compliance Risk 145 Conduct Risk 146 Legal Risk 147 Estimations and Model Risk 148 47",
+      "metadata": {
+        "node_id": "p47_n1",
+        "parent_id": "section_p18",
+        "score": 0.9342529024964241,
+        "lexical_score": 0.11425290249642413,
+        "structural_score": 0.18,
+        "entity_score": 0.64,
+        "phrase_boost": 0.0,
+        "matched_terms": [
+          "risk"
+        ],
+        "matched_entities": [
+          "capital risk",
+          "climate risk",
+          "compliance risk",
+          "conduct risk",
+          "consumer credit risk",
+          "country risk",
+          "investment portfolio risk",
+          "legal risk"
+        ]
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "build_document_tree",
+      "target": "JPMORGAN_2023Q2_10Q.pdf",
+      "metadata": {
+        "page_count": 217,
+        "node_count": 512,
+        "node_words": 320
+      }
+    },
+    {
+      "step": 2,
+      "action": "build_entity_graph",
+      "target": "lightweight_entity_cooccurrence_graph",
+      "metadata": {
+        "entity_count": 4397,
+        "edge_count": 115950,
+        "entity_top_k": 8
+      }
+    },
+    {
+      "step": 3,
+      "action": "rank_tree_graph_node",
+      "target": "p85_n2",
+      "metadata": {
+        "rank": 1,
+        "page": 85,
+        "section": "Page 85",
+        "score": 1.1870619717635584,
+        "matched_terms": [
+          "compared",
+          "period",
+          "prior",
+          "quarter",
+          "risk",
+          "same",
+          "second",
+          "var"
+        ],
+        "matched_entities": [
+          "credit portfolio var",
+          "daily risk management var",
+          "first quarter",
+          "fourth quarter",
+          "quarter",
+          "risk",
+          "risk management var",
+          "second"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "rank_tree_graph_node",
+      "target": "p85_n0",
+      "metadata": {
+        "rank": 2,
+        "page": 85,
+        "section": "Page 85",
+        "score": 1.070884196269172,
+        "matched_terms": [
+          "risk",
+          "var"
+        ],
+        "matched_entities": [
+          "ccb var",
+          "cib var",
+          "credit portfolio var",
+          "lob var",
+          "nm nm cib var",
+          "nm nm other var",
+          "nm nm total var",
+          "risk"
+        ]
+      }
+    },
+    {
+      "step": 5,
+      "action": "rank_tree_graph_node",
+      "target": "p84_n0",
+      "metadata": {
+        "rank": 3,
+        "page": 84,
+        "section": "MARKET RISK MANAGEMENT",
+        "score": 1.0159552867468582,
+        "matched_terms": [
+          "period",
+          "risk",
+          "var"
+        ],
+        "matched_entities": [
+          "k. market risk management",
+          "market risk management",
+          "market risk management market",
+          "model risk management",
+          "regulatory var",
+          "regulatory var. the firm",
+          "risk",
+          "risk management var"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": null,
+    "output": null,
+    "total": null
+  },
+  "latency_ms": 647,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\JPMORGAN_2023Q2_10Q.pdf",
+    "page_count": 217,
+    "node_count": 512,
+    "entity_count": 4397,
+    "edge_count": 115950,
+    "retrieve_top_k": 12,
+    "max_citations": 3,
+    "inspiration": "BookRAG-style tree plus entity graph plus tree-node mapping; independently implemented for BenchLab.",
+    "llm_enabled": false
+  }
+}

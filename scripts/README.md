@@ -264,6 +264,24 @@ python scripts\evaluate_evidence_mvp.py --results-dir reports\hybrid_rag\qa_llm 
 python scripts\evaluate_answers_mvp.py --results-dir reports\hybrid_rag\qa_llm --output reports\hybrid_rag\answer_eval_llm.json --mode llm --model deepseek/deepseek-v4-pro --continue-on-error
 ```
 
+## Run Structured Tree-Graph RAG Baseline
+
+This is BenchLab's independently implemented structural retrieval baseline. It follows the BookRAG direction at a minimal level: document tree nodes, entity co-occurrence graph, entity-to-node mapping, and page-level evidence output. It does not copy BookRAG code.
+
+Smoke test without LLM answer generation:
+
+```powershell
+python scripts\run_structured_rag_mvp.py --force --continue-on-error
+python scripts\evaluate_evidence_mvp.py --results-dir reports\structured_rag\qa_smoke --output reports\structured_rag\evidence_eval_smoke.json --continue-on-error
+```
+
+Expanded 25-question retrieval run:
+
+```powershell
+python scripts\run_structured_rag_mvp.py --questions datasets\financebench\expanded_questions_25.jsonl --output-dir reports\structured_rag\qa_expanded_25 --manifest reports\structured_rag\qa_expanded_25_manifest.json --force --continue-on-error
+python scripts\evaluate_evidence_mvp.py --questions datasets\financebench\expanded_questions_25.jsonl --results-dir reports\structured_rag\qa_expanded_25 --output reports\structured_rag\evidence_eval_qa_expanded_25.json --continue-on-error
+```
+
 ## Check BookRAG Readiness
 
 BookRAG is the priority external graph-tree baseline. Keep its source and environment outside this repository.

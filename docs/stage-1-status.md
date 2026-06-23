@@ -20,7 +20,8 @@ The active contributor is `KairosMarco`; there is no active collaborator split i
 | Hybrid RAG | MVP and expanded LlamaIndex diagnostics complete | `pipelines/llamaindex_hybrid_rag/`, `reports/llamaindex_expanded_llm_diagnostics.md` |
 | GraphRAG | Placeholder only | `pipelines/graphrag/` |
 | HyperGraphRAG | Placeholder only | `pipelines/hypergraphrag/` |
-| BookRAG | Priority external baseline; readiness, dataset bridge, config templates, and config-load smoke checks added | `pipelines/bookrag/`, `scripts/check_bookrag_readiness.py`, `scripts/build_bookrag_dataset.py`, `scripts/prepare_bookrag_config.py` |
+| BookRAG | Priority external baseline; readiness, dataset bridge, config templates, config-load smoke checks, and upstream issue opened | `pipelines/bookrag/`, `scripts/check_bookrag_readiness.py`, `scripts/build_bookrag_dataset.py`, `scripts/prepare_bookrag_config.py` |
+| Structured Tree-Graph RAG | Local structural baseline implemented and evaluated on MVP retrieval smoke test | `pipelines/structured_rag/`, `scripts/run_structured_rag_mvp.py`, `reports/structured_rag/status.md` |
 | Upstream PRs | Two PageIndex PRs open | `docs/upstream-pr-overview.md` |
 
 ## Current Benchmark Snapshot
@@ -38,6 +39,19 @@ Source:
 
 ```text
 reports/expanded_cost_quality_summary.md
+```
+
+Local structured retrieval smoke result:
+
+| Method | Subset | Evidence recall | Citation precision | Generated |
+|---|---|---:|---:|---:|
+| Structured Tree-Graph RAG | 12-question MVP | `0.667` | `0.222` | `12 / 12` |
+
+Source:
+
+```text
+reports/structured_rag/status.md
+reports/structured_rag/evidence_eval_smoke.json
 ```
 
 ## PageIndex Findings
@@ -122,5 +136,6 @@ Recommended order:
 1. Run a one-document BookRAG tree-index attempt and record exact output or blocker.
 2. If indexing succeeds, run one BookRAG RAG inference and convert the answer to `BenchmarkResult`.
 3. Run the existing evidence and answer evaluators on that one output before expanding to the 25-question subset.
-4. Monitor PageIndex PR #333 and PR #334; if no response after several working days, leave a concise follow-up comment on PR #333.
-5. If PageIndex maintainers request smaller scope, split PR #333 into parser, TOC fallback, and test-only PRs.
+4. Monitor BookRAG issue #6 for maintainer guidance on a Windows/setup or benchmark-adapter PR.
+5. Monitor PageIndex PR #333 and PR #334; if no response after several working days, leave a concise follow-up comment on PR #333.
+6. If PageIndex maintainers request smaller scope, split PR #333 into parser, TOC fallback, and test-only PRs.
