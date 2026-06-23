@@ -7,6 +7,7 @@ __pycache__/
 .DS_Store
 Thumbs.db
 reports/raw/
+reports/bookrag/workdir/
 datasets/raw/
 datasets/financebench/financebench_open_source.jsonl
 datasets/financebench/financebench_document_information.jsonl

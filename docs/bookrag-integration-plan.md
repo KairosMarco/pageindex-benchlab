@@ -4,7 +4,7 @@ Date: 2026-06-23
 
 ## Purpose
 
-BookRAG is added to PageIndex BenchLab as a planned structural graph-tree baseline.
+BookRAG is now the priority structural graph-tree baseline in PageIndex BenchLab.
 
 The goal is not to replace PageIndex in the benchmark. The goal is to test whether BookRAG's richer `BookIndex` design improves retrieval and answer quality on the same long-document QA tasks already used for PageIndex, Long-context LLM, Vector RAG, and Hybrid RAG.
 
@@ -26,7 +26,7 @@ The goal is not to replace PageIndex in the benchmark. The goal is to test wheth
 | Method | Index structure | Retrieval style | BenchLab role |
 |---|---|---|---|
 | PageIndex | Hierarchical document tree | Reasoning-based tree traversal | Main method under evaluation |
-| BookRAG | Document tree + entity graph + tree-graph mappings | Agent-planned retrieval over BookIndex | Planned structural graph-tree baseline |
+| BookRAG | Document tree + entity graph + tree-graph mappings | Agent-planned retrieval over BookIndex | Priority structural graph-tree baseline |
 | GraphRAG | Entity and relationship graph | Graph community/entity retrieval | Planned graph baseline |
 | HyperGraphRAG | Hypergraph | N-ary relation retrieval | Planned hypergraph baseline |
 | Long-context LLM | No persistent index | Full-context prompting | Cost and context baseline |
@@ -34,6 +34,8 @@ The goal is not to replace PageIndex in the benchmark. The goal is to test wheth
 ## Why BookRAG Matters
 
 BookRAG narrows PageIndex's research novelty space because it keeps the document hierarchy idea but adds graph relations and explicit mappings between graph entities and tree nodes.
+
+BookRAG's README states that the paper was accepted to VLDB 2026. In this document, that is treated as a research-credibility signal for the method, not as evidence that the released code is production-ready or that BookRAG will outperform PageIndex on FinanceBench.
 
 This makes it a strong candidate baseline for questions that require:
 
@@ -51,7 +53,8 @@ Known setup constraints from the current BookRAG README and requirements:
 
 - Python 3.12 environment is recommended.
 - MinerU is used for PDF parsing.
-- Default parsing expects a MinerU/SGLang service through `vlm-sglang-client`.
+- The upstream example configs commonly use a MinerU/SGLang service through `vlm-sglang-client`.
+- BenchLab's generated template defaults to MinerU `pipeline` to avoid requiring a SGLang service for the first local tree-index attempt.
 - The dependency set includes ChromaDB, spaCy, Torch, TorchVision, Ultralytics, and layout/document parsing packages.
 - The repository currently has no detected license in GitHub metadata, so reuse and redistribution need caution until clarified.
 
@@ -110,6 +113,22 @@ The BookRAG dataset file uses only the upstream fields described in the BookRAG 
 
 The generated system config is intentionally a template. It contains `TODO_*` placeholders for LLM, VLM, MinerU, embedding, and reranker endpoints. Do not commit real keys or private service URLs.
 
+Validation completed:
+
+```text
+records=25 documents=24 missing_pdfs=0
+BookRAG system config loads through Core.configs.system_config.load_system_config
+BookRAG dataset config loads through Core.configs.dataset_config.load_dataset_config
+```
+
+Runtime check completed:
+
+```text
+The first one-document tree-index command reached MinerU PDF parsing.
+The old invalid mineru.server_url template error is fixed by the local pipeline default.
+The run did not finish within the observation window because MinerU local model parsing/loading was still in progress.
+```
+
 ### Phase 2: Index Construction Adapter
 
 Run BookRAG offline indexing on the same FinanceBench PDFs.
@@ -143,7 +162,7 @@ python scripts\evaluate_answers_mvp.py --questions datasets\financebench\expande
 
 ## Success Criteria
 
-BookRAG can be promoted from `planned` to `active` only after:
+BookRAG can be promoted from adapter preparation to measured baseline only after:
 
 - a local BookRAG checkout passes readiness checks;
 - at least one FinanceBench PDF is indexed;

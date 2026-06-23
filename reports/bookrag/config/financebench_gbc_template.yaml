@@ -21,9 +21,9 @@ index:
   chunk_size: 512
   overlap: 50
 mineru:
-  backend: vlm-sglang-client
-  method: vlm
-  server_url: TODO_MINERU_SGLANG_SERVER_URL
+  backend: pipeline
+  method: auto
+  server_url: ''
   lang: en
 tree:
   node_keywords: true

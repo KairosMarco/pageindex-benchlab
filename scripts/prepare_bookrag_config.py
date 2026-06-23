@@ -70,9 +70,13 @@ def build_system_config(mapping_path: Path, working_dir: Path) -> dict[str, Any]
             "overlap": 50,
         },
         "mineru": {
-            "backend": "vlm-sglang-client",
-            "method": "vlm",
-            "server_url": "TODO_MINERU_SGLANG_SERVER_URL",
+            # Use MinerU's local pipeline backend by default so a fresh BenchLab
+            # setup does not immediately require a running SGLang parsing service.
+            # Switch this to vlm-sglang-client plus a real server_url when
+            # reproducing the upstream BookRAG high-throughput VLM setup.
+            "backend": "pipeline",
+            "method": "auto",
+            "server_url": "",
             "lang": "en",
         },
         "tree": {

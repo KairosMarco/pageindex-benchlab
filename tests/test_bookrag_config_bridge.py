@@ -39,7 +39,9 @@ def test_build_system_config_writes_bookrag_required_sections(tmp_path: Path) ->
 
     assert payload["pdf_path"].endswith("EXAMPLE_10K.pdf")
     assert payload["save_path"].endswith("EXAMPLE_10K")
-    assert payload["mineru"]["backend"] == "vlm-sglang-client"
+    assert payload["mineru"]["backend"] == "pipeline"
+    assert payload["mineru"]["method"] == "auto"
+    assert payload["mineru"]["server_url"] == ""
     assert payload["rag"]["strategy"] == "gbc"
     assert payload["rag"]["sim_threshold_e"] == 0.3
 

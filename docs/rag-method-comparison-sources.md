@@ -10,6 +10,7 @@ This document records the comparison methods used or planned in PageIndex BenchL
 | Long-context LLM | Active | Full-document context baseline | https://platform.openai.com/docs/api-reference/responses/create |
 | LlamaIndex Vector RAG | Active | Semantic retrieval baseline | https://github.com/run-llama/llama_index |
 | LlamaIndex Hybrid RAG | Active | BM25 + vector retrieval baseline | https://docs.llamaindex.ai/ |
+| BookRAG | Adapter preparation | Structural graph-tree baseline for complex documents | https://github.com/sam234990/BookRAG |
 
 ## Planned Methods
 
@@ -17,7 +18,6 @@ This document records the comparison methods used or planned in PageIndex BenchL
 |---|---|---|---|
 | GraphRAG | Planned | Entity and relationship graph baseline | https://github.com/microsoft/graphrag |
 | HyperGraphRAG | Planned | Hypergraph baseline for n-ary relations | https://github.com/LHRLAB/HyperGraphRAG |
-| BookRAG | Planned | Structural graph-tree baseline for complex documents | https://github.com/sam234990/BookRAG |
 
 ## Structural Graph-Tree Baseline
 
@@ -37,7 +37,8 @@ Integration notes:
 - Keep BookRAG as an external checkout.
 - Do not add BookRAG's heavy dependencies to the main BenchLab `requirements.txt`.
 - Use `scripts/check_bookrag_readiness.py` before adapter work.
-- Treat BookRAG result rows as planned until at least one schema-valid output is produced and evaluated.
+- Treat BookRAG result rows as excluded from the measured result table until at least one schema-valid output is produced and evaluated.
+- Current adapter preparation includes dataset conversion, sidecar mapping, YAML config templates, and BookRAG config-load smoke checks.
 
 ## Evaluation Discipline
 

@@ -266,7 +266,7 @@ python scripts\evaluate_answers_mvp.py --results-dir reports\hybrid_rag\qa_llm -
 
 ## Check BookRAG Readiness
 
-BookRAG is a planned external graph-tree baseline. Keep its source and environment outside this repository.
+BookRAG is the priority external graph-tree baseline. Keep its source and environment outside this repository.
 
 Check whether a local BookRAG checkout and environment are ready for adapter work:
 
@@ -316,10 +316,25 @@ reports/bookrag/config/financebench_gbc_template.yaml
 
 The system config is a template and must be edited before running BookRAG. Keep real API keys and service URLs out of git.
 
+The generated template defaults to MinerU `pipeline`, not `vlm-sglang-client`. This avoids the immediate `Invalid server URL: TODO_MINERU_SGLANG_SERVER_URL` failure in a fresh local setup. If you want to use BookRAG's upstream SGLang-client parsing path, set `mineru.backend` to `vlm-sglang-client` and provide a real `mineru.server_url`.
+
+Smoke-check the generated configs with BookRAG's own loaders:
+
+```powershell
+conda run -n gbc-rag python -c "import sys; sys.path.insert(0, r'D:\bookrag-source'); from Core.configs.system_config import load_system_config; cfg=load_system_config(r'D:\pageindex-benchlab\reports\bookrag\config\financebench_gbc_template.yaml'); print(cfg.rag.strategy_config.strategy, cfg.rag.strategy_config.sim_threshold_e)"
+conda run -n gbc-rag python -c "import sys; sys.path.insert(0, r'D:\bookrag-source'); from Core.configs.dataset_config import load_dataset_config; cfg=load_dataset_config(r'D:\pageindex-benchlab\reports\bookrag\config\financebench_expanded_25.yaml'); print(cfg.dataset_name, cfg.dataset_path)"
+```
+
 Current BookRAG status:
 
 ```text
 reports/bookrag/status.md
+```
+
+Run a one-document tree-index attempt only after filling the LLM settings in a non-committed local config:
+
+```powershell
+conda run -n gbc-rag python D:\bookrag-source\main.py -c D:\path\to\local_bookrag_config.yaml -d D:\pageindex-benchlab\reports\bookrag\config\financebench_expanded_25.yaml --nsplit 24 --num 1 index --stage tree
 ```
 
 ## Run LlamaIndex Vector RAG Diagnostic Baseline

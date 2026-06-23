@@ -15,15 +15,26 @@ PDF documents -> BookIndex tree + entity graph + tree-graph links -> agent-plann
 
 ## Status
 
-BookRAG is a planned structural graph-tree baseline. It is not part of the committed benchmark result table yet.
+BookRAG is the priority structural graph-tree baseline. It is not part of the committed benchmark result table yet because no schema-valid BookRAG answer has been produced and evaluated.
 
-This repository intentionally does not add BookRAG's dependencies to the main `requirements.txt`. BookRAG has a heavier runtime profile than the current PageIndex/LlamaIndex baselines, including Python 3.12, MinerU, ChromaDB, spaCy, Torch, Ultralytics, and a MinerU/SGLang parsing service in the default setup. It should be installed and checked as an external method-specific environment.
+This repository intentionally does not add BookRAG's dependencies to the main `requirements.txt`. BookRAG has a heavier runtime profile than the current PageIndex/LlamaIndex baselines, including Python 3.12, MinerU, ChromaDB, spaCy, Torch, Ultralytics, and optional MinerU/SGLang parsing services. It should be installed and checked as an external method-specific environment.
 
 Local readiness is recorded in:
 
 ```text
 reports/bookrag/status.md
 reports/bookrag/readiness.json
+```
+
+Current completed preparation:
+
+```text
+local BookRAG checkout exists at D:\bookrag-source
+conda env gbc-rag created
+BookRAG CLI smoke check passes
+FinanceBench 25-question dataset bridge generated
+BookRAG dataset and system config templates generated
+BookRAG config-load smoke checks pass
 ```
 
 ## Why Add It
@@ -110,7 +121,7 @@ reports/bookrag/config/financebench_expanded_25.yaml
 reports/bookrag/config/financebench_gbc_template.yaml
 ```
 
-The system config is a template. Replace all `TODO_*` values before running BookRAG.
+The system config is a template. It defaults to MinerU's local `pipeline` backend so the first tree-index attempt does not require a running SGLang service. Replace all model endpoint `TODO_*` values before running BookRAG. If you want the upstream VLM/SGLang parsing path, set `mineru.backend` to `vlm-sglang-client` and provide a real `mineru.server_url`.
 
 ### Phase 3: Offline Index Construction
 

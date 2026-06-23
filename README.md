@@ -1,11 +1,11 @@
 # PageIndex BenchLab
 
-PageIndex BenchLab is a reproducible benchmark and contribution workspace for testing **PageIndex** against long-context LLMs and RAG baselines on structured long-document QA.
+PageIndex BenchLab is a reproducible benchmark and contribution workspace for testing **PageIndex**, **BookRAG**, long-context LLMs, and RAG baselines on structured long-document QA.
 
 The current work was executed independently by `KairosMarco`. The repository has two concrete purposes:
 
 - compare retrieval and answer quality on FinanceBench-style documents;
-- turn benchmark findings into small upstream contributions to `VectifyAI/PageIndex`.
+- turn benchmark findings into small upstream contributions, starting with `VectifyAI/PageIndex` and then BookRAG-related adapter/report work where licensing permits.
 
 ## Current State
 
@@ -13,7 +13,8 @@ The current work was executed independently by `KairosMarco`. The repository has
 |---|---|
 | Benchmark scope | 25-question FinanceBench expanded subset |
 | Implemented methods | PageIndex, Long-context LLM, LlamaIndex Vector RAG, LlamaIndex Hybrid RAG |
-| Planned methods | GraphRAG, HyperGraphRAG, BookRAG |
+| BookRAG status | External checkout, conda environment, dataset bridge, config templates, and config-load smoke checks are complete; first index/RAG run is still pending |
+| Planned methods | GraphRAG, HyperGraphRAG |
 | Main reports | `reports/expanded_cost_quality_summary.md`, `reports/pageindex_expanded_llm_diagnostics.md` |
 | Upstream PRs | PageIndex PR #333 and PR #334 are open |
 
@@ -47,7 +48,7 @@ Tracked metrics:
 | LlamaIndex Hybrid RAG | BM25 + vector retrieval baseline | https://docs.llamaindex.ai/ |
 | GraphRAG | Planned graph baseline | https://github.com/microsoft/graphrag |
 | HyperGraphRAG | Planned hypergraph baseline | https://github.com/LHRLAB/HyperGraphRAG |
-| BookRAG | Planned structural graph-tree baseline | https://github.com/sam234990/BookRAG |
+| BookRAG | Priority structural graph-tree baseline; adapter preparation in progress | https://github.com/sam234990/BookRAG |
 
 ## Key Result Snapshot
 
@@ -142,12 +143,11 @@ tests/        local tests
 
 ## Next Actions
 
-1. Monitor PageIndex PR #333 and respond to maintainer feedback.
-2. Monitor PageIndex PR #334 and adjust wording if requested.
-3. If PR #333 is too broad, split it into parser, TOC fallback, and test-only PRs.
-4. Add BookRAG as an external graph-tree baseline after readiness checks pass.
-5. Open a separate PageIndex issue or discussion for benchmark/ranking diagnostics.
-6. Continue benchmark work only when it supports a concrete upstream contribution or a scoped report.
+1. Run the first BookRAG one-document tree-index attempt and record the exact blocker or output.
+2. Convert the first BookRAG answer into `BenchmarkResult` once RAG inference succeeds.
+3. Evaluate that output with the existing evidence and answer evaluators before adding BookRAG to the result table.
+4. Monitor PageIndex PR #333 and PR #334, then respond or split scope if maintainers request changes.
+5. Continue benchmark work only when it supports a concrete upstream contribution or a scoped report.
 
 ## Contribution Rules
 
