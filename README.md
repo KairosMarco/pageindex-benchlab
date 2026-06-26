@@ -61,6 +61,7 @@ Expanded 25-question FinanceBench run:
 | LlamaIndex Vector RAG | `1.000` | `0.360` | `0.920` | `2,543` | `16,497 ms` |
 | LlamaIndex Hybrid RAG | `1.000` | `0.360` | `0.880` | `2,553` | `16,846 ms` |
 | Long-context LLM | `0.800` | `0.267` | `0.920` | `92,500` | `12,772 ms` |
+| Structured Tree-Graph RAG | `0.600` | `0.207` | not run | n/a | `310 ms` |
 
 Conservative reading:
 
@@ -81,6 +82,8 @@ Conservative reading:
 - [Baseline diagnostics summary](docs/baseline-diagnostics-summary.md)
 - [BookRAG integration plan](docs/bookrag-integration-plan.md)
 - [BookRAG status](reports/bookrag/status.md)
+- [Structured Tree-Graph RAG status](reports/structured_rag/status.md)
+- [Structured Tree-Graph RAG expanded diagnostics](reports/structured_rag/expanded_diagnostics.md)
 - [Upstream PR overview](docs/upstream-pr-overview.md)
 - [PageIndex PR pattern review](docs/pageindex-pr-pattern-review.md)
 - [Docs index](docs/README.md)

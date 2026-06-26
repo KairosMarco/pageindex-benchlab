@@ -1,0 +1,203 @@
+{
+  "method": "structured_tree_graph_rag",
+  "question_id": "fb_exp_019",
+  "question": "How much (in USD billions) did American Water Works pay out in cash dividends for FY2020? Compute or extract the answer by primarily using the details outlined in the statement of cash flows.",
+  "answer": "Structured RAG retrieved the most relevant document tree nodes and entity-linked passages. Use the cited pages as supporting evidence: [PAGE 86], [PAGE 66], [PAGE 107].",
+  "citations": [
+    {
+      "document_id": "AMERICANWATERWORKS_2020_10K",
+      "page": 86,
+      "section": "Consolidated Statements of Cash Flows",
+      "text": "Table of Contents American Water Works Company, Inc. and Subsidiary Companies Consolidated Statements of Cash Flows (In millions) For the Years Ended December 31, 2020 2019 2018 CASH FLOWS FROM OPERATING ACTIVITIES Net income $ 709 $ 621 $ 565 Adjustments to reconcile to net cash flows provided by operating activities: Depreciation and amortization 604 582 545 Deferred income taxes and amortization of investment tax credits 207 208 195 Provision for losses on accounts receivable 34 28 33 Loss (gain) on asset dispositions and purchases — 34 (20) Impairment charge — — 57 Pension and non-pension postretirement benefits (14) 17 23 Other non-cash, net (20) (41) 20 Changes in assets and liabilitie",
+      "metadata": {
+        "node_id": "p86_n0",
+        "parent_id": "section_p86",
+        "score": 3.3279161282690772,
+        "lexical_score": 0.08791612826907748,
+        "structural_score": 0.18,
+        "entity_score": 0.56,
+        "phrase_boost": 2.5,
+        "matched_terms": [
+          "cash",
+          "flows",
+          "for"
+        ],
+        "matched_entities": [
+          "cash",
+          "cash flows",
+          "cash flows from financing activities",
+          "cash flows from investing activities",
+          "cash flows from operating activities",
+          "flows",
+          "for"
+        ]
+      }
+    },
+    {
+      "document_id": "AMERICANWATERWORKS_2020_10K",
+      "page": 66,
+      "section": "Page 66",
+      "text": "(a) — 38 56 Changes in working capital (b) (49) (1) 30 Settlement of cash flow hedges (6) (30) — Pension and postretirement healthcare contributions (39) (31) (22) Impact of Freedom Industries settlement activities — (4) (40) Net cash flows provided by operating activities $ 1,426 $ 1,383 $ 1,386 (a) Includes provision for losses on accounts receivable, loss (gain) on asset dispositions and purchases, pension and non-pension postretirement benefits and other non-cash, net. Details of each component can be found on the Consolidated Statements of Cash Flows. (b) Changes in working capital include changes to receivables and unbilled revenues, accounts payable and accrued liabilities, and other",
+      "metadata": {
+        "node_id": "p66_n1",
+        "parent_id": "section_p51",
+        "score": 3.1105621918793718,
+        "lexical_score": 0.11056219187937147,
+        "structural_score": 0.18,
+        "entity_score": 0.32,
+        "phrase_boost": 2.5,
+        "matched_terms": [
+          "cash",
+          "details",
+          "flows",
+          "for",
+          "primarily"
+        ],
+        "matched_entities": [
+          "cash",
+          "cash flows",
+          "details",
+          "flows"
+        ]
+      }
+    },
+    {
+      "document_id": "AMERICANWATERWORKS_2020_10K",
+      "page": 107,
+      "section": "Page 107",
+      "text": "There have been no significant adjustments to the forfeiture rates during 2020, 2019 and 2018. There were no grants of stock options to employees after 2016, and the remaining stock options outstanding as of December 31, 2020 were not material. Presented in the table below is the stock-based compensation expense recorded in O&M expense in the accompanying Consolidated Statements of Operations for the years ended December 31: 2020 2019 2018 RSUs and PSUs $ 19 $ 15 $ 15 Nonqualified employee stock purchase plan 2 2 1 Stock-based compensation 21 17 16 Income tax benefit (5) (4) (5) Stock-based compensation expense, net of tax $ 16 $ 13 $ 11 There were no significant stock-based compensation cos",
+      "metadata": {
+        "node_id": "p107_n1",
+        "parent_id": "section_p105",
+        "score": 3.013968172552695,
+        "lexical_score": 0.01396817255269525,
+        "structural_score": 0.18,
+        "entity_score": 0.32,
+        "phrase_boost": 2.5,
+        "matched_terms": [
+          "cash",
+          "flows",
+          "for"
+        ],
+        "matched_entities": [
+          "cash",
+          "cash flows. stock units during",
+          "flows",
+          "for"
+        ]
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "build_document_tree",
+      "target": "AMERICANWATERWORKS_2020_10K.pdf",
+      "metadata": {
+        "page_count": 152,
+        "node_count": 427,
+        "node_words": 320
+      }
+    },
+    {
+      "step": 2,
+      "action": "build_entity_graph",
+      "target": "lightweight_entity_cooccurrence_graph",
+      "metadata": {
+        "entity_count": 3696,
+        "edge_count": 65461,
+        "entity_top_k": 8
+      }
+    },
+    {
+      "step": 3,
+      "action": "rank_tree_graph_node",
+      "target": "p86_n0",
+      "metadata": {
+        "rank": 1,
+        "page": 86,
+        "section": "Consolidated Statements of Cash Flows",
+        "score": 3.3279161282690772,
+        "matched_terms": [
+          "cash",
+          "flows",
+          "for"
+        ],
+        "matched_entities": [
+          "cash",
+          "cash flows",
+          "cash flows from financing activities",
+          "cash flows from investing activities",
+          "cash flows from operating activities",
+          "flows",
+          "for"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "rank_tree_graph_node",
+      "target": "p66_n1",
+      "metadata": {
+        "rank": 2,
+        "page": 66,
+        "section": "Page 66",
+        "score": 3.1105621918793718,
+        "matched_terms": [
+          "cash",
+          "details",
+          "flows",
+          "for",
+          "primarily"
+        ],
+        "matched_entities": [
+          "cash",
+          "cash flows",
+          "details",
+          "flows"
+        ]
+      }
+    },
+    {
+      "step": 5,
+      "action": "rank_tree_graph_node",
+      "target": "section_p86",
+      "metadata": {
+        "rank": 3,
+        "page": 86,
+        "section": "Consolidated Statements of Cash Flows",
+        "score": 3.0834263603395344,
+        "matched_terms": [
+          "cash",
+          "flows",
+          "for"
+        ],
+        "matched_entities": [
+          "cash",
+          "cash flows",
+          "cash flows from investing activities",
+          "cash flows from operating activities",
+          "flows",
+          "for"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": null,
+    "output": null,
+    "total": null
+  },
+  "latency_ms": 374,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\AMERICANWATERWORKS_2020_10K.pdf",
+    "page_count": 152,
+    "node_count": 427,
+    "entity_count": 3696,
+    "edge_count": 65461,
+    "retrieve_top_k": 12,
+    "max_citations": 3,
+    "inspiration": "BookRAG-style tree plus entity graph plus tree-node mapping; independently implemented for BenchLab.",
+    "llm_enabled": false
+  }
+}

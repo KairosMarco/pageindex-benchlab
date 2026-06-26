@@ -1,0 +1,207 @@
+{
+  "method": "structured_tree_graph_rag",
+  "question_id": "fb_exp_013",
+  "question": "What is Adobe's year-over-year change in unadjusted operating income from FY2015 to FY2016 (in units of percents and round to one decimal place)? Give a solution to the question by using the income statement.",
+  "answer": "Structured RAG retrieved the most relevant document tree nodes and entity-linked passages. Use the cited pages as supporting evidence: [PAGE 62], [PAGE 92], [PAGE 95].",
+  "citations": [
+    {
+      "document_id": "ADOBE_2016_10K",
+      "page": 62,
+      "section": "ADOBE SYSTEMS INCORPORATED",
+      "text": "Table of Contents 62 ADOBE SYSTEMS INCORPORATED CONSOLIDATED STATEMENTS OF INCOME (In thousands, except per share data) Years Ended December 2, 2016 November 27, 2015 November 28, 2014 Revenue: Subscription $ 4,584,833 $ 3,223,904 $ 2,076,584 Product 800,498 1,125,146 1,627,803 Services and support 469,099 446,461 442,678 Total revenue 5,854,430 4,795,511 4,147,065 Cost of revenue: Subscription 461,860 409,194 335,432 Product 68,917 90,035 97,099 Services and support 289,131 245,088 189,549 Total cost of revenue 819,908 744,317 622,080 Gross profit 5,034,522 4,051,194 3,524,985 Operating expenses: Research and development 975,987 862,730 844,353 Sales and marketing 1,910,197 1,683,242 1,652,",
+      "metadata": {
+        "node_id": "p62_n0",
+        "parent_id": "section_p60",
+        "score": 3.3517160472638547,
+        "lexical_score": 0.1917160472638547,
+        "structural_score": 0.18,
+        "entity_score": 0.48,
+        "phrase_boost": 2.5,
+        "matched_terms": [
+          "income",
+          "operating",
+          "revenue",
+          "sales"
+        ],
+        "matched_entities": [
+          "income",
+          "non-operating",
+          "of income",
+          "operating",
+          "revenue",
+          "sales"
+        ]
+      }
+    },
+    {
+      "document_id": "ADOBE_2016_10K",
+      "page": 92,
+      "section": "ADOBE SYSTEMS INCORPORATED",
+      "text": "Table of Contents ADOBE SYSTEMS INCORPORATED NOTES TO CONSOLIDATED FINANCIAL STATEMENTS (Continued) 92 Total stock-based compensation costs that have been included in our Consolidated Statements of Income for fiscal 2016, 2015 and 2014 were as follows (in thousands): Income Statement Classifications Cost of Revenue– Subscription Cost of Revenue– Services and Support Research and Development Sales and Marketing General and Administrative Total(1) Option Grants and Stock Purchase Rights 2016 $ 1,474 $ 5,514 $ 13,932 $ 16,534 $ 4,371 $ 41,825 2015 $ 1,449 $ 5,185 $ 14,082 $ 18,360 $ 4,790 $ 43,866 2014 $ 1,855 $ 4,000 $ 15,125 $ 17,706 $ 6,476 $ 45,162 Restricted Stock Units and Performance Sha",
+      "metadata": {
+        "node_id": "p92_n0",
+        "parent_id": "section_p60",
+        "score": 3.331750604592059,
+        "lexical_score": 0.09175060459205917,
+        "structural_score": 0.18,
+        "entity_score": 0.56,
+        "phrase_boost": 2.5,
+        "matched_terms": [
+          "income",
+          "revenue",
+          "sales",
+          "statement"
+        ],
+        "matched_entities": [
+          "development sales",
+          "equity comprehensive income",
+          "income",
+          "income statement classifications cost",
+          "revenue",
+          "sales",
+          "statement"
+        ]
+      }
+    },
+    {
+      "document_id": "ADOBE_2016_10K",
+      "page": 95,
+      "section": "ADOBE SYSTEMS INCORPORATED",
+      "text": "The Almaden Tower lease qualifies for operating lease accounting treatment and, as such, the building and the related obligation are not included in our Consolidated Balance Sheets. Unconditional Purchase Obligations Our purchase obligations consist of agreements to purchase goods and services entered into in the ordinary course of business. The following table summarizes our non-cancellable unconditional purchase obligations and operating leases for each of the next five years and thereafter as of December 2, 2016 (in thousands): Operating Leases Fiscal Year Purchase Obligations Future Minimum Lease Payments Future Minimum Sublease Income 2017 $ 275,066 $ 45,201 $ 1,701 2018 18,510 40,777 1",
+      "metadata": {
+        "node_id": "p95_n1",
+        "parent_id": "section_p60",
+        "score": 3.0557417380487397,
+        "lexical_score": 0.05574173804873983,
+        "structural_score": 0.18,
+        "entity_score": 0.32,
+        "phrase_boost": 2.5,
+        "matched_terms": [
+          "income",
+          "operating",
+          "operations",
+          "revenue"
+        ],
+        "matched_entities": [
+          "future minimum sublease income",
+          "income",
+          "operating",
+          "operating leases fiscal year purchase"
+        ]
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "build_document_tree",
+      "target": "ADOBE_2016_10K.pdf",
+      "metadata": {
+        "page_count": 112,
+        "node_count": 278,
+        "node_words": 320
+      }
+    },
+    {
+      "step": 2,
+      "action": "build_entity_graph",
+      "target": "lightweight_entity_cooccurrence_graph",
+      "metadata": {
+        "entity_count": 3554,
+        "edge_count": 53107,
+        "entity_top_k": 8
+      }
+    },
+    {
+      "step": 3,
+      "action": "rank_tree_graph_node",
+      "target": "p62_n0",
+      "metadata": {
+        "rank": 1,
+        "page": 62,
+        "section": "ADOBE SYSTEMS INCORPORATED",
+        "score": 3.3517160472638547,
+        "matched_terms": [
+          "income",
+          "operating",
+          "revenue",
+          "sales"
+        ],
+        "matched_entities": [
+          "income",
+          "non-operating",
+          "of income",
+          "operating",
+          "revenue",
+          "sales"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "rank_tree_graph_node",
+      "target": "p92_n0",
+      "metadata": {
+        "rank": 2,
+        "page": 92,
+        "section": "ADOBE SYSTEMS INCORPORATED",
+        "score": 3.331750604592059,
+        "matched_terms": [
+          "income",
+          "revenue",
+          "sales",
+          "statement"
+        ],
+        "matched_entities": [
+          "development sales",
+          "equity comprehensive income",
+          "income",
+          "income statement classifications cost",
+          "revenue",
+          "sales",
+          "statement"
+        ]
+      }
+    },
+    {
+      "step": 5,
+      "action": "rank_tree_graph_node",
+      "target": "p95_n1",
+      "metadata": {
+        "rank": 3,
+        "page": 95,
+        "section": "ADOBE SYSTEMS INCORPORATED",
+        "score": 3.0557417380487397,
+        "matched_terms": [
+          "income",
+          "operating",
+          "operations",
+          "revenue"
+        ],
+        "matched_entities": [
+          "future minimum sublease income",
+          "income",
+          "operating",
+          "operating leases fiscal year purchase"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": null,
+    "output": null,
+    "total": null
+  },
+  "latency_ms": 261,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\ADOBE_2016_10K.pdf",
+    "page_count": 112,
+    "node_count": 278,
+    "entity_count": 3554,
+    "edge_count": 53107,
+    "retrieve_top_k": 12,
+    "max_citations": 3,
+    "inspiration": "BookRAG-style tree plus entity graph plus tree-node mapping; independently implemented for BenchLab.",
+    "llm_enabled": false
+  }
+}

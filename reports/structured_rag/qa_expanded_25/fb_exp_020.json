@@ -1,0 +1,181 @@
+{
+  "method": "structured_tree_graph_rag",
+  "question_id": "fb_exp_020",
+  "question": "Is CVS Health a capital-intensive business based on FY2022 data?",
+  "answer": "Structured RAG retrieved the most relevant document tree nodes and entity-linked passages. Use the cited pages as supporting evidence: [PAGE 199], [PAGE 27], [PAGE 191].",
+  "citations": [
+    {
+      "document_id": "CVSHEALTH_2022_10K",
+      "page": 199,
+      "section": "Page 199",
+      "text": "nsulting (Indonesia) ◦ PE Holdings, LLC (Connecticut) ◦ Aetna Resources LLC (Delaware) ◦ Canal Place, LLC (Delaware) ◦ Aetna Ventures, LLC (Delaware) ◦ Phoenix Data Solutions LLC (Delaware) ◦ Aetna Financial Holdings, LLC (Delaware) ◦ Aetna Asset Advisors, LLC (Delaware) ◦ U.S. Healthcare Properties, Inc. (Pennsylvania) ◦ Aetna Capital Management, LLC (Delaware) ▪ Aetna Partners Diversified Fund, LLC (Delaware) ◦ Aetna Workers’ Comp Access, LLC (Delaware) ◦ Aetna Behavioral Health, LLC (Delaware) ◦ Managed Care Coordinators, Inc. (Delaware) ◦ Horizon Behavioral Services, LLC (Delaware) ▪ Employee Assistance Services, LLC (Kentucky) ▪ Health and Human Resource Center, Inc. (California) ▪ Reso",
+      "metadata": {
+        "node_id": "p199_n0",
+        "parent_id": "section_p186",
+        "score": 0.6108209220293418,
+        "lexical_score": 0.030820922029341807,
+        "structural_score": 0.18,
+        "entity_score": 0.4,
+        "phrase_boost": 0.0,
+        "matched_terms": [
+          "capital",
+          "data"
+        ],
+        "matched_entities": [
+          "aetna capital management",
+          "capital",
+          "data",
+          "health data",
+          "phoenix data solutions llc"
+        ]
+      }
+    },
+    {
+      "document_id": "CVSHEALTH_2022_10K",
+      "page": 27,
+      "section": "Page 27",
+      "text": "affect the Company’s businesses in various ways, including through increases in solvency fund assessments, requirements that the Company hold greater levels of capital and/or delays in approving dividends from regulated subsidiaries. PBM offerings of prescription drug coverage under certain risk arrangements may be subject to laws and regulations in various states. Such laws may require that the party at risk become licensed as an insurer, establish reserves or otherwise demonstrate financial viability. Laws that may apply in such cases include insurance laws and laws governing MCOs and limited prepaid health service plans. In addition, several states require that PBMs become directly regist",
+      "metadata": {
+        "node_id": "p27_n0",
+        "parent_id": "section_p4",
+        "score": 0.5353875338412972,
+        "lexical_score": 0.11538753384129725,
+        "structural_score": 0.18,
+        "entity_score": 0.24,
+        "phrase_boost": 0.0,
+        "matched_terms": [
+          "based",
+          "capital"
+        ],
+        "matched_entities": [
+          "capital",
+          "risk-based",
+          "risk-based capital"
+        ]
+      }
+    },
+    {
+      "document_id": "CVSHEALTH_2022_10K",
+      "page": 191,
+      "section": "Page 191",
+      "text": "Consolidated Statements of Cash Flows, (v) the Consolidated Statements of Shareholders’ Equity and (vi) the related Notes to Consolidated Financial Statements. The instance document does not appear in the Interactive Data File because its XBRL tags are embedded within the Inline XBRL document. 104 104 Cover Page Interactive Data File - The cover page from the Company's Annual Report on Form 10-K for the year ended December 31, 2022, formatted in Inline XBRL (included as Exhibit 101). Item 16. Form 10-K Summary. None. 189",
+      "metadata": {
+        "node_id": "p191_n1",
+        "parent_id": "section_p186",
+        "score": 0.5121593946750859,
+        "lexical_score": 0.09215939467508591,
+        "structural_score": 0.18,
+        "entity_score": 0.24,
+        "phrase_boost": 0.0,
+        "matched_terms": [
+          "data"
+        ],
+        "matched_entities": [
+          "cover page interactive data file",
+          "data",
+          "interactive data file"
+        ]
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "build_document_tree",
+      "target": "CVSHEALTH_2022_10K.pdf",
+      "metadata": {
+        "page_count": 213,
+        "node_count": 564,
+        "node_words": 320
+      }
+    },
+    {
+      "step": 2,
+      "action": "build_entity_graph",
+      "target": "lightweight_entity_cooccurrence_graph",
+      "metadata": {
+        "entity_count": 4816,
+        "edge_count": 83389,
+        "entity_top_k": 8
+      }
+    },
+    {
+      "step": 3,
+      "action": "rank_tree_graph_node",
+      "target": "p199_n0",
+      "metadata": {
+        "rank": 1,
+        "page": 199,
+        "section": "Page 199",
+        "score": 0.6108209220293418,
+        "matched_terms": [
+          "capital",
+          "data"
+        ],
+        "matched_entities": [
+          "aetna capital management",
+          "capital",
+          "data",
+          "health data",
+          "phoenix data solutions llc"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "rank_tree_graph_node",
+      "target": "p27_n0",
+      "metadata": {
+        "rank": 2,
+        "page": 27,
+        "section": "Page 27",
+        "score": 0.5353875338412972,
+        "matched_terms": [
+          "based",
+          "capital"
+        ],
+        "matched_entities": [
+          "capital",
+          "risk-based",
+          "risk-based capital"
+        ]
+      }
+    },
+    {
+      "step": 5,
+      "action": "rank_tree_graph_node",
+      "target": "p191_n1",
+      "metadata": {
+        "rank": 3,
+        "page": 191,
+        "section": "Page 191",
+        "score": 0.5121593946750859,
+        "matched_terms": [
+          "data"
+        ],
+        "matched_entities": [
+          "cover page interactive data file",
+          "data",
+          "interactive data file"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": null,
+    "output": null,
+    "total": null
+  },
+  "latency_ms": 577,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\CVSHEALTH_2022_10K.pdf",
+    "page_count": 213,
+    "node_count": 564,
+    "entity_count": 4816,
+    "edge_count": 83389,
+    "retrieve_top_k": 12,
+    "max_citations": 3,
+    "inspiration": "BookRAG-style tree plus entity graph plus tree-node mapping; independently implemented for BenchLab.",
+    "llm_enabled": false
+  }
+}

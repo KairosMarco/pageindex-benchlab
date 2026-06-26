@@ -280,6 +280,7 @@ Expanded 25-question retrieval run:
 ```powershell
 python scripts\run_structured_rag_mvp.py --questions datasets\financebench\expanded_questions_25.jsonl --output-dir reports\structured_rag\qa_expanded_25 --manifest reports\structured_rag\qa_expanded_25_manifest.json --force --continue-on-error
 python scripts\evaluate_evidence_mvp.py --questions datasets\financebench\expanded_questions_25.jsonl --results-dir reports\structured_rag\qa_expanded_25 --output reports\structured_rag\evidence_eval_qa_expanded_25.json --continue-on-error
+python scripts\summarize_structured_rag.py
 ```
 
 ## Check BookRAG Readiness

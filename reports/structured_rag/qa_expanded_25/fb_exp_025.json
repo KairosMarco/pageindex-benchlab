@@ -1,0 +1,181 @@
+{
+  "method": "structured_tree_graph_rag",
+  "question_id": "fb_exp_025",
+  "question": "What drove the reduction in SG&A expense as a percent of net sales in FY2023?",
+  "answer": "Structured RAG retrieved the most relevant document tree nodes and entity-linked passages. Use the cited pages as supporting evidence: [PAGE 6], [PAGE 1], [PAGE 3].",
+  "citations": [
+    {
+      "document_id": "ULTABEAUTY_2023Q4_EARNINGS",
+      "page": 6,
+      "section": "Page 6",
+      "text": "a Beauty, Inc. Consolidated Statements of Income (In thousands, except per share data) 13 Weeks Ended January 28, January 29, 2023 2022 (Unaudited) (Unaudited) Net sales $ 3,226,773 100.0% $ 2,729,388 100.0% Cost of sales 2,014,270 62.4% 1,702,059 62.4% Gross profit 1,212,503 37.6% 1,027,329 37.6% Selling, general and administrative expenses 762,706 23.6% 649,968 23.8% Pre-opening expenses 2,179 0.1% 1,739 0.1% Operating income 447,618 13.9% 375,622 13.8% Interest (income) expense, net (4,378) (0.1%) 467 0.1% Income before income taxes 451,996 14.0% 375,155 13.7% Income tax expense 111,245 3.4% 85,789 3.1% Net income $ 340,751 10.6% $ 289,366 10.6% Net income per common share: Basic $ 6.73 $",
+      "metadata": {
+        "node_id": "p6_n0",
+        "parent_id": null,
+        "score": 2.8411048603265074,
+        "lexical_score": 0.2611048603265074,
+        "structural_score": 0.0,
+        "entity_score": 0.08,
+        "phrase_boost": 2.5,
+        "matched_terms": [
+          "expense",
+          "net",
+          "sales"
+        ],
+        "matched_entities": [
+          "net"
+        ]
+      }
+    },
+    {
+      "document_id": "ULTABEAUTY_2023Q4_EARNINGS",
+      "page": 1,
+      "section": "Page 1",
+      "text": "March 9, 2023 Ulta Beauty Announces Fourth Quarter Fiscal 2022 Results Net Sales of $3.2 Billion Compared to $2.7 Billion in the Year-Ago Quarter Comparable Sales Increased 15.6% Net Income of $340.8 Million or $6.68 Per Diluted Share BOLINGBROOK, Ill.--(BUSINESS WIRE)-- Ulta Beauty, Inc. (NASDAQ: ULTA) today announced financial results for the thirteen-week period (“fourth quarter”) and fifty-two-week period (“fiscal year”) ended January 28, 2023 compared to the same periods ended January 29, 2022. 13 Weeks Ended 52 Weeks Ended January 28, January 29, January 30, January 28, January 29, January 30, (Dollars in millions, except per share data) 2023 2022 2021 2023 2022 2021 Net sales $ 3,226.",
+      "metadata": {
+        "node_id": "p1_n0",
+        "parent_id": null,
+        "score": 0.5458188465871915,
+        "lexical_score": 0.1458188465871915,
+        "structural_score": 0.0,
+        "entity_score": 0.4,
+        "phrase_boost": 0.0,
+        "matched_terms": [
+          "net",
+          "sales"
+        ],
+        "matched_entities": [
+          "net",
+          "net income",
+          "results net sales",
+          "sales",
+          "year-ago quarter comparable sales increased"
+        ]
+      }
+    },
+    {
+      "document_id": "ULTABEAUTY_2023Q4_EARNINGS",
+      "page": 3,
+      "section": "Page 3",
+      "text": "fourth quarter of fiscal 2022, the Company operated 1,355 stores totaling 14.2 million square feet. Fiscal 2023 Outlook For fiscal 2023, the Company plans to: FY23 Outlook Net sales $10.95 billion to $11.05 billion Comparable sales 4% to 5% New stores, net 25-30 Remodel and relocation projects 20-30 Operating margin 14.7% to 15.0% Diluted earnings per share $24.70 to $25.40 Share repurchases approximately $900 million Effective tax rate approximately 24.6% Capital expenditures $400 million to $475 million Depreciation and amortization expense $245 million to $250 million",
+      "metadata": {
+        "node_id": "p3_n1",
+        "parent_id": null,
+        "score": 0.3273398138618907,
+        "lexical_score": 0.1673398138618907,
+        "structural_score": 0.0,
+        "entity_score": 0.16,
+        "phrase_boost": 0.0,
+        "matched_terms": [
+          "expense",
+          "net",
+          "sales"
+        ],
+        "matched_entities": [
+          "fy23 outlook net",
+          "net"
+        ]
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "build_document_tree",
+      "target": "ULTABEAUTY_2023Q4_EARNINGS.pdf",
+      "metadata": {
+        "page_count": 9,
+        "node_count": 13,
+        "node_words": 320
+      }
+    },
+    {
+      "step": 2,
+      "action": "build_entity_graph",
+      "target": "lightweight_entity_cooccurrence_graph",
+      "metadata": {
+        "entity_count": 619,
+        "edge_count": 5717,
+        "entity_top_k": 8
+      }
+    },
+    {
+      "step": 3,
+      "action": "rank_tree_graph_node",
+      "target": "p6_n0",
+      "metadata": {
+        "rank": 1,
+        "page": 6,
+        "section": "Page 6",
+        "score": 2.8411048603265074,
+        "matched_terms": [
+          "expense",
+          "net",
+          "sales"
+        ],
+        "matched_entities": [
+          "net"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "rank_tree_graph_node",
+      "target": "p1_n0",
+      "metadata": {
+        "rank": 2,
+        "page": 1,
+        "section": "Page 1",
+        "score": 0.5458188465871915,
+        "matched_terms": [
+          "net",
+          "sales"
+        ],
+        "matched_entities": [
+          "net",
+          "net income",
+          "results net sales",
+          "sales",
+          "year-ago quarter comparable sales increased"
+        ]
+      }
+    },
+    {
+      "step": 5,
+      "action": "rank_tree_graph_node",
+      "target": "p3_n1",
+      "metadata": {
+        "rank": 3,
+        "page": 3,
+        "section": "Page 3",
+        "score": 0.3273398138618907,
+        "matched_terms": [
+          "expense",
+          "net",
+          "sales"
+        ],
+        "matched_entities": [
+          "fy23 outlook net",
+          "net"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": null,
+    "output": null,
+    "total": null
+  },
+  "latency_ms": 20,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\ULTABEAUTY_2023Q4_EARNINGS.pdf",
+    "page_count": 9,
+    "node_count": 13,
+    "entity_count": 619,
+    "edge_count": 5717,
+    "retrieve_top_k": 12,
+    "max_citations": 3,
+    "inspiration": "BookRAG-style tree plus entity graph plus tree-node mapping; independently implemented for BenchLab.",
+    "llm_enabled": false
+  }
+}

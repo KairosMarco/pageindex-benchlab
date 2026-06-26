@@ -1,0 +1,188 @@
+{
+  "method": "structured_tree_graph_rag",
+  "question_id": "fb_exp_022",
+  "question": "What is Coca Cola's FY2021 COGS % margin? Calculate what was asked by utilizing the line items clearly shown in the income statement.",
+  "answer": "Structured RAG retrieved the most relevant document tree nodes and entity-linked passages. Use the cited pages as supporting evidence: [PAGE 62], [PAGE 47], [PAGE 76].",
+  "citations": [
+    {
+      "document_id": "COCACOLA_2021_10K",
+      "page": 62,
+      "section": "THE COCA-COLA COMPANY AND SUBSIDIARIES",
+      "text": "THE COCA-COLA COMPANY AND SUBSIDIARIES CONSOLIDATED STATEMENTS OF INCOME (In millions except per share data) Year Ended December 31, 2021 2020 2019 Net Operating Revenues $ 38,655 $ 33,014 $ 37,266 Cost of goods sold 15,357 13,433 14,619 Gross Profit 23,298 19,581 22,647 Selling, general and administrative expenses 12,144 9,731 12,103 Other operating charges 846 853 458 Operating Income 10,308 8,997 10,086 Interest income 276 370 563 Interest expense 1,597 1,437 946 Equity income (loss) — net 1,438 978 1,049 Other income (loss) — net 2,000 841 34 Income Before Income Taxes 12,425 9,749 10,786 Income taxes 2,621 1,981 1,801 Consolidated Net Income 9,804 7,768 8,985 Less: Net income (loss) att",
+      "metadata": {
+        "node_id": "p62_n0",
+        "parent_id": "section_p61",
+        "score": 3.4433404204812117,
+        "lexical_score": 0.12334042048121141,
+        "structural_score": 0.18,
+        "entity_score": 0.64,
+        "phrase_boost": 2.5,
+        "matched_terms": [
+          "cost",
+          "goods",
+          "income"
+        ],
+        "matched_entities": [
+          "basic net income per share",
+          "consolidated net income",
+          "consolidated statements of income",
+          "cost",
+          "diluted net income per share",
+          "income",
+          "income before income taxes",
+          "net income attributable"
+        ]
+      }
+    },
+    {
+      "document_id": "COCACOLA_2021_10K",
+      "page": 47,
+      "section": "Page 47",
+      "text": "fluctuates over time due to net operating revenues in some operating segments growing at a faster rate compared to other operating segments. For additional information about the impact of foreign currency fluctuations, refer to the heading “Liquidity, Capital Resources and Financial Position — Foreign Exchange” below. Gross Profit Margin Gross profit margin is a ratio calculated by dividing gross profit by net operating revenues. Management believes gross profit margin provides investors with useful information related to the profitability of our business prior to considering all of the operating costs incurred. Management uses this measure in making financial, operating and planning decisio",
+      "metadata": {
+        "node_id": "p47_n2",
+        "parent_id": "section_p34",
+        "score": 3.026161799083801,
+        "lexical_score": 0.1861617990838011,
+        "structural_score": 0.18,
+        "entity_score": 0.16,
+        "phrase_boost": 2.5,
+        "matched_terms": [
+          "margin"
+        ],
+        "matched_entities": [
+          "gross profit margin gross",
+          "margin"
+        ]
+      }
+    },
+    {
+      "document_id": "COCACOLA_2021_10K",
+      "page": 76,
+      "section": "Page 76",
+      "text": "following table presents information related to the major classes of assets and liabilities that were classified as held for sale and were included in the line items prepaid expenses and other current assets and accounts payable and accrued expenses, respectively, in our consolidated balance sheet (in millions): December 31, 2021 Cash, cash equivalents and short-term investments $ 228 Trade accounts receivable, less allowances 21 Inventories 55 Prepaid expenses and other current assets 36 Other noncurrent assets 9 Deferred income tax assets 6 Property, plant and equipment — net 282 Goodwill 37 Assets held for sale $ 674 Accounts payable and accrued expenses $ 139 Accrued income taxes 4 Other",
+      "metadata": {
+        "node_id": "p76_n0",
+        "parent_id": "section_p61",
+        "score": 2.9058552775351263,
+        "lexical_score": 0.06585527753512654,
+        "structural_score": 0.18,
+        "entity_score": 0.16,
+        "phrase_boost": 2.5,
+        "matched_terms": [
+          "income",
+          "items",
+          "operations",
+          "revenue"
+        ],
+        "matched_entities": [
+          "revenue",
+          "revenue recognition our company"
+        ]
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "build_document_tree",
+      "target": "COCACOLA_2021_10K.pdf",
+      "metadata": {
+        "page_count": 183,
+        "node_count": 483,
+        "node_words": 320
+      }
+    },
+    {
+      "step": 2,
+      "action": "build_entity_graph",
+      "target": "lightweight_entity_cooccurrence_graph",
+      "metadata": {
+        "entity_count": 4031,
+        "edge_count": 68997,
+        "entity_top_k": 8
+      }
+    },
+    {
+      "step": 3,
+      "action": "rank_tree_graph_node",
+      "target": "p62_n0",
+      "metadata": {
+        "rank": 1,
+        "page": 62,
+        "section": "THE COCA-COLA COMPANY AND SUBSIDIARIES",
+        "score": 3.4433404204812117,
+        "matched_terms": [
+          "cost",
+          "goods",
+          "income"
+        ],
+        "matched_entities": [
+          "basic net income per share",
+          "consolidated net income",
+          "consolidated statements of income",
+          "cost",
+          "diluted net income per share",
+          "income",
+          "income before income taxes",
+          "net income attributable"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "rank_tree_graph_node",
+      "target": "p47_n2",
+      "metadata": {
+        "rank": 2,
+        "page": 47,
+        "section": "Page 47",
+        "score": 3.026161799083801,
+        "matched_terms": [
+          "margin"
+        ],
+        "matched_entities": [
+          "gross profit margin gross",
+          "margin"
+        ]
+      }
+    },
+    {
+      "step": 5,
+      "action": "rank_tree_graph_node",
+      "target": "p47_n1",
+      "metadata": {
+        "rank": 3,
+        "page": 47,
+        "section": "Page 47",
+        "score": 2.936624567351435,
+        "matched_terms": [
+          "margin",
+          "revenue",
+          "sales"
+        ],
+        "matched_entities": [
+          "gross profit margin gross",
+          "margin"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": null,
+    "output": null,
+    "total": null
+  },
+  "latency_ms": 867,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\COCACOLA_2021_10K.pdf",
+    "page_count": 183,
+    "node_count": 483,
+    "entity_count": 4031,
+    "edge_count": 68997,
+    "retrieve_top_k": 12,
+    "max_citations": 3,
+    "inspiration": "BookRAG-style tree plus entity graph plus tree-node mapping; independently implemented for BenchLab.",
+    "llm_enabled": false
+  }
+}

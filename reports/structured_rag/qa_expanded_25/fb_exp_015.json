@@ -1,0 +1,166 @@
+{
+  "method": "structured_tree_graph_rag",
+  "question_id": "fb_exp_015",
+  "question": "Were there any board member nominees who had substantially more votes against joining than the other nominees?",
+  "answer": "Structured RAG retrieved the most relevant document tree nodes and entity-linked passages. Use the cited pages as supporting evidence: [PAGE 2], [PAGE 3].",
+  "citations": [
+    {
+      "document_id": "FOOTLOCKER_2022_8K_dated-2022-05-20",
+      "page": 2,
+      "section": "Page 2",
+      "text": "2. With respect to the proposal to approve, on an advisory basis, the Company’s named executive officers’ (“NEOs”) compensation, the votes were cast for the proposal as set forth below: Votes For Votes Against Abstentions Broker Non-Votes 57,172,731 13,324,080 170,172 6,884,223 Based on the votes set forth above, the NEOs’ compensation was approved. Proposal 3. With respect to the proposal, on an advisory basis, whether the shareholder vote to approve the NEOs’ compensation should occur every 1, 2, or 3 years, the votes were cast for the proposal as set forth below: Votes For 1 Year Votes For 2 Years Votes For 3 Years Abstentions Broker Non-Votes 66,076,265 43,060 4,352,683 194,975 6,884,223",
+      "metadata": {
+        "node_id": "p2_n1",
+        "parent_id": null,
+        "score": 0.8605327387352186,
+        "lexical_score": 0.22053273873521864,
+        "structural_score": 0.0,
+        "entity_score": 0.64,
+        "phrase_boost": 0.0,
+        "matched_terms": [
+          "votes"
+        ],
+        "matched_entities": [
+          "broker non-votes",
+          "non-votes",
+          "votes",
+          "votes for",
+          "votes for votes against abstentions",
+          "year votes for",
+          "years abstentions broker non-votes",
+          "years votes for"
+        ]
+      }
+    },
+    {
+      "document_id": "FOOTLOCKER_2022_8K_dated-2022-05-20",
+      "page": 3,
+      "section": "Item 8.01.",
+      "text": "Item 8.01. Other Events. On May 18, 2022, in light of Matthew McKenna’s retirement, the Board designated Ms. Nicosia as the “audit committee financial expert.” In connection with this designation, the Board determined that Ms. Nicosia qualifies as an “audit committee financial expert,” as defined by the rules under the Securities Exchange Act of 1934, as amended (the “Exchange Act”), because of her relevant experience as president of an operating unit of a large multinational corporation. She has supervised the finance and accounting professionals responsible for, and personally analyzed and evaluated, financial statements, as well as internal controls over financial reporting. She is also f",
+      "metadata": {
+        "node_id": "p3_n0",
+        "parent_id": "section_p3",
+        "score": 0.4340960685600117,
+        "lexical_score": 0.09409606856001167,
+        "structural_score": 0.18,
+        "entity_score": 0.16,
+        "phrase_boost": 0.0,
+        "matched_terms": [
+          "board",
+          "who"
+        ],
+        "matched_entities": [
+          "audit committee. the board",
+          "board"
+        ]
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "build_document_tree",
+      "target": "FOOTLOCKER_2022_8K_dated-2022-05-20.pdf",
+      "metadata": {
+        "page_count": 4,
+        "node_count": 6,
+        "node_words": 320
+      }
+    },
+    {
+      "step": 2,
+      "action": "build_entity_graph",
+      "target": "lightweight_entity_cooccurrence_graph",
+      "metadata": {
+        "entity_count": 291,
+        "edge_count": 2303,
+        "entity_top_k": 8
+      }
+    },
+    {
+      "step": 3,
+      "action": "rank_tree_graph_node",
+      "target": "p2_n1",
+      "metadata": {
+        "rank": 1,
+        "page": 2,
+        "section": "Page 2",
+        "score": 0.8605327387352186,
+        "matched_terms": [
+          "votes"
+        ],
+        "matched_entities": [
+          "broker non-votes",
+          "non-votes",
+          "votes",
+          "votes for",
+          "votes for votes against abstentions",
+          "year votes for",
+          "years abstentions broker non-votes",
+          "years votes for"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "rank_tree_graph_node",
+      "target": "p2_n0",
+      "metadata": {
+        "rank": 2,
+        "page": 2,
+        "section": "Page 2",
+        "score": 0.7972171338478565,
+        "matched_terms": [
+          "board",
+          "nominees",
+          "votes"
+        ],
+        "matched_entities": [
+          "abstentions broker non-votes virginia c",
+          "board",
+          "broker non-votes",
+          "name votes for votes against",
+          "non-votes",
+          "votes",
+          "votes for votes against abstentions"
+        ]
+      }
+    },
+    {
+      "step": 5,
+      "action": "rank_tree_graph_node",
+      "target": "p3_n0",
+      "metadata": {
+        "rank": 3,
+        "page": 3,
+        "section": "Item 8.01.",
+        "score": 0.4340960685600117,
+        "matched_terms": [
+          "board",
+          "who"
+        ],
+        "matched_entities": [
+          "audit committee. the board",
+          "board"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": null,
+    "output": null,
+    "total": null
+  },
+  "latency_ms": 13,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\FOOTLOCKER_2022_8K_dated-2022-05-20.pdf",
+    "page_count": 4,
+    "node_count": 6,
+    "entity_count": 291,
+    "edge_count": 2303,
+    "retrieve_top_k": 12,
+    "max_citations": 3,
+    "inspiration": "BookRAG-style tree plus entity graph plus tree-node mapping; independently implemented for BenchLab.",
+    "llm_enabled": false
+  }
+}

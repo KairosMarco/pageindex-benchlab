@@ -1,0 +1,173 @@
+{
+  "method": "structured_tree_graph_rag",
+  "question_id": "fb_exp_021",
+  "question": "As of FY2023Q1, why did Pepsico raise full year guidance for FY2023?",
+  "answer": "Structured RAG retrieved the most relevant document tree nodes and entity-linked passages. Use the cited pages as supporting evidence: [PAGE 1], [PAGE 3], [PAGE 10].",
+  "citations": [
+    {
+      "document_id": "PEPSICO_2023Q1_EARNINGS",
+      "page": 1,
+      "section": "Page 1",
+      "text": "PepsiCo Reports First-Quarter 2023 Results; Raises Full-Year Guidance Reported (GAAP) First-Quarter 2023 Results First-Quarter Net revenue growth 10.2% Foreign exchange impact on net revenue (2.5)% Earnings per share (EPS) $1.40 EPS change (54)% Foreign exchange impact on EPS (2)% Organic/Core (non-GAAP)1 First-Quarter 2023 Results First-Quarter Organic revenue growth 14.3% Core EPS $1.50 Core constant currency EPS change 18% PURCHASE, N.Y. - April 25, 2023 - PepsiCo, Inc. (NASDAQ: PEP) today reported results for the first quarter 2023. “We are very pleased with our performance and business momentum as our categories and geographies remained resilient during the first quarter. Given our stro",
+      "metadata": {
+        "node_id": "p1_n0",
+        "parent_id": null,
+        "score": 0.4397868506955712,
+        "lexical_score": 0.19978685069557126,
+        "structural_score": 0.0,
+        "entity_score": 0.24,
+        "phrase_boost": 0.0,
+        "matched_terms": [
+          "for",
+          "full",
+          "guidance"
+        ],
+        "matched_entities": [
+          "full-year",
+          "guidance",
+          "raises full-year guidance reported"
+        ]
+      }
+    },
+    {
+      "document_id": "PEPSICO_2023Q1_EARNINGS",
+      "page": 3,
+      "section": "Page 3",
+      "text": "Guidance and Outlook The Company provides guidance on a non-GAAP basis as we cannot predict certain elements which are included in reported GAAP results, including the impact of foreign exchange translation and commodity mark-to-market net impacts. For fiscal year 2023, the Company now expects to deliver 8 percent organic revenue growth (previously 6 percent), and 9 percent core constant currency EPS growth (previously 8 percent). Consistent with its previous guidance for 2023, the Company continues to expect: • A core annual effective tax rate of 20 percent; and • Total cash returns to shareholders of approximately $7.7 billion, comprised of dividends of $6.7 billion and share repurchases o",
+      "metadata": {
+        "node_id": "p3_n0",
+        "parent_id": null,
+        "score": 0.26311558263910473,
+        "lexical_score": 0.1031155826391047,
+        "structural_score": 0.0,
+        "entity_score": 0.16,
+        "phrase_boost": 0.0,
+        "matched_terms": [
+          "for",
+          "guidance"
+        ],
+        "matched_entities": [
+          "for",
+          "guidance"
+        ]
+      }
+    },
+    {
+      "document_id": "PEPSICO_2023Q1_EARNINGS",
+      "page": 10,
+      "section": "Page 10",
+      "text": "ctivities and mix resulting from selling varying products in different package sizes and in different countries. Organic revenue growth: A measure that adjusts for the impacts of foreign exchange translation, acquisitions and divestitures and every five or six years, the impact of an additional week of results (53rd reporting week), including in our fourth quarter 2022 financial results. We believe organic revenue growth provides useful information in evaluating the results of our business because it excludes items that we believe are not indicative of ongoing performance or that we believe impact comparability with the prior year. 2023 guidance Our 2023 organic revenue growth guidance exclu",
+      "metadata": {
+        "node_id": "p10_n1",
+        "parent_id": null,
+        "score": 0.25801910905743336,
+        "lexical_score": 0.25801910905743336,
+        "structural_score": 0.0,
+        "entity_score": 0.0,
+        "phrase_boost": 0.0,
+        "matched_terms": [
+          "for",
+          "full",
+          "guidance"
+        ],
+        "matched_entities": []
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "build_document_tree",
+      "target": "PEPSICO_2023Q1_EARNINGS.pdf",
+      "metadata": {
+        "page_count": 16,
+        "node_count": 24,
+        "node_words": 320
+      }
+    },
+    {
+      "step": 2,
+      "action": "build_entity_graph",
+      "target": "lightweight_entity_cooccurrence_graph",
+      "metadata": {
+        "entity_count": 663,
+        "edge_count": 7456,
+        "entity_top_k": 8
+      }
+    },
+    {
+      "step": 3,
+      "action": "rank_tree_graph_node",
+      "target": "p1_n0",
+      "metadata": {
+        "rank": 1,
+        "page": 1,
+        "section": "Page 1",
+        "score": 0.4397868506955712,
+        "matched_terms": [
+          "for",
+          "full",
+          "guidance"
+        ],
+        "matched_entities": [
+          "full-year",
+          "guidance",
+          "raises full-year guidance reported"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "rank_tree_graph_node",
+      "target": "p3_n0",
+      "metadata": {
+        "rank": 2,
+        "page": 3,
+        "section": "Page 3",
+        "score": 0.26311558263910473,
+        "matched_terms": [
+          "for",
+          "guidance"
+        ],
+        "matched_entities": [
+          "for",
+          "guidance"
+        ]
+      }
+    },
+    {
+      "step": 5,
+      "action": "rank_tree_graph_node",
+      "target": "p10_n1",
+      "metadata": {
+        "rank": 3,
+        "page": 10,
+        "section": "Page 10",
+        "score": 0.25801910905743336,
+        "matched_terms": [
+          "for",
+          "full",
+          "guidance"
+        ],
+        "matched_entities": []
+      }
+    }
+  ],
+  "token_usage": {
+    "input": null,
+    "output": null,
+    "total": null
+  },
+  "latency_ms": 33,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\PEPSICO_2023Q1_EARNINGS.pdf",
+    "page_count": 16,
+    "node_count": 24,
+    "entity_count": 663,
+    "edge_count": 7456,
+    "retrieve_top_k": 12,
+    "max_citations": 3,
+    "inspiration": "BookRAG-style tree plus entity graph plus tree-node mapping; independently implemented for BenchLab.",
+    "llm_enabled": false
+  }
+}

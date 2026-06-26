@@ -1,0 +1,219 @@
+{
+  "method": "structured_tree_graph_rag",
+  "question_id": "fb_mvp_008",
+  "question": "What is the FY2016 COGS for Microsoft? Please state answer in USD millions. Provide a response to the question by primarily using the statement of income.",
+  "answer": "Structured RAG retrieved the most relevant document tree nodes and entity-linked passages. Use the cited pages as supporting evidence: [PAGE 52], [PAGE 33], [PAGE 35].",
+  "citations": [
+    {
+      "document_id": "MICROSOFT_2016_10K",
+      "page": 52,
+      "section": "PART II",
+      "text": "Table of Contents PART II Item 8 ITEM 8. FINANCIAL STATEMENTS AND SUPPLEMENTARY DATA INCOME STATEMENTS (In millions, except per share amounts) Year Ended June 30, 2016 2015 2014 Revenue: Product $ 61,502 $ 75,956 $ 72,948 Service and other 23,818 17,624 13,885 Total revenue 85,320 93,580 86,833 Cost of revenue: Product 17,880 21,410 16,681 Service and other 14,900 11,628 10,397 Total cost of revenue 32,780 33,038 27,078 Gross margin 52,540 60,542 59,755 Research and development 11,988 12,046 11,381 Sales and marketing 14,697 15,713 15,811 General and administrative 4,563 4,611 4,677 Impairment, integration, and restructuring 1,110 10,011 127 Operating income 20,182 18,161 27,759 Other income",
+      "metadata": {
+        "node_id": "p52_n0",
+        "parent_id": "section_p27",
+        "score": 3.40110908347447,
+        "lexical_score": 0.2411090834744701,
+        "structural_score": 0.18,
+        "entity_score": 0.48,
+        "phrase_boost": 2.5,
+        "matched_terms": [
+          "cost",
+          "earnings",
+          "for",
+          "income",
+          "millions",
+          "revenue",
+          "sales"
+        ],
+        "matched_entities": [
+          "cost",
+          "earnings",
+          "income",
+          "income statements",
+          "revenue",
+          "sales"
+        ]
+      }
+    },
+    {
+      "document_id": "MICROSOFT_2016_10K",
+      "page": 33,
+      "section": "PART II",
+      "text": "Table of Contents PART II Item 7 Fiscal year 2015 compared with fiscal year 2014 Revenue increased $6.7 billion or 8%, primarily due to higher revenue from More Personal Computing and Intelligent Cloud. More Personal Computing revenue increased, primarily due to higher revenue from Devices, search advertising and Gaming, offset in part by a decline in Windows revenue. Intelligent Cloud revenue increased, primarily due to higher revenue from server products and cloud services. Revenue included an unfavorable foreign currency impact of approximately 2%. Operating income decreased $9.6 billion or 35%, primarily due to impairment, integration, and restructuring expenses in fiscal year 2015, as w",
+      "metadata": {
+        "node_id": "p33_n0",
+        "parent_id": "section_p27",
+        "score": 3.2030304323597365,
+        "lexical_score": 0.12303043235973667,
+        "structural_score": 0.18,
+        "entity_score": 0.4,
+        "phrase_boost": 2.5,
+        "matched_terms": [
+          "cost",
+          "for",
+          "income",
+          "millions",
+          "operations",
+          "primarily",
+          "revenue",
+          "sales"
+        ],
+        "matched_entities": [
+          "cost",
+          "operations",
+          "revenue",
+          "revenue productivity",
+          "segment results of operations"
+        ]
+      }
+    },
+    {
+      "document_id": "MICROSOFT_2016_10K",
+      "page": 35,
+      "section": "PART II",
+      "text": "revenue included an unfavorable foreign currency impact of approximately 2%. • Gaming revenue increased $132 million or 1%, primarily due to higher revenue from Xbox Live and video games, offset in part by lower Xbox hardware revenue. Xbox Live revenue increased 17%, driven by higher revenue per transaction and volume of transactions. Video games revenue grew 34%, driven by the launch of Halo 5 and sales of Minecraft. We acquired Mojang AB (“Mojang”), the Swedish video game developer of the Minecraft gaming franchise, in November 2014. Xbox hardware revenue decreased 16%, mainly due to lower prices of Xbox One consoles sold and a decline in Xbox 360 console volume, offset in part by higher X",
+      "metadata": {
+        "node_id": "p35_n1",
+        "parent_id": "section_p27",
+        "score": 3.149816602371442,
+        "lexical_score": 0.1498166023714418,
+        "structural_score": 0.18,
+        "entity_score": 0.32,
+        "phrase_boost": 2.5,
+        "matched_terms": [
+          "cost",
+          "income",
+          "primarily",
+          "revenue",
+          "sales"
+        ],
+        "matched_entities": [
+          "cost",
+          "dynamics. revenue",
+          "revenue",
+          "sales"
+        ]
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "build_document_tree",
+      "target": "MICROSOFT_2016_10K.pdf",
+      "metadata": {
+        "page_count": 121,
+        "node_count": 291,
+        "node_words": 320
+      }
+    },
+    {
+      "step": 2,
+      "action": "build_entity_graph",
+      "target": "lightweight_entity_cooccurrence_graph",
+      "metadata": {
+        "entity_count": 3164,
+        "edge_count": 50988,
+        "entity_top_k": 8
+      }
+    },
+    {
+      "step": 3,
+      "action": "rank_tree_graph_node",
+      "target": "p52_n0",
+      "metadata": {
+        "rank": 1,
+        "page": 52,
+        "section": "PART II",
+        "score": 3.40110908347447,
+        "matched_terms": [
+          "cost",
+          "earnings",
+          "for",
+          "income",
+          "millions",
+          "revenue",
+          "sales"
+        ],
+        "matched_entities": [
+          "cost",
+          "earnings",
+          "income",
+          "income statements",
+          "revenue",
+          "sales"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "rank_tree_graph_node",
+      "target": "p33_n0",
+      "metadata": {
+        "rank": 2,
+        "page": 33,
+        "section": "PART II",
+        "score": 3.2030304323597365,
+        "matched_terms": [
+          "cost",
+          "for",
+          "income",
+          "millions",
+          "operations",
+          "primarily",
+          "revenue",
+          "sales"
+        ],
+        "matched_entities": [
+          "cost",
+          "operations",
+          "revenue",
+          "revenue productivity",
+          "segment results of operations"
+        ]
+      }
+    },
+    {
+      "step": 5,
+      "action": "rank_tree_graph_node",
+      "target": "p35_n1",
+      "metadata": {
+        "rank": 3,
+        "page": 35,
+        "section": "PART II",
+        "score": 3.149816602371442,
+        "matched_terms": [
+          "cost",
+          "income",
+          "primarily",
+          "revenue",
+          "sales"
+        ],
+        "matched_entities": [
+          "cost",
+          "dynamics. revenue",
+          "revenue",
+          "sales"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": null,
+    "output": null,
+    "total": null
+  },
+  "latency_ms": 239,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\MICROSOFT_2016_10K.pdf",
+    "page_count": 121,
+    "node_count": 291,
+    "entity_count": 3164,
+    "edge_count": 50988,
+    "retrieve_top_k": 12,
+    "max_citations": 3,
+    "inspiration": "BookRAG-style tree plus entity graph plus tree-node mapping; independently implemented for BenchLab.",
+    "llm_enabled": false
+  }
+}

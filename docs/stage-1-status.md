@@ -34,6 +34,7 @@ Expanded 25-question FinanceBench run:
 | LlamaIndex Vector RAG | `1.000` | `0.360` | `0.920` | `2,543` | `16,497 ms` |
 | LlamaIndex Hybrid RAG | `1.000` | `0.360` | `0.880` | `2,553` | `16,846 ms` |
 | Long-context LLM | `0.800` | `0.267` | `0.920` | `92,500` | `12,772 ms` |
+| Structured Tree-Graph RAG | `0.600` | `0.207` | not run | n/a | `310 ms` |
 
 Source:
 
@@ -41,17 +42,19 @@ Source:
 reports/expanded_cost_quality_summary.md
 ```
 
-Local structured retrieval smoke result:
+Local structured retrieval results:
 
-| Method | Subset | Evidence recall | Citation precision | Generated |
-|---|---|---:|---:|---:|
-| Structured Tree-Graph RAG | 12-question MVP | `0.667` | `0.222` | `12 / 12` |
+| Method | Subset | Evidence recall | Citation precision | Generated | Misses |
+|---|---|---:|---:|---:|---:|
+| Structured Tree-Graph RAG | 12-question MVP | `0.667` | `0.222` | `12 / 12` | n/a |
+| Structured Tree-Graph RAG | 25-question expanded | `0.600` | `0.207` | `25 / 25` | `10` |
 
 Source:
 
 ```text
 reports/structured_rag/status.md
 reports/structured_rag/evidence_eval_smoke.json
+reports/structured_rag/expanded_diagnostics.md
 ```
 
 ## PageIndex Findings

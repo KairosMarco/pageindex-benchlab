@@ -1,0 +1,197 @@
+{
+  "method": "structured_tree_graph_rag",
+  "question_id": "fb_exp_018",
+  "question": "Which region had the Highest EBITDAR Contribution for MGM during FY2022?",
+  "answer": "Structured RAG retrieved the most relevant document tree nodes and entity-linked passages. Use the cited pages as supporting evidence: [PAGE 15], [PAGE 14], [PAGE 8].",
+  "citations": [
+    {
+      "document_id": "MGMRESORTS_2022Q4_EARNINGS",
+      "page": 15,
+      "section": "MGM RESORTS INTERNATIONAL AND SUBSIDIARIES",
+      "text": "LAS VEGAS STRIP RESORTS NET REVENUES TO TABLE GAMES HOLD ADJUSTED LAS VEGAS STRIP RESORTS SAME-STORE NET REVENUES AND LAS VEGAS STRIP RESORTS ADJUSTED PROPERTY EBITDAR TO LAS VEGAS STRIP RESORTS SAME-STORE ADJUSTED PROPERTY EBITDAR AND TABLE GAMES HOLD ADJUSTED LAS VEGAS STRIP RESORTS SAME-STORE ADJUSTED PROPERTY EBITDAR (In thousands) (Unaudited) Three months ended Twelve months ended December 31, 2022 December 31, 2021 December 31, 2022 December 31, 2021 Las Vegas Strip Resorts net revenues $ 2,297,282 $ 1,806,686 $ 8,398,372 $ 4,737,185 Acquisitions(1) (317,689) — (2,226,495) (366,879) Dispositions(2) (137,802) (152,537) (559,858) (419,063) Las Vegas Strip Resorts same-store net revenues",
+      "metadata": {
+        "node_id": "p15_n0",
+        "parent_id": null,
+        "score": 0.5773240606614725,
+        "lexical_score": 0.09732406066147253,
+        "structural_score": 0.0,
+        "entity_score": 0.48,
+        "phrase_boost": 0.0,
+        "matched_terms": [
+          "ebitdar",
+          "for",
+          "had"
+        ],
+        "matched_entities": [
+          "adjusted property ebitdar",
+          "adjusted property ebitdar to las",
+          "ebitdar",
+          "property ebitdar",
+          "property ebitdar and table games",
+          "resorts same-store adjusted property ebitdar"
+        ]
+      }
+    },
+    {
+      "document_id": "MGMRESORTS_2022Q4_EARNINGS",
+      "page": 14,
+      "section": "MGM RESORTS INTERNATIONAL AND SUBSIDIARIES",
+      "text": "Page 14 of 15 MGM RESORTS INTERNATIONAL AND SUBSIDIARIES RECONCILIATION OF NET INCOME (LOSS) ATTRIBUTABLE TO MGM RESORTS INTERNATIONAL TO ADJUSTED EBITDAR (In thousands) (Unaudited) Three months ended Twelve months ended December 31, 2022 December 31, 2021 December 31, 2022 December 31, 2021 Net income attributable to MGM Resorts International $ 284,002 $ 131,013 $ 1,473,093 $ 1,254,370 Plus: Net loss attributable to noncontrolling interests (604,016) (14,926) (1,266,362) (45,981) Net income (loss) (320,014) 116,087 206,731 1,208,389 Provision for income taxes 285,937 31,152 697,068 253,415 Income (loss) before income taxes (34,077) 147,239 903,799 1,461,804 Non-operating (income) expense In",
+      "metadata": {
+        "node_id": "p14_n0",
+        "parent_id": null,
+        "score": 0.5277992227570093,
+        "lexical_score": 0.047799222757009305,
+        "structural_score": 0.0,
+        "entity_score": 0.48,
+        "phrase_boost": 0.0,
+        "matched_terms": [
+          "ebitdar",
+          "for"
+        ],
+        "matched_entities": [
+          "adjusted ebitdar",
+          "ebitdar",
+          "ebitdar to table games hold",
+          "property ebitdar",
+          "resorts adjusted property ebitdar",
+          "to adjusted ebitdar"
+        ]
+      }
+    },
+    {
+      "document_id": "MGMRESORTS_2022Q4_EARNINGS",
+      "page": 8,
+      "section": "Page 8",
+      "text": "segment Adjusted Property EBITDAR GAAP measure to Same-Store Adjusted Property EBITDAR is included in the financial schedules in this release. \"Table Games Hold Adjusted Las Vegas Strip Resorts Adjusted Property EBITDAR\" and \"Table Games Hold Adjusted Las Vegas Strip Resorts Same-Store Adjusted Property EBITDAR\" are supplemental non-GAAP financial measures, that, in addition to the reasons described above for the presentation of Adjusted Property EBITDAR and Same-Store Adjusted Property EBITDAR, are presented to adjust for the impact of certain variances in table games win percentages compared to the mid-point of the expected ranges. Table Games Hold Adjusted Las Vegas Strip Resorts Adjusted",
+      "metadata": {
+        "node_id": "p8_n1",
+        "parent_id": null,
+        "score": 0.503199590281385,
+        "lexical_score": 0.10319959028138496,
+        "structural_score": 0.0,
+        "entity_score": 0.4,
+        "phrase_boost": 0.0,
+        "matched_terms": [
+          "ebitdar",
+          "for"
+        ],
+        "matched_entities": [
+          "adjusted property ebitdar",
+          "adjusted property ebitdar gaap",
+          "ebitdar",
+          "property ebitdar",
+          "same-store adjusted property ebitdar"
+        ]
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "build_document_tree",
+      "target": "MGMRESORTS_2022Q4_EARNINGS.pdf",
+      "metadata": {
+        "page_count": 15,
+        "node_count": 32,
+        "node_words": 320
+      }
+    },
+    {
+      "step": 2,
+      "action": "build_entity_graph",
+      "target": "lightweight_entity_cooccurrence_graph",
+      "metadata": {
+        "entity_count": 937,
+        "edge_count": 10548,
+        "entity_top_k": 8
+      }
+    },
+    {
+      "step": 3,
+      "action": "rank_tree_graph_node",
+      "target": "p15_n0",
+      "metadata": {
+        "rank": 1,
+        "page": 15,
+        "section": "MGM RESORTS INTERNATIONAL AND SUBSIDIARIES",
+        "score": 0.5773240606614725,
+        "matched_terms": [
+          "ebitdar",
+          "for",
+          "had"
+        ],
+        "matched_entities": [
+          "adjusted property ebitdar",
+          "adjusted property ebitdar to las",
+          "ebitdar",
+          "property ebitdar",
+          "property ebitdar and table games",
+          "resorts same-store adjusted property ebitdar"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "rank_tree_graph_node",
+      "target": "p14_n0",
+      "metadata": {
+        "rank": 2,
+        "page": 14,
+        "section": "MGM RESORTS INTERNATIONAL AND SUBSIDIARIES",
+        "score": 0.5277992227570093,
+        "matched_terms": [
+          "ebitdar",
+          "for"
+        ],
+        "matched_entities": [
+          "adjusted ebitdar",
+          "ebitdar",
+          "ebitdar to table games hold",
+          "property ebitdar",
+          "resorts adjusted property ebitdar",
+          "to adjusted ebitdar"
+        ]
+      }
+    },
+    {
+      "step": 5,
+      "action": "rank_tree_graph_node",
+      "target": "p8_n1",
+      "metadata": {
+        "rank": 3,
+        "page": 8,
+        "section": "Page 8",
+        "score": 0.503199590281385,
+        "matched_terms": [
+          "ebitdar",
+          "for"
+        ],
+        "matched_entities": [
+          "adjusted property ebitdar",
+          "adjusted property ebitdar gaap",
+          "ebitdar",
+          "property ebitdar",
+          "same-store adjusted property ebitdar"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": null,
+    "output": null,
+    "total": null
+  },
+  "latency_ms": 68,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\MGMRESORTS_2022Q4_EARNINGS.pdf",
+    "page_count": 15,
+    "node_count": 32,
+    "entity_count": 937,
+    "edge_count": 10548,
+    "retrieve_top_k": 12,
+    "max_citations": 3,
+    "inspiration": "BookRAG-style tree plus entity graph plus tree-node mapping; independently implemented for BenchLab.",
+    "llm_enabled": false
+  }
+}

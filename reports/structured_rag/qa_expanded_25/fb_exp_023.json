@@ -1,0 +1,149 @@
+{
+  "method": "structured_tree_graph_rag",
+  "question_id": "fb_exp_023",
+  "question": "Did Pfizer grow its PPNE between FY20 and FY21?",
+  "answer": "Structured RAG retrieved the most relevant document tree nodes and entity-linked passages. Use the cited pages as supporting evidence: [PAGE 18], [PAGE 21], [PAGE 71].",
+  "citations": [
+    {
+      "document_id": "PFIZER_2021_10K",
+      "page": 18,
+      "section": "Page 18",
+      "text": "ttract and retain the best and brightest diverse talent, but also ensure they remain engaged and can thrive in an environment that is committed to helping them grow, succeed and contribute directly to achieving our purpose. As part of these efforts, we strive for an inclusive and empowering work environment, adopting practices to simplify processes and remove needless complexity, rewarding both performance and leadership skills, Pfizer Inc. 2021 Form 10-K 12",
+      "metadata": {
+        "node_id": "p18_n3",
+        "parent_id": "section_p17",
+        "score": 0.2320235453906601,
+        "lexical_score": 0.05202354539066013,
+        "structural_score": 0.18,
+        "entity_score": 0.0,
+        "phrase_boost": 0.0,
+        "matched_terms": [
+          "grow"
+        ],
+        "matched_entities": []
+      }
+    },
+    {
+      "document_id": "PFIZER_2021_10K",
+      "page": 21,
+      "section": "RESEARCH AND DEVELOPMENT",
+      "text": "instability or significant currency fluctuations or may have limited resources for healthcare spending. As a result of these and other factors, our strategy to grow in emerging markets may not be successful, and growth rates in these markets may not be sustainable. Government financing and economic pressures can lead to negative pricing pressure in various markets where governments take an active role in setting prices, access criteria (e.g., through health technology assessments) or other means of cost control. For additional information on government pricing pressures, see the Item 1. Business—Government Regulation and Price Constraints section in this Form 10-K. We continue to monitor the",
+      "metadata": {
+        "node_id": "p21_n2",
+        "parent_id": "section_p17",
+        "score": 0.23060696690631777,
+        "lexical_score": 0.050606966906317774,
+        "structural_score": 0.18,
+        "entity_score": 0.0,
+        "phrase_boost": 0.0,
+        "matched_terms": [
+          "grow"
+        ],
+        "matched_entities": []
+      }
+    },
+    {
+      "document_id": "PFIZER_2021_10K",
+      "page": 71,
+      "section": "Notes to Consolidated Financial Statements",
+      "text": "urement period adjustments were recorded to better reflect market participant assumptions about facts and circumstances existing as of the acquisition date and did not have a material impact on our consolidated statement of income for the year ended December 31, 2020. Therachon On July 1, 2019, we acquired all the remaining shares of Therachon, a privately-held clinical-stage biotechnology company focused on rare diseases, with assets in development for the treatment of achondroplasia, a genetic condition and the most common form of short-limb dwarfism, for $340 million upfront, plus potential milestone payments of up to $470 million contingent on the achievement of key milestones in the dev",
+      "metadata": {
+        "node_id": "p71_n0",
+        "parent_id": "section_p71",
+        "score": 0.23057417163438043,
+        "lexical_score": 0.05057417163438045,
+        "structural_score": 0.18,
+        "entity_score": 0.0,
+        "phrase_boost": 0.0,
+        "matched_terms": [
+          "did"
+        ],
+        "matched_entities": []
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "build_document_tree",
+      "target": "PFIZER_2021_10K.pdf",
+      "metadata": {
+        "page_count": 143,
+        "node_count": 499,
+        "node_words": 320
+      }
+    },
+    {
+      "step": 2,
+      "action": "build_entity_graph",
+      "target": "lightweight_entity_cooccurrence_graph",
+      "metadata": {
+        "entity_count": 5480,
+        "edge_count": 95661,
+        "entity_top_k": 8
+      }
+    },
+    {
+      "step": 3,
+      "action": "rank_tree_graph_node",
+      "target": "p18_n3",
+      "metadata": {
+        "rank": 1,
+        "page": 18,
+        "section": "Page 18",
+        "score": 0.2320235453906601,
+        "matched_terms": [
+          "grow"
+        ],
+        "matched_entities": []
+      }
+    },
+    {
+      "step": 4,
+      "action": "rank_tree_graph_node",
+      "target": "p21_n2",
+      "metadata": {
+        "rank": 2,
+        "page": 21,
+        "section": "RESEARCH AND DEVELOPMENT",
+        "score": 0.23060696690631777,
+        "matched_terms": [
+          "grow"
+        ],
+        "matched_entities": []
+      }
+    },
+    {
+      "step": 5,
+      "action": "rank_tree_graph_node",
+      "target": "p71_n0",
+      "metadata": {
+        "rank": 3,
+        "page": 71,
+        "section": "Notes to Consolidated Financial Statements",
+        "score": 0.23057417163438043,
+        "matched_terms": [
+          "did"
+        ],
+        "matched_entities": []
+      }
+    }
+  ],
+  "token_usage": {
+    "input": null,
+    "output": null,
+    "total": null
+  },
+  "latency_ms": 405,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\PFIZER_2021_10K.pdf",
+    "page_count": 143,
+    "node_count": 499,
+    "entity_count": 5480,
+    "edge_count": 95661,
+    "retrieve_top_k": 12,
+    "max_citations": 3,
+    "inspiration": "BookRAG-style tree plus entity graph plus tree-node mapping; independently implemented for BenchLab.",
+    "llm_enabled": false
+  }
+}

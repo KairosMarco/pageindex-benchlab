@@ -1,0 +1,201 @@
+{
+  "method": "structured_tree_graph_rag",
+  "question_id": "fb_exp_017",
+  "question": "Does Corning have positive working capital based on FY2022 data? If working capital is not a useful or relevant metric for this company, then please state that and explain why.",
+  "answer": "Structured RAG retrieved the most relevant document tree nodes and entity-linked passages. Use the cited pages as supporting evidence: [PAGE 34], [PAGE 65], [PAGE 99].",
+  "citations": [
+    {
+      "document_id": "CORNING_2022_10K",
+      "page": 34,
+      "section": "LIQUIDITY AND CAPITAL RESOURCES",
+      "text": "Table of Contents LIQUIDITY AND CAPITAL RESOURCES Our financial condition and liquidity are strong. We are not aware of any known trends, demands, commitments, events or uncertainties that will result in or that are reasonably likely to result in a material decrease in our liquidity. In addition, other than items discussed, there are no known material trends, favorable or unfavorable, in our capital resources and no expected material changes in the mix of such resources. Our major source of funding for 2023 and beyond will be our operating cash flow, our existing balances of cash and cash equivalents and proceeds from any issuances of debt. We believe we have sufficient liquidity to fund ope",
+      "metadata": {
+        "node_id": "p34_n0",
+        "parent_id": "section_p23",
+        "score": 0.7715329683782567,
+        "lexical_score": 0.1915329683782567,
+        "structural_score": 0.18,
+        "entity_score": 0.4,
+        "phrase_boost": 0.0,
+        "matched_terms": [
+          "capital",
+          "data",
+          "for",
+          "not",
+          "working"
+        ],
+        "matched_entities": [
+          "capital",
+          "contents liquidity and capital resources",
+          "data",
+          "key balance sheet data we",
+          "working"
+        ]
+      }
+    },
+    {
+      "document_id": "CORNING_2022_10K",
+      "page": 65,
+      "section": "Page 65",
+      "text": "for awards expected to ultimately vest. The number of awards expected to vest equals the total awards granted less an estimation of the number of forfeitures expected to occur prior to vesting. The Company reassesses the probability of vesting at each reporting period and adjusts share-based compensation expense based on its probability assessment. The forfeiture rate is calculated based on over 15 years of historical data and is adjusted if actual forfeitures differ significantly from the original estimates. The effect of any change in estimated forfeitures would be recognized through a cumulative adjustment that would be included in compensation cost in the period of the change in estimate",
+      "metadata": {
+        "node_id": "p65_n1",
+        "parent_id": "section_p63",
+        "score": 0.713557264010845,
+        "lexical_score": 0.05355726401084503,
+        "structural_score": 0.18,
+        "entity_score": 0.48,
+        "phrase_boost": 0.0,
+        "matched_terms": [
+          "based",
+          "data",
+          "for"
+        ],
+        "matched_entities": [
+          "for",
+          "performance-based",
+          "performance-based restricted stock units performance-based",
+          "restricted stock units time-based",
+          "time-based",
+          "time-based restricted stock"
+        ]
+      }
+    },
+    {
+      "document_id": "CORNING_2022_10K",
+      "page": 99,
+      "section": "Page 99",
+      "text": "Table of Contents 18. Share-Based Compensation The following table presents share-based compensation cost and the unrecognized compensation cost by award type (in millions): Amount of share-based compensation cost recognized Unrecognized compensation cost Weighted- average remaining term in years Year ended December 31, December 31, 2022 2021 2020 2022 Time-based restricted stock and restricted stock units $ 111 $ 94 $ 95 $ 150 2.7 Performance-based restricted stock units 52 79 81 17 1.4 Stock Options 7 9 23 2 0.4 Other 5 8 8 Total share-based compensation cost (1) $ 175 $ 190 $ 207 (1) The income tax benefit realized from share-based compensation was $16 million, $37 million and $12 million",
+      "metadata": {
+        "node_id": "p99_n0",
+        "parent_id": "section_p63",
+        "score": 0.6259689292099186,
+        "lexical_score": 0.045968929209918574,
+        "structural_score": 0.18,
+        "entity_score": 0.4,
+        "phrase_boost": 0.0,
+        "matched_terms": [
+          "based",
+          "for"
+        ],
+        "matched_entities": [
+          "performance-based",
+          "plans. incentive stock plans time-based",
+          "share-based",
+          "share-based compensation the",
+          "time-based"
+        ]
+      }
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "action": "build_document_tree",
+      "target": "CORNING_2022_10K.pdf",
+      "metadata": {
+        "page_count": 159,
+        "node_count": 335,
+        "node_words": 320
+      }
+    },
+    {
+      "step": 2,
+      "action": "build_entity_graph",
+      "target": "lightweight_entity_cooccurrence_graph",
+      "metadata": {
+        "entity_count": 3753,
+        "edge_count": 61288,
+        "entity_top_k": 8
+      }
+    },
+    {
+      "step": 3,
+      "action": "rank_tree_graph_node",
+      "target": "p34_n0",
+      "metadata": {
+        "rank": 1,
+        "page": 34,
+        "section": "LIQUIDITY AND CAPITAL RESOURCES",
+        "score": 0.7715329683782567,
+        "matched_terms": [
+          "capital",
+          "data",
+          "for",
+          "not",
+          "working"
+        ],
+        "matched_entities": [
+          "capital",
+          "contents liquidity and capital resources",
+          "data",
+          "key balance sheet data we",
+          "working"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "rank_tree_graph_node",
+      "target": "p65_n1",
+      "metadata": {
+        "rank": 2,
+        "page": 65,
+        "section": "Page 65",
+        "score": 0.713557264010845,
+        "matched_terms": [
+          "based",
+          "data",
+          "for"
+        ],
+        "matched_entities": [
+          "for",
+          "performance-based",
+          "performance-based restricted stock units performance-based",
+          "restricted stock units time-based",
+          "time-based",
+          "time-based restricted stock"
+        ]
+      }
+    },
+    {
+      "step": 5,
+      "action": "rank_tree_graph_node",
+      "target": "p99_n0",
+      "metadata": {
+        "rank": 3,
+        "page": 99,
+        "section": "Page 99",
+        "score": 0.6259689292099186,
+        "matched_terms": [
+          "based",
+          "for"
+        ],
+        "matched_entities": [
+          "performance-based",
+          "plans. incentive stock plans time-based",
+          "share-based",
+          "share-based compensation the",
+          "time-based"
+        ]
+      }
+    }
+  ],
+  "token_usage": {
+    "input": null,
+    "output": null,
+    "total": null
+  },
+  "latency_ms": 380,
+  "metadata": {
+    "pdf_path": "datasets\\raw\\financebench\\pdfs\\CORNING_2022_10K.pdf",
+    "page_count": 159,
+    "node_count": 335,
+    "entity_count": 3753,
+    "edge_count": 61288,
+    "retrieve_top_k": 12,
+    "max_citations": 3,
+    "inspiration": "BookRAG-style tree plus entity graph plus tree-node mapping; independently implemented for BenchLab.",
+    "llm_enabled": false
+  }
+}
