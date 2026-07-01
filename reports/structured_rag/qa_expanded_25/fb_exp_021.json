@@ -2,7 +2,7 @@
   "method": "structured_tree_graph_rag",
   "question_id": "fb_exp_021",
   "question": "As of FY2023Q1, why did Pepsico raise full year guidance for FY2023?",
-  "answer": "Structured RAG retrieved the most relevant document tree nodes and entity-linked passages. Use the cited pages as supporting evidence: [PAGE 1], [PAGE 3], [PAGE 10].",
+  "answer": "Structured RAG retrieved the most relevant document tree nodes and entity-linked passages. Use the cited pages as supporting evidence: [PAGE 1], [PAGE 3], [PAGE 2].",
   "citations": [
     {
       "document_id": "PEPSICO_2023Q1_EARNINGS",
@@ -12,13 +12,14 @@
       "metadata": {
         "node_id": "p1_n0",
         "parent_id": null,
-        "score": 0.4397868506955712,
-        "lexical_score": 0.19978685069557126,
+        "score": 0.8598826628667848,
+        "lexical_score": 0.19166913228406005,
         "structural_score": 0.0,
         "entity_score": 0.24,
         "phrase_boost": 0.0,
+        "position_boost": 0.35,
+        "page_aggregate_score": 0.0782135305827248,
         "matched_terms": [
-          "for",
           "full",
           "guidance"
         ],
@@ -37,39 +38,37 @@
       "metadata": {
         "node_id": "p3_n0",
         "parent_id": null,
-        "score": 0.26311558263910473,
-        "lexical_score": 0.1031155826391047,
+        "score": 0.5925959305784488,
+        "lexical_score": 0.10418141720226744,
         "structural_score": 0.0,
-        "entity_score": 0.16,
+        "entity_score": 0.08,
         "phrase_boost": 0.0,
+        "position_boost": 0.35,
+        "page_aggregate_score": 0.05841451337618139,
         "matched_terms": [
-          "for",
           "guidance"
         ],
         "matched_entities": [
-          "for",
           "guidance"
         ]
       }
     },
     {
       "document_id": "PEPSICO_2023Q1_EARNINGS",
-      "page": 10,
-      "section": "Page 10",
-      "text": "ctivities and mix resulting from selling varying products in different package sizes and in different countries. Organic revenue growth: A measure that adjusts for the impacts of foreign exchange translation, acquisitions and divestitures and every five or six years, the impact of an additional week of results (53rd reporting week), including in our fourth quarter 2022 financial results. We believe organic revenue growth provides useful information in evaluating the results of our business because it excludes items that we believe are not indicative of ongoing performance or that we believe impact comparability with the prior year. 2023 guidance Our 2023 organic revenue growth guidance exclu",
+      "page": 2,
+      "section": "Page 2",
+      "text": "Summary First-Quarter 2023 Performance Revenue Volume(a) GAAP Reported % Change Percentage Point Impact Organic % Change % Change Foreign Exchange Translation Acquisitions and Divestitures Convenient Foods Beverages Frito-Lay North America 15 — — 16 — Quaker Foods North America 9 1 — 10 (5) PepsiCo Beverages North America 8 — 3 12 (2) Latin America 21 (6) 1 16 1 5 Europe 5 5 4 14 (5) (11) Africa, Middle East and South Asia 2 28 — 29 (8) 15 Asia Pacific, Australia and New Zealand and China Region (1) 6 — 4 4 2 Total 10 2.5 2 14 (3) 1 Operating Profit and EPS GAAP Reported % Change Percentage Point Impact Core Constant Currency % Change Items Affecting Comparability Foreign Exchange Translatio",
       "metadata": {
-        "node_id": "p10_n1",
+        "node_id": "p2_n0",
         "parent_id": null,
-        "score": 0.25801910905743336,
-        "lexical_score": 0.25801910905743336,
+        "score": 0.4354750523084937,
+        "lexical_score": 0.0,
         "structural_score": 0.0,
         "entity_score": 0.0,
         "phrase_boost": 0.0,
-        "matched_terms": [
-          "for",
-          "full",
-          "guidance"
-        ],
+        "position_boost": 0.35,
+        "page_aggregate_score": 0.08547505230849374,
+        "matched_terms": [],
         "matched_entities": []
       }
     }
@@ -90,8 +89,8 @@
       "action": "build_entity_graph",
       "target": "lightweight_entity_cooccurrence_graph",
       "metadata": {
-        "entity_count": 663,
-        "edge_count": 7456,
+        "entity_count": 662,
+        "edge_count": 7434,
         "entity_top_k": 8
       }
     },
@@ -103,9 +102,8 @@
         "rank": 1,
         "page": 1,
         "section": "Page 1",
-        "score": 0.4397868506955712,
+        "score": 0.8598826628667848,
         "matched_terms": [
-          "for",
           "full",
           "guidance"
         ],
@@ -124,13 +122,11 @@
         "rank": 2,
         "page": 3,
         "section": "Page 3",
-        "score": 0.26311558263910473,
+        "score": 0.5925959305784488,
         "matched_terms": [
-          "for",
           "guidance"
         ],
         "matched_entities": [
-          "for",
           "guidance"
         ]
       }
@@ -138,17 +134,13 @@
     {
       "step": 5,
       "action": "rank_tree_graph_node",
-      "target": "p10_n1",
+      "target": "p2_n0",
       "metadata": {
         "rank": 3,
-        "page": 10,
-        "section": "Page 10",
-        "score": 0.25801910905743336,
-        "matched_terms": [
-          "for",
-          "full",
-          "guidance"
-        ],
+        "page": 2,
+        "section": "Page 2",
+        "score": 0.4354750523084937,
+        "matched_terms": [],
         "matched_entities": []
       }
     }
@@ -158,13 +150,13 @@
     "output": null,
     "total": null
   },
-  "latency_ms": 33,
+  "latency_ms": 43,
   "metadata": {
     "pdf_path": "datasets\\raw\\financebench\\pdfs\\PEPSICO_2023Q1_EARNINGS.pdf",
     "page_count": 16,
     "node_count": 24,
-    "entity_count": 663,
-    "edge_count": 7456,
+    "entity_count": 662,
+    "edge_count": 7434,
     "retrieve_top_k": 12,
     "max_citations": 3,
     "inspiration": "BookRAG-style tree plus entity graph plus tree-node mapping; independently implemented for BenchLab.",

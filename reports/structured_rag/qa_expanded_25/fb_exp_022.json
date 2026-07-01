@@ -2,7 +2,7 @@
   "method": "structured_tree_graph_rag",
   "question_id": "fb_exp_022",
   "question": "What is Coca Cola's FY2021 COGS % margin? Calculate what was asked by utilizing the line items clearly shown in the income statement.",
-  "answer": "Structured RAG retrieved the most relevant document tree nodes and entity-linked passages. Use the cited pages as supporting evidence: [PAGE 62], [PAGE 47], [PAGE 76].",
+  "answer": "Structured RAG retrieved the most relevant document tree nodes and entity-linked passages. Use the cited pages as supporting evidence: [PAGE 62], [PAGE 132], [PAGE 47].",
   "citations": [
     {
       "document_id": "COCACOLA_2021_10K",
@@ -12,11 +12,13 @@
       "metadata": {
         "node_id": "p62_n0",
         "parent_id": "section_p61",
-        "score": 3.4433404204812117,
-        "lexical_score": 0.12334042048121141,
+        "score": 6.405091036997136,
+        "lexical_score": 0.12512282017774998,
         "structural_score": 0.18,
         "entity_score": 0.64,
-        "phrase_boost": 2.5,
+        "phrase_boost": 5.0,
+        "position_boost": 0.0,
+        "page_aggregate_score": 0.4599682168193854,
         "matched_terms": [
           "cost",
           "goods",
@@ -36,48 +38,54 @@
     },
     {
       "document_id": "COCACOLA_2021_10K",
+      "page": 132,
+      "section": "ITEM 13. CERTAIN RELATIONSHIPS AND RELATED TRANSACTIONS, AND DIRECTOR INDEPENDENCE",
+      "text": "e information under the subheading “Director Independence and Related Person Transactions” under the principal heading “Governance” in the Company’s 2022 Proxy Statement is incorporated herein by reference. ITEM 14. PRINCIPAL ACCOUNTANT FEES AND SERVICES The information regarding Audit Fees, Audit-Related Fees, Tax Fees, All Other Fees and Audit Committee Pre-Approval of Audit and Permissible Non-Audit Services of Independent Auditors under the subheading “Item 3 Ratification of the Appointment of Ernst & Young LLP as Independent Auditors” under the principal heading “Audit Matters” in the Company’s 2022 Proxy Statement is incorporated herein by reference. Part IV ITEM 15. EXHIBITS AND FINAN",
+      "metadata": {
+        "node_id": "p132_n0",
+        "parent_id": "section_p132",
+        "score": 3.7246233615507376,
+        "lexical_score": 0.04765937214948603,
+        "structural_score": 0.18,
+        "entity_score": 0.48,
+        "phrase_boost": 2.5,
+        "position_boost": 0.0,
+        "page_aggregate_score": 0.5169639894012515,
+        "matched_terms": [
+          "income",
+          "statement"
+        ],
+        "matched_entities": [
+          "comprehensive income",
+          "exhibits and financial statement schedules",
+          "financial statement schedules",
+          "income",
+          "proxy statement",
+          "statement"
+        ]
+      }
+    },
+    {
+      "document_id": "COCACOLA_2021_10K",
       "page": 47,
       "section": "Page 47",
       "text": "fluctuates over time due to net operating revenues in some operating segments growing at a faster rate compared to other operating segments. For additional information about the impact of foreign currency fluctuations, refer to the heading “Liquidity, Capital Resources and Financial Position — Foreign Exchange” below. Gross Profit Margin Gross profit margin is a ratio calculated by dividing gross profit by net operating revenues. Management believes gross profit margin provides investors with useful information related to the profitability of our business prior to considering all of the operating costs incurred. Management uses this measure in making financial, operating and planning decisio",
       "metadata": {
         "node_id": "p47_n2",
         "parent_id": "section_p34",
-        "score": 3.026161799083801,
-        "lexical_score": 0.1861617990838011,
+        "score": 3.531440410662063,
+        "lexical_score": 0.19155069237871258,
         "structural_score": 0.18,
         "entity_score": 0.16,
         "phrase_boost": 2.5,
+        "position_boost": 0.0,
+        "page_aggregate_score": 0.49988971828335005,
         "matched_terms": [
           "margin"
         ],
         "matched_entities": [
           "gross profit margin gross",
           "margin"
-        ]
-      }
-    },
-    {
-      "document_id": "COCACOLA_2021_10K",
-      "page": 76,
-      "section": "Page 76",
-      "text": "following table presents information related to the major classes of assets and liabilities that were classified as held for sale and were included in the line items prepaid expenses and other current assets and accounts payable and accrued expenses, respectively, in our consolidated balance sheet (in millions): December 31, 2021 Cash, cash equivalents and short-term investments $ 228 Trade accounts receivable, less allowances 21 Inventories 55 Prepaid expenses and other current assets 36 Other noncurrent assets 9 Deferred income tax assets 6 Property, plant and equipment — net 282 Goodwill 37 Assets held for sale $ 674 Accounts payable and accrued expenses $ 139 Accrued income taxes 4 Other",
-      "metadata": {
-        "node_id": "p76_n0",
-        "parent_id": "section_p61",
-        "score": 2.9058552775351263,
-        "lexical_score": 0.06585527753512654,
-        "structural_score": 0.18,
-        "entity_score": 0.16,
-        "phrase_boost": 2.5,
-        "matched_terms": [
-          "income",
-          "items",
-          "operations",
-          "revenue"
-        ],
-        "matched_entities": [
-          "revenue",
-          "revenue recognition our company"
         ]
       }
     }
@@ -98,8 +106,8 @@
       "action": "build_entity_graph",
       "target": "lightweight_entity_cooccurrence_graph",
       "metadata": {
-        "entity_count": 4031,
-        "edge_count": 68997,
+        "entity_count": 4030,
+        "edge_count": 68808,
         "entity_top_k": 8
       }
     },
@@ -111,7 +119,7 @@
         "rank": 1,
         "page": 62,
         "section": "THE COCA-COLA COMPANY AND SUBSIDIARIES",
-        "score": 3.4433404204812117,
+        "score": 6.405091036997136,
         "matched_terms": [
           "cost",
           "goods",
@@ -132,34 +140,37 @@
     {
       "step": 4,
       "action": "rank_tree_graph_node",
-      "target": "p47_n2",
+      "target": "p132_n0",
       "metadata": {
         "rank": 2,
-        "page": 47,
-        "section": "Page 47",
-        "score": 3.026161799083801,
+        "page": 132,
+        "section": "ITEM 13. CERTAIN RELATIONSHIPS AND RELATED TRANSACTIONS, AND DIRECTOR INDEPENDENCE",
+        "score": 3.7246233615507376,
         "matched_terms": [
-          "margin"
+          "income",
+          "statement"
         ],
         "matched_entities": [
-          "gross profit margin gross",
-          "margin"
+          "comprehensive income",
+          "exhibits and financial statement schedules",
+          "financial statement schedules",
+          "income",
+          "proxy statement",
+          "statement"
         ]
       }
     },
     {
       "step": 5,
       "action": "rank_tree_graph_node",
-      "target": "p47_n1",
+      "target": "p47_n2",
       "metadata": {
         "rank": 3,
         "page": 47,
         "section": "Page 47",
-        "score": 2.936624567351435,
+        "score": 3.531440410662063,
         "matched_terms": [
-          "margin",
-          "revenue",
-          "sales"
+          "margin"
         ],
         "matched_entities": [
           "gross profit margin gross",
@@ -173,13 +184,13 @@
     "output": null,
     "total": null
   },
-  "latency_ms": 867,
+  "latency_ms": 1022,
   "metadata": {
     "pdf_path": "datasets\\raw\\financebench\\pdfs\\COCACOLA_2021_10K.pdf",
     "page_count": 183,
     "node_count": 483,
-    "entity_count": 4031,
-    "edge_count": 68997,
+    "entity_count": 4030,
+    "edge_count": 68808,
     "retrieve_top_k": 12,
     "max_citations": 3,
     "inspiration": "BookRAG-style tree plus entity graph plus tree-node mapping; independently implemented for BenchLab.",

@@ -3,13 +3,13 @@
     "method": "structured_tree_graph_rag",
     "question_count": 25,
     "generated_count": 25,
-    "average_evidence_recall": 0.6,
-    "average_citation_precision": 0.20666666666666664,
-    "full_hit_count": 15,
-    "partial_hit_count": 0,
-    "miss_count": 10,
-    "median_latency_ms": 264.0,
-    "average_latency_ms": 309.76,
+    "average_evidence_recall": 0.74,
+    "average_citation_precision": 0.25999999999999995,
+    "full_hit_count": 18,
+    "partial_hit_count": 1,
+    "miss_count": 6,
+    "median_latency_ms": 359.0,
+    "average_latency_ms": 372.56,
     "median_node_count": 291.0,
     "average_node_count": 277.16
   },
@@ -19,26 +19,28 @@
       "doc_name": "3M_2018_10K",
       "question_type": "metrics-generated",
       "question_reasoning": "Information extraction",
-      "evidence_recall": 0.0,
-      "citation_precision": 0.0,
+      "evidence_recall": 1.0,
+      "citation_precision": 0.3333333333333333,
       "gold_pages_one_indexed": [
         60
       ],
       "predicted_pages_one_indexed": [
+        49,
         46,
-        83,
-        3
+        60
       ],
-      "matched_pages_zero_indexed": [],
+      "matched_pages_zero_indexed": [
+        59
+      ],
       "citation_count": 3,
       "node_count": 400,
       "entity_count": 4482,
-      "edge_count": 79112,
-      "latency_ms": 493,
+      "edge_count": 78918,
+      "latency_ms": 695,
       "top_sections": [
+        "Page 49",
         "Page 46",
-        "Page 83",
-        "ITEM 8"
+        "Page 60"
       ]
     },
     {
@@ -52,8 +54,8 @@
         38
       ],
       "predicted_pages_one_indexed": [
-        38,
         44,
+        38,
         48
       ],
       "matched_pages_zero_indexed": [
@@ -61,12 +63,12 @@
       ],
       "citation_count": 3,
       "node_count": 213,
-      "entity_count": 2679,
-      "edge_count": 41119,
-      "latency_ms": 213,
+      "entity_count": 2678,
+      "edge_count": 40996,
+      "latency_ms": 188,
       "top_sections": [
-        "AMAZON.COM, INC.",
         "Page 44",
+        "AMAZON.COM, INC.",
         "Page 48"
       ]
     },
@@ -75,26 +77,28 @@
       "doc_name": "AMD_2022_10K",
       "question_type": "domain-relevant",
       "question_reasoning": "Information extraction",
-      "evidence_recall": 0.0,
-      "citation_precision": 0.0,
+      "evidence_recall": 1.0,
+      "citation_precision": 0.3333333333333333,
       "gold_pages_one_indexed": [
         4
       ],
       "predicted_pages_one_indexed": [
-        10,
-        111,
-        7
+        4,
+        7,
+        8
       ],
-      "matched_pages_zero_indexed": [],
+      "matched_pages_zero_indexed": [
+        3
+      ],
       "citation_count": 3,
       "node_count": 292,
-      "entity_count": 3318,
-      "edge_count": 49384,
-      "latency_ms": 477,
+      "entity_count": 3317,
+      "edge_count": 49233,
+      "latency_ms": 511,
       "top_sections": [
-        "Page 10",
-        "Page 111",
-        "Page 7"
+        "ITEM 1. BUSINESS",
+        "Page 7",
+        "Page 8"
       ]
     },
     {
@@ -102,28 +106,26 @@
       "doc_name": "AMD_2022_10K",
       "question_type": "domain-relevant",
       "question_reasoning": "Numerical reasoning",
-      "evidence_recall": 1.0,
-      "citation_precision": 0.3333333333333333,
+      "evidence_recall": 0.0,
+      "citation_precision": 0.0,
       "gold_pages_one_indexed": [
         58
       ],
       "predicted_pages_one_indexed": [
         101,
-        59,
-        58
+        62,
+        73
       ],
-      "matched_pages_zero_indexed": [
-        57
-      ],
+      "matched_pages_zero_indexed": [],
       "citation_count": 3,
       "node_count": 292,
-      "entity_count": 3318,
-      "edge_count": 49384,
-      "latency_ms": 415,
+      "entity_count": 3317,
+      "edge_count": 49233,
+      "latency_ms": 408,
       "top_sections": [
         "PART IV",
-        "Consolidated Statements of Cash Flows",
-        "Consolidated Statements of Cash Flows"
+        "Consolidated Statements of Operations.",
+        "Page 73"
       ]
     },
     {
@@ -131,28 +133,26 @@
       "doc_name": "BESTBUY_2023_10K",
       "question_type": "domain-relevant",
       "question_reasoning": "Logical reasoning (based on numerical reasoning) OR Logical reasoning",
-      "evidence_recall": 1.0,
-      "citation_precision": 0.3333333333333333,
+      "evidence_recall": 0.0,
+      "citation_precision": 0.0,
       "gold_pages_one_indexed": [
         40
       ],
       "predicted_pages_one_indexed": [
         25,
-        27,
-        40
+        26,
+        27
       ],
-      "matched_pages_zero_indexed": [
-        39
-      ],
+      "matched_pages_zero_indexed": [],
       "citation_count": 3,
       "node_count": 199,
-      "entity_count": 2575,
-      "edge_count": 37591,
-      "latency_ms": 174,
+      "entity_count": 2574,
+      "edge_count": 37464,
+      "latency_ms": 190,
       "top_sections": [
         "Page 25",
-        "Page 27",
-        "Page 40"
+        "Page 26",
+        "Page 27"
       ]
     },
     {
@@ -160,26 +160,28 @@
       "doc_name": "BOEING_2022_10K",
       "question_type": "domain-relevant",
       "question_reasoning": "Information extraction",
-      "evidence_recall": 0.0,
-      "citation_precision": 0.0,
+      "evidence_recall": 1.0,
+      "citation_precision": 0.3333333333333333,
       "gold_pages_one_indexed": [
         113
       ],
       "predicted_pages_one_indexed": [
-        20,
-        112,
-        54
+        19,
+        113,
+        20
       ],
-      "matched_pages_zero_indexed": [],
+      "matched_pages_zero_indexed": [
+        112
+      ],
       "citation_count": 3,
       "node_count": 380,
-      "entity_count": 3829,
-      "edge_count": 67393,
-      "latency_ms": 364,
+      "entity_count": 3828,
+      "edge_count": 67196,
+      "latency_ms": 388,
       "top_sections": [
-        "Page 20",
-        "Page 112",
-        "Item 8. Financial Statements and Supplementary Data"
+        "Page 19",
+        "Page 113",
+        "Page 20"
       ]
     },
     {
@@ -202,9 +204,9 @@
       ],
       "citation_count": 3,
       "node_count": 163,
-      "entity_count": 2182,
-      "edge_count": 30957,
-      "latency_ms": 156,
+      "entity_count": 2181,
+      "edge_count": 30877,
+      "latency_ms": 171,
       "top_sections": [
         "COSTCO WHOLESALE CORPORATION",
         "Note 4—Fair Value Measurement",
@@ -216,24 +218,22 @@
       "doc_name": "MICROSOFT_2016_10K",
       "question_type": "metrics-generated",
       "question_reasoning": "Information extraction",
-      "evidence_recall": 1.0,
-      "citation_precision": 0.3333333333333333,
+      "evidence_recall": 0.0,
+      "citation_precision": 0.0,
       "gold_pages_one_indexed": [
         52
       ],
       "predicted_pages_one_indexed": [
-        52,
-        33,
-        35
+        34,
+        35,
+        33
       ],
-      "matched_pages_zero_indexed": [
-        51
-      ],
+      "matched_pages_zero_indexed": [],
       "citation_count": 3,
       "node_count": 291,
-      "entity_count": 3164,
-      "edge_count": 50988,
-      "latency_ms": 242,
+      "entity_count": 3163,
+      "edge_count": 50854,
+      "latency_ms": 319,
       "top_sections": [
         "PART II",
         "PART II",
@@ -260,9 +260,9 @@
       ],
       "citation_count": 3,
       "node_count": 278,
-      "entity_count": 2987,
-      "edge_count": 46832,
-      "latency_ms": 256,
+      "entity_count": 2986,
+      "edge_count": 46678,
+      "latency_ms": 341,
       "top_sections": [
         "Page 69",
         "NIKE, INC.",
@@ -281,21 +281,21 @@
       ],
       "predicted_pages_one_indexed": [
         11,
-        7,
-        12
+        12,
+        7
       ],
       "matched_pages_zero_indexed": [
         11
       ],
       "citation_count": 3,
       "node_count": 29,
-      "entity_count": 668,
-      "edge_count": 7383,
-      "latency_ms": 33,
+      "entity_count": 667,
+      "edge_count": 7356,
+      "latency_ms": 55,
       "top_sections": [
         "EBITDA",
-        "Page 7",
-        "EBITDA"
+        "EBITDA",
+        "Page 7"
       ]
     },
     {
@@ -318,9 +318,9 @@
       ],
       "citation_count": 3,
       "node_count": 512,
-      "entity_count": 4397,
-      "edge_count": 115950,
-      "latency_ms": 581,
+      "entity_count": 4396,
+      "edge_count": 115805,
+      "latency_ms": 797,
       "top_sections": [
         "Page 85",
         "MARKET RISK MANAGEMENT",
@@ -347,7 +347,7 @@
       "node_count": 43,
       "entity_count": 1146,
       "edge_count": 14457,
-      "latency_ms": 124,
+      "latency_ms": 195,
       "top_sections": [
         "SIX MONTHS",
         "FULL YEAR",
@@ -374,9 +374,9 @@
       ],
       "citation_count": 3,
       "node_count": 278,
-      "entity_count": 3554,
-      "edge_count": 53107,
-      "latency_ms": 264,
+      "entity_count": 3553,
+      "edge_count": 52980,
+      "latency_ms": 359,
       "top_sections": [
         "ADOBE SYSTEMS INCORPORATED",
         "ADOBE SYSTEMS INCORPORATED",
@@ -395,19 +395,19 @@
       ],
       "predicted_pages_one_indexed": [
         118,
-        202,
-        119
+        136,
+        102
       ],
       "matched_pages_zero_indexed": [],
       "citation_count": 3,
       "node_count": 591,
-      "entity_count": 5076,
-      "edge_count": 89812,
-      "latency_ms": 574,
+      "entity_count": 5075,
+      "edge_count": 89568,
+      "latency_ms": 721,
       "top_sections": [
         "NOTE 4",
-        "Page 202",
-        "Page 119"
+        "Page 136",
+        "AMOUNTS BASED ON ESTIMATES AND ASSUMPTIONS"
       ]
     },
     {
@@ -429,9 +429,9 @@
       ],
       "citation_count": 2,
       "node_count": 6,
-      "entity_count": 291,
-      "edge_count": 2303,
-      "latency_ms": 15,
+      "entity_count": 290,
+      "edge_count": 2289,
+      "latency_ms": 25,
       "top_sections": [
         "Page 2",
         "Item 8.01."
@@ -449,21 +449,21 @@
       ],
       "predicted_pages_one_indexed": [
         68,
-        65,
-        84
+        76,
+        65
       ],
       "matched_pages_zero_indexed": [
         67
       ],
       "citation_count": 3,
       "node_count": 274,
-      "entity_count": 2745,
-      "edge_count": 44616,
-      "latency_ms": 229,
+      "entity_count": 2744,
+      "edge_count": 44461,
+      "latency_ms": 279,
       "top_sections": [
         "SQUARE, INC.",
-        "Item 8. FINANCIAL STATEMENTS AND SUPPLEMENTARY DATA",
-        "Page 84"
+        "SQUARE, INC.",
+        "Item 8. FINANCIAL STATEMENTS AND SUPPLEMENTARY DATA"
       ]
     },
     {
@@ -471,26 +471,28 @@
       "doc_name": "CORNING_2022_10K",
       "question_type": "domain-relevant",
       "question_reasoning": "Numerical reasoning OR Logical reasoning",
-      "evidence_recall": 0.0,
-      "citation_precision": 0.0,
+      "evidence_recall": 1.0,
+      "citation_precision": 0.3333333333333333,
       "gold_pages_one_indexed": [
         60
       ],
       "predicted_pages_one_indexed": [
-        34,
-        65,
-        99
+        20,
+        60,
+        104
       ],
-      "matched_pages_zero_indexed": [],
+      "matched_pages_zero_indexed": [
+        59
+      ],
       "citation_count": 3,
       "node_count": 335,
-      "entity_count": 3753,
-      "edge_count": 61288,
-      "latency_ms": 384,
+      "entity_count": 3752,
+      "edge_count": 61129,
+      "latency_ms": 405,
       "top_sections": [
-        "LIQUIDITY AND CAPITAL RESOURCES",
-        "Page 65",
-        "Page 99"
+        "Item 1B. Unresolved Staff Comments",
+        "Consolidated Balance Sheets",
+        "Page 104"
       ]
     },
     {
@@ -504,20 +506,20 @@
         13
       ],
       "predicted_pages_one_indexed": [
-        15,
         14,
-        8
+        8,
+        9
       ],
       "matched_pages_zero_indexed": [],
       "citation_count": 3,
       "node_count": 32,
-      "entity_count": 937,
-      "edge_count": 10548,
-      "latency_ms": 69,
+      "entity_count": 936,
+      "edge_count": 10532,
+      "latency_ms": 98,
       "top_sections": [
         "MGM RESORTS INTERNATIONAL AND SUBSIDIARIES",
-        "MGM RESORTS INTERNATIONAL AND SUBSIDIARIES",
-        "Page 8"
+        "Page 8",
+        "Page 9"
       ]
     },
     {
@@ -533,20 +535,20 @@
       "predicted_pages_one_indexed": [
         86,
         66,
-        107
+        79
       ],
       "matched_pages_zero_indexed": [
         85
       ],
       "citation_count": 3,
       "node_count": 427,
-      "entity_count": 3696,
-      "edge_count": 65461,
-      "latency_ms": 378,
+      "entity_count": 3695,
+      "edge_count": 65284,
+      "latency_ms": 470,
       "top_sections": [
         "Consolidated Statements of Cash Flows",
         "Page 66",
-        "Page 107"
+        "ITEM 8. FINANCIAL STATEMENTS AND SUPPLEMENTARY DATA"
       ]
     },
     {
@@ -554,27 +556,29 @@
       "doc_name": "CVSHEALTH_2022_10K",
       "question_type": "domain-relevant",
       "question_reasoning": "Logical reasoning (based on numerical reasoning)",
-      "evidence_recall": 0.0,
-      "citation_precision": 0.0,
+      "evidence_recall": 0.5,
+      "citation_precision": 0.3333333333333333,
       "gold_pages_one_indexed": [
         108,
         110
       ],
       "predicted_pages_one_indexed": [
-        199,
-        27,
-        191
+        110,
+        118,
+        115
       ],
-      "matched_pages_zero_indexed": [],
+      "matched_pages_zero_indexed": [
+        109
+      ],
       "citation_count": 3,
       "node_count": 564,
-      "entity_count": 4816,
-      "edge_count": 83389,
-      "latency_ms": 581,
+      "entity_count": 4815,
+      "edge_count": 83178,
+      "latency_ms": 681,
       "top_sections": [
-        "Page 199",
-        "Page 27",
-        "Page 191"
+        "Consolidated Balance Sheets",
+        "Page 118",
+        "Page 115"
       ]
     },
     {
@@ -590,20 +594,20 @@
       "predicted_pages_one_indexed": [
         1,
         3,
-        10
+        2
       ],
       "matched_pages_zero_indexed": [
         0
       ],
       "citation_count": 3,
       "node_count": 24,
-      "entity_count": 663,
-      "edge_count": 7456,
-      "latency_ms": 34,
+      "entity_count": 662,
+      "edge_count": 7434,
+      "latency_ms": 45,
       "top_sections": [
         "Page 1",
         "Page 3",
-        "Page 10"
+        "Page 2"
       ]
     },
     {
@@ -618,21 +622,21 @@
       ],
       "predicted_pages_one_indexed": [
         62,
-        47,
-        76
+        132,
+        47
       ],
       "matched_pages_zero_indexed": [
         61
       ],
       "citation_count": 3,
       "node_count": 483,
-      "entity_count": 4031,
-      "edge_count": 68997,
-      "latency_ms": 872,
+      "entity_count": 4030,
+      "edge_count": 68808,
+      "latency_ms": 1026,
       "top_sections": [
         "THE COCA-COLA COMPANY AND SUBSIDIARIES",
-        "Page 47",
-        "Page 76"
+        "ITEM 13. CERTAIN RELATIONSHIPS AND RELATED TRANSACTIONS, AND DIRECTOR INDEPENDENCE",
+        "Page 47"
       ]
     },
     {
@@ -640,26 +644,28 @@
       "doc_name": "PFIZER_2021_10K",
       "question_type": "novel-generated",
       "question_reasoning": null,
-      "evidence_recall": 0.0,
-      "citation_precision": 0.0,
+      "evidence_recall": 1.0,
+      "citation_precision": 0.3333333333333333,
       "gold_pages_one_indexed": [
         59
       ],
       "predicted_pages_one_indexed": [
-        18,
-        21,
-        71
+        61,
+        53,
+        59
       ],
-      "matched_pages_zero_indexed": [],
+      "matched_pages_zero_indexed": [
+        58
+      ],
       "citation_count": 3,
       "node_count": 499,
-      "entity_count": 5480,
-      "edge_count": 95661,
-      "latency_ms": 410,
+      "entity_count": 5479,
+      "edge_count": 95476,
+      "latency_ms": 497,
       "top_sections": [
-        "Page 18",
-        "RESEARCH AND DEVELOPMENT",
-        "Notes to Consolidated Financial Statements"
+        "Consolidated Statements of Cash Flows",
+        "Page 53",
+        "Consolidated Balance Sheets"
       ]
     },
     {
@@ -673,22 +679,22 @@
         50
       ],
       "predicted_pages_one_indexed": [
-        69,
         50,
-        100
+        69,
+        103
       ],
       "matched_pages_zero_indexed": [
         49
       ],
       "citation_count": 3,
       "node_count": 311,
-      "entity_count": 3891,
-      "edge_count": 58723,
-      "latency_ms": 385,
+      "entity_count": 3890,
+      "edge_count": 58603,
+      "latency_ms": 421,
       "top_sections": [
-        "Page 69",
         "Consolidated Balance Sheets",
-        "PART IV"
+        "Page 69",
+        "Page 103"
       ]
     },
     {
@@ -696,109 +702,111 @@
       "doc_name": "ULTABEAUTY_2023Q4_EARNINGS",
       "question_type": "novel-generated",
       "question_reasoning": null,
-      "evidence_recall": 0.0,
-      "citation_precision": 0.0,
+      "evidence_recall": 1.0,
+      "citation_precision": 0.3333333333333333,
       "gold_pages_one_indexed": [
         2
       ],
       "predicted_pages_one_indexed": [
+        2,
         6,
-        1,
         3
       ],
-      "matched_pages_zero_indexed": [],
+      "matched_pages_zero_indexed": [
+        1
+      ],
       "citation_count": 3,
       "node_count": 13,
-      "entity_count": 619,
-      "edge_count": 5717,
-      "latency_ms": 21,
+      "entity_count": 618,
+      "edge_count": 5687,
+      "latency_ms": 29,
       "top_sections": [
+        "Page 2",
         "Page 6",
-        "Page 1",
         "Page 3"
       ]
     }
   ],
   "misses": [
     {
-      "question_id": "fb_mvp_001",
-      "doc_name": "3M_2018_10K",
+      "question_id": "fb_mvp_004",
+      "doc_name": "AMD_2022_10K",
+      "question_type": "domain-relevant",
+      "question_reasoning": "Numerical reasoning",
+      "evidence_recall": 0.0,
+      "citation_precision": 0.0,
+      "gold_pages_one_indexed": [
+        58
+      ],
+      "predicted_pages_one_indexed": [
+        101,
+        62,
+        73
+      ],
+      "matched_pages_zero_indexed": [],
+      "citation_count": 3,
+      "node_count": 292,
+      "entity_count": 3317,
+      "edge_count": 49233,
+      "latency_ms": 408,
+      "top_sections": [
+        "PART IV",
+        "Consolidated Statements of Operations.",
+        "Page 73"
+      ]
+    },
+    {
+      "question_id": "fb_mvp_005",
+      "doc_name": "BESTBUY_2023_10K",
+      "question_type": "domain-relevant",
+      "question_reasoning": "Logical reasoning (based on numerical reasoning) OR Logical reasoning",
+      "evidence_recall": 0.0,
+      "citation_precision": 0.0,
+      "gold_pages_one_indexed": [
+        40
+      ],
+      "predicted_pages_one_indexed": [
+        25,
+        26,
+        27
+      ],
+      "matched_pages_zero_indexed": [],
+      "citation_count": 3,
+      "node_count": 199,
+      "entity_count": 2574,
+      "edge_count": 37464,
+      "latency_ms": 190,
+      "top_sections": [
+        "Page 25",
+        "Page 26",
+        "Page 27"
+      ]
+    },
+    {
+      "question_id": "fb_mvp_008",
+      "doc_name": "MICROSOFT_2016_10K",
       "question_type": "metrics-generated",
       "question_reasoning": "Information extraction",
       "evidence_recall": 0.0,
       "citation_precision": 0.0,
       "gold_pages_one_indexed": [
-        60
+        52
       ],
       "predicted_pages_one_indexed": [
-        46,
-        83,
-        3
+        34,
+        35,
+        33
       ],
       "matched_pages_zero_indexed": [],
       "citation_count": 3,
-      "node_count": 400,
-      "entity_count": 4482,
-      "edge_count": 79112,
-      "latency_ms": 493,
+      "node_count": 291,
+      "entity_count": 3163,
+      "edge_count": 50854,
+      "latency_ms": 319,
       "top_sections": [
-        "Page 46",
-        "Page 83",
-        "ITEM 8"
-      ]
-    },
-    {
-      "question_id": "fb_mvp_003",
-      "doc_name": "AMD_2022_10K",
-      "question_type": "domain-relevant",
-      "question_reasoning": "Information extraction",
-      "evidence_recall": 0.0,
-      "citation_precision": 0.0,
-      "gold_pages_one_indexed": [
-        4
-      ],
-      "predicted_pages_one_indexed": [
-        10,
-        111,
-        7
-      ],
-      "matched_pages_zero_indexed": [],
-      "citation_count": 3,
-      "node_count": 292,
-      "entity_count": 3318,
-      "edge_count": 49384,
-      "latency_ms": 477,
-      "top_sections": [
-        "Page 10",
-        "Page 111",
-        "Page 7"
-      ]
-    },
-    {
-      "question_id": "fb_mvp_006",
-      "doc_name": "BOEING_2022_10K",
-      "question_type": "domain-relevant",
-      "question_reasoning": "Information extraction",
-      "evidence_recall": 0.0,
-      "citation_precision": 0.0,
-      "gold_pages_one_indexed": [
-        113
-      ],
-      "predicted_pages_one_indexed": [
-        20,
-        112,
-        54
-      ],
-      "matched_pages_zero_indexed": [],
-      "citation_count": 3,
-      "node_count": 380,
-      "entity_count": 3829,
-      "edge_count": 67393,
-      "latency_ms": 364,
-      "top_sections": [
-        "Page 20",
-        "Page 112",
-        "Item 8. Financial Statements and Supplementary Data"
+        "PART II",
+        "PART II",
+        "PART II"
       ]
     },
     {
@@ -821,7 +829,7 @@
       "node_count": 43,
       "entity_count": 1146,
       "edge_count": 14457,
-      "latency_ms": 124,
+      "latency_ms": 195,
       "top_sections": [
         "SIX MONTHS",
         "FULL YEAR",
@@ -840,46 +848,19 @@
       ],
       "predicted_pages_one_indexed": [
         118,
-        202,
-        119
+        136,
+        102
       ],
       "matched_pages_zero_indexed": [],
       "citation_count": 3,
       "node_count": 591,
-      "entity_count": 5076,
-      "edge_count": 89812,
-      "latency_ms": 574,
+      "entity_count": 5075,
+      "edge_count": 89568,
+      "latency_ms": 721,
       "top_sections": [
         "NOTE 4",
-        "Page 202",
-        "Page 119"
-      ]
-    },
-    {
-      "question_id": "fb_exp_017",
-      "doc_name": "CORNING_2022_10K",
-      "question_type": "domain-relevant",
-      "question_reasoning": "Numerical reasoning OR Logical reasoning",
-      "evidence_recall": 0.0,
-      "citation_precision": 0.0,
-      "gold_pages_one_indexed": [
-        60
-      ],
-      "predicted_pages_one_indexed": [
-        34,
-        65,
-        99
-      ],
-      "matched_pages_zero_indexed": [],
-      "citation_count": 3,
-      "node_count": 335,
-      "entity_count": 3753,
-      "edge_count": 61288,
-      "latency_ms": 384,
-      "top_sections": [
-        "LIQUIDITY AND CAPITAL RESOURCES",
-        "Page 65",
-        "Page 99"
+        "Page 136",
+        "AMOUNTS BASED ON ESTIMATES AND ASSUMPTIONS"
       ]
     },
     {
@@ -893,104 +874,53 @@
         13
       ],
       "predicted_pages_one_indexed": [
-        15,
         14,
-        8
+        8,
+        9
       ],
       "matched_pages_zero_indexed": [],
       "citation_count": 3,
       "node_count": 32,
-      "entity_count": 937,
-      "edge_count": 10548,
-      "latency_ms": 69,
+      "entity_count": 936,
+      "edge_count": 10532,
+      "latency_ms": 98,
       "top_sections": [
         "MGM RESORTS INTERNATIONAL AND SUBSIDIARIES",
-        "MGM RESORTS INTERNATIONAL AND SUBSIDIARIES",
-        "Page 8"
+        "Page 8",
+        "Page 9"
       ]
-    },
+    }
+  ],
+  "partials": [
     {
       "question_id": "fb_exp_020",
       "doc_name": "CVSHEALTH_2022_10K",
       "question_type": "domain-relevant",
       "question_reasoning": "Logical reasoning (based on numerical reasoning)",
-      "evidence_recall": 0.0,
-      "citation_precision": 0.0,
+      "evidence_recall": 0.5,
+      "citation_precision": 0.3333333333333333,
       "gold_pages_one_indexed": [
         108,
         110
       ],
       "predicted_pages_one_indexed": [
-        199,
-        27,
-        191
+        110,
+        118,
+        115
       ],
-      "matched_pages_zero_indexed": [],
+      "matched_pages_zero_indexed": [
+        109
+      ],
       "citation_count": 3,
       "node_count": 564,
-      "entity_count": 4816,
-      "edge_count": 83389,
-      "latency_ms": 581,
+      "entity_count": 4815,
+      "edge_count": 83178,
+      "latency_ms": 681,
       "top_sections": [
-        "Page 199",
-        "Page 27",
-        "Page 191"
-      ]
-    },
-    {
-      "question_id": "fb_exp_023",
-      "doc_name": "PFIZER_2021_10K",
-      "question_type": "novel-generated",
-      "question_reasoning": null,
-      "evidence_recall": 0.0,
-      "citation_precision": 0.0,
-      "gold_pages_one_indexed": [
-        59
-      ],
-      "predicted_pages_one_indexed": [
-        18,
-        21,
-        71
-      ],
-      "matched_pages_zero_indexed": [],
-      "citation_count": 3,
-      "node_count": 499,
-      "entity_count": 5480,
-      "edge_count": 95661,
-      "latency_ms": 410,
-      "top_sections": [
-        "Page 18",
-        "RESEARCH AND DEVELOPMENT",
-        "Notes to Consolidated Financial Statements"
-      ]
-    },
-    {
-      "question_id": "fb_exp_025",
-      "doc_name": "ULTABEAUTY_2023Q4_EARNINGS",
-      "question_type": "novel-generated",
-      "question_reasoning": null,
-      "evidence_recall": 0.0,
-      "citation_precision": 0.0,
-      "gold_pages_one_indexed": [
-        2
-      ],
-      "predicted_pages_one_indexed": [
-        6,
-        1,
-        3
-      ],
-      "matched_pages_zero_indexed": [],
-      "citation_count": 3,
-      "node_count": 13,
-      "entity_count": 619,
-      "edge_count": 5717,
-      "latency_ms": 21,
-      "top_sections": [
-        "Page 6",
-        "Page 1",
-        "Page 3"
+        "Consolidated Balance Sheets",
+        "Page 118",
+        "Page 115"
       ]
     }
-  ],
-  "partials": []
+  ]
 }

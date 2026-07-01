@@ -9,7 +9,6 @@ from collections import Counter
 from pathlib import Path
 from typing import Any
 
-import fitz
 from litellm import completion
 
 from benchlab.schemas import BenchmarkQuestion, BenchmarkResult, Citation, RetrievalTraceStep, TokenUsage
@@ -142,8 +141,20 @@ def expanded_question_terms(question: BenchmarkQuestion) -> set[str]:
 
 
 def extract_pages(pdf_path: Path) -> list[dict[str, Any]]:
-    doc = fitz.open(pdf_path)
-    return [{"page": i + 1, "text": page.get_text()} for i, page in enumerate(doc)]
+    try:
+        import fitz  # type: ignore
+
+        doc = fitz.open(pdf_path)
+        return [{"page": i + 1, "text": page.get_text()} for i, page in enumerate(doc)]
+    except Exception:
+        from pypdf import PdfReader
+
+        # Keep the baseline runnable on Windows environments that block PyMuPDF's native DLL.
+        reader = PdfReader(str(pdf_path))
+        return [
+            {"page": i + 1, "text": page.extract_text() or ""}
+            for i, page in enumerate(reader.pages)
+        ]
 
 
 def chunk_page_text(page: int, text: str, chunk_words: int, overlap: int) -> list[dict[str, Any]]:

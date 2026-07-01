@@ -2,25 +2,26 @@
   "method": "structured_tree_graph_rag",
   "question_id": "fb_mvp_004",
   "question": "Among operations, investing, and financing activities, which brought in the most (or lost the least) cash flow for AMD in FY22?",
-  "answer": "Structured RAG retrieved the most relevant document tree nodes and entity-linked passages. Use the cited pages as supporting evidence: [PAGE 101], [PAGE 59], [PAGE 58].",
+  "answer": "Structured RAG retrieved the most relevant document tree nodes and entity-linked passages. Use the cited pages as supporting evidence: [PAGE 101], [PAGE 62], [PAGE 73].",
   "citations": [
     {
       "document_id": "AMD_2022_10K",
       "page": 101,
       "section": "PART IV",
-      "text": "Table of Contents PART IV ITEM 15. EXHIBITS, FINANCIAL STATEMENT SCHEDULES 1. Financial Statements The financial statements of AMD are set forth in Item 8 of this Annual Report on Form 10-K, as indexed below. Index to Consolidated Financial Statements Consolidated Statements of Operations 51 Consolidated Statements of Comprehensive Income 52 Consolidated Balance Sheets 53 Consolidated Statements of Stockholders’ Equity 54 Consolidated Statements of Cash Flows 55 Notes to Consolidated Financial Statements 57 Reports of Independent Registered Public Accounting Firm (PCAOB ID: 42) 90 All schedules have been omitted because the information is not required, is not applicable, or is included in th",
+      "text": "ents of AMD are set forth in Item 8 of this Annual Report on Form 10-K, as indexed below. Index to Consolidated Financial Statements Consolidated Statements of Operations 51 Consolidated Statements of Comprehensive Income 52 Consolidated Balance Sheets 53 Consolidated Statements of Stockholders’ Equity 54 Consolidated Statements of Cash Flows 55 Notes to Consolidated Financial Statements 57 Reports of Independent Registered Public Accounting Firm (PCAOB ID: 42) 90 All schedules have been omitted because the information is not required, is not applicable, or is included in the Notes to the Consolidated Financial Statements. 2. Exhibits The exhibits listed in the accompanying Index to Exhibits",
       "metadata": {
         "node_id": "p101_n0",
         "parent_id": "section_p99",
-        "score": 5.520249053565043,
-        "lexical_score": 0.02024905356504308,
+        "score": 5.138297572650275,
+        "lexical_score": 0.01829757265027544,
         "structural_score": 0.18,
         "entity_score": 0.32,
-        "phrase_boost": 5.0,
+        "phrase_boost": 4.3,
+        "position_boost": 0.0,
+        "page_aggregate_score": 0.32,
         "matched_terms": [
           "cash",
           "flows",
-          "for",
           "operations"
         ],
         "matched_entities": [
@@ -33,62 +34,51 @@
     },
     {
       "document_id": "AMD_2022_10K",
-      "page": 59,
-      "section": "Consolidated Statements of Cash Flows",
-      "text": "Table of Contents Advanced Micro Devices, Inc. Consolidated Statements of Cash Flows Year Ended December 31, 2022 December 25, 2021 December 26, 2020 (In millions) Supplemental cash flow information: Cash paid during the year for: Interest $ 85 $ 25 $ 31 Income taxes, net of refund $ 685 $ 35 $ 8 Non-cash investing and financing activities: Purchases of property and equipment, accrued but not paid $ 157 $ 72 $ 31 Issuance of common stock to settle convertible debt $ — $ 25 $ 217 Issuance of common stock and treasury stock for the acquisition of Xilinx $ 48,514 $ — $ — Fair value of replacement share-based awards related to acquisition of Xilinx $ 275 $ — $ — Transfer of assets for the acquis",
+      "page": 62,
+      "section": "Consolidated Statements of Operations.",
+      "text": "ion of the fair value of the purchase price of an acquisition, whichever comes first, any subsequent adjustments are recorded in the Consolidated Statements of Operations. Goodwill The Company performs its goodwill impairment analysis as of the first day of the fourth quarter of each year and, if certain events or circumstances indicate that an impairment loss may have been incurred, on a more frequent basis. The analysis may include both qualitative and quantitative factors to assess the likelihood of an impairment. The Company has the option to first perform qualitative testing to determine if it is more likely than not that the fair value of a",
       "metadata": {
-        "node_id": "p59_n0",
-        "parent_id": "section_p59",
-        "score": 3.344186469042132,
-        "lexical_score": 0.26418646904213217,
+        "node_id": "p62_n0",
+        "parent_id": "section_p62",
+        "score": 3.650305422193237,
+        "lexical_score": 0.010305422193236815,
         "structural_score": 0.18,
-        "entity_score": 0.4,
+        "entity_score": 0.16,
         "phrase_boost": 2.5,
+        "position_boost": 0.0,
+        "page_aggregate_score": 0.8,
         "matched_terms": [
-          "activities",
-          "cash",
-          "financing",
-          "flow",
-          "flows",
-          "for",
-          "investing",
-          "operating"
+          "operations"
         ],
         "matched_entities": [
-          "cash",
-          "cash flows year ended december",
-          "flows",
-          "non-cash",
-          "operating"
+          "operations",
+          "operations. goodwill the company"
         ]
       }
     },
     {
       "document_id": "AMD_2022_10K",
-      "page": 58,
-      "section": "Consolidated Statements of Cash Flows",
-      "text": "Table of Contents Advanced Micro Devices, Inc. Consolidated Statements of Cash Flows Year Ended December 31, 2022 December 25, 2021 December 26, 2020 (In millions) Cash flows from operating activities: Net income $ 1,320 $ 3,162 $ 2,490 Adjustments to reconcile net income to net cash provided by operating activities: Depreciation and amortization 4,174 407 312 Stock-based compensation 1,081 379 274 Amortization of debt discount and issuance costs — 5 14 Amortization of operating lease right-of-use assets 88 56 42 Amortization of inventory fair value adjustment 189 — — Loss on debt redemption, repurchase and conversion — 7 54 Loss on sale or disposal of property and equipment 16 34 33 Deferre",
+      "page": 73,
+      "section": "Page 73",
+      "text": "revenue $ 4,612 Operating income $ 2,247 Operating income attributable to Xilinx recorded under the Embedded and Data Center segments does not include $4.2 billion of amortization of acquisition- related intangibles, employee stock-based compensation expense and acquisition-related costs, which are recorded under the “All Other” segment. In 2022, Xilinx acquisition-related costs of $350 million were recorded under Cost of sales, Research and development, and Marketing, general and administrative expenses on the Company’s Consolidated Statements of Operations. Acquisition-related costs are primarily comprised of direct transaction costs, fair value adjustments for acquired inventory and certa",
       "metadata": {
-        "node_id": "p58_n0",
-        "parent_id": "section_p58",
-        "score": 3.2123798944776594,
-        "lexical_score": 0.29237989447765955,
+        "node_id": "p73_n1",
+        "parent_id": "section_p66",
+        "score": 3.424404455527254,
+        "lexical_score": 0.026679732688169186,
         "structural_score": 0.18,
         "entity_score": 0.24,
         "phrase_boost": 2.5,
+        "position_boost": 0.0,
+        "page_aggregate_score": 0.4777247228390849,
         "matched_terms": [
-          "activities",
-          "cash",
-          "financing",
-          "flows",
-          "for",
-          "investing",
-          "operating"
+          "operating",
+          "operations"
         ],
         "matched_entities": [
-          "cash",
-          "cash flows year ended december",
-          "flows"
+          "operating",
+          "operations",
+          "operations. acquisition-related"
         ]
       }
     }
@@ -109,8 +99,8 @@
       "action": "build_entity_graph",
       "target": "lightweight_entity_cooccurrence_graph",
       "metadata": {
-        "entity_count": 3318,
-        "edge_count": 49384,
+        "entity_count": 3317,
+        "edge_count": 49233,
         "entity_top_k": 8
       }
     },
@@ -122,11 +112,10 @@
         "rank": 1,
         "page": 101,
         "section": "PART IV",
-        "score": 5.520249053565043,
+        "score": 5.138297572650275,
         "matched_terms": [
           "cash",
           "flows",
-          "for",
           "operations"
         ],
         "matched_entities": [
@@ -140,53 +129,38 @@
     {
       "step": 4,
       "action": "rank_tree_graph_node",
-      "target": "p59_n0",
+      "target": "p62_n0",
       "metadata": {
         "rank": 2,
-        "page": 59,
-        "section": "Consolidated Statements of Cash Flows",
-        "score": 3.344186469042132,
+        "page": 62,
+        "section": "Consolidated Statements of Operations.",
+        "score": 3.650305422193237,
         "matched_terms": [
-          "activities",
-          "cash",
-          "financing",
-          "flow",
-          "flows",
-          "for",
-          "investing",
-          "operating"
+          "operations"
         ],
         "matched_entities": [
-          "cash",
-          "cash flows year ended december",
-          "flows",
-          "non-cash",
-          "operating"
+          "operations",
+          "operations. goodwill the company"
         ]
       }
     },
     {
       "step": 5,
       "action": "rank_tree_graph_node",
-      "target": "p58_n0",
+      "target": "p73_n1",
       "metadata": {
         "rank": 3,
-        "page": 58,
-        "section": "Consolidated Statements of Cash Flows",
-        "score": 3.2123798944776594,
+        "page": 73,
+        "section": "Page 73",
+        "score": 3.424404455527254,
         "matched_terms": [
-          "activities",
-          "cash",
-          "financing",
-          "flows",
-          "for",
-          "investing",
-          "operating"
+          "operating",
+          "operations"
         ],
         "matched_entities": [
-          "cash",
-          "cash flows year ended december",
-          "flows"
+          "operating",
+          "operations",
+          "operations. acquisition-related"
         ]
       }
     }
@@ -196,13 +170,13 @@
     "output": null,
     "total": null
   },
-  "latency_ms": 412,
+  "latency_ms": 405,
   "metadata": {
     "pdf_path": "datasets\\raw\\financebench\\pdfs\\AMD_2022_10K.pdf",
     "page_count": 121,
     "node_count": 292,
-    "entity_count": 3318,
-    "edge_count": 49384,
+    "entity_count": 3317,
+    "edge_count": 49233,
     "retrieve_top_k": 12,
     "max_citations": 3,
     "inspiration": "BookRAG-style tree plus entity graph plus tree-node mapping; independently implemented for BenchLab.",

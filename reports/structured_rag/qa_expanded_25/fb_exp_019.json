@@ -2,7 +2,7 @@
   "method": "structured_tree_graph_rag",
   "question_id": "fb_exp_019",
   "question": "How much (in USD billions) did American Water Works pay out in cash dividends for FY2020? Compute or extract the answer by primarily using the details outlined in the statement of cash flows.",
-  "answer": "Structured RAG retrieved the most relevant document tree nodes and entity-linked passages. Use the cited pages as supporting evidence: [PAGE 86], [PAGE 66], [PAGE 107].",
+  "answer": "Structured RAG retrieved the most relevant document tree nodes and entity-linked passages. Use the cited pages as supporting evidence: [PAGE 86], [PAGE 66], [PAGE 79].",
   "citations": [
     {
       "document_id": "AMERICANWATERWORKS_2020_10K",
@@ -12,15 +12,16 @@
       "metadata": {
         "node_id": "p86_n0",
         "parent_id": "section_p86",
-        "score": 3.3279161282690772,
-        "lexical_score": 0.08791612826907748,
+        "score": 3.1443798459259167,
+        "lexical_score": 0.09067479064390079,
         "structural_score": 0.18,
-        "entity_score": 0.56,
-        "phrase_boost": 2.5,
+        "entity_score": 0.48,
+        "phrase_boost": 1.8,
+        "position_boost": 0.0,
+        "page_aggregate_score": 0.5937050552820157,
         "matched_terms": [
           "cash",
-          "flows",
-          "for"
+          "flows"
         ],
         "matched_entities": [
           "cash",
@@ -28,8 +29,7 @@
           "cash flows from financing activities",
           "cash flows from investing activities",
           "cash flows from operating activities",
-          "flows",
-          "for"
+          "flows"
         ]
       }
     },
@@ -41,16 +41,17 @@
       "metadata": {
         "node_id": "p66_n1",
         "parent_id": "section_p51",
-        "score": 3.1105621918793718,
-        "lexical_score": 0.11056219187937147,
+        "score": 2.7028691058299557,
+        "lexical_score": 0.11660741206900378,
         "structural_score": 0.18,
         "entity_score": 0.32,
-        "phrase_boost": 2.5,
+        "phrase_boost": 1.8,
+        "position_boost": 0.0,
+        "page_aggregate_score": 0.2862616937609518,
         "matched_terms": [
           "cash",
           "details",
           "flows",
-          "for",
           "primarily"
         ],
         "matched_entities": [
@@ -63,27 +64,27 @@
     },
     {
       "document_id": "AMERICANWATERWORKS_2020_10K",
-      "page": 107,
-      "section": "Page 107",
-      "text": "There have been no significant adjustments to the forfeiture rates during 2020, 2019 and 2018. There were no grants of stock options to employees after 2016, and the remaining stock options outstanding as of December 31, 2020 were not material. Presented in the table below is the stock-based compensation expense recorded in O&M expense in the accompanying Consolidated Statements of Operations for the years ended December 31: 2020 2019 2018 RSUs and PSUs $ 19 $ 15 $ 15 Nonqualified employee stock purchase plan 2 2 1 Stock-based compensation 21 17 16 Income tax benefit (5) (4) (5) Stock-based compensation expense, net of tax $ 16 $ 13 $ 11 There were no significant stock-based compensation cos",
+      "page": 79,
+      "section": "ITEM 8. FINANCIAL STATEMENTS AND SUPPLEMENTARY DATA",
+      "text": "Table of Contents ITEM 8. FINANCIAL STATEMENTS AND SUPPLEMENTARY DATA INDEX TO CONSOLIDATED FINANCIAL STATEMENTS Page Audited Consolidated Financial Statements Report of Independent Registered Public Accounting Firm 78 Consolidated Balance Sheets as of December 31, 2020 and 2019 80 Consolidated Statements of Operations for the years ended December 31, 2020, 2019 and 2018 82 Consolidated Statements of Comprehensive Income for the years ended December 31, 2020, 2019 and 2018 83 Consolidated Statements of Cash Flows for the years ended December 31, 2020, 2019 and 2018 84 Consolidated Statements of Changes in Shareholders’ Equity for the years ended December 31, 2020, 2019 and 2018 85 Notes to C",
       "metadata": {
-        "node_id": "p107_n1",
-        "parent_id": "section_p105",
-        "score": 3.013968172552695,
-        "lexical_score": 0.01396817255269525,
+        "node_id": "p79_n0",
+        "parent_id": "section_p79",
+        "score": 2.5881072596454366,
+        "lexical_score": 0.019643387111731938,
         "structural_score": 0.18,
-        "entity_score": 0.32,
-        "phrase_boost": 2.5,
+        "entity_score": 0.24,
+        "phrase_boost": 1.8,
+        "position_boost": 0.0,
+        "page_aggregate_score": 0.3484638725337046,
         "matched_terms": [
           "cash",
-          "flows",
-          "for"
+          "flows"
         ],
         "matched_entities": [
           "cash",
-          "cash flows. stock units during",
-          "flows",
-          "for"
+          "cash flows",
+          "flows"
         ]
       }
     }
@@ -104,8 +105,8 @@
       "action": "build_entity_graph",
       "target": "lightweight_entity_cooccurrence_graph",
       "metadata": {
-        "entity_count": 3696,
-        "edge_count": 65461,
+        "entity_count": 3695,
+        "edge_count": 65284,
         "entity_top_k": 8
       }
     },
@@ -117,11 +118,10 @@
         "rank": 1,
         "page": 86,
         "section": "Consolidated Statements of Cash Flows",
-        "score": 3.3279161282690772,
+        "score": 3.1443798459259167,
         "matched_terms": [
           "cash",
-          "flows",
-          "for"
+          "flows"
         ],
         "matched_entities": [
           "cash",
@@ -129,8 +129,7 @@
           "cash flows from financing activities",
           "cash flows from investing activities",
           "cash flows from operating activities",
-          "flows",
-          "for"
+          "flows"
         ]
       }
     },
@@ -142,12 +141,11 @@
         "rank": 2,
         "page": 66,
         "section": "Page 66",
-        "score": 3.1105621918793718,
+        "score": 2.7028691058299557,
         "matched_terms": [
           "cash",
           "details",
           "flows",
-          "for",
           "primarily"
         ],
         "matched_entities": [
@@ -161,24 +159,20 @@
     {
       "step": 5,
       "action": "rank_tree_graph_node",
-      "target": "section_p86",
+      "target": "p79_n0",
       "metadata": {
         "rank": 3,
-        "page": 86,
-        "section": "Consolidated Statements of Cash Flows",
-        "score": 3.0834263603395344,
+        "page": 79,
+        "section": "ITEM 8. FINANCIAL STATEMENTS AND SUPPLEMENTARY DATA",
+        "score": 2.5881072596454366,
         "matched_terms": [
           "cash",
-          "flows",
-          "for"
+          "flows"
         ],
         "matched_entities": [
           "cash",
           "cash flows",
-          "cash flows from investing activities",
-          "cash flows from operating activities",
-          "flows",
-          "for"
+          "flows"
         ]
       }
     }
@@ -188,13 +182,13 @@
     "output": null,
     "total": null
   },
-  "latency_ms": 374,
+  "latency_ms": 465,
   "metadata": {
     "pdf_path": "datasets\\raw\\financebench\\pdfs\\AMERICANWATERWORKS_2020_10K.pdf",
     "page_count": 152,
     "node_count": 427,
-    "entity_count": 3696,
-    "edge_count": 65461,
+    "entity_count": 3695,
+    "edge_count": 65284,
     "retrieve_top_k": 12,
     "max_citations": 3,
     "inspiration": "BookRAG-style tree plus entity graph plus tree-node mapping; independently implemented for BenchLab.",

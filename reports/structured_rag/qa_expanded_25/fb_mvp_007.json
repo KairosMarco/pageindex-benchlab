@@ -12,11 +12,13 @@
       "metadata": {
         "node_id": "p38_n0",
         "parent_id": "section_p33",
-        "score": 3.608424351308808,
-        "lexical_score": 0.2884243513088083,
+        "score": 6.270563967360259,
+        "lexical_score": 0.2960238388341928,
         "structural_score": 0.18,
         "entity_score": 0.64,
-        "phrase_boost": 2.5,
+        "phrase_boost": 4.8,
+        "position_boost": 0.0,
+        "page_aggregate_score": 0.3545401285260662,
         "matched_terms": [
           "assets",
           "balance",
@@ -45,11 +47,13 @@
       "metadata": {
         "node_id": "p51_n0",
         "parent_id": "section_p51",
-        "score": 3.31328871146728,
-        "lexical_score": 0.15328871146728026,
+        "score": 4.219688029964793,
+        "lexical_score": 0.16349900637052378,
         "structural_score": 0.18,
         "entity_score": 0.48,
-        "phrase_boost": 2.5,
+        "phrase_boost": 2.8,
+        "position_boost": 0.0,
+        "page_aggregate_score": 0.5961890235942696,
         "matched_terms": [
           "assets",
           "balance",
@@ -77,11 +81,13 @@
       "metadata": {
         "node_id": "p53_n0",
         "parent_id": "section_p53",
-        "score": 3.2281571933459356,
-        "lexical_score": 0.1481571933459356,
+        "score": 4.0947718595893345,
+        "lexical_score": 0.1496722130215625,
         "structural_score": 0.18,
         "entity_score": 0.4,
-        "phrase_boost": 2.5,
+        "phrase_boost": 2.8,
+        "position_boost": 0.0,
+        "page_aggregate_score": 0.5650996465677726,
         "matched_terms": [
           "assets",
           "balance",
@@ -115,8 +121,8 @@
       "action": "build_entity_graph",
       "target": "lightweight_entity_cooccurrence_graph",
       "metadata": {
-        "entity_count": 2182,
-        "edge_count": 30957,
+        "entity_count": 2181,
+        "edge_count": 30877,
         "entity_top_k": 8
       }
     },
@@ -128,7 +134,7 @@
         "rank": 1,
         "page": 38,
         "section": "COSTCO WHOLESALE CORPORATION",
-        "score": 3.608424351308808,
+        "score": 6.270563967360259,
         "matched_terms": [
           "assets",
           "balance",
@@ -157,7 +163,7 @@
         "rank": 2,
         "page": 51,
         "section": "Note 4—Fair Value Measurement",
-        "score": 3.31328871146728,
+        "score": 4.219688029964793,
         "matched_terms": [
           "assets",
           "balance",
@@ -185,7 +191,7 @@
         "rank": 3,
         "page": 53,
         "section": "Note 6—Leases",
-        "score": 3.2281571933459356,
+        "score": 4.0947718595893345,
         "matched_terms": [
           "assets",
           "balance",
@@ -208,13 +214,13 @@
     "output": null,
     "total": null
   },
-  "latency_ms": 154,
+  "latency_ms": 169,
   "metadata": {
     "pdf_path": "datasets\\raw\\financebench\\pdfs\\COSTCO_2021_10K.pdf",
     "page_count": 76,
     "node_count": 163,
-    "entity_count": 2182,
-    "edge_count": 30957,
+    "entity_count": 2181,
+    "edge_count": 30877,
     "retrieve_top_k": 12,
     "max_citations": 3,
     "inspiration": "BookRAG-style tree plus entity graph plus tree-node mapping; independently implemented for BenchLab.",

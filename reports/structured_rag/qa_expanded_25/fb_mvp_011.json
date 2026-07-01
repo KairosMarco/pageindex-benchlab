@@ -12,11 +12,13 @@
       "metadata": {
         "node_id": "p85_n2",
         "parent_id": "section_p78",
-        "score": 1.1870619717635584,
-        "lexical_score": 0.3670619717635585,
+        "score": 1.5429919182257372,
+        "lexical_score": 0.3912231602541901,
         "structural_score": 0.18,
         "entity_score": 0.64,
         "phrase_boost": 0.0,
+        "position_boost": 0.0,
+        "page_aggregate_score": 0.3317687579715469,
         "matched_terms": [
           "compared",
           "period",
@@ -47,11 +49,13 @@
       "metadata": {
         "node_id": "p84_n0",
         "parent_id": "section_p78",
-        "score": 1.0159552867468582,
-        "lexical_score": 0.1959552867468581,
+        "score": 1.2749702215852587,
+        "lexical_score": 0.203174648100922,
         "structural_score": 0.18,
         "entity_score": 0.64,
         "phrase_boost": 0.0,
+        "position_boost": 0.0,
+        "page_aggregate_score": 0.2517955734843366,
         "matched_terms": [
           "period",
           "risk",
@@ -77,11 +81,13 @@
       "metadata": {
         "node_id": "p47_n1",
         "parent_id": "section_p18",
-        "score": 0.9342529024964241,
-        "lexical_score": 0.11425290249642413,
+        "score": 1.1408301136644095,
+        "lexical_score": 0.11456804634260978,
         "structural_score": 0.18,
         "entity_score": 0.64,
         "phrase_boost": 0.0,
+        "position_boost": 0.0,
+        "page_aggregate_score": 0.2062620673217997,
         "matched_terms": [
           "risk"
         ],
@@ -114,8 +120,8 @@
       "action": "build_entity_graph",
       "target": "lightweight_entity_cooccurrence_graph",
       "metadata": {
-        "entity_count": 4397,
-        "edge_count": 115950,
+        "entity_count": 4396,
+        "edge_count": 115805,
         "entity_top_k": 8
       }
     },
@@ -127,7 +133,7 @@
         "rank": 1,
         "page": 85,
         "section": "Page 85",
-        "score": 1.1870619717635584,
+        "score": 1.5429919182257372,
         "matched_terms": [
           "compared",
           "period",
@@ -153,37 +159,12 @@
     {
       "step": 4,
       "action": "rank_tree_graph_node",
-      "target": "p85_n0",
-      "metadata": {
-        "rank": 2,
-        "page": 85,
-        "section": "Page 85",
-        "score": 1.070884196269172,
-        "matched_terms": [
-          "risk",
-          "var"
-        ],
-        "matched_entities": [
-          "ccb var",
-          "cib var",
-          "credit portfolio var",
-          "lob var",
-          "nm nm cib var",
-          "nm nm other var",
-          "nm nm total var",
-          "risk"
-        ]
-      }
-    },
-    {
-      "step": 5,
-      "action": "rank_tree_graph_node",
       "target": "p84_n0",
       "metadata": {
-        "rank": 3,
+        "rank": 2,
         "page": 84,
         "section": "MARKET RISK MANAGEMENT",
-        "score": 1.0159552867468582,
+        "score": 1.2749702215852587,
         "matched_terms": [
           "period",
           "risk",
@@ -200,6 +181,30 @@
           "risk management var"
         ]
       }
+    },
+    {
+      "step": 5,
+      "action": "rank_tree_graph_node",
+      "target": "p47_n1",
+      "metadata": {
+        "rank": 3,
+        "page": 47,
+        "section": "FIRMWIDE RISK MANAGEMENT",
+        "score": 1.1408301136644095,
+        "matched_terms": [
+          "risk"
+        ],
+        "matched_entities": [
+          "capital risk",
+          "climate risk",
+          "compliance risk",
+          "conduct risk",
+          "consumer credit risk",
+          "country risk",
+          "investment portfolio risk",
+          "legal risk"
+        ]
+      }
     }
   ],
   "token_usage": {
@@ -207,13 +212,13 @@
     "output": null,
     "total": null
   },
-  "latency_ms": 577,
+  "latency_ms": 791,
   "metadata": {
     "pdf_path": "datasets\\raw\\financebench\\pdfs\\JPMORGAN_2023Q2_10Q.pdf",
     "page_count": 217,
     "node_count": 512,
-    "entity_count": 4397,
-    "edge_count": 115950,
+    "entity_count": 4396,
+    "edge_count": 115805,
     "retrieve_top_k": 12,
     "max_citations": 3,
     "inspiration": "BookRAG-style tree plus entity graph plus tree-node mapping; independently implemented for BenchLab.",

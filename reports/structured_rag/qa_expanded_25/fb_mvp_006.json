@@ -2,8 +2,57 @@
   "method": "structured_tree_graph_rag",
   "question_id": "fb_mvp_006",
   "question": "Has Boeing reported any materially important ongoing legal battles from FY2022?",
-  "answer": "Structured RAG retrieved the most relevant document tree nodes and entity-linked passages. Use the cited pages as supporting evidence: [PAGE 20], [PAGE 112], [PAGE 54].",
+  "answer": "Structured RAG retrieved the most relevant document tree nodes and entity-linked passages. Use the cited pages as supporting evidence: [PAGE 19], [PAGE 113], [PAGE 20].",
   "citations": [
+    {
+      "document_id": "BOEING_2022_10K",
+      "page": 19,
+      "section": "Page 19",
+      "text": "tection is available outside the U.S., potentially resulting in significant liabilities. See Note 21 of the Consolidated Financial Statements for discussion of legal proceedings resulting from the October 29, 2018 accident of Lion Air Flight 610 and the March 10, 2019 accident of Ethiopian Airlines Flight 302. The amount of insurance coverage we maintain may be inadequate to cover these or other claims or liabilities. A significant portion of our customer financing portfolio is concentrated among certain customers and in certain types of Boeing aircraft, which exposes us to concentration risks. A significant portion of our customer financing portfolio is concentrated among certain customers",
+      "metadata": {
+        "node_id": "p19_n0",
+        "parent_id": "section_p8",
+        "score": 10.281786785168505,
+        "lexical_score": 0.12432621944533567,
+        "structural_score": 0.18,
+        "entity_score": 0.0,
+        "phrase_boost": 9.5,
+        "position_boost": 0.0,
+        "page_aggregate_score": 0.4774605657231682,
+        "matched_terms": [
+          "accident",
+          "claims",
+          "legal",
+          "materially",
+          "proceedings"
+        ],
+        "matched_entities": []
+      }
+    },
+    {
+      "document_id": "BOEING_2022_10K",
+      "page": 113,
+      "section": "Page 113",
+      "text": "Table of Contents based upon current information, that the outcome of any such legal proceeding, claim, or government dispute and investigation will not have a material effect on our financial position, results of operations or cash flows. Where it is reasonably possible that we will incur losses in excess of recorded amounts in connection with any of the matters set forth below, we will disclose either the amount or range of reasonably possible losses in excess of such amounts or, where no such amount or range can be reasonably estimated, the reasons why no such estimate can be made. Multiple legal actions have been filed against us as a result of the October 29, 2018 accident of Lion Air F",
+      "metadata": {
+        "node_id": "p113_n0",
+        "parent_id": "section_p110",
+        "score": 7.733395258042233,
+        "lexical_score": 0.14718102443431946,
+        "structural_score": 0.18,
+        "entity_score": 0.0,
+        "phrase_boost": 7.0,
+        "position_boost": 0.0,
+        "page_aggregate_score": 0.40621423360791264,
+        "matched_terms": [
+          "accident",
+          "actions",
+          "lawsuits",
+          "legal"
+        ],
+        "matched_entities": []
+      }
+    },
     {
       "document_id": "BOEING_2022_10K",
       "page": 20,
@@ -12,11 +61,13 @@
       "metadata": {
         "node_id": "p20_n1",
         "parent_id": "section_p8",
-        "score": 3.1351564974372055,
-        "lexical_score": 0.21515649743720577,
+        "score": 3.7042756217742436,
+        "lexical_score": 0.2017973373677769,
         "structural_score": 0.18,
         "entity_score": 0.24,
         "phrase_boost": 2.5,
+        "position_boost": 0.0,
+        "page_aggregate_score": 0.5824782844064668,
         "matched_terms": [
           "legal",
           "proceedings"
@@ -24,55 +75,6 @@
         "matched_entities": [
           "legal",
           "legal proceedings currently",
-          "proceedings"
-        ]
-      }
-    },
-    {
-      "document_id": "BOEING_2022_10K",
-      "page": 112,
-      "section": "Page 112",
-      "text": "alue of assets and liabilities whose carrying value approximates fair value is determined using Level 2 inputs, with the exception of cash (Level 1). Note 21 – Legal Proceedings Various legal proceedings, claims and investigations related to products, contracts, employment and other matters are pending against us. In addition, we are subject to various U.S. government inquiries and investigations from which civil, criminal or administrative proceedings could result or have resulted in the past. Such proceedings involve or could involve claims by the government for fines, penalties, compensatory and treble damages, restitution and/or forfeitures. Under government regulations, a company, or on",
-      "metadata": {
-        "node_id": "p112_n1",
-        "parent_id": "section_p110",
-        "score": 3.0938142282827985,
-        "lexical_score": 0.17381422828279855,
-        "structural_score": 0.18,
-        "entity_score": 0.24,
-        "phrase_boost": 2.5,
-        "matched_terms": [
-          "claims",
-          "legal",
-          "proceedings"
-        ],
-        "matched_entities": [
-          "legal",
-          "legal proceedings various",
-          "proceedings"
-        ]
-      }
-    },
-    {
-      "document_id": "BOEING_2022_10K",
-      "page": 54,
-      "section": "Item 8. Financial Statements and Supplementary Data",
-      "text": "Compensation Arrangements 99 Note 18 - Shareholders’ Equity 103 Note 19 - Derivative Financial Instruments 104 Note 20 - Fair Value Measurements 106 Note 21 - Legal Proceedings 108 Note 22 - Segment and Revenue Information 109 Reports of Independent Registered Public Accounting Firm 115 52",
-      "metadata": {
-        "node_id": "p54_n0",
-        "parent_id": "section_p54",
-        "score": 2.9506520736395148,
-        "lexical_score": 0.030652073639515005,
-        "structural_score": 0.18,
-        "entity_score": 0.24,
-        "phrase_boost": 2.5,
-        "matched_terms": [
-          "legal",
-          "proceedings"
-        ],
-        "matched_entities": [
-          "legal",
-          "legal proceedings",
           "proceedings"
         ]
       }
@@ -94,61 +96,57 @@
       "action": "build_entity_graph",
       "target": "lightweight_entity_cooccurrence_graph",
       "metadata": {
-        "entity_count": 3829,
-        "edge_count": 67393,
+        "entity_count": 3828,
+        "edge_count": 67196,
         "entity_top_k": 8
       }
     },
     {
       "step": 3,
       "action": "rank_tree_graph_node",
-      "target": "p20_n1",
+      "target": "p19_n0",
       "metadata": {
         "rank": 1,
-        "page": 20,
-        "section": "Page 20",
-        "score": 3.1351564974372055,
+        "page": 19,
+        "section": "Page 19",
+        "score": 10.281786785168505,
         "matched_terms": [
+          "accident",
+          "claims",
           "legal",
+          "materially",
           "proceedings"
         ],
-        "matched_entities": [
-          "legal",
-          "legal proceedings currently",
-          "proceedings"
-        ]
+        "matched_entities": []
       }
     },
     {
       "step": 4,
       "action": "rank_tree_graph_node",
-      "target": "p112_n1",
+      "target": "p113_n0",
       "metadata": {
         "rank": 2,
-        "page": 112,
-        "section": "Page 112",
-        "score": 3.0938142282827985,
+        "page": 113,
+        "section": "Page 113",
+        "score": 7.733395258042233,
         "matched_terms": [
-          "claims",
-          "legal",
-          "proceedings"
+          "accident",
+          "actions",
+          "lawsuits",
+          "legal"
         ],
-        "matched_entities": [
-          "legal",
-          "legal proceedings various",
-          "proceedings"
-        ]
+        "matched_entities": []
       }
     },
     {
       "step": 5,
       "action": "rank_tree_graph_node",
-      "target": "p20_n0",
+      "target": "p20_n1",
       "metadata": {
         "rank": 3,
         "page": 20,
         "section": "Page 20",
-        "score": 2.9867449781770086,
+        "score": 3.7042756217742436,
         "matched_terms": [
           "legal",
           "proceedings"
@@ -166,13 +164,13 @@
     "output": null,
     "total": null
   },
-  "latency_ms": 361,
+  "latency_ms": 384,
   "metadata": {
     "pdf_path": "datasets\\raw\\financebench\\pdfs\\BOEING_2022_10K.pdf",
     "page_count": 190,
     "node_count": 380,
-    "entity_count": 3829,
-    "edge_count": 67393,
+    "entity_count": 3828,
+    "edge_count": 67196,
     "retrieve_top_k": 12,
     "max_citations": 3,
     "inspiration": "BookRAG-style tree plus entity graph plus tree-node mapping; independently implemented for BenchLab.",

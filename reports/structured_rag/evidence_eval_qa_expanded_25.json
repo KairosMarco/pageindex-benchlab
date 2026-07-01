@@ -2,8 +2,8 @@
   "summary": {
     "result_count": 25,
     "failure_count": 0,
-    "average_evidence_recall": 0.6,
-    "average_citation_precision": 0.20666666666666664,
+    "average_evidence_recall": 0.74,
+    "average_citation_precision": 0.25999999999999995,
     "citation_page_base": 1,
     "results_dir": "reports\\structured_rag\\qa_expanded_25"
   },
@@ -43,8 +43,8 @@
       ],
       "predicted_pages": [
         118,
-        202,
-        119
+        136,
+        102
       ],
       "evidence_recall": 0.0,
       "citation_precision": 0.0,
@@ -90,8 +90,8 @@
       ],
       "predicted_pages": [
         68,
-        65,
-        84
+        76,
+        65
       ],
       "evidence_recall": 1.0,
       "citation_precision": 0.3333333333333333,
@@ -114,13 +114,15 @@
         60
       ],
       "predicted_pages": [
-        34,
-        65,
-        99
+        20,
+        60,
+        104
       ],
-      "evidence_recall": 0.0,
-      "citation_precision": 0.0,
-      "matched_pages": [],
+      "evidence_recall": 1.0,
+      "citation_precision": 0.3333333333333333,
+      "matched_pages": [
+        59
+      ],
       "metadata": {
         "citation_page_base": 1,
         "result_path": "reports\\structured_rag\\qa_expanded_25\\fb_exp_017.json",
@@ -137,9 +139,9 @@
         13
       ],
       "predicted_pages": [
-        15,
         14,
-        8
+        8,
+        9
       ],
       "evidence_recall": 0.0,
       "citation_precision": 0.0,
@@ -162,7 +164,7 @@
       "predicted_pages": [
         86,
         66,
-        107
+        79
       ],
       "evidence_recall": 1.0,
       "citation_precision": 0.3333333333333333,
@@ -187,13 +189,15 @@
         110
       ],
       "predicted_pages": [
-        199,
-        27,
-        191
+        110,
+        118,
+        115
       ],
-      "evidence_recall": 0.0,
-      "citation_precision": 0.0,
-      "matched_pages": [],
+      "evidence_recall": 0.5,
+      "citation_precision": 0.3333333333333333,
+      "matched_pages": [
+        109
+      ],
       "metadata": {
         "citation_page_base": 1,
         "result_path": "reports\\structured_rag\\qa_expanded_25\\fb_exp_020.json",
@@ -212,7 +216,7 @@
       "predicted_pages": [
         1,
         3,
-        10
+        2
       ],
       "evidence_recall": 1.0,
       "citation_precision": 0.3333333333333333,
@@ -236,8 +240,8 @@
       ],
       "predicted_pages": [
         62,
-        47,
-        76
+        132,
+        47
       ],
       "evidence_recall": 1.0,
       "citation_precision": 0.3333333333333333,
@@ -260,13 +264,15 @@
         59
       ],
       "predicted_pages": [
-        18,
-        21,
-        71
+        61,
+        53,
+        59
       ],
-      "evidence_recall": 0.0,
-      "citation_precision": 0.0,
-      "matched_pages": [],
+      "evidence_recall": 1.0,
+      "citation_precision": 0.3333333333333333,
+      "matched_pages": [
+        58
+      ],
       "metadata": {
         "citation_page_base": 1,
         "result_path": "reports\\structured_rag\\qa_expanded_25\\fb_exp_023.json",
@@ -283,9 +289,9 @@
         50
       ],
       "predicted_pages": [
-        69,
         50,
-        100
+        69,
+        103
       ],
       "evidence_recall": 1.0,
       "citation_precision": 0.3333333333333333,
@@ -308,13 +314,15 @@
         2
       ],
       "predicted_pages": [
+        2,
         6,
-        1,
         3
       ],
-      "evidence_recall": 0.0,
-      "citation_precision": 0.0,
-      "matched_pages": [],
+      "evidence_recall": 1.0,
+      "citation_precision": 0.3333333333333333,
+      "matched_pages": [
+        1
+      ],
       "metadata": {
         "citation_page_base": 1,
         "result_path": "reports\\structured_rag\\qa_expanded_25\\fb_exp_025.json",
@@ -331,13 +339,15 @@
         60
       ],
       "predicted_pages": [
+        49,
         46,
-        83,
-        3
+        60
       ],
-      "evidence_recall": 0.0,
-      "citation_precision": 0.0,
-      "matched_pages": [],
+      "evidence_recall": 1.0,
+      "citation_precision": 0.3333333333333333,
+      "matched_pages": [
+        59
+      ],
       "metadata": {
         "citation_page_base": 1,
         "result_path": "reports\\structured_rag\\qa_expanded_25\\fb_mvp_001.json",
@@ -354,8 +364,8 @@
         38
       ],
       "predicted_pages": [
-        38,
         44,
+        38,
         48
       ],
       "evidence_recall": 1.0,
@@ -379,13 +389,15 @@
         4
       ],
       "predicted_pages": [
-        10,
-        111,
-        7
+        4,
+        7,
+        8
       ],
-      "evidence_recall": 0.0,
-      "citation_precision": 0.0,
-      "matched_pages": [],
+      "evidence_recall": 1.0,
+      "citation_precision": 0.3333333333333333,
+      "matched_pages": [
+        3
+      ],
       "metadata": {
         "citation_page_base": 1,
         "result_path": "reports\\structured_rag\\qa_expanded_25\\fb_mvp_003.json",
@@ -403,14 +415,12 @@
       ],
       "predicted_pages": [
         101,
-        59,
-        58
+        62,
+        73
       ],
-      "evidence_recall": 1.0,
-      "citation_precision": 0.3333333333333333,
-      "matched_pages": [
-        57
-      ],
+      "evidence_recall": 0.0,
+      "citation_precision": 0.0,
+      "matched_pages": [],
       "metadata": {
         "citation_page_base": 1,
         "result_path": "reports\\structured_rag\\qa_expanded_25\\fb_mvp_004.json",
@@ -428,14 +438,12 @@
       ],
       "predicted_pages": [
         25,
-        27,
-        40
+        26,
+        27
       ],
-      "evidence_recall": 1.0,
-      "citation_precision": 0.3333333333333333,
-      "matched_pages": [
-        39
-      ],
+      "evidence_recall": 0.0,
+      "citation_precision": 0.0,
+      "matched_pages": [],
       "metadata": {
         "citation_page_base": 1,
         "result_path": "reports\\structured_rag\\qa_expanded_25\\fb_mvp_005.json",
@@ -452,13 +460,15 @@
         113
       ],
       "predicted_pages": [
-        20,
-        112,
-        54
+        19,
+        113,
+        20
       ],
-      "evidence_recall": 0.0,
-      "citation_precision": 0.0,
-      "matched_pages": [],
+      "evidence_recall": 1.0,
+      "citation_precision": 0.3333333333333333,
+      "matched_pages": [
+        112
+      ],
       "metadata": {
         "citation_page_base": 1,
         "result_path": "reports\\structured_rag\\qa_expanded_25\\fb_mvp_006.json",
@@ -500,15 +510,13 @@
         52
       ],
       "predicted_pages": [
-        52,
-        33,
-        35
+        34,
+        35,
+        33
       ],
-      "evidence_recall": 1.0,
-      "citation_precision": 0.3333333333333333,
-      "matched_pages": [
-        51
-      ],
+      "evidence_recall": 0.0,
+      "citation_precision": 0.0,
+      "matched_pages": [],
       "metadata": {
         "citation_page_base": 1,
         "result_path": "reports\\structured_rag\\qa_expanded_25\\fb_mvp_008.json",
@@ -551,8 +559,8 @@
       ],
       "predicted_pages": [
         11,
-        7,
-        12
+        12,
+        7
       ],
       "evidence_recall": 1.0,
       "citation_precision": 0.3333333333333333,

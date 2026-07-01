@@ -2,8 +2,32 @@
   "method": "structured_tree_graph_rag",
   "question_id": "fb_exp_025",
   "question": "What drove the reduction in SG&A expense as a percent of net sales in FY2023?",
-  "answer": "Structured RAG retrieved the most relevant document tree nodes and entity-linked passages. Use the cited pages as supporting evidence: [PAGE 6], [PAGE 1], [PAGE 3].",
+  "answer": "Structured RAG retrieved the most relevant document tree nodes and entity-linked passages. Use the cited pages as supporting evidence: [PAGE 2], [PAGE 6], [PAGE 3].",
   "citations": [
+    {
+      "document_id": "ULTABEAUTY_2023Q4_EARNINGS",
+      "page": 2,
+      "section": "Page 2",
+      "text": ".41 including a $0.05 benefit due to income tax accounting for stock-based compensation, in the fourth quarter of fiscal 2021. For the Full Year of Fiscal 2022 Net sales increased 18.3% to $10.2 billion compared to $8.6 billion in fiscal 2021, primarily due to the favorable impact from the continued resilience of the beauty category, retail price increases, the impact of new brands and product innovation, increased social occasions, and fewer COVID-19 limitations compared to fiscal 2021. Comparable sales increased 15.6% compared to an increase of 37.9% in fiscal 2021, driven by a 10.8% increase in transactions and a 4.3% increase in average ticket. Gross profit increased 20.1% to $4.0 billio",
+      "metadata": {
+        "node_id": "p2_n1",
+        "parent_id": null,
+        "score": 9.673237053787293,
+        "lexical_score": 0.13117212057817684,
+        "structural_score": 0.0,
+        "entity_score": 0.08,
+        "phrase_boost": 8.5,
+        "position_boost": 0.35,
+        "page_aggregate_score": 0.612064933209118,
+        "matched_terms": [
+          "net",
+          "sales"
+        ],
+        "matched_entities": [
+          "net"
+        ]
+      }
+    },
     {
       "document_id": "ULTABEAUTY_2023Q4_EARNINGS",
       "page": 6,
@@ -12,11 +36,13 @@
       "metadata": {
         "node_id": "p6_n0",
         "parent_id": null,
-        "score": 2.8411048603265074,
-        "lexical_score": 0.2611048603265074,
+        "score": 5.664779217022268,
+        "lexical_score": 0.2639215632570967,
         "structural_score": 0.0,
         "entity_score": 0.08,
-        "phrase_boost": 2.5,
+        "phrase_boost": 5.0,
+        "position_boost": 0.0,
+        "page_aggregate_score": 0.3208576537651707,
         "matched_terms": [
           "expense",
           "net",
@@ -29,45 +55,20 @@
     },
     {
       "document_id": "ULTABEAUTY_2023Q4_EARNINGS",
-      "page": 1,
-      "section": "Page 1",
-      "text": "March 9, 2023 Ulta Beauty Announces Fourth Quarter Fiscal 2022 Results Net Sales of $3.2 Billion Compared to $2.7 Billion in the Year-Ago Quarter Comparable Sales Increased 15.6% Net Income of $340.8 Million or $6.68 Per Diluted Share BOLINGBROOK, Ill.--(BUSINESS WIRE)-- Ulta Beauty, Inc. (NASDAQ: ULTA) today announced financial results for the thirteen-week period (“fourth quarter”) and fifty-two-week period (“fiscal year”) ended January 28, 2023 compared to the same periods ended January 29, 2022. 13 Weeks Ended 52 Weeks Ended January 28, January 29, January 30, January 28, January 29, January 30, (Dollars in millions, except per share data) 2023 2022 2021 2023 2022 2021 Net sales $ 3,226.",
-      "metadata": {
-        "node_id": "p1_n0",
-        "parent_id": null,
-        "score": 0.5458188465871915,
-        "lexical_score": 0.1458188465871915,
-        "structural_score": 0.0,
-        "entity_score": 0.4,
-        "phrase_boost": 0.0,
-        "matched_terms": [
-          "net",
-          "sales"
-        ],
-        "matched_entities": [
-          "net",
-          "net income",
-          "results net sales",
-          "sales",
-          "year-ago quarter comparable sales increased"
-        ]
-      }
-    },
-    {
-      "document_id": "ULTABEAUTY_2023Q4_EARNINGS",
       "page": 3,
       "section": "Page 3",
-      "text": "fourth quarter of fiscal 2022, the Company operated 1,355 stores totaling 14.2 million square feet. Fiscal 2023 Outlook For fiscal 2023, the Company plans to: FY23 Outlook Net sales $10.95 billion to $11.05 billion Comparable sales 4% to 5% New stores, net 25-30 Remodel and relocation projects 20-30 Operating margin 14.7% to 15.0% Diluted earnings per share $24.70 to $25.40 Share repurchases approximately $900 million Effective tax rate approximately 24.6% Capital expenditures $400 million to $475 million Depreciation and amortization expense $245 million to $250 million",
+      "text": "ensation, in fiscal 2021. Balance Sheet Cash and cash equivalents at the end of the fourth quarter of fiscal 2022 were $737.9 million. Merchandise inventories, net at the end of the fourth quarter of fiscal 2022 totaled $1.6 billion compared to $1.5 billion at the end of the fourth quarter of fiscal 2021. The $104.2 million increase was primarily due to the opening of 47 new stores since January 29, 2022, inventory to support new brand launches and brand expansions, and inventory cost increases. Share Repurchase Program During the fourth quarter of fiscal 2022, the Company repurchased 722,457 shares of its common stock at a cost of $328.1 million. During fiscal 2022, the Company repurchased",
       "metadata": {
-        "node_id": "p3_n1",
+        "node_id": "p3_n0",
         "parent_id": null,
-        "score": 0.3273398138618907,
-        "lexical_score": 0.1673398138618907,
+        "score": 2.418062295307143,
+        "lexical_score": 0.05205177030556057,
         "structural_score": 0.0,
         "entity_score": 0.16,
-        "phrase_boost": 0.0,
+        "phrase_boost": 1.5,
+        "position_boost": 0.35,
+        "page_aggregate_score": 0.35601052500158276,
         "matched_terms": [
-          "expense",
           "net",
           "sales"
         ],
@@ -94,22 +95,21 @@
       "action": "build_entity_graph",
       "target": "lightweight_entity_cooccurrence_graph",
       "metadata": {
-        "entity_count": 619,
-        "edge_count": 5717,
+        "entity_count": 618,
+        "edge_count": 5687,
         "entity_top_k": 8
       }
     },
     {
       "step": 3,
       "action": "rank_tree_graph_node",
-      "target": "p6_n0",
+      "target": "p2_n1",
       "metadata": {
         "rank": 1,
-        "page": 6,
-        "section": "Page 6",
-        "score": 2.8411048603265074,
+        "page": 2,
+        "section": "Page 2",
+        "score": 9.673237053787293,
         "matched_terms": [
-          "expense",
           "net",
           "sales"
         ],
@@ -121,36 +121,32 @@
     {
       "step": 4,
       "action": "rank_tree_graph_node",
-      "target": "p1_n0",
+      "target": "p6_n0",
       "metadata": {
         "rank": 2,
-        "page": 1,
-        "section": "Page 1",
-        "score": 0.5458188465871915,
+        "page": 6,
+        "section": "Page 6",
+        "score": 5.664779217022268,
         "matched_terms": [
+          "expense",
           "net",
           "sales"
         ],
         "matched_entities": [
-          "net",
-          "net income",
-          "results net sales",
-          "sales",
-          "year-ago quarter comparable sales increased"
+          "net"
         ]
       }
     },
     {
       "step": 5,
       "action": "rank_tree_graph_node",
-      "target": "p3_n1",
+      "target": "p3_n0",
       "metadata": {
         "rank": 3,
         "page": 3,
         "section": "Page 3",
-        "score": 0.3273398138618907,
+        "score": 2.418062295307143,
         "matched_terms": [
-          "expense",
           "net",
           "sales"
         ],
@@ -166,13 +162,13 @@
     "output": null,
     "total": null
   },
-  "latency_ms": 20,
+  "latency_ms": 28,
   "metadata": {
     "pdf_path": "datasets\\raw\\financebench\\pdfs\\ULTABEAUTY_2023Q4_EARNINGS.pdf",
     "page_count": 9,
     "node_count": 13,
-    "entity_count": 619,
-    "edge_count": 5717,
+    "entity_count": 618,
+    "edge_count": 5687,
     "retrieve_top_k": 12,
     "max_citations": 3,
     "inspiration": "BookRAG-style tree plus entity graph plus tree-node mapping; independently implemented for BenchLab.",

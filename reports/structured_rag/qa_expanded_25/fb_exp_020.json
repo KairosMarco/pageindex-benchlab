@@ -2,78 +2,86 @@
   "method": "structured_tree_graph_rag",
   "question_id": "fb_exp_020",
   "question": "Is CVS Health a capital-intensive business based on FY2022 data?",
-  "answer": "Structured RAG retrieved the most relevant document tree nodes and entity-linked passages. Use the cited pages as supporting evidence: [PAGE 199], [PAGE 27], [PAGE 191].",
+  "answer": "Structured RAG retrieved the most relevant document tree nodes and entity-linked passages. Use the cited pages as supporting evidence: [PAGE 110], [PAGE 118], [PAGE 115].",
   "citations": [
     {
       "document_id": "CVSHEALTH_2022_10K",
-      "page": 199,
-      "section": "Page 199",
-      "text": "nsulting (Indonesia) ◦ PE Holdings, LLC (Connecticut) ◦ Aetna Resources LLC (Delaware) ◦ Canal Place, LLC (Delaware) ◦ Aetna Ventures, LLC (Delaware) ◦ Phoenix Data Solutions LLC (Delaware) ◦ Aetna Financial Holdings, LLC (Delaware) ◦ Aetna Asset Advisors, LLC (Delaware) ◦ U.S. Healthcare Properties, Inc. (Pennsylvania) ◦ Aetna Capital Management, LLC (Delaware) ▪ Aetna Partners Diversified Fund, LLC (Delaware) ◦ Aetna Workers’ Comp Access, LLC (Delaware) ◦ Aetna Behavioral Health, LLC (Delaware) ◦ Managed Care Coordinators, Inc. (Delaware) ◦ Horizon Behavioral Services, LLC (Delaware) ▪ Employee Assistance Services, LLC (Kentucky) ▪ Health and Human Resource Center, Inc. (California) ▪ Reso",
+      "page": 110,
+      "section": "Consolidated Balance Sheets",
+      "text": "Index to Consolidated Financial Statements Consolidated Balance Sheets At December 31, In millions, except per share amounts 2022 2021 Assets: Cash and cash equivalents $ 12,945 $ 9,408 Investments 2,778 3,117 Accounts receivable, net 27,276 24,431 Inventories 19,090 17,760 Assets held for sale 908 — Other current assets 2,685 5,292 Total current assets 65,682 60,008 Long-term investments 21,096 23,025 Property and equipment, net 12,873 12,896 Operating lease right-of-use assets 17,872 19,122 Goodwill 78,150 79,121 Intangible assets, net 24,754 29,026 Separate accounts assets 3,228 5,087 Other assets 4,620 4,714 Total assets $ 228,275 $ 232,999 Liabilities: Accounts payable $ 14,838 $ 12,544",
       "metadata": {
-        "node_id": "p199_n0",
-        "parent_id": "section_p186",
-        "score": 0.6108209220293418,
-        "lexical_score": 0.030820922029341807,
+        "node_id": "p110_n0",
+        "parent_id": "section_p110",
+        "score": 6.01152951886964,
+        "lexical_score": 0.1452254968098251,
         "structural_score": 0.18,
-        "entity_score": 0.4,
-        "phrase_boost": 0.0,
+        "entity_score": 0.24,
+        "phrase_boost": 4.8,
+        "position_boost": 0.0,
+        "page_aggregate_score": 0.6463040220598149,
         "matched_terms": [
+          "assets",
           "capital",
-          "data"
+          "equipment",
+          "goodwill",
+          "property"
         ],
         "matched_entities": [
-          "aetna capital management",
-          "capital",
-          "data",
-          "health data",
-          "phoenix data solutions llc"
+          "assets",
+          "goodwill",
+          "property"
         ]
       }
     },
     {
       "document_id": "CVSHEALTH_2022_10K",
-      "page": 27,
-      "section": "Page 27",
-      "text": "affect the Company’s businesses in various ways, including through increases in solvency fund assessments, requirements that the Company hold greater levels of capital and/or delays in approving dividends from regulated subsidiaries. PBM offerings of prescription drug coverage under certain risk arrangements may be subject to laws and regulations in various states. Such laws may require that the party at risk become licensed as an insurer, establish reserves or otherwise demonstrate financial viability. Laws that may apply in such cases include insurance laws and laws governing MCOs and limited prepaid health service plans. In addition, several states require that PBMs become directly regist",
+      "page": 118,
+      "section": "Page 118",
+      "text": "or other assets on the consolidated balance sheets and are amortized over the estimated life of the contracts. The amortization of deferred acquisition costs is recorded in operating expenses in the consolidated statements of operations. At December 31, 2022 and 2021, the balance of deferred acquisition costs was $1.2 billion and $895 million, respectively, comprised primarily of commissions paid on Medicare Supplement products within the Health Care Benefits segment. Property and Equipment Property and equipment is reported at historical cost, net of accumulated depreciation. Property, equipment and improvements to leased premises are depreciated using the straight-line method over the esti",
       "metadata": {
-        "node_id": "p27_n0",
-        "parent_id": "section_p4",
-        "score": 0.5353875338412972,
-        "lexical_score": 0.11538753384129725,
+        "node_id": "p118_n2",
+        "parent_id": "section_p114",
+        "score": 4.3134233765678145,
+        "lexical_score": 0.2968521311860902,
         "structural_score": 0.18,
         "entity_score": 0.24,
-        "phrase_boost": 0.0,
+        "phrase_boost": 2.8,
+        "position_boost": 0.0,
+        "page_aggregate_score": 0.7965712453817243,
         "matched_terms": [
-          "based",
-          "capital"
+          "assets",
+          "equipment",
+          "property"
         ],
         "matched_entities": [
-          "capital",
-          "risk-based",
-          "risk-based capital"
+          "equipment",
+          "equipment property",
+          "property"
         ]
       }
     },
     {
       "document_id": "CVSHEALTH_2022_10K",
-      "page": 191,
-      "section": "Page 191",
-      "text": "Consolidated Statements of Cash Flows, (v) the Consolidated Statements of Shareholders’ Equity and (vi) the related Notes to Consolidated Financial Statements. The instance document does not appear in the Interactive Data File because its XBRL tags are embedded within the Inline XBRL document. 104 104 Cover Page Interactive Data File - The cover page from the Company's Annual Report on Form 10-K for the year ended December 31, 2022, formatted in Inline XBRL (included as Exhibit 101). Item 16. Form 10-K Summary. None. 189",
+      "page": 115,
+      "section": "Page 115",
+      "text": "ed balance sheets, as these funds are highly liquid and readily convertible to known amounts of cash. Restricted Cash Restricted cash included in other current assets on the consolidated balance sheets represents funds held on behalf of members, including health savings account (“HSA”) funds associated with high deductible health plans. Restricted cash included in other assets on the consolidated balance sheets represents amounts held in a trust in one of the Company’s captive insurance companies to satisfy collateral requirements associated with the assignment of certain insurance policies. All restricted cash is invested in time deposits and money market funds. The following is a reconcili",
       "metadata": {
-        "node_id": "p191_n1",
-        "parent_id": "section_p186",
-        "score": 0.5121593946750859,
-        "lexical_score": 0.09215939467508591,
+        "node_id": "p115_n1",
+        "parent_id": "section_p114",
+        "score": 3.8834640770058213,
+        "lexical_score": 0.04766471057413169,
         "structural_score": 0.18,
-        "entity_score": 0.24,
-        "phrase_boost": 0.0,
+        "entity_score": 0.16,
+        "phrase_boost": 2.8,
+        "position_boost": 0.0,
+        "page_aggregate_score": 0.69579936643169,
         "matched_terms": [
-          "data"
+          "asset",
+          "assets"
         ],
         "matched_entities": [
-          "cover page interactive data file",
-          "data",
-          "interactive data file"
+          "asset",
+          "asset sales"
         ]
       }
     }
@@ -94,69 +102,71 @@
       "action": "build_entity_graph",
       "target": "lightweight_entity_cooccurrence_graph",
       "metadata": {
-        "entity_count": 4816,
-        "edge_count": 83389,
+        "entity_count": 4815,
+        "edge_count": 83178,
         "entity_top_k": 8
       }
     },
     {
       "step": 3,
       "action": "rank_tree_graph_node",
-      "target": "p199_n0",
+      "target": "p110_n0",
       "metadata": {
         "rank": 1,
-        "page": 199,
-        "section": "Page 199",
-        "score": 0.6108209220293418,
+        "page": 110,
+        "section": "Consolidated Balance Sheets",
+        "score": 6.01152951886964,
         "matched_terms": [
+          "assets",
           "capital",
-          "data"
+          "equipment",
+          "goodwill",
+          "property"
         ],
         "matched_entities": [
-          "aetna capital management",
-          "capital",
-          "data",
-          "health data",
-          "phoenix data solutions llc"
+          "assets",
+          "goodwill",
+          "property"
         ]
       }
     },
     {
       "step": 4,
       "action": "rank_tree_graph_node",
-      "target": "p27_n0",
+      "target": "p118_n2",
       "metadata": {
         "rank": 2,
-        "page": 27,
-        "section": "Page 27",
-        "score": 0.5353875338412972,
+        "page": 118,
+        "section": "Page 118",
+        "score": 4.3134233765678145,
         "matched_terms": [
-          "based",
-          "capital"
+          "assets",
+          "equipment",
+          "property"
         ],
         "matched_entities": [
-          "capital",
-          "risk-based",
-          "risk-based capital"
+          "equipment",
+          "equipment property",
+          "property"
         ]
       }
     },
     {
       "step": 5,
       "action": "rank_tree_graph_node",
-      "target": "p191_n1",
+      "target": "p115_n1",
       "metadata": {
         "rank": 3,
-        "page": 191,
-        "section": "Page 191",
-        "score": 0.5121593946750859,
+        "page": 115,
+        "section": "Page 115",
+        "score": 3.8834640770058213,
         "matched_terms": [
-          "data"
+          "asset",
+          "assets"
         ],
         "matched_entities": [
-          "cover page interactive data file",
-          "data",
-          "interactive data file"
+          "asset",
+          "asset sales"
         ]
       }
     }
@@ -166,13 +176,13 @@
     "output": null,
     "total": null
   },
-  "latency_ms": 577,
+  "latency_ms": 677,
   "metadata": {
     "pdf_path": "datasets\\raw\\financebench\\pdfs\\CVSHEALTH_2022_10K.pdf",
     "page_count": 213,
     "node_count": 564,
-    "entity_count": 4816,
-    "edge_count": 83389,
+    "entity_count": 4815,
+    "edge_count": 83178,
     "retrieve_top_k": 12,
     "max_citations": 3,
     "inspiration": "BookRAG-style tree plus entity graph plus tree-node mapping; independently implemented for BenchLab.",

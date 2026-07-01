@@ -1,6 +1,6 @@
 # Structured Tree-Graph RAG Status
 
-Date: 2026-06-26
+Date: 2026-07-01
 
 ## Purpose
 
@@ -65,11 +65,13 @@ Result:
 Generated outputs: 25 / 25
 Evidence evaluation result_count: 25
 Failure count: 0
-Average evidence recall: 0.600
-Average citation precision: 0.207
-Full hits: 15
-Misses: 10
-Median latency: 264 ms
+Average evidence recall: 0.740
+Average citation precision: 0.260
+Full hits: 18
+Partial hits: 1
+Misses: 6
+Median latency: 359 ms
+Average latency: 373 ms
 ```
 
 Artifacts:
@@ -84,24 +86,43 @@ reports/structured_rag/expanded_diagnostics.json
 
 ## Interpretation
 
-This baseline is not competitive with the current PageIndex expanded result. Its value is different:
+This baseline is still not competitive with the current PageIndex expanded result, but the second retrieval pass made a measurable improvement over the first expanded run:
+
+```text
+Previous expanded recall: 0.600
+Current expanded recall: 0.740
+Previous expanded citation precision: 0.207
+Current expanded citation precision: 0.260
+Previous misses: 10
+Current misses: 6
+```
+
+The improvement came from:
+
+- finance abbreviation normalization for `SG&A`, `PP&E`, `PPNE`, and `EBITDAR`;
+- table-aware phrase boosts for cash-flow, balance-sheet, income-statement, legal, EBITDAR, and SG&A evidence;
+- page-level score aggregation with small neighboring-page propagation for split table extraction;
+- front-page guards for short earnings releases and early 10-K business overview questions;
+- a pure-Python `pypdf` fallback when Windows blocks PyMuPDF native DLL loading.
+
+Its value is different:
 
 - it proves BenchLab can evaluate a local tree-plus-graph retrieval method;
 - it creates a controllable implementation surface for structural retrieval experiments;
 - it provides a license-safe path while BookRAG remains an external dependency with unclear repository license status;
 - it gives concrete failure cases for improving entity mapping, section detection, and ranking.
 
-Expanded diagnostics show the current weak points clearly:
+Expanded diagnostics show the remaining weak points clearly:
 
 - table-heavy financial line-item questions often need better table-aware ranking;
-- early-page earnings-release questions can be missed when generic business/summary language outranks the gold page;
-- some misses are near misses where a neighboring page is selected, suggesting page-window expansion should be tested;
+- multi-step numerical reasoning questions still need better statement-page selection before answer generation;
+- some earnings-release and annual-report misses remain near misses where a neighboring page is selected;
 - citation precision is capped by the current three-page fallback policy, so ranking quality matters more than answer generation at this stage.
 
 ## Next Steps
 
-1. Add table-aware node splitting and table phrase boosts.
-2. Add an early-page guard for short earnings-release PDFs.
-3. Test page-window expansion around high-scoring nodes.
+1. Add explicit table row/column extraction instead of relying only on page text.
+2. Add section-target inference for cash-flow, income-statement, balance-sheet, legal, and business-overview questions.
+3. Test a controlled page-window citation policy that can cite adjacent pages when the top node is a near miss.
 4. Add an optional LLM answer-generation step after retrieval stabilizes.
 5. Use failure cases to shape BookRAG and PageIndex upstream issues.

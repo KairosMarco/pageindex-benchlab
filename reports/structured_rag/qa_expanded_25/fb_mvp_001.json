@@ -2,111 +2,125 @@
   "method": "structured_tree_graph_rag",
   "question_id": "fb_mvp_001",
   "question": "What is the FY2018 capital expenditure amount (in USD millions) for 3M? Give a response to the question by relying on the details shown in the cash flow statement.",
-  "answer": "Structured RAG retrieved the most relevant document tree nodes and entity-linked passages. Use the cited pages as supporting evidence: [PAGE 46], [PAGE 83], [PAGE 3].",
+  "answer": "Structured RAG retrieved the most relevant document tree nodes and entity-linked passages. Use the cited pages as supporting evidence: [PAGE 49], [PAGE 46], [PAGE 60].",
   "citations": [
     {
       "document_id": "3M_2018_10K",
-      "page": 46,
-      "section": "Page 46",
-      "text": "Table of Contents Cash Flows: Cash flows from operating, investing and financing activities are provided in the tables that follow. Individual amounts in the Consolidated Statement of Cash Flows exclude the effects of acquisitions, divestitures and exchange rate impacts on cash and cash equivalents, which are presented separately in the cash flows. Thus, the amounts presented in the following operating, investing and financing activities tables reflect changes in balances from period to period adjusted for these effects. Cash Flows from Operating Activities: Years Ended December 31 (Millions) 2018 2017 2016 Net income including noncontrolling interest $ 5,363 $ 4,869 $ 5,058 Depreciation and",
+      "page": 49,
+      "section": "Page 49",
+      "text": "ivision, net of restructuring actions related to addressing corporate functional costs following the divestiture. On a combined basis, these items reduced free cash flow conversion by 2 percentage points. In 2017, free cash flow conversion was impacted by enactment of the TCJA, along with an additional U.S. pension contribution of $600 million that 3M made following the signing of tax reform. On a combined basis, these items benefited free cash flow conversion by 3 percentage points. Refer to the preceding “Cash Flows from Operating Activities” section for discussion of additional items that impacted operating cash flow. Refer to the preceding “Cash Flows from Investing Activities” section f",
       "metadata": {
-        "node_id": "p46_n0",
-        "parent_id": "section_p15",
-        "score": 3.5986521874011923,
-        "lexical_score": 0.27865218740119235,
+        "node_id": "p49_n1",
+        "parent_id": "section_p48",
+        "score": 5.860316152880042,
+        "lexical_score": 0.3416145252792556,
         "structural_score": 0.18,
         "entity_score": 0.64,
-        "phrase_boost": 2.5,
+        "phrase_boost": 4.0,
+        "position_boost": 0.0,
+        "page_aggregate_score": 0.698701627600786,
         "matched_terms": [
           "capital",
           "cash",
-          "financing",
-          "flows",
-          "for",
-          "investing",
-          "millions",
-          "operating",
-          "statement"
-        ],
-        "matched_entities": [
-          "cash",
-          "cash flows",
-          "consolidated statement",
-          "contents cash flows",
-          "flows",
-          "millions",
-          "operating",
-          "operating activities"
-        ]
-      }
-    },
-    {
-      "document_id": "3M_2018_10K",
-      "page": 83,
-      "section": "Page 83",
-      "text": "Table of Contents Reclassifications out of Accumulated Other Comprehensive Income Attributable to 3M Amounts Reclassified from Details about Accumulated Other Accumulated Other Comprehensive Income Comprehensive Income Components Year ended December 31, Location on Income (Millions) 2018 2017 2016 Statement Gains (losses) associated with defined benefit pension and postretirement plans amortization Transition asset $ — $ — $ 1 See Note 13 Prior service benefit 76 89 92 See Note 13 Net actuarial loss (678) (570) (506) See Note 13 Curtailments/Settlements (4) (2) (8) See Note 13 Total before tax (606) (483) (421) Tax effect 145 116 148 Provision for income taxes Net of tax $ (461) $ (367) $ (2",
-      "metadata": {
-        "node_id": "p83_n0",
-        "parent_id": "section_p82",
-        "score": 3.52028239401995,
-        "lexical_score": 0.20028239401995018,
-        "structural_score": 0.18,
-        "entity_score": 0.64,
-        "phrase_boost": 2.5,
-        "matched_terms": [
-          "capital",
-          "cash",
-          "details",
           "equipment",
           "financing",
           "flow",
           "flows",
-          "for",
           "investing",
           "millions",
-          "statement"
+          "operating",
+          "plant",
+          "property",
+          "purchases"
         ],
         "matched_entities": [
           "cash",
           "cash flows",
-          "consolidated statement",
-          "details",
           "flow",
           "flows",
-          "millions",
-          "statement"
+          "free cash flow",
+          "investing",
+          "investing activities",
+          "major gaap cash flow categories"
         ]
       }
     },
     {
       "document_id": "3M_2018_10K",
-      "page": 3,
-      "section": "ITEM 8",
-      "text": "Table of Contents Beginning Page ITEM 8 Financial Statements and Supplementary Data (continued) Consolidated Statement of Changes in Equity for the years ended December 31, 2018, 2017 and 2016 59 Consolidated Statement of Cash Flows for the years ended December 31, 2018, 2017 and 2016 60 Notes to Consolidated Financial Statements 61 Note 1. Significant Accounting Policies 61 Note 2. Revenue 71 Note 3. Acquisitions and Divestitures 73 Note 4. Goodwill and Intangible Assets 76 Note 5. Restructuring Actions 78 Note 6. Supplemental Income Statement Information 80 Note 7. Supplemental Balance Sheet Information 81 Note 8. Supplemental Equity and Comprehensive Income Information 82 Note 9. Suppleme",
+      "page": 46,
+      "section": "Page 46",
+      "text": "year-on-year increases in income tax payments. Additional factors that decreased operating cash flows were increases in inventory and accounts receivable. The combination of accounts receivable, inventories and accounts payable increased working capital by $406 million in 2018, compared to the working capital increases of $608 million in 2017. Additional discussion on working capital changes is provided earlier in the “Financial Condition and Liquidity” section. In 2017, cash flows provided by operating activities decreased $422 million compared to the same period last year. Factors that decreased operating cash flows were increases in pension contributions, plus year-on-year increases in wo",
       "metadata": {
-        "node_id": "p3_n0",
-        "parent_id": "section_p3",
-        "score": 3.386588148238748,
-        "lexical_score": 0.06658814823874804,
+        "node_id": "p46_n1",
+        "parent_id": "section_p15",
+        "score": 5.618243205705814,
+        "lexical_score": 0.2761336264215752,
         "structural_score": 0.18,
-        "entity_score": 0.64,
-        "phrase_boost": 2.5,
+        "entity_score": 0.56,
+        "phrase_boost": 4.0,
+        "position_boost": 0.0,
+        "page_aggregate_score": 0.6021095792842391,
         "matched_terms": [
+          "capital",
           "cash",
-          "flow",
+          "equipment",
           "flows",
-          "for",
-          "statement"
+          "investing",
+          "millions",
+          "operating",
+          "plant",
+          "property",
+          "purchases"
         ],
         "matched_entities": [
           "cash",
           "cash flows",
-          "consolidated statement",
-          "financial statement schedules",
+          "flows",
+          "investing",
+          "investing activities",
+          "millions",
+          "purchases"
+        ]
+      }
+    },
+    {
+      "document_id": "3M_2018_10K",
+      "page": 60,
+      "section": "Page 60",
+      "text": "Table of Contents 3M Company and Subsidiaries Consolidated Statement of Cash Flow s Years ended December 31 (Millions) 2018 2017 2016 Cash Flows from Operating Activities Net income including noncontrolling interest $ 5,363 $ 4,869 $ 5,058 Adjustments to reconcile net income including noncontrolling interest to net cash provided by operating activities Depreciation and amortization 1,488 1,544 1,474 Company pension and postretirement contributions (370) (967) (383) Company pension and postretirement expense 410 334 250 Stock-based compensation expense 302 324 298 Gain on sale of businesses (545) (586) (111) Deferred income taxes (57) 107 7 Changes in assets and liabilities Accounts receivabl",
+      "metadata": {
+        "node_id": "p60_n0",
+        "parent_id": "section_p51",
+        "score": 5.518872201039141,
+        "lexical_score": 0.3000286806531708,
+        "structural_score": 0.18,
+        "entity_score": 0.64,
+        "phrase_boost": 4.0,
+        "position_boost": 0.0,
+        "page_aggregate_score": 0.3988435203859704,
+        "matched_terms": [
+          "cash",
+          "equipment",
+          "financing",
           "flow",
           "flows",
-          "statement",
-          "supplemental cash flow information"
+          "investing",
+          "millions",
+          "operating",
+          "plant",
+          "property",
+          "purchases",
+          "statement"
+        ],
+        "matched_entities": [
+          "cash",
+          "cash flow",
+          "cash flows",
+          "financing",
+          "financing activities change",
+          "flow",
+          "flows",
+          "investing"
         ]
       }
     }
@@ -128,101 +142,109 @@
       "target": "lightweight_entity_cooccurrence_graph",
       "metadata": {
         "entity_count": 4482,
-        "edge_count": 79112,
+        "edge_count": 78918,
         "entity_top_k": 8
       }
     },
     {
       "step": 3,
       "action": "rank_tree_graph_node",
-      "target": "p46_n0",
+      "target": "p49_n1",
       "metadata": {
         "rank": 1,
-        "page": 46,
-        "section": "Page 46",
-        "score": 3.5986521874011923,
+        "page": 49,
+        "section": "Page 49",
+        "score": 5.860316152880042,
         "matched_terms": [
           "capital",
           "cash",
+          "equipment",
           "financing",
+          "flow",
           "flows",
-          "for",
           "investing",
           "millions",
           "operating",
-          "statement"
+          "plant",
+          "property",
+          "purchases"
         ],
         "matched_entities": [
           "cash",
           "cash flows",
-          "consolidated statement",
-          "contents cash flows",
+          "flow",
           "flows",
-          "millions",
-          "operating",
-          "operating activities"
+          "free cash flow",
+          "investing",
+          "investing activities",
+          "major gaap cash flow categories"
         ]
       }
     },
     {
       "step": 4,
       "action": "rank_tree_graph_node",
-      "target": "p83_n0",
+      "target": "p46_n1",
       "metadata": {
         "rank": 2,
-        "page": 83,
-        "section": "Page 83",
-        "score": 3.52028239401995,
+        "page": 46,
+        "section": "Page 46",
+        "score": 5.618243205705814,
         "matched_terms": [
           "capital",
           "cash",
-          "details",
           "equipment",
-          "financing",
-          "flow",
           "flows",
-          "for",
           "investing",
           "millions",
-          "statement"
+          "operating",
+          "plant",
+          "property",
+          "purchases"
         ],
         "matched_entities": [
           "cash",
           "cash flows",
-          "consolidated statement",
-          "details",
-          "flow",
           "flows",
+          "investing",
+          "investing activities",
           "millions",
-          "statement"
+          "purchases"
         ]
       }
     },
     {
       "step": 5,
       "action": "rank_tree_graph_node",
-      "target": "p3_n0",
+      "target": "p60_n0",
       "metadata": {
         "rank": 3,
-        "page": 3,
-        "section": "ITEM 8",
-        "score": 3.386588148238748,
+        "page": 60,
+        "section": "Page 60",
+        "score": 5.518872201039141,
         "matched_terms": [
           "cash",
+          "equipment",
+          "financing",
           "flow",
           "flows",
-          "for",
+          "investing",
+          "millions",
+          "operating",
+          "plant",
+          "property",
+          "purchases",
           "statement"
         ],
         "matched_entities": [
           "cash",
+          "cash flow",
           "cash flows",
-          "consolidated statement",
-          "financial statement schedules",
+          "financing",
+          "financing activities change",
           "flow",
           "flows",
-          "statement",
-          "supplemental cash flow information"
+          "investing"
         ]
       }
     }
@@ -232,13 +254,13 @@
     "output": null,
     "total": null
   },
-  "latency_ms": 489,
+  "latency_ms": 653,
   "metadata": {
     "pdf_path": "datasets\\raw\\financebench\\pdfs\\3M_2018_10K.pdf",
     "page_count": 160,
     "node_count": 400,
     "entity_count": 4482,
-    "edge_count": 79112,
+    "edge_count": 78918,
     "retrieve_top_k": 12,
     "max_citations": 3,
     "inspiration": "BookRAG-style tree plus entity graph plus tree-node mapping; independently implemented for BenchLab.",

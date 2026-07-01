@@ -2,8 +2,34 @@
   "method": "structured_tree_graph_rag",
   "question_id": "fb_mvp_002",
   "question": "What is Amazon's year-over-year change in revenue from FY2016 to FY2017 (in units of percents and round to one decimal place)? Calculate what was asked by utilizing the line items clearly shown in the statement of income.",
-  "answer": "Structured RAG retrieved the most relevant document tree nodes and entity-linked passages. Use the cited pages as supporting evidence: [PAGE 38], [PAGE 44], [PAGE 48].",
+  "answer": "Structured RAG retrieved the most relevant document tree nodes and entity-linked passages. Use the cited pages as supporting evidence: [PAGE 44], [PAGE 38], [PAGE 48].",
   "citations": [
+    {
+      "document_id": "AMAZON_2017_10K",
+      "page": 44,
+      "section": "Page 44",
+      "text": "Table of Contents Cost of Sales Cost of sales primarily consists of the purchase price of consumer products, digital media content costs where we record revenue gross, including video and music, packaging supplies, sortation and delivery centers and related equipment costs, and inbound and outbound shipping costs, including where we are the transportation service provider. Shipping costs to receive products from our suppliers are included in our inventory, and recognized as cost of sales upon sale of products to our customers. Payment processing and related transaction costs, including those associated with seller transactions, are classified in “Fulfillment” on our consolidated statements o",
+      "metadata": {
+        "node_id": "p44_n0",
+        "parent_id": "section_p35",
+        "score": 6.088681581965918,
+        "lexical_score": 0.03812752105048595,
+        "structural_score": 0.18,
+        "entity_score": 0.16,
+        "phrase_boost": 5.0,
+        "position_boost": 0.0,
+        "page_aggregate_score": 0.7105540609154332,
+        "matched_terms": [
+          "operations",
+          "revenue",
+          "sales"
+        ],
+        "matched_entities": [
+          "sales",
+          "sales cost"
+        ]
+      }
+    },
     {
       "document_id": "AMAZON_2017_10K",
       "page": 38,
@@ -12,11 +38,13 @@
       "metadata": {
         "node_id": "p38_n0",
         "parent_id": "section_p35",
-        "score": 5.724968901696327,
-        "lexical_score": 0.22496890169632683,
+        "score": 6.074108844260268,
+        "lexical_score": 0.22706531729052085,
         "structural_score": 0.18,
         "entity_score": 0.32,
         "phrase_boost": 5.0,
+        "position_boost": 0.0,
+        "page_aggregate_score": 0.3470435269697474,
         "matched_terms": [
           "earnings",
           "income",
@@ -34,41 +62,19 @@
     },
     {
       "document_id": "AMAZON_2017_10K",
-      "page": 44,
-      "section": "Page 44",
-      "text": "Table of Contents Cost of Sales Cost of sales primarily consists of the purchase price of consumer products, digital media content costs where we record revenue gross, including video and music, packaging supplies, sortation and delivery centers and related equipment costs, and inbound and outbound shipping costs, including where we are the transportation service provider. Shipping costs to receive products from our suppliers are included in our inventory, and recognized as cost of sales upon sale of products to our customers. Payment processing and related transaction costs, including those associated with seller transactions, are classified in “Fulfillment” on our consolidated statements o",
-      "metadata": {
-        "node_id": "p44_n0",
-        "parent_id": "section_p35",
-        "score": 5.375921152773162,
-        "lexical_score": 0.0359211527731623,
-        "structural_score": 0.18,
-        "entity_score": 0.16,
-        "phrase_boost": 5.0,
-        "matched_terms": [
-          "operations",
-          "revenue",
-          "sales"
-        ],
-        "matched_entities": [
-          "sales",
-          "sales cost"
-        ]
-      }
-    },
-    {
-      "document_id": "AMAZON_2017_10K",
       "page": 48,
       "section": "Page 48",
       "text": "Table of Contents expensed as incurred. These capitalized costs are amortized to “Cost of sales” on an accelerated basis that follows the viewing pattern of customer streams in the first months after availability. Investments We generally invest our excess cash in investment grade short- to intermediate-term fixed income securities and AAA-rated money market funds. Such investments are included in “Cash and cash equivalents” or “Marketable securities” on the accompanying consolidated balance sheets. Marketable securities are classified as available-for-sale and reported at fair value with unrealized gains and losses included in “Accumulated other comprehensive loss.” Equity investments are a",
       "metadata": {
         "node_id": "p48_n0",
         "parent_id": "section_p35",
-        "score": 5.211629104352611,
-        "lexical_score": 0.03162910435261156,
+        "score": 5.909047986989579,
+        "lexical_score": 0.03431026119024191,
         "structural_score": 0.18,
         "entity_score": 0.0,
         "phrase_boost": 5.0,
+        "position_boost": 0.0,
+        "page_aggregate_score": 0.6947377257993366,
         "matched_terms": [
           "earnings",
           "income",
@@ -96,20 +102,40 @@
       "action": "build_entity_graph",
       "target": "lightweight_entity_cooccurrence_graph",
       "metadata": {
-        "entity_count": 2679,
-        "edge_count": 41119,
+        "entity_count": 2678,
+        "edge_count": 40996,
         "entity_top_k": 8
       }
     },
     {
       "step": 3,
       "action": "rank_tree_graph_node",
-      "target": "p38_n0",
+      "target": "p44_n0",
       "metadata": {
         "rank": 1,
+        "page": 44,
+        "section": "Page 44",
+        "score": 6.088681581965918,
+        "matched_terms": [
+          "operations",
+          "revenue",
+          "sales"
+        ],
+        "matched_entities": [
+          "sales",
+          "sales cost"
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "rank_tree_graph_node",
+      "target": "p38_n0",
+      "metadata": {
+        "rank": 2,
         "page": 38,
         "section": "AMAZON.COM, INC.",
-        "score": 5.724968901696327,
+        "score": 6.074108844260268,
         "matched_terms": [
           "earnings",
           "income",
@@ -126,26 +152,6 @@
       }
     },
     {
-      "step": 4,
-      "action": "rank_tree_graph_node",
-      "target": "p44_n0",
-      "metadata": {
-        "rank": 2,
-        "page": 44,
-        "section": "Page 44",
-        "score": 5.375921152773162,
-        "matched_terms": [
-          "operations",
-          "revenue",
-          "sales"
-        ],
-        "matched_entities": [
-          "sales",
-          "sales cost"
-        ]
-      }
-    },
-    {
       "step": 5,
       "action": "rank_tree_graph_node",
       "target": "p48_n0",
@@ -153,7 +159,7 @@
         "rank": 3,
         "page": 48,
         "section": "Page 48",
-        "score": 5.211629104352611,
+        "score": 5.909047986989579,
         "matched_terms": [
           "earnings",
           "income",
@@ -170,13 +176,13 @@
     "output": null,
     "total": null
   },
-  "latency_ms": 210,
+  "latency_ms": 185,
   "metadata": {
     "pdf_path": "datasets\\raw\\financebench\\pdfs\\AMAZON_2017_10K.pdf",
     "page_count": 85,
     "node_count": 213,
-    "entity_count": 2679,
-    "edge_count": 41119,
+    "entity_count": 2678,
+    "edge_count": 40996,
     "retrieve_top_k": 12,
     "max_citations": 3,
     "inspiration": "BookRAG-style tree plus entity graph plus tree-node mapping; independently implemented for BenchLab.",

@@ -12,11 +12,13 @@
       "metadata": {
         "node_id": "p2_n1",
         "parent_id": null,
-        "score": 0.8605327387352186,
-        "lexical_score": 0.22053273873521864,
+        "score": 1.0666223304934488,
+        "lexical_score": 0.2691756153021197,
         "structural_score": 0.0,
         "entity_score": 0.64,
         "phrase_boost": 0.0,
+        "position_boost": 0.0,
+        "page_aggregate_score": 0.1574467151913289,
         "matched_terms": [
           "votes"
         ],
@@ -40,11 +42,13 @@
       "metadata": {
         "node_id": "p3_n0",
         "parent_id": "section_p3",
-        "score": 0.4340960685600117,
-        "lexical_score": 0.09409606856001167,
+        "score": 0.5503725291661407,
+        "lexical_score": 0.11279164422214752,
         "structural_score": 0.18,
         "entity_score": 0.16,
         "phrase_boost": 0.0,
+        "position_boost": 0.0,
+        "page_aggregate_score": 0.09758088494399308,
         "matched_terms": [
           "board",
           "who"
@@ -72,8 +76,8 @@
       "action": "build_entity_graph",
       "target": "lightweight_entity_cooccurrence_graph",
       "metadata": {
-        "entity_count": 291,
-        "edge_count": 2303,
+        "entity_count": 290,
+        "edge_count": 2289,
         "entity_top_k": 8
       }
     },
@@ -85,7 +89,7 @@
         "rank": 1,
         "page": 2,
         "section": "Page 2",
-        "score": 0.8605327387352186,
+        "score": 1.0666223304934488,
         "matched_terms": [
           "votes"
         ],
@@ -104,37 +108,12 @@
     {
       "step": 4,
       "action": "rank_tree_graph_node",
-      "target": "p2_n0",
-      "metadata": {
-        "rank": 2,
-        "page": 2,
-        "section": "Page 2",
-        "score": 0.7972171338478565,
-        "matched_terms": [
-          "board",
-          "nominees",
-          "votes"
-        ],
-        "matched_entities": [
-          "abstentions broker non-votes virginia c",
-          "board",
-          "broker non-votes",
-          "name votes for votes against",
-          "non-votes",
-          "votes",
-          "votes for votes against abstentions"
-        ]
-      }
-    },
-    {
-      "step": 5,
-      "action": "rank_tree_graph_node",
       "target": "p3_n0",
       "metadata": {
-        "rank": 3,
+        "rank": 2,
         "page": 3,
         "section": "Item 8.01.",
-        "score": 0.4340960685600117,
+        "score": 0.5503725291661407,
         "matched_terms": [
           "board",
           "who"
@@ -151,13 +130,13 @@
     "output": null,
     "total": null
   },
-  "latency_ms": 13,
+  "latency_ms": 24,
   "metadata": {
     "pdf_path": "datasets\\raw\\financebench\\pdfs\\FOOTLOCKER_2022_8K_dated-2022-05-20.pdf",
     "page_count": 4,
     "node_count": 6,
-    "entity_count": 291,
-    "edge_count": 2303,
+    "entity_count": 290,
+    "edge_count": 2289,
     "retrieve_top_k": 12,
     "max_citations": 3,
     "inspiration": "BookRAG-style tree plus entity graph plus tree-node mapping; independently implemented for BenchLab.",

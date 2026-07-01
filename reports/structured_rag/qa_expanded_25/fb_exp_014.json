@@ -2,90 +2,79 @@
   "method": "structured_tree_graph_rag",
   "question_id": "fb_exp_014",
   "question": "What drove gross margin change as of the FY2022 for American Express? If gross margin is not a useful metric for a company like this, then please state that and explain why.",
-  "answer": "Structured RAG retrieved the most relevant document tree nodes and entity-linked passages. Use the cited pages as supporting evidence: [PAGE 118], [PAGE 202], [PAGE 119].",
+  "answer": "Structured RAG retrieved the most relevant document tree nodes and entity-linked passages. Use the cited pages as supporting evidence: [PAGE 118], [PAGE 136], [PAGE 102].",
   "citations": [
     {
       "document_id": "AMERICANEXPRESS_2022_10K",
       "page": 118,
       "section": "NOTE 4",
-      "text": "2022 2021 Description of Securities (Millions) Cost Gross Unrealized Gains Gross Unrealized Losses Estimated Fair Value Cost Gross Unrealized Gains Gross Unrealized Losses Estimated Fair Value Available-for-sale debt securities: State and municipal obligations $ 64 $ — $ (10) $ 54 $ 106 $ 5 $ — $ 111 U.S. Government agency obligations 5 — — 5 6 — — 6 U.S. Government treasury obligations 3,859 — (73) 3,786 1,680 25 (1) 1,704 Mortgage-backed securities 13 — — 13 17 1 — 18 Foreign government bonds and obligations 633 — (1) 632 630 — — 630 Other 47 — — 47 43 — — 43 Equity securities 50 — (9) 41 66 17 (4) 79 Total $ 4,671 $ — $ (93) $ 4,578 $ 2,548 $ 48 $ (5) $ 2,591 (a) Represents mortgage-backe",
+      "text": "Table of Contents NOTE 4 INVESTMENT SECURITIES Investment securities principally include available-for-sale debt securities carried at fair value on the Consolidated Balance Sheets. The methodology for estimating credit losses for available for sale debt securities requires us to estimate lifetime credit losses for all available-for-sale debt securities in an unrealized loss position. When estimating a security’s probability of default and the recovery rate, we assess the security’s credit indicators, including credit ratings. If our assessment indicates that an estimated credit loss exists, we determine the portion of the unrealized loss attributable to credit deterioration and record a res",
       "metadata": {
-        "node_id": "p118_n1",
+        "node_id": "p118_n0",
         "parent_id": "section_p118",
-        "score": 0.9383184512681413,
-        "lexical_score": 0.11831845126814126,
+        "score": 3.5790754645205913,
+        "lexical_score": 0.06101953967825482,
         "structural_score": 0.18,
-        "entity_score": 0.64,
-        "phrase_boost": 0.0,
+        "entity_score": 0.24,
+        "phrase_boost": 2.5,
+        "position_boost": 0.0,
+        "page_aggregate_score": 0.5980559248423363,
         "matched_terms": [
           "cost",
-          "for",
           "gross"
         ],
         "matched_entities": [
-          "available-for-sale",
           "cost",
           "cost gross unrealized gains gross",
-          "estimated fair value gross unrealized",
-          "gross",
-          "gross unrealized losses estimated fair",
-          "losses estimated fair value gross",
-          "value gross unrealized losses state"
-        ]
-      }
-    },
-    {
-      "document_id": "AMERICANEXPRESS_2022_10K",
-      "page": 202,
-      "section": "Page 202",
-      "text": "(iii) Temporary Salary Reductions Disregarded. In determining the Compensation of a Participant for purposes of this Section 5.2, “Total Pay” under the RSP shall be determined by disregarding the temporary salary reductions in effect for the pay period commencing March 30, 2009 through the pay period ending on January 3, 2010. (b) Contribution Credits. The following amounts shall be credited to the Participant’s RSP-Related Account for each Plan Year, in accordance with Section 5.3: (i) Company Stock Contribution. An amount equal to: (A) one percent of the sum of: (1) the Participant’s Compensation, calculated without the Section 401(a)(17) Limitation or Section 415 Limitations, plus (2) tha",
-      "metadata": {
-        "node_id": "p202_n0",
-        "parent_id": "section_p166",
-        "score": 0.8233860262186685,
-        "lexical_score": 0.08338602621866849,
-        "structural_score": 0.18,
-        "entity_score": 0.56,
-        "phrase_boost": 0.0,
-        "matched_terms": [
-          "for",
-          "profit"
-        ],
-        "matched_entities": [
-          "company discretionary profit sharing contribution",
-          "company profit-sharing contribution",
-          "company profit-sharing contribution. an",
-          "for",
-          "profit",
-          "profit-sharing",
-          "rsp. for"
-        ]
-      }
-    },
-    {
-      "document_id": "AMERICANEXPRESS_2022_10K",
-      "page": 119,
-      "section": "Page 119",
-      "text": "Table of Contents The following table summarizes the gross unrealized losses for available-for-sale debt securities by ratio of fair value to amortized cost as of December 31, 2022 and 2021: Less than 12 months 12 months or more Total Ratio of Fair Value to Amortized Cost (Dollars in millions) Number of Securities Estimated Fair Value Gross Unrealized Losses Number of Securities Estimated Fair Value Gross Unrealized Losses Number of Securities Estimated Fair Value Gross Unrealized Losses 2022: 90%–100% 74 $ 4,287 $ (74) 3 $ 52 $ (1) 77 $ 4,339 $ (75) Less than 90% 14 24 (9) — — — 14 24 (9) Total as of December 31, 2022 88 $ 4,311 $ (83) 3 $ 52 $ (1) 91 $ 4,363 $ (84) 2021: 90%–100% 5 $ 477 $",
-      "metadata": {
-        "node_id": "p119_n0",
-        "parent_id": "section_p118",
-        "score": 0.6835194375790941,
-        "lexical_score": 0.103519437579094,
-        "structural_score": 0.18,
-        "entity_score": 0.4,
-        "phrase_boost": 0.0,
-        "matched_terms": [
-          "cost",
-          "for",
           "gross"
+        ]
+      }
+    },
+    {
+      "document_id": "AMERICANEXPRESS_2022_10K",
+      "page": 136,
+      "section": "Page 136",
+      "text": "years ended December 31, 2022, 2021 and 2020, respectively. Net investment hedge reclassifications out of AOCI into the Consolidated Statements of Income were not significant for the years ended December 31, 2022, 2021 and 2020, respectively. DERIVATIVES NOT DESIGNATED AS HEDGES We have derivatives that act as economic hedges, but are not designated as such for hedge accounting purposes. Foreign currency transactions from time to time may be partially or fully economically hedged through foreign currency contracts, primarily foreign exchange forwards. These hedges generally mature within one year. Foreign currency contracts involve the purchase and sale of designated currencies at an agreed",
+      "metadata": {
+        "node_id": "p136_n1",
+        "parent_id": "section_p134",
+        "score": 3.5634126468608027,
+        "lexical_score": 0.008181340536770651,
+        "structural_score": 0.18,
+        "entity_score": 0.16,
+        "phrase_boost": 2.5,
+        "position_boost": 0.0,
+        "page_aggregate_score": 0.7152313063240321,
+        "matched_terms": [
+          "not"
         ],
         "matched_entities": [
-          "amortized cost",
-          "cost",
-          "gross",
-          "securities estimated fair value gross",
-          "total cost"
+          "derivatives not designated as hedges",
+          "not"
+        ]
+      }
+    },
+    {
+      "document_id": "AMERICANEXPRESS_2022_10K",
+      "page": 102,
+      "section": "AMOUNTS BASED ON ESTIMATES AND ASSUMPTIONS",
+      "text": "twork rate fee in our settlement with the merchant acquirer, which is individually negotiated between us and that merchant acquirer and is recorded as discount revenue at the time the Card Member transaction occurs. Net Card Fees Net card fees represent revenue earned from annual card membership fees, which vary based on the type of card and the number of cards for each account. These fees, net of acquisition costs and a reserve for projected refunds for Card Member cancellations, are deferred and recognized on a straight-line basis over the twelve-month card membership period as Net card fees in the Consolidated Statements of Income and are therefore more stable in relation to short term bu",
+      "metadata": {
+        "node_id": "p102_n1",
+        "parent_id": "section_p101",
+        "score": 3.312338114749895,
+        "lexical_score": 0.030914063088205636,
+        "structural_score": 0.18,
+        "entity_score": 0.16,
+        "phrase_boost": 2.5,
+        "position_boost": 0.0,
+        "page_aggregate_score": 0.4414240516616892,
+        "matched_terms": [
+          "revenue"
+        ],
+        "matched_entities": [
+          "other revenue service",
+          "revenue"
         ]
       }
     }
@@ -106,81 +95,64 @@
       "action": "build_entity_graph",
       "target": "lightweight_entity_cooccurrence_graph",
       "metadata": {
-        "entity_count": 5076,
-        "edge_count": 89812,
+        "entity_count": 5075,
+        "edge_count": 89568,
         "entity_top_k": 8
       }
     },
     {
       "step": 3,
       "action": "rank_tree_graph_node",
-      "target": "p118_n1",
+      "target": "p118_n0",
       "metadata": {
         "rank": 1,
         "page": 118,
         "section": "NOTE 4",
-        "score": 0.9383184512681413,
+        "score": 3.5790754645205913,
         "matched_terms": [
           "cost",
-          "for",
           "gross"
         ],
         "matched_entities": [
-          "available-for-sale",
           "cost",
           "cost gross unrealized gains gross",
-          "estimated fair value gross unrealized",
-          "gross",
-          "gross unrealized losses estimated fair",
-          "losses estimated fair value gross",
-          "value gross unrealized losses state"
+          "gross"
         ]
       }
     },
     {
       "step": 4,
       "action": "rank_tree_graph_node",
-      "target": "p202_n0",
+      "target": "p136_n1",
       "metadata": {
         "rank": 2,
-        "page": 202,
-        "section": "Page 202",
-        "score": 0.8233860262186685,
+        "page": 136,
+        "section": "Page 136",
+        "score": 3.5634126468608027,
         "matched_terms": [
-          "for",
-          "profit"
+          "not"
         ],
         "matched_entities": [
-          "company discretionary profit sharing contribution",
-          "company profit-sharing contribution",
-          "company profit-sharing contribution. an",
-          "for",
-          "profit",
-          "profit-sharing",
-          "rsp. for"
+          "derivatives not designated as hedges",
+          "not"
         ]
       }
     },
     {
       "step": 5,
       "action": "rank_tree_graph_node",
-      "target": "p119_n0",
+      "target": "p102_n1",
       "metadata": {
         "rank": 3,
-        "page": 119,
-        "section": "Page 119",
-        "score": 0.6835194375790941,
+        "page": 102,
+        "section": "AMOUNTS BASED ON ESTIMATES AND ASSUMPTIONS",
+        "score": 3.312338114749895,
         "matched_terms": [
-          "cost",
-          "for",
-          "gross"
+          "revenue"
         ],
         "matched_entities": [
-          "amortized cost",
-          "cost",
-          "gross",
-          "securities estimated fair value gross",
-          "total cost"
+          "other revenue service",
+          "revenue"
         ]
       }
     }
@@ -190,13 +162,13 @@
     "output": null,
     "total": null
   },
-  "latency_ms": 570,
+  "latency_ms": 716,
   "metadata": {
     "pdf_path": "datasets\\raw\\financebench\\pdfs\\AMERICANEXPRESS_2022_10K.pdf",
     "page_count": 260,
     "node_count": 591,
-    "entity_count": 5076,
-    "edge_count": 89812,
+    "entity_count": 5075,
+    "edge_count": 89568,
     "retrieve_top_k": 12,
     "max_citations": 3,
     "inspiration": "BookRAG-style tree plus entity graph plus tree-node mapping; independently implemented for BenchLab.",

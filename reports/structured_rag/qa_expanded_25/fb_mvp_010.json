@@ -2,7 +2,7 @@
   "method": "structured_tree_graph_rag",
   "question_id": "fb_mvp_010",
   "question": "What Was AMCOR's Adjusted Non GAAP EBITDA for FY 2023",
-  "answer": "Structured RAG retrieved the most relevant document tree nodes and entity-linked passages. Use the cited pages as supporting evidence: [PAGE 11], [PAGE 7], [PAGE 12].",
+  "answer": "Structured RAG retrieved the most relevant document tree nodes and entity-linked passages. Use the cited pages as supporting evidence: [PAGE 11], [PAGE 12], [PAGE 7].",
   "citations": [
     {
       "document_id": "AMCOR_2023Q4_EARNINGS",
@@ -12,11 +12,13 @@
       "metadata": {
         "node_id": "p11_n0",
         "parent_id": null,
-        "score": 5.931469152751565,
-        "lexical_score": 0.37146915275156484,
+        "score": 4.062914731956005,
+        "lexical_score": 0.4125197562612958,
         "structural_score": 0.0,
         "entity_score": 0.56,
-        "phrase_boost": 5.0,
+        "phrase_boost": 2.5,
+        "position_boost": 0.0,
+        "page_aggregate_score": 0.5903949756947093,
         "matched_terms": [
           "adjusted",
           "ebitda",
@@ -37,48 +39,22 @@
     },
     {
       "document_id": "AMCOR_2023Q4_EARNINGS",
-      "page": 7,
-      "section": "Page 7",
-      "text": "are made only as of the date hereof and Amcor does not undertake any obligation to update any forward-looking statements, or any other information in this communication, as a result of new information, future developments or otherwise, or to correct any inaccuracies or omissions in them which become apparent, except as expressly required by law. All forward-looking statements in this communication are qualified in their entirety by this cautionary statement. Presentation of non-GAAP information Included in this release are measures of financial performance that are not calculated in accordance with U.S. GAAP. These measures include adjusted EBITDA and EBITDA (calculated as earnings before in",
-      "metadata": {
-        "node_id": "p7_n2",
-        "parent_id": null,
-        "score": 5.44777146270353,
-        "lexical_score": 0.20777146270353009,
-        "structural_score": 0.0,
-        "entity_score": 0.24,
-        "phrase_boost": 5.0,
-        "matched_terms": [
-          "adjusted",
-          "ebitda",
-          "for",
-          "gaap",
-          "non"
-        ],
-        "matched_entities": [
-          "ebitda",
-          "gaap",
-          "u.s. gaap. these"
-        ]
-      }
-    },
-    {
-      "document_id": "AMCOR_2023Q4_EARNINGS",
       "page": 12,
       "section": "EBITDA",
       "text": "Twelve Months Ended June 30, 2022 Twelve Months Ended June 30, 2023 ($ million) EBITDA EBIT Net Income EPS (Diluted US cents)(1) EBITDA EBIT Net Income EPS (Diluted US cents)(1) Net income attributable to Amcor 805 805 805 52.9 1,048 1,048 1,048 70.5 Net income attributable to non-controlling interests 10 10 10 10 Tax expense 300 300 193 193 Interest expense, net 135 135 259 259 Depreciation and amortization 579 569 EBITDA, EBIT, Net income and EPS 1,829 1,250 805 52.9 2,080 1,510 1,048 70.5 2019 Bemis Integration Plan 37 37 37 2.5 — — — — Net loss on disposals(2) 10 10 10 0.7 — — — — Impact of hyperinflation 16 16 16 1.0 24 24 24 1.9 Property and other losses, net(3) 13 13 13 0.8 2 2 2 0.1",
       "metadata": {
         "node_id": "p12_n0",
         "parent_id": null,
-        "score": 3.2725565280275197,
-        "lexical_score": 0.2925565280275198,
+        "score": 3.724042408377157,
+        "lexical_score": 0.3098948688637028,
         "structural_score": 0.0,
         "entity_score": 0.48,
         "phrase_boost": 2.5,
+        "position_boost": 0.0,
+        "page_aggregate_score": 0.4341475395134537,
         "matched_terms": [
           "adjusted",
           "ebitda",
-          "for",
           "non",
           "reconciliation"
         ],
@@ -89,6 +65,34 @@
           "ebitda",
           "ebitda ebit net income eps",
           "reconciliation"
+        ]
+      }
+    },
+    {
+      "document_id": "AMCOR_2023Q4_EARNINGS",
+      "page": 7,
+      "section": "Page 7",
+      "text": "s expressly required by law. All forward-looking statements in this communication are qualified in their entirety by this cautionary statement. Presentation of non-GAAP information Included in this release are measures of financial performance that are not calculated in accordance with U.S. GAAP. These measures include adjusted EBITDA and EBITDA (calculated as earnings before interest and tax and depreciation and amortization), adjusted EBIT and EBIT (calculated as earnings before interest and tax), adjusted net income, adjusted earnings per share, adjusted free cash flow and net debt. In arriving at these non- GAAP measures, we exclude items that either have a non-recurring impact on the in",
+      "metadata": {
+        "node_id": "p7_n2",
+        "parent_id": null,
+        "score": 3.27865544690422,
+        "lexical_score": 0.25716358140906154,
+        "structural_score": 0.0,
+        "entity_score": 0.24,
+        "phrase_boost": 2.5,
+        "position_boost": 0.0,
+        "page_aggregate_score": 0.2814918654951585,
+        "matched_terms": [
+          "adjusted",
+          "ebitda",
+          "gaap",
+          "non"
+        ],
+        "matched_entities": [
+          "ebitda",
+          "gaap",
+          "u.s. gaap. these"
         ]
       }
     }
@@ -109,8 +113,8 @@
       "action": "build_entity_graph",
       "target": "lightweight_entity_cooccurrence_graph",
       "metadata": {
-        "entity_count": 668,
-        "edge_count": 7383,
+        "entity_count": 667,
+        "edge_count": 7356,
         "entity_top_k": 8
       }
     },
@@ -122,7 +126,7 @@
         "rank": 1,
         "page": 11,
         "section": "EBITDA",
-        "score": 5.931469152751565,
+        "score": 4.062914731956005,
         "matched_terms": [
           "adjusted",
           "ebitda",
@@ -144,39 +148,15 @@
     {
       "step": 4,
       "action": "rank_tree_graph_node",
-      "target": "p7_n2",
-      "metadata": {
-        "rank": 2,
-        "page": 7,
-        "section": "Page 7",
-        "score": 5.44777146270353,
-        "matched_terms": [
-          "adjusted",
-          "ebitda",
-          "for",
-          "gaap",
-          "non"
-        ],
-        "matched_entities": [
-          "ebitda",
-          "gaap",
-          "u.s. gaap. these"
-        ]
-      }
-    },
-    {
-      "step": 5,
-      "action": "rank_tree_graph_node",
       "target": "p12_n0",
       "metadata": {
-        "rank": 3,
+        "rank": 2,
         "page": 12,
         "section": "EBITDA",
-        "score": 3.2725565280275197,
+        "score": 3.724042408377157,
         "matched_terms": [
           "adjusted",
           "ebitda",
-          "for",
           "non",
           "reconciliation"
         ],
@@ -189,6 +169,28 @@
           "reconciliation"
         ]
       }
+    },
+    {
+      "step": 5,
+      "action": "rank_tree_graph_node",
+      "target": "p7_n2",
+      "metadata": {
+        "rank": 3,
+        "page": 7,
+        "section": "Page 7",
+        "score": 3.27865544690422,
+        "matched_terms": [
+          "adjusted",
+          "ebitda",
+          "gaap",
+          "non"
+        ],
+        "matched_entities": [
+          "ebitda",
+          "gaap",
+          "u.s. gaap. these"
+        ]
+      }
     }
   ],
   "token_usage": {
@@ -196,13 +198,13 @@
     "output": null,
     "total": null
   },
-  "latency_ms": 32,
+  "latency_ms": 52,
   "metadata": {
     "pdf_path": "datasets\\raw\\financebench\\pdfs\\AMCOR_2023Q4_EARNINGS.pdf",
     "page_count": 14,
     "node_count": 29,
-    "entity_count": 668,
-    "edge_count": 7383,
+    "entity_count": 667,
+    "edge_count": 7356,
     "retrieve_top_k": 12,
     "max_citations": 3,
     "inspiration": "BookRAG-style tree plus entity graph plus tree-node mapping; independently implemented for BenchLab.",

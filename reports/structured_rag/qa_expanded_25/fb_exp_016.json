@@ -2,7 +2,7 @@
   "method": "structured_tree_graph_rag",
   "question_id": "fb_exp_016",
   "question": "Considering the data in the balance sheet, what is Block's (formerly known as Square) FY2016 working capital ratio? Define working capital ratio as total current assets divided by total current liabilities. Round your answer to two decimal places.",
-  "answer": "Structured RAG retrieved the most relevant document tree nodes and entity-linked passages. Use the cited pages as supporting evidence: [PAGE 68], [PAGE 65], [PAGE 84].",
+  "answer": "Structured RAG retrieved the most relevant document tree nodes and entity-linked passages. Use the cited pages as supporting evidence: [PAGE 68], [PAGE 76], [PAGE 65].",
   "citations": [
     {
       "document_id": "BLOCK_2016_10K",
@@ -12,11 +12,13 @@
       "metadata": {
         "node_id": "p68_n0",
         "parent_id": "section_p65",
-        "score": 3.552441813319549,
-        "lexical_score": 0.23244181331954886,
+        "score": 6.268536835099666,
+        "lexical_score": 0.2425890349416183,
         "structural_score": 0.18,
         "entity_score": 0.64,
-        "phrase_boost": 2.5,
+        "phrase_boost": 4.8,
+        "position_boost": 0.0,
+        "page_aggregate_score": 0.4059478001580479,
         "matched_terms": [
           "assets",
           "balance",
@@ -42,17 +44,48 @@
     },
     {
       "document_id": "BLOCK_2016_10K",
+      "page": 76,
+      "section": "SQUARE, INC.",
+      "text": "not material with respect to the operating loss or net loss for the current fiscal year or any previously reported consolidated financial statements. The correction of this error had no impact on the net cash flows from operations in any of the periods. Immaterial Correction to Cash and Cash Equivalents During the fourth quarter of 2016, the Company identified an error that impacted the consolidated balance sheet as of December 31, 2015, the consolidated statement of cash flows for the years ended December 31, 2015 and 2014, and in the unaudited condensed consolidated balance sheets and statements of cash flows as of and for the three months ended March 31, 2016, the six months ended June 30",
+      "metadata": {
+        "node_id": "p76_n1",
+        "parent_id": "section_p65",
+        "score": 5.603814263446376,
+        "lexical_score": 0.08635290097056329,
+        "structural_score": 0.18,
+        "entity_score": 0.16,
+        "phrase_boost": 4.8,
+        "position_boost": 0.0,
+        "page_aggregate_score": 0.37746136247581247,
+        "matched_terms": [
+          "assets",
+          "balance",
+          "current",
+          "sheet",
+          "square",
+          "total"
+        ],
+        "matched_entities": [
+          "square",
+          "square cash"
+        ]
+      }
+    },
+    {
+      "document_id": "BLOCK_2016_10K",
       "page": 65,
       "section": "Item 8. FINANCIAL STATEMENTS AND SUPPLEMENTARY DATA",
       "text": "Item 8. FINANCIAL STATEMENTS AND SUPPLEMENTARY DATA SQUARE, INC. INDEX TO THE CONSOLIDATED FINANCIAL STATEMENTS Page No Reports of Independent Registered Public Accounting Firm 66 Consolidated Balance Sheets 68 Consolidated Statements of Operations 69 Consolidated Statements of Comprehensive Loss 70 Consolidated Statements of Stockholders' Equity 71 Consolidated Statements of Cash Flows 73 Notes to the Consolidated Financial Statements 75 The supplementary financial information required by this Item 8 is included in Part II, Item 7 under the caption \"Quarterly Results of Operations,\" which is incorporated herein by reference. 65",
       "metadata": {
         "node_id": "p65_n0",
         "parent_id": "section_p65",
-        "score": 3.214206598683713,
-        "lexical_score": 0.054206598683713476,
+        "score": 4.14469081376171,
+        "lexical_score": 0.05472036195973738,
         "structural_score": 0.18,
         "entity_score": 0.48,
-        "phrase_boost": 2.5,
+        "phrase_boost": 2.8,
+        "position_boost": 0.0,
+        "page_aggregate_score": 0.6299704518019725,
         "matched_terms": [
           "balance",
           "data",
@@ -66,34 +99,6 @@
           "equity",
           "financial statements and supplementary data",
           "square"
-        ]
-      }
-    },
-    {
-      "document_id": "BLOCK_2016_10K",
-      "page": 84,
-      "section": "Page 84",
-      "text": "olicy and therefore prior periods were not retrospectively adjusted. In January 2016, the FASB issued ASU No. 2016-01, Recognition and Measurement of Financial Assets and Financial Liabilities. This guidance is intended to improve the recognition, measurement, presentation, and disclosure of financial instruments. This guidance is effective for financial statements issued for fiscal years beginning after December 15, 2017, and interim periods within those fiscal years, with early adoption permitted with certain restrictions. The Company is currently evaluating the impact this new guidance may have on the consolidated financial statements. In February 2016, the FASB issued ASU No. 2016-02, Le",
-      "metadata": {
-        "node_id": "p84_n0",
-        "parent_id": "section_p65",
-        "score": 3.0703946885415667,
-        "lexical_score": 0.07039468854156682,
-        "structural_score": 0.18,
-        "entity_score": 0.32,
-        "phrase_boost": 2.5,
-        "matched_terms": [
-          "assets",
-          "balance",
-          "current",
-          "liabilities",
-          "sheet"
-        ],
-        "matched_entities": [
-          "assets",
-          "financial assets",
-          "financial liabilities. this",
-          "liabilities"
         ]
       }
     }
@@ -114,8 +119,8 @@
       "action": "build_entity_graph",
       "target": "lightweight_entity_cooccurrence_graph",
       "metadata": {
-        "entity_count": 2745,
-        "edge_count": 44616,
+        "entity_count": 2744,
+        "edge_count": 44461,
         "entity_top_k": 8
       }
     },
@@ -127,7 +132,7 @@
         "rank": 1,
         "page": 68,
         "section": "SQUARE, INC.",
-        "score": 3.552441813319549,
+        "score": 6.268536835099666,
         "matched_terms": [
           "assets",
           "balance",
@@ -154,12 +159,35 @@
     {
       "step": 4,
       "action": "rank_tree_graph_node",
-      "target": "p65_n0",
+      "target": "p76_n1",
       "metadata": {
         "rank": 2,
+        "page": 76,
+        "section": "SQUARE, INC.",
+        "score": 5.603814263446376,
+        "matched_terms": [
+          "assets",
+          "balance",
+          "current",
+          "sheet",
+          "square",
+          "total"
+        ],
+        "matched_entities": [
+          "square",
+          "square cash"
+        ]
+      }
+    },
+    {
+      "step": 5,
+      "action": "rank_tree_graph_node",
+      "target": "p65_n0",
+      "metadata": {
+        "rank": 3,
         "page": 65,
         "section": "Item 8. FINANCIAL STATEMENTS AND SUPPLEMENTARY DATA",
-        "score": 3.214206598683713,
+        "score": 4.14469081376171,
         "matched_terms": [
           "balance",
           "data",
@@ -175,30 +203,6 @@
           "square"
         ]
       }
-    },
-    {
-      "step": 5,
-      "action": "rank_tree_graph_node",
-      "target": "p84_n0",
-      "metadata": {
-        "rank": 3,
-        "page": 84,
-        "section": "Page 84",
-        "score": 3.0703946885415667,
-        "matched_terms": [
-          "assets",
-          "balance",
-          "current",
-          "liabilities",
-          "sheet"
-        ],
-        "matched_entities": [
-          "assets",
-          "financial assets",
-          "financial liabilities. this",
-          "liabilities"
-        ]
-      }
     }
   ],
   "token_usage": {
@@ -206,13 +210,13 @@
     "output": null,
     "total": null
   },
-  "latency_ms": 226,
+  "latency_ms": 276,
   "metadata": {
     "pdf_path": "datasets\\raw\\financebench\\pdfs\\BLOCK_2016_10K.pdf",
     "page_count": 121,
     "node_count": 274,
-    "entity_count": 2745,
-    "edge_count": 44616,
+    "entity_count": 2744,
+    "edge_count": 44461,
     "retrieve_top_k": 12,
     "max_citations": 3,
     "inspiration": "BookRAG-style tree plus entity graph plus tree-node mapping; independently implemented for BenchLab.",

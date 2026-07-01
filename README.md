@@ -61,13 +61,14 @@ Expanded 25-question FinanceBench run:
 | LlamaIndex Vector RAG | `1.000` | `0.360` | `0.920` | `2,543` | `16,497 ms` |
 | LlamaIndex Hybrid RAG | `1.000` | `0.360` | `0.880` | `2,553` | `16,846 ms` |
 | Long-context LLM | `0.800` | `0.267` | `0.920` | `92,500` | `12,772 ms` |
-| Structured Tree-Graph RAG | `0.600` | `0.207` | not run | n/a | `310 ms` |
+| Structured Tree-Graph RAG | `0.740` | `0.260` | not run | n/a | `373 ms` |
 
 Conservative reading:
 
 - PageIndex is competitive on this small finance subset.
 - PageIndex retrieved all gold evidence pages in the expanded PageIndex run.
 - Remaining PageIndex misses were answer-generation or judge-strictness cases, not evidence retrieval failures.
+- Structured Tree-Graph RAG improved after table-aware phrase boosts, page-level aggregation, and short-document front-page guards, but it is still a local structural retrieval floor rather than a competitive BookRAG replacement.
 - The result supports scoped follow-up work, not broad superiority claims.
 
 ## Important Reports

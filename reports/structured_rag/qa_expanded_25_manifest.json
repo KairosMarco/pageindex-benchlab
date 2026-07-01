@@ -7,19 +7,19 @@
     "pdf_path": "datasets\\raw\\financebench\\pdfs\\3M_2018_10K.pdf",
     "citation_count": 3,
     "selected_pages_one_indexed": [
+      49,
       46,
-      83,
-      3
+      60
     ],
     "node_count": 400,
     "entity_count": 4482,
-    "edge_count": 79112,
+    "edge_count": 78918,
     "node_words": 320,
     "node_overlap": 60,
     "retrieve_top_k": 12,
     "entity_top_k": 8,
     "max_citations": 3,
-    "latency_ms": 493
+    "latency_ms": 695
   },
   {
     "question_id": "fb_mvp_002",
@@ -29,19 +29,19 @@
     "pdf_path": "datasets\\raw\\financebench\\pdfs\\AMAZON_2017_10K.pdf",
     "citation_count": 3,
     "selected_pages_one_indexed": [
-      38,
       44,
+      38,
       48
     ],
     "node_count": 213,
-    "entity_count": 2679,
-    "edge_count": 41119,
+    "entity_count": 2678,
+    "edge_count": 40996,
     "node_words": 320,
     "node_overlap": 60,
     "retrieve_top_k": 12,
     "entity_top_k": 8,
     "max_citations": 3,
-    "latency_ms": 213
+    "latency_ms": 188
   },
   {
     "question_id": "fb_mvp_003",
@@ -51,19 +51,19 @@
     "pdf_path": "datasets\\raw\\financebench\\pdfs\\AMD_2022_10K.pdf",
     "citation_count": 3,
     "selected_pages_one_indexed": [
-      10,
-      111,
-      7
+      4,
+      7,
+      8
     ],
     "node_count": 292,
-    "entity_count": 3318,
-    "edge_count": 49384,
+    "entity_count": 3317,
+    "edge_count": 49233,
     "node_words": 320,
     "node_overlap": 60,
     "retrieve_top_k": 12,
     "entity_top_k": 8,
     "max_citations": 3,
-    "latency_ms": 477
+    "latency_ms": 511
   },
   {
     "question_id": "fb_mvp_004",
@@ -74,18 +74,18 @@
     "citation_count": 3,
     "selected_pages_one_indexed": [
       101,
-      59,
-      58
+      62,
+      73
     ],
     "node_count": 292,
-    "entity_count": 3318,
-    "edge_count": 49384,
+    "entity_count": 3317,
+    "edge_count": 49233,
     "node_words": 320,
     "node_overlap": 60,
     "retrieve_top_k": 12,
     "entity_top_k": 8,
     "max_citations": 3,
-    "latency_ms": 415
+    "latency_ms": 408
   },
   {
     "question_id": "fb_mvp_005",
@@ -96,18 +96,18 @@
     "citation_count": 3,
     "selected_pages_one_indexed": [
       25,
-      27,
-      40
+      26,
+      27
     ],
     "node_count": 199,
-    "entity_count": 2575,
-    "edge_count": 37591,
+    "entity_count": 2574,
+    "edge_count": 37464,
     "node_words": 320,
     "node_overlap": 60,
     "retrieve_top_k": 12,
     "entity_top_k": 8,
     "max_citations": 3,
-    "latency_ms": 174
+    "latency_ms": 190
   },
   {
     "question_id": "fb_mvp_006",
@@ -117,19 +117,19 @@
     "pdf_path": "datasets\\raw\\financebench\\pdfs\\BOEING_2022_10K.pdf",
     "citation_count": 3,
     "selected_pages_one_indexed": [
-      20,
-      112,
-      54
+      19,
+      113,
+      20
     ],
     "node_count": 380,
-    "entity_count": 3829,
-    "edge_count": 67393,
+    "entity_count": 3828,
+    "edge_count": 67196,
     "node_words": 320,
     "node_overlap": 60,
     "retrieve_top_k": 12,
     "entity_top_k": 8,
     "max_citations": 3,
-    "latency_ms": 364
+    "latency_ms": 388
   },
   {
     "question_id": "fb_mvp_007",
@@ -144,14 +144,14 @@
       53
     ],
     "node_count": 163,
-    "entity_count": 2182,
-    "edge_count": 30957,
+    "entity_count": 2181,
+    "edge_count": 30877,
     "node_words": 320,
     "node_overlap": 60,
     "retrieve_top_k": 12,
     "entity_top_k": 8,
     "max_citations": 3,
-    "latency_ms": 156
+    "latency_ms": 171
   },
   {
     "question_id": "fb_mvp_008",
@@ -161,19 +161,19 @@
     "pdf_path": "datasets\\raw\\financebench\\pdfs\\MICROSOFT_2016_10K.pdf",
     "citation_count": 3,
     "selected_pages_one_indexed": [
-      52,
-      33,
-      35
+      34,
+      35,
+      33
     ],
     "node_count": 291,
-    "entity_count": 3164,
-    "edge_count": 50988,
+    "entity_count": 3163,
+    "edge_count": 50854,
     "node_words": 320,
     "node_overlap": 60,
     "retrieve_top_k": 12,
     "entity_top_k": 8,
     "max_citations": 3,
-    "latency_ms": 242
+    "latency_ms": 319
   },
   {
     "question_id": "fb_mvp_009",
@@ -188,14 +188,14 @@
       93
     ],
     "node_count": 278,
-    "entity_count": 2987,
-    "edge_count": 46832,
+    "entity_count": 2986,
+    "edge_count": 46678,
     "node_words": 320,
     "node_overlap": 60,
     "retrieve_top_k": 12,
     "entity_top_k": 8,
     "max_citations": 3,
-    "latency_ms": 256
+    "latency_ms": 341
   },
   {
     "question_id": "fb_mvp_010",
@@ -206,18 +206,18 @@
     "citation_count": 3,
     "selected_pages_one_indexed": [
       11,
-      7,
-      12
+      12,
+      7
     ],
     "node_count": 29,
-    "entity_count": 668,
-    "edge_count": 7383,
+    "entity_count": 667,
+    "edge_count": 7356,
     "node_words": 320,
     "node_overlap": 60,
     "retrieve_top_k": 12,
     "entity_top_k": 8,
     "max_citations": 3,
-    "latency_ms": 33
+    "latency_ms": 55
   },
   {
     "question_id": "fb_mvp_011",
@@ -232,14 +232,14 @@
       47
     ],
     "node_count": 512,
-    "entity_count": 4397,
-    "edge_count": 115950,
+    "entity_count": 4396,
+    "edge_count": 115805,
     "node_words": 320,
     "node_overlap": 60,
     "retrieve_top_k": 12,
     "entity_top_k": 8,
     "max_citations": 3,
-    "latency_ms": 581
+    "latency_ms": 797
   },
   {
     "question_id": "fb_mvp_012",
@@ -261,7 +261,7 @@
     "retrieve_top_k": 12,
     "entity_top_k": 8,
     "max_citations": 3,
-    "latency_ms": 124
+    "latency_ms": 195
   },
   {
     "question_id": "fb_exp_013",
@@ -276,14 +276,14 @@
       95
     ],
     "node_count": 278,
-    "entity_count": 3554,
-    "edge_count": 53107,
+    "entity_count": 3553,
+    "edge_count": 52980,
     "node_words": 320,
     "node_overlap": 60,
     "retrieve_top_k": 12,
     "entity_top_k": 8,
     "max_citations": 3,
-    "latency_ms": 264
+    "latency_ms": 359
   },
   {
     "question_id": "fb_exp_014",
@@ -294,18 +294,18 @@
     "citation_count": 3,
     "selected_pages_one_indexed": [
       118,
-      202,
-      119
+      136,
+      102
     ],
     "node_count": 591,
-    "entity_count": 5076,
-    "edge_count": 89812,
+    "entity_count": 5075,
+    "edge_count": 89568,
     "node_words": 320,
     "node_overlap": 60,
     "retrieve_top_k": 12,
     "entity_top_k": 8,
     "max_citations": 3,
-    "latency_ms": 574
+    "latency_ms": 721
   },
   {
     "question_id": "fb_exp_015",
@@ -319,14 +319,14 @@
       3
     ],
     "node_count": 6,
-    "entity_count": 291,
-    "edge_count": 2303,
+    "entity_count": 290,
+    "edge_count": 2289,
     "node_words": 320,
     "node_overlap": 60,
     "retrieve_top_k": 12,
     "entity_top_k": 8,
     "max_citations": 3,
-    "latency_ms": 15
+    "latency_ms": 25
   },
   {
     "question_id": "fb_exp_016",
@@ -337,18 +337,18 @@
     "citation_count": 3,
     "selected_pages_one_indexed": [
       68,
-      65,
-      84
+      76,
+      65
     ],
     "node_count": 274,
-    "entity_count": 2745,
-    "edge_count": 44616,
+    "entity_count": 2744,
+    "edge_count": 44461,
     "node_words": 320,
     "node_overlap": 60,
     "retrieve_top_k": 12,
     "entity_top_k": 8,
     "max_citations": 3,
-    "latency_ms": 229
+    "latency_ms": 279
   },
   {
     "question_id": "fb_exp_017",
@@ -358,19 +358,19 @@
     "pdf_path": "datasets\\raw\\financebench\\pdfs\\CORNING_2022_10K.pdf",
     "citation_count": 3,
     "selected_pages_one_indexed": [
-      34,
-      65,
-      99
+      20,
+      60,
+      104
     ],
     "node_count": 335,
-    "entity_count": 3753,
-    "edge_count": 61288,
+    "entity_count": 3752,
+    "edge_count": 61129,
     "node_words": 320,
     "node_overlap": 60,
     "retrieve_top_k": 12,
     "entity_top_k": 8,
     "max_citations": 3,
-    "latency_ms": 384
+    "latency_ms": 405
   },
   {
     "question_id": "fb_exp_018",
@@ -380,19 +380,19 @@
     "pdf_path": "datasets\\raw\\financebench\\pdfs\\MGMRESORTS_2022Q4_EARNINGS.pdf",
     "citation_count": 3,
     "selected_pages_one_indexed": [
-      15,
       14,
-      8
+      8,
+      9
     ],
     "node_count": 32,
-    "entity_count": 937,
-    "edge_count": 10548,
+    "entity_count": 936,
+    "edge_count": 10532,
     "node_words": 320,
     "node_overlap": 60,
     "retrieve_top_k": 12,
     "entity_top_k": 8,
     "max_citations": 3,
-    "latency_ms": 69
+    "latency_ms": 98
   },
   {
     "question_id": "fb_exp_019",
@@ -404,17 +404,17 @@
     "selected_pages_one_indexed": [
       86,
       66,
-      107
+      79
     ],
     "node_count": 427,
-    "entity_count": 3696,
-    "edge_count": 65461,
+    "entity_count": 3695,
+    "edge_count": 65284,
     "node_words": 320,
     "node_overlap": 60,
     "retrieve_top_k": 12,
     "entity_top_k": 8,
     "max_citations": 3,
-    "latency_ms": 378
+    "latency_ms": 470
   },
   {
     "question_id": "fb_exp_020",
@@ -424,19 +424,19 @@
     "pdf_path": "datasets\\raw\\financebench\\pdfs\\CVSHEALTH_2022_10K.pdf",
     "citation_count": 3,
     "selected_pages_one_indexed": [
-      199,
-      27,
-      191
+      110,
+      118,
+      115
     ],
     "node_count": 564,
-    "entity_count": 4816,
-    "edge_count": 83389,
+    "entity_count": 4815,
+    "edge_count": 83178,
     "node_words": 320,
     "node_overlap": 60,
     "retrieve_top_k": 12,
     "entity_top_k": 8,
     "max_citations": 3,
-    "latency_ms": 581
+    "latency_ms": 681
   },
   {
     "question_id": "fb_exp_021",
@@ -448,17 +448,17 @@
     "selected_pages_one_indexed": [
       1,
       3,
-      10
+      2
     ],
     "node_count": 24,
-    "entity_count": 663,
-    "edge_count": 7456,
+    "entity_count": 662,
+    "edge_count": 7434,
     "node_words": 320,
     "node_overlap": 60,
     "retrieve_top_k": 12,
     "entity_top_k": 8,
     "max_citations": 3,
-    "latency_ms": 34
+    "latency_ms": 45
   },
   {
     "question_id": "fb_exp_022",
@@ -469,18 +469,18 @@
     "citation_count": 3,
     "selected_pages_one_indexed": [
       62,
-      47,
-      76
+      132,
+      47
     ],
     "node_count": 483,
-    "entity_count": 4031,
-    "edge_count": 68997,
+    "entity_count": 4030,
+    "edge_count": 68808,
     "node_words": 320,
     "node_overlap": 60,
     "retrieve_top_k": 12,
     "entity_top_k": 8,
     "max_citations": 3,
-    "latency_ms": 872
+    "latency_ms": 1026
   },
   {
     "question_id": "fb_exp_023",
@@ -490,19 +490,19 @@
     "pdf_path": "datasets\\raw\\financebench\\pdfs\\PFIZER_2021_10K.pdf",
     "citation_count": 3,
     "selected_pages_one_indexed": [
-      18,
-      21,
-      71
+      61,
+      53,
+      59
     ],
     "node_count": 499,
-    "entity_count": 5480,
-    "edge_count": 95661,
+    "entity_count": 5479,
+    "edge_count": 95476,
     "node_words": 320,
     "node_overlap": 60,
     "retrieve_top_k": 12,
     "entity_top_k": 8,
     "max_citations": 3,
-    "latency_ms": 410
+    "latency_ms": 497
   },
   {
     "question_id": "fb_exp_024",
@@ -512,19 +512,19 @@
     "pdf_path": "datasets\\raw\\financebench\\pdfs\\GENERALMILLS_2020_10K.pdf",
     "citation_count": 3,
     "selected_pages_one_indexed": [
-      69,
       50,
-      100
+      69,
+      103
     ],
     "node_count": 311,
-    "entity_count": 3891,
-    "edge_count": 58723,
+    "entity_count": 3890,
+    "edge_count": 58603,
     "node_words": 320,
     "node_overlap": 60,
     "retrieve_top_k": 12,
     "entity_top_k": 8,
     "max_citations": 3,
-    "latency_ms": 385
+    "latency_ms": 421
   },
   {
     "question_id": "fb_exp_025",
@@ -534,18 +534,18 @@
     "pdf_path": "datasets\\raw\\financebench\\pdfs\\ULTABEAUTY_2023Q4_EARNINGS.pdf",
     "citation_count": 3,
     "selected_pages_one_indexed": [
+      2,
       6,
-      1,
       3
     ],
     "node_count": 13,
-    "entity_count": 619,
-    "edge_count": 5717,
+    "entity_count": 618,
+    "edge_count": 5687,
     "node_words": 320,
     "node_overlap": 60,
     "retrieve_top_k": 12,
     "entity_top_k": 8,
     "max_citations": 3,
-    "latency_ms": 21
+    "latency_ms": 29
   }
 ]

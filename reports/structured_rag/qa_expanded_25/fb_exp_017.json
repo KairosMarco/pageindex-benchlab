@@ -2,89 +2,69 @@
   "method": "structured_tree_graph_rag",
   "question_id": "fb_exp_017",
   "question": "Does Corning have positive working capital based on FY2022 data? If working capital is not a useful or relevant metric for this company, then please state that and explain why.",
-  "answer": "Structured RAG retrieved the most relevant document tree nodes and entity-linked passages. Use the cited pages as supporting evidence: [PAGE 34], [PAGE 65], [PAGE 99].",
+  "answer": "Structured RAG retrieved the most relevant document tree nodes and entity-linked passages. Use the cited pages as supporting evidence: [PAGE 20], [PAGE 60], [PAGE 104].",
   "citations": [
     {
       "document_id": "CORNING_2022_10K",
-      "page": 34,
-      "section": "LIQUIDITY AND CAPITAL RESOURCES",
-      "text": "Table of Contents LIQUIDITY AND CAPITAL RESOURCES Our financial condition and liquidity are strong. We are not aware of any known trends, demands, commitments, events or uncertainties that will result in or that are reasonably likely to result in a material decrease in our liquidity. In addition, other than items discussed, there are no known material trends, favorable or unfavorable, in our capital resources and no expected material changes in the mix of such resources. Our major source of funding for 2023 and beyond will be our operating cash flow, our existing balances of cash and cash equivalents and proceeds from any issuances of debt. We believe we have sufficient liquidity to fund ope",
+      "page": 20,
+      "section": "Item 1B. Unresolved Staff Comments",
+      "text": "ufacturing 55.7 20.7 35.0 Sales and administrative 2.4 1.8 0.6 Research and development 3.9 1.9 2.0 Warehouse 3.8 3.0 0.8 Total 65.8 27.4 38.4 Total assets and capital expenditures by reportable segment are included in Note 19 (Reportable Segments) in the accompanying notes to the consolidated financial statements. Information concerning lease commitments is included in Note 6 (Leases) in the accompanying notes to the consolidated financial statements. Item 3. Legal Proceedings Corning is a defendant in various lawsuits and is subject to various claims that arise in the normal course of business, the most significant of which are summarized in Note 13 (Commitments, Contingencies and Guarante",
       "metadata": {
-        "node_id": "p34_n0",
-        "parent_id": "section_p23",
-        "score": 0.7715329683782567,
-        "lexical_score": 0.1915329683782567,
+        "node_id": "p20_n0",
+        "parent_id": "section_p20",
+        "score": 2.5740410573252532,
+        "lexical_score": 0.00977153259154786,
         "structural_score": 0.18,
-        "entity_score": 0.4,
-        "phrase_boost": 0.0,
+        "entity_score": 0.0,
+        "phrase_boost": 2.0,
+        "position_boost": 0.0,
+        "page_aggregate_score": 0.3842695247337054,
         "matched_terms": [
-          "capital",
-          "data",
-          "for",
-          "not",
-          "working"
+          "capital"
         ],
-        "matched_entities": [
-          "capital",
-          "contents liquidity and capital resources",
-          "data",
-          "key balance sheet data we",
-          "working"
-        ]
+        "matched_entities": []
       }
     },
     {
       "document_id": "CORNING_2022_10K",
-      "page": 65,
-      "section": "Page 65",
-      "text": "for awards expected to ultimately vest. The number of awards expected to vest equals the total awards granted less an estimation of the number of forfeitures expected to occur prior to vesting. The Company reassesses the probability of vesting at each reporting period and adjusts share-based compensation expense based on its probability assessment. The forfeiture rate is calculated based on over 15 years of historical data and is adjusted if actual forfeitures differ significantly from the original estimates. The effect of any change in estimated forfeitures would be recognized through a cumulative adjustment that would be included in compensation cost in the period of the change in estimate",
+      "page": 60,
+      "section": "Consolidated Balance Sheets",
+      "text": "021 Assets Current assets: Cash and cash equivalents $ 1,671 $ 2,148 Trade accounts receivable, net of doubtful accounts - $40 and $42 1,721 2,004 Inventories (Note 5) 2,904 2,481 Other current assets (Notes 10 and 14) 1,157 1,026 Total current assets 7,453 7,659 Property, plant and equipment, net of accumulated depreciation - $14,147 and $13,969 (Note 8) 15,371 15,804 Goodwill, net (Note 9) 2,394 2,421 Other intangible assets, net (Note 9) 1,029 1,148 Deferred income taxes (Note 7) 1,073 1,066 Other assets (Notes 10 and 14) 2,179 2,056 Total Assets $ 29,499 $ 30,154 Liabilities and Equity Current liabilities: Current portion of long-term debt and short-term borrowings (Note 11) $ 224 $ 55 A",
       "metadata": {
-        "node_id": "p65_n1",
-        "parent_id": "section_p63",
-        "score": 0.713557264010845,
-        "lexical_score": 0.05355726401084503,
+        "node_id": "p60_n0",
+        "parent_id": "section_p60",
+        "score": 2.5364140393371333,
+        "lexical_score": 0.011137243504354152,
         "structural_score": 0.18,
-        "entity_score": 0.48,
-        "phrase_boost": 0.0,
+        "entity_score": 0.0,
+        "phrase_boost": 2.0,
+        "position_boost": 0.0,
+        "page_aggregate_score": 0.3452767958327791,
         "matched_terms": [
-          "based",
-          "data",
-          "for"
+          "capital"
         ],
-        "matched_entities": [
-          "for",
-          "performance-based",
-          "performance-based restricted stock units performance-based",
-          "restricted stock units time-based",
-          "time-based",
-          "time-based restricted stock"
-        ]
+        "matched_entities": []
       }
     },
     {
       "document_id": "CORNING_2022_10K",
-      "page": 99,
-      "section": "Page 99",
-      "text": "Table of Contents 18. Share-Based Compensation The following table presents share-based compensation cost and the unrecognized compensation cost by award type (in millions): Amount of share-based compensation cost recognized Unrecognized compensation cost Weighted- average remaining term in years Year ended December 31, December 31, 2022 2021 2020 2022 Time-based restricted stock and restricted stock units $ 111 $ 94 $ 95 $ 150 2.7 Performance-based restricted stock units 52 79 81 17 1.4 Stock Options 7 9 23 2 0.4 Other 5 8 8 Total share-based compensation cost (1) $ 175 $ 190 $ 207 (1) The income tax benefit realized from share-based compensation was $16 million, $37 million and $12 million",
+      "page": 104,
+      "section": "Page 104",
+      "text": "sets. (2) Represents other corporate investments. HSG became a fully consolidated subsidiary of Corning on September 9, 2020. (3) Represents corporate property not specifically identifiable to an operating segment. (4) Includes goodwill, other intangible assets, pension assets, long-term derivative assets, operating leases and deferred income taxes. 104",
       "metadata": {
-        "node_id": "p99_n0",
+        "node_id": "p104_n0",
         "parent_id": "section_p63",
-        "score": 0.6259689292099186,
-        "lexical_score": 0.045968929209918574,
+        "score": 2.3675343249175134,
+        "lexical_score": 0.004562154353958774,
         "structural_score": 0.18,
-        "entity_score": 0.4,
-        "phrase_boost": 0.0,
+        "entity_score": 0.0,
+        "phrase_boost": 2.0,
+        "position_boost": 0.0,
+        "page_aggregate_score": 0.18297217056355475,
         "matched_terms": [
-          "based",
-          "for"
+          "not"
         ],
-        "matched_entities": [
-          "performance-based",
-          "plans. incentive stock plans time-based",
-          "share-based",
-          "share-based compensation the",
-          "time-based"
-        ]
+        "matched_entities": []
       }
     }
   ],
@@ -104,80 +84,54 @@
       "action": "build_entity_graph",
       "target": "lightweight_entity_cooccurrence_graph",
       "metadata": {
-        "entity_count": 3753,
-        "edge_count": 61288,
+        "entity_count": 3752,
+        "edge_count": 61129,
         "entity_top_k": 8
       }
     },
     {
       "step": 3,
       "action": "rank_tree_graph_node",
-      "target": "p34_n0",
+      "target": "p20_n0",
       "metadata": {
         "rank": 1,
-        "page": 34,
-        "section": "LIQUIDITY AND CAPITAL RESOURCES",
-        "score": 0.7715329683782567,
+        "page": 20,
+        "section": "Item 1B. Unresolved Staff Comments",
+        "score": 2.5740410573252532,
         "matched_terms": [
-          "capital",
-          "data",
-          "for",
-          "not",
-          "working"
+          "capital"
         ],
-        "matched_entities": [
-          "capital",
-          "contents liquidity and capital resources",
-          "data",
-          "key balance sheet data we",
-          "working"
-        ]
+        "matched_entities": []
       }
     },
     {
       "step": 4,
       "action": "rank_tree_graph_node",
-      "target": "p65_n1",
+      "target": "p60_n0",
       "metadata": {
         "rank": 2,
-        "page": 65,
-        "section": "Page 65",
-        "score": 0.713557264010845,
+        "page": 60,
+        "section": "Consolidated Balance Sheets",
+        "score": 2.5364140393371333,
         "matched_terms": [
-          "based",
-          "data",
-          "for"
+          "capital"
         ],
-        "matched_entities": [
-          "for",
-          "performance-based",
-          "performance-based restricted stock units performance-based",
-          "restricted stock units time-based",
-          "time-based",
-          "time-based restricted stock"
-        ]
+        "matched_entities": []
       }
     },
     {
       "step": 5,
       "action": "rank_tree_graph_node",
-      "target": "p99_n0",
+      "target": "p104_n0",
       "metadata": {
         "rank": 3,
-        "page": 99,
-        "section": "Page 99",
-        "score": 0.6259689292099186,
+        "page": 104,
+        "section": "Page 104",
+        "score": 2.3675343249175134,
         "matched_terms": [
-          "based",
-          "for"
+          "not"
         ],
-        "matched_entities": [
-          "performance-based",
-          "plans. incentive stock plans time-based",
-          "share-based",
-          "share-based compensation the",
-          "time-based"
-        ]
+        "matched_entities": []
       }
     }
   ],
@@ -186,13 +140,13 @@
     "output": null,
     "total": null
   },
-  "latency_ms": 380,
+  "latency_ms": 400,
   "metadata": {
     "pdf_path": "datasets\\raw\\financebench\\pdfs\\CORNING_2022_10K.pdf",
     "page_count": 159,
     "node_count": 335,
-    "entity_count": 3753,
-    "edge_count": 61288,
+    "entity_count": 3752,
+    "edge_count": 61129,
     "retrieve_top_k": 12,
     "max_citations": 3,
     "inspiration": "BookRAG-style tree plus entity graph plus tree-node mapping; independently implemented for BenchLab.",

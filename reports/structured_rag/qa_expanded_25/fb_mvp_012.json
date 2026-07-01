@@ -12,11 +12,13 @@
       "metadata": {
         "node_id": "p13_n0",
         "parent_id": "section_p8",
-        "score": 2.8968829621933776,
-        "lexical_score": 0.056882962193377656,
+        "score": 3.2639682759225788,
+        "lexical_score": 0.06187504337655072,
         "structural_score": 0.18,
         "entity_score": 0.16,
         "phrase_boost": 2.5,
+        "position_boost": 0.0,
+        "page_aggregate_score": 0.3620932325460278,
         "matched_terms": [
           "discontinued"
         ],
@@ -34,11 +36,13 @@
       "metadata": {
         "node_id": "p14_n0",
         "parent_id": "section_p8",
-        "score": 2.8966058096173652,
-        "lexical_score": 0.05660580961736527,
+        "score": 3.199048608111316,
+        "lexical_score": 0.06189500661081601,
         "structural_score": 0.18,
         "entity_score": 0.16,
         "phrase_boost": 2.5,
+        "position_boost": 0.0,
+        "page_aggregate_score": 0.2971536015005,
         "matched_terms": [
           "discontinued"
         ],
@@ -56,11 +60,13 @@
       "metadata": {
         "node_id": "p12_n0",
         "parent_id": "section_p8",
-        "score": 2.8947377859467065,
-        "lexical_score": 0.05473778594670647,
+        "score": 3.196075367134455,
+        "lexical_score": 0.05914200570631511,
         "structural_score": 0.18,
         "entity_score": 0.16,
         "phrase_boost": 2.5,
+        "position_boost": 0.0,
+        "page_aggregate_score": 0.2969333614281399,
         "matched_terms": [
           "discontinued"
         ],
@@ -100,7 +106,7 @@
         "rank": 1,
         "page": 13,
         "section": "SIX MONTHS",
-        "score": 2.8968829621933776,
+        "score": 3.2639682759225788,
         "matched_terms": [
           "discontinued"
         ],
@@ -118,7 +124,7 @@
         "rank": 2,
         "page": 14,
         "section": "FULL YEAR",
-        "score": 2.8966058096173652,
+        "score": 3.199048608111316,
         "matched_terms": [
           "discontinued"
         ],
@@ -136,7 +142,7 @@
         "rank": 3,
         "page": 12,
         "section": "SIX MONTHS",
-        "score": 2.8947377859467065,
+        "score": 3.196075367134455,
         "matched_terms": [
           "discontinued"
         ],
@@ -152,7 +158,7 @@
     "output": null,
     "total": null
   },
-  "latency_ms": 122,
+  "latency_ms": 193,
   "metadata": {
     "pdf_path": "datasets\\raw\\financebench\\pdfs\\JOHNSON_JOHNSON_2023_8K_dated-2023-08-30.pdf",
     "page_count": 27,

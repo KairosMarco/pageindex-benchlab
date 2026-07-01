@@ -1,6 +1,6 @@
 # Stage 1 Status
 
-Date: 2026-06-23
+Date: 2026-07-01
 
 ## Summary
 
@@ -21,7 +21,7 @@ The active contributor is `KairosMarco`; there is no active collaborator split i
 | GraphRAG | Placeholder only | `pipelines/graphrag/` |
 | HyperGraphRAG | Placeholder only | `pipelines/hypergraphrag/` |
 | BookRAG | Priority external baseline; readiness, dataset bridge, config templates, config-load smoke checks, and upstream issue opened | `pipelines/bookrag/`, `scripts/check_bookrag_readiness.py`, `scripts/build_bookrag_dataset.py`, `scripts/prepare_bookrag_config.py` |
-| Structured Tree-Graph RAG | Local structural baseline implemented and evaluated on MVP retrieval smoke test | `pipelines/structured_rag/`, `scripts/run_structured_rag_mvp.py`, `reports/structured_rag/status.md` |
+| Structured Tree-Graph RAG | Local structural baseline implemented, expanded, improved, and evaluated on the 25-question subset | `pipelines/structured_rag/`, `scripts/run_structured_rag_mvp.py`, `reports/structured_rag/status.md` |
 | Upstream PRs | Two PageIndex PRs open | `docs/upstream-pr-overview.md` |
 
 ## Current Benchmark Snapshot
@@ -34,7 +34,7 @@ Expanded 25-question FinanceBench run:
 | LlamaIndex Vector RAG | `1.000` | `0.360` | `0.920` | `2,543` | `16,497 ms` |
 | LlamaIndex Hybrid RAG | `1.000` | `0.360` | `0.880` | `2,553` | `16,846 ms` |
 | Long-context LLM | `0.800` | `0.267` | `0.920` | `92,500` | `12,772 ms` |
-| Structured Tree-Graph RAG | `0.600` | `0.207` | not run | n/a | `310 ms` |
+| Structured Tree-Graph RAG | `0.740` | `0.260` | not run | n/a | `373 ms` |
 
 Source:
 
@@ -47,7 +47,7 @@ Local structured retrieval results:
 | Method | Subset | Evidence recall | Citation precision | Generated | Misses |
 |---|---|---:|---:|---:|---:|
 | Structured Tree-Graph RAG | 12-question MVP | `0.667` | `0.222` | `12 / 12` | n/a |
-| Structured Tree-Graph RAG | 25-question expanded | `0.600` | `0.207` | `25 / 25` | `10` |
+| Structured Tree-Graph RAG | 25-question expanded | `0.740` | `0.260` | `25 / 25` | `6` |
 
 Source:
 
@@ -56,6 +56,8 @@ reports/structured_rag/status.md
 reports/structured_rag/evidence_eval_smoke.json
 reports/structured_rag/expanded_diagnostics.md
 ```
+
+The July 1 structured retrieval update added normalized finance abbreviations, table-aware phrase boosts, page-level score aggregation, neighboring-page propagation, and short-document front-page guards. The improvement is useful as a controlled local structural baseline, but it should not be described as a BookRAG result.
 
 ## PageIndex Findings
 

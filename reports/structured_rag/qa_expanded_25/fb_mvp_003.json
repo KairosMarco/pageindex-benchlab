@@ -2,53 +2,31 @@
   "method": "structured_tree_graph_rag",
   "question_id": "fb_mvp_003",
   "question": "What are the major products and services that AMD sells as of FY22?",
-  "answer": "Structured RAG retrieved the most relevant document tree nodes and entity-linked passages. Use the cited pages as supporting evidence: [PAGE 10], [PAGE 111], [PAGE 7].",
+  "answer": "Structured RAG retrieved the most relevant document tree nodes and entity-linked passages. Use the cited pages as supporting evidence: [PAGE 4], [PAGE 7], [PAGE 8].",
   "citations": [
     {
       "document_id": "AMD_2022_10K",
-      "page": 10,
-      "section": "Page 10",
-      "text": "Table of Contents FPGAs and Adaptive SoCs. Our FPGA products are hardware-customizable devices that can be tailored to meet the specific needs of each customer, enabling them to differentiate their products and accelerate time-to-market. Our FPGA families include UltraScale+™ (based on 16 nm technology), UltraScale™ (20 nm), 7 Series (28 nm) and older series. Adaptive SoC products include the Zynq SoC and UltraScale+ Multi-Processing System on a Chip (MPSoCs) which combine FPGA technology with a heterogeneous processing system, as well as the industry’s first RFSoC architecture with integrated radio frequency (RF) data converters. The Versal portfolio is composed of software-programmable Ada",
+      "page": 4,
+      "section": "ITEM 1. BUSINESS",
+      "text": "this Annual Report on Form 10-K to “AMD,” “we,” “us,” “management,” “our” or the “Company” mean Advanced Micro Devices, Inc. and our consolidated subsidiaries. Overview We are a global semiconductor company primarily offering: • server microprocessors (CPUs) and graphics processing units (GPUs), data processing units (DPUs), Field Programmable Gate Arrays (FPGAs), and Adaptive System-on-Chip (SoC) products for data centers; • CPUs, accelerated processing units (APUs) that integrate CPUs and GPUs, and chipsets for desktop and notebook personal computers; • discrete GPUs, and semi-custom SoC products and development services; and • embedded CPUs, GPUs, APUs, FPGAs, and Adaptive SoC products. F",
       "metadata": {
-        "node_id": "p10_n0",
+        "node_id": "p4_n1",
         "parent_id": "section_p4",
-        "score": 0.5236472782174648,
-        "lexical_score": 0.02364727821746487,
+        "score": 3.7984671340717404,
+        "lexical_score": 0.08089454203734196,
         "structural_score": 0.18,
-        "entity_score": 0.32,
-        "phrase_boost": 0.0,
+        "entity_score": 0.16,
+        "phrase_boost": 2.5,
+        "position_boost": 0.45,
+        "page_aggregate_score": 0.42757259203439857,
         "matched_terms": [
+          "overview",
           "products",
           "services"
         ],
         "matched_entities": [
-          "configuration products. we",
-          "products",
-          "services",
-          "services adaptable platforms. we"
-        ]
-      }
-    },
-    {
-      "document_id": "AMD_2022_10K",
-      "page": 111,
-      "section": "Page 111",
-      "text": "Exhibit 21 Solarflare India Private Limited India Xilinx India Technology Services Private Limited India Xilinx Finance Ireland Limited Ireland Xilinx Ireland Unlimited Company Ireland Xilinx Israel Limited Israel Advanced Micro Devices S.p.A. Italy AMD Japan Ltd. Japan Silexica Japan KK Japan Xilinx K.K. Japan Advanced Micro Devices Sdn. Bhd. Malaysia Advanced Micro Devices Global Services (M) Sdn. Bhd. Malaysia ATI Technologies (L) Inc. Malaysia Advanced Micro Devices Malaysia Ltd. Malaysia Xilinx NL B.V. Netherlands Advanced Micro Devices (Poland) sp. z o.o. Poland AMD Advanced Micro Devices (ROU) S.R.L. Romania Advanced Micro Devices RS d.o.o. Serbia Advanced Micro Devices (Singapore) Pt",
-      "metadata": {
-        "node_id": "p111_n0",
-        "parent_id": "section_p99",
-        "score": 0.4353985002301938,
-        "lexical_score": 0.015398500230193755,
-        "structural_score": 0.18,
-        "entity_score": 0.24,
-        "phrase_boost": 0.0,
-        "matched_terms": [
-          "services"
-        ],
-        "matched_entities": [
-          "devices global services",
-          "services",
-          "xilinx india technology services private"
+          "overview",
+          "overview we"
         ]
       }
     },
@@ -60,11 +38,13 @@
       "metadata": {
         "node_id": "p7_n0",
         "parent_id": "section_p4",
-        "score": 0.42458824027721553,
-        "lexical_score": 0.08458824027721548,
+        "score": 1.14058834319142,
+        "lexical_score": 0.08841736549845279,
         "structural_score": 0.18,
         "entity_score": 0.16,
         "phrase_boost": 0.0,
+        "position_boost": 0.45,
+        "page_aggregate_score": 0.2621709776929673,
         "matched_terms": [
           "major",
           "products",
@@ -72,6 +52,30 @@
         ],
         "matched_entities": [
           "contents data center products server",
+          "products"
+        ]
+      }
+    },
+    {
+      "document_id": "AMD_2022_10K",
+      "page": 8,
+      "section": "Page 8",
+      "text": "game console and handheld PC gaming manufacturers and can also address customer needs in many other markets. We leverage our existing IP to create a variety of products tailored to a specific customer’s needs, including complex fully-customized SoCs to more modest adaptations and integrations of existing CPU, APU or GPU products. Gaming Products Semi-Custom Products. Our semi-custom products are tailored, co-developed, high-performance, customer-specific solutions based on our CPU, GPU and multi-media technologies. We work closely with our customers to define solutions to precisely match the requirements of the device or application. We developed the semi-custom SoC products that power both",
+      "metadata": {
+        "node_id": "p8_n2",
+        "parent_id": "section_p4",
+        "score": 1.0592299893528243,
+        "lexical_score": 0.032153607527777905,
+        "structural_score": 0.18,
+        "entity_score": 0.16,
+        "phrase_boost": 0.0,
+        "position_boost": 0.45,
+        "page_aggregate_score": 0.23707638182504626,
+        "matched_terms": [
+          "products"
+        ],
+        "matched_entities": [
+          "gaming products semi-custom products. our",
           "products"
         ]
       }
@@ -93,60 +97,40 @@
       "action": "build_entity_graph",
       "target": "lightweight_entity_cooccurrence_graph",
       "metadata": {
-        "entity_count": 3318,
-        "edge_count": 49384,
+        "entity_count": 3317,
+        "edge_count": 49233,
         "entity_top_k": 8
       }
     },
     {
       "step": 3,
       "action": "rank_tree_graph_node",
-      "target": "p10_n0",
+      "target": "p4_n1",
       "metadata": {
         "rank": 1,
-        "page": 10,
-        "section": "Page 10",
-        "score": 0.5236472782174648,
+        "page": 4,
+        "section": "ITEM 1. BUSINESS",
+        "score": 3.7984671340717404,
         "matched_terms": [
+          "overview",
           "products",
           "services"
         ],
         "matched_entities": [
-          "configuration products. we",
-          "products",
-          "services",
-          "services adaptable platforms. we"
+          "overview",
+          "overview we"
         ]
       }
     },
     {
       "step": 4,
       "action": "rank_tree_graph_node",
-      "target": "p111_n0",
-      "metadata": {
-        "rank": 2,
-        "page": 111,
-        "section": "Page 111",
-        "score": 0.4353985002301938,
-        "matched_terms": [
-          "services"
-        ],
-        "matched_entities": [
-          "devices global services",
-          "services",
-          "xilinx india technology services private"
-        ]
-      }
-    },
-    {
-      "step": 5,
-      "action": "rank_tree_graph_node",
       "target": "p7_n0",
       "metadata": {
-        "rank": 3,
+        "rank": 2,
         "page": 7,
         "section": "Page 7",
-        "score": 0.42458824027721553,
+        "score": 1.14058834319142,
         "matched_terms": [
           "major",
           "products",
@@ -157,6 +141,24 @@
           "products"
         ]
       }
+    },
+    {
+      "step": 5,
+      "action": "rank_tree_graph_node",
+      "target": "p8_n2",
+      "metadata": {
+        "rank": 3,
+        "page": 8,
+        "section": "Page 8",
+        "score": 1.0592299893528243,
+        "matched_terms": [
+          "products"
+        ],
+        "matched_entities": [
+          "gaming products semi-custom products. our",
+          "products"
+        ]
+      }
     }
   ],
   "token_usage": {
@@ -164,13 +166,13 @@
     "output": null,
     "total": null
   },
-  "latency_ms": 473,
+  "latency_ms": 508,
   "metadata": {
     "pdf_path": "datasets\\raw\\financebench\\pdfs\\AMD_2022_10K.pdf",
     "page_count": 121,
     "node_count": 292,
-    "entity_count": 3318,
-    "edge_count": 49384,
+    "entity_count": 3317,
+    "edge_count": 49233,
     "retrieve_top_k": 12,
     "max_citations": 3,
     "inspiration": "BookRAG-style tree plus entity graph plus tree-node mapping; independently implemented for BenchLab.",

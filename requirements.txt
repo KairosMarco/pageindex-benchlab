@@ -5,6 +5,7 @@ rich>=13.7
 
 # Document parsing
 pymupdf>=1.24
+pypdf>=6.0
 litellm>=1.83
 
 # RAG baselines, installed gradually as adapters are implemented

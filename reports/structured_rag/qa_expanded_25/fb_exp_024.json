@@ -2,39 +2,8 @@
   "method": "structured_tree_graph_rag",
   "question_id": "fb_exp_024",
   "question": "By drawing conclusions from the information stated only in the statement of financial position, what is General Mills's FY2020 working capital ratio? Define working capital ratio as total current assets divided by total current liabilities. Round your answer to two decimal places.",
-  "answer": "Structured RAG retrieved the most relevant document tree nodes and entity-linked passages. Use the cited pages as supporting evidence: [PAGE 69], [PAGE 50], [PAGE 100].",
+  "answer": "Structured RAG retrieved the most relevant document tree nodes and entity-linked passages. Use the cited pages as supporting evidence: [PAGE 50], [PAGE 69], [PAGE 103].",
   "citations": [
-    {
-      "document_id": "GENERALMILLS_2020_10K",
-      "page": 69,
-      "section": "Page 69",
-      "text": "69 The following tables reconcile the net fair values of assets and liabilities subject to offsetting arrangements that are recorded in our Consolidated Balance Sheets to the net fair values that could be reported in our Consolidated Balance Sheets: May 31, 2020 Assets Liabilities Gross Amounts Not Offset in the Balance Sheet (e) Gross Amounts Not Offset in the Balance Sheet (e) In Millions Gross Amounts of Recognized Assets Gross Liabilities Offset in the Balance Sheet (a) Net Amounts of Assets (b) Financial Instruments Cash Collateral Received Net Amount (c) Gross Amounts of Recognized Liabilities Gross Assets Offset in the Balance Sheet (a) Net Amounts of Liabilities (b) Financial Instrum",
-      "metadata": {
-        "node_id": "p69_n0",
-        "parent_id": "section_p63",
-        "score": 3.404718457772846,
-        "lexical_score": 0.08471845777284633,
-        "structural_score": 0.18,
-        "entity_score": 0.64,
-        "phrase_boost": 2.5,
-        "matched_terms": [
-          "assets",
-          "financial",
-          "liabilities",
-          "total"
-        ],
-        "matched_entities": [
-          "assets",
-          "assets liabilities gross amounts not",
-          "financial",
-          "financial instruments cash collateral pledged",
-          "financial instruments cash collateral received",
-          "liabilities",
-          "recognized assets gross liabilities offset",
-          "recognized liabilities gross assets offset"
-        ]
-      }
-    },
     {
       "document_id": "GENERALMILLS_2020_10K",
       "page": 50,
@@ -43,11 +12,13 @@
       "metadata": {
         "node_id": "p50_n0",
         "parent_id": "section_p50",
-        "score": 3.390281743090366,
-        "lexical_score": 0.2302817430903658,
+        "score": 6.351370932056379,
+        "lexical_score": 0.23534644706605276,
         "structural_score": 0.18,
         "entity_score": 0.48,
-        "phrase_boost": 2.5,
+        "phrase_boost": 4.8,
+        "position_boost": 0.0,
+        "page_aggregate_score": 0.6560244849903265,
         "matched_terms": [
           "assets",
           "capital",
@@ -68,29 +39,63 @@
     },
     {
       "document_id": "GENERALMILLS_2020_10K",
-      "page": 100,
-      "section": "PART IV",
-      "text": "100 PART IV ITEM 15 – Exhibits and Financial Statement Schedules 1. Financial Statements: The following financial statements are included in Item 8 of this report: Consolidated Statements of Earnings for the fiscal years ended May 31, 2020, May 26, 2019, and May 27, 2018. Consolidated Statements of Comprehensive Income for the fiscal years ended May 31, 2020, May 26, 2019, and May 27, 2018. Consolidated Balance Sheets as of May 31, 2020 and May 26, 2019. Consolidated Statements of Cash Flows for the fiscal years ended May 31, 2020, May 26, 2019, and May 27, 2018. Consolidated Statements of Total Equity and Redeemable Interest for the fiscal years ended May 31, 2020, May 26, 2019, and May 27,",
+      "page": 69,
+      "section": "Page 69",
+      "text": "69 The following tables reconcile the net fair values of assets and liabilities subject to offsetting arrangements that are recorded in our Consolidated Balance Sheets to the net fair values that could be reported in our Consolidated Balance Sheets: May 31, 2020 Assets Liabilities Gross Amounts Not Offset in the Balance Sheet (e) Gross Amounts Not Offset in the Balance Sheet (e) In Millions Gross Amounts of Recognized Assets Gross Liabilities Offset in the Balance Sheet (a) Net Amounts of Assets (b) Financial Instruments Cash Collateral Received Net Amount (c) Gross Amounts of Recognized Liabilities Gross Assets Offset in the Balance Sheet (a) Net Amounts of Liabilities (b) Financial Instrum",
       "metadata": {
-        "node_id": "p100_n0",
-        "parent_id": "section_p85",
-        "score": 3.38055717094668,
-        "lexical_score": 0.060557170946679936,
+        "node_id": "p69_n0",
+        "parent_id": "section_p63",
+        "score": 4.282618204576976,
+        "lexical_score": 0.08537501098970822,
         "structural_score": 0.18,
         "entity_score": 0.64,
-        "phrase_boost": 2.5,
+        "phrase_boost": 2.8,
+        "position_boost": 0.0,
+        "page_aggregate_score": 0.5772431935872679,
         "matched_terms": [
+          "assets",
           "financial",
-          "statement",
+          "liabilities",
           "total"
         ],
         "matched_entities": [
-          "consolidated financial statements. report",
+          "assets",
+          "assets liabilities gross amounts not",
           "financial",
-          "financial statement schedule",
-          "financial statement schedules",
-          "financial statements",
-          "statement",
+          "financial instruments cash collateral pledged",
+          "financial instruments cash collateral received",
+          "liabilities",
+          "recognized assets gross liabilities offset",
+          "recognized liabilities gross assets offset"
+        ]
+      }
+    },
+    {
+      "document_id": "GENERALMILLS_2020_10K",
+      "page": 103,
+      "section": "Page 103",
+      "text": "103 10.32 Five-Year Credit Agreement, dated as of May 18, 2016, among the Company, the several financial institutions from time to time party to the agreement, and Bank of America, N.A., as Administrative Agent (incorporated herein by reference to Exhibit 10.1 to the Company’s Current Report on Form 8-K filed May 18, 2016). 10.33 Extension Agreement, dated April 26, 2017, among the Company, the several financial institutions from time to time party to the agreement, and Bank of America, N.A., as Administrative Agent (incorporated herein by reference to Exhibit 10.1 the Company’s Current Report on Form 8-K filed May 1, 2017). 10.34 Amendment No. 1 to Credit Agreement, dated as of May 31, 2018",
+      "metadata": {
+        "node_id": "p103_n0",
+        "parent_id": "section_p85",
+        "score": 4.131223774026718,
+        "lexical_score": 0.03051480215005074,
+        "structural_score": 0.18,
+        "entity_score": 0.56,
+        "phrase_boost": 2.8,
+        "position_boost": 0.0,
+        "page_aggregate_score": 0.5607089718766675,
+        "matched_terms": [
+          "current",
+          "financial",
+          "total"
+        ],
+        "matched_entities": [
+          "chief financial officer",
+          "consolidated financial statements",
+          "current",
+          "current report",
+          "financial",
           "total",
           "total equity"
         ]
@@ -113,47 +118,20 @@
       "action": "build_entity_graph",
       "target": "lightweight_entity_cooccurrence_graph",
       "metadata": {
-        "entity_count": 3891,
-        "edge_count": 58723,
+        "entity_count": 3890,
+        "edge_count": 58603,
         "entity_top_k": 8
       }
     },
     {
       "step": 3,
       "action": "rank_tree_graph_node",
-      "target": "p69_n0",
-      "metadata": {
-        "rank": 1,
-        "page": 69,
-        "section": "Page 69",
-        "score": 3.404718457772846,
-        "matched_terms": [
-          "assets",
-          "financial",
-          "liabilities",
-          "total"
-        ],
-        "matched_entities": [
-          "assets",
-          "assets liabilities gross amounts not",
-          "financial",
-          "financial instruments cash collateral pledged",
-          "financial instruments cash collateral received",
-          "liabilities",
-          "recognized assets gross liabilities offset",
-          "recognized liabilities gross assets offset"
-        ]
-      }
-    },
-    {
-      "step": 4,
-      "action": "rank_tree_graph_node",
       "target": "p50_n0",
       "metadata": {
-        "rank": 2,
+        "rank": 1,
         "page": 50,
         "section": "Consolidated Balance Sheets",
-        "score": 3.390281743090366,
+        "score": 6.351370932056379,
         "matched_terms": [
           "assets",
           "capital",
@@ -173,26 +151,52 @@
       }
     },
     {
-      "step": 5,
+      "step": 4,
       "action": "rank_tree_graph_node",
-      "target": "p100_n0",
+      "target": "p69_n0",
       "metadata": {
-        "rank": 3,
-        "page": 100,
-        "section": "PART IV",
-        "score": 3.38055717094668,
+        "rank": 2,
+        "page": 69,
+        "section": "Page 69",
+        "score": 4.282618204576976,
         "matched_terms": [
+          "assets",
           "financial",
-          "statement",
+          "liabilities",
           "total"
         ],
         "matched_entities": [
-          "consolidated financial statements. report",
+          "assets",
+          "assets liabilities gross amounts not",
           "financial",
-          "financial statement schedule",
-          "financial statement schedules",
-          "financial statements",
-          "statement",
+          "financial instruments cash collateral pledged",
+          "financial instruments cash collateral received",
+          "liabilities",
+          "recognized assets gross liabilities offset",
+          "recognized liabilities gross assets offset"
+        ]
+      }
+    },
+    {
+      "step": 5,
+      "action": "rank_tree_graph_node",
+      "target": "p103_n0",
+      "metadata": {
+        "rank": 3,
+        "page": 103,
+        "section": "Page 103",
+        "score": 4.131223774026718,
+        "matched_terms": [
+          "current",
+          "financial",
+          "total"
+        ],
+        "matched_entities": [
+          "chief financial officer",
+          "consolidated financial statements",
+          "current",
+          "current report",
+          "financial",
           "total",
           "total equity"
         ]
@@ -204,13 +208,13 @@
     "output": null,
     "total": null
   },
-  "latency_ms": 381,
+  "latency_ms": 418,
   "metadata": {
     "pdf_path": "datasets\\raw\\financebench\\pdfs\\GENERALMILLS_2020_10K.pdf",
     "page_count": 127,
     "node_count": 311,
-    "entity_count": 3891,
-    "edge_count": 58723,
+    "entity_count": 3890,
+    "edge_count": 58603,
     "retrieve_top_k": 12,
     "max_citations": 3,
     "inspiration": "BookRAG-style tree plus entity graph plus tree-node mapping; independently implemented for BenchLab.",
